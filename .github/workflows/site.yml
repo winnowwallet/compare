@@ -1,0 +1,45 @@
+name: Site
+
+# Deploys site/ as a Cloudflare Worker with static assets (wrangler.jsonc). The Worker's
+# custom domain, compare.winnowwallet.com, is created by Cloudflare on deploy along with
+# its DNS record and certificate; nothing is configured by hand.
+#   push to main      -> deploy
+#   workflow_dispatch -> the same, for the first deploy and for reruns
+#
+# The site is generated and committed by ./build; the Reproduce workflow checks that a
+# fresh build produces exactly what is committed before anything reaches main.
+#
+# Requires repo secrets: CF_API_TOKEN made from the "Edit Cloudflare Workers" template
+# plus Zone -> DNS -> Edit, with the winnowwallet.com zone included, and CF_ACCOUNT_ID.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["site/**", "wrangler.jsonc", ".github/workflows/site.yml"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.repository == 'winnowwallet/compare'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Deploy the Worker
+        uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          packageManager: npm
+          wranglerVersion: "4.125.0"
+          command: deploy

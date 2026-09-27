@@ -1,0 +1,125 @@
+{
+ "wallet": "Zeus",
+ "features": {
+  "bolt11_pay": {
+   "value": "yes",
+   "evidence": "zeus:utils/handleAnything.ts:521; zeus:views/PaymentRequest.tsx:360",
+   "note": "Scanned or pasted BOLT 11 invoices are paid through the embedded LND"
+  },
+  "bolt11_receive": {
+   "value": "yes",
+   "evidence": "zeus:views/Receive.tsx:652",
+   "note": "Receive screen creates invoices, optionally combined with an on-chain address"
+  },
+  "bolt12_pay": {
+   "value": "no",
+   "evidence": "zeus:backends/EmbeddedLND.ts:599; zeus:views/Send.tsx:1364",
+   "note": "Offers are detected but Pay is disabled on LND; works in LDK mode or with remote CLN"
+  },
+  "bolt12_receive": {
+   "value": "no",
+   "evidence": "zeus:backends/EmbeddedLND.ts:599-601",
+   "note": "No offers on LND; only available in LDK Node mode or with remote CLN"
+  },
+  "offline_receive": {
+   "value": "partial",
+   "evidence": "zeus:views/LightningAddress/index.tsx:553; zeus:stores/LightningAddressStore.ts:403",
+   "note": "Only via custodial Cashu-backed ZEUS Pay address; self-custodial Zaplocker being retired"
+  },
+  "lnurl": {
+   "value": "yes",
+   "evidence": "zeus:utils/handleAnything.ts:1017-1041",
+   "note": "LNURL-pay, withdraw, channel and auth are all handled"
+  },
+  "ln_address_pay": {
+   "value": "yes",
+   "evidence": "zeus:utils/handleAnything.ts:675; zeus:utils/handleAnything.ts:751",
+   "note": "user@domain looked up via LUD-16 .well-known/lnurlp"
+  },
+  "ln_address_receive": {
+   "value": "partial",
+   "evidence": "zeus:views/LightningAddress/index.tsx:553; zeus:views/LightningAddress/index.tsx:738",
+   "note": "New embedded addresses are custodial ecash only; NWC type needs remote node"
+  },
+  "bip353": {
+   "value": "partial",
+   "evidence": "zeus:utils/handleAnything.ts:707-736; zeus:views/Send.tsx:1364",
+   "note": "Resolves via Cloudflare DNS-over-HTTPS; offers can't be paid on LND, only on-chain/BOLT 11 fallbacks"
+  },
+  "mpp": {
+   "value": "yes",
+   "evidence": "zeus:views/PaymentRequest.tsx:1125; zeus:backends/EmbeddedLND.ts:573",
+   "note": "MPP toggle with max-parts setting; AMP also offered"
+  },
+  "keysend": {
+   "value": "yes",
+   "evidence": "zeus:views/Send.tsx:683; zeus:utils/LndMobileUtils.ts:254",
+   "note": "Send to a node pubkey; accept-keysend enabled for receiving"
+  },
+  "choose_peer": {
+   "value": "yes",
+   "evidence": "zeus:views/OpenChannel.tsx:237; zeus:views/Settings/LSP.tsx:235",
+   "note": "Open channels to any node URI; LSP defaults to Olympus, custom host configurable"
+  },
+  "jit_channels": {
+   "value": "yes",
+   "evidence": "zeus:views/Receive.tsx:325; zeus:stores/LSPStore.ts:527",
+   "note": "Olympus flow LSP wraps invoices with a JIT channel; LSPS1 channel purchase too"
+  },
+  "splicing": {
+   "value": "no",
+   "evidence": "zeus:backends/EmbeddedLND.ts:555-610; lnd:lnrpc/lightning.proto",
+   "note": "No splice capability in Zeus or in the LND RPCs"
+  },
+  "anchors": {
+   "value": "yes",
+   "evidence": "lnd:funding/commitment_type_negotiation.go:471; zeus:utils/LndMobileUtils.ts:257",
+   "note": "LND negotiates anchor channels by default; simple taproot channels are optional"
+  },
+  "local_pathfinding": {
+   "value": "yes",
+   "evidence": "zeus:utils/LndMobileUtils.ts:319; zeus:utils/LndMobileUtils.ts:391",
+   "note": "LND routes over its own gossip graph; Express Graph Sync; bimodal/apriori choice"
+  },
+  "watchtower": {
+   "value": "yes",
+   "evidence": "zeus:ios/LndMobile/Lnd.swift:201; zeus:views/Tools/index.tsx:325",
+   "note": "Client on by default (--wtclient.active); user adds towers under Tools"
+  },
+  "channel_backup": {
+   "value": "yes",
+   "evidence": "zeus:stores/ChannelBackupStore.ts:95; zeus:views/Settings/EmbeddedNode/DisasterRecovery.tsx:49",
+   "note": "Automatic encrypted static channel backups to the Olympus server; restore offered"
+  },
+  "taproot": {
+   "value": "yes",
+   "evidence": "zeus:views/Receive.tsx:1125; zeus:backends/EmbeddedLND.ts:586",
+   "note": "Receive screen offers a Taproot (P2TR) address type"
+  },
+  "multisig": {
+   "value": "no",
+   "evidence": "zeus:views/Tools/Accounts/ImportAccount.tsx:35-42",
+   "note": "Only single-key account types; no multisig code found"
+  },
+  "hw_signer": {
+   "value": "yes",
+   "evidence": "zeus:views/Tools/Accounts/ImportAccount.tsx:85; zeus:views/PSBT.tsx:210",
+   "note": "Import xpub, sign PSBT on another device, scan back via QR (experimental)"
+  },
+  "coin_control": {
+   "value": "yes",
+   "evidence": "zeus:views/Send.tsx:990; zeus:views/OpenChannel.tsx:1102",
+   "note": "UTXO picker when sending on-chain and when opening channels"
+  },
+  "tor": {
+   "value": "no",
+   "evidence": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465; zeus:stores/SettingsStore.ts:1604",
+   "note": "Built-in Tor only for remote nodes; embedded LND Tor setting has no toggle"
+  },
+  "license": {
+   "value": "AGPL-3.0",
+   "evidence": "zeus:LICENSE:20",
+   "note": "GNU Affero General Public License v3"
+  }
+ }
+}

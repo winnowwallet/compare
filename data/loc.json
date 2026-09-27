@@ -1,0 +1,171 @@
+{
+ "Winnow": {
+  "app": {
+   "code": 10298,
+   "chars": 336449,
+   "files": 47,
+   "languages": {
+    "Swift": 10298
+   },
+   "generated_excluded": []
+  },
+  "bitcoin": {
+   "code": 13120,
+   "chars": 445981,
+   "files": 61,
+   "languages": {
+    "Swift": 13120
+   },
+   "generated_excluded": []
+  },
+  "lightning": {
+   "code": 4907,
+   "chars": 229156,
+   "files": 55,
+   "languages": {
+    "Swift": 4907
+   },
+   "generated_excluded": []
+  }
+ },
+ "Phoenix": {
+  "app": {
+   "code": 72767,
+   "chars": 1898647,
+   "files": 516,
+   "languages": {
+    "Kotlin": 12512,
+    "Swift": 60255
+   },
+   "generated_excluded": []
+  },
+  "lightning": {
+   "code": 28086,
+   "chars": 1172617,
+   "files": 145,
+   "languages": {
+    "C/C++ Header": 4,
+    "Kotlin": 27440,
+    "Objective-C": 3,
+    "Swift": 639
+   },
+   "generated_excluded": []
+  }
+ },
+ "Bitkit": {
+  "app": {
+   "code": 91893,
+   "chars": 2541191,
+   "files": 588,
+   "languages": {
+    "Swift": 91893
+   },
+   "generated_excluded": []
+  },
+  "lightning": {
+   "code": 126384,
+   "chars": 3790085,
+   "files": 225,
+   "languages": {
+    "Rust": 126384
+   },
+   "generated_excluded": []
+  }
+ },
+ "Blixt": {
+  "app": {
+   "code": 36360,
+   "chars": 947579,
+   "files": 298,
+   "languages": {
+    "C++": 47,
+    "C/C++ Header": 87,
+    "JavaScript": 3768,
+    "Objective-C": 154,
+    "Objective-C++": 84,
+    "Swift": 780,
+    "TypeScript": 31440
+   },
+   "generated_excluded": [
+    "blixt/speedloader-turbomodule/liblnd/arm64-v8a/liblnd.h",
+    "blixt/speedloader-turbomodule/liblnd/armeabi-v7a/liblnd.h",
+    "blixt/speedloader-turbomodule/liblnd/x86/liblnd.h",
+    "blixt/speedloader-turbomodule/liblnd/x86_64/liblnd.h"
+   ]
+  },
+  "lightning": {
+   "code": 239849,
+   "chars": 5558536,
+   "files": 1180,
+   "languages": {
+    "Go": 239849
+   },
+   "generated_excluded": [
+    "lnd/graph/db/migration1/sqlc/db.go",
+    "lnd/graph/db/migration1/sqlc/graph.sql.go",
+    "lnd/graph/db/migration1/sqlc/models.go",
+    "lnd/payments/db/migration1/sqlc/db.go",
+    "lnd/payments/db/migration1/sqlc/models.go",
+    "lnd/payments/db/migration1/sqlc/payments.sql.go",
+    "lnd/sqldb/sqlc/amp_invoices.sql.go",
+    "lnd/sqldb/sqlc/chain_params.sql.go",
+    "lnd/sqldb/sqlc/db.go",
+    "lnd/sqldb/sqlc/graph.sql.go",
+    "lnd/sqldb/sqlc/invoice_events.sql.go",
+    "lnd/sqldb/sqlc/invoices.sql.go",
+    "lnd/sqldb/sqlc/migration.sql.go",
+    "lnd/sqldb/sqlc/models.go",
+    "lnd/sqldb/sqlc/payments.sql.go",
+    "lnd/sqldb/sqlc/querier.go",
+    "lnd/tlv/internal/gen/gen_tlv_types.go",
+    "lnd/tlv/tlv_types_generated.go"
+   ]
+  }
+ },
+ "Zeus": {
+  "app": {
+   "code": 189559,
+   "chars": 3674180,
+   "files": 574,
+   "languages": {
+    "C/C++ Header": 41,
+    "JavaScript": 47,
+    "Objective-C": 1332,
+    "Objective-C++": 424,
+    "Swift": 4038,
+    "TypeScript": 183677
+   },
+   "generated_excluded": [
+    "zeus/ios/LdkNodeMobile/LDKNode.swift"
+   ]
+  },
+  "lightning": {
+   "code": 239849,
+   "chars": 5558536,
+   "files": 1180,
+   "languages": {
+    "Go": 239849
+   },
+   "generated_excluded": [
+    "lnd/graph/db/migration1/sqlc/db.go",
+    "lnd/graph/db/migration1/sqlc/graph.sql.go",
+    "lnd/graph/db/migration1/sqlc/models.go",
+    "lnd/payments/db/migration1/sqlc/db.go",
+    "lnd/payments/db/migration1/sqlc/models.go",
+    "lnd/payments/db/migration1/sqlc/payments.sql.go",
+    "lnd/sqldb/sqlc/amp_invoices.sql.go",
+    "lnd/sqldb/sqlc/chain_params.sql.go",
+    "lnd/sqldb/sqlc/db.go",
+    "lnd/sqldb/sqlc/graph.sql.go",
+    "lnd/sqldb/sqlc/invoice_events.sql.go",
+    "lnd/sqldb/sqlc/invoices.sql.go",
+    "lnd/sqldb/sqlc/migration.sql.go",
+    "lnd/sqldb/sqlc/models.go",
+    "lnd/sqldb/sqlc/payments.sql.go",
+    "lnd/sqldb/sqlc/querier.go",
+    "lnd/tlv/internal/gen/gen_tlv_types.go",
+    "lnd/tlv/tlv_types_generated.go"
+   ]
+  }
+ }
+}

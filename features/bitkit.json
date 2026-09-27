@@ -1,0 +1,125 @@
+{
+ "wallet": "Bitkit",
+ "features": {
+  "bolt11_pay": {
+   "value": "yes",
+   "evidence": "bitkit:Bitkit/Services/LightningService.swift:811; bitkit:Bitkit/ViewModels/WalletViewModel.swift:892",
+   "note": "Scanned/pasted invoices paid via LDK Node bolt11Payment().send"
+  },
+  "bolt11_receive": {
+   "value": "yes",
+   "evidence": "bitkit:Bitkit/Services/LightningService.swift:712; bitkit:Bitkit/ViewModels/WalletViewModel.swift:1417",
+   "note": "Receive screen shows BIP21 with an embedded bolt11 invoice"
+  },
+  "bolt12_pay": {
+   "value": "engine-only",
+   "evidence": "synonym-ldk-node:src/lib.rs:1058; bitkit:Bitkit/ViewModels/AppViewModel.swift:834",
+   "note": "The app never calls bolt12Payment; offers fall through to 'Unsupported' toast"
+  },
+  "bolt12_receive": {
+   "value": "engine-only",
+   "evidence": "synonym-ldk-node:src/lib.rs:1058; bitkit:Bitkit/Services/LightningService.swift:712",
+   "note": "The app creates only bolt11 invoices, never offers"
+  },
+  "offline_receive": {
+   "value": "partial",
+   "evidence": "bitkit:BitkitNotification/NotificationService.swift:7; bitkit:Bitkit/Constants/Env.swift:325",
+   "note": "Blocktank push asks user to open app; extension doesn't start node"
+  },
+  "lnurl": {
+   "value": "yes",
+   "evidence": "bitkit:Bitkit/ViewModels/AppViewModel.swift:794; bitkit:Bitkit/Views/Wallets/LnurlWithdraw/LnurlWithdrawConfirm.swift:73",
+   "note": "LNURL-pay, withdraw, channel and auth all handled"
+  },
+  "ln_address_pay": {
+   "value": "yes",
+   "evidence": "bitkit:Bitkit/Utilities/PaymentNavigationHelper.swift:65; bitkit:Bitkit/ViewModels/AppViewModel.swift:640",
+   "note": "bitkit-core decode turns user@domain into LNURL-pay (source not in scratchpad)"
+  },
+  "ln_address_receive": {
+   "value": "no",
+   "evidence": "bitkit:Bitkit/ViewModels/WalletViewModel.swift:1417; bitkit:Bitkit/Components/CopyAddressCard.swift:35",
+   "note": "Receive offers only on-chain/bolt11; Pubky/Paykit profile keys are a separate system"
+  },
+  "bip353": {
+   "value": "no",
+   "evidence": "synonym-ldk-node:src/payment/unified_qr.rs:29; bitkit:Bitkit/ViewModels/AppViewModel.swift:834",
+   "note": "No DNS/HRN resolution in fork or app; user@domain resolves as LNURL"
+  },
+  "mpp": {
+   "value": "yes",
+   "evidence": "rust-lightning:lightning/src/routing/router.rs:794; synonym-ldk-node:src/payment/bolt11.rs:122",
+   "note": "LDK router splits payments automatically, up to 10 paths by default"
+  },
+  "keysend": {
+   "value": "engine-only",
+   "evidence": "synonym-ldk-node:src/payment/spontaneous.rs:55; bitkit:Bitkit/Services/LightningService.swift:1790",
+   "note": "App uses spontaneous only for probes in the hidden dev settings"
+  },
+  "choose_peer": {
+   "value": "yes",
+   "evidence": "bitkit:Bitkit/Views/Transfer/FundAdvancedOptions.swift:37; bitkit:Bitkit/ViewModels/TransferViewModel.swift:1253",
+   "note": "Default LSP is Blocktank; manual open to any node URI, or LNURL-channel from other LSPs"
+  },
+  "jit_channels": {
+   "value": "yes",
+   "evidence": "bitkit:Bitkit/ViewModels/BlocktankViewModel.swift:169; bitkit:Bitkit/ViewModels/BlocktankViewModel.swift:347",
+   "note": "Blocktank CJIT on receive, plus paid orders for inbound liquidity"
+  },
+  "splicing": {
+   "value": "engine-only",
+   "evidence": "synonym-ldk-node:src/lib.rs:1526; bitkit:Bitkit/Services/LightningService.swift:1528",
+   "note": "App only logs splice events and never calls spliceIn/spliceOut"
+  },
+  "anchors": {
+   "value": "yes",
+   "evidence": "bitkit:Bitkit/Services/LightningService.swift:107; synonym-ldk-node:src/config.rs:432",
+   "note": "Anchor channels config is set, with zero reserve for trusted Blocktank peers"
+  },
+  "local_pathfinding": {
+   "value": "yes",
+   "evidence": "bitkit:Bitkit/Services/LightningService.swift:1116; bitkit:Bitkit/Constants/Env.swift:252",
+   "note": "Local LDK routing using Blocktank RGS snapshot and Blocktank-hosted scorer"
+  },
+  "watchtower": {
+   "value": "no",
+   "evidence": "bitkit:Bitkit/Services/LightningService.swift:120; synonym-ldk-node:src/builder.rs:483",
+   "note": "No watchtower client configured in app or offered by LDK Node"
+  },
+  "channel_backup": {
+   "value": "yes",
+   "evidence": "bitkit:Bitkit/Services/LightningService.swift:168; bitkit:Bitkit/Constants/Env.swift:337",
+   "note": "All LDK state stored remotely in Synonym VSS server (bitkit.to)"
+  },
+  "taproot": {
+   "value": "yes",
+   "evidence": "bitkit:Bitkit/Extensions/LDKNode+AddressType.swift:7; bitkit:Bitkit/Views/Settings/Advanced/AddressTypePreferenceView.swift:109",
+   "note": "Selectable address type in Advanced settings; default is native segwit"
+  },
+  "multisig": {
+   "value": "no",
+   "evidence": "bitkit:Bitkit/Extensions/LDKNode+AddressType.swift:7",
+   "note": "Only single-sig address types; no multisig or shared accounts found"
+  },
+  "hw_signer": {
+   "value": "yes",
+   "evidence": "bitkit:Bitkit/Services/Trezor/TrezorService.swift:157; bitkit:Bitkit/Views/Settings/General/HardwareWalletsSettingsScreen.swift:35",
+   "note": "Trezor pairing (BLE); on-chain sends and transfers signed on device"
+  },
+  "coin_control": {
+   "value": "yes",
+   "evidence": "bitkit:Bitkit/Views/Wallets/Send/SendUtxoSelectionView.swift:4; bitkit:Bitkit/Services/LightningService.swift:773",
+   "note": "Manual coin selection mode lets user pick UTXOs for on-chain sends"
+  },
+  "tor": {
+   "value": "no",
+   "evidence": "bitkit:Bitkit/Resources/Localization/en.lproj/Localizable.strings:320",
+   "note": "No Tor code; UI string says 'Bitkit cannot add Tor nodes'"
+  },
+  "license": {
+   "value": "MIT",
+   "evidence": "bitkit:LICENSE:1",
+   "note": "MIT License, Copyright (c) 2024 Synonym"
+  }
+ }
+}

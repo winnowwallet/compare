@@ -1,0 +1,125 @@
+{
+ "wallet": "Blixt",
+ "features": {
+  "bolt11_pay": {
+   "value": "yes",
+   "evidence": "blixt:src/state/Send.ts:140; blixt:src/state/Send.ts:408",
+   "note": "Decodes lnbc invoice, pays via LND routerSendPaymentV2"
+  },
+  "bolt11_receive": {
+   "value": "yes",
+   "evidence": "blixt:src/state/Receive.ts:147",
+   "note": "Receive screen creates invoices via LND addInvoice"
+  },
+  "bolt12_pay": {
+   "value": "no",
+   "evidence": "blixt:src/hooks/useEvaluateLightningCode.ts:24; blixt:src/state/Send.ts:130",
+   "note": "Parser only accepts lnurl/lnbc/lntb; LND 0.21.3 lacks BOLT12 offers"
+  },
+  "bolt12_receive": {
+   "value": "no",
+   "evidence": "blixt:src/state/Receive.ts:147",
+   "note": "Only BOLT11 invoices; no offer code in app or LND"
+  },
+  "offline_receive": {
+   "value": "no",
+   "evidence": "blixt:src/components/Drawer.tsx:221; blixt:src/utils/push-notification.ts:5",
+   "note": "Lightning Box is Android-only; iOS has only local notifications, no push-woken receive"
+  },
+  "lnurl": {
+   "value": "yes",
+   "evidence": "blixt:src/state/LNURL.ts:30; blixt:src/windows/LNURL/index.tsx:33",
+   "note": "pay, withdraw, channel and auth all supported"
+  },
+  "ln_address_pay": {
+   "value": "yes",
+   "evidence": "blixt:src/components/Drawer.tsx:161; blixt:src/state/LNURL.ts:633",
+   "note": "'Send to Lightning Address' menu item, LUD-16 resolution"
+  },
+  "ln_address_receive": {
+   "value": "no",
+   "evidence": "blixt:src/components/Drawer.tsx:221; blixt:src/windows/Settings/Settings.tsx:1938",
+   "note": "Lightning Box address menu/settings gated to Android only"
+  },
+  "bip353": {
+   "value": "no",
+   "evidence": "blixt:src/hooks/useEvaluateLightningCode.ts:71; blixt:src/state/LNURL.ts:647",
+   "note": "user@domain resolved only via .well-known/lnurlp; no DNS lookup"
+  },
+  "mpp": {
+   "value": "yes",
+   "evidence": "blixt:src/state/Send.ts:392; blixt:src/storage/app.ts:303",
+   "note": "MPP on by default (maxParts 16), toggle in settings"
+  },
+  "keysend": {
+   "value": "yes",
+   "evidence": "blixt:src/components/Drawer.tsx:210; blixt:src/state/index.ts:680",
+   "note": "Keysend screen under drawer 'show more'; accept-keysend=1 for receiving"
+  },
+  "choose_peer": {
+   "value": "yes",
+   "evidence": "blixt:src/windows/LightningInfo/LightningInfo.tsx:216; blixt:src/state/Channel.ts:323",
+   "note": "Open channel to any pubkey@host; also autopilot (Blixt node) and Dunder LSP"
+  },
+  "jit_channels": {
+   "value": "yes",
+   "evidence": "blixt:src/windows/Receive/ReceiveSetupLsp.tsx:90; blixt:src/state/BlixtLsp.ts:253",
+   "note": "Dunder LSP opens channel on receive; on by default (README checkbox outdated)"
+  },
+  "splicing": {
+   "value": "no",
+   "evidence": "lnd:lnrpc/lightning.proto",
+   "note": "No splice RPC in LND 0.21.3; nothing in app"
+  },
+  "anchors": {
+   "value": "yes",
+   "evidence": "blixt:src/state/Channel.ts:345",
+   "note": "Channel open refuses peers without anchor support (feature bit 23)"
+  },
+  "local_pathfinding": {
+   "value": "yes",
+   "evidence": "blixt:src/state/index.ts:406; blixt:src/storage/app.ts:331",
+   "note": "Embedded LND routes from local graph; speedloader gossip sync on by default"
+  },
+  "watchtower": {
+   "value": "engine-only",
+   "evidence": "blixt:src/state/index.ts:674; lnd:lncfg/wtclient.go:16",
+   "note": "LND wtclient exists but app config/UI never enables it"
+  },
+  "channel_backup": {
+   "value": "yes",
+   "evidence": "blixt:src/state/ICloudBackup.ts:12; blixt:src/windows/Settings/Settings.tsx:1568",
+   "note": "SCB exported to iCloud (auto) and restorable at wallet restore"
+  },
+  "taproot": {
+   "value": "yes",
+   "evidence": "blixt:src/state/OnChain.ts:173; blixt:src/windows/OnChain/OnChainInfo.tsx:62",
+   "note": "Default receive address is P2TR; long-press for P2WPKH"
+  },
+  "multisig": {
+   "value": "no",
+   "evidence": "blixt:src/state/OnChain.ts:217",
+   "note": "Single-sig LND wallet only; no multisig/shared account code"
+  },
+  "hw_signer": {
+   "value": "engine-only",
+   "evidence": "lnd:lnrpc/walletrpc/walletkit.proto:400; lnd:lncfg/remotesigner.go:17",
+   "note": "LND has PSBT/remote signer; app has no PSBT or signer code"
+  },
+  "coin_control": {
+   "value": "engine-only",
+   "evidence": "blixt:src/state/OnChain.ts:218; lnd:lnrpc/lightning.proto:1157",
+   "note": "App sendCoins passes no outpoints; LND supports outpoint selection"
+  },
+  "tor": {
+   "value": "yes",
+   "evidence": "blixt:src/windows/Settings/Settings.tsx:1867; blixt:src/state/index.ts:312",
+   "note": "Experimental toggle on iOS; embedded Tor via react-native-nitro-tor"
+  },
+  "license": {
+   "value": "MIT",
+   "evidence": "blixt:LICENSE:1",
+   "note": "MIT license text, copyright Hampus Sjöberg"
+  }
+ }
+}

@@ -1,0 +1,111 @@
+{
+  "snapshot": "2026-09-27",
+  "sources": {
+    "winnow": {"repo": "https://github.com/posix4e/winnow-lightning", "rev": "f379b7cec9a025e0910f8e334dfcd36a6f1f9040", "label": "winnow-lightning@f379b7c", "date": "2026-09-27"},
+    "phoenix": {"repo": "https://github.com/ACINQ/phoenix", "rev": "1facad2762acb9cfac3e418ae5a326a0bab167c3", "label": "phoenix@1facad2", "date": "2026-09-23"},
+    "lightning-kmp": {"repo": "https://github.com/ACINQ/lightning-kmp", "rev": "77f2f788509fb8452177e86ba6ea4b731cb840e9", "label": "lightning-kmp v1.12.0", "tag": "v1.12.0"},
+    "bitkit": {"repo": "https://github.com/synonymdev/bitkit-ios", "rev": "c906d5af336dd1ceec22bcbbb1c7d9f115e2d021", "label": "bitkit-ios@c906d5a", "date": "2026-09-25"},
+    "synonym-ldk-node": {"repo": "https://github.com/synonymdev/ldk-node", "rev": "190a17d966cf5a685444cfa17c3a419c290bf26c", "label": "ldk-node@190a17d (0.7.0-rc.66)"},
+    "rust-lightning": {"repo": "https://github.com/lightningdevkit/rust-lightning", "rev": "311ad94772722ff9c54ec0f7656a4b811be5b846", "label": "rust-lightning v0.2", "tag": "v0.2"},
+    "zeus": {"repo": "https://github.com/ZeusLN/zeus", "rev": "aeb9c10c6b0b8aad4752c08457a4f0d127ea4645", "label": "zeus@aeb9c10", "date": "2026-09-27"},
+    "lnd": {"repo": "https://github.com/lightningnetwork/lnd", "rev": "572b561bf05f03dfe6135110970c4d858c3482dc", "label": "lnd v0.21.3-beta", "tag": "v0.21.3-beta"},
+    "blixt": {"repo": "https://github.com/hsjoberg/blixt-wallet", "rev": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a", "label": "blixt-wallet@baa6ba0", "date": "2026-08-21"},
+    "bitkit-core": {"repo": "https://github.com/synonymdev/bitkit-core", "rev": "b53fa54a16f04940943072bb6e08dc2650302f93", "label": "bitkit-core v0.5.18", "tag": "v0.5.18"},
+    "paykit-rs": {"repo": "https://github.com/pubky/paykit-rs", "rev": "4613beee25d1680ed8bc849446498e9bfb2cdb16", "label": "paykit-rs v0.1.0-rc55", "tag": "v0.1.0-rc55"},
+    "vss-rust-client-ffi": {"repo": "https://github.com/synonymdev/vss-rust-client-ffi", "rev": "3476fa45be919244310c4f65945e8d2bc1b8ee15", "label": "vss-rust-client-ffi v0.5.23", "tag": "v0.5.23"},
+    "zeus-ldk-node": {"repo": "https://github.com/ZeusLN/ldk-node", "rev": "921ef6370a5694ed8cf00538878420ccb5afe09d", "label": "ZeusLN/ldk-node v0.7.0-zeus-rl-0.2.5", "tag": "v0.7.0-zeus-rl-0.2.5"},
+    "cdk": {"repo": "https://github.com/cashubtc/cdk", "rev": "874745d5d79b36be346efbd716393357ab898834", "label": "cdk v0.17.4", "tag": "v0.17.4"}
+  },
+  "wallets": {
+    "Winnow": {
+      "app_source": "winnow",
+      "code": {
+        "app": ["winnow:Sources/WinnowApp"],
+        "bitcoin": ["winnow:Sources/WalletCore"],
+        "lightning": ["winnow:Sources/LightningCore"]
+      },
+      "deps": {"spm": "winnow:Package.resolved"}
+    },
+    "Phoenix": {
+      "app_source": "phoenix",
+      "code": {
+        "app": ["phoenix:phoenix-ios/phoenix-ios", "phoenix:phoenix-ios/phoenix-notifySrvExt", "phoenix:phoenix-shared/src"],
+        "lightning": ["lightning-kmp:modules"]
+      },
+      "deps": {
+        "spm": "phoenix:phoenix-ios/phoenix-ios.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
+        "maven": {
+          "target": "ios_arm64",
+          "engine": "fr.acinq.lightning:lightning-kmp-core",
+          "roots": [
+            "fr.acinq.lightning:lightning-kmp-core:1.12.0",
+            "org.jetbrains.kotlinx:kotlinx-serialization-cbor:1.9.0",
+            "app.cash.sqldelight:runtime:2.1.0",
+            "app.cash.sqldelight:coroutines-extensions:2.1.0",
+            "co.touchlab.skie:configuration-annotations:0.10.10",
+            "app.cash.sqldelight:native-driver:2.1.0"
+          ]
+        }
+      }
+    },
+    "Bitkit": {
+      "app_source": "bitkit",
+      "code": {
+        "app": ["bitkit:Bitkit", "bitkit:BitkitNotification", "bitkit:BitkitWidget"],
+        "lightning": ["synonym-ldk-node:src", "rust-lightning:lightning/src", "rust-lightning:lightning-types/src",
+          "rust-lightning:lightning-invoice/src", "rust-lightning:lightning-net-tokio/src", "rust-lightning:lightning-persister/src",
+          "rust-lightning:lightning-background-processor/src", "rust-lightning:lightning-rapid-gossip-sync/src",
+          "rust-lightning:lightning-block-sync/src", "rust-lightning:lightning-transaction-sync/src",
+          "rust-lightning:lightning-liquidity/src", "rust-lightning:lightning-macros/src"]
+      },
+      "deps": {
+        "spm": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
+        "spm_engine": "ldk-node",
+        "cargo": [
+          {"source": "synonym-ldk-node", "args": ["--features", "uniffi"], "lock": "locks/synonym-ldk-node.Cargo.lock"},
+          {"source": "bitkit-core", "args": []},
+          {"source": "paykit-rs", "args": ["-p", "paykit-ffi"]},
+          {"source": "vss-rust-client-ffi", "args": []}
+        ]
+      }
+    },
+    "Blixt": {
+      "app_source": "blixt",
+      "code": {
+        "app": ["blixt:src", "blixt:index.js", "blixt:ios/BlixtWallet", "blixt:ios/LndMobile", "blixt:speedloader-turbomodule"],
+        "lightning": ["lnd:."]
+      },
+      "deps": {"bun": "blixt:bun.lock", "pods": "blixt:ios/Podfile.lock", "go": true}
+    },
+    "Zeus": {
+      "app_source": "zeus",
+      "code": {
+        "app": ["zeus:App.tsx", "zeus:NavigationService.ts", "zeus:PushNotificationManager.tsx", "zeus:index.js", "zeus:shim.js",
+          "zeus:polyfills.js", "zeus:backends", "zeus:components", "zeus:hooks", "zeus:models", "zeus:stores", "zeus:storage",
+          "zeus:utils", "zeus:views", "zeus:lndmobile", "zeus:ldknode", "zeus:cashu-cdk", "zeus:ios/zeus", "zeus:ios/LndMobile",
+          "zeus:ios/LdkNodeMobile", "zeus:ios/LncMobile", "zeus:ios/NWCWidget", "zeus:ios/ShareQR", "zeus:ios/CryptoHelper.swift",
+          "zeus:ios/ShareBridge.h", "zeus:ios/ShareBridge.m", "zeus:ios/ZipUtils.h", "zeus:ios/ZipUtils.m",
+          "zeus:ios/KeychainAudit.h", "zeus:ios/KeychainAudit.m"],
+        "lightning": ["lnd:."]
+      },
+      "deps": {
+        "npm": {"package": "zeus:package.json", "yarn": "zeus:yarn.lock"},
+        "pods": "zeus:ios/Podfile.lock",
+        "go": true,
+        "cargo": [
+          {"source": "zeus-ldk-node", "args": ["--features", "uniffi"]},
+          {"source": "cdk", "args": ["-p", "cdk-ffi"]}
+        ]
+      }
+    }
+  },
+  "go": {
+    "source": "lnd",
+    "package": "./mobile",
+    "tags": "mobile dev autopilotrpc chainrpc invoicesrpc neutrinorpc peersrpc routerrpc signrpc verrpc walletrpc watchtowerrpc wtclientrpc",
+    "env": {"GOOS": "ios", "GOARCH": "arm64", "CGO_ENABLED": "1"},
+    "first_party": "github.com/lightningnetwork/lnd/"
+  },
+  "cargo_target": "aarch64-apple-ios",
+  "cargo_engine_crates": "^(lightning(-[a-z-]+)?|ldk-node) v"
+}
