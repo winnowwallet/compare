@@ -91,6 +91,11 @@
    "evidence": "zeus:stores/ChannelBackupStore.ts:95; zeus:views/Settings/EmbeddedNode/DisasterRecovery.tsx:49",
    "note": "Automatic encrypted static channel backups to the Olympus server; restore offered"
   },
+  "onchain_independent": {
+   "value": "yes",
+   "evidence": "zeus:backends/EmbeddedLND.ts:133; zeus:backends/EmbeddedLND.ts:100",
+   "note": "Embedded LND's own single-key wallet; the channel partner is not involved"
+  },
   "taproot": {
    "value": "yes",
    "evidence": "zeus:views/Receive.tsx:1125; zeus:backends/EmbeddedLND.ts:586",

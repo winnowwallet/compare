@@ -91,6 +91,11 @@
    "evidence": "winnow:Sources/LightningCore/README.md:129; winnow:Sources/WinnowApp/AppModel.swift:425",
    "note": "Journal stays on device; iCloud backup disabled in Lightning app"
   },
+  "onchain_independent": {
+   "value": "yes",
+   "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:668; winnow:Sources/LightningCore/README.md:37",
+   "note": "Single-key BIP86 Taproot wallet; channels are funded from it, not the reverse"
+  },
   "taproot": {
    "value": "yes",
    "evidence": "winnow:README.md:8; winnow:Sources/WalletCore/Wallet/Wallet.swift:722",

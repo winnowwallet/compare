@@ -91,6 +91,11 @@
    "evidence": "blixt:src/state/ICloudBackup.ts:12; blixt:src/windows/Settings/Settings.tsx:1568",
    "note": "SCB exported to iCloud (auto) and restorable at wallet restore"
   },
+  "onchain_independent": {
+   "value": "yes",
+   "evidence": "blixt:src/state/OnChain.ts:177; blixt:src/state/OnChain.ts:218",
+   "note": "LND's own single-key wallet; the channel partner is not involved"
+  },
   "taproot": {
    "value": "yes",
    "evidence": "blixt:src/state/OnChain.ts:173; blixt:src/windows/OnChain/OnChainInfo.tsx:62",

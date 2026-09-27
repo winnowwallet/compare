@@ -91,6 +91,11 @@
    "evidence": "bitkit:Bitkit/Services/LightningService.swift:168; bitkit:Bitkit/Constants/Env.swift:337",
    "note": "All LDK state stored remotely in Synonym VSS server (bitkit.to)"
   },
+  "onchain_independent": {
+   "value": "yes",
+   "evidence": "bitkit:Bitkit/Services/LightningService.swift:641; bitkit:Bitkit/Services/LightningService.swift:797",
+   "note": "LDK Node's single-key on-chain wallet; sends do not involve Blocktank"
+  },
   "taproot": {
    "value": "yes",
    "evidence": "bitkit:Bitkit/Extensions/LDKNode+AddressType.swift:7; bitkit:Bitkit/Views/Settings/Advanced/AddressTypePreferenceView.swift:109",

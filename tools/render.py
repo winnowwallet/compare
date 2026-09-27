@@ -179,7 +179,8 @@ GROUPS = [
     ('Channels and routing', [('choose_peer', 'Choose your channel partner'), ('jit_channels', 'Inbound channels from a provider'),
                               ('splicing', 'Splicing'), ('anchors', 'Anchor channels'), ('local_pathfinding', 'Finds its own routes')]),
     ('Safety and recovery', [('watchtower', 'Watchtower'), ('channel_backup', 'Channel backup off the phone')]),
-    ('On-chain and privacy', [('taproot', 'Taproot receive addresses'), ('multisig', 'Multisig or shared accounts'),
+    ('On-chain and privacy', [('onchain_independent', 'On-chain funds without the channel partner'),
+                              ('taproot', 'Taproot receive addresses'), ('multisig', 'Multisig or shared accounts'),
                               ('hw_signer', 'Hardware or external signer'), ('coin_control', 'Coin control'), ('tor', 'Built-in Tor')]),
 ]
 MARK = {'yes': ('f-yes', '✓', 'Yes'), 'partial': ('f-partial', '◐', 'Partial'), 'engine-only': ('f-engine', '○', 'Engine only'),

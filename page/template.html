@@ -222,6 +222,8 @@ ul.evidence code{font-size:.8em}
 <p>LND and LDK are general-purpose nodes. They keep the network graph, find their own routes and can forward other people’s payments. lightning-kmp supports splicing and dual-funded channels. Winnow’s engine has no general graph routing, pays only BOLT 12 offers, and does not implement multipath payments, anchor channels or splicing. The <a href="#features">feature table</a> shows the rest.</p>
 <h3>The apps do different amounts of work</h3>
 <p>Zeus also manages remote LND and Core Lightning nodes and includes Cashu, Nostr Wallet Connect and a point of sale. Bitkit includes Pubky contacts, Paykit and Trezor support. Winnow includes shared accounts with MuSig2 and 2-of-3 signing. Each count is the whole app, not only its Lightning features.</p>
+<h3>Who can move on-chain funds</h3>
+<p>Phoenix has no separate on-chain wallet. Its Bitcoin address needs ACINQ’s signature alongside yours; without ACINQ, your key alone can spend it after about six months. Sending to a Bitcoin address takes the amount out of your ACINQ channel, which ACINQ co-signs. Winnow, Bitkit, Blixt and Zeus each keep a single-key on-chain wallet that works without their channel partner.</p>
 <h3>Recovery differs</h3>
 <p>Winnow keeps channel state in an encrypted journal on the phone. Keep the phone and its files while a channel is open. The recovery phrase restores the on-chain wallet, not current channel state.</p>
 </section>

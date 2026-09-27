@@ -4054,6 +4054,11 @@
     "evidence": "winnow:Sources/LightningCore/README.md:129; winnow:Sources/WinnowApp/AppModel.swift:425",
     "note": "Journal stays on device; iCloud backup disabled in Lightning app"
    },
+   "onchain_independent": {
+    "value": "yes",
+    "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:668; winnow:Sources/LightningCore/README.md:37",
+    "note": "Single-key BIP86 Taproot wallet; channels are funded from it, not the reverse"
+   },
    "taproot": {
     "value": "yes",
     "evidence": "winnow:README.md:8; winnow:Sources/WalletCore/Wallet/Wallet.swift:722",
@@ -4175,6 +4180,11 @@
     "value": "yes",
     "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:158; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:281",
     "note": "Encrypted channel backup kept by ACINQ peer (peer storage); restorable from seed"
+   },
+   "onchain_independent": {
+    "value": "partial",
+    "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/transactions/SwapInProtocol.kt:11; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:94; phoenix:phoenix-ios/phoenix-ios/views/send/ValidateView.swift:1576",
+    "note": "Deposits are 2-of-2 with ACINQ, yours alone after about six months; sends are splice-outs with ACINQ"
    },
    "taproot": {
     "value": "yes",
@@ -4298,6 +4308,11 @@
     "evidence": "bitkit:Bitkit/Services/LightningService.swift:168; bitkit:Bitkit/Constants/Env.swift:337",
     "note": "All LDK state stored remotely in Synonym VSS server (bitkit.to)"
    },
+   "onchain_independent": {
+    "value": "yes",
+    "evidence": "bitkit:Bitkit/Services/LightningService.swift:641; bitkit:Bitkit/Services/LightningService.swift:797",
+    "note": "LDK Node's single-key on-chain wallet; sends do not involve Blocktank"
+   },
    "taproot": {
     "value": "yes",
     "evidence": "bitkit:Bitkit/Extensions/LDKNode+AddressType.swift:7; bitkit:Bitkit/Views/Settings/Advanced/AddressTypePreferenceView.swift:109",
@@ -4420,6 +4435,11 @@
     "evidence": "blixt:src/state/ICloudBackup.ts:12; blixt:src/windows/Settings/Settings.tsx:1568",
     "note": "SCB exported to iCloud (auto) and restorable at wallet restore"
    },
+   "onchain_independent": {
+    "value": "yes",
+    "evidence": "blixt:src/state/OnChain.ts:177; blixt:src/state/OnChain.ts:218",
+    "note": "LND's own single-key wallet; the channel partner is not involved"
+   },
    "taproot": {
     "value": "yes",
     "evidence": "blixt:src/state/OnChain.ts:173; blixt:src/windows/OnChain/OnChainInfo.tsx:62",
@@ -4541,6 +4561,11 @@
     "value": "yes",
     "evidence": "zeus:stores/ChannelBackupStore.ts:95; zeus:views/Settings/EmbeddedNode/DisasterRecovery.tsx:49",
     "note": "Automatic encrypted static channel backups to the Olympus server; restore offered"
+   },
+   "onchain_independent": {
+    "value": "yes",
+    "evidence": "zeus:backends/EmbeddedLND.ts:133; zeus:backends/EmbeddedLND.ts:100",
+    "note": "Embedded LND's own single-key wallet; the channel partner is not involved"
    },
    "taproot": {
     "value": "yes",
