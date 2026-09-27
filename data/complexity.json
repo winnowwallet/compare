@@ -1,21 +1,21 @@
 {
  "Winnow": {
   "app": {
-   "functions": 695,
-   "mean_cc": 3.31,
+   "functions": 710,
+   "mean_cc": 3.35,
    "p90_cc": 7,
    "max_cc": 31,
-   "cc_le_2": 370,
-   "cc_3_12": 314,
-   "cc_gt_12": 11,
+   "cc_le_2": 378,
+   "cc_3_12": 319,
+   "cc_gt_12": 13,
    "cc_gt_30": 1,
-   "files": 47,
+   "files": 50,
    "files_with_parse_errors": 2,
    "most_complex": [
     {
      "cc": 31,
      "function": "init",
-     "at": "winnow/Sources/WinnowApp/AppModel.swift:420"
+     "at": "winnow/Sources/WinnowApp/AppModel.swift:433"
     },
     {
      "cc": 28,
@@ -79,17 +79,22 @@
    ]
   },
   "lightning": {
-   "functions": 464,
-   "mean_cc": 3.28,
+   "functions": 515,
+   "mean_cc": 3.39,
    "p90_cc": 7,
-   "max_cc": 13,
-   "cc_le_2": 235,
-   "cc_3_12": 226,
-   "cc_gt_12": 3,
+   "max_cc": 14,
+   "cc_le_2": 251,
+   "cc_3_12": 259,
+   "cc_gt_12": 5,
    "cc_gt_30": 0,
-   "files": 55,
+   "files": 63,
    "files_with_parse_errors": 4,
    "most_complex": [
+    {
+     "cc": 14,
+     "function": "rejectOpening",
+     "at": "winnow/Sources/LightningCore/LightningPeerNotice.swift:36"
+    },
     {
      "cc": 13,
      "function": "apply",
@@ -103,28 +108,23 @@
     {
      "cc": 13,
      "function": "validateLoaded",
-     "at": "winnow/Sources/LightningCore/LightningEngine.swift:191"
+     "at": "winnow/Sources/LightningCore/LightningEngine.swift:192"
     },
     {
-     "cc": 12,
-     "function": "init",
-     "at": "winnow/Sources/LightningCore/AsyncPaymentMessage.swift:14"
-    },
-    {
-     "cc": 12,
-     "function": "updateChainChannels",
-     "at": "winnow/Sources/LightningCore/LightningChain.swift:109"
+     "cc": 13,
+     "function": "receiveChannelPolicy",
+     "at": "winnow/Sources/LightningCore/LightningInvoiceRouting.swift:16"
     }
    ]
   },
   "all": {
-   "functions": 2164,
-   "mean_cc": 3.32,
+   "functions": 2230,
+   "mean_cc": 3.36,
    "p90_cc": 7,
    "max_cc": 31,
-   "cc_le_2": 1130,
-   "cc_3_12": 1006,
-   "cc_gt_12": 28,
+   "cc_le_2": 1154,
+   "cc_3_12": 1044,
+   "cc_gt_12": 32,
    "cc_gt_30": 1
   }
  },
@@ -259,21 +259,21 @@
    ]
   },
   "lightning": {
-   "functions": 5337,
-   "mean_cc": 2.97,
+   "functions": 5348,
+   "mean_cc": 2.98,
    "p90_cc": 6,
-   "max_cc": 171,
-   "cc_le_2": 3741,
-   "cc_3_12": 1435,
+   "max_cc": 174,
+   "cc_le_2": 3743,
+   "cc_3_12": 1444,
    "cc_gt_12": 161,
-   "cc_gt_30": 38,
-   "files": 225,
+   "cc_gt_30": 39,
+   "files": 226,
    "files_with_parse_errors": 6,
    "most_complex": [
     {
-     "cc": 171,
+     "cc": 174,
      "function": "read",
-     "at": "rust-lightning/lightning/src/ln/channelmanager.rs:16686"
+     "at": "rust-lightning/lightning/src/ln/channelmanager.rs:16784"
     },
     {
      "cc": 153,
@@ -281,31 +281,31 @@
      "at": "synonym-ldk-node/src/event.rs:1184"
     },
     {
-     "cc": 97,
+     "cc": 99,
      "function": "get_route",
-     "at": "rust-lightning/lightning/src/routing/router.rs:2434"
+     "at": "rust-lightning/lightning/src/routing/router.rs:2449"
     },
     {
      "cc": 87,
      "function": "read",
-     "at": "rust-lightning/lightning/src/ln/channel.rs:14858"
+     "at": "rust-lightning/lightning/src/ln/channel.rs:14958"
     },
     {
-     "cc": 77,
+     "cc": 75,
      "function": "process_events",
-     "at": "rust-lightning/lightning/src/ln/peer_handler.rs:2806"
+     "at": "rust-lightning/lightning/src/ln/peer_handler.rs:2822"
     }
    ]
   },
   "all": {
-   "functions": 10668,
-   "mean_cc": 2.97,
+   "functions": 10679,
+   "mean_cc": 2.98,
    "p90_cc": 6,
-   "max_cc": 171,
-   "cc_le_2": 6992,
-   "cc_3_12": 3430,
+   "max_cc": 174,
+   "cc_le_2": 6994,
+   "cc_3_12": 3439,
    "cc_gt_12": 246,
-   "cc_gt_30": 46
+   "cc_gt_30": 47
   }
  },
  "Blixt": {
@@ -349,63 +349,63 @@
    ]
   },
   "lightning": {
-   "functions": 10459,
-   "mean_cc": 3.9,
+   "functions": 10408,
+   "mean_cc": 3.91,
    "p90_cc": 9,
-   "max_cc": 147,
-   "cc_le_2": 5921,
-   "cc_3_12": 3978,
-   "cc_gt_12": 560,
+   "max_cc": 148,
+   "cc_le_2": 5896,
+   "cc_3_12": 3957,
+   "cc_gt_12": 555,
    "cc_gt_30": 66,
-   "files": 1180,
+   "files": 1175,
    "files_with_parse_errors": 0,
    "most_complex": [
     {
-     "cc": 147,
+     "cc": 148,
      "function": "ValidateConfig",
-     "at": "lnd/config.go:1007"
+     "at": "lnd-blixt/config.go:1007"
     },
     {
      "cc": 99,
      "function": "WriteElement",
-     "at": "lnd/channeldb/migration/lnwire21/lnwire.go:76"
+     "at": "lnd-blixt/channeldb/migration/lnwire21/lnwire.go:76"
     },
     {
      "cc": 96,
      "function": "WriteElement",
-     "at": "lnd/lnwire/lnwire.go:87"
+     "at": "lnd-blixt/lnwire/lnwire.go:87"
     },
     {
      "cc": 93,
      "function": "ReadElement",
-     "at": "lnd/channeldb/migration/lnwire21/lnwire.go:441"
+     "at": "lnd-blixt/channeldb/migration/lnwire21/lnwire.go:441"
     },
     {
      "cc": 89,
      "function": "ReadElement",
-     "at": "lnd/lnwire/lnwire.go:444"
+     "at": "lnd-blixt/lnwire/lnwire.go:444"
     }
    ]
   },
   "all": {
-   "functions": 11516,
-   "mean_cc": 3.87,
+   "functions": 11465,
+   "mean_cc": 3.88,
    "p90_cc": 8,
-   "max_cc": 147,
-   "cc_le_2": 6706,
-   "cc_3_12": 4194,
-   "cc_gt_12": 616,
+   "max_cc": 148,
+   "cc_le_2": 6681,
+   "cc_3_12": 4173,
+   "cc_gt_12": 611,
    "cc_gt_30": 85
   }
  },
  "Zeus": {
   "app": {
-   "functions": 4672,
+   "functions": 4673,
    "mean_cc": 4.72,
    "p90_cc": 10,
    "max_cc": 252,
    "cc_le_2": 2687,
-   "cc_3_12": 1641,
+   "cc_3_12": 1642,
    "cc_gt_12": 344,
    "cc_gt_30": 75,
    "files": 575,
@@ -439,53 +439,53 @@
    ]
   },
   "lightning": {
-   "functions": 10459,
-   "mean_cc": 3.9,
+   "functions": 10527,
+   "mean_cc": 3.92,
    "p90_cc": 9,
    "max_cc": 147,
-   "cc_le_2": 5921,
-   "cc_3_12": 3978,
-   "cc_gt_12": 560,
-   "cc_gt_30": 66,
-   "files": 1180,
+   "cc_le_2": 5952,
+   "cc_3_12": 4010,
+   "cc_gt_12": 565,
+   "cc_gt_30": 67,
+   "files": 1187,
    "files_with_parse_errors": 0,
    "most_complex": [
     {
      "cc": 147,
      "function": "ValidateConfig",
-     "at": "lnd/config.go:1007"
+     "at": "lnd-zeus/config.go:1007"
     },
     {
      "cc": 99,
      "function": "WriteElement",
-     "at": "lnd/channeldb/migration/lnwire21/lnwire.go:76"
+     "at": "lnd-zeus/channeldb/migration/lnwire21/lnwire.go:76"
     },
     {
      "cc": 96,
      "function": "WriteElement",
-     "at": "lnd/lnwire/lnwire.go:87"
+     "at": "lnd-zeus/lnwire/lnwire.go:87"
     },
     {
      "cc": 93,
      "function": "ReadElement",
-     "at": "lnd/channeldb/migration/lnwire21/lnwire.go:441"
+     "at": "lnd-zeus/channeldb/migration/lnwire21/lnwire.go:441"
     },
     {
      "cc": 89,
      "function": "ReadElement",
-     "at": "lnd/lnwire/lnwire.go:444"
+     "at": "lnd-zeus/lnwire/lnwire.go:444"
     }
    ]
   },
   "all": {
-   "functions": 15131,
+   "functions": 15200,
    "mean_cc": 4.16,
    "p90_cc": 9,
    "max_cc": 252,
-   "cc_le_2": 8608,
-   "cc_3_12": 5619,
-   "cc_gt_12": 904,
-   "cc_gt_30": 141
+   "cc_le_2": 8639,
+   "cc_3_12": 5652,
+   "cc_gt_12": 909,
+   "cc_gt_30": 142
   }
  }
 }

@@ -11,6 +11,7 @@ import os
 import re
 import subprocess
 import time
+import tomllib
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -154,7 +155,9 @@ def maven_dependencies(group, module, version, target):
 
 
 def maven(spec):
-    chosen, todo = {}, [tuple(r.split(':')) for r in spec['roots']]
+    """Roots name their versions from the app's Gradle catalog, e.g. {lightningkmp}."""
+    versions = tomllib.loads(resolve(spec['catalog']).read_text())['versions']
+    chosen, todo = {}, [tuple(r.format(**versions).split(':')) for r in spec['roots']]
     while todo:
         g, m, v = todo.pop()
         key = f'{g}:{m}'
@@ -184,18 +187,19 @@ def cargo(crate):
                    if l.strip() and '(/' not in l and not engine.match(l)})
 
 
-def go_modules():
+def go_modules(source):
     spec = CONFIG['go']
-    out = subprocess.run(['go', 'list', '-deps', f'-tags={spec["tags"]}', '-f',
-                          '{{with .Module}}{{if not .Main}}{{.Path}}@{{.Version}}{{end}}{{end}}', spec['package']],
-                         cwd=source_dir(spec['source']), env={**os.environ, **spec['env']},
+    # A module replaced by another (a fork's go.mod often does this) is listed as the replacement.
+    template = ('{{with .Module}}{{if not .Main}}{{.Path}} {{with .Replace}}{{.Path}}@{{.Version}}'
+                '{{else}}{{.Path}}@{{.Version}}{{end}}\n{{end}}{{end}}')
+    out = subprocess.run(['go', 'list', '-deps', f'-tags={spec["tags"]}', '-f', template, spec['package']],
+                         cwd=source_dir(source), env={**os.environ, **spec['env']},
                          capture_output=True, text=True, check=True).stdout
-    return sorted({m for m in out.split() if m and not m.startswith(spec['first_party'])})
+    return sorted({line.split()[1] for line in out.splitlines() if line.strip() and not line.startswith(spec['first_party'])})
 
 
 def main():
-    go = go_modules()
-    out = {}
+    go, out = {}, {}
     for wallet, spec in CONFIG['wallets'].items():
         d, r = spec['deps'], {}
         if 'spm' in d:
@@ -207,8 +211,9 @@ def main():
             r['rust'] = sorted(set().union(*per.values()))
             r['rust_copies'] = sum(len(v) for v in per.values())
             r['rust_per_library'] = {k: len(v) for k, v in per.items()}
-        if d.get('go'):
-            r['go'] = go
+        if 'go' in d:
+            source = d['go']['source']
+            r['go'] = go[source] = go.get(source) or go_modules(source)
         if 'npm' in d:
             r['npm_direct'], r['npm'] = npm_yarn(d['npm'])
         if 'bun' in d:

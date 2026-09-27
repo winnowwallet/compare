@@ -1,0 +1,163 @@
+"""Move every source to what each wallet ships today, and rewrite sources.json.
+
+Wallet repositories follow their default branch. Every engine and prebuilt library follows the
+version its wallet declares, read from the wallet's own files at the new revision: Phoenix's Gradle
+catalog, Bitkit's Package.resolved, Zeus's fetch-libraries-versions.json, Blixt's bun.lock through
+react-native-turbo-lnd, and LDK Node's Cargo.lock for rust-lightning. Nothing is picked by hand.
+
+A source that commits no Cargo.lock gets one generated when its revision changes, saved in locks/
+so the measurement stays reproducible. When anything moved, `snapshot` becomes today's date (UTC)
+and a summary of the moves is written to .cache/update.md for the commit message."""
+import json
+import re
+import subprocess
+import tomllib
+from datetime import datetime, timezone
+from pathlib import Path
+
+from common import CONFIG, CONFIG_PATH, ROOT, resolve, source_dir, write_config
+from fetch import fetch, git
+
+
+def remote_rev(repo, ref):
+    """The commit a branch or tag names; annotated tags are peeled."""
+    out = subprocess.run(['git', 'ls-remote', repo, ref, f'{ref}^{{}}'], capture_output=True, text=True, check=True).stdout
+    refs = {name: sha for sha, name in (line.split('\t') for line in out.splitlines())}
+    rev = refs.get(f'{ref}^{{}}') or refs.get(ref)
+    if not rev:
+        raise SystemExit(f'{repo} has no {ref}')
+    return rev
+
+
+def dig(value, dotted):
+    for part in dotted.split('.'):
+        value = value[part]
+    return value
+
+
+def spm_pin(text, identity):
+    d = json.loads(text)
+    for p in d.get('pins') or d['object']['pins']:
+        if (p.get('identity') or p.get('package', '')).lower() == identity:
+            return p['state']['revision'], p['state'].get('version')
+    raise KeyError(identity)
+
+
+def cargo_version(lock_text, manifest_text, crate):
+    """The version of `crate` the root package itself depends on (a lock can hold several)."""
+    root = tomllib.loads(manifest_text)['package']['name']
+    packages = tomllib.loads(lock_text)['package']
+    versions = {p['version'] for p in packages if p['name'] == crate}
+    for p in packages:
+        if p['name'] == root and 'source' not in p:
+            for dep in p.get('dependencies', []):
+                name, _, version = dep.partition(' ')
+                if name == crate:
+                    return version.split(' ')[0] if version else versions.pop()
+    raise KeyError(crate)
+
+
+def bun_version(text, package):
+    d = json.loads(re.sub(r',(\s*[}\]])', r'\1', text))  # JSONC trailing commas
+    return d['packages'][package][0].rpartition('@')[2]
+
+
+def properties(text):
+    return dict(line.split('=', 1) for line in text.splitlines() if '=' in line and not line.lstrip().startswith('#'))
+
+
+def resolve_rule(key, spec):
+    """Returns (repo, rev, version, tag) for a source's `track` rule."""
+    rule, repo = spec['track'], spec['repo']
+    if 'branch' in rule:
+        return repo, remote_rev(repo, rule['branch']), None, None
+    ref = rule['from']
+    path = resolve(ref)
+    if not path.is_file():
+        raise SystemExit(f'{key}: {ref} is missing, so the version it pins cannot be read')
+    text = path.read_text()
+    if 'spm' in rule:
+        rev, version = spm_pin(text, rule['spm'])
+        return repo, rev, version, None
+    if 'properties' in rule:
+        props = properties(text)
+        repo = rule['properties']['repo'].format(**props)
+        return repo, rule['properties']['rev'].format(**props), None, None
+    if 'toml' in rule:
+        value = dig(tomllib.loads(text), rule['toml'])
+    elif 'json' in rule:
+        value = dig(json.loads(text), rule['json'])
+    elif 'bun' in rule:
+        value = bun_version(text, rule['bun'])
+    elif 'cargo' in rule:
+        manifest = (path.parent / 'Cargo.toml').read_text()
+        value = cargo_version(text, manifest, rule['cargo'])
+    else:
+        raise SystemExit(f'{key}: unknown track rule {rule}')
+    tag = rule['tag'].format(value)
+    return repo, remote_rev(repo, f'refs/tags/{tag}'), value.removeprefix('v'), tag
+
+
+def cargo_sources():
+    return {c['source'] for w in CONFIG['wallets'].values() for c in w['deps'].get('cargo', [])}
+
+
+def ensure_lock(key, spec, moved):
+    """Use the source's own Cargo.lock; generate one only when it commits none."""
+    path = source_dir(key)
+    if git('ls-files', 'Cargo.lock', cwd=path):
+        if spec.pop('lock', None):
+            (ROOT / f'locks/{key}.Cargo.lock').unlink(missing_ok=True)
+        return
+    lock = ROOT / f'locks/{key}.Cargo.lock'
+    if moved or not lock.exists():
+        (path / 'Cargo.lock').unlink(missing_ok=True)
+        subprocess.run(['cargo', 'generate-lockfile', '--manifest-path', str(path / 'Cargo.toml')], check=True)
+        lock.write_bytes((path / 'Cargo.lock').read_bytes())
+    spec['lock'] = f'locks/{key}.Cargo.lock'
+    fetch(key, spec)
+
+
+def describe(spec):
+    repo = spec['repo'].removeprefix('https://github.com/').removesuffix('.git')
+    if spec.get('tag'):
+        return f'{repo} {spec["tag"]}'
+    if spec.get('version') and spec['track'].get('spm'):
+        return f'{repo} {spec["version"]}'
+    return f'{repo}@{spec["rev"][:7]}' + (f' ({spec["version"]})' if spec.get('version') else '')
+
+
+def main():
+    moves = []
+    for key, spec in CONFIG['sources'].items():
+        repo, rev, version, tag = resolve_rule(key, spec)
+        before = dict(spec)
+        spec.update(repo=repo, rev=rev)
+        for field, value in (('tag', tag), ('version', version)):
+            if value:
+                spec[field] = value
+            else:
+                spec.pop(field, None)
+        fetch(key, spec)
+        if key in cargo_sources():
+            ensure_lock(key, spec, moved=before.get('rev') != rev)
+        if spec.get('version_from'):
+            m = re.search(spec['version_from']['pattern'], (source_dir(key) / spec['version_from']['path']).read_text())
+            spec['version'] = '.'.join(str(int(g)) for g in m.groups())
+        spec['label'] = describe(spec)
+        spec['date'] = git('log', '-1', '--format=%cs', cwd=source_dir(key))
+        if before.get('rev') != rev:
+            old = before.get('label') or (before.get('rev') or '')[:7] or 'new'
+            moves.append(f'{key}: {old} → {spec["label"]}')
+        print(f'{key:22} {spec["label"]}  ({spec["date"]})')
+    if moves:
+        CONFIG['snapshot'] = datetime.now(timezone.utc).date().isoformat()
+    write_config(CONFIG_PATH, CONFIG)
+    summary = ROOT / '.cache/update.md'
+    summary.parent.mkdir(exist_ok=True)
+    summary.write_text(''.join(f'- {m}\n' for m in moves))
+    print(f'{len(moves)} sources moved' + ''.join(f'\n  {m}' for m in moves))
+
+
+if __name__ == '__main__':
+    main()

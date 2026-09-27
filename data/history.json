@@ -1,0 +1,90 @@
+{
+ "about": "One row per snapshot: the revisions measured and each wallet's headline numbers. Rows with a different method were counted under earlier rules.",
+ "snapshots": [
+  {
+   "date": "2026-09-27",
+   "method": 1,
+   "sources": {
+    "winnow": "1f1bfdd956c84765c444ed6b0667806b20626c55",
+    "phoenix": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
+    "lightning-kmp": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
+    "bitkit": "c906d5af336dd1ceec22bcbbb1c7d9f115e2d021",
+    "synonym-ldk-node": "190a17d966cf5a685444cfa17c3a419c290bf26c",
+    "rust-lightning": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
+    "bitkit-core": "b53fa54a16f04940943072bb6e08dc2650302f93",
+    "paykit-rs": "4613beee25d1680ed8bc849446498e9bfb2cdb16",
+    "vss-rust-client-ffi": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
+    "blixt": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
+    "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
+    "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
+    "zeus": "5792769159aec740c31d8f28a0d606c96ccd1618",
+    "lnd-zeus": "ae24665a916d94fa89475b21ec27e8cda0eb5845",
+    "zeus-ldk-node": "921ef6370a5694ed8cf00538878420ccb5afe09d",
+    "cdk": "874745d5d79b36be346efbd716393357ab898834"
+   },
+   "wallets": {
+    "Winnow": {
+     "lines": 29192,
+     "lines_app": 10576,
+     "lines_bitcoin": 13132,
+     "lines_lightning": 5484,
+     "characters": 1052232,
+     "functions": 2230,
+     "cc_gt_12": 32,
+     "cc_gt_30": 1,
+     "max_cc": 31,
+     "packages": 1,
+     "vendored_lines": 0
+    },
+    "Phoenix": {
+     "lines": 100853,
+     "lines_app": 72767,
+     "lines_lightning": 28086,
+     "characters": 3071264,
+     "functions": 7218,
+     "cc_gt_12": 132,
+     "cc_gt_30": 22,
+     "max_cc": 168,
+     "packages": 59,
+     "vendored_lines": 0
+    },
+    "Bitkit": {
+     "lines": 219539,
+     "lines_app": 91893,
+     "lines_lightning": 127646,
+     "characters": 6353943,
+     "functions": 10679,
+     "cc_gt_12": 246,
+     "cc_gt_30": 47,
+     "max_cc": 174,
+     "packages": 691,
+     "vendored_lines": 0
+    },
+    "Blixt": {
+     "lines": 275307,
+     "lines_app": 36360,
+     "lines_lightning": 238947,
+     "characters": 6481671,
+     "functions": 11465,
+     "cc_gt_12": 611,
+     "cc_gt_30": 85,
+     "max_cc": 148,
+     "packages": 681,
+     "vendored_lines": 0
+    },
+    "Zeus": {
+     "lines": 431736,
+     "lines_app": 189569,
+     "lines_lightning": 242167,
+     "characters": 9284431,
+     "functions": 15200,
+     "cc_gt_12": 909,
+     "cc_gt_30": 142,
+     "max_cc": 252,
+     "packages": 1447,
+     "vendored_lines": 4551
+    }
+   }
+  }
+ ]
+}

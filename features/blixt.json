@@ -68,8 +68,8 @@
   },
   "splicing": {
    "value": "no",
-   "evidence": "lnd:lnrpc/lightning.proto",
-   "note": "No splice RPC in LND 0.21.3; nothing in app"
+   "evidence": "lnd-blixt:lnrpc/lightning.proto",
+   "note": "No splice RPC in Blixt’s LND; nothing in app"
   },
   "anchors": {
    "value": "yes",
@@ -83,7 +83,7 @@
   },
   "watchtower": {
    "value": "engine-only",
-   "evidence": "blixt:src/state/index.ts:674; lnd:lncfg/wtclient.go:16",
+   "evidence": "blixt:src/state/index.ts:674; lnd-blixt:lncfg/wtclient.go:16",
    "note": "LND wtclient exists but app config/UI never enables it"
   },
   "channel_backup": {
@@ -108,12 +108,12 @@
   },
   "hw_signer": {
    "value": "engine-only",
-   "evidence": "lnd:lnrpc/walletrpc/walletkit.proto:400; lnd:lncfg/remotesigner.go:17",
+   "evidence": "lnd-blixt:lnrpc/walletrpc/walletkit.proto:329; lnd-blixt:lncfg/remotesigner.go:17",
    "note": "LND has PSBT/remote signer; app has no PSBT or signer code"
   },
   "coin_control": {
    "value": "engine-only",
-   "evidence": "blixt:src/state/OnChain.ts:218; lnd:lnrpc/lightning.proto:1157",
+   "evidence": "blixt:src/state/OnChain.ts:218; lnd-blixt:lnrpc/lightning.proto:1157",
    "note": "App sendCoins passes no outpoints; LND supports outpoint selection"
   },
   "tor": {

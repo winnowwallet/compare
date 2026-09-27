@@ -1,0 +1,92 @@
+name: Daily
+
+# Measures the wallets again every day. `./build update` moves every pin to what each wallet
+# ships today (wallet repositories at their branch head, engines and libraries at the versions
+# the wallets declare). When anything moved, `./build` measures it, adds the snapshot to
+# data/history.json, and the result is committed to main and deployed. A day on which nothing
+# moved changes nothing.
+#
+# A commit pushed with the workflow token does not start other workflows, so this one calls the
+# Site workflow itself with the new commit.
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  measure:
+    if: github.repository == 'winnowwallet/compare'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.commit.outputs.sha }}
+    env:
+      GOTOOLCHAIN: auto  # LND's go.mod names the Go version it resolves with
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: Install pinned tools
+        run: |
+          python3 -m pip install --user -r requirements.txt
+          npm ci --no-audit --no-fund
+          go version
+          cargo --version
+
+      - name: Move every pin to what each wallet ships today
+        id: update
+        run: |
+          ./build update
+          if git diff --quiet -- sources.json locks/; then
+            echo "moved=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "moved=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Measure, record the snapshot, check citations, render
+        if: steps.update.outputs.moved == 'true'
+        run: ./build
+
+      - name: Commit the snapshot to main
+        id: commit
+        if: steps.update.outputs.moved == 'true'
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          snapshot=$(python3 -c "import json; print(json.load(open('sources.json'))['snapshot'])")
+          drift=$(python3 -c "import json; d=json.load(open('data/drift.json')); print(f\"{d['changed'] + d['gone']} of {d['citations']} feature citations point at code that changed since the review on {d['reviewed']}.\")")
+          { echo "Snapshot $snapshot"; echo; cat .cache/update.md; echo; echo "$drift"; } > .cache/message
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A sources.json locks data site
+          git commit -q -F .cache/message
+          git remote set-url origin "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push origin HEAD:main
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          { echo "### Snapshot $snapshot"; echo; cat .cache/update.md; echo; echo "$drift"; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Nothing moved
+        if: steps.update.outputs.moved != 'true'
+        run: echo "No source moved since the last snapshot; nothing to commit." >> "$GITHUB_STEP_SUMMARY"
+
+  deploy:
+    needs: measure
+    if: needs.measure.outputs.sha != ''
+    permissions:
+      contents: read
+    uses: ./.github/workflows/site.yml
+    with:
+      ref: ${{ needs.measure.outputs.sha }}
+    secrets: inherit
