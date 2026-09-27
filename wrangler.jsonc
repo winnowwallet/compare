@@ -1,0 +1,17 @@
+{
+  // The comparison site as a Worker with static assets: site/index.html, site/data.json
+  // and site/assets/. No Worker script; Cloudflare serves the files. The custom domain
+  // below makes Cloudflare create the DNS record and certificate itself.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "winnow-compare",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./site",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "routes": [
+    { "pattern": "compare.winnowwallet.com", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+}

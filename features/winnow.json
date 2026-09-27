@@ -1,0 +1,130 @@
+{
+ "wallet": "Winnow",
+ "features": {
+  "bolt11_pay": {
+   "value": "no",
+   "evidence": "winnow:Sources/WinnowApp/LightningAppPayments.swift:15; winnow:Sources/WinnowApp/LightningLiquidityView.swift:68",
+   "note": "Send accepts only lno offers; setup invoices must be paid elsewhere"
+  },
+  "bolt11_receive": {
+   "value": "yes",
+   "evidence": "winnow:Sources/WinnowApp/LightningReceiveView.swift:34; winnow:Sources/WinnowApp/LightningAppReceiving.swift:89",
+   "note": "Single-use invoice with provider route hint; app must stay open"
+  },
+  "bolt12_pay": {
+   "value": "partial",
+   "evidence": "winnow:Sources/WinnowApp/LightningAppPayments.swift:22; winnow:Sources/LightningCore/LightningAsyncSending.swift:14",
+   "note": "Only async static-invoice flow; needs imported profile route, async provider"
+  },
+  "bolt12_receive": {
+   "value": "partial",
+   "evidence": "winnow:Sources/WinnowApp/LightningView.swift:117; winnow:Sources/WinnowApp/LightningProviders.swift:16",
+   "note": "Reusable offer needs imported async-provider profile; mainnet presets lack receive config"
+  },
+  "offline_receive": {
+   "value": "partial",
+   "evidence": "winnow:Sources/WinnowApp/LightningInputViews.swift:31; winnow:docs/engineering/swift-lightning.md:68",
+   "note": "LDK-style async hold/release via imported profile only; no push"
+  },
+  "lnurl": {
+   "value": "no",
+   "evidence": "winnow:Sources/WinnowApp/LightningAppPayments.swift:15",
+   "note": "No LNURL code; send input parses BOLT12 offers only"
+  },
+  "ln_address_pay": {
+   "value": "no",
+   "evidence": "winnow:Sources/WinnowApp/LightningAppPayments.swift:15",
+   "note": "No Lightning address resolution; only lno offers accepted"
+  },
+  "ln_address_receive": {
+   "value": "no",
+   "evidence": "winnow:Sources/WinnowApp/LightningReceiveView.swift:34; winnow:Sources/WinnowApp/LightningView.swift:117",
+   "note": "Receive offers BOLT11 invoice or BOLT12 offer only"
+  },
+  "bip353": {
+   "value": "no",
+   "evidence": "winnow:Sources/WinnowApp/LightningAppPayments.swift:15",
+   "note": "No DNS/BIP353 resolution code found"
+  },
+  "mpp": {
+   "value": "no",
+   "evidence": "winnow:Sources/LightningCore/LightningFeatures.swift:30; winnow:Sources/LightningCore/Bolt11Invoice.swift:37",
+   "note": "Features explicitly exclude MPP"
+  },
+  "keysend": {
+   "value": "no",
+   "evidence": "winnow:Sources/WinnowApp/LightningInputViews.swift:76; winnow:Sources/LightningCore/AsyncPaymentRoute.swift:62",
+   "note": "Keysend TLV used only internally for async payments; no user keysend"
+  },
+  "choose_peer": {
+   "value": "yes",
+   "evidence": "winnow:Sources/WinnowApp/LightningProviders.swift:19; winnow:Sources/WinnowApp/LightningInputViews.swift:30",
+   "note": "Olympus by ZEUS, Megalith, LNServer Wave, or import any node profile; one channel"
+  },
+  "jit_channels": {
+   "value": "partial",
+   "evidence": "winnow:Sources/WinnowApp/LightningAppReceiving.swift:34; winnow:Sources/WinnowApp/LightningLiquidityView.swift:68",
+   "note": "LSPS1 inbound purchase (Olympus, Megalith); fee paid externally; no LSPS2"
+  },
+  "splicing": {
+   "value": "no",
+   "evidence": "winnow:Sources/LightningCore/README.md:135",
+   "note": "Docs: splicing not implemented or advertised"
+  },
+  "anchors": {
+   "value": "no",
+   "evidence": "winnow:Sources/LightningCore/README.md:135; winnow:Sources/LightningCore/ChannelTransactions.swift:4",
+   "note": "Static-remotekey non-anchor channels only"
+  },
+  "local_pathfinding": {
+   "value": "no",
+   "evidence": "winnow:Sources/LightningCore/LightningPeerSession.swift:137; winnow:Sources/LightningCore/README.md:136",
+   "note": "Configured-route client; gossip ignored; no graph routing"
+  },
+  "watchtower": {
+   "value": "no",
+   "evidence": "winnow:docs/engineering/swift-lightning.md:237; winnow:Sources/WinnowApp/LightningView.swift:21",
+   "note": "No external watchtower; iOS background checks relay pre-signed recovery txs"
+  },
+  "channel_backup": {
+   "value": "no",
+   "evidence": "winnow:Sources/LightningCore/README.md:129; winnow:Sources/WinnowApp/AppModel.swift:425",
+   "note": "Journal stays on device; iCloud backup disabled in Lightning app"
+  },
+  "onchain_independent": {
+   "value": "yes",
+   "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:668; winnow:Sources/LightningCore/README.md:37",
+   "note": "Single-key BIP86 Taproot wallet; channels are funded from it, not the reverse"
+  },
+  "taproot": {
+   "value": "yes",
+   "evidence": "winnow:README.md:8; winnow:Sources/WalletCore/Wallet/Wallet.swift:722",
+   "note": "Ordinary receive uses BIP86 P2TR"
+  },
+  "multisig": {
+   "value": "yes",
+   "evidence": "winnow:README.md:9; winnow:Sources/WinnowApp/VaultsView.swift:72",
+   "note": "Threshold shared savings (e.g. 2-of-3) and MuSig2 accounts"
+  },
+  "hw_signer": {
+   "value": "partial",
+   "evidence": "winnow:Sources/WinnowApp/VaultsView.swift:72; winnow:Sources/WinnowApp/VaultSpendSession.swift:403",
+   "note": "PSBT/MuSig2 cosigning with another device (Core tested); hardware wallets unverified"
+  },
+  "coin_control": {
+   "value": "no",
+   "evidence": "winnow:Sources/WinnowApp/AppModel.swift:1842",
+   "note": "Automatic coin selection over all spendable UTXOs; coins list read-only"
+  },
+  "tor": {
+   "value": "no",
+   "evidence": "winnow:README.md:11; winnow:Sources/WinnowApp/WinnowApp.swift:39",
+   "note": "Embedded Tor removed in 0.7.1"
+  },
+  "license": {
+   "value": "MIT",
+   "evidence": "winnow:LICENSE:1; winnow:README.md:160",
+   "note": "MIT License"
+  }
+ }
+}

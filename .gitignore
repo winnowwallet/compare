@@ -1,0 +1,5 @@
+.sources/
+.stage/
+.cache/
+node_modules/
+__pycache__/

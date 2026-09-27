@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+"""Rebuild everything: fetch the pinned sources, measure, check citations, render the site.
+
+  ./build            all steps
+  ./build test       the hand-counted cases that pin the complexity and Rust test rules
+  ./build fetch      check out every source at its pinned commit under .sources/
+  ./build measure    lines, complexity, dependencies and vendored code -> data/
+  ./build evidence   every feature and profile citation resolves at the pinned revision
+  ./build render     data/ -> site/index.html and site/data.json
+
+A reproduction leaves `git diff` empty."""
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+STEPS = {
+    'test': [],
+    'fetch': ['fetch'],
+    'measure': ['loc', 'complexity', 'deps', 'vendored'],
+    'evidence': ['evidence'],
+    'render': ['render'],
+}
+
+
+def run(module):
+    print(f'── {module}', flush=True)
+    subprocess.run([sys.executable, str(ROOT / 'tools' / f'{module}.py')], cwd=ROOT / 'tools', check=True)
+
+
+def main():
+    wanted = sys.argv[1:] or list(STEPS)
+    unknown = [w for w in wanted if w not in STEPS]
+    if unknown:
+        sys.exit(__doc__ + f'\nunknown step: {" ".join(unknown)}')
+    for step in wanted:
+        if step == 'test':
+            print('── test', flush=True)
+            subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests'], cwd=ROOT, check=True)
+        for module in STEPS[step]:
+            run(module)
+
+
+if __name__ == '__main__':
+    main()

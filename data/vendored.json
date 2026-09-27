@@ -1,0 +1,69 @@
+{
+ "Winnow": {
+  "copied_packages": {},
+  "nested_licenses": [],
+  "binaries": [],
+  "patches": [],
+  "copied_lines": 0
+ },
+ "Phoenix": {
+  "copied_packages": {},
+  "nested_licenses": [],
+  "binaries": [],
+  "patches": [],
+  "copied_lines": 0
+ },
+ "Bitkit": {
+  "copied_packages": {},
+  "nested_licenses": [],
+  "binaries": [],
+  "patches": [],
+  "copied_lines": 0
+ },
+ "Blixt": {
+  "copied_packages": {},
+  "nested_licenses": [],
+  "binaries": [],
+  "patches": [],
+  "copied_lines": 0
+ },
+ "Zeus": {
+  "copied_packages": {
+   "zeus_modules/@lightninglabs/lnc-core": {
+    "lines": 3619,
+    "counted": "source"
+   },
+   "zeus_modules/@lightninglabs/lnc-rn": {
+    "lines": 276,
+    "counted": "source"
+   },
+   "zeus_modules/bc-bech32": {
+    "lines": 206,
+    "counted": "published build output"
+   },
+   "zeus_modules/bc-ur": {
+    "lines": 284,
+    "counted": "published build output"
+   },
+   "zeus_modules/noble_ecc.ts": {
+    "lines": 89,
+    "counted": "source"
+   },
+   "zeus_modules/ur": {
+    "lines": 77,
+    "counted": "source"
+   }
+  },
+  "nested_licenses": [],
+  "binaries": [],
+  "patches": [
+   "patch-jcenter.mjs",
+   "patch-keychain-cloudsync.mjs",
+   "patch-native-event-emitter.mjs",
+   "patch-noble-hashes.mjs",
+   "patch-react-native-notifications.mjs",
+   "patch-reanimated-set-fixes.mjs"
+  ],
+  "copied_lines": 4551
+ }
+}

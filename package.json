@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "description": "Pins the cloc used to count lines of code.",
+  "devDependencies": {
+    "cloc": "2.6.0-cloc"
+  }
+}
