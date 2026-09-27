@@ -21,7 +21,8 @@ python3 -m pip install -r requirements.txt  # pins the tree-sitter grammars
 git diff                              # empty when the measurement reproduces
 ```
 
-`./build fetch|measure|evidence|render` runs one step. The Reproduce workflow runs the whole build
+`./build test|fetch|measure|evidence|render` runs one step; `test` checks the counting rules against
+hand-counted cases in `tests/`. The Reproduce workflow runs the whole build
 on every pull request and fails if anything it produces differs from what is committed.
 
 ## What is measured, and how
@@ -48,6 +49,7 @@ wallets.json        hand-reviewed profile facts (engine, chain data, channel par
 features/           hand-reviewed feature cells, one file per wallet, each with code citations
 locks/              a Cargo.lock for a pinned source that does not commit one
 tools/              fetch, loc, complexity, deps, vendored, evidence, render
+tests/              hand-counted cases that pin the complexity and Rust test-stripping rules
 page/template.html  the page; placeholders are filled by tools/render.py
 data/               measurements (generated, committed)
 site/               the published site (generated, committed); site/data.json has everything

@@ -2,6 +2,7 @@
 """Rebuild everything: fetch the pinned sources, measure, check citations, render the site.
 
   ./build            all steps
+  ./build test       the hand-counted cases that pin the complexity and Rust test rules
   ./build fetch      check out every source at its pinned commit under .sources/
   ./build measure    lines, complexity, dependencies and vendored code -> data/
   ./build evidence   every feature and profile citation resolves at the pinned revision
@@ -14,6 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 STEPS = {
+    'test': [],
     'fetch': ['fetch'],
     'measure': ['loc', 'complexity', 'deps', 'vendored'],
     'evidence': ['evidence'],
@@ -32,6 +34,9 @@ def main():
     if unknown:
         sys.exit(__doc__ + f'\nunknown step: {" ".join(unknown)}')
     for step in wanted:
+        if step == 'test':
+            print('── test', flush=True)
+            subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests'], cwd=ROOT, check=True)
         for module in STEPS[step]:
             run(module)
 
