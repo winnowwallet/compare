@@ -68,7 +68,7 @@ site/               the published site (generated, committed); site/data.json ha
 
 | Source | Follows |
 | --- | --- |
-| Winnow | the head of `codex/lightning-receive-providers` in posix4e/winnow-lightning, where its Lightning code is |
+| Winnow | the `lightning` branch of winnowwallet/winnow, where Lightning is being added to the app, then `main` once it merges |
 | Phoenix, Bitkit, Blixt, Zeus | the head of their default branch |
 | lightning-kmp | `lightningkmp` in Phoenix's `gradle/libs.versions.toml`; the Kotlin libraries use the same catalog |
 | Synonym's LDK Node, bitkit-core, Paykit, VSS client | Bitkit's `Package.resolved` |

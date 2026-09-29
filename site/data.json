@@ -4,7 +4,11 @@
   "winnow": {
    "repo": "https://github.com/posix4e/winnow-lightning",
    "track": {
-    "branch": "refs/heads/codex/lightning-receive-providers"
+    "repo": "https://github.com/winnowwallet/winnow",
+    "branch": [
+     "refs/heads/lightning",
+     "refs/heads/main"
+    ]
    },
    "rev": "1f1bfdd956c84765c444ed6b0667806b20626c55",
    "label": "posix4e/winnow-lightning@1f1bfdd",
