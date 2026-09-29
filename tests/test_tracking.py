@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / 'tools'))
 
 from evidence import find  # noqa: E402
 from render import scale  # noqa: E402
+import update  # noqa: E402
 from update import bun_version, cargo_version, properties, spm_pin  # noqa: E402
 
 
@@ -59,6 +60,22 @@ dependencies = ["bitcoin", "lightning 0.2.6", "lightning-types"]
     def test_properties(self):
         self.assertEqual(properties('# pinned\nrepository=hsjoberg/lnd\nref=ae185f27\n'),
                          {'repository': 'hsjoberg/lnd', 'ref': 'ae185f27'})
+
+
+class Branches(unittest.TestCase):
+    def test_falls_back_to_the_next_branch(self):
+        # Winnow follows its Lightning branch, then main once that branch has merged and gone.
+        heads = {'refs/heads/main': 'aaa'}
+        real, update.remote_rev = update.remote_rev, lambda repo, ref, required=True: heads.get(ref)
+        try:
+            self.assertEqual(update.first_branch('r', ['refs/heads/lightning', 'refs/heads/main']), 'aaa')
+            heads['refs/heads/lightning'] = 'bbb'
+            self.assertEqual(update.first_branch('r', ['refs/heads/lightning', 'refs/heads/main']), 'bbb')
+            self.assertEqual(update.first_branch('r', 'refs/heads/main'), 'aaa')
+            with self.assertRaises(SystemExit):
+                update.first_branch('r', ['refs/heads/gone'])
+        finally:
+            update.remote_rev = real
 
 
 class Review(unittest.TestCase):

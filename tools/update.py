@@ -19,14 +19,23 @@ from common import CONFIG, CONFIG_PATH, ROOT, resolve, source_dir, write_config
 from fetch import fetch, git
 
 
-def remote_rev(repo, ref):
+def remote_rev(repo, ref, required=True):
     """The commit a branch or tag names; annotated tags are peeled."""
     out = subprocess.run(['git', 'ls-remote', repo, ref, f'{ref}^{{}}'], capture_output=True, text=True, check=True).stdout
     refs = {name: sha for sha, name in (line.split('\t') for line in out.splitlines())}
     rev = refs.get(f'{ref}^{{}}') or refs.get(ref)
-    if not rev:
+    if not rev and required:
         raise SystemExit(f'{repo} has no {ref}')
     return rev
+
+
+def first_branch(repo, branches):
+    """The first of `branches` that exists, so a working branch can fall back to main once it merges."""
+    for branch in [branches] if isinstance(branches, str) else branches:
+        rev = remote_rev(repo, branch, required=False)
+        if rev:
+            return rev
+    raise SystemExit(f'{repo} has none of {branches}')
 
 
 def dig(value, dotted):
@@ -70,7 +79,8 @@ def resolve_rule(key, spec):
     """Returns (repo, rev, version, tag) for a source's `track` rule."""
     rule, repo = spec['track'], spec['repo']
     if 'branch' in rule:
-        return repo, remote_rev(repo, rule['branch']), None, None
+        repo = rule.get('repo', repo)  # a rule may move a source to another repository
+        return repo, first_branch(repo, rule['branch']), None, None
     ref = rule['from']
     path = resolve(ref)
     if not path.is_file():
