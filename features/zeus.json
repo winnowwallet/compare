@@ -3,7 +3,7 @@
  "features": {
   "bolt11_pay": {
    "value": "yes",
-   "evidence": "zeus:utils/handleAnything.ts:521; zeus:views/PaymentRequest.tsx:360",
+   "evidence": "zeus:utils/handleAnything.ts:464; zeus:views/PaymentRequest.tsx:360",
    "note": "Scanned or pasted BOLT 11 invoices are paid through the embedded LND"
   },
   "bolt11_receive": {
@@ -28,12 +28,12 @@
   },
   "lnurl": {
    "value": "yes",
-   "evidence": "zeus:utils/handleAnything.ts:1017-1041",
+   "evidence": "zeus:utils/handleAnything.ts:941-965",
    "note": "LNURL-pay, withdraw, channel and auth are all handled"
   },
   "ln_address_pay": {
    "value": "yes",
-   "evidence": "zeus:utils/handleAnything.ts:675; zeus:utils/handleAnything.ts:751",
+   "evidence": "zeus:utils/handleAnything.ts:618; zeus:utils/handleAnything.ts:719",
    "note": "user@domain looked up via LUD-16 .well-known/lnurlp"
   },
   "ln_address_receive": {
@@ -43,7 +43,7 @@
   },
   "bip353": {
    "value": "partial",
-   "evidence": "zeus:utils/handleAnything.ts:707-736; zeus:views/Send.tsx:1364",
+   "evidence": "zeus:utils/handleAnything.ts:672-701; zeus:views/Send.tsx:1364",
    "note": "Resolves via Cloudflare DNS-over-HTTPS; offers can't be paid on LND, only on-chain/BOLT 11 fallbacks"
   },
   "mpp": {
@@ -118,7 +118,7 @@
   },
   "tor": {
    "value": "no",
-   "evidence": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465; zeus:stores/SettingsStore.ts:1604",
+   "evidence": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465; zeus:stores/SettingsStore.ts:1608",
    "note": "Built-in Tor only for remote nodes; embedded LND Tor setting has no toggle"
   },
   "license": {

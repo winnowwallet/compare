@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / 'tools'))
 
-from evidence import find  # noqa: E402
+from evidence import find, locate  # noqa: E402
 from render import scale  # noqa: E402
 import update  # noqa: E402
 from update import bun_version, cargo_version, properties, spm_pin  # noqa: E402
@@ -83,6 +83,15 @@ class Review(unittest.TestCase):
         now = ['import X', '', 'struct A {', '    func pay() {', '    }', '}']
         self.assertEqual(find(['    func pay() {  ', '    }'], now), 4)  # trailing space is not a change
         self.assertIsNone(find(['    func send() {'], now))
+
+    def test_a_common_line_is_placed_by_its_neighbours(self):
+        reviewed = ['func a() {', '    guard ok else { return }', '    pay()', '}',
+                    'func b() {', '    guard ok else { return }', '    send()', '}']
+        now = ['func b() {', '    guard ok else { return }', '    send()', '}', '',
+               'func a() {', '    guard ok else { return }', '    pay()', '}']
+        self.assertEqual(locate(reviewed, 6, 6, now), 2)  # b's guard, not a's
+        self.assertEqual(locate(reviewed, 2, 2, now), 7)
+        self.assertIsNone(locate(['}', '}'], 1, 1, ['}', '}', '}']))  # never unique
 
 
 class Axis(unittest.TestCase):

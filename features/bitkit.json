@@ -13,7 +13,7 @@
   },
   "bolt12_pay": {
    "value": "engine-only",
-   "evidence": "synonym-ldk-node:src/lib.rs:1058; bitkit:Bitkit/ViewModels/AppViewModel.swift:834",
+   "evidence": "synonym-ldk-node:src/lib.rs:1058; bitkit:Bitkit/ViewModels/AppViewModel.swift:831",
    "note": "The app never calls bolt12Payment; offers fall through to 'Unsupported' toast"
   },
   "bolt12_receive": {
@@ -23,17 +23,17 @@
   },
   "offline_receive": {
    "value": "partial",
-   "evidence": "bitkit:BitkitNotification/NotificationService.swift:7; bitkit:Bitkit/Constants/Env.swift:325",
+   "evidence": "bitkit:BitkitNotification/NotificationService.swift:7; bitkit:Bitkit/Constants/Env.swift:328",
    "note": "Blocktank push asks user to open app; extension doesn't start node"
   },
   "lnurl": {
    "value": "yes",
-   "evidence": "bitkit:Bitkit/ViewModels/AppViewModel.swift:794; bitkit:Bitkit/Views/Wallets/LnurlWithdraw/LnurlWithdrawConfirm.swift:73",
+   "evidence": "bitkit:Bitkit/ViewModels/AppViewModel.swift:791; bitkit:Bitkit/Views/Wallets/LnurlWithdraw/LnurlWithdrawConfirm.swift:73",
    "note": "LNURL-pay, withdraw, channel and auth all handled"
   },
   "ln_address_pay": {
    "value": "yes",
-   "evidence": "bitkit:Bitkit/Utilities/PaymentNavigationHelper.swift:65; bitkit:Bitkit/ViewModels/AppViewModel.swift:640",
+   "evidence": "bitkit:Bitkit/Utilities/PaymentNavigationHelper.swift:65; bitkit:Bitkit/ViewModels/AppViewModel.swift:637",
    "note": "bitkit-core decode turns user@domain into LNURL-pay (source not in scratchpad)"
   },
   "ln_address_receive": {
@@ -43,7 +43,7 @@
   },
   "bip353": {
    "value": "no",
-   "evidence": "synonym-ldk-node:src/payment/unified_qr.rs:29; bitkit:Bitkit/ViewModels/AppViewModel.swift:834",
+   "evidence": "synonym-ldk-node:src/payment/unified_qr.rs:29; bitkit:Bitkit/ViewModels/AppViewModel.swift:831",
    "note": "No DNS/HRN resolution in fork or app; user@domain resolves as LNURL"
   },
   "mpp": {
@@ -58,7 +58,7 @@
   },
   "choose_peer": {
    "value": "yes",
-   "evidence": "bitkit:Bitkit/Views/Transfer/FundAdvancedOptions.swift:37; bitkit:Bitkit/ViewModels/TransferViewModel.swift:1253",
+   "evidence": "bitkit:Bitkit/Views/Transfer/FundAdvancedOptions.swift:37; bitkit:Bitkit/ViewModels/TransferViewModel.swift:1296",
    "note": "Default LSP is Blocktank; manual open to any node URI, or LNURL-channel from other LSPs"
   },
   "jit_channels": {
@@ -78,7 +78,7 @@
   },
   "local_pathfinding": {
    "value": "yes",
-   "evidence": "bitkit:Bitkit/Services/LightningService.swift:1116; bitkit:Bitkit/Constants/Env.swift:252",
+   "evidence": "bitkit:Bitkit/Services/LightningService.swift:1116; bitkit:Bitkit/Constants/Env.swift:255",
    "note": "Local LDK routing using Blocktank RGS snapshot and Blocktank-hosted scorer"
   },
   "watchtower": {
@@ -88,7 +88,7 @@
   },
   "channel_backup": {
    "value": "yes",
-   "evidence": "bitkit:Bitkit/Services/LightningService.swift:168; bitkit:Bitkit/Constants/Env.swift:337",
+   "evidence": "bitkit:Bitkit/Services/LightningService.swift:168; bitkit:Bitkit/Constants/Env.swift:340",
    "note": "All LDK state stored remotely in Synonym VSS server (bitkit.to)"
   },
   "onchain_independent": {
@@ -118,7 +118,7 @@
   },
   "tor": {
    "value": "no",
-   "evidence": "bitkit:Bitkit/Resources/Localization/en.lproj/Localizable.strings:320",
+   "evidence": "bitkit:Bitkit/Resources/Localization/en.lproj/Localizable.strings:323",
    "note": "No Tor code; UI string says 'Bitkit cannot add Tor nodes'"
   },
   "license": {
