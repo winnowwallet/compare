@@ -14,7 +14,7 @@
     },
     "Phoenix": {
       "built_with": "Swift on Kotlin Multiplatform",
-      "engine": "lightning-kmp 1.12 (Kotlin)",
+      "engine": "lightning-kmp {version:lightning-kmp} (Kotlin)",
       "chain_data": {"text": "An Electrum server picked at random from a built-in list of 15", "cite": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/AppConfigurationManager.kt:66"},
       "partner": {"text": "ACINQ", "cite": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/NodeParamsManager.kt:87"},
       "distribution": "App Store",
@@ -25,7 +25,7 @@
     },
     "Bitkit": {
       "built_with": "Swift",
-      "engine": "LDK Node (Synonym’s fork) on rust-lightning 0.2 (Rust)",
+      "engine": "LDK Node (Synonym’s fork) on rust-lightning {version:rust-lightning} (Rust)",
       "chain_data": {"text": "Synonym’s Electrum server", "cite": "bitkit:Bitkit/Constants/Env.swift:188"},
       "partner": {"text": "Blocktank, run by Synonym", "cite": "bitkit:Bitkit/Constants/Env.swift:292"},
       "distribution": "App Store",
@@ -36,7 +36,7 @@
     },
     "Blixt": {
       "built_with": "React Native (TypeScript)",
-      "engine": "Embedded LND (Go)",
+      "engine": "Embedded LND {version:lnd-blixt} (Go)",
       "chain_data": {"text": "Neutrino (BIP157) through six default peers, four run by Blixt", "cite": "blixt:src/utils/constants.ts:30"},
       "partner": {"text": "Dunder, run by Blixt, or any node", "cite": "blixt:src/utils/constants.ts:51"},
       "distribution": "TestFlight",
@@ -47,7 +47,7 @@
     },
     "Zeus": {
       "built_with": "React Native (TypeScript)",
-      "engine": "Embedded LND 0.21 (Go). LDK Node is an option, and Zeus can also drive a remote node.",
+      "engine": "Embedded LND {version:lnd-zeus} (Go). LDK Node is an option, and Zeus can also drive a remote node.",
       "chain_data": {"text": "Neutrino (BIP157) through five default peers, two run by Olympus; the LDK Node option uses an Esplora server", "cite": "zeus:stores/SettingsStore.ts:1476"},
       "partner": {"text": "Olympus, run by Zeus, or any node", "cite": "zeus:stores/SettingsStore.ts:1305"},
       "distribution": "App Store",

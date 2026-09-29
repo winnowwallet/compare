@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 """Rebuild everything: fetch the pinned sources, measure, check citations, render the site.
 
-  ./build            all steps
+  ./build            all steps below, from the pins in sources.json
   ./build test       the hand-counted cases that pin the complexity and Rust test rules
   ./build fetch      check out every source at its pinned commit under .sources/
-  ./build measure    lines, complexity, dependencies and vendored code -> data/
-  ./build evidence   every feature and profile citation resolves at the pinned revision
+  ./build measure    lines, complexity, dependencies and vendored code -> data/, and this
+                     snapshot's row in data/history.json
+  ./build evidence   every feature and profile citation resolves at its reviewed revision;
+                     how much of the cited code has changed since -> data/drift.json
   ./build render     data/ -> site/index.html and site/data.json
+
+  ./build update     not part of a plain build: move every pin to what each wallet ships
+                     today (sources.json, locks/). The daily workflow runs it, then ./build.
 
 A reproduction leaves `git diff` empty."""
 import subprocess
@@ -17,10 +22,11 @@ ROOT = Path(__file__).resolve().parent
 STEPS = {
     'test': [],
     'fetch': ['fetch'],
-    'measure': ['loc', 'complexity', 'deps', 'vendored'],
+    'measure': ['loc', 'complexity', 'deps', 'vendored', 'history'],
     'evidence': ['evidence'],
     'render': ['render'],
 }
+EXTRA = {'update': ['update']}
 
 
 def run(module):
@@ -30,14 +36,14 @@ def run(module):
 
 def main():
     wanted = sys.argv[1:] or list(STEPS)
-    unknown = [w for w in wanted if w not in STEPS]
+    unknown = [w for w in wanted if w not in STEPS and w not in EXTRA]
     if unknown:
         sys.exit(__doc__ + f'\nunknown step: {" ".join(unknown)}')
     for step in wanted:
         if step == 'test':
             print('── test', flush=True)
             subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests'], cwd=ROOT, check=True)
-        for module in STEPS[step]:
+        for module in STEPS[step] if step in STEPS else EXTRA[step]:
             run(module)
 
 

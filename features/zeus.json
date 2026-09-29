@@ -68,12 +68,12 @@
   },
   "splicing": {
    "value": "no",
-   "evidence": "zeus:backends/EmbeddedLND.ts:555-610; lnd:lnrpc/lightning.proto",
+   "evidence": "zeus:backends/EmbeddedLND.ts:555-610; lnd-zeus:lnrpc/lightning.proto",
    "note": "No splice capability in Zeus or in the LND RPCs"
   },
   "anchors": {
    "value": "yes",
-   "evidence": "lnd:funding/commitment_type_negotiation.go:471; zeus:utils/LndMobileUtils.ts:257",
+   "evidence": "lnd-zeus:funding/commitment_type_negotiation.go:471; zeus:utils/LndMobileUtils.ts:257",
    "note": "LND negotiates anchor channels by default; simple taproot channels are optional"
   },
   "local_pathfinding": {

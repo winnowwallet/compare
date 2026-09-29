@@ -25,8 +25,8 @@
 .bar-row,.axis{display:grid;grid-template-columns:4.8rem minmax(0,1fr) 3.4rem;column-gap:.8rem;align-items:stretch}
 .bar-row{position:relative;min-height:44px;outline-offset:1px}
 .bar-row .name{align-self:center;font-size:.9rem;color:var(--ink)}
-.track{display:flex;align-items:center;background:linear-gradient(to right,var(--rule) 1px,transparent 1px) 0 0/22.2222% 100%}
-#unit-chars:checked~.bars .track{background-size:20% 100%}
+.track{display:flex;align-items:center;background:linear-gradient(to right,var(--rule) 1px,transparent 1px) 0 0/var(--gl) 100%}
+#unit-chars:checked~.bars .track{background-size:var(--gc) 100%}
 .bar{display:flex;height:20px;width:100%}
 .seg{flex:none;height:100%;width:max(1px,calc(var(--l) - 2px));margin-right:2px;background:var(--s)}
 .seg:last-child{width:max(2px,var(--l));margin-right:0;border-radius:0 4px 4px 0}
@@ -72,6 +72,22 @@ ul.evidence li{margin:.3rem 0}
 ul.evidence code{font-size:.8em}
 .cite{display:block;margin-top:.25rem;font-size:.74rem}.cite a{color:var(--ink-3)}.cite code{overflow-wrap:normal}
 .legend-line{font-size:.86rem;color:var(--ink-2);margin:.4rem 0 0}
+/* Over time: one sparkline per wallet and measure. Gray line, today's value in the accent. */
+.trend{--accent:#2a78d6}
+@media (prefers-color-scheme:dark){.trend{--accent:#3987e5}}
+.trend th[scope=col]{white-space:normal}
+.trend-cell{position:relative;min-width:9.5rem;vertical-align:top}
+.trend-cell .val{display:block;font-weight:600;color:var(--ink)}
+.trend-cell .delta{display:block;font-size:.8rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.spark{display:block;width:144px;max-width:100%;height:auto;margin-top:.35rem;overflow:visible;cursor:crosshair;border-radius:3px}
+.spark:focus-visible{outline:2px solid var(--mark);outline-offset:3px}
+.spark polyline{fill:none;stroke:var(--ink-3);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.spark .end{fill:var(--accent);stroke:var(--paper);stroke-width:2}
+.spark .hover{fill:var(--ink);stroke:var(--paper);stroke-width:2;display:none}
+.spark .cross{stroke:var(--rule-2);stroke-width:1;display:none}
+.trend-cell.reading .val,.trend-cell.reading .delta{color:var(--ink)}
+.snapshots th[scope=row]{font-weight:500;white-space:nowrap}
+@media (forced-colors:active){.spark polyline{stroke:CanvasText}.spark .end{fill:Highlight}}
 </style>
 </head>
 <body>
@@ -82,7 +98,7 @@ ul.evidence code{font-size:.8em}
 <h1>Lightning wallets compared</h1>
 <p class="lede">Winnow is adding Lightning. Here is how it compares with the open-source iPhone wallets that already run a Lightning node on the phone: features, code size, complexity and what each one depends on.</p>
 <aside class="guide-summary"><p><strong>Winnow’s Lightning is a research beta in internal testing.</strong> It is not in the App Store app. It pays BOLT 12 offers but cannot yet pay BOLT 11 invoices. It opens private channels with a provider you choose and uses configured routes through that provider, not the public network graph. Background checks run when iOS allows. There is no watchtower, and the recovery phrase does not restore open channels. <a href="#scope">What the comparison leaves out</a></p></aside>
-<nav class="contents" aria-label="On this page"><a href="#glance">At a glance</a><a href="#features">Features</a><a href="#size">Code size</a><a href="#languages">Languages</a><a href="#complexity">Complexity</a><a href="#dependencies">Dependencies</a><a href="#scope">What the numbers leave out</a><a href="#method">How we measured</a><a href="#other">Other approaches</a></nav>
+<nav class="contents" aria-label="On this page"><a href="#glance">At a glance</a><a href="#features">Features</a><a href="#size">Code size</a><a href="#languages">Languages</a><a href="#complexity">Complexity</a><a href="#dependencies">Dependencies</a><a href="#history">Over time</a><a href="#scope">What the numbers leave out</a><a href="#method">How we measured</a><a href="#other">Other approaches</a></nav>
 
 <section id="glance">
 <h2>At a glance</h2>
@@ -99,7 +115,7 @@ ul.evidence code{font-size:.8em}
 
 <section id="features">
 <h2>Features</h2>
-<p>What a person can do in each iPhone app today, checked against the code. “Engine only” means the Lightning library supports it but the app does not offer it. Hover or focus a cell for the note; <a href="#feature-evidence">every cell links to its evidence</a> below.</p>
+<p>What a person can do in each iPhone app today, checked against the code. “Engine only” means the Lightning library supports it but the app does not offer it. Hover or focus a cell for the note; <a href="#feature-evidence">every cell links to its evidence</a> below. The cells were last checked by hand {{REVIEWED}}. {{DRIFT_TEXT}}</p>
 <div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table">
 <table class="feat">
 <thead><tr><th scope="col">Feature</th>{{WALLET_TH}}</tr></thead>
@@ -111,7 +127,8 @@ ul.evidence code{font-size:.8em}
 <p class="legend-line"><span class="f-yes"><span aria-hidden="true">✓</span></span> Yes · <span class="f-partial"><span aria-hidden="true">◐</span></span> Partial · <span class="f-engine"><span aria-hidden="true">○</span></span> Engine only · <span class="f-no"><span aria-hidden="true">–</span></span> No</p>
 <details id="feature-evidence">
 <summary>Notes and code evidence for every cell</summary>
-<p>Links open the exact line at the revision measured.</p>
+<p>Links open the exact line that was checked, at the revision reviewed {{REVIEWED}}.</p>
+{{DRIFT_LIST}}
 {{EVIDENCE}}
 </details>
 </section>
@@ -120,7 +137,7 @@ ul.evidence code{font-size:.8em}
 <h2>Code size</h2>
 <p>Winnow ships {{W_L}} lines of code: {{W_APP}} for the app, {{W_BTC}} for its Bitcoin library and peer networking, and {{W_LN}} for the Lightning engine. The other wallets ship {{LR_MIN}} to {{LR_MAX}} times as many lines, without counting their Bitcoin libraries.</p>
 <p>Winnow’s lines are denser, at about {{W_CPL}} characters each against {{O_CPL_MIN}}–{{O_CPL_MAX}} for the others. Counted in characters, the gap is {{CR_MIN}} to {{CR_MAX}} times.</p>
-<figure class="size-chart" aria-labelledby="size-caption">
+<figure class="size-chart" aria-labelledby="size-caption" style="--gl:{{GRID_L}};--gc:{{GRID_C}}">
 <input type="radio" name="unit" id="unit-lines" checked><input type="radio" name="unit" id="unit-chars">
 <div class="chart-head">
 <ul class="key" aria-label="Legend"><li style="--c:var(--s-app)"><i></i>App</li><li style="--c:var(--s-ln)"><i></i>Lightning engine</li><li style="--c:var(--s-btc)"><i></i>Bitcoin library</li></ul>
@@ -141,7 +158,7 @@ ul.evidence code{font-size:.8em}
 </tbody>
 </table>
 </div>
-<p>“vs Winnow” divides each total by Winnow’s, first in lines, then in characters. The Lightning engines alone: Winnow’s is {{W_LN}} lines, lightning-kmp {{E_PHX}}, LDK Node with its rust-lightning crates {{E_BITKIT}}, and LND {{E_LND}}.</p>
+<p>“vs Winnow” divides each total by Winnow’s, first in lines, then in characters. The Lightning engines alone: Winnow’s is {{W_LN}} lines, lightning-kmp {{E_PHX}}, LDK Node with its rust-lightning crates {{E_BITKIT}}, and LND {{E_LND_Z}} in Zeus and {{E_LND_B}} in Blixt.</p>
 </section>
 
 <section id="languages">
@@ -180,7 +197,7 @@ ul.evidence code{font-size:.8em}
 </tbody>
 </table>
 </div>
-<p>Blixt and Zeus share the same LND, so their engine rows match.</p>
+<p>{{LND_NOTE}}</p>
 </details>
 </section>
 
@@ -214,6 +231,24 @@ ul.evidence code{font-size:.8em}
 </ul>
 </section>
 
+<section id="history">
+<h2>Over time</h2>
+<p>The comparison is measured again every day from each wallet’s latest code. Wallet repositories are read at the head of their main branch, and Winnow at its Lightning branch. Every engine and library is read at the version its wallet pins. A snapshot is recorded whenever any of them moves: {{SNAPSHOTS_N}} since tracking began on {{FIRST_DAY}}. Changes are shown against that first snapshot. Hover or focus a line for each snapshot.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table">
+<table class="trend">
+<thead><tr><th scope="col">Wallet</th><th scope="col">Lines of code</th><th scope="col">Third-party packages</th><th scope="col">Functions above CC 12</th></tr></thead>
+<tbody>
+{{TREND_ROWS}}
+</tbody>
+</table>
+</div>
+<details>
+<summary>Every snapshot</summary>
+{{SNAPSHOT_TABLES}}
+{{OLDER}}
+</details>
+</section>
+
 <section id="scope">
 <h2>What the numbers leave out</h2>
 <h3>Less code is not proof of safety</h3>
@@ -235,8 +270,8 @@ ul.evidence code{font-size:.8em}
 <li><strong>Complexity:</strong> each file was parsed with <a href="https://tree-sitter.github.io/">tree-sitter</a>, and one rule applied to every language. CC is 1, plus 1 for each <code>if</code> or <code>guard</code>, loop, <code>catch</code>, ternary, <code>&amp;&amp;</code>, <code>||</code>, <code>??</code> or elvis, and non-default <code>case</code>, <code>when</code> or <code>match</code> arm. Closures, lambdas and nested functions count toward the function that contains them. Tree-sitter could not fully parse at most {{PE_MAX}}% of any wallet’s files; it recovers locally, so their functions are still counted.</li>
 <li><strong>Dependencies:</strong> read from each app’s own lockfiles (Swift Package Manager, CocoaPods, yarn and bun). Kotlin libraries were resolved from Maven Central’s metadata for the iPhone target. Rust crates come from <code>cargo tree</code> for <code>aarch64-apple-ios</code> at each prebuilt library’s pinned source. Go modules come from <code>go list -deps</code> with the build tags LND’s own iOS build uses.</li>
 <li><strong>Vendored code:</strong> each repository was searched for third-party code committed into it: vendor directories, copied npm packages, license files below the root, committed binaries and dependency patches.</li>
-<li><strong>Features:</strong> each cell was checked in the app’s and the engine’s source at the revision below.</li>
-<li><strong>Lightning engines:</strong> counted at the version each app pins, as the named library only. Zeus’s count uses its default embedded LND and does not add its optional LDK Node.</li>
+<li><strong>Features:</strong> each cell was checked by hand in the app’s and the engine’s source {{REVIEWED}}, at the revisions in <code>reviewed.json</code>. The build compares every cited passage with today’s code and lists any that have changed.</li>
+<li><strong>Lightning engines:</strong> counted at the version each app pins, as the named library only. Phoenix’s lightning-kmp comes from its Gradle catalog. Bitkit’s LDK Node and libraries come from its Package.resolved, and rust-lightning from LDK Node’s lockfile. Blixt’s LND is the fork its react-native-turbo-lnd release builds. Zeus’s LND, LDK Node and Cashu versions come from its <code>fetch-libraries-versions.json</code>. Zeus’s count uses its default embedded LND and does not add its optional LDK Node.</li>
 </ul>
 <details>
 <summary>Exact sources</summary>
@@ -249,7 +284,7 @@ ul.evidence code{font-size:.8em}
 </table>
 </div>
 </details>
-<p>Each project changes often. These numbers are a dated measurement, not a ranking.</p>
+<p>Each project changes often. These numbers are measured again every day, and each snapshot is dated. They are a measurement, not a ranking.</p>
 <h3 id="reproduce">Reproduce it</h3>
 <p>Everything on this page is generated from the <a href="https://github.com/winnowwallet/compare">source repository</a>. It pins every project to an exact commit, and <code>data.json</code> holds every measurement, including the full package lists. To rebuild it:</p>
 <pre><code>git clone https://github.com/winnowwallet/compare
@@ -257,7 +292,7 @@ cd compare
 npm ci &amp;&amp; pip install -r requirements.txt
 ./build          # fetch the pinned sources, measure, render
 git diff         # nothing changes if the measurement reproduces</code></pre>
-<p>It needs Python 3.11, Node, Go and Cargo, plus network access to GitHub, crates.io, the Go module proxy and Maven Central. Feature cells and profile facts are reviewed by hand. The build checks that every one of their citations still resolves at the pinned revision.</p>
+<p>It needs Python 3.11, Node, Go and Cargo, plus network access to GitHub, crates.io, the Go module proxy and Maven Central. Feature cells and profile facts are reviewed by hand. The build checks that every citation resolves at the revision it was reviewed against, and reports which cited code has changed since.</p>
 </section>
 
 <section id="other">
@@ -269,5 +304,37 @@ git diff         # nothing changes if the measurement reproduces</code></pre>
 </section>
 </main>
 <footer><div class="bar"><nav aria-label="Footer"><a href="https://winnowwallet.com/">Winnow</a><a href="https://census.winnowwallet.com/">Census</a><a href="data.json">All data (JSON)</a><a href="https://github.com/winnowwallet/compare">Source</a></nav></div></footer>
+<script>
+// Sparklines: hovering or focusing shows the nearest snapshot's value and date in place of today's; arrow keys step.
+for (const svg of document.querySelectorAll('svg.spark')) {
+  const d = svg.dataset.d.split(','), v = svg.dataset.v.split(',').map(Number);
+  const x = svg.dataset.x.split(',').map(Number), y = svg.dataset.y.split(',').map(Number);
+  const cell = svg.parentElement, val = cell.querySelector('.val'), note = cell.querySelector('.delta');
+  const cross = svg.querySelector('.cross'), dot = svg.querySelector('.hover'), rest = [val.textContent, note.textContent];
+  const when = s => new Date(s + 'T00:00:00Z').toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'});
+  let at = d.length - 1;
+  const show = i => {
+    at = i;
+    cross.setAttribute('x1', x[i]); cross.setAttribute('x2', x[i]); cross.style.display = 'block';
+    dot.setAttribute('cx', x[i]); dot.setAttribute('cy', y[i]); dot.style.display = 'block';
+    val.textContent = v[i].toLocaleString('en-US'); note.textContent = when(d[i]); cell.classList.add('reading');
+  };
+  const hide = () => {
+    cross.style.display = dot.style.display = 'none';
+    [val.textContent, note.textContent] = rest; cell.classList.remove('reading');
+  };
+  svg.addEventListener('pointermove', e => {
+    const r = svg.getBoundingClientRect(), px = (e.clientX - r.left) / r.width * svg.viewBox.baseVal.width;
+    show(x.reduce((best, xi, i) => Math.abs(xi - px) < Math.abs(x[best] - px) ? i : best, 0));
+  });
+  svg.addEventListener('pointerleave', hide);
+  svg.addEventListener('focus', () => show(at));
+  svg.addEventListener('blur', hide);
+  svg.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft' && at > 0) { show(at - 1); e.preventDefault(); }
+    if (e.key === 'ArrowRight' && at < d.length - 1) { show(at + 1); e.preventDefault(); }
+  });
+}
+</script>
 </body>
 </html>

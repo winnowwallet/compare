@@ -1,11 +1,15 @@
 """Render site/index.html and site/data.json from data/, features/ and wallets.json.
-No number on the page is typed by hand; every citation links to the pinned revision."""
+No number on the page is typed by hand. Citations link to the revision they were reviewed
+against; everything measured links to today's pins. Sentences whose wording depends on the
+numbers are checked in claims(), so a daily run fails rather than publish one that stopped
+being true."""
 import html
 import json
+import math
 import re
 from datetime import date
 
-from common import CONFIG, DATA, ROOT, write_json
+from common import CONFIG, DATA, REVIEWED, ROOT, write_json
 
 esc = html.escape
 PROFILES = json.loads((ROOT / 'wallets.json').read_text())
@@ -14,14 +18,23 @@ loc = json.loads((DATA / 'loc.json').read_text())
 cc = json.loads((DATA / 'complexity.json').read_text())
 deps = json.loads((DATA / 'deps.json').read_text())
 vend = json.loads((DATA / 'vendored.json').read_text())
+drift = json.loads((DATA / 'drift.json').read_text())
+history = json.loads((DATA / 'history.json').read_text())['snapshots']
 features = {w: json.loads((ROOT / f'features/{w.lower()}.json').read_text())['features'] for w in ORDER}
 P = PROFILES['profiles']
 SNAPSHOT = date.fromisoformat(CONFIG['snapshot'])
-SNAPSHOT_TEXT = f'{SNAPSHOT.day} {SNAPSHOT:%B %Y}'
 
 
-def link(source, path, line=None, end=None, text=None):
-    spec = CONFIG['sources'][source]
+def day(d):
+    d = date.fromisoformat(d) if isinstance(d, str) else d
+    return f'{d.day} {d:%B %Y}'
+
+
+SNAPSHOT_TEXT = day(SNAPSHOT)
+
+
+def link(source, path, line=None, end=None, text=None, reviewed=False):
+    spec = (REVIEWED if reviewed else CONFIG)['sources'][source]
     base = spec['repo'].removesuffix('.git')
     anchor = f'#L{line}' + (f'-L{end}' if end else '') if line else ''
     shown = text or (path.rsplit('/', 1)[-1] + (f':{line}' if line else ''))
@@ -33,7 +46,7 @@ def cite_links(text):
     out = []
     for item in (t.strip() for t in text.split(';') if t.strip()):
         source, path, a, b = re.fullmatch(r'([a-z0-9-]+):([^:]+?)(?::(\d+)(?:-(\d+))?)?', item).groups()
-        out.append(link(source, path, a, b))
+        out.append(link(source, path, a, b, reviewed=True))
     return ' '.join(out)
 
 
@@ -42,11 +55,16 @@ def name_cell(w, tag='th'):
     return f'<th scope="row">{inner}</th>' if tag == 'th' else inner
 
 
+def versions(text):
+    """{version:lnd-zeus} in a hand-written fact is the version measured today."""
+    return re.sub(r'\{version:([a-z0-9-]+)\}', lambda m: CONFIG['sources'][m.group(1)]['version'], text)
+
+
 def fact(value):
     if isinstance(value, dict):
         cite = f' <span class="cite">{cite_links(value["cite"])}</span>' if value.get('cite') else ''
-        return esc(value['text']) + cite
-    return esc(value)
+        return esc(versions(value['text'])) + cite
+    return esc(versions(value))
 
 
 # ── at a glance ────────────────────────────────────────────────
@@ -56,9 +74,6 @@ glance = '\n'.join(
 
 # ── code size chart and table ──────────────────────────────────
 ROLES = [('app', 'App', 'app'), ('lightning', 'Lightning engine', 'ln'), ('bitcoin', 'Bitcoin library', 'btc')]
-MAX = {'l': 450_000, 'c': 10_000_000}
-TICKS = {'l': [(0, '0'), (100_000, '100k'), (200_000, '200k'), (300_000, '300k'), (400_000, '400k')],
-         'c': [(0, '0'), (2_000_000, '2M'), (4_000_000, '4M'), (6_000_000, '6M'), (8_000_000, '8M')]}
 
 
 def tot(w, key):
@@ -67,6 +82,24 @@ def tot(w, key):
 
 def k(n):
     return f'{n / 1000:.0f}k' if n < 1_000_000 else f'{n / 1_000_000:.1f}M'
+
+
+def tick_label(n):
+    return '0' if not n else f'{n / 1000:g}k' if n < 1_000_000 else f'{n / 1_000_000:g}M'
+
+
+def scale(biggest):
+    """A round tick step giving at most five intervals, and an axis end just past the biggest bar."""
+    exp = 10 ** math.floor(math.log10(biggest / 4))
+    step = next(m * exp for m in (1, 2, 2.5, 5, 10) if m * exp * 5 >= biggest)
+    end = biggest * 1.06
+    return end, [(v, tick_label(v)) for v in range(0, int(end), int(step))], step
+
+
+MAX, TICKS, GRID = {}, {}, {}
+for u, key in (('l', 'code'), ('c', 'chars')):
+    MAX[u], TICKS[u], step = scale(max(tot(w, key) for w in ORDER))
+    GRID[u] = f'{100 * step / MAX[u]:.4f}%'
 
 
 def pct(n, u):
@@ -139,6 +172,14 @@ for w in ORDER:
                             f'<td class="num">{p["mean_cc"]:.1f}</td><td class="num">{p["p90_cc"]}</td><td class="num">{p["max_cc"]}</td>'
                             f'<td class="num">{p["cc_gt_12"]:,}</td><td class="num">{p["cc_gt_30"]:,}</td>'
                             f'<td>{link(source, path, line, text=top["function"][:32])}</td></tr>')
+
+lnd_b, lnd_z = CONFIG['sources']['lnd-blixt'], CONFIG['sources']['lnd-zeus']
+if lnd_b['rev'] == lnd_z['rev']:
+    lnd_note = 'Blixt and Zeus build the same LND, so their engine rows match.'
+else:
+    repo = lambda spec: esc(spec['repo'].removeprefix('https://github.com/'))
+    lnd_note = (f'Blixt and Zeus each build their own LND: Blixt LND {lnd_b["version"]} from {repo(lnd_b)}, '
+                f'Zeus LND {lnd_z["version"]} from {repo(lnd_z)}.')
 
 # ── dependencies ───────────────────────────────────────────────
 def dep_cell(w, key):
@@ -220,6 +261,93 @@ for w in ORDER:
     source_rows.append(f'<tr>{name_cell(w)}<td>{src(app_key)}</td><td>{engine_cell}</td><td>{extra_cell}</td></tr>')
 other = '\n'.join(f'<li><strong>{esc(n)}</strong> {esc(t)}</li>' for n, t in PROFILES['other_approaches'])
 
+# ── over time ──────────────────────────────────────────────────
+TRENDS = [('lines', 'Lines of code'), ('packages', 'Third-party packages'), ('cc_gt_12', 'Functions above CC 12')]
+SPARK_W, SPARK_H, PAD = 144, 32, 6
+first_day = date.fromisoformat(history[0]['date'])
+
+
+def spark(w, key, label):
+    """A sparkline tile: today's value, the change since tracking began, and every snapshot in between.
+    The y range is at least a tenth of the value, so a small change does not fill the tile."""
+    rows = [r for r in history if w in r['wallets'] and key in r['wallets'][w]]
+    days = [date.fromisoformat(r['date']) for r in rows]
+    vals = [r['wallets'][w][key] for r in rows]
+    span_days = (days[-1] - days[0]).days
+    xs = [PAD + (SPARK_W - 2 * PAD) * ((d - days[0]).days / span_days if span_days else 1) for d in days]
+    lo, hi = min(vals), max(vals)
+    pad = max(hi - lo, 0.1 * hi, 1) - (hi - lo)
+    lo, hi = lo - pad / 2, hi + pad / 2
+    ys = [SPARK_H - PAD - (SPARK_H - 2 * PAD) * (v - lo) / (hi - lo) for v in vals]
+    pts = ' '.join(f'{x:.1f},{y:.1f}' for x, y in zip(xs, ys))
+    now, was = vals[-1], vals[0]
+    if len(vals) == 1:
+        change = '<span class="delta">first snapshot</span>'
+    elif now == was:
+        change = '<span class="delta">no change</span>'
+    else:
+        pct_text = f' ({100 * (now - was) / was:+.1f}%)' if was else ''
+        change = f'<span class="delta">{f"{now - was:+,}{pct_text}".replace("-", "−")}</span>'
+    aria = (f'{w}, {label.lower()}: {now:,} on {day(days[-1])}' +
+            (f', from {was:,} on {day(days[0])}' if len(vals) > 1 else '') + '. Arrow keys step through snapshots.')
+    return (f'<td class="trend-cell"><span class="val">{now:,}</span>{change}'
+            f'<svg class="spark" viewBox="0 0 {SPARK_W} {SPARK_H}" width="{SPARK_W}" height="{SPARK_H}" tabindex="0" role="img" aria-label="{esc(aria)}" '
+            f'data-d="{",".join(r["date"] for r in rows)}" data-v="{",".join(map(str, vals))}" '
+            f'data-x="{",".join(f"{x:.1f}" for x in xs)}" data-y="{",".join(f"{y:.1f}" for y in ys)}">'
+            f'<line class="cross" x1="0" x2="0" y1="0" y2="{SPARK_H}"/>'
+            + (f'<polyline points="{pts}"/>' if len(vals) > 1 else '') +
+            f'<circle class="end" cx="{xs[-1]:.1f}" cy="{ys[-1]:.1f}" r="4"/><circle class="hover" r="4"/></svg></td>')
+
+
+trend_rows = '\n'.join(f'<tr>{name_cell(w)}{"".join(spark(w, key, label) for key, label in TRENDS)}</tr>' for w in ORDER)
+
+
+def moved(prev, row):
+    if prev is None:
+        return 'First snapshot'
+    notes = ['Counting rules changed'] if prev['method'] != row['method'] else []
+    keys = [k for k, rev in row['sources'].items() if prev['sources'].get(k) != rev]
+    return '; '.join(notes + [', '.join(keys)] if keys else notes) or '—'
+
+
+RECENT = 90
+recent = list(enumerate(history))[-RECENT:][::-1]
+snapshot_tables = []
+for n, (key, label) in enumerate(TRENDS):
+    body = '\n'.join(
+        f'<tr><th scope="row">{day(r["date"])}</th>' +
+        ''.join(f'<td class="num">{r["wallets"][w][key]:,}</td>' if w in r['wallets'] else '<td class="num dim">—</td>' for w in ORDER) +
+        (f'<td class="wrap">{esc(moved(history[i - 1] if i else None, r))}</td>' if n == 0 else '') + '</tr>'
+        for i, r in recent)
+    extra = '<th scope="col">Sources that moved</th>' if n == 0 else ''
+    snapshot_tables.append(
+        f'<div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table"><table class="snapshots">'
+        f'<caption>{label}</caption><thead><tr><th scope="col">Snapshot</th>'
+        + ''.join(f'<th scope="col" class="num">{w}</th>' for w in ORDER) + f'{extra}</tr></thead><tbody>\n{body}\n</tbody></table></div>')
+older = (f'<p>The page lists the latest {RECENT} snapshots; <a href="data.json">data.json</a> has all {len(history)}.</p>'
+         if len(history) > RECENT else '')
+
+# ── how fresh the hand review is ───────────────────────────────
+reviewed_text = (f"on {day(drift['reviewed'])}" if drift['reviewed'] == drift['reviewed_latest'] else
+                 f'between {day(drift["reviewed"])} and {day(drift["reviewed_latest"])}')
+stale = drift['changed'] + drift['gone']
+if not stale and not drift['moved']:
+    drift_text = 'Nothing they cite has changed since.'
+else:
+    where = [w for w in ORDER if any(r['wallet'] == w for r in drift['changed_or_gone'])]
+    where_text = f' (all in {where[0]})' if len(where) == 1 else f' (in {", ".join(where[:-1])} and {where[-1]})' if where else ''
+    parts = [f'{stale} of the {drift["citations"]} cited passages have changed{where_text}' if stale else '',
+             f'{drift["moved"]} have moved within their file' if drift['moved'] else '']
+    drift_text = f'Since that review, {" and ".join(p for p in parts if p)} in the code measured below.'
+FACT_LABELS = {f'features.{key}': label for _, items in GROUPS for key, label in items} | {
+    'profile.chain_data': 'Chain data', 'profile.partner': 'Channel partner', 'profile.libraries': 'Main libraries',
+    'profile.prebuilt': 'Prebuilt binaries', 'profile.engine': 'Lightning engine', 'features.license': 'Source license'}
+drift_items = ''.join(
+    f'<li>{esc(r["wallet"])}, {esc(FACT_LABELS.get(r["fact"], r["fact"]))}: '
+    f'{cite_links(r["cite"])} {"no longer exists" if r["status"] == "gone" else "has changed"}</li>' for r in drift['changed_or_gone'])
+drift_list = (f'<p>Cited code that has changed since the review, and so is due a fresh look:</p><ul class="evidence">{drift_items}</ul>'
+              if drift_items else '')
+
 # ── prose numbers ──────────────────────────────────────────────
 others = [w for w in ORDER if w != 'Winnow']
 lr = sorted(tot(w, 'code') / W_L for w in others)
@@ -229,6 +357,27 @@ ocpl = sorted(cpl[w] for w in others)
 p12 = {w: 100 * cc[w]['all']['cc_gt_12'] / cc[w]['all']['functions'] for w in ORDER}
 parse_errors = max(100 * sum(p.get('files_with_parse_errors', 0) for kk, p in cc[w].items() if kk != 'all') /
                    sum(p.get('files', 0) for kk, p in cc[w].items() if kk != 'all') for w in ORDER)
+
+
+def claims():
+    """Sentences in page/template.html whose wording depends on the numbers."""
+    wrong = []
+    if lr[0] <= 1:
+        wrong.append('"The other wallets ship … times as many lines" needs every other wallet above Winnow')
+    if cpl['Winnow'] <= ocpl[-1]:
+        wrong.append('"Winnow’s lines are denser" needs Winnow’s characters per line above every other wallet’s')
+    if not all(cc['Winnow']['all']['mean_cc'] > cc[w]['all']['mean_cc'] for w in ('Phoenix', 'Bitkit')):
+        wrong.append('"Its average is … higher than Phoenix’s and Bitkit’s" no longer holds')
+    if [p.split('@')[0] for p in deps['Winnow'].get('spm', [])] != ['swift-secp256k1'] or deps['Winnow']['total'] != 1:
+        wrong.append('"Winnow depends on 1 third-party package: swift-secp256k1" no longer holds')
+    if sum(1 for v in languages['Winnow'].values() if v) != 1:
+        wrong.append('"Winnow is written in one language" no longer holds')
+    if len(CONFIG['wallets']['Bitkit']['deps']['cargo']) != 4:
+        wrong.append('"Bitkit’s four libraries" no longer matches sources.json')
+    if wrong:
+        raise SystemExit('Page sentences that are no longer true; reword them in page/template.html:\n  ' + '\n  '.join(wrong))
+
+
 subs = {
     'GLANCE': glance, 'ROWS': '\n'.join(rows), 'AXIS_L': axis[0], 'AXIS_C': axis[1], 'SIZE_TABLE': '\n'.join(size_table),
     'LANG_ROWS': '\n'.join(lang_rows), 'CC_ROWS': '\n'.join(cc_rows), 'CC_PARTS': '\n'.join(cc_parts),
@@ -240,7 +389,11 @@ subs = {
     'CR_MIN': f'{cr[0]:.1f}', 'CR_MAX': f'{cr[-1]:.1f}', 'W_CPL': f'{cpl["Winnow"]:.0f}',
     'O_CPL_MIN': f'{ocpl[0]:.0f}', 'O_CPL_MAX': f'{ocpl[-1]:.0f}',
     'E_PHX': f'{loc["Phoenix"]["lightning"]["code"]:,}', 'E_BITKIT': f'{loc["Bitkit"]["lightning"]["code"]:,}',
-    'E_LND': f'{loc["Zeus"]["lightning"]["code"]:,}',
+    'E_LND_Z': f'{loc["Zeus"]["lightning"]["code"]:,}', 'E_LND_B': f'{loc["Blixt"]["lightning"]["code"]:,}',
+    'LND_NOTE': lnd_note, 'GRID_L': GRID['l'], 'GRID_C': GRID['c'],
+    'TREND_ROWS': trend_rows, 'SNAPSHOT_TABLES': '\n'.join(snapshot_tables), 'OLDER': older,
+    'FIRST_DAY': day(first_day), 'SNAPSHOTS_N': f'{len(history):,}',
+    'REVIEWED': reviewed_text, 'DRIFT_TEXT': drift_text, 'DRIFT_LIST': drift_list, 'CITES': str(drift['citations']),
     'P12_W': f'{p12["Winnow"]:.1f}', 'P12_MIN': f'{min(p12[w] for w in others):.1f}', 'P12_MAX': f'{max(p12[w] for w in others):.1f}',
     'W_MAXCC': str(cc['Winnow']['all']['max_cc']), 'W_MEAN': f'{cc["Winnow"]["all"]["mean_cc"]:.1f}', 'PE_MAX': f'{parse_errors:.0f}',
     'DEP_W': f'{deps["Winnow"]["total"]:,}', 'DEP_P': f'{deps["Phoenix"]["total"]:,}',
@@ -253,6 +406,7 @@ subs = {
 
 
 def main():
+    claims()
     page = (ROOT / 'page/template.html').read_text()
     for key, value in subs.items():
         page = page.replace('{{' + key + '}}', value)
@@ -262,7 +416,8 @@ def main():
     (ROOT / 'site/index.html').write_text(page)
     write_json(ROOT / 'site/data.json', {
         'snapshot': CONFIG['snapshot'], 'sources': CONFIG['sources'], 'lines': loc, 'languages_percent': languages,
-        'complexity': cc, 'dependencies': deps, 'vendored': vend, 'features': features, 'profiles': P})
+        'complexity': cc, 'dependencies': deps, 'vendored': vend, 'features': features, 'profiles': P,
+        'reviewed': REVIEWED, 'drift': drift, 'history': history})
     print(f'site/index.html {len(page):,} bytes; site/data.json')
 
 

@@ -1,0 +1,133 @@
+{
+ "reviewed": "2026-09-27",
+ "reviewed_latest": "2026-09-27",
+ "measured": "2026-09-27",
+ "citations": 239,
+ "same": 226,
+ "moved": 9,
+ "changed": 4,
+ "gone": 0,
+ "by_wallet": {
+  "Winnow": {
+   "same": 35,
+   "moved": 9,
+   "changed": 4,
+   "gone": 0
+  },
+  "Phoenix": {
+   "same": 43,
+   "moved": 0,
+   "changed": 0,
+   "gone": 0
+  },
+  "Bitkit": {
+   "same": 53,
+   "moved": 0,
+   "changed": 0,
+   "gone": 0
+  },
+  "Blixt": {
+   "same": 47,
+   "moved": 0,
+   "changed": 0,
+   "gone": 0
+  },
+  "Zeus": {
+   "same": 48,
+   "moved": 0,
+   "changed": 0,
+   "gone": 0
+  }
+ },
+ "changed_or_gone": [
+  {
+   "wallet": "Winnow",
+   "fact": "features.bolt11_pay",
+   "cite": "winnow:Sources/WinnowApp/LightningLiquidityView.swift:68",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.jit_channels",
+   "cite": "winnow:Sources/WinnowApp/LightningLiquidityView.swift:68",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.local_pathfinding",
+   "cite": "winnow:Sources/LightningCore/LightningPeerSession.swift:137",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.local_pathfinding",
+   "cite": "winnow:Sources/LightningCore/README.md:136",
+   "status": "changed"
+  }
+ ],
+ "moved_within_file": [
+  {
+   "wallet": "Winnow",
+   "fact": "features.bolt11_receive",
+   "cite": "winnow:Sources/WinnowApp/LightningReceiveView.swift:34",
+   "status": "moved",
+   "now_at": 37
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.bolt11_receive",
+   "cite": "winnow:Sources/WinnowApp/LightningAppReceiving.swift:89",
+   "status": "moved",
+   "now_at": 110
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.bolt12_receive",
+   "cite": "winnow:Sources/WinnowApp/LightningView.swift:117",
+   "status": "moved",
+   "now_at": 135
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.ln_address_receive",
+   "cite": "winnow:Sources/WinnowApp/LightningReceiveView.swift:34",
+   "status": "moved",
+   "now_at": 37
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.ln_address_receive",
+   "cite": "winnow:Sources/WinnowApp/LightningView.swift:117",
+   "status": "moved",
+   "now_at": 135
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.jit_channels",
+   "cite": "winnow:Sources/WinnowApp/LightningAppReceiving.swift:34",
+   "status": "moved",
+   "now_at": 55
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.watchtower",
+   "cite": "winnow:Sources/WinnowApp/LightningView.swift:21",
+   "status": "moved",
+   "now_at": 23
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.channel_backup",
+   "cite": "winnow:Sources/WinnowApp/AppModel.swift:425",
+   "status": "moved",
+   "now_at": 438
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.coin_control",
+   "cite": "winnow:Sources/WinnowApp/AppModel.swift:1842",
+   "status": "moved",
+   "now_at": 1379
+  }
+ ]
+}

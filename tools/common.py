@@ -11,7 +11,9 @@ SOURCES_DIR = ROOT / '.sources'
 STAGE = ROOT / '.stage'
 DATA = ROOT / 'data'
 CLOC = ROOT / 'node_modules/.bin/cloc'
-CONFIG = json.loads((ROOT / 'sources.json').read_text())
+CONFIG_PATH = ROOT / 'sources.json'
+CONFIG = json.loads(CONFIG_PATH.read_text())
+REVIEWED = json.loads((ROOT / 'reviewed.json').read_text())
 WALLETS = list(CONFIG['wallets'])
 
 # Programming languages only: no JSON, XML, Markdown, assets or build scripts.
@@ -45,6 +47,22 @@ def resolve(ref):
 def write_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, indent=1, sort_keys=False, ensure_ascii=False) + '\n')
+
+
+def dumps(value, width=150, indent=''):
+    """JSON for files people edit: anything that fits on one line stays on one line."""
+    flat = json.dumps(value, ensure_ascii=False)
+    if len(indent) + len(flat) <= width or not isinstance(value, (dict, list)) or not value:
+        return flat
+    inner = indent + ' '
+    if isinstance(value, dict):
+        items = [f'{inner}{json.dumps(k)}: {dumps(v, width, inner)}' for k, v in value.items()]
+        return '{\n' + ',\n'.join(items) + '\n' + indent + '}'
+    return '[\n' + ',\n'.join(inner + dumps(v, width, inner) for v in value) + '\n' + indent + ']'
+
+
+def write_config(path, value):
+    path.write_text(dumps(value) + '\n')
 
 
 def strip_rust_tests(text):
@@ -94,6 +112,8 @@ def counted_files(refs):
     kept, generated = [], []
     for ref in refs:
         src = resolve(ref)
+        if not src.exists():
+            raise SystemExit(f'{ref} does not exist at the pinned revision; update the paths in sources.json')
         files = [src] if src.is_file() else sorted(f for f in src.rglob('*') if f.is_file())
         for f in files:
             rel = str(f.relative_to(SOURCES_DIR))

@@ -3,114 +3,221 @@
  "sources": {
   "winnow": {
    "repo": "https://github.com/posix4e/winnow-lightning",
-   "rev": "f379b7cec9a025e0910f8e334dfcd36a6f1f9040",
-   "label": "winnow-lightning@f379b7c",
+   "track": {
+    "branch": "refs/heads/codex/lightning-receive-providers"
+   },
+   "rev": "1f1bfdd956c84765c444ed6b0667806b20626c55",
+   "label": "posix4e/winnow-lightning@1f1bfdd",
    "date": "2026-09-27"
   },
   "phoenix": {
    "repo": "https://github.com/ACINQ/phoenix",
+   "track": {
+    "branch": "HEAD"
+   },
    "rev": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
-   "label": "phoenix@1facad2",
+   "label": "ACINQ/phoenix@1facad2",
    "date": "2026-09-23"
   },
   "lightning-kmp": {
    "repo": "https://github.com/ACINQ/lightning-kmp",
+   "track": {
+    "from": "phoenix:gradle/libs.versions.toml",
+    "toml": "versions.lightningkmp",
+    "tag": "v{}"
+   },
    "rev": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
-   "label": "lightning-kmp v1.12.0",
-   "tag": "v1.12.0"
+   "tag": "v1.12.0",
+   "version": "1.12.0",
+   "label": "ACINQ/lightning-kmp v1.12.0",
+   "date": "2026-05-19"
   },
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
+   "track": {
+    "branch": "HEAD"
+   },
    "rev": "c906d5af336dd1ceec22bcbbb1c7d9f115e2d021",
-   "label": "bitkit-ios@c906d5a",
+   "label": "synonymdev/bitkit-ios@c906d5a",
    "date": "2026-09-25"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",
+   "track": {
+    "from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
+    "spm": "ldk-node"
+   },
+   "lock": "locks/synonym-ldk-node.Cargo.lock",
    "rev": "190a17d966cf5a685444cfa17c3a419c290bf26c",
-   "label": "ldk-node@190a17d (0.7.0-rc.66)"
+   "version": "0.7.0-rc.66",
+   "label": "synonymdev/ldk-node 0.7.0-rc.66",
+   "date": "2026-09-02"
   },
   "rust-lightning": {
    "repo": "https://github.com/lightningdevkit/rust-lightning",
-   "rev": "311ad94772722ff9c54ec0f7656a4b811be5b846",
-   "label": "rust-lightning v0.2",
-   "tag": "v0.2"
-  },
-  "zeus": {
-   "repo": "https://github.com/ZeusLN/zeus",
-   "rev": "aeb9c10c6b0b8aad4752c08457a4f0d127ea4645",
-   "label": "zeus@aeb9c10",
-   "date": "2026-09-27"
-  },
-  "lnd": {
-   "repo": "https://github.com/lightningnetwork/lnd",
-   "rev": "572b561bf05f03dfe6135110970c4d858c3482dc",
-   "label": "lnd v0.21.3-beta",
-   "tag": "v0.21.3-beta"
-  },
-  "blixt": {
-   "repo": "https://github.com/hsjoberg/blixt-wallet",
-   "rev": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
-   "label": "blixt-wallet@baa6ba0",
-   "date": "2026-08-21"
+   "track": {
+    "from": "synonym-ldk-node:Cargo.lock",
+    "cargo": "lightning",
+    "tag": "v{}"
+   },
+   "rev": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
+   "tag": "v0.2.6",
+   "version": "0.2.6",
+   "label": "lightningdevkit/rust-lightning v0.2.6",
+   "date": "2026-09-09"
   },
   "bitkit-core": {
    "repo": "https://github.com/synonymdev/bitkit-core",
+   "track": {
+    "from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
+    "spm": "bitkit-core"
+   },
    "rev": "b53fa54a16f04940943072bb6e08dc2650302f93",
-   "label": "bitkit-core v0.5.18",
-   "tag": "v0.5.18"
+   "version": "0.5.18",
+   "label": "synonymdev/bitkit-core 0.5.18",
+   "date": "2026-09-21"
   },
   "paykit-rs": {
    "repo": "https://github.com/pubky/paykit-rs",
+   "track": {
+    "from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
+    "spm": "paykit-rs"
+   },
    "rev": "4613beee25d1680ed8bc849446498e9bfb2cdb16",
-   "label": "paykit-rs v0.1.0-rc55",
-   "tag": "v0.1.0-rc55"
+   "version": "0.1.0-rc55",
+   "label": "pubky/paykit-rs 0.1.0-rc55",
+   "date": "2026-09-15"
   },
   "vss-rust-client-ffi": {
    "repo": "https://github.com/synonymdev/vss-rust-client-ffi",
+   "track": {
+    "from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
+    "spm": "vss-rust-client-ffi"
+   },
    "rev": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
-   "label": "vss-rust-client-ffi v0.5.23",
-   "tag": "v0.5.23"
+   "version": "0.5.23",
+   "label": "synonymdev/vss-rust-client-ffi 0.5.23",
+   "date": "2026-08-17"
+  },
+  "blixt": {
+   "repo": "https://github.com/hsjoberg/blixt-wallet",
+   "track": {
+    "branch": "HEAD"
+   },
+   "rev": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
+   "label": "hsjoberg/blixt-wallet@baa6ba0",
+   "date": "2026-08-21"
+  },
+  "turbo-lnd": {
+   "repo": "https://github.com/hsjoberg/react-native-turbo-lnd",
+   "track": {
+    "from": "blixt:bun.lock",
+    "bun": "react-native-turbo-lnd",
+    "tag": "v{}"
+   },
+   "rev": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
+   "tag": "v0.0.22",
+   "version": "0.0.22",
+   "label": "hsjoberg/react-native-turbo-lnd v0.0.22",
+   "date": "2026-08-03"
+  },
+  "lnd-blixt": {
+   "repo": "https://github.com/hsjoberg/lnd",
+   "track": {
+    "from": "turbo-lnd:lnd-source.properties",
+    "properties": {
+     "repo": "https://github.com/{repository}",
+     "rev": "{ref}"
+    }
+   },
+   "version_from": {
+    "path": "build/version.go",
+    "pattern": "AppMajor uint = (\\d+)[\\s\\S]*?AppMinor uint = (\\d+)[\\s\\S]*?AppPatch uint = (\\d+)"
+   },
+   "rev": "ae185f27e097a4106d04437f0a2be6edacf40910",
+   "label": "hsjoberg/lnd@ae185f2 (0.21.1)",
+   "date": "2026-08-03",
+   "version": "0.21.1"
+  },
+  "zeus": {
+   "repo": "https://github.com/ZeusLN/zeus",
+   "track": {
+    "branch": "HEAD"
+   },
+   "rev": "5792769159aec740c31d8f28a0d606c96ccd1618",
+   "label": "ZeusLN/zeus@5792769",
+   "date": "2026-09-27"
+  },
+  "lnd-zeus": {
+   "repo": "https://github.com/ZeusLN/lnd",
+   "track": {
+    "from": "zeus:fetch-libraries-versions.json",
+    "json": "embedded-lnd.version",
+    "tag": "{}"
+   },
+   "version_from": {
+    "path": "build/version.go",
+    "pattern": "AppMajor uint = (\\d+)[\\s\\S]*?AppMinor uint = (\\d+)[\\s\\S]*?AppPatch uint = (\\d+)"
+   },
+   "rev": "ae24665a916d94fa89475b21ec27e8cda0eb5845",
+   "tag": "v0.21.3-beta-zeus",
+   "version": "0.21.3",
+   "label": "ZeusLN/lnd v0.21.3-beta-zeus",
+   "date": "2026-09-02"
   },
   "zeus-ldk-node": {
    "repo": "https://github.com/ZeusLN/ldk-node",
+   "track": {
+    "from": "zeus:fetch-libraries-versions.json",
+    "json": "ldk-node.version",
+    "tag": "{}"
+   },
    "rev": "921ef6370a5694ed8cf00538878420ccb5afe09d",
+   "tag": "v0.7.0-zeus-rl-0.2.5",
+   "version": "0.7.0-zeus-rl-0.2.5",
    "label": "ZeusLN/ldk-node v0.7.0-zeus-rl-0.2.5",
-   "tag": "v0.7.0-zeus-rl-0.2.5"
+   "date": "2026-08-27"
   },
   "cdk": {
    "repo": "https://github.com/cashubtc/cdk",
+   "track": {
+    "from": "zeus:fetch-libraries-versions.json",
+    "json": "cdk.version",
+    "tag": "v{}"
+   },
    "rev": "874745d5d79b36be346efbd716393357ab898834",
-   "label": "cdk v0.17.4",
-   "tag": "v0.17.4"
+   "tag": "v0.17.4",
+   "version": "0.17.4",
+   "label": "cashubtc/cdk v0.17.4",
+   "date": "2026-08-14"
   }
  },
  "lines": {
   "Winnow": {
    "app": {
-    "code": 10298,
-    "chars": 336449,
-    "files": 47,
+    "code": 10576,
+    "chars": 349214,
+    "files": 50,
     "languages": {
-     "Swift": 10298
+     "Swift": 10576
     },
     "generated_excluded": []
    },
    "bitcoin": {
-    "code": 13120,
-    "chars": 445981,
+    "code": 13132,
+    "chars": 446285,
     "files": 61,
     "languages": {
-     "Swift": 13120
+     "Swift": 13132
     },
     "generated_excluded": []
    },
    "lightning": {
-    "code": 4907,
-    "chars": 229156,
-    "files": 55,
+    "code": 5484,
+    "chars": 256733,
+    "files": 63,
     "languages": {
-     "Swift": 4907
+     "Swift": 5484
     },
     "generated_excluded": []
    }
@@ -150,11 +257,11 @@
     "generated_excluded": []
    },
    "lightning": {
-    "code": 126384,
-    "chars": 3790085,
-    "files": 225,
+    "code": 127646,
+    "chars": 3812752,
+    "files": 226,
     "languages": {
-     "Rust": 126384
+     "Rust": 127646
     },
     "generated_excluded": []
    }
@@ -181,38 +288,38 @@
     ]
    },
    "lightning": {
-    "code": 239849,
-    "chars": 5558536,
-    "files": 1180,
+    "code": 238947,
+    "chars": 5534092,
+    "files": 1175,
     "languages": {
-     "Go": 239849
+     "Go": 238947
     },
     "generated_excluded": [
-     "lnd/graph/db/migration1/sqlc/db.go",
-     "lnd/graph/db/migration1/sqlc/graph.sql.go",
-     "lnd/graph/db/migration1/sqlc/models.go",
-     "lnd/payments/db/migration1/sqlc/db.go",
-     "lnd/payments/db/migration1/sqlc/models.go",
-     "lnd/payments/db/migration1/sqlc/payments.sql.go",
-     "lnd/sqldb/sqlc/amp_invoices.sql.go",
-     "lnd/sqldb/sqlc/chain_params.sql.go",
-     "lnd/sqldb/sqlc/db.go",
-     "lnd/sqldb/sqlc/graph.sql.go",
-     "lnd/sqldb/sqlc/invoice_events.sql.go",
-     "lnd/sqldb/sqlc/invoices.sql.go",
-     "lnd/sqldb/sqlc/migration.sql.go",
-     "lnd/sqldb/sqlc/models.go",
-     "lnd/sqldb/sqlc/payments.sql.go",
-     "lnd/sqldb/sqlc/querier.go",
-     "lnd/tlv/internal/gen/gen_tlv_types.go",
-     "lnd/tlv/tlv_types_generated.go"
+     "lnd-blixt/graph/db/migration1/sqlc/db.go",
+     "lnd-blixt/graph/db/migration1/sqlc/graph.sql.go",
+     "lnd-blixt/graph/db/migration1/sqlc/models.go",
+     "lnd-blixt/payments/db/migration1/sqlc/db.go",
+     "lnd-blixt/payments/db/migration1/sqlc/models.go",
+     "lnd-blixt/payments/db/migration1/sqlc/payments.sql.go",
+     "lnd-blixt/sqldb/sqlc/amp_invoices.sql.go",
+     "lnd-blixt/sqldb/sqlc/chain_params.sql.go",
+     "lnd-blixt/sqldb/sqlc/db.go",
+     "lnd-blixt/sqldb/sqlc/graph.sql.go",
+     "lnd-blixt/sqldb/sqlc/invoice_events.sql.go",
+     "lnd-blixt/sqldb/sqlc/invoices.sql.go",
+     "lnd-blixt/sqldb/sqlc/migration.sql.go",
+     "lnd-blixt/sqldb/sqlc/models.go",
+     "lnd-blixt/sqldb/sqlc/payments.sql.go",
+     "lnd-blixt/sqldb/sqlc/querier.go",
+     "lnd-blixt/tlv/internal/gen/gen_tlv_types.go",
+     "lnd-blixt/tlv/tlv_types_generated.go"
     ]
    }
   },
   "Zeus": {
    "app": {
-    "code": 189559,
-    "chars": 3674180,
+    "code": 189569,
+    "chars": 3674510,
     "files": 574,
     "languages": {
      "C/C++ Header": 41,
@@ -220,38 +327,38 @@
      "Objective-C": 1332,
      "Objective-C++": 424,
      "Swift": 4038,
-     "TypeScript": 183677
+     "TypeScript": 183687
     },
     "generated_excluded": [
      "zeus/ios/LdkNodeMobile/LDKNode.swift"
     ]
    },
    "lightning": {
-    "code": 239849,
-    "chars": 5558536,
-    "files": 1180,
+    "code": 242167,
+    "chars": 5609921,
+    "files": 1187,
     "languages": {
-     "Go": 239849
+     "Go": 242167
     },
     "generated_excluded": [
-     "lnd/graph/db/migration1/sqlc/db.go",
-     "lnd/graph/db/migration1/sqlc/graph.sql.go",
-     "lnd/graph/db/migration1/sqlc/models.go",
-     "lnd/payments/db/migration1/sqlc/db.go",
-     "lnd/payments/db/migration1/sqlc/models.go",
-     "lnd/payments/db/migration1/sqlc/payments.sql.go",
-     "lnd/sqldb/sqlc/amp_invoices.sql.go",
-     "lnd/sqldb/sqlc/chain_params.sql.go",
-     "lnd/sqldb/sqlc/db.go",
-     "lnd/sqldb/sqlc/graph.sql.go",
-     "lnd/sqldb/sqlc/invoice_events.sql.go",
-     "lnd/sqldb/sqlc/invoices.sql.go",
-     "lnd/sqldb/sqlc/migration.sql.go",
-     "lnd/sqldb/sqlc/models.go",
-     "lnd/sqldb/sqlc/payments.sql.go",
-     "lnd/sqldb/sqlc/querier.go",
-     "lnd/tlv/internal/gen/gen_tlv_types.go",
-     "lnd/tlv/tlv_types_generated.go"
+     "lnd-zeus/graph/db/migration1/sqlc/db.go",
+     "lnd-zeus/graph/db/migration1/sqlc/graph.sql.go",
+     "lnd-zeus/graph/db/migration1/sqlc/models.go",
+     "lnd-zeus/payments/db/migration1/sqlc/db.go",
+     "lnd-zeus/payments/db/migration1/sqlc/models.go",
+     "lnd-zeus/payments/db/migration1/sqlc/payments.sql.go",
+     "lnd-zeus/sqldb/sqlc/amp_invoices.sql.go",
+     "lnd-zeus/sqldb/sqlc/chain_params.sql.go",
+     "lnd-zeus/sqldb/sqlc/db.go",
+     "lnd-zeus/sqldb/sqlc/graph.sql.go",
+     "lnd-zeus/sqldb/sqlc/invoice_events.sql.go",
+     "lnd-zeus/sqldb/sqlc/invoices.sql.go",
+     "lnd-zeus/sqldb/sqlc/migration.sql.go",
+     "lnd-zeus/sqldb/sqlc/models.go",
+     "lnd-zeus/sqldb/sqlc/payments.sql.go",
+     "lnd-zeus/sqldb/sqlc/querier.go",
+     "lnd-zeus/tlv/internal/gen/gen_tlv_types.go",
+     "lnd-zeus/tlv/tlv_types_generated.go"
     ]
    }
   }
@@ -274,9 +381,9 @@
    "C family": 0.01
   },
   "Bitkit": {
-   "Swift": 42.1,
+   "Swift": 41.86,
    "Kotlin": 0.0,
-   "Rust": 57.9,
+   "Rust": 58.14,
    "Go": 0.0,
    "TypeScript/JS": 0.0,
    "C family": 0.0
@@ -285,37 +392,37 @@
    "Swift": 0.28,
    "Kotlin": 0.0,
    "Rust": 0.0,
-   "Go": 86.84,
-   "TypeScript/JS": 12.75,
-   "C family": 0.13
+   "Go": 86.79,
+   "TypeScript/JS": 12.79,
+   "C family": 0.14
   },
   "Zeus": {
    "Swift": 0.94,
    "Kotlin": 0.0,
    "Rust": 0.0,
-   "Go": 55.86,
-   "TypeScript/JS": 42.79,
+   "Go": 56.09,
+   "TypeScript/JS": 42.56,
    "C family": 0.42
   }
  },
  "complexity": {
   "Winnow": {
    "app": {
-    "functions": 695,
-    "mean_cc": 3.31,
+    "functions": 710,
+    "mean_cc": 3.35,
     "p90_cc": 7,
     "max_cc": 31,
-    "cc_le_2": 370,
-    "cc_3_12": 314,
-    "cc_gt_12": 11,
+    "cc_le_2": 378,
+    "cc_3_12": 319,
+    "cc_gt_12": 13,
     "cc_gt_30": 1,
-    "files": 47,
+    "files": 50,
     "files_with_parse_errors": 2,
     "most_complex": [
      {
       "cc": 31,
       "function": "init",
-      "at": "winnow/Sources/WinnowApp/AppModel.swift:420"
+      "at": "winnow/Sources/WinnowApp/AppModel.swift:433"
      },
      {
       "cc": 28,
@@ -379,17 +486,22 @@
     ]
    },
    "lightning": {
-    "functions": 464,
-    "mean_cc": 3.28,
+    "functions": 515,
+    "mean_cc": 3.39,
     "p90_cc": 7,
-    "max_cc": 13,
-    "cc_le_2": 235,
-    "cc_3_12": 226,
-    "cc_gt_12": 3,
+    "max_cc": 14,
+    "cc_le_2": 251,
+    "cc_3_12": 259,
+    "cc_gt_12": 5,
     "cc_gt_30": 0,
-    "files": 55,
+    "files": 63,
     "files_with_parse_errors": 4,
     "most_complex": [
+     {
+      "cc": 14,
+      "function": "rejectOpening",
+      "at": "winnow/Sources/LightningCore/LightningPeerNotice.swift:36"
+     },
      {
       "cc": 13,
       "function": "apply",
@@ -403,28 +515,23 @@
      {
       "cc": 13,
       "function": "validateLoaded",
-      "at": "winnow/Sources/LightningCore/LightningEngine.swift:191"
+      "at": "winnow/Sources/LightningCore/LightningEngine.swift:192"
      },
      {
-      "cc": 12,
-      "function": "init",
-      "at": "winnow/Sources/LightningCore/AsyncPaymentMessage.swift:14"
-     },
-     {
-      "cc": 12,
-      "function": "updateChainChannels",
-      "at": "winnow/Sources/LightningCore/LightningChain.swift:109"
+      "cc": 13,
+      "function": "receiveChannelPolicy",
+      "at": "winnow/Sources/LightningCore/LightningInvoiceRouting.swift:16"
      }
     ]
    },
    "all": {
-    "functions": 2164,
-    "mean_cc": 3.32,
+    "functions": 2230,
+    "mean_cc": 3.36,
     "p90_cc": 7,
     "max_cc": 31,
-    "cc_le_2": 1130,
-    "cc_3_12": 1006,
-    "cc_gt_12": 28,
+    "cc_le_2": 1154,
+    "cc_3_12": 1044,
+    "cc_gt_12": 32,
     "cc_gt_30": 1
    }
   },
@@ -559,21 +666,21 @@
     ]
    },
    "lightning": {
-    "functions": 5337,
-    "mean_cc": 2.97,
+    "functions": 5348,
+    "mean_cc": 2.98,
     "p90_cc": 6,
-    "max_cc": 171,
-    "cc_le_2": 3741,
-    "cc_3_12": 1435,
+    "max_cc": 174,
+    "cc_le_2": 3743,
+    "cc_3_12": 1444,
     "cc_gt_12": 161,
-    "cc_gt_30": 38,
-    "files": 225,
+    "cc_gt_30": 39,
+    "files": 226,
     "files_with_parse_errors": 6,
     "most_complex": [
      {
-      "cc": 171,
+      "cc": 174,
       "function": "read",
-      "at": "rust-lightning/lightning/src/ln/channelmanager.rs:16686"
+      "at": "rust-lightning/lightning/src/ln/channelmanager.rs:16784"
      },
      {
       "cc": 153,
@@ -581,31 +688,31 @@
       "at": "synonym-ldk-node/src/event.rs:1184"
      },
      {
-      "cc": 97,
+      "cc": 99,
       "function": "get_route",
-      "at": "rust-lightning/lightning/src/routing/router.rs:2434"
+      "at": "rust-lightning/lightning/src/routing/router.rs:2449"
      },
      {
       "cc": 87,
       "function": "read",
-      "at": "rust-lightning/lightning/src/ln/channel.rs:14858"
+      "at": "rust-lightning/lightning/src/ln/channel.rs:14958"
      },
      {
-      "cc": 77,
+      "cc": 75,
       "function": "process_events",
-      "at": "rust-lightning/lightning/src/ln/peer_handler.rs:2806"
+      "at": "rust-lightning/lightning/src/ln/peer_handler.rs:2822"
      }
     ]
    },
    "all": {
-    "functions": 10668,
-    "mean_cc": 2.97,
+    "functions": 10679,
+    "mean_cc": 2.98,
     "p90_cc": 6,
-    "max_cc": 171,
-    "cc_le_2": 6992,
-    "cc_3_12": 3430,
+    "max_cc": 174,
+    "cc_le_2": 6994,
+    "cc_3_12": 3439,
     "cc_gt_12": 246,
-    "cc_gt_30": 46
+    "cc_gt_30": 47
    }
   },
   "Blixt": {
@@ -649,63 +756,63 @@
     ]
    },
    "lightning": {
-    "functions": 10459,
-    "mean_cc": 3.9,
+    "functions": 10408,
+    "mean_cc": 3.91,
     "p90_cc": 9,
-    "max_cc": 147,
-    "cc_le_2": 5921,
-    "cc_3_12": 3978,
-    "cc_gt_12": 560,
+    "max_cc": 148,
+    "cc_le_2": 5896,
+    "cc_3_12": 3957,
+    "cc_gt_12": 555,
     "cc_gt_30": 66,
-    "files": 1180,
+    "files": 1175,
     "files_with_parse_errors": 0,
     "most_complex": [
      {
-      "cc": 147,
+      "cc": 148,
       "function": "ValidateConfig",
-      "at": "lnd/config.go:1007"
+      "at": "lnd-blixt/config.go:1007"
      },
      {
       "cc": 99,
       "function": "WriteElement",
-      "at": "lnd/channeldb/migration/lnwire21/lnwire.go:76"
+      "at": "lnd-blixt/channeldb/migration/lnwire21/lnwire.go:76"
      },
      {
       "cc": 96,
       "function": "WriteElement",
-      "at": "lnd/lnwire/lnwire.go:87"
+      "at": "lnd-blixt/lnwire/lnwire.go:87"
      },
      {
       "cc": 93,
       "function": "ReadElement",
-      "at": "lnd/channeldb/migration/lnwire21/lnwire.go:441"
+      "at": "lnd-blixt/channeldb/migration/lnwire21/lnwire.go:441"
      },
      {
       "cc": 89,
       "function": "ReadElement",
-      "at": "lnd/lnwire/lnwire.go:444"
+      "at": "lnd-blixt/lnwire/lnwire.go:444"
      }
     ]
    },
    "all": {
-    "functions": 11516,
-    "mean_cc": 3.87,
+    "functions": 11465,
+    "mean_cc": 3.88,
     "p90_cc": 8,
-    "max_cc": 147,
-    "cc_le_2": 6706,
-    "cc_3_12": 4194,
-    "cc_gt_12": 616,
+    "max_cc": 148,
+    "cc_le_2": 6681,
+    "cc_3_12": 4173,
+    "cc_gt_12": 611,
     "cc_gt_30": 85
    }
   },
   "Zeus": {
    "app": {
-    "functions": 4672,
+    "functions": 4673,
     "mean_cc": 4.72,
     "p90_cc": 10,
     "max_cc": 252,
     "cc_le_2": 2687,
-    "cc_3_12": 1641,
+    "cc_3_12": 1642,
     "cc_gt_12": 344,
     "cc_gt_30": 75,
     "files": 575,
@@ -739,53 +846,53 @@
     ]
    },
    "lightning": {
-    "functions": 10459,
-    "mean_cc": 3.9,
+    "functions": 10527,
+    "mean_cc": 3.92,
     "p90_cc": 9,
     "max_cc": 147,
-    "cc_le_2": 5921,
-    "cc_3_12": 3978,
-    "cc_gt_12": 560,
-    "cc_gt_30": 66,
-    "files": 1180,
+    "cc_le_2": 5952,
+    "cc_3_12": 4010,
+    "cc_gt_12": 565,
+    "cc_gt_30": 67,
+    "files": 1187,
     "files_with_parse_errors": 0,
     "most_complex": [
      {
       "cc": 147,
       "function": "ValidateConfig",
-      "at": "lnd/config.go:1007"
+      "at": "lnd-zeus/config.go:1007"
      },
      {
       "cc": 99,
       "function": "WriteElement",
-      "at": "lnd/channeldb/migration/lnwire21/lnwire.go:76"
+      "at": "lnd-zeus/channeldb/migration/lnwire21/lnwire.go:76"
      },
      {
       "cc": 96,
       "function": "WriteElement",
-      "at": "lnd/lnwire/lnwire.go:87"
+      "at": "lnd-zeus/lnwire/lnwire.go:87"
      },
      {
       "cc": 93,
       "function": "ReadElement",
-      "at": "lnd/channeldb/migration/lnwire21/lnwire.go:441"
+      "at": "lnd-zeus/channeldb/migration/lnwire21/lnwire.go:441"
      },
      {
       "cc": 89,
       "function": "ReadElement",
-      "at": "lnd/lnwire/lnwire.go:444"
+      "at": "lnd-zeus/lnwire/lnwire.go:444"
      }
     ]
    },
    "all": {
-    "functions": 15131,
+    "functions": 15200,
     "mean_cc": 4.16,
     "p90_cc": 9,
     "max_cc": 252,
-    "cc_le_2": 8608,
-    "cc_3_12": 5619,
-    "cc_gt_12": 904,
-    "cc_gt_30": 141
+    "cc_le_2": 8639,
+    "cc_3_12": 5652,
+    "cc_gt_12": 909,
+    "cc_gt_30": 142
    }
   }
  },
@@ -1576,6 +1683,7 @@
     "github.com/Yawning/aez@v0.0.0-20211027044916-e49e68abd344",
     "github.com/aead/chacha20@v0.0.0-20180709150244-8b13a72661da",
     "github.com/aead/siphash@v1.0.1",
+    "github.com/andybalholm/brotli@v1.0.5",
     "github.com/btcsuite/btcd/btcec/v2@v2.3.6",
     "github.com/btcsuite/btcd/btcutil/psbt@v1.1.10",
     "github.com/btcsuite/btcd/btcutil@v1.1.6",
@@ -1587,23 +1695,26 @@
     "github.com/btcsuite/btcwallet/wallet/txauthor@v1.3.5",
     "github.com/btcsuite/btcwallet/wallet/txrules@v1.2.2",
     "github.com/btcsuite/btcwallet/wallet/txsizes@v1.2.5",
-    "github.com/btcsuite/btcwallet/walletdb@v1.5.1",
     "github.com/btcsuite/btcwallet/wtxmgr@v1.5.6",
-    "github.com/btcsuite/btcwallet@v0.16.19",
+    "github.com/btcsuite/btcwallet@v0.16.18",
     "github.com/btcsuite/go-socks@v0.0.0-20170105172521-4720035b7bfd",
     "github.com/btcsuite/websocket@v0.0.0-20150119174127-31079b680792",
     "github.com/cenkalti/backoff/v4@v4.2.1",
     "github.com/containerd/continuity@v0.3.0",
-    "github.com/coreos/go-systemd@v0.0.0-20190719114852-fd7a80b32e1f",
-    "github.com/davecgh/go-spew@v1.1.1",
+    "github.com/coreos/go-systemd@v0.0.0-20191104093116-d3cd4ed1dbcf",
+    "github.com/davecgh/go-spew@v1.1.2-0.20180830191138-d8f796af33cc",
     "github.com/decred/dcrd/crypto/blake256@v1.1.0",
     "github.com/decred/dcrd/dcrec/secp256k1/v4@v4.4.0",
     "github.com/decred/dcrd/lru@v1.1.2",
+    "github.com/djkazic/breez@v0.0.8",
+    "github.com/djkazic/btcwallet/walletdb@v1.7.4",
     "github.com/docker/cli@v28.1.1+incompatible",
     "github.com/docker/docker@v28.1.1+incompatible",
     "github.com/docker/go-connections@v0.4.0",
     "github.com/docker/go-units@v0.5.0",
+    "github.com/dsnet/compress@v0.0.1",
     "github.com/dustin/go-humanize@v1.0.1",
+    "github.com/gabstv/go-bsdiff@v1.0.5",
     "github.com/go-viper/mapstructure/v2@v2.4.0",
     "github.com/gogo/protobuf@v1.3.2",
     "github.com/golang-migrate/migrate/v4@v4.17.0",
@@ -1612,7 +1723,7 @@
     "github.com/google/uuid@v1.6.0",
     "github.com/gorilla/websocket@v1.5.0",
     "github.com/grpc-ecosystem/go-grpc-middleware@v1.3.0",
-    "github.com/grpc-ecosystem/grpc-gateway/v2@v2.16.0",
+    "github.com/grpc-ecosystem/grpc-gateway/v2@v2.27.1",
     "github.com/hashicorp/errwrap@v1.1.0",
     "github.com/hashicorp/go-multierror@v1.1.1",
     "github.com/jackc/chunkreader/v2@v2.0.1",
@@ -1632,10 +1743,11 @@
     "github.com/jrick/logrotate@v1.1.2",
     "github.com/juju/loggo@v0.0.0-20210728185423-eebad3a902c4",
     "github.com/kkdai/bstream@v1.0.0",
-    "github.com/klauspost/compress@v1.17.9",
+    "github.com/klauspost/compress@v1.18.0",
     "github.com/lightninglabs/gozmq@v0.0.0-20191113021534-d20a764486bf",
     "github.com/lightninglabs/neutrino/cache@v1.1.3",
     "github.com/lightninglabs/neutrino@v0.17.1",
+    "github.com/lightninglabs/protobuf-go-hex-display@v1.33.0-hex-display",
     "github.com/lightningnetwork/lightning-onion@v1.3.0",
     "github.com/ltcsuite/ltcd@v0.0.0-20190101042124-f37f8bf35796",
     "github.com/mattn/go-isatty@v0.0.20",
@@ -1648,10 +1760,10 @@
     "github.com/opencontainers/runc@v1.1.14",
     "github.com/ory/dockertest/v3@v3.10.0",
     "github.com/pkg/errors@v0.9.1",
-    "github.com/pmezard/go-difflib@v1.0.0",
+    "github.com/pmezard/go-difflib@v1.0.1-0.20181226105442-5d4384ee4fb2",
     "github.com/remyoudompheng/bigfft@v0.0.0-20230129092748-24d4a6f8daec",
     "github.com/rogpeppe/fastuuid@v1.2.0",
-    "github.com/sirupsen/logrus@v1.9.2",
+    "github.com/sirupsen/logrus@v1.9.3",
     "github.com/stretchr/objx@v0.5.2",
     "github.com/stretchr/testify@v1.11.1",
     "github.com/tv42/zbase32@v0.0.0-20160707012821-501572607d02",
@@ -1661,19 +1773,20 @@
     "gitlab.com/yawning/bsaes.git@v0.0.0-20190805113838-0a714cd429ec",
     "go.etcd.io/bbolt@v1.4.3",
     "go.uber.org/atomic@v1.7.0",
-    "golang.org/x/crypto@v0.51.0",
+    "golang.org/x/crypto@v0.46.0",
     "golang.org/x/exp@v0.0.0-20250811191247-51f88131bc50",
-    "golang.org/x/mobile@v0.0.0-20190719004257-d2bd2a29d028",
-    "golang.org/x/net@v0.55.0",
-    "golang.org/x/sync@v0.20.0",
-    "golang.org/x/sys@v0.45.0",
-    "golang.org/x/term@v0.43.0",
-    "golang.org/x/text@v0.37.0",
-    "golang.org/x/time@v0.3.0",
-    "google.golang.org/genproto/googleapis/api@v0.0.0-20260526163538-3dc84a4a5aaa",
-    "google.golang.org/genproto/googleapis/rpc@v0.0.0-20260526163538-3dc84a4a5aaa",
-    "google.golang.org/grpc@v1.83.1",
-    "google.golang.org/protobuf@v1.36.11",
+    "golang.org/x/mobile@v0.0.0-20231127183840-76ac6878050a",
+    "golang.org/x/mod@v0.30.0",
+    "golang.org/x/net@v0.48.0",
+    "golang.org/x/sync@v0.19.0",
+    "golang.org/x/sys@v0.40.0",
+    "golang.org/x/term@v0.38.0",
+    "golang.org/x/text@v0.32.0",
+    "golang.org/x/time@v0.11.0",
+    "golang.org/x/tools@v0.39.0",
+    "google.golang.org/genproto/googleapis/api@v0.0.0-20251202230838-ff82c1b0f217",
+    "google.golang.org/genproto/googleapis/rpc@v0.0.0-20251202230838-ff82c1b0f217",
+    "google.golang.org/grpc@v1.79.3",
     "gopkg.in/errgo.v1@v1.0.1",
     "gopkg.in/macaroon-bakery.v2@v2.0.1",
     "gopkg.in/macaroon.v2@v2.0.0",
@@ -2339,7 +2452,7 @@
     "SwiftProtobuf"
    ],
    "pods_from_npm_and_react_native": 99,
-   "total": 675
+   "total": 681
   },
   "Zeus": {
    "rust": [
@@ -2758,12 +2871,17 @@
    },
    "go": [
     "dario.cat/mergo@v1.0.1",
+    "github.com/BoltzExchange/boltz-client/v2@v2.9.0",
     "github.com/NebulousLabs/fastrand@v0.0.0-20181203155948-6fb6489aac4e",
     "github.com/NebulousLabs/go-upnp@v0.0.0-20180202185039-29b680b06c82",
     "github.com/Nvveen/Gotty@v0.0.0-20120604004816-cd527374f1e5",
     "github.com/Yawning/aez@v0.0.0-20211027044916-e49e68abd344",
+    "github.com/ZeusLN/btcwallet@v0.16.19-zeus",
+    "github.com/ZeusLN/chantools@v0.14.2-zeus",
+    "github.com/ZeusLN/lightning-terminal@v0.10.5-alpha-zeus",
     "github.com/aead/chacha20@v0.0.0-20180709150244-8b13a72661da",
     "github.com/aead/siphash@v1.0.1",
+    "github.com/andybalholm/brotli@v1.0.5",
     "github.com/btcsuite/btcd/btcec/v2@v2.3.6",
     "github.com/btcsuite/btcd/btcutil/psbt@v1.1.10",
     "github.com/btcsuite/btcd/btcutil@v1.1.6",
@@ -2775,32 +2893,36 @@
     "github.com/btcsuite/btcwallet/wallet/txauthor@v1.3.5",
     "github.com/btcsuite/btcwallet/wallet/txrules@v1.2.2",
     "github.com/btcsuite/btcwallet/wallet/txsizes@v1.2.5",
-    "github.com/btcsuite/btcwallet/walletdb@v1.5.1",
     "github.com/btcsuite/btcwallet/wtxmgr@v1.5.6",
-    "github.com/btcsuite/btcwallet@v0.16.19",
     "github.com/btcsuite/go-socks@v0.0.0-20170105172521-4720035b7bfd",
     "github.com/btcsuite/websocket@v0.0.0-20150119174127-31079b680792",
     "github.com/cenkalti/backoff/v4@v4.2.1",
     "github.com/containerd/continuity@v0.3.0",
-    "github.com/coreos/go-systemd@v0.0.0-20190719114852-fd7a80b32e1f",
-    "github.com/davecgh/go-spew@v1.1.1",
+    "github.com/coreos/go-systemd@v0.0.0-20191104093116-d3cd4ed1dbcf",
+    "github.com/davecgh/go-spew@v1.1.2-0.20180830191138-d8f796af33cc",
     "github.com/decred/dcrd/crypto/blake256@v1.1.0",
     "github.com/decred/dcrd/dcrec/secp256k1/v4@v4.4.0",
     "github.com/decred/dcrd/lru@v1.1.2",
+    "github.com/djkazic/breez@v0.0.8",
+    "github.com/djkazic/btcwallet/walletdb@v1.7.4",
     "github.com/docker/cli@v28.1.1+incompatible",
     "github.com/docker/docker@v28.1.1+incompatible",
-    "github.com/docker/go-connections@v0.4.0",
+    "github.com/docker/go-connections@v0.5.0",
     "github.com/docker/go-units@v0.5.0",
+    "github.com/dsnet/compress@v0.0.1",
     "github.com/dustin/go-humanize@v1.0.1",
-    "github.com/go-viper/mapstructure/v2@v2.4.0",
+    "github.com/fatih/color@v1.18.0",
+    "github.com/gabstv/go-bsdiff@v1.0.5",
+    "github.com/go-macaroon-bakery/macaroonpb@v1.0.0",
+    "github.com/go-viper/mapstructure/v2@v2.5.0",
     "github.com/gogo/protobuf@v1.3.2",
     "github.com/golang-migrate/migrate/v4@v4.17.0",
     "github.com/golang/protobuf@v1.5.4",
     "github.com/google/shlex@v0.0.0-20191202100458-e7afc7fbc510",
     "github.com/google/uuid@v1.6.0",
-    "github.com/gorilla/websocket@v1.5.0",
-    "github.com/grpc-ecosystem/go-grpc-middleware@v1.3.0",
-    "github.com/grpc-ecosystem/grpc-gateway/v2@v2.16.0",
+    "github.com/gorilla/websocket@v1.5.3",
+    "github.com/grpc-ecosystem/go-grpc-middleware@v1.4.0",
+    "github.com/grpc-ecosystem/grpc-gateway/v2@v2.22.0",
     "github.com/hashicorp/errwrap@v1.1.0",
     "github.com/hashicorp/go-multierror@v1.1.1",
     "github.com/jackc/chunkreader/v2@v2.0.1",
@@ -2818,37 +2940,53 @@
     "github.com/jackpal/go-nat-pmp@v0.0.0-20170405195558-28a68d0c24ad",
     "github.com/jessevdk/go-flags@v1.6.1",
     "github.com/jrick/logrotate@v1.1.2",
-    "github.com/juju/loggo@v0.0.0-20210728185423-eebad3a902c4",
     "github.com/kkdai/bstream@v1.0.0",
     "github.com/klauspost/compress@v1.17.9",
+    "github.com/lightninglabs/faraday@v0.2.11-alpha",
     "github.com/lightninglabs/gozmq@v0.0.0-20191113021534-d20a764486bf",
+    "github.com/lightninglabs/lightning-node-connect/gbn@v1.0.0",
+    "github.com/lightninglabs/lightning-node-connect/hashmailrpc@v1.0.2",
+    "github.com/lightninglabs/lightning-node-connect/mailbox@v1.0.0",
+    "github.com/lightninglabs/loop/looprpc@v1.0.0",
+    "github.com/lightninglabs/loop/swapserverrpc@v1.0.14",
     "github.com/lightninglabs/neutrino/cache@v1.1.3",
     "github.com/lightninglabs/neutrino@v0.17.1",
+    "github.com/lightninglabs/pool/auctioneerrpc@v1.1.3",
+    "github.com/lightninglabs/pool/poolrpc@v1.0.0",
+    "github.com/lightninglabs/protobuf-go-hex-display@v1.33.0-hex-display",
+    "github.com/lightninglabs/taproot-assets@v0.2.3",
     "github.com/lightningnetwork/lightning-onion@v1.3.0",
-    "github.com/ltcsuite/ltcd@v0.0.0-20190101042124-f37f8bf35796",
+    "github.com/ltcsuite/ltcd@v0.22.1-beta",
+    "github.com/mattn/go-colorable@v0.1.14",
     "github.com/mattn/go-isatty@v0.0.20",
-    "github.com/miekg/dns@v1.1.43",
+    "github.com/miekg/dns@v1.1.50",
+    "github.com/mitchellh/mapstructure@v1.5.0",
     "github.com/moby/docker-image-spec@v1.3.1",
-    "github.com/moby/term@v0.5.0",
+    "github.com/moby/sys/user@v0.3.0",
+    "github.com/moby/term@v0.5.2",
     "github.com/ncruces/go-strftime@v0.1.9",
     "github.com/opencontainers/go-digest@v1.0.0",
-    "github.com/opencontainers/image-spec@v1.0.2",
-    "github.com/opencontainers/runc@v1.1.14",
+    "github.com/opencontainers/image-spec@v1.1.1",
+    "github.com/opencontainers/runc@v1.2.8",
     "github.com/ory/dockertest/v3@v3.10.0",
     "github.com/pkg/errors@v0.9.1",
-    "github.com/pmezard/go-difflib@v1.0.0",
+    "github.com/pmezard/go-difflib@v1.0.1-0.20181226105442-5d4384ee4fb2",
     "github.com/remyoudompheng/bigfft@v0.0.0-20230129092748-24d4a6f8daec",
     "github.com/rogpeppe/fastuuid@v1.2.0",
-    "github.com/sirupsen/logrus@v1.9.2",
+    "github.com/sirupsen/logrus@v1.9.3",
     "github.com/stretchr/objx@v0.5.2",
     "github.com/stretchr/testify@v1.11.1",
-    "github.com/tv42/zbase32@v0.0.0-20160707012821-501572607d02",
-    "github.com/xeipuuv/gojsonpointer@v0.0.0-20180127040702-4e3ac2762d5f",
+    "github.com/tv42/zbase32@v0.0.0-20220222190657-f76a9fc892fa",
+    "github.com/tyler-smith/go-bip39@v1.1.0",
+    "github.com/vulpemventures/fastsha256@v0.0.0-20160815193821-637e65642941",
+    "github.com/vulpemventures/go-elements@v0.5.5",
+    "github.com/vulpemventures/go-secp256k1-zkp@v1.1.6",
+    "github.com/xeipuuv/gojsonpointer@v0.0.0-20190905194746-02993c407bfb",
     "github.com/xeipuuv/gojsonreference@v0.0.0-20180127040603-bd5ef7bd5415",
     "github.com/xeipuuv/gojsonschema@v1.2.0",
     "gitlab.com/yawning/bsaes.git@v0.0.0-20190805113838-0a714cd429ec",
     "go.etcd.io/bbolt@v1.4.3",
-    "go.uber.org/atomic@v1.7.0",
+    "go.uber.org/atomic@v1.10.0",
     "golang.org/x/crypto@v0.51.0",
     "golang.org/x/exp@v0.0.0-20250811191247-51f88131bc50",
     "golang.org/x/mobile@v0.0.0-20190719004257-d2bd2a29d028",
@@ -2857,19 +2995,20 @@
     "golang.org/x/sys@v0.45.0",
     "golang.org/x/term@v0.43.0",
     "golang.org/x/text@v0.37.0",
-    "golang.org/x/time@v0.3.0",
+    "golang.org/x/time@v0.5.0",
     "google.golang.org/genproto/googleapis/api@v0.0.0-20260526163538-3dc84a4a5aaa",
     "google.golang.org/genproto/googleapis/rpc@v0.0.0-20260526163538-3dc84a4a5aaa",
     "google.golang.org/grpc@v1.83.1",
-    "google.golang.org/protobuf@v1.36.11",
     "gopkg.in/errgo.v1@v1.0.1",
-    "gopkg.in/macaroon-bakery.v2@v2.0.1",
-    "gopkg.in/macaroon.v2@v2.0.0",
+    "gopkg.in/macaroon-bakery.v2@v2.3.0",
+    "gopkg.in/macaroon.v2@v2.1.0",
+    "gopkg.in/natefinch/lumberjack.v2@v2.2.1",
     "gopkg.in/yaml.v3@v3.0.1",
-    "modernc.org/libc@v1.49.3",
+    "modernc.org/libc@v1.55.3",
     "modernc.org/mathutil@v1.6.0",
     "modernc.org/memory@v1.8.0",
-    "modernc.org/sqlite@v1.29.10",
+    "modernc.org/sqlite@v1.34.5",
+    "nhooyr.io/websocket@v1.8.7",
     "pgregory.net/rapid@v1.2.0"
    ],
    "npm_direct": [
@@ -3890,7 +4029,7 @@
     "lottie-ios"
    ],
    "pods_from_npm_and_react_native": 110,
-   "total": 1421
+   "total": 1447
   }
  },
  "vendored": {
@@ -4412,8 +4551,8 @@
    },
    "splicing": {
     "value": "no",
-    "evidence": "lnd:lnrpc/lightning.proto",
-    "note": "No splice RPC in LND 0.21.3; nothing in app"
+    "evidence": "lnd-blixt:lnrpc/lightning.proto",
+    "note": "No splice RPC in Blixt’s LND; nothing in app"
    },
    "anchors": {
     "value": "yes",
@@ -4427,7 +4566,7 @@
    },
    "watchtower": {
     "value": "engine-only",
-    "evidence": "blixt:src/state/index.ts:674; lnd:lncfg/wtclient.go:16",
+    "evidence": "blixt:src/state/index.ts:674; lnd-blixt:lncfg/wtclient.go:16",
     "note": "LND wtclient exists but app config/UI never enables it"
    },
    "channel_backup": {
@@ -4452,12 +4591,12 @@
    },
    "hw_signer": {
     "value": "engine-only",
-    "evidence": "lnd:lnrpc/walletrpc/walletkit.proto:400; lnd:lncfg/remotesigner.go:17",
+    "evidence": "lnd-blixt:lnrpc/walletrpc/walletkit.proto:329; lnd-blixt:lncfg/remotesigner.go:17",
     "note": "LND has PSBT/remote signer; app has no PSBT or signer code"
    },
    "coin_control": {
     "value": "engine-only",
-    "evidence": "blixt:src/state/OnChain.ts:218; lnd:lnrpc/lightning.proto:1157",
+    "evidence": "blixt:src/state/OnChain.ts:218; lnd-blixt:lnrpc/lightning.proto:1157",
     "note": "App sendCoins passes no outpoints; LND supports outpoint selection"
    },
    "tor": {
@@ -4539,12 +4678,12 @@
    },
    "splicing": {
     "value": "no",
-    "evidence": "zeus:backends/EmbeddedLND.ts:555-610; lnd:lnrpc/lightning.proto",
+    "evidence": "zeus:backends/EmbeddedLND.ts:555-610; lnd-zeus:lnrpc/lightning.proto",
     "note": "No splice capability in Zeus or in the LND RPCs"
    },
    "anchors": {
     "value": "yes",
-    "evidence": "lnd:funding/commitment_type_negotiation.go:471; zeus:utils/LndMobileUtils.ts:257",
+    "evidence": "lnd-zeus:funding/commitment_type_negotiation.go:471; zeus:utils/LndMobileUtils.ts:257",
     "note": "LND negotiates anchor channels by default; simple taproot channels are optional"
    },
    "local_pathfinding": {
@@ -4624,7 +4763,7 @@
   },
   "Phoenix": {
    "built_with": "Swift on Kotlin Multiplatform",
-   "engine": "lightning-kmp 1.12 (Kotlin)",
+   "engine": "lightning-kmp {version:lightning-kmp} (Kotlin)",
    "chain_data": {
     "text": "An Electrum server picked at random from a built-in list of 15",
     "cite": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/AppConfigurationManager.kt:66"
@@ -4646,7 +4785,7 @@
   },
   "Bitkit": {
    "built_with": "Swift",
-   "engine": "LDK Node (Synonym’s fork) on rust-lightning 0.2 (Rust)",
+   "engine": "LDK Node (Synonym’s fork) on rust-lightning {version:rust-lightning} (Rust)",
    "chain_data": {
     "text": "Synonym’s Electrum server",
     "cite": "bitkit:Bitkit/Constants/Env.swift:188"
@@ -4668,7 +4807,7 @@
   },
   "Blixt": {
    "built_with": "React Native (TypeScript)",
-   "engine": "Embedded LND (Go)",
+   "engine": "Embedded LND {version:lnd-blixt} (Go)",
    "chain_data": {
     "text": "Neutrino (BIP157) through six default peers, four run by Blixt",
     "cite": "blixt:src/utils/constants.ts:30"
@@ -4690,7 +4829,7 @@
   },
   "Zeus": {
    "built_with": "React Native (TypeScript)",
-   "engine": "Embedded LND 0.21 (Go). LDK Node is an option, and Zeus can also drive a remote node.",
+   "engine": "Embedded LND {version:lnd-zeus} (Go). LDK Node is an option, and Zeus can also drive a remote node.",
    "chain_data": {
     "text": "Neutrino (BIP157) through five default peers, two run by Olympus; the LDK Node option uses an Esplora server",
     "cite": "zeus:stores/SettingsStore.ts:1476"
@@ -4710,5 +4849,295 @@
    },
    "patched": "Five iOS-relevant scripts rewrite installed npm packages (a sixth targets Android); rn-nodeify shims crypto and stream"
   }
- }
+ },
+ "reviewed": {
+  "about": "The revision each hand-reviewed fact in features/ and wallets.json was checked against, and when. Citations resolve and link here, so they stay valid as sources.json moves forward; data/drift.json shows which cited code has changed since. `tools/evidence.py --adopt [source ...]` starts a re-review.",
+  "sources": {
+   "winnow": {
+    "repo": "https://github.com/posix4e/winnow-lightning",
+    "rev": "f379b7cec9a025e0910f8e334dfcd36a6f1f9040",
+    "date": "2026-09-27"
+   },
+   "phoenix": {
+    "repo": "https://github.com/ACINQ/phoenix",
+    "rev": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
+    "date": "2026-09-27"
+   },
+   "lightning-kmp": {
+    "repo": "https://github.com/ACINQ/lightning-kmp",
+    "rev": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
+    "date": "2026-09-27"
+   },
+   "bitkit": {
+    "repo": "https://github.com/synonymdev/bitkit-ios",
+    "rev": "c906d5af336dd1ceec22bcbbb1c7d9f115e2d021",
+    "date": "2026-09-27"
+   },
+   "synonym-ldk-node": {
+    "repo": "https://github.com/synonymdev/ldk-node",
+    "rev": "190a17d966cf5a685444cfa17c3a419c290bf26c",
+    "date": "2026-09-27"
+   },
+   "rust-lightning": {
+    "repo": "https://github.com/lightningdevkit/rust-lightning",
+    "rev": "311ad94772722ff9c54ec0f7656a4b811be5b846",
+    "date": "2026-09-27"
+   },
+   "bitkit-core": {
+    "repo": "https://github.com/synonymdev/bitkit-core",
+    "rev": "b53fa54a16f04940943072bb6e08dc2650302f93",
+    "date": "2026-09-27"
+   },
+   "paykit-rs": {
+    "repo": "https://github.com/pubky/paykit-rs",
+    "rev": "4613beee25d1680ed8bc849446498e9bfb2cdb16",
+    "date": "2026-09-27"
+   },
+   "vss-rust-client-ffi": {
+    "repo": "https://github.com/synonymdev/vss-rust-client-ffi",
+    "rev": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
+    "date": "2026-09-27"
+   },
+   "blixt": {
+    "repo": "https://github.com/hsjoberg/blixt-wallet",
+    "rev": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
+    "date": "2026-09-27"
+   },
+   "lnd-blixt": {
+    "repo": "https://github.com/hsjoberg/lnd",
+    "rev": "ae185f27e097a4106d04437f0a2be6edacf40910",
+    "date": "2026-09-27"
+   },
+   "zeus": {
+    "repo": "https://github.com/ZeusLN/zeus",
+    "rev": "aeb9c10c6b0b8aad4752c08457a4f0d127ea4645",
+    "date": "2026-09-27"
+   },
+   "lnd-zeus": {
+    "repo": "https://github.com/ZeusLN/lnd",
+    "rev": "ae24665a916d94fa89475b21ec27e8cda0eb5845",
+    "date": "2026-09-27"
+   }
+  }
+ },
+ "drift": {
+  "reviewed": "2026-09-27",
+  "reviewed_latest": "2026-09-27",
+  "measured": "2026-09-27",
+  "citations": 239,
+  "same": 226,
+  "moved": 9,
+  "changed": 4,
+  "gone": 0,
+  "by_wallet": {
+   "Winnow": {
+    "same": 35,
+    "moved": 9,
+    "changed": 4,
+    "gone": 0
+   },
+   "Phoenix": {
+    "same": 43,
+    "moved": 0,
+    "changed": 0,
+    "gone": 0
+   },
+   "Bitkit": {
+    "same": 53,
+    "moved": 0,
+    "changed": 0,
+    "gone": 0
+   },
+   "Blixt": {
+    "same": 47,
+    "moved": 0,
+    "changed": 0,
+    "gone": 0
+   },
+   "Zeus": {
+    "same": 48,
+    "moved": 0,
+    "changed": 0,
+    "gone": 0
+   }
+  },
+  "changed_or_gone": [
+   {
+    "wallet": "Winnow",
+    "fact": "features.bolt11_pay",
+    "cite": "winnow:Sources/WinnowApp/LightningLiquidityView.swift:68",
+    "status": "changed"
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.jit_channels",
+    "cite": "winnow:Sources/WinnowApp/LightningLiquidityView.swift:68",
+    "status": "changed"
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.local_pathfinding",
+    "cite": "winnow:Sources/LightningCore/LightningPeerSession.swift:137",
+    "status": "changed"
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.local_pathfinding",
+    "cite": "winnow:Sources/LightningCore/README.md:136",
+    "status": "changed"
+   }
+  ],
+  "moved_within_file": [
+   {
+    "wallet": "Winnow",
+    "fact": "features.bolt11_receive",
+    "cite": "winnow:Sources/WinnowApp/LightningReceiveView.swift:34",
+    "status": "moved",
+    "now_at": 37
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.bolt11_receive",
+    "cite": "winnow:Sources/WinnowApp/LightningAppReceiving.swift:89",
+    "status": "moved",
+    "now_at": 110
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.bolt12_receive",
+    "cite": "winnow:Sources/WinnowApp/LightningView.swift:117",
+    "status": "moved",
+    "now_at": 135
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.ln_address_receive",
+    "cite": "winnow:Sources/WinnowApp/LightningReceiveView.swift:34",
+    "status": "moved",
+    "now_at": 37
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.ln_address_receive",
+    "cite": "winnow:Sources/WinnowApp/LightningView.swift:117",
+    "status": "moved",
+    "now_at": 135
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.jit_channels",
+    "cite": "winnow:Sources/WinnowApp/LightningAppReceiving.swift:34",
+    "status": "moved",
+    "now_at": 55
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.watchtower",
+    "cite": "winnow:Sources/WinnowApp/LightningView.swift:21",
+    "status": "moved",
+    "now_at": 23
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.channel_backup",
+    "cite": "winnow:Sources/WinnowApp/AppModel.swift:425",
+    "status": "moved",
+    "now_at": 438
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.coin_control",
+    "cite": "winnow:Sources/WinnowApp/AppModel.swift:1842",
+    "status": "moved",
+    "now_at": 1379
+   }
+  ]
+ },
+ "history": [
+  {
+   "date": "2026-09-27",
+   "method": 1,
+   "sources": {
+    "winnow": "1f1bfdd956c84765c444ed6b0667806b20626c55",
+    "phoenix": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
+    "lightning-kmp": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
+    "bitkit": "c906d5af336dd1ceec22bcbbb1c7d9f115e2d021",
+    "synonym-ldk-node": "190a17d966cf5a685444cfa17c3a419c290bf26c",
+    "rust-lightning": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
+    "bitkit-core": "b53fa54a16f04940943072bb6e08dc2650302f93",
+    "paykit-rs": "4613beee25d1680ed8bc849446498e9bfb2cdb16",
+    "vss-rust-client-ffi": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
+    "blixt": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
+    "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
+    "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
+    "zeus": "5792769159aec740c31d8f28a0d606c96ccd1618",
+    "lnd-zeus": "ae24665a916d94fa89475b21ec27e8cda0eb5845",
+    "zeus-ldk-node": "921ef6370a5694ed8cf00538878420ccb5afe09d",
+    "cdk": "874745d5d79b36be346efbd716393357ab898834"
+   },
+   "wallets": {
+    "Winnow": {
+     "lines": 29192,
+     "lines_app": 10576,
+     "lines_bitcoin": 13132,
+     "lines_lightning": 5484,
+     "characters": 1052232,
+     "functions": 2230,
+     "cc_gt_12": 32,
+     "cc_gt_30": 1,
+     "max_cc": 31,
+     "packages": 1,
+     "vendored_lines": 0
+    },
+    "Phoenix": {
+     "lines": 100853,
+     "lines_app": 72767,
+     "lines_lightning": 28086,
+     "characters": 3071264,
+     "functions": 7218,
+     "cc_gt_12": 132,
+     "cc_gt_30": 22,
+     "max_cc": 168,
+     "packages": 59,
+     "vendored_lines": 0
+    },
+    "Bitkit": {
+     "lines": 219539,
+     "lines_app": 91893,
+     "lines_lightning": 127646,
+     "characters": 6353943,
+     "functions": 10679,
+     "cc_gt_12": 246,
+     "cc_gt_30": 47,
+     "max_cc": 174,
+     "packages": 691,
+     "vendored_lines": 0
+    },
+    "Blixt": {
+     "lines": 275307,
+     "lines_app": 36360,
+     "lines_lightning": 238947,
+     "characters": 6481671,
+     "functions": 11465,
+     "cc_gt_12": 611,
+     "cc_gt_30": 85,
+     "max_cc": 148,
+     "packages": 681,
+     "vendored_lines": 0
+    },
+    "Zeus": {
+     "lines": 431736,
+     "lines_app": 189569,
+     "lines_lightning": 242167,
+     "characters": 9284431,
+     "functions": 15200,
+     "cc_gt_12": 909,
+     "cc_gt_30": 142,
+     "max_cc": 252,
+     "packages": 1447,
+     "vendored_lines": 4551
+    }
+   }
+  }
+ ]
 }

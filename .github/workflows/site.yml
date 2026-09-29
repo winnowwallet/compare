@@ -5,6 +5,7 @@ name: Site
 # its DNS record and certificate; nothing is configured by hand.
 #   push to main      -> deploy
 #   workflow_dispatch -> the same, for the first deploy and for reruns
+#   workflow_call     -> the Daily workflow, with the snapshot commit it just pushed
 #
 # The site is generated and committed by ./build; the Reproduce workflow checks that a
 # fresh build produces exactly what is committed before anything reaches main.
@@ -14,6 +15,12 @@ name: Site
 
 on:
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      ref:
+        description: Commit to deploy
+        type: string
+        required: true
   push:
     branches: [main]
     paths: ["site/**", "wrangler.jsonc", ".github/workflows/site.yml"]
@@ -21,18 +28,18 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: site
-  cancel-in-progress: true
-
 jobs:
   deploy:
     if: github.repository == 'winnowwallet/compare'
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    concurrency:
+      group: site
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
+          ref: ${{ inputs.ref || github.sha }}
           persist-credentials: false
 
       - name: Deploy the Worker
