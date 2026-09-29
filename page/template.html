@@ -97,7 +97,7 @@ ul.evidence code{font-size:.8em}
 <p class="page-kicker">Winnow compare · Lightning on iPhone</p>
 <h1>Lightning wallets compared</h1>
 <p class="lede">Winnow is adding Lightning. Here is how it compares with the open-source iPhone wallets that already run a Lightning node on the phone: features, code size, complexity and what each one depends on.</p>
-<aside class="guide-summary"><p><strong>Winnow’s Lightning is a research beta in internal testing.</strong> It is not in the App Store app. It pays BOLT 12 offers but cannot yet pay BOLT 11 invoices. It opens private channels with a provider you choose and uses configured routes through that provider, not the public network graph. Background checks run when iOS allows. There is no watchtower, and the recovery phrase does not restore open channels. <a href="#scope">What the comparison leaves out</a></p></aside>
+<aside class="guide-summary"><p><strong>Winnow’s Lightning is a research beta in internal testing.</strong> It is not in the App Store app. It pays BOLT 11 invoices, BOLT 12 offers and BIP 353 names, each as a single-part payment. It opens private channels with a provider you choose, and for invoices it finds its own route over the public graph it fetches from that provider. Background checks run when iOS allows. There is no watchtower. The recovery phrase alone does not restore open channels; an encrypted recovery file, saved by hand, lets Winnow close them and recover the funds. <a href="#scope">What the comparison leaves out</a></p></aside>
 <nav class="contents" aria-label="On this page"><a href="#glance">At a glance</a><a href="#features">Features</a><a href="#size">Code size</a><a href="#languages">Languages</a><a href="#complexity">Complexity</a><a href="#dependencies">Dependencies</a><a href="#history">Over time</a><a href="#scope">What the numbers leave out</a><a href="#method">How we measured</a><a href="#other">Other approaches</a></nav>
 
 <section id="glance">
@@ -254,13 +254,13 @@ ul.evidence code{font-size:.8em}
 <h3>Less code is not proof of safety</h3>
 <p>A smaller codebase is quicker to read and review. It does not show the code is correct. Winnow’s Lightning engine is tested against Core Lightning, LDK and Bitcoin Core on regtest, but it has not had an independent security review.</p>
 <h3>The engines do different amounts of work</h3>
-<p>LND and LDK are general-purpose nodes. They keep the network graph, find their own routes and can forward other people’s payments. lightning-kmp supports splicing and dual-funded channels. Winnow’s engine has no general graph routing, pays only BOLT 12 offers, and does not implement multipath payments, anchor channels or splicing. The <a href="#features">feature table</a> shows the rest.</p>
+<p>LND and LDK are general-purpose nodes. They keep the network graph, split payments across several paths and can forward other people’s payments. lightning-kmp supports splicing and dual-funded channels. Winnow’s engine fetches the graph from its channel partner only when it pays an invoice, sends every payment as a single part, and does not implement splicing. The <a href="#features">feature table</a> shows the rest.</p>
 <h3>The apps do different amounts of work</h3>
 <p>Zeus also manages remote LND and Core Lightning nodes and includes Cashu, Nostr Wallet Connect and a point of sale. Bitkit includes Pubky contacts, Paykit and Trezor support. Winnow includes shared accounts with MuSig2 and 2-of-3 signing. Each count is the whole app, not only its Lightning features.</p>
 <h3>Who can move on-chain funds</h3>
 <p>Phoenix has no separate on-chain wallet. Its Bitcoin address needs ACINQ’s signature alongside yours; without ACINQ, your key alone can spend it after about six months. Sending to a Bitcoin address takes the amount out of your ACINQ channel, which ACINQ co-signs. Winnow, Bitkit, Blixt and Zeus each keep a single-key on-chain wallet that works without their channel partner.</p>
 <h3>Recovery differs</h3>
-<p>Winnow keeps channel state in an encrypted journal on the phone. Keep the phone and its files while a channel is open. The recovery phrase restores the on-chain wallet, not current channel state.</p>
+<p>Winnow keeps channel state in an encrypted journal on the phone. Keep the phone and its files while a channel is open. The recovery phrase restores the on-chain wallet, not channel state. An encrypted recovery file, exported by hand, lets a restored Winnow ask the channel partner to close and recover the funds, though it cannot resume payments.</p>
 </section>
 
 <section id="method">

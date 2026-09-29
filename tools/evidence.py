@@ -50,13 +50,29 @@ def blob(source, rev, path):
     return r.stdout.decode(errors='ignore').splitlines() if r.returncode == 0 else None
 
 
-def find(block, lines):
-    """First line number where `block` appears in `lines`, comparing without trailing space."""
+def find_all(block, lines):
+    """Every line number where `block` appears in `lines`, comparing without trailing space."""
     want = [l.rstrip() for l in block]
     have = [l.rstrip() for l in lines]
-    for i in range(len(have) - len(want) + 1):
-        if have[i:i + len(want)] == want:
-            return i + 1
+    return [i + 1 for i in range(len(have) - len(want) + 1) if have[i:i + len(want)] == want]
+
+
+def find(block, lines):
+    hits = find_all(block, lines)
+    return hits[0] if hits else None
+
+
+def locate(reviewed, first, last, now, widest=3):
+    """Where the cited lines are now. A passage that occurs more than once (a lone `}` or a
+    common guard) is widened with its surrounding lines until it is unique; if it never is,
+    or is not found, there is no answer."""
+    for pad in range(widest + 1):
+        start, end = max(0, first - 1 - pad), min(len(reviewed), last + pad)
+        hits = find_all(reviewed[start:end], now)
+        if len(hits) == 1:
+            return hits[0] + (first - 1 - start)
+        if not hits:
+            return None
     return None
 
 
@@ -68,10 +84,9 @@ def drift(source, path, a, b, reviewed_lines):
     if not a:
         return ('same' if now == reviewed_lines else 'changed'), None
     first, last = int(a), int(b or a)
-    block = reviewed_lines[first - 1:last]
-    if now[first - 1:last] == block:
+    if now[first - 1:last] == reviewed_lines[first - 1:last]:
         return 'same', None
-    at = find(block, now)
+    at = locate(reviewed_lines, first, last, now)
     return ('moved', at) if at else ('changed', None)
 
 

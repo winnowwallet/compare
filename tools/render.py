@@ -286,8 +286,9 @@ def spark(w, key, label):
     elif now == was:
         change = '<span class="delta">no change</span>'
     else:
-        pct_text = f' ({100 * (now - was) / was:+.1f}%)' if was else ''
-        change = f'<span class="delta">{f"{now - was:+,}{pct_text}".replace("-", "−")}</span>'
+        share = 100 * (now - was) / was if was else None
+        pct_text = '' if share is None else ' (<0.1%)' if abs(share) < 0.05 else f' ({share:+.1f}%)'
+        change = f'<span class="delta">{esc(f"{now - was:+,}{pct_text}".replace("-", "−"))}</span>'
     aria = (f'{w}, {label.lower()}: {now:,} on {day(days[-1])}' +
             (f', from {was:,} on {day(days[0])}' if len(vals) > 1 else '') + '. Arrow keys step through snapshots.')
     return (f'<td class="trend-cell"><span class="val">{now:,}</span>{change}'

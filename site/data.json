@@ -4142,24 +4142,24 @@
  "features": {
   "Winnow": {
    "bolt11_pay": {
-    "value": "no",
-    "evidence": "winnow:Sources/WinnowApp/LightningAppPayments.swift:15; winnow:Sources/WinnowApp/LightningLiquidityView.swift:68",
-    "note": "Send accepts only lno offers; setup invoices must be paid elsewhere"
+    "value": "yes",
+    "evidence": "winnow:Sources/WinnowApp/SendView.swift:217; winnow:Sources/WinnowApp/LightningAppInvoicePayments.swift:11; winnow:Sources/LightningCore/LightningPeerRouting.swift:7",
+    "note": "Single-part payments from Send; Winnow finds the route from the invoice hints and the public graph"
    },
    "bolt11_receive": {
     "value": "yes",
-    "evidence": "winnow:Sources/WinnowApp/LightningReceiveView.swift:34; winnow:Sources/WinnowApp/LightningAppReceiving.swift:89",
-    "note": "Single-use invoice with provider route hint; app must stay open"
+    "evidence": "winnow:Sources/WinnowApp/LightningReceiveView.swift:46; winnow:Sources/WinnowApp/LightningAppReceiving.swift:150",
+    "note": "Single-use invoice with a provider route hint; the app must stay open"
    },
    "bolt12_pay": {
-    "value": "partial",
-    "evidence": "winnow:Sources/WinnowApp/LightningAppPayments.swift:22; winnow:Sources/LightningCore/LightningAsyncSending.swift:14",
-    "note": "Only async static-invoice flow; needs imported profile route, async provider"
+    "value": "yes",
+    "evidence": "winnow:Sources/WinnowApp/LightningView.swift:45; winnow:Sources/WinnowApp/LightningAppOffers.swift:19; winnow:Sources/LightningCore/LightningAsyncSending.swift:14",
+    "note": "Requests an invoice from the offer over onion messages, then a separate route and fee review; async static invoices too"
    },
    "bolt12_receive": {
-    "value": "partial",
-    "evidence": "winnow:Sources/WinnowApp/LightningView.swift:117; winnow:Sources/WinnowApp/LightningProviders.swift:16",
-    "note": "Reusable offer needs imported async-provider profile; mainnet presets lack receive config"
+    "value": "yes",
+    "evidence": "winnow:Sources/WinnowApp/LightningView.swift:160; winnow:Sources/WinnowApp/LightningProviders.swift:16",
+    "note": "Reusable offer once a channel has inbound capacity; the app must be open to answer. Offline offers need an async provider profile"
    },
    "offline_receive": {
     "value": "partial",
@@ -4168,28 +4168,28 @@
    },
    "lnurl": {
     "value": "no",
-    "evidence": "winnow:Sources/WinnowApp/LightningAppPayments.swift:15",
-    "note": "No LNURL code; send input parses BOLT12 offers only"
+    "evidence": "winnow:Sources/WinnowApp/LightningAppPayments.swift:15; winnow:Sources/WinnowApp/LightningAppOffers.swift:41",
+    "note": "No LNURL code; send takes BOLT 11 invoices, BOLT 12 offers and BIP 353 names"
    },
    "ln_address_pay": {
     "value": "no",
-    "evidence": "winnow:Sources/WinnowApp/LightningAppPayments.swift:15",
-    "note": "No Lightning address resolution; only lno offers accepted"
+    "evidence": "winnow:Sources/WinnowApp/LightningAppOffers.swift:41",
+    "note": "user@domain resolves only as a BIP 353 name, not through LNURL-pay"
    },
    "ln_address_receive": {
     "value": "no",
-    "evidence": "winnow:Sources/WinnowApp/LightningReceiveView.swift:34; winnow:Sources/WinnowApp/LightningView.swift:117",
-    "note": "Receive offers BOLT11 invoice or BOLT12 offer only"
+    "evidence": "winnow:Sources/WinnowApp/LightningReceiveView.swift:46; winnow:Sources/WinnowApp/LightningView.swift:160",
+    "note": "Receive gives a BOLT 11 invoice or a BOLT 12 offer; no hosted address"
    },
    "bip353": {
-    "value": "no",
-    "evidence": "winnow:Sources/WinnowApp/LightningAppPayments.swift:15",
-    "note": "No DNS/BIP353 resolution code found"
+    "value": "yes",
+    "evidence": "winnow:Sources/WinnowApp/LightningAppOffers.swift:41; winnow:Sources/LightningCore/BIP353Resolver.swift:8",
+    "note": "₿name@domain resolves to an offer, with DNSSEC checked on the device rather than trusting the resolver"
    },
    "mpp": {
     "value": "no",
-    "evidence": "winnow:Sources/LightningCore/LightningFeatures.swift:30; winnow:Sources/LightningCore/Bolt11Invoice.swift:37",
-    "note": "Features explicitly exclude MPP"
+    "evidence": "winnow:Sources/LightningCore/LightningFeatures.swift:30; winnow:Sources/LightningCore/README.md:184",
+    "note": "Single-part payments only; the advertised features exclude MPP"
    },
    "keysend": {
     "value": "no",
@@ -4203,42 +4203,42 @@
    },
    "jit_channels": {
     "value": "partial",
-    "evidence": "winnow:Sources/WinnowApp/LightningAppReceiving.swift:34; winnow:Sources/WinnowApp/LightningLiquidityView.swift:68",
-    "note": "LSPS1 inbound purchase (Olympus, Megalith); fee paid externally; no LSPS2"
+    "evidence": "winnow:Sources/WinnowApp/LightningAppReceiving.swift:60; winnow:Sources/WinnowApp/LightningLiquidityView.swift:116",
+    "note": "LSPS1 inbound purchase (Olympus, Megalith); the setup fee is paid from another wallet; no LSPS2"
    },
    "splicing": {
     "value": "no",
-    "evidence": "winnow:Sources/LightningCore/README.md:135",
-    "note": "Docs: splicing not implemented or advertised"
+    "evidence": "winnow:Sources/LightningCore/README.md:183",
+    "note": "Not implemented or advertised"
    },
    "anchors": {
-    "value": "no",
-    "evidence": "winnow:Sources/LightningCore/README.md:135; winnow:Sources/LightningCore/ChannelTransactions.swift:4",
-    "note": "Static-remotekey non-anchor channels only"
+    "value": "yes",
+    "evidence": "winnow:Sources/LightningCore/README.md:20; winnow:Sources/LightningCore/ChannelTransactions.swift:4",
+    "note": "Negotiates option_anchors for new channels; older channels keep static-remotekey"
    },
    "local_pathfinding": {
-    "value": "no",
-    "evidence": "winnow:Sources/LightningCore/LightningPeerSession.swift:137; winnow:Sources/LightningCore/README.md:136",
-    "note": "Configured-route client; gossip ignored; no graph routing"
+    "value": "yes",
+    "evidence": "winnow:Sources/LightningCore/LightningPeerRouting.swift:7; winnow:Sources/LightningCore/LightningRoutingGraph.swift:16",
+    "note": "For BOLT 11, searches a graph of up to 150,000 channels fetched from its channel partner and cached for 10 minutes; one path"
    },
    "watchtower": {
-    "value": "no",
-    "evidence": "winnow:docs/engineering/swift-lightning.md:237; winnow:Sources/WinnowApp/LightningView.swift:21",
-    "note": "No external watchtower; iOS background checks relay pre-signed recovery txs"
+    "value": "partial",
+    "evidence": "winnow:docs/engineering/swift-lightning.md:216; winnow:Sources/WinnowApp/LightningView.swift:27",
+    "note": "No watchtower; background checks can publish pre-signed penalty and recovery transactions when iOS allows"
    },
    "channel_backup": {
-    "value": "no",
-    "evidence": "winnow:Sources/LightningCore/README.md:129; winnow:Sources/WinnowApp/AppModel.swift:425",
-    "note": "Journal stays on device; iCloud backup disabled in Lightning app"
+    "value": "partial",
+    "evidence": "winnow:Sources/WinnowApp/LightningBackupView.swift:36; winnow:Sources/WinnowApp/AppModel.swift:450",
+    "note": "Encrypted recovery file exported by hand; restoring asks the peer to close. iCloud backup is off in the Lightning app"
    },
    "onchain_independent": {
     "value": "yes",
-    "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:668; winnow:Sources/LightningCore/README.md:37",
+    "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:659; winnow:Sources/LightningCore/README.md:48",
     "note": "Single-key BIP86 Taproot wallet; channels are funded from it, not the reverse"
    },
    "taproot": {
     "value": "yes",
-    "evidence": "winnow:README.md:8; winnow:Sources/WalletCore/Wallet/Wallet.swift:722",
+    "evidence": "winnow:README.md:8; winnow:Sources/WalletCore/Wallet/Wallet.swift:716",
     "note": "Ordinary receive uses BIP86 P2TR"
    },
    "multisig": {
@@ -4248,18 +4248,18 @@
    },
    "hw_signer": {
     "value": "partial",
-    "evidence": "winnow:Sources/WinnowApp/VaultsView.swift:72; winnow:Sources/WinnowApp/VaultSpendSession.swift:403",
+    "evidence": "winnow:Sources/WinnowApp/VaultsView.swift:72; winnow:Sources/WinnowApp/VaultSpendSession.swift:410",
     "note": "PSBT/MuSig2 cosigning with another device (Core tested); hardware wallets unverified"
    },
    "coin_control": {
     "value": "no",
-    "evidence": "winnow:Sources/WinnowApp/AppModel.swift:1842",
+    "evidence": "winnow:Sources/WinnowApp/AppModel.swift:1989",
     "note": "Automatic coin selection over all spendable UTXOs; coins list read-only"
    },
    "tor": {
-    "value": "no",
-    "evidence": "winnow:README.md:11; winnow:Sources/WinnowApp/WinnowApp.swift:39",
-    "note": "Embedded Tor removed in 0.7.1"
+    "value": "partial",
+    "evidence": "winnow:README.md:11; winnow:Sources/WalletCore/Network/Transport/TailnetGatewayDiscovery.swift:17; winnow:Sources/WinnowApp/PeerGatewaysSection.swift:17",
+    "note": "No bundled Tor; reaches Tor and I2P Bitcoin peers through a SOCKS gateway you run, found on your Tailscale network or set by hand"
    },
    "license": {
     "value": "MIT",
@@ -4407,7 +4407,7 @@
    },
    "bolt12_pay": {
     "value": "engine-only",
-    "evidence": "synonym-ldk-node:src/lib.rs:1058; bitkit:Bitkit/ViewModels/AppViewModel.swift:834",
+    "evidence": "synonym-ldk-node:src/lib.rs:1058; bitkit:Bitkit/ViewModels/AppViewModel.swift:831",
     "note": "The app never calls bolt12Payment; offers fall through to 'Unsupported' toast"
    },
    "bolt12_receive": {
@@ -4417,17 +4417,17 @@
    },
    "offline_receive": {
     "value": "partial",
-    "evidence": "bitkit:BitkitNotification/NotificationService.swift:7; bitkit:Bitkit/Constants/Env.swift:325",
+    "evidence": "bitkit:BitkitNotification/NotificationService.swift:7; bitkit:Bitkit/Constants/Env.swift:328",
     "note": "Blocktank push asks user to open app; extension doesn't start node"
    },
    "lnurl": {
     "value": "yes",
-    "evidence": "bitkit:Bitkit/ViewModels/AppViewModel.swift:794; bitkit:Bitkit/Views/Wallets/LnurlWithdraw/LnurlWithdrawConfirm.swift:73",
+    "evidence": "bitkit:Bitkit/ViewModels/AppViewModel.swift:791; bitkit:Bitkit/Views/Wallets/LnurlWithdraw/LnurlWithdrawConfirm.swift:73",
     "note": "LNURL-pay, withdraw, channel and auth all handled"
    },
    "ln_address_pay": {
     "value": "yes",
-    "evidence": "bitkit:Bitkit/Utilities/PaymentNavigationHelper.swift:65; bitkit:Bitkit/ViewModels/AppViewModel.swift:640",
+    "evidence": "bitkit:Bitkit/Utilities/PaymentNavigationHelper.swift:65; bitkit:Bitkit/ViewModels/AppViewModel.swift:637",
     "note": "bitkit-core decode turns user@domain into LNURL-pay (source not in scratchpad)"
    },
    "ln_address_receive": {
@@ -4437,7 +4437,7 @@
    },
    "bip353": {
     "value": "no",
-    "evidence": "synonym-ldk-node:src/payment/unified_qr.rs:29; bitkit:Bitkit/ViewModels/AppViewModel.swift:834",
+    "evidence": "synonym-ldk-node:src/payment/unified_qr.rs:29; bitkit:Bitkit/ViewModels/AppViewModel.swift:831",
     "note": "No DNS/HRN resolution in fork or app; user@domain resolves as LNURL"
    },
    "mpp": {
@@ -4452,7 +4452,7 @@
    },
    "choose_peer": {
     "value": "yes",
-    "evidence": "bitkit:Bitkit/Views/Transfer/FundAdvancedOptions.swift:37; bitkit:Bitkit/ViewModels/TransferViewModel.swift:1253",
+    "evidence": "bitkit:Bitkit/Views/Transfer/FundAdvancedOptions.swift:37; bitkit:Bitkit/ViewModels/TransferViewModel.swift:1296",
     "note": "Default LSP is Blocktank; manual open to any node URI, or LNURL-channel from other LSPs"
    },
    "jit_channels": {
@@ -4472,7 +4472,7 @@
    },
    "local_pathfinding": {
     "value": "yes",
-    "evidence": "bitkit:Bitkit/Services/LightningService.swift:1116; bitkit:Bitkit/Constants/Env.swift:252",
+    "evidence": "bitkit:Bitkit/Services/LightningService.swift:1116; bitkit:Bitkit/Constants/Env.swift:255",
     "note": "Local LDK routing using Blocktank RGS snapshot and Blocktank-hosted scorer"
    },
    "watchtower": {
@@ -4482,7 +4482,7 @@
    },
    "channel_backup": {
     "value": "yes",
-    "evidence": "bitkit:Bitkit/Services/LightningService.swift:168; bitkit:Bitkit/Constants/Env.swift:337",
+    "evidence": "bitkit:Bitkit/Services/LightningService.swift:168; bitkit:Bitkit/Constants/Env.swift:340",
     "note": "All LDK state stored remotely in Synonym VSS server (bitkit.to)"
    },
    "onchain_independent": {
@@ -4512,7 +4512,7 @@
    },
    "tor": {
     "value": "no",
-    "evidence": "bitkit:Bitkit/Resources/Localization/en.lproj/Localizable.strings:320",
+    "evidence": "bitkit:Bitkit/Resources/Localization/en.lproj/Localizable.strings:323",
     "note": "No Tor code; UI string says 'Bitkit cannot add Tor nodes'"
    },
    "license": {
@@ -4651,7 +4651,7 @@
   "Zeus": {
    "bolt11_pay": {
     "value": "yes",
-    "evidence": "zeus:utils/handleAnything.ts:521; zeus:views/PaymentRequest.tsx:360",
+    "evidence": "zeus:utils/handleAnything.ts:464; zeus:views/PaymentRequest.tsx:360",
     "note": "Scanned or pasted BOLT 11 invoices are paid through the embedded LND"
    },
    "bolt11_receive": {
@@ -4676,12 +4676,12 @@
    },
    "lnurl": {
     "value": "yes",
-    "evidence": "zeus:utils/handleAnything.ts:1017-1041",
+    "evidence": "zeus:utils/handleAnything.ts:941-965",
     "note": "LNURL-pay, withdraw, channel and auth are all handled"
    },
    "ln_address_pay": {
     "value": "yes",
-    "evidence": "zeus:utils/handleAnything.ts:675; zeus:utils/handleAnything.ts:751",
+    "evidence": "zeus:utils/handleAnything.ts:618; zeus:utils/handleAnything.ts:719",
     "note": "user@domain looked up via LUD-16 .well-known/lnurlp"
    },
    "ln_address_receive": {
@@ -4691,7 +4691,7 @@
    },
    "bip353": {
     "value": "partial",
-    "evidence": "zeus:utils/handleAnything.ts:707-736; zeus:views/Send.tsx:1364",
+    "evidence": "zeus:utils/handleAnything.ts:672-701; zeus:views/Send.tsx:1364",
     "note": "Resolves via Cloudflare DNS-over-HTTPS; offers can't be paid on LND, only on-chain/BOLT 11 fallbacks"
    },
    "mpp": {
@@ -4766,7 +4766,7 @@
    },
    "tor": {
     "value": "no",
-    "evidence": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465; zeus:stores/SettingsStore.ts:1604",
+    "evidence": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465; zeus:stores/SettingsStore.ts:1608",
     "note": "Built-in Tor only for remote nodes; embedded LND Tor setting has no toggle"
    },
    "license": {
@@ -4826,11 +4826,11 @@
    "engine": "LDK Node (Synonym’s fork) on rust-lightning {version:rust-lightning} (Rust)",
    "chain_data": {
     "text": "Synonym’s Electrum server",
-    "cite": "bitkit:Bitkit/Constants/Env.swift:188"
+    "cite": "bitkit:Bitkit/Constants/Env.swift:191"
    },
    "partner": {
     "text": "Blocktank, run by Synonym",
-    "cite": "bitkit:Bitkit/Constants/Env.swift:292"
+    "cite": "bitkit:Bitkit/Constants/Env.swift:295"
    },
    "distribution": "App Store",
    "libraries": {
@@ -4892,9 +4892,9 @@
   "about": "The revision each hand-reviewed fact in features/ and wallets.json was checked against, and when. Citations resolve and link here, so they stay valid as sources.json moves forward; data/drift.json shows which cited code has changed since. `tools/evidence.py --adopt [source ...]` starts a re-review.",
   "sources": {
    "winnow": {
-    "repo": "https://github.com/posix4e/winnow-lightning",
-    "rev": "f379b7cec9a025e0910f8e334dfcd36a6f1f9040",
-    "date": "2026-09-27"
+    "repo": "https://github.com/winnowwallet/winnow",
+    "rev": "bd8714549c90b68a4ddace01972109e5bcf333ba",
+    "date": "2026-09-29"
    },
    "phoenix": {
     "repo": "https://github.com/ACINQ/phoenix",
@@ -4908,8 +4908,8 @@
    },
    "bitkit": {
     "repo": "https://github.com/synonymdev/bitkit-ios",
-    "rev": "c906d5af336dd1ceec22bcbbb1c7d9f115e2d021",
-    "date": "2026-09-27"
+    "rev": "2a0cb7bf5055ba7b9d0e907822a6fcf57f770932",
+    "date": "2026-09-29"
    },
    "synonym-ldk-node": {
     "repo": "https://github.com/synonymdev/ldk-node",
@@ -4948,8 +4948,8 @@
    },
    "zeus": {
     "repo": "https://github.com/ZeusLN/zeus",
-    "rev": "aeb9c10c6b0b8aad4752c08457a4f0d127ea4645",
-    "date": "2026-09-27"
+    "rev": "605b88bfc55a71992d00ca754b9046a7b8a778fb",
+    "date": "2026-09-29"
    },
    "lnd-zeus": {
     "repo": "https://github.com/ZeusLN/lnd",
@@ -4960,18 +4960,18 @@
  },
  "drift": {
   "reviewed": "2026-09-27",
-  "reviewed_latest": "2026-09-27",
+  "reviewed_latest": "2026-09-29",
   "measured": "2026-09-29",
-  "citations": 239,
-  "same": 199,
-  "moved": 22,
-  "changed": 18,
+  "citations": 244,
+  "same": 244,
+  "moved": 0,
+  "changed": 0,
   "gone": 0,
   "by_wallet": {
    "Winnow": {
-    "same": 25,
-    "moved": 8,
-    "changed": 15,
+    "same": 53,
+    "moved": 0,
+    "changed": 0,
     "gone": 0
    },
    "Phoenix": {
@@ -4981,8 +4981,8 @@
     "gone": 0
    },
    "Bitkit": {
-    "same": 42,
-    "moved": 11,
+    "same": 53,
+    "moved": 0,
     "changed": 0,
     "gone": 0
    },
@@ -4993,278 +4993,14 @@
     "gone": 0
    },
    "Zeus": {
-    "same": 42,
-    "moved": 3,
-    "changed": 3,
+    "same": 48,
+    "moved": 0,
+    "changed": 0,
     "gone": 0
    }
   },
-  "changed_or_gone": [
-   {
-    "wallet": "Winnow",
-    "fact": "features.bolt11_pay",
-    "cite": "winnow:Sources/WinnowApp/LightningLiquidityView.swift:68",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.bolt11_receive",
-    "cite": "winnow:Sources/WinnowApp/LightningReceiveView.swift:34",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.bolt12_receive",
-    "cite": "winnow:Sources/WinnowApp/LightningView.swift:117",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.ln_address_receive",
-    "cite": "winnow:Sources/WinnowApp/LightningReceiveView.swift:34",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.ln_address_receive",
-    "cite": "winnow:Sources/WinnowApp/LightningView.swift:117",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.mpp",
-    "cite": "winnow:Sources/LightningCore/LightningFeatures.swift:30",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.jit_channels",
-    "cite": "winnow:Sources/WinnowApp/LightningLiquidityView.swift:68",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.splicing",
-    "cite": "winnow:Sources/LightningCore/README.md:135",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.anchors",
-    "cite": "winnow:Sources/LightningCore/README.md:135",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.anchors",
-    "cite": "winnow:Sources/LightningCore/ChannelTransactions.swift:4",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.local_pathfinding",
-    "cite": "winnow:Sources/LightningCore/LightningPeerSession.swift:137",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.local_pathfinding",
-    "cite": "winnow:Sources/LightningCore/README.md:136",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.channel_backup",
-    "cite": "winnow:Sources/LightningCore/README.md:129",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.channel_backup",
-    "cite": "winnow:Sources/WinnowApp/AppModel.swift:425",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.tor",
-    "cite": "winnow:Sources/WinnowApp/WinnowApp.swift:39",
-    "status": "changed"
-   },
-   {
-    "wallet": "Zeus",
-    "fact": "features.ln_address_pay",
-    "cite": "zeus:utils/handleAnything.ts:751",
-    "status": "changed"
-   },
-   {
-    "wallet": "Zeus",
-    "fact": "features.bip353",
-    "cite": "zeus:utils/handleAnything.ts:707-736",
-    "status": "changed"
-   },
-   {
-    "wallet": "Zeus",
-    "fact": "features.tor",
-    "cite": "zeus:stores/SettingsStore.ts:1604",
-    "status": "changed"
-   }
-  ],
-  "moved_within_file": [
-   {
-    "wallet": "Winnow",
-    "fact": "features.bolt11_receive",
-    "cite": "winnow:Sources/WinnowApp/LightningAppReceiving.swift:89",
-    "status": "moved",
-    "now_at": 150
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.jit_channels",
-    "cite": "winnow:Sources/WinnowApp/LightningAppReceiving.swift:34",
-    "status": "moved",
-    "now_at": 60
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.watchtower",
-    "cite": "winnow:Sources/WinnowApp/LightningView.swift:21",
-    "status": "moved",
-    "now_at": 27
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.onchain_independent",
-    "cite": "winnow:Sources/WalletCore/Wallet/Wallet.swift:668",
-    "status": "moved",
-    "now_at": 659
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.onchain_independent",
-    "cite": "winnow:Sources/LightningCore/README.md:37",
-    "status": "moved",
-    "now_at": 48
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.taproot",
-    "cite": "winnow:Sources/WalletCore/Wallet/Wallet.swift:722",
-    "status": "moved",
-    "now_at": 716
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.hw_signer",
-    "cite": "winnow:Sources/WinnowApp/VaultSpendSession.swift:403",
-    "status": "moved",
-    "now_at": 410
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.coin_control",
-    "cite": "winnow:Sources/WinnowApp/AppModel.swift:1842",
-    "status": "moved",
-    "now_at": 1509
-   },
-   {
-    "wallet": "Bitkit",
-    "fact": "features.bolt12_pay",
-    "cite": "bitkit:Bitkit/ViewModels/AppViewModel.swift:834",
-    "status": "moved",
-    "now_at": 831
-   },
-   {
-    "wallet": "Bitkit",
-    "fact": "features.offline_receive",
-    "cite": "bitkit:Bitkit/Constants/Env.swift:325",
-    "status": "moved",
-    "now_at": 328
-   },
-   {
-    "wallet": "Bitkit",
-    "fact": "features.lnurl",
-    "cite": "bitkit:Bitkit/ViewModels/AppViewModel.swift:794",
-    "status": "moved",
-    "now_at": 791
-   },
-   {
-    "wallet": "Bitkit",
-    "fact": "features.ln_address_pay",
-    "cite": "bitkit:Bitkit/ViewModels/AppViewModel.swift:640",
-    "status": "moved",
-    "now_at": 637
-   },
-   {
-    "wallet": "Bitkit",
-    "fact": "features.bip353",
-    "cite": "bitkit:Bitkit/ViewModels/AppViewModel.swift:834",
-    "status": "moved",
-    "now_at": 831
-   },
-   {
-    "wallet": "Bitkit",
-    "fact": "features.choose_peer",
-    "cite": "bitkit:Bitkit/ViewModels/TransferViewModel.swift:1253",
-    "status": "moved",
-    "now_at": 1296
-   },
-   {
-    "wallet": "Bitkit",
-    "fact": "features.local_pathfinding",
-    "cite": "bitkit:Bitkit/Constants/Env.swift:252",
-    "status": "moved",
-    "now_at": 255
-   },
-   {
-    "wallet": "Bitkit",
-    "fact": "features.channel_backup",
-    "cite": "bitkit:Bitkit/Constants/Env.swift:337",
-    "status": "moved",
-    "now_at": 340
-   },
-   {
-    "wallet": "Bitkit",
-    "fact": "features.tor",
-    "cite": "bitkit:Bitkit/Resources/Localization/en.lproj/Localizable.strings:320",
-    "status": "moved",
-    "now_at": 323
-   },
-   {
-    "wallet": "Zeus",
-    "fact": "features.bolt11_pay",
-    "cite": "zeus:utils/handleAnything.ts:521",
-    "status": "moved",
-    "now_at": 464
-   },
-   {
-    "wallet": "Zeus",
-    "fact": "features.lnurl",
-    "cite": "zeus:utils/handleAnything.ts:1017-1041",
-    "status": "moved",
-    "now_at": 941
-   },
-   {
-    "wallet": "Zeus",
-    "fact": "features.ln_address_pay",
-    "cite": "zeus:utils/handleAnything.ts:675",
-    "status": "moved",
-    "now_at": 618
-   },
-   {
-    "wallet": "Bitkit",
-    "fact": "profile.chain_data",
-    "cite": "bitkit:Bitkit/Constants/Env.swift:188",
-    "status": "moved",
-    "now_at": 191
-   },
-   {
-    "wallet": "Bitkit",
-    "fact": "profile.partner",
-    "cite": "bitkit:Bitkit/Constants/Env.swift:292",
-    "status": "moved",
-    "now_at": 295
-   }
-  ]
+  "changed_or_gone": [],
+  "moved_within_file": []
  },
  "history": [
   {

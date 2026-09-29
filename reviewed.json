@@ -1,10 +1,10 @@
 {
  "about": "The revision each hand-reviewed fact in features/ and wallets.json was checked against, and when. Citations resolve and link here, so they stay valid as sources.json moves forward; data/drift.json shows which cited code has changed since. `tools/evidence.py --adopt [source ...]` starts a re-review.",
  "sources": {
-  "winnow": {"repo": "https://github.com/posix4e/winnow-lightning", "rev": "f379b7cec9a025e0910f8e334dfcd36a6f1f9040", "date": "2026-09-27"},
+  "winnow": {"repo": "https://github.com/winnowwallet/winnow", "rev": "bd8714549c90b68a4ddace01972109e5bcf333ba", "date": "2026-09-29"},
   "phoenix": {"repo": "https://github.com/ACINQ/phoenix", "rev": "1facad2762acb9cfac3e418ae5a326a0bab167c3", "date": "2026-09-27"},
   "lightning-kmp": {"repo": "https://github.com/ACINQ/lightning-kmp", "rev": "77f2f788509fb8452177e86ba6ea4b731cb840e9", "date": "2026-09-27"},
-  "bitkit": {"repo": "https://github.com/synonymdev/bitkit-ios", "rev": "c906d5af336dd1ceec22bcbbb1c7d9f115e2d021", "date": "2026-09-27"},
+  "bitkit": {"repo": "https://github.com/synonymdev/bitkit-ios", "rev": "2a0cb7bf5055ba7b9d0e907822a6fcf57f770932", "date": "2026-09-29"},
   "synonym-ldk-node": {"repo": "https://github.com/synonymdev/ldk-node", "rev": "190a17d966cf5a685444cfa17c3a419c290bf26c", "date": "2026-09-27"},
   "rust-lightning": {"repo": "https://github.com/lightningdevkit/rust-lightning", "rev": "311ad94772722ff9c54ec0f7656a4b811be5b846", "date": "2026-09-27"},
   "bitkit-core": {"repo": "https://github.com/synonymdev/bitkit-core", "rev": "b53fa54a16f04940943072bb6e08dc2650302f93", "date": "2026-09-27"},
@@ -12,7 +12,7 @@
   "vss-rust-client-ffi": {"repo": "https://github.com/synonymdev/vss-rust-client-ffi", "rev": "3476fa45be919244310c4f65945e8d2bc1b8ee15", "date": "2026-09-27"},
   "blixt": {"repo": "https://github.com/hsjoberg/blixt-wallet", "rev": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a", "date": "2026-09-27"},
   "lnd-blixt": {"repo": "https://github.com/hsjoberg/lnd", "rev": "ae185f27e097a4106d04437f0a2be6edacf40910", "date": "2026-09-27"},
-  "zeus": {"repo": "https://github.com/ZeusLN/zeus", "rev": "aeb9c10c6b0b8aad4752c08457a4f0d127ea4645", "date": "2026-09-27"},
+  "zeus": {"repo": "https://github.com/ZeusLN/zeus", "rev": "605b88bfc55a71992d00ca754b9046a7b8a778fb", "date": "2026-09-29"},
   "lnd-zeus": {"repo": "https://github.com/ZeusLN/lnd", "rev": "ae24665a916d94fa89475b21ec27e8cda0eb5845", "date": "2026-09-27"}
  }
 }

@@ -26,8 +26,8 @@
     "Bitkit": {
       "built_with": "Swift",
       "engine": "LDK Node (Synonym’s fork) on rust-lightning {version:rust-lightning} (Rust)",
-      "chain_data": {"text": "Synonym’s Electrum server", "cite": "bitkit:Bitkit/Constants/Env.swift:188"},
-      "partner": {"text": "Blocktank, run by Synonym", "cite": "bitkit:Bitkit/Constants/Env.swift:292"},
+      "chain_data": {"text": "Synonym’s Electrum server", "cite": "bitkit:Bitkit/Constants/Env.swift:191"},
+      "partner": {"text": "Blocktank, run by Synonym", "cite": "bitkit:Bitkit/Constants/Env.swift:295"},
       "distribution": "App Store",
       "libraries": {"text": "BDK (inside LDK Node), bitkit-core, Paykit, VSS client, Lottie"},
       "bitcoin_library_not_counted": "BDK, rust-bitcoin",
