@@ -1,17 +1,17 @@
 {
  "reviewed": "2026-09-27",
  "reviewed_latest": "2026-09-27",
- "measured": "2026-09-27",
+ "measured": "2026-09-29",
  "citations": 239,
- "same": 226,
- "moved": 9,
- "changed": 4,
+ "same": 199,
+ "moved": 22,
+ "changed": 18,
  "gone": 0,
  "by_wallet": {
   "Winnow": {
-   "same": 35,
-   "moved": 9,
-   "changed": 4,
+   "same": 25,
+   "moved": 8,
+   "changed": 15,
    "gone": 0
   },
   "Phoenix": {
@@ -21,8 +21,8 @@
    "gone": 0
   },
   "Bitkit": {
-   "same": 53,
-   "moved": 0,
+   "same": 42,
+   "moved": 11,
    "changed": 0,
    "gone": 0
   },
@@ -33,9 +33,9 @@
    "gone": 0
   },
   "Zeus": {
-   "same": 48,
-   "moved": 0,
-   "changed": 0,
+   "same": 42,
+   "moved": 3,
+   "changed": 3,
    "gone": 0
   }
  },
@@ -48,8 +48,56 @@
   },
   {
    "wallet": "Winnow",
+   "fact": "features.bolt11_receive",
+   "cite": "winnow:Sources/WinnowApp/LightningReceiveView.swift:34",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.bolt12_receive",
+   "cite": "winnow:Sources/WinnowApp/LightningView.swift:117",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.ln_address_receive",
+   "cite": "winnow:Sources/WinnowApp/LightningReceiveView.swift:34",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.ln_address_receive",
+   "cite": "winnow:Sources/WinnowApp/LightningView.swift:117",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.mpp",
+   "cite": "winnow:Sources/LightningCore/LightningFeatures.swift:30",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
    "fact": "features.jit_channels",
    "cite": "winnow:Sources/WinnowApp/LightningLiquidityView.swift:68",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.splicing",
+   "cite": "winnow:Sources/LightningCore/README.md:135",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.anchors",
+   "cite": "winnow:Sources/LightningCore/README.md:135",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.anchors",
+   "cite": "winnow:Sources/LightningCore/ChannelTransactions.swift:4",
    "status": "changed"
   },
   {
@@ -63,71 +111,198 @@
    "fact": "features.local_pathfinding",
    "cite": "winnow:Sources/LightningCore/README.md:136",
    "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.channel_backup",
+   "cite": "winnow:Sources/LightningCore/README.md:129",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.channel_backup",
+   "cite": "winnow:Sources/WinnowApp/AppModel.swift:425",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.tor",
+   "cite": "winnow:Sources/WinnowApp/WinnowApp.swift:39",
+   "status": "changed"
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.ln_address_pay",
+   "cite": "zeus:utils/handleAnything.ts:751",
+   "status": "changed"
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.bip353",
+   "cite": "zeus:utils/handleAnything.ts:707-736",
+   "status": "changed"
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.tor",
+   "cite": "zeus:stores/SettingsStore.ts:1604",
+   "status": "changed"
   }
  ],
  "moved_within_file": [
   {
    "wallet": "Winnow",
    "fact": "features.bolt11_receive",
-   "cite": "winnow:Sources/WinnowApp/LightningReceiveView.swift:34",
-   "status": "moved",
-   "now_at": 37
-  },
-  {
-   "wallet": "Winnow",
-   "fact": "features.bolt11_receive",
    "cite": "winnow:Sources/WinnowApp/LightningAppReceiving.swift:89",
    "status": "moved",
-   "now_at": 110
-  },
-  {
-   "wallet": "Winnow",
-   "fact": "features.bolt12_receive",
-   "cite": "winnow:Sources/WinnowApp/LightningView.swift:117",
-   "status": "moved",
-   "now_at": 135
-  },
-  {
-   "wallet": "Winnow",
-   "fact": "features.ln_address_receive",
-   "cite": "winnow:Sources/WinnowApp/LightningReceiveView.swift:34",
-   "status": "moved",
-   "now_at": 37
-  },
-  {
-   "wallet": "Winnow",
-   "fact": "features.ln_address_receive",
-   "cite": "winnow:Sources/WinnowApp/LightningView.swift:117",
-   "status": "moved",
-   "now_at": 135
+   "now_at": 150
   },
   {
    "wallet": "Winnow",
    "fact": "features.jit_channels",
    "cite": "winnow:Sources/WinnowApp/LightningAppReceiving.swift:34",
    "status": "moved",
-   "now_at": 55
+   "now_at": 60
   },
   {
    "wallet": "Winnow",
    "fact": "features.watchtower",
    "cite": "winnow:Sources/WinnowApp/LightningView.swift:21",
    "status": "moved",
-   "now_at": 23
+   "now_at": 27
   },
   {
    "wallet": "Winnow",
-   "fact": "features.channel_backup",
-   "cite": "winnow:Sources/WinnowApp/AppModel.swift:425",
+   "fact": "features.onchain_independent",
+   "cite": "winnow:Sources/WalletCore/Wallet/Wallet.swift:668",
    "status": "moved",
-   "now_at": 438
+   "now_at": 659
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.onchain_independent",
+   "cite": "winnow:Sources/LightningCore/README.md:37",
+   "status": "moved",
+   "now_at": 48
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.taproot",
+   "cite": "winnow:Sources/WalletCore/Wallet/Wallet.swift:722",
+   "status": "moved",
+   "now_at": 716
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.hw_signer",
+   "cite": "winnow:Sources/WinnowApp/VaultSpendSession.swift:403",
+   "status": "moved",
+   "now_at": 410
   },
   {
    "wallet": "Winnow",
    "fact": "features.coin_control",
    "cite": "winnow:Sources/WinnowApp/AppModel.swift:1842",
    "status": "moved",
-   "now_at": 1379
+   "now_at": 1509
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.bolt12_pay",
+   "cite": "bitkit:Bitkit/ViewModels/AppViewModel.swift:834",
+   "status": "moved",
+   "now_at": 831
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.offline_receive",
+   "cite": "bitkit:Bitkit/Constants/Env.swift:325",
+   "status": "moved",
+   "now_at": 328
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.lnurl",
+   "cite": "bitkit:Bitkit/ViewModels/AppViewModel.swift:794",
+   "status": "moved",
+   "now_at": 791
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.ln_address_pay",
+   "cite": "bitkit:Bitkit/ViewModels/AppViewModel.swift:640",
+   "status": "moved",
+   "now_at": 637
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.bip353",
+   "cite": "bitkit:Bitkit/ViewModels/AppViewModel.swift:834",
+   "status": "moved",
+   "now_at": 831
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.choose_peer",
+   "cite": "bitkit:Bitkit/ViewModels/TransferViewModel.swift:1253",
+   "status": "moved",
+   "now_at": 1296
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.local_pathfinding",
+   "cite": "bitkit:Bitkit/Constants/Env.swift:252",
+   "status": "moved",
+   "now_at": 255
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.channel_backup",
+   "cite": "bitkit:Bitkit/Constants/Env.swift:337",
+   "status": "moved",
+   "now_at": 340
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.tor",
+   "cite": "bitkit:Bitkit/Resources/Localization/en.lproj/Localizable.strings:320",
+   "status": "moved",
+   "now_at": 323
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.bolt11_pay",
+   "cite": "zeus:utils/handleAnything.ts:521",
+   "status": "moved",
+   "now_at": 464
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.lnurl",
+   "cite": "zeus:utils/handleAnything.ts:1017-1041",
+   "status": "moved",
+   "now_at": 941
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.ln_address_pay",
+   "cite": "zeus:utils/handleAnything.ts:675",
+   "status": "moved",
+   "now_at": 618
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "profile.chain_data",
+   "cite": "bitkit:Bitkit/Constants/Env.swift:188",
+   "status": "moved",
+   "now_at": 191
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "profile.partner",
+   "cite": "bitkit:Bitkit/Constants/Env.swift:292",
+   "status": "moved",
+   "now_at": 295
   }
  ]
 }

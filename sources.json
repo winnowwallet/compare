@@ -1,13 +1,13 @@
 {
- "snapshot": "2026-09-27",
+ "snapshot": "2026-09-29",
  "method": 1,
  "sources": {
   "winnow": {
-   "repo": "https://github.com/posix4e/winnow-lightning",
+   "repo": "https://github.com/winnowwallet/winnow",
    "track": {"repo": "https://github.com/winnowwallet/winnow", "branch": ["refs/heads/lightning", "refs/heads/main"]},
-   "rev": "1f1bfdd956c84765c444ed6b0667806b20626c55",
-   "label": "posix4e/winnow-lightning@1f1bfdd",
-   "date": "2026-09-27"
+   "rev": "bd8714549c90b68a4ddace01972109e5bcf333ba",
+   "label": "winnowwallet/winnow@bd87145",
+   "date": "2026-09-29"
   },
   "phoenix": {
    "repo": "https://github.com/ACINQ/phoenix",
@@ -28,9 +28,9 @@
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {"branch": "HEAD"},
-   "rev": "c906d5af336dd1ceec22bcbbb1c7d9f115e2d021",
-   "label": "synonymdev/bitkit-ios@c906d5a",
-   "date": "2026-09-25"
+   "rev": "2a0cb7bf5055ba7b9d0e907822a6fcf57f770932",
+   "label": "synonymdev/bitkit-ios@2a0cb7b",
+   "date": "2026-09-29"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",
@@ -102,9 +102,9 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "5792769159aec740c31d8f28a0d606c96ccd1618",
-   "label": "ZeusLN/zeus@5792769",
-   "date": "2026-09-27"
+   "rev": "605b88bfc55a71992d00ca754b9046a7b8a778fb",
+   "label": "ZeusLN/zeus@605b88b",
+   "date": "2026-09-29"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",

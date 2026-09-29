@@ -1,21 +1,21 @@
 {
  "Winnow": {
   "app": {
-   "functions": 710,
-   "mean_cc": 3.35,
-   "p90_cc": 7,
-   "max_cc": 31,
-   "cc_le_2": 378,
-   "cc_3_12": 319,
-   "cc_gt_12": 13,
+   "functions": 944,
+   "mean_cc": 3.06,
+   "p90_cc": 6,
+   "max_cc": 34,
+   "cc_le_2": 527,
+   "cc_3_12": 402,
+   "cc_gt_12": 15,
    "cc_gt_30": 1,
-   "files": 50,
+   "files": 59,
    "files_with_parse_errors": 2,
    "most_complex": [
     {
-     "cc": 31,
+     "cc": 34,
      "function": "init",
-     "at": "winnow/Sources/WinnowApp/AppModel.swift:433"
+     "at": "winnow/Sources/WinnowApp/AppModel.swift:441"
     },
     {
      "cc": 28,
@@ -30,65 +30,65 @@
     {
      "cc": 20,
      "function": "(computed_property)",
-     "at": "winnow/Sources/WinnowApp/RecipientsView.swift:116"
+     "at": "winnow/Sources/WinnowApp/PeerGatewaysSection.swift:15"
     },
     {
-     "cc": 18,
+     "cc": 20,
      "function": "(computed_property)",
-     "at": "winnow/Sources/WinnowApp/AppModel.swift:75"
+     "at": "winnow/Sources/WinnowApp/RecipientsView.swift:116"
     }
    ]
   },
   "bitcoin": {
-   "functions": 1005,
-   "mean_cc": 3.34,
+   "functions": 1115,
+   "mean_cc": 3.22,
    "p90_cc": 7,
-   "max_cc": 27,
-   "cc_le_2": 525,
-   "cc_3_12": 466,
-   "cc_gt_12": 14,
+   "max_cc": 23,
+   "cc_le_2": 577,
+   "cc_3_12": 527,
+   "cc_gt_12": 11,
    "cc_gt_30": 0,
-   "files": 61,
-   "files_with_parse_errors": 2,
+   "files": 64,
+   "files_with_parse_errors": 3,
    "most_complex": [
-    {
-     "cc": 27,
-     "function": "decode",
-     "at": "winnow/Sources/WalletCore/Network/Protocol/Messages.swift:367"
-    },
     {
      "cc": 23,
      "function": "(computed_property)",
      "at": "winnow/Sources/WalletCore/Network/Protocol/Messages.swift:302"
     },
     {
-     "cc": 22,
-     "function": "init",
-     "at": "winnow/Sources/WalletCore/Wallet/Wallet.swift:455"
-    },
-    {
-     "cc": 21,
-     "function": "validateKnownFields",
-     "at": "winnow/Sources/WalletCore/PSBT/PSBT.swift:815"
-    },
-    {
      "cc": 19,
      "function": "(computed_property)",
      "at": "winnow/Sources/WalletCore/Network/Protocol/Messages.swift:329"
+    },
+    {
+     "cc": 19,
+     "function": "init",
+     "at": "winnow/Sources/WalletCore/Wallet/Wallet.swift:456"
+    },
+    {
+     "cc": 18,
+     "function": "replenish",
+     "at": "winnow/Sources/WalletCore/Network/Peers/PeerPool.swift:643"
+    },
+    {
+     "cc": 16,
+     "function": "canonicalIP",
+     "at": "winnow/Sources/WalletCore/Network/Peers/CensusCatalog.swift:135"
     }
    ]
   },
   "lightning": {
-   "functions": 515,
+   "functions": 692,
    "mean_cc": 3.39,
    "p90_cc": 7,
    "max_cc": 14,
-   "cc_le_2": 251,
-   "cc_3_12": 259,
-   "cc_gt_12": 5,
+   "cc_le_2": 334,
+   "cc_3_12": 354,
+   "cc_gt_12": 4,
    "cc_gt_30": 0,
-   "files": 63,
-   "files_with_parse_errors": 4,
+   "files": 81,
+   "files_with_parse_errors": 5,
    "most_complex": [
     {
      "cc": 14,
@@ -97,34 +97,34 @@
     },
     {
      "cc": 13,
-     "function": "apply",
-     "at": "winnow/Sources/LightningCore/ChannelUpdates.swift:26"
-    },
-    {
-     "cc": 13,
      "function": "amount",
-     "at": "winnow/Sources/LightningCore/InvoiceRequest.swift:35"
+     "at": "winnow/Sources/LightningCore/InvoiceRequest.swift:40"
     },
     {
      "cc": 13,
      "function": "validateLoaded",
-     "at": "winnow/Sources/LightningCore/LightningEngine.swift:192"
+     "at": "winnow/Sources/LightningCore/LightningEngine.swift:214"
     },
     {
      "cc": 13,
      "function": "receiveChannelPolicy",
      "at": "winnow/Sources/LightningCore/LightningInvoiceRouting.swift:16"
+    },
+    {
+     "cc": 12,
+     "function": "init",
+     "at": "winnow/Sources/LightningCore/AsyncPaymentMessage.swift:14"
     }
    ]
   },
   "all": {
-   "functions": 2230,
-   "mean_cc": 3.36,
+   "functions": 2751,
+   "mean_cc": 3.21,
    "p90_cc": 7,
-   "max_cc": 31,
-   "cc_le_2": 1154,
-   "cc_3_12": 1044,
-   "cc_gt_12": 32,
+   "max_cc": 34,
+   "cc_le_2": 1438,
+   "cc_3_12": 1283,
+   "cc_gt_12": 30,
    "cc_gt_30": 1
   }
  },
@@ -220,15 +220,15 @@
  },
  "Bitkit": {
   "app": {
-   "functions": 5331,
+   "functions": 5369,
    "mean_cc": 2.97,
    "p90_cc": 6,
    "max_cc": 127,
-   "cc_le_2": 3251,
-   "cc_3_12": 1995,
-   "cc_gt_12": 85,
+   "cc_le_2": 3279,
+   "cc_3_12": 2004,
+   "cc_gt_12": 86,
    "cc_gt_30": 8,
-   "files": 588,
+   "files": 590,
    "files_with_parse_errors": 3,
    "most_complex": [
     {
@@ -244,12 +244,12 @@
     {
      "cc": 56,
      "function": "handleScannedData",
-     "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:538"
+     "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:535"
     },
     {
      "cc": 55,
      "function": "handleLdkNodeEvent",
-     "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:1357"
+     "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:1351"
     },
     {
      "cc": 48,
@@ -298,13 +298,13 @@
    ]
   },
   "all": {
-   "functions": 10679,
-   "mean_cc": 2.98,
+   "functions": 10717,
+   "mean_cc": 2.97,
    "p90_cc": 6,
    "max_cc": 174,
-   "cc_le_2": 6994,
-   "cc_3_12": 3439,
-   "cc_gt_12": 246,
+   "cc_le_2": 7022,
+   "cc_3_12": 3448,
+   "cc_gt_12": 247,
    "cc_gt_30": 47
   }
  },
@@ -400,12 +400,12 @@
  },
  "Zeus": {
   "app": {
-   "functions": 4673,
-   "mean_cc": 4.72,
+   "functions": 4684,
+   "mean_cc": 4.71,
    "p90_cc": 10,
    "max_cc": 252,
-   "cc_le_2": 2687,
-   "cc_3_12": 1642,
+   "cc_le_2": 2694,
+   "cc_3_12": 1646,
    "cc_gt_12": 344,
    "cc_gt_30": 75,
    "files": 575,
@@ -422,7 +422,7 @@
      "at": "zeus/views/Settings/WalletConfiguration.tsx:1389"
     },
     {
-     "cc": 177,
+     "cc": 164,
      "function": "(arrow_function)",
      "at": "zeus/utils/handleAnything.ts:363"
     },
@@ -478,12 +478,12 @@
    ]
   },
   "all": {
-   "functions": 15200,
+   "functions": 15211,
    "mean_cc": 4.16,
    "p90_cc": 9,
    "max_cc": 252,
-   "cc_le_2": 8639,
-   "cc_3_12": 5652,
+   "cc_le_2": 8646,
+   "cc_3_12": 5656,
    "cc_gt_12": 909,
    "cc_gt_30": 142
   }
