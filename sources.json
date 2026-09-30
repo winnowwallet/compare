@@ -1,12 +1,12 @@
 {
- "snapshot": "2026-09-29",
+ "snapshot": "2026-09-30",
  "method": 1,
  "sources": {
   "winnow": {
    "repo": "https://github.com/winnowwallet/winnow",
    "track": {"repo": "https://github.com/winnowwallet/winnow", "branch": ["refs/heads/lightning", "refs/heads/main"]},
-   "rev": "bd8714549c90b68a4ddace01972109e5bcf333ba",
-   "label": "winnowwallet/winnow@bd87145",
+   "rev": "0045bef8670f43526b7eae9f4474c35eaa008df8",
+   "label": "winnowwallet/winnow@0045bef",
    "date": "2026-09-29"
   },
   "phoenix": {
@@ -28,9 +28,9 @@
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {"branch": "HEAD"},
-   "rev": "2a0cb7bf5055ba7b9d0e907822a6fcf57f770932",
-   "label": "synonymdev/bitkit-ios@2a0cb7b",
-   "date": "2026-09-29"
+   "rev": "202373a9a07a47c859623a2f78702d5774f072ac",
+   "label": "synonymdev/bitkit-ios@202373a",
+   "date": "2026-09-30"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",
@@ -61,10 +61,10 @@
   "paykit-rs": {
    "repo": "https://github.com/pubky/paykit-rs",
    "track": {"from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved", "spm": "paykit-rs"},
-   "rev": "4613beee25d1680ed8bc849446498e9bfb2cdb16",
-   "version": "0.1.0-rc55",
-   "label": "pubky/paykit-rs 0.1.0-rc55",
-   "date": "2026-09-15"
+   "rev": "24162ebbcc703251d8038f2e176d1f4cfb117c6a",
+   "version": "0.1.0-rc56",
+   "label": "pubky/paykit-rs 0.1.0-rc56",
+   "date": "2026-09-28"
   },
   "vss-rust-client-ffi": {
    "repo": "https://github.com/synonymdev/vss-rust-client-ffi",
@@ -102,8 +102,8 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "605b88bfc55a71992d00ca754b9046a7b8a778fb",
-   "label": "ZeusLN/zeus@605b88b",
+   "rev": "bf3e016c473dd0e5f3f75343359d8babcc721051",
+   "label": "ZeusLN/zeus@bf3e016",
    "date": "2026-09-29"
   },
   "lnd-zeus": {

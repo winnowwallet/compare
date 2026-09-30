@@ -170,6 +170,91 @@
      "vendored_lines": 4551
     }
    }
+  },
+  {
+   "date": "2026-09-30",
+   "method": 1,
+   "sources": {
+    "winnow": "0045bef8670f43526b7eae9f4474c35eaa008df8",
+    "phoenix": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
+    "lightning-kmp": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
+    "bitkit": "202373a9a07a47c859623a2f78702d5774f072ac",
+    "synonym-ldk-node": "190a17d966cf5a685444cfa17c3a419c290bf26c",
+    "rust-lightning": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
+    "bitkit-core": "b53fa54a16f04940943072bb6e08dc2650302f93",
+    "paykit-rs": "24162ebbcc703251d8038f2e176d1f4cfb117c6a",
+    "vss-rust-client-ffi": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
+    "blixt": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
+    "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
+    "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
+    "zeus": "bf3e016c473dd0e5f3f75343359d8babcc721051",
+    "lnd-zeus": "ae24665a916d94fa89475b21ec27e8cda0eb5845",
+    "zeus-ldk-node": "921ef6370a5694ed8cf00538878420ccb5afe09d",
+    "cdk": "874745d5d79b36be346efbd716393357ab898834"
+   },
+   "wallets": {
+    "Winnow": {
+     "lines": 33096,
+     "lines_app": 12294,
+     "lines_bitcoin": 13685,
+     "lines_lightning": 7117,
+     "characters": 1248410,
+     "functions": 2751,
+     "cc_gt_12": 30,
+     "cc_gt_30": 1,
+     "max_cc": 34,
+     "packages": 1,
+     "vendored_lines": 0
+    },
+    "Phoenix": {
+     "lines": 100853,
+     "lines_app": 72767,
+     "lines_lightning": 28086,
+     "characters": 3071264,
+     "functions": 7218,
+     "cc_gt_12": 132,
+     "cc_gt_30": 22,
+     "max_cc": 168,
+     "packages": 59,
+     "vendored_lines": 0
+    },
+    "Bitkit": {
+     "lines": 219916,
+     "lines_app": 92270,
+     "lines_lightning": 127646,
+     "characters": 6370962,
+     "functions": 10728,
+     "cc_gt_12": 249,
+     "cc_gt_30": 47,
+     "max_cc": 174,
+     "packages": 691,
+     "vendored_lines": 0
+    },
+    "Blixt": {
+     "lines": 275307,
+     "lines_app": 36360,
+     "lines_lightning": 238947,
+     "characters": 6481671,
+     "functions": 11465,
+     "cc_gt_12": 611,
+     "cc_gt_30": 85,
+     "max_cc": 148,
+     "packages": 681,
+     "vendored_lines": 0
+    },
+    "Zeus": {
+     "lines": 431809,
+     "lines_app": 189642,
+     "lines_lightning": 242167,
+     "characters": 9287885,
+     "functions": 15211,
+     "cc_gt_12": 909,
+     "cc_gt_30": 142,
+     "max_cc": 252,
+     "packages": 1481,
+     "vendored_lines": 4551
+    }
+   }
   }
  ]
 }

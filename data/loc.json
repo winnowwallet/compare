@@ -54,11 +54,11 @@
  },
  "Bitkit": {
   "app": {
-   "code": 92036,
-   "chars": 2550922,
+   "code": 92270,
+   "chars": 2558210,
    "files": 590,
    "languages": {
-    "Swift": 92036
+    "Swift": 92270
    },
    "generated_excluded": []
   },
@@ -124,8 +124,8 @@
  },
  "Zeus": {
   "app": {
-   "code": 189624,
-   "chars": 3677615,
+   "code": 189642,
+   "chars": 3677964,
    "files": 574,
    "languages": {
     "C/C++ Header": 41,
@@ -133,7 +133,7 @@
     "Objective-C": 1332,
     "Objective-C++": 424,
     "Swift": 4038,
-    "TypeScript": 183742
+    "TypeScript": 183760
    },
    "generated_excluded": [
     "zeus/ios/LdkNodeMobile/LDKNode.swift"
