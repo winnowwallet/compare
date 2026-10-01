@@ -220,19 +220,19 @@
  },
  "Bitkit": {
   "app": {
-   "functions": 5380,
+   "functions": 5417,
    "mean_cc": 2.97,
    "p90_cc": 6,
-   "max_cc": 127,
-   "cc_le_2": 3283,
-   "cc_3_12": 2009,
-   "cc_gt_12": 88,
+   "max_cc": 125,
+   "cc_le_2": 3300,
+   "cc_3_12": 2028,
+   "cc_gt_12": 89,
    "cc_gt_30": 8,
    "files": 590,
-   "files_with_parse_errors": 3,
+   "files_with_parse_errors": 4,
    "most_complex": [
     {
-     "cc": 127,
+     "cc": 125,
      "function": "(computed_property)",
      "at": "bitkit/Bitkit/MainNavView.swift:492"
     },
@@ -298,13 +298,13 @@
    ]
   },
   "all": {
-   "functions": 10728,
-   "mean_cc": 2.97,
+   "functions": 10765,
+   "mean_cc": 2.98,
    "p90_cc": 6,
    "max_cc": 174,
-   "cc_le_2": 7026,
-   "cc_3_12": 3453,
-   "cc_gt_12": 249,
+   "cc_le_2": 7043,
+   "cc_3_12": 3472,
+   "cc_gt_12": 250,
    "cc_gt_30": 47
   }
  },
@@ -400,12 +400,12 @@
  },
  "Zeus": {
   "app": {
-   "functions": 4684,
+   "functions": 4685,
    "mean_cc": 4.71,
    "p90_cc": 10,
    "max_cc": 252,
    "cc_le_2": 2694,
-   "cc_3_12": 1646,
+   "cc_3_12": 1647,
    "cc_gt_12": 344,
    "cc_gt_30": 75,
    "files": 575,
@@ -478,12 +478,12 @@
    ]
   },
   "all": {
-   "functions": 15211,
+   "functions": 15212,
    "mean_cc": 4.16,
    "p90_cc": 9,
    "max_cc": 252,
    "cc_le_2": 8646,
-   "cc_3_12": 5656,
+   "cc_3_12": 5657,
    "cc_gt_12": 909,
    "cc_gt_30": 142
   }

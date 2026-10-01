@@ -1,12 +1,12 @@
 {
- "snapshot": "2026-09-30",
+ "snapshot": "2026-10-01",
  "method": 1,
  "sources": {
   "winnow": {
    "repo": "https://github.com/winnowwallet/winnow",
    "track": {"repo": "https://github.com/winnowwallet/winnow", "branch": ["refs/heads/lightning", "refs/heads/main"]},
-   "rev": "0045bef8670f43526b7eae9f4474c35eaa008df8",
-   "label": "winnowwallet/winnow@0045bef",
+   "rev": "3493008e2c62b9d4389a6b892c341ebc6b19dc01",
+   "label": "winnowwallet/winnow@3493008",
    "date": "2026-09-29"
   },
   "phoenix": {
@@ -28,9 +28,9 @@
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {"branch": "HEAD"},
-   "rev": "202373a9a07a47c859623a2f78702d5774f072ac",
-   "label": "synonymdev/bitkit-ios@202373a",
-   "date": "2026-09-30"
+   "rev": "4584e9489626916bed456ce2d7ca07977c808cc8",
+   "label": "synonymdev/bitkit-ios@4584e94",
+   "date": "2026-10-01"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",
@@ -102,9 +102,9 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "bf3e016c473dd0e5f3f75343359d8babcc721051",
-   "label": "ZeusLN/zeus@bf3e016",
-   "date": "2026-09-29"
+   "rev": "2ec405b2b4db10636ebfee85b41563669ea0774e",
+   "label": "ZeusLN/zeus@2ec405b",
+   "date": "2026-10-01"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
