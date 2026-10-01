@@ -3,77 +3,77 @@
  "features": {
   "bolt11_pay": {
    "value": "yes",
-   "evidence": "winnow:Sources/WinnowApp/SendView.swift:217; winnow:Sources/WinnowApp/LightningAppInvoicePayments.swift:11; winnow:Sources/LightningCore/LightningPeerRouting.swift:7",
+   "evidence": "winnow:Sources/WinnowApp/SendView.swift:218; winnow:Sources/WinnowLightningApp/LightningAppInvoicePayments.swift:18; winnow:Sources/LightningCore/LightningPeerRouting.swift:7",
    "note": "Single-part payments from Send; Winnow finds the route from the invoice hints and the public graph"
   },
   "bolt11_receive": {
    "value": "yes",
-   "evidence": "winnow:Sources/WinnowApp/LightningReceiveView.swift:46; winnow:Sources/WinnowApp/LightningAppReceiving.swift:150",
+   "evidence": "winnow:Sources/WinnowLightningApp/LightningReceiveView.swift:46; winnow:Sources/WinnowLightningApp/LightningAppReceiving.swift:150",
    "note": "Single-use invoice with a provider route hint; the app must stay open"
   },
   "bolt12_pay": {
    "value": "yes",
-   "evidence": "winnow:Sources/WinnowApp/LightningView.swift:45; winnow:Sources/WinnowApp/LightningAppOffers.swift:19; winnow:Sources/LightningCore/LightningAsyncSending.swift:14",
+   "evidence": "winnow:Sources/WinnowLightningApp/LightningView.swift:48; winnow:Sources/WinnowLightningApp/LightningAppOffers.swift:19; winnow:Sources/LightningCore/LightningAsyncSending.swift:14",
    "note": "Requests an invoice from the offer over onion messages, then a separate route and fee review; async static invoices too"
   },
   "bolt12_receive": {
    "value": "yes",
-   "evidence": "winnow:Sources/WinnowApp/LightningView.swift:160; winnow:Sources/WinnowApp/LightningProviders.swift:16",
+   "evidence": "winnow:Sources/WinnowLightningApp/LightningView.swift:163; winnow:Sources/WinnowLightningApp/LightningProviders.swift:16",
    "note": "Reusable offer once a channel has inbound capacity; the app must be open to answer. Offline offers need an async provider profile"
   },
   "offline_receive": {
    "value": "partial",
-   "evidence": "winnow:Sources/WinnowApp/LightningInputViews.swift:31; winnow:docs/engineering/swift-lightning.md:68",
+   "evidence": "winnow:Sources/WinnowLightningApp/LightningInputViews.swift:31; winnow:docs/engineering/swift-lightning.md:65",
    "note": "LDK-style async hold/release via imported profile only; no push"
   },
   "lnurl": {
    "value": "no",
-   "evidence": "winnow:Sources/WinnowApp/LightningAppPayments.swift:15; winnow:Sources/WinnowApp/LightningAppOffers.swift:41",
+   "evidence": "winnow:Sources/WinnowLightningApp/LightningAppPayments.swift:15; winnow:Sources/WinnowLightningApp/LightningAppOffers.swift:41",
    "note": "No LNURL code; send takes BOLT 11 invoices, BOLT 12 offers and BIP 353 names"
   },
   "ln_address_pay": {
    "value": "no",
-   "evidence": "winnow:Sources/WinnowApp/LightningAppOffers.swift:41",
+   "evidence": "winnow:Sources/WinnowLightningApp/LightningAppOffers.swift:41",
    "note": "user@domain resolves only as a BIP 353 name, not through LNURL-pay"
   },
   "ln_address_receive": {
    "value": "no",
-   "evidence": "winnow:Sources/WinnowApp/LightningReceiveView.swift:46; winnow:Sources/WinnowApp/LightningView.swift:160",
+   "evidence": "winnow:Sources/WinnowLightningApp/LightningReceiveView.swift:46; winnow:Sources/WinnowLightningApp/LightningView.swift:163",
    "note": "Receive gives a BOLT 11 invoice or a BOLT 12 offer; no hosted address"
   },
   "bip353": {
    "value": "yes",
-   "evidence": "winnow:Sources/WinnowApp/LightningAppOffers.swift:41; winnow:Sources/LightningCore/BIP353Resolver.swift:8",
+   "evidence": "winnow:Sources/WinnowLightningApp/LightningAppOffers.swift:41; winnow:Sources/LightningCore/BIP353Resolver.swift:8",
    "note": "₿name@domain resolves to an offer, with DNSSEC checked on the device rather than trusting the resolver"
   },
   "mpp": {
    "value": "no",
-   "evidence": "winnow:Sources/LightningCore/LightningFeatures.swift:30; winnow:Sources/LightningCore/README.md:184",
+   "evidence": "winnow:Sources/LightningCore/LightningFeatures.swift:30; winnow:Sources/LightningCore/README.md:180",
    "note": "Single-part payments only; the advertised features exclude MPP"
   },
   "keysend": {
    "value": "no",
-   "evidence": "winnow:Sources/WinnowApp/LightningInputViews.swift:76; winnow:Sources/LightningCore/AsyncPaymentRoute.swift:62",
+   "evidence": "winnow:Sources/WinnowLightningApp/LightningInputViews.swift:76; winnow:Sources/LightningCore/AsyncPaymentRoute.swift:62",
    "note": "Keysend TLV used only internally for async payments; no user keysend"
   },
   "choose_peer": {
    "value": "yes",
-   "evidence": "winnow:Sources/WinnowApp/LightningProviders.swift:19; winnow:Sources/WinnowApp/LightningInputViews.swift:30",
+   "evidence": "winnow:Sources/WinnowLightningApp/LightningProviders.swift:19; winnow:Sources/WinnowLightningApp/LightningInputViews.swift:30",
    "note": "Olympus by ZEUS, Megalith, LNServer Wave, or import any node profile; one channel"
   },
   "jit_channels": {
    "value": "partial",
-   "evidence": "winnow:Sources/WinnowApp/LightningAppReceiving.swift:60; winnow:Sources/WinnowApp/LightningLiquidityView.swift:116",
+   "evidence": "winnow:Sources/WinnowLightningApp/LightningAppReceiving.swift:60; winnow:Sources/WinnowLightningApp/LightningLiquidityView.swift:116",
    "note": "LSPS1 inbound purchase (Olympus, Megalith); the setup fee is paid from another wallet; no LSPS2"
   },
   "splicing": {
    "value": "no",
-   "evidence": "winnow:Sources/LightningCore/README.md:183",
+   "evidence": "winnow:Sources/LightningCore/README.md:179",
    "note": "Not implemented or advertised"
   },
   "anchors": {
    "value": "yes",
-   "evidence": "winnow:Sources/LightningCore/README.md:20; winnow:Sources/LightningCore/ChannelTransactions.swift:4",
+   "evidence": "winnow:Sources/LightningCore/README.md:17; winnow:Sources/LightningCore/ChannelTransactions.swift:4",
    "note": "Negotiates option_anchors for new channels; older channels keep static-remotekey"
   },
   "local_pathfinding": {
@@ -83,22 +83,22 @@
   },
   "watchtower": {
    "value": "partial",
-   "evidence": "winnow:docs/engineering/swift-lightning.md:216; winnow:Sources/WinnowApp/LightningView.swift:27",
-   "note": "No watchtower; background checks can publish pre-signed penalty and recovery transactions when iOS allows"
+   "evidence": "winnow:docs/engineering/swift-lightning.md:54-55; winnow:Sources/WinnowLightningApp/LightningView.swift:27",
+   "note": "No external watchtower; background checks relay pre-signed recovery transactions when iOS allows"
   },
   "channel_backup": {
    "value": "partial",
-   "evidence": "winnow:Sources/WinnowApp/LightningBackupView.swift:36; winnow:Sources/WinnowApp/AppModel.swift:450",
-   "note": "Encrypted recovery file exported by hand; restoring asks the peer to close. iCloud backup is off in the Lightning app"
+   "evidence": "winnow:Sources/WinnowLightningApp/LightningBackupView.swift:35; winnow:docs/engineering/swift-lightning.md:40-44",
+   "note": "Channels are saved only in an encrypted recovery file you export by hand; it opens with the wallet’s recovery phrase. iCloud backup covers the Bitcoin wallet, not channels"
   },
   "onchain_independent": {
    "value": "yes",
-   "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:659; winnow:Sources/LightningCore/README.md:48",
+   "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:664; winnow:Sources/LightningCore/README.md:45",
    "note": "Single-key BIP86 Taproot wallet; channels are funded from it, not the reverse"
   },
   "taproot": {
    "value": "yes",
-   "evidence": "winnow:README.md:8; winnow:Sources/WalletCore/Wallet/Wallet.swift:716",
+   "evidence": "winnow:README.md:8; winnow:Sources/WalletCore/Wallet/Wallet.swift:723",
    "note": "Ordinary receive uses BIP86 P2TR"
   },
   "multisig": {
@@ -113,7 +113,7 @@
   },
   "coin_control": {
    "value": "no",
-   "evidence": "winnow:Sources/WinnowApp/AppModel.swift:1989",
+   "evidence": "winnow:Sources/WinnowApp/AppModel.swift:2058",
    "note": "Automatic coin selection over all spendable UTXOs; coins list read-only"
   },
   "tor": {
@@ -123,7 +123,7 @@
   },
   "license": {
    "value": "MIT",
-   "evidence": "winnow:LICENSE:1; winnow:README.md:160",
+   "evidence": "winnow:LICENSE:1; winnow:README.md:162",
    "note": "MIT License"
   }
  }

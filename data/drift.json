@@ -1,15 +1,15 @@
 {
  "reviewed": "2026-09-27",
- "reviewed_latest": "2026-09-29",
+ "reviewed_latest": "2026-10-01",
  "measured": "2026-10-01",
- "citations": 244,
- "same": 239,
- "moved": 5,
+ "citations": 246,
+ "same": 246,
+ "moved": 0,
  "changed": 0,
  "gone": 0,
  "by_wallet": {
   "Winnow": {
-   "same": 53,
+   "same": 55,
    "moved": 0,
    "changed": 0,
    "gone": 0
@@ -33,48 +33,12 @@
    "gone": 0
   },
   "Zeus": {
-   "same": 43,
-   "moved": 5,
+   "same": 48,
+   "moved": 0,
    "changed": 0,
    "gone": 0
   }
  },
  "changed_or_gone": [],
- "moved_within_file": [
-  {
-   "wallet": "Zeus",
-   "fact": "features.bolt12_pay",
-   "cite": "zeus:views/Send.tsx:1364",
-   "status": "moved",
-   "now_at": 1377
-  },
-  {
-   "wallet": "Zeus",
-   "fact": "features.bip353",
-   "cite": "zeus:views/Send.tsx:1364",
-   "status": "moved",
-   "now_at": 1377
-  },
-  {
-   "wallet": "Zeus",
-   "fact": "features.keysend",
-   "cite": "zeus:views/Send.tsx:683",
-   "status": "moved",
-   "now_at": 696
-  },
-  {
-   "wallet": "Zeus",
-   "fact": "features.coin_control",
-   "cite": "zeus:views/Send.tsx:990",
-   "status": "moved",
-   "now_at": 1003
-  },
-  {
-   "wallet": "Zeus",
-   "fact": "features.coin_control",
-   "cite": "zeus:views/OpenChannel.tsx:1102",
-   "status": "moved",
-   "now_at": 1107
-  }
- ]
+ "moved_within_file": []
 }

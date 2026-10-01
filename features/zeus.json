@@ -8,12 +8,12 @@
   },
   "bolt11_receive": {
    "value": "yes",
-   "evidence": "zeus:views/Receive.tsx:652",
+   "evidence": "zeus:views/Receive.tsx:654",
    "note": "Receive screen creates invoices, optionally combined with an on-chain address"
   },
   "bolt12_pay": {
    "value": "no",
-   "evidence": "zeus:backends/EmbeddedLND.ts:599; zeus:views/Send.tsx:1364",
+   "evidence": "zeus:backends/EmbeddedLND.ts:599; zeus:views/Send.tsx:1389",
    "note": "Offers are detected but Pay is disabled on LND; works in LDK mode or with remote CLN"
   },
   "bolt12_receive": {
@@ -23,7 +23,7 @@
   },
   "offline_receive": {
    "value": "partial",
-   "evidence": "zeus:views/LightningAddress/index.tsx:553; zeus:stores/LightningAddressStore.ts:403",
+   "evidence": "zeus:views/LightningAddress/index.tsx:564; zeus:stores/LightningAddressStore.ts:407",
    "note": "Only via custodial Cashu-backed ZEUS Pay address; self-custodial Zaplocker being retired"
   },
   "lnurl": {
@@ -38,12 +38,12 @@
   },
   "ln_address_receive": {
    "value": "partial",
-   "evidence": "zeus:views/LightningAddress/index.tsx:553; zeus:views/LightningAddress/index.tsx:738",
+   "evidence": "zeus:views/LightningAddress/index.tsx:564; zeus:views/LightningAddress/index.tsx:749",
    "note": "New embedded addresses are custodial ecash only; NWC type needs remote node"
   },
   "bip353": {
    "value": "partial",
-   "evidence": "zeus:utils/handleAnything.ts:672-701; zeus:views/Send.tsx:1364",
+   "evidence": "zeus:utils/handleAnything.ts:672-701; zeus:views/Send.tsx:1389",
    "note": "Resolves via Cloudflare DNS-over-HTTPS; offers can't be paid on LND, only on-chain/BOLT 11 fallbacks"
   },
   "mpp": {
@@ -53,7 +53,7 @@
   },
   "keysend": {
    "value": "yes",
-   "evidence": "zeus:views/Send.tsx:683; zeus:utils/LndMobileUtils.ts:254",
+   "evidence": "zeus:views/Send.tsx:708; zeus:utils/LndMobileUtils.ts:254",
    "note": "Send to a node pubkey; accept-keysend enabled for receiving"
   },
   "choose_peer": {
@@ -63,7 +63,7 @@
   },
   "jit_channels": {
    "value": "yes",
-   "evidence": "zeus:views/Receive.tsx:325; zeus:stores/LSPStore.ts:527",
+   "evidence": "zeus:views/Receive.tsx:327; zeus:stores/LSPStore.ts:527",
    "note": "Olympus flow LSP wraps invoices with a JIT channel; LSPS1 channel purchase too"
   },
   "splicing": {
@@ -98,7 +98,7 @@
   },
   "taproot": {
    "value": "yes",
-   "evidence": "zeus:views/Receive.tsx:1125; zeus:backends/EmbeddedLND.ts:586",
+   "evidence": "zeus:views/Receive.tsx:1127; zeus:backends/EmbeddedLND.ts:586",
    "note": "Receive screen offers a Taproot (P2TR) address type"
   },
   "multisig": {
@@ -113,7 +113,7 @@
   },
   "coin_control": {
    "value": "yes",
-   "evidence": "zeus:views/Send.tsx:990; zeus:views/OpenChannel.tsx:1102",
+   "evidence": "zeus:views/Send.tsx:1015; zeus:views/OpenChannel.tsx:1107",
    "note": "UTXO picker when sending on-chain and when opening channels"
   },
   "tor": {
