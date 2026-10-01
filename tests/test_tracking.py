@@ -2,6 +2,7 @@
 real file the rule reads: Bitkit's Package.resolved, LDK Node's Cargo.lock, Blixt's bun.lock and
 react-native-turbo-lnd's lnd-source.properties."""
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -9,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / 'tools'))
 
 from evidence import find, locate  # noqa: E402
 from render import scale  # noqa: E402
+import common  # noqa: E402
 import update  # noqa: E402
 from update import bun_version, cargo_version, properties, spm_pin  # noqa: E402
 
@@ -76,6 +78,26 @@ class Branches(unittest.TestCase):
                 update.first_branch('r', ['refs/heads/gone'])
         finally:
             update.remote_rev = real
+
+
+class Layout(unittest.TestCase):
+    def test_a_new_folder_in_a_complete_tree_is_not_skipped(self):
+        # Winnow moved its Lightning screens from Sources/WinnowApp into Sources/WinnowLightningApp.
+        with tempfile.TemporaryDirectory() as tmp:
+            for d in ('WinnowApp', 'WalletCore', 'LightningCore', 'WinnowLightningApp'):
+                (Path(tmp) / 'winnow/Sources' / d).mkdir(parents=True)
+            spec = {'code': {'app': ['winnow:Sources/WinnowApp'], 'bitcoin': ['winnow:Sources/WalletCore'],
+                             'lightning': ['winnow:Sources/LightningCore']}, 'complete': ['winnow:Sources']}
+            real, common.SOURCES_DIR = common.SOURCES_DIR, Path(tmp)
+            try:
+                self.assertEqual(common.unclaimed(spec), ['winnow:Sources/WinnowLightningApp'])
+                spec['code']['app'].append('winnow:Sources/WinnowLightningApp')
+                self.assertEqual(common.unclaimed(spec), [])
+                del spec['complete']
+                spec['code']['app'].pop()
+                self.assertEqual(common.unclaimed(spec), [])  # only trees listed in `complete` are checked
+            finally:
+                common.SOURCES_DIR = real
 
 
 class Review(unittest.TestCase):

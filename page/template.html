@@ -96,8 +96,8 @@ ul.evidence code{font-size:.8em}
 <main id="main">
 <p class="page-kicker">Winnow compare · Lightning on iPhone</p>
 <h1>Lightning wallets compared</h1>
-<p class="lede">Winnow is adding Lightning. Here is how it compares with the open-source iPhone wallets that already run a Lightning node on the phone: features, code size, complexity and what each one depends on.</p>
-<aside class="guide-summary"><p><strong>Winnow’s Lightning is a research beta in internal testing.</strong> It is not in the App Store app. It pays BOLT 11 invoices, BOLT 12 offers and BIP 353 names, each as a single-part payment. It opens private channels with a provider you choose, and for invoices it finds its own route over the public graph it fetches from that provider. Background checks run when iOS allows. There is no watchtower. The recovery phrase alone does not restore open channels; an encrypted recovery file, saved by hand, lets Winnow close them and recover the funds. <a href="#scope">What the comparison leaves out</a></p></aside>
+<p class="lede">Lightning is now part of Winnow. Here is how it compares with the open-source iPhone wallets that already run a Lightning node on the phone: features, code size, complexity and what each one depends on.</p>
+<aside class="guide-summary"><p><strong>Winnow’s Lightning is built into the app and labelled experimental.</strong> It has been in Winnow’s TestFlight builds since <a href="https://github.com/winnowwallet/winnow/releases/tag/v0.8.0">version 0.8.0</a> (1 October 2026), as one app and one release, with Lightning in both Simple and Advanced mode. It pays BOLT 11 invoices, BOLT 12 offers and BIP 353 names, each as a single-part payment. It opens private channels with a provider you choose, and for invoices it finds its own route over the public graph it fetches from that provider. Background checks run when iOS allows. There is no watchtower. The recovery phrase alone does not restore open channels. An encrypted recovery file, saved by hand and opened with that phrase, lets Winnow close them and recover the funds. <a href="#scope">What the comparison leaves out</a></p></aside>
 <nav class="contents" aria-label="On this page"><a href="#glance">At a glance</a><a href="#features">Features</a><a href="#size">Code size</a><a href="#languages">Languages</a><a href="#complexity">Complexity</a><a href="#dependencies">Dependencies</a><a href="#history">Over time</a><a href="#scope">What the numbers leave out</a><a href="#method">How we measured</a><a href="#other">Other approaches</a></nav>
 
 <section id="glance">
@@ -177,7 +177,7 @@ ul.evidence code{font-size:.8em}
 <section id="complexity">
 <h2>Complexity and CRAP</h2>
 <p>CRAP scores each function by its cyclomatic complexity (CC, the number of paths through it) and how much of it the tests run: CRAP = CC² × (1 − coverage)³ + CC. Coverage needs each project’s test suite run with instrumentation, on a Mac for the three Swift apps, so it is not measured here. Testing can only bring CRAP down to CC, so the complexity alone sets a floor: a function above 12 scores above 12 however well it is tested, and one above 30 fails crap4j’s default threshold whatever its tests.</p>
-<p>{{P12_W}}% of Winnow’s functions are above 12, against {{P12_MIN}}–{{P12_MAX}}% for the others. Winnow’s most complex function scores {{W_MAXCC}}. Its average is {{W_MEAN}}, higher than Phoenix’s and Bitkit’s, because those codebases have more very small functions. Winnow’s CI also rejects any function over 8 as SwiftLint counts complexity, which leaves out <code>case</code> arms, <code>&amp;&amp;</code>, <code>||</code>, <code>??</code> and ternaries.</p>
+<p>{{P12_W}}% of Winnow’s functions are above 12, against {{P12_MIN}}–{{P12_MAX}}% for the others. Winnow’s most complex function scores {{W_MAXCC}}. Its average is {{W_MEAN}}, higher than Phoenix’s and Bitkit’s, because those codebases have more very small functions. Winnow’s CI also rejects any function over 8 as SwiftLint counts complexity, which leaves out <code>case</code> arms, <code>&amp;&amp;</code>, <code>||</code>, <code>??</code> and ternaries. Its CI also gates every method at CRAP 12, using coverage it measures itself ({{WINNOW_CRAP_DOC}}); this page does not measure coverage.</p>
 <div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table">
 <table class="cc">
 <caption>Cyclomatic complexity per function, app and Lightning engine together</caption>
@@ -260,7 +260,7 @@ ul.evidence code{font-size:.8em}
 <h3>Who can move on-chain funds</h3>
 <p>Phoenix has no separate on-chain wallet. Its Bitcoin address needs ACINQ’s signature alongside yours; without ACINQ, your key alone can spend it after about six months. Sending to a Bitcoin address takes the amount out of your ACINQ channel, which ACINQ co-signs. Winnow, Bitkit, Blixt and Zeus each keep a single-key on-chain wallet that works without their channel partner.</p>
 <h3>Recovery differs</h3>
-<p>Winnow keeps channel state in an encrypted journal on the phone. Keep the phone and its files while a channel is open. The recovery phrase restores the on-chain wallet, not channel state. An encrypted recovery file, exported by hand, lets a restored Winnow ask the channel partner to close and recover the funds, though it cannot resume payments.</p>
+<p>Winnow keeps channel state in an encrypted journal on the phone. Keep the phone and its files while a channel is open. The recovery phrase restores the on-chain wallet, not channel state. An encrypted recovery file, exported by hand and opened with that phrase, lets a restored Winnow ask the channel partner to close and recover the funds, though it cannot resume payments.</p>
 </section>
 
 <section id="method">

@@ -10,6 +10,7 @@ import re
 from datetime import date
 
 from common import CONFIG, DATA, REVIEWED, ROOT, write_json
+from evidence import blob
 
 esc = html.escape
 PROFILES = json.loads((ROOT / 'wallets.json').read_text())
@@ -360,9 +361,23 @@ parse_errors = max(100 * sum(p.get('files_with_parse_errors', 0) for kk, p in cc
                    sum(p.get('files', 0) for kk, p in cc[w].items() if kk != 'all') for w in ORDER)
 
 
+# What the page says about Winnow's own project, and the file at the pinned revision that has to keep saying it.
+WINNOW_STATEMENTS = [
+    ('docs/engineering/lightning-release.md', ['Lightning ships inside Winnow'], 'Lightning is built into the app and released with it'),
+    ('docs/engineering/swift-lightning.md', ['in both modes'], 'Lightning is in both Simple and Advanced mode'),
+    ('Sources/WinnowLightningApp/LightningView.swift', ['Experimental Lightning'], 'the app labels Lightning experimental'),
+    ('docs/crap.md', ['The gate is 12'], 'Winnow’s CI gates every method at CRAP 12'),
+    ('.swiftlint.yml', ['error: 8', 'ignores_case_statements: true'], 'Winnow’s CI rejects a function over 8 as SwiftLint counts it, leaving out case arms'),
+]
+
+
 def claims():
-    """Sentences in page/template.html whose wording depends on the numbers."""
+    """Sentences in page/template.html whose wording depends on the numbers, or on what Winnow's own files say."""
     wrong = []
+    for path, needles, statement in WINNOW_STATEMENTS:
+        text = '\n'.join(blob('winnow', CONFIG['sources']['winnow']['rev'], path) or [])
+        wrong += [f'"{statement}" needs {path} to contain {needle!r} at winnow@{CONFIG["sources"]["winnow"]["rev"][:7]}'
+                  for needle in needles if needle not in text]
     if lr[0] <= 1:
         wrong.append('"The other wallets ship … times as many lines" needs every other wallet above Winnow')
     if cpl['Winnow'] <= ocpl[-1]:
@@ -384,7 +399,7 @@ subs = {
     'LANG_ROWS': '\n'.join(lang_rows), 'CC_ROWS': '\n'.join(cc_rows), 'CC_PARTS': '\n'.join(cc_parts),
     'DEP_ROWS': dep_rows, 'DEP_TEXT': dep_text, 'FEAT_ROWS': '\n'.join(feat_rows), 'EVIDENCE': '\n'.join(evidence),
     'WALLET_TH': ''.join(f'<th scope="col">{w}</th>' for w in ORDER), 'SOURCE_ROWS': '\n'.join(source_rows), 'OTHER': other,
-    'SNAPSHOT': SNAPSHOT_TEXT,
+    'SNAPSHOT': SNAPSHOT_TEXT, 'WINNOW_CRAP_DOC': link('winnow', 'docs/crap.md', text='docs/crap.md'),
     'W_L': f'{W_L:,}', 'W_APP': f'{loc["Winnow"]["app"]["code"]:,}', 'W_BTC': f'{loc["Winnow"]["bitcoin"]["code"]:,}',
     'W_LN': f'{loc["Winnow"]["lightning"]["code"]:,}', 'LR_MIN': f'{lr[0]:.1f}', 'LR_MAX': f'{lr[-1]:.0f}',
     'CR_MIN': f'{cr[0]:.1f}', 'CR_MAX': f'{cr[-1]:.1f}', 'W_CPL': f'{cpl["Winnow"]:.0f}',

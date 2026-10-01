@@ -106,6 +106,20 @@ def strip_rust_tests(text):
         i = j
 
 
+def unclaimed(spec):
+    """Directories in a wallet's `complete` trees that none of its code parts counts. A tree listed
+    there (e.g. winnow:Sources) must be counted in full, so a wallet that moves code into a new
+    folder fails the build instead of quietly shrinking."""
+    counted = [resolve(ref).resolve() for refs in spec['code'].values() for ref in refs]
+    missing = []
+    for tree in spec.get('complete', []):
+        for d in sorted(p for p in resolve(tree).iterdir() if p.is_dir()):
+            d = d.resolve()
+            if not any(c == d or d in c.parents or c in d.parents for c in counted):
+                missing.append(f'{tree}/{d.name}')
+    return missing
+
+
 def counted_files(refs):
     """The files a part of a wallet ships: programming-language sources that build into the
     iPhone app, minus tests, other platforms and generated files. Returns (kept, generated)."""

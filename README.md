@@ -3,7 +3,7 @@
 A reproducible comparison of open-source iPhone Lightning wallets, published at
 **https://compare.winnowwallet.com/**.
 
-It measures [Winnow](https://github.com/winnowwallet/winnow)'s Lightning research beta beside the
+It measures [Winnow](https://github.com/winnowwallet/winnow)'s Lightning beside the
 open-source iPhone wallets that run a Lightning node on the phone (Phoenix, Bitkit, Blixt and Zeus):
 features, lines of code, languages, cyclomatic complexity and CRAP, third-party dependencies,
 prebuilt binaries, vendored code and patched dependencies. Every project is pinned to an exact
