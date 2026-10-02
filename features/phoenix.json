@@ -13,7 +13,7 @@
   },
   "psbt": {
    "value": "no",
-   "evidence": "; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:560-581",
+   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/utils/swapin/SwapInSignerHelper.kt:73-84; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:560-581",
    "note": "No PSBT code; the Swap-in signer tool takes a raw transaction plus a server nonce, and spends are built, signed and sent in-app."
   },
   "watch_only": {
