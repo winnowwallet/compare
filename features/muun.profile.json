@@ -15,7 +15,7 @@
  "distribution": "App Store (fastlane prd lane uploads com.muun.falcon to App Store Connect and TestFlight; dogfood builds are internal TestFlight)",
  "libraries": {
   "text": "Swift: Firebase (Analytics, Crashlytics, Messaging), GoogleSignIn and Google Drive API, GRDB.swift, RxSwift, Dip, grpc-swift, Lottie. Go: btcd, lnd (lnwire, zpay32), lightning-onion, go-lnurl, gofpdf, pdfcpu, gorm with SQLite, gRPC.",
-  "cite": "muun:falcon/app/Podfile:15-31; muun:falcon/app/SPM/Package.swift:12-21; muun:libwallet/go.mod:6-35"
+  "cite": "muun:falcon/app/Podfile:15-31; muun:falcon/app/SPM/Package.swift:15-18; muun:libwallet/go.mod:6-35"
  },
  "bitcoin_library_not_counted": "btcsuite btcd (btcec, btcutil, txscript, wire, chaincfg, hdkeychain) and lnd, pulled as Go modules via go.mod, are not counted. Copies kept in the repository are counted as libwallet code: btcsuitew/ (bech32m copy, wrappers of btcutil, txscript, chainhash) and musig2v040/ (modified btcec MuSig2 v2.2.2).",
  "prebuilt": {
