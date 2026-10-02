@@ -1,130 +1,80 @@
 {
  "wallet": "Blixt",
  "features": {
-  "bolt11_pay": {
-   "value": "yes",
-   "evidence": "blixt:src/state/Send.ts:140; blixt:src/state/Send.ts:408",
-   "note": "Decodes lnbc invoice, pays via LND routerSendPaymentV2"
-  },
-  "bolt11_receive": {
-   "value": "yes",
-   "evidence": "blixt:src/state/Receive.ts:147",
-   "note": "Receive screen creates invoices via LND addInvoice"
-  },
-  "bolt12_pay": {
+  "multisig": {
    "value": "no",
-   "evidence": "blixt:src/hooks/useEvaluateLightningCode.ts:24; blixt:src/state/Send.ts:130",
-   "note": "Parser only accepts lnurl/lnbc/lntb; LND 0.21.3 lacks BOLT12 offers"
+   "evidence": "blixt:src/state/index.ts:795-797; blixt:src/state/OnChain.ts:165-174",
+   "note": "One wallet from one 24-word seed; the app has no m-of-n or MuSig2 account (LND signing RPCs are never called)"
   },
-  "bolt12_receive": {
+  "hw_signer": {
    "value": "no",
-   "evidence": "blixt:src/state/Receive.ts:147",
-   "note": "Only BOLT11 invoices; no offer code in app or LND"
+   "evidence": "blixt:src/state/index.ts:795-797; blixt:src/state/index.ts:674-698",
+   "note": "Keys come from the on-phone seed; the generated lnd.conf has no remote signer and no device code exists in the app"
   },
-  "offline_receive": {
+  "psbt": {
    "value": "no",
-   "evidence": "blixt:src/components/Drawer.tsx:221; blixt:src/utils/push-notification.ts:5",
-   "note": "Lightning Box is Android-only; iOS has only local notifications, no push-woken receive"
+   "evidence": "blixt:src/windows/OnChain/Withdraw.tsx:50-65; blixt:src/state/OnChain.ts:217-226",
+   "note": "Withdraw signs and broadcasts through LND sendCoins; there is no PSBT import, export or share"
   },
-  "lnurl": {
-   "value": "yes",
-   "evidence": "blixt:src/state/LNURL.ts:30; blixt:src/windows/LNURL/index.tsx:33",
-   "note": "pay, withdraw, channel and auth all supported"
-  },
-  "ln_address_pay": {
-   "value": "yes",
-   "evidence": "blixt:src/components/Drawer.tsx:161; blixt:src/state/LNURL.ts:633",
-   "note": "'Send to Lightning Address' menu item, LUD-16 resolution"
-  },
-  "ln_address_receive": {
+  "watch_only": {
    "value": "no",
-   "evidence": "blixt:src/components/Drawer.tsx:221; blixt:src/windows/Settings/Settings.tsx:1938",
-   "note": "Lightning Box address menu/settings gated to Android only"
+   "evidence": "blixt:src/windows/Welcome/Restore.tsx:69-73; blixt:src/state/index.ts:778-782",
+   "note": "Restore accepts a 24-word seed only; no xpub, descriptor or address import in the app"
   },
-  "bip353": {
+  "passphrase": {
+   "value": "partial",
+   "evidence": "blixt:src/windows/Welcome/Start.tsx:63-92; blixt:src/windows/Welcome/Restore.tsx:310-314; lnd-blixt:aezeed/errors.go:10-12",
+   "note": "Optional aezeed passphrase on create and restore; not BIP 39: a wrong one is rejected, it does not open another wallet"
+  },
+  "coin_control": {
    "value": "no",
-   "evidence": "blixt:src/hooks/useEvaluateLightningCode.ts:71; blixt:src/state/LNURL.ts:647",
-   "note": "user@domain resolved only via .well-known/lnurlp; no DNS lookup"
+   "evidence": "blixt:src/state/OnChain.ts:217-226; blixt:src/windows/OnChain/Withdraw.tsx:50-65",
+   "note": "sendCoins gets address, amount and fee rate only, no outpoints; no coin list in the app (LND would accept outpoints)"
   },
-  "mpp": {
-   "value": "yes",
-   "evidence": "blixt:src/state/Send.ts:392; blixt:src/storage/app.ts:303",
-   "note": "MPP on by default (maxParts 16), toggle in settings"
-  },
-  "keysend": {
-   "value": "yes",
-   "evidence": "blixt:src/components/Drawer.tsx:210; blixt:src/state/index.ts:680",
-   "note": "Keysend screen under drawer 'show more'; accept-keysend=1 for receiving"
-  },
-  "choose_peer": {
-   "value": "yes",
-   "evidence": "blixt:src/windows/LightningInfo/LightningInfo.tsx:216; blixt:src/state/Channel.ts:323",
-   "note": "Open channel to any pubkey@host; also autopilot (Blixt node) and Dunder LSP"
-  },
-  "jit_channels": {
-   "value": "yes",
-   "evidence": "blixt:src/windows/Receive/ReceiveSetupLsp.tsx:90; blixt:src/state/BlixtLsp.ts:253",
-   "note": "Dunder LSP opens channel on receive; on by default (README checkbox outdated)"
-  },
-  "splicing": {
-   "value": "no",
-   "evidence": "lnd-blixt:lnrpc/lightning.proto",
-   "note": "No splice RPC in Blixt’s LND; nothing in app"
-  },
-  "anchors": {
-   "value": "yes",
-   "evidence": "blixt:src/state/Channel.ts:345",
-   "note": "Channel open refuses peers without anchor support (feature bit 23)"
-  },
-  "local_pathfinding": {
-   "value": "yes",
-   "evidence": "blixt:src/state/index.ts:406; blixt:src/storage/app.ts:331",
-   "note": "Embedded LND routes from local graph; speedloader gossip sync on by default"
-  },
-  "watchtower": {
-   "value": "engine-only",
-   "evidence": "blixt:src/state/index.ts:674; lnd-blixt:lncfg/wtclient.go:16",
-   "note": "LND wtclient exists but app config/UI never enables it"
-  },
-  "channel_backup": {
-   "value": "yes",
-   "evidence": "blixt:src/state/ICloudBackup.ts:12; blixt:src/windows/Settings/Settings.tsx:1568",
-   "note": "SCB exported to iCloud (auto) and restorable at wallet restore"
-  },
-  "onchain_independent": {
-   "value": "yes",
-   "evidence": "blixt:src/state/OnChain.ts:177; blixt:src/state/OnChain.ts:218",
-   "note": "LND's own single-key wallet; the channel partner is not involved"
+  "fee_bump": {
+   "value": "partial",
+   "evidence": "blixt:src/components/PendingChannelCard.tsx:117-148; blixt:src/components/PendingChannelCard.tsx:176-185; blixt:src/state/OnChain.ts:239-248",
+   "note": "Bump Fee does CPFP on the change of a pending channel-open tx only; ordinary on-chain sends have no bump"
   },
   "taproot": {
    "value": "yes",
-   "evidence": "blixt:src/state/OnChain.ts:173; blixt:src/windows/OnChain/OnChainInfo.tsx:62",
-   "note": "Default receive address is P2TR; long-press for P2WPKH"
+   "evidence": "blixt:src/state/OnChain.ts:164-174; blixt:src/windows/OnChain/OnChainInfo.tsx:62-63",
+   "note": "Default receive address is P2TR (bc1p); long-pressing New Address gives P2WPKH"
   },
-  "multisig": {
+  "descriptors": {
    "value": "no",
-   "evidence": "blixt:src/state/OnChain.ts:217",
-   "note": "Single-sig LND wallet only; no multisig/shared account code"
+   "evidence": "blixt:src/windows/OnChain/index.tsx:19-29; blixt:src/windows/OnChain/OnChainInfo.tsx:129-150",
+   "note": "On-chain screens are address, history, details and withdraw; no descriptor or xpub export or import"
   },
-  "hw_signer": {
-   "value": "engine-only",
-   "evidence": "lnd-blixt:lnrpc/walletrpc/walletkit.proto:329; lnd-blixt:lncfg/remotesigner.go:17",
-   "note": "LND has PSBT/remote signer; app has no PSBT or signer code"
+  "own_server": {
+   "value": "yes",
+   "evidence": "blixt:src/windows/Settings/Settings.tsx:1670-1680; blixt:src/windows/Settings/Settings.tsx:750-785; blixt:src/windows/Settings/PowerUserTools.tsx:696-704",
+   "note": "Settings > Bitcoin Node takes any BIP 157 peer. A bitcoind mode sits behind a hidden debug gate; the fee URL is fixed"
   },
-  "coin_control": {
-   "value": "engine-only",
-   "evidence": "blixt:src/state/OnChain.ts:218; lnd-blixt:lnrpc/lightning.proto:1157",
-   "note": "App sendCoins passes no outpoints; LND supports outpoint selection"
+  "verifies_chain": {
+   "value": "yes",
+   "evidence": "blixt:src/state/index.ts:695-708; lnd-blixt:config_builder.go:1872",
+   "note": "Embedded LND runs neutrino (BIP 157/158): headers and filters are checked on the phone, not a server's balances"
   },
   "tor": {
    "value": "yes",
-   "evidence": "blixt:src/windows/Settings/Settings.tsx:1867; blixt:src/state/index.ts:312",
-   "note": "Experimental toggle on iOS; embedded Tor via react-native-nitro-tor"
+   "evidence": "blixt:src/windows/Settings/Settings.tsx:1867-1877; blixt:src/state/index.ts:295-316; blixt:locales/en.json:958",
+   "note": "Experimental toggle starts embedded Tor; Bitcoin and LN peers use it, rates and mempool.space calls stay clearnet"
+  },
+  "seed_standard": {
+   "value": "partial",
+   "evidence": "blixt:src/state/index.ts:628-632; blixt:src/windows/Welcome/Restore.tsx:70-76; lnd-blixt:aezeed/cipherseed.go:15-26",
+   "note": "24-word aezeed phrase (LND), not BIP 39; BIP 39 wallets cannot restore it and the app cannot import a BIP 39 phrase"
+  },
+  "cloud_backup": {
+   "value": "no",
+   "evidence": "blixt:src/state/ICloudBackup.ts:102-108; blixt:locales/en.json:1241-1242",
+   "note": "iCloud backup holds encrypted channel state only (off-chain funds); on-chain funds restore from the written phrase"
   },
   "license": {
    "value": "MIT",
-   "evidence": "blixt:LICENSE:1",
-   "note": "MIT license text, copyright Hampus Sjöberg"
+   "evidence": "blixt:README.md:157-159; blixt:LICENSE:3",
+   "note": "README states MIT; LICENSE carries the MIT permission text, copyright Hampus Sjoberg"
   }
  }
 }

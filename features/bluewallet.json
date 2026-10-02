@@ -1,0 +1,80 @@
+{
+ "wallet": "BlueWallet",
+ "features": {
+  "multisig": {
+   "value": "yes",
+   "evidence": "bluewallet:screen/wallets/Add.tsx:294; bluewallet:screen/wallets/WalletsAddMultisig.tsx:54-58; bluewallet:screen/wallets/addMultisigStep2.tsx:226-232",
+   "note": "Vault wallet type: m-of-n (default 2-of-3); person can generate or import several keys in the app"
+  },
+  "hw_signer": {
+   "value": "yes",
+   "evidence": "bluewallet:class/wallets/abstract-wallet.ts:321-337; bluewallet:class/wallets/abstract-wallet.ts:339-347; bluewallet:screen/send/ScanQRCode.tsx:165-170; bluewallet:screen/wallets/WalletDetails.tsx:813",
+   "note": "Imports Coldcard/Cobo/Keystone-style keys by QR or file and signs via PSBT QR or file; no USB, Bluetooth or NFC link"
+  },
+  "psbt": {
+   "value": "yes",
+   "evidence": "bluewallet:screen/send/psbtWithHardwareWallet.tsx:259; bluewallet:screen/send/psbtWithHardwareWallet.tsx:270-280; bluewallet:screen/send/psbtWithHardwareWallet.tsx:314",
+   "note": "Unsigned PSBT shows as animated QR, file or clipboard; signed PSBT is scanned or opened from a file"
+  },
+  "watch_only": {
+   "value": "yes",
+   "evidence": "bluewallet:class/wallet-import.ts:502-528; bluewallet:class/wallets/watch-only-wallet.ts:64-72",
+   "note": "Imports xpub/ypub/zpub, single-key descriptors or one address as watch-only; shows balance and history"
+  },
+  "passphrase": {
+   "value": "partial",
+   "evidence": "bluewallet:navigation/AddWalletStack.tsx:246-262; bluewallet:class/wallet-import.ts:146-148; bluewallet:class/wallets/abstract-hd-wallet.ts:79-80",
+   "note": "Passphrase prompt only when importing a seed or adding a multisig seed key; creating a new wallet offers none"
+  },
+  "coin_control": {
+   "value": "yes",
+   "evidence": "bluewallet:screen/send/SendDetails.tsx:1056-1061; bluewallet:screen/send/CoinControl.tsx:289-291; bluewallet:screen/send/CoinControl.tsx:301-303",
+   "note": "Coin Control screen selects UTXOs and hands them to Send; coins can also be frozen"
+  },
+  "fee_bump": {
+   "value": "partial",
+   "evidence": "bluewallet:class/wallets/abstract-wallet.ts:170-172; bluewallet:class/wallets/hd-segwit-bech32-wallet.ts:22-24; bluewallet:screen/transactions/TransactionStatus.tsx:1128-1150",
+   "note": "RBF bump, RBF cancel and CPFP exist, but allowRBF() is true only for native SegWit (and aezeed) wallets"
+  },
+  "taproot": {
+   "value": "yes",
+   "evidence": "bluewallet:navigation/AddWalletStack.tsx:155-159; bluewallet:screen/wallets/Add.tsx:250-252; bluewallet:class/wallets/hd-taproot-wallet.ts:47-57",
+   "note": "Taproot (BIP86) is a wallet-type choice in Add Wallet; receive addresses are bc1p; default type is native SegWit"
+  },
+  "descriptors": {
+   "value": "yes",
+   "evidence": "bluewallet:class/wallets/abstract-wallet.ts:238-244; bluewallet:class/wallets/multisig-hd-wallet.ts:634-640; bluewallet:screen/wallets/xpub.tsx:72-78",
+   "note": "Imports wpkh/sh/pkh/tr and sortedmulti descriptors; exports a descriptor (tr()) only for Taproot wallets"
+  },
+  "own_server": {
+   "value": "yes",
+   "evidence": "bluewallet:screen/settings/ElectrumSettings.tsx:193-198; bluewallet:screen/settings/ElectrumSettings.tsx:210-212; bluewallet:blue_modules/BlueElectrum.ts:90-97",
+   "note": "Electrum server setting takes any host and TCP/SSL port after a connection test; defaults are a hardcoded peer list"
+  },
+  "verifies_chain": {
+   "value": "no",
+   "evidence": "bluewallet:blue_modules/BlueElectrum.ts:1034-1038; bluewallet:blue_modules/BlueElectrum.ts:1128-1131; bluewallet:blue_modules/BlueElectrum.ts:1609-1616",
+   "note": "Balances and history are taken straight from Electrum replies; headers are fetched only for timestamps, no proofs"
+  },
+  "tor": {
+   "value": "partial",
+   "evidence": "bluewallet:screen/settings/ElectrumSettings.tsx:199-202; bluewallet:loc/en.json:253; bluewallet:blue_modules/BlueElectrum.ts:1453",
+   "note": ".onion Electrum hosts are accepted; no Tor in the app, the error text asks the person to connect the Orbot app"
+  },
+  "seed_standard": {
+   "value": "yes",
+   "evidence": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:168-171; bluewallet:screen/wallets/PleaseBackup.tsx:71; bluewallet:screen/wallets/Add.tsx:284-286",
+   "note": "New on-chain wallets get a 12-word BIP39 phrase (16 bytes of entropy), shown on a backup screen"
+  },
+  "cloud_backup": {
+   "value": "no",
+   "evidence": "bluewallet:class/blue-app.ts:133; bluewallet:class/blue-app.ts:302; bluewallet:class/blue-app.ts:709",
+   "note": "Wallet data saved in a this-device-only keychain item and Realm excluded from iCloud backup; only manual seed display"
+  },
+  "license": {
+   "value": "MIT",
+   "evidence": "bluewallet:LICENSE:1; bluewallet:package.json:4",
+   "note": "MIT License, copyright BlueWallet developers; package.json also declares MIT"
+  }
+ }
+}

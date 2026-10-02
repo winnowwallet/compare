@@ -1,0 +1,26 @@
+{
+ "built_with": "React Native (TypeScript) with Go (LND)",
+ "engine": {
+  "text": "Embedded LND {version:lnd-blixt} (Go); the on-chain wallet is btcwallet inside LND, run in-process through react-native-turbo-lnd",
+  "cite": "lnd-blixt:lnwallet/btcwallet/btcwallet.go:83-88"
+ },
+ "chain_data": {
+  "text": "Neutrino (BIP 157/158) light client through six default peers, four run by Blixt; the person can change the peers in Settings. Fee estimates come from a fixed URL.",
+  "cite": "blixt:src/utils/constants.ts:30-38; blixt:src/windows/Settings/Settings.tsx:1670-1680"
+ },
+ "third_party": {
+  "text": "Nobody",
+  "cite": "blixt:src/state/OnChain.ts:217-226"
+ },
+ "distribution": "TestFlight",
+ "libraries": {
+  "text": "React Native, react-native-turbo-lnd, @bufbuild/protobuf, secp256k1, bech32, react-native-nitro-tor, react-native-keychain, easy-peasy",
+  "cite": "blixt:package.json:70; blixt:package.json:104; blixt:package.json:122; blixt:package.json:134; blixt:package.json:145"
+ },
+ "bitcoin_library_not_counted": "btcwallet (with btcd and neutrino), Go modules under LND",
+ "prebuilt": {
+  "text": "Lndmobile.xcframework (LND), downloaded from the react-native-turbo-lnd release for the pinned LND commit",
+  "cite": "turbo-lnd:react-native-turbo-lnd.podspec:19"
+ },
+ "patched": "None in the app (no patch files); LND is Blixt's own fork (hsjoberg/lnd) with an added gossip speedloader"
+}
