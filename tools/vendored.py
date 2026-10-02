@@ -9,8 +9,9 @@ import re
 
 from common import CONFIG, DATA, GENERATED, LANGS, cloc, source_dir, write_json
 
-IGNORE = re.compile(r'/(\.git|node_modules|Pods|android|phoenix-android|build|target)(/|$)')
-VENDOR_DIR = re.compile(r'^(vendor|vendored|third[_-]?party|thirdparty|external|externals|zeus_modules)$', re.I)
+IGNORE = re.compile(r'/(\.git|node_modules|android|phoenix-android|build|target)(/|$)')
+VENDOR_DIR = re.compile(r'^(vendor|vendored|third[_-]?party|thirdparty|external|externals|zeus_modules|Pods)$', re.I)
+NOT_A_POD = re.compile(r'^(Headers|Target Support Files|Local Podspecs)$|\.xcodeproj$')  # CocoaPods' own scaffolding, in a committed Pods/
 LICENSE = re.compile(r'^(LICEN[CS]E|COPYING)(\.[a-z]+)?$', re.I)
 BINARY = re.compile(r'\.(a|so|dylib|dll|wasm|xcframework|framework)$', re.I)
 TOOLING = re.compile(r'(^|/)([^/]*\.config\.[cm]?[jt]s|\.?eslintrc[^/]*|babel\.config\.[^/]+)$')  # build and lint configuration
@@ -38,6 +39,8 @@ def packages_in(vendor_dir):
     """Each copied package: scoped (@scope/name), plain directories, and single files."""
     out = []
     for child in sorted(vendor_dir.iterdir()):
+        if vendor_dir.name == 'Pods' and NOT_A_POD.search(child.name):
+            continue
         if child.is_dir() and child.name.startswith('@'):
             out += sorted(p for p in child.iterdir() if p.is_dir())
         elif child.is_dir() or child.suffix in SOURCE_EXT:

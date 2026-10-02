@@ -1,18 +1,25 @@
 {
  "about": "The revision each hand-reviewed fact in features/ and wallets.json was checked against, and when. Citations resolve and link here, so they stay valid as sources.json moves forward; data/drift.json shows which cited code has changed since. `tools/evidence.py --adopt [source ...]` starts a re-review.",
  "sources": {
-  "winnow": {"repo": "https://github.com/winnowwallet/winnow", "rev": "8b6606de01427e54e3d7c12651ac4eafedd910d4", "date": "2026-10-01"},
-  "phoenix": {"repo": "https://github.com/ACINQ/phoenix", "rev": "1facad2762acb9cfac3e418ae5a326a0bab167c3", "date": "2026-09-27"},
-  "lightning-kmp": {"repo": "https://github.com/ACINQ/lightning-kmp", "rev": "77f2f788509fb8452177e86ba6ea4b731cb840e9", "date": "2026-09-27"},
-  "bitkit": {"repo": "https://github.com/synonymdev/bitkit-ios", "rev": "e33dc08e799a3b476924d6580142990f78b50601", "date": "2026-10-01"},
-  "synonym-ldk-node": {"repo": "https://github.com/synonymdev/ldk-node", "rev": "190a17d966cf5a685444cfa17c3a419c290bf26c", "date": "2026-09-27"},
-  "rust-lightning": {"repo": "https://github.com/lightningdevkit/rust-lightning", "rev": "311ad94772722ff9c54ec0f7656a4b811be5b846", "date": "2026-09-27"},
-  "bitkit-core": {"repo": "https://github.com/synonymdev/bitkit-core", "rev": "b53fa54a16f04940943072bb6e08dc2650302f93", "date": "2026-09-27"},
-  "paykit-rs": {"repo": "https://github.com/pubky/paykit-rs", "rev": "4613beee25d1680ed8bc849446498e9bfb2cdb16", "date": "2026-09-27"},
-  "vss-rust-client-ffi": {"repo": "https://github.com/synonymdev/vss-rust-client-ffi", "rev": "3476fa45be919244310c4f65945e8d2bc1b8ee15", "date": "2026-09-27"},
-  "blixt": {"repo": "https://github.com/hsjoberg/blixt-wallet", "rev": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a", "date": "2026-09-27"},
-  "lnd-blixt": {"repo": "https://github.com/hsjoberg/lnd", "rev": "ae185f27e097a4106d04437f0a2be6edacf40910", "date": "2026-09-27"},
-  "zeus": {"repo": "https://github.com/ZeusLN/zeus", "rev": "1a6f97a71336a9202f45c169f55b250f298b6ab4", "date": "2026-10-01"},
-  "lnd-zeus": {"repo": "https://github.com/ZeusLN/lnd", "rev": "ae24665a916d94fa89475b21ec27e8cda0eb5845", "date": "2026-09-27"}
+  "winnow": {"repo": "https://github.com/winnowwallet/winnow", "rev": "7751cfd30f5e1b108fcfe322db38b76948a0bb1d", "date": "2026-10-02"},
+  "phoenix": {"repo": "https://github.com/ACINQ/phoenix", "rev": "1facad2762acb9cfac3e418ae5a326a0bab167c3", "date": "2026-10-02"},
+  "lightning-kmp": {"repo": "https://github.com/ACINQ/lightning-kmp", "rev": "77f2f788509fb8452177e86ba6ea4b731cb840e9", "date": "2026-10-02"},
+  "bitkit": {"repo": "https://github.com/synonymdev/bitkit-ios", "rev": "f751f505710e175bbbf4ee9f8cf8ca09fc471df7", "date": "2026-10-02"},
+  "synonym-ldk-node": {"repo": "https://github.com/synonymdev/ldk-node", "rev": "190a17d966cf5a685444cfa17c3a419c290bf26c", "date": "2026-10-02"},
+  "rust-lightning": {"repo": "https://github.com/lightningdevkit/rust-lightning", "rev": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4", "date": "2026-10-02"},
+  "bitkit-core": {"repo": "https://github.com/synonymdev/bitkit-core", "rev": "b53fa54a16f04940943072bb6e08dc2650302f93", "date": "2026-10-02"},
+  "paykit-rs": {"repo": "https://github.com/pubky/paykit-rs", "rev": "24162ebbcc703251d8038f2e176d1f4cfb117c6a", "date": "2026-10-02"},
+  "vss-rust-client-ffi": {"repo": "https://github.com/synonymdev/vss-rust-client-ffi", "rev": "3476fa45be919244310c4f65945e8d2bc1b8ee15", "date": "2026-10-02"},
+  "blixt": {"repo": "https://github.com/hsjoberg/blixt-wallet", "rev": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a", "date": "2026-10-02"},
+  "lnd-blixt": {"repo": "https://github.com/hsjoberg/lnd", "rev": "ae185f27e097a4106d04437f0a2be6edacf40910", "date": "2026-10-02"},
+  "zeus": {"repo": "https://github.com/ZeusLN/zeus", "rev": "1a6f97a71336a9202f45c169f55b250f298b6ab4", "date": "2026-10-02"},
+  "lnd-zeus": {"repo": "https://github.com/ZeusLN/lnd", "rev": "ae24665a916d94fa89475b21ec27e8cda0eb5845", "date": "2026-10-02"},
+  "turbo-lnd": {"repo": "https://github.com/hsjoberg/react-native-turbo-lnd", "rev": "87ed562a0e9369c0933cfe8383cf5cd22388de46", "date": "2026-10-02"},
+  "zeus-ldk-node": {"repo": "https://github.com/ZeusLN/ldk-node", "rev": "921ef6370a5694ed8cf00538878420ccb5afe09d", "date": "2026-10-02"},
+  "cdk": {"repo": "https://github.com/cashubtc/cdk", "rev": "874745d5d79b36be346efbd716393357ab898834", "date": "2026-10-02"},
+  "bluewallet": {"repo": "https://github.com/BlueWallet/BlueWallet", "rev": "98dafb58d86ffd1c431b0dd3c634c7d843112c63", "date": "2026-10-02"},
+  "green": {"repo": "https://github.com/Blockstream/green_ios", "rev": "131f820fdef34b5368de9caa5ef7f3de4d7e0139", "date": "2026-10-02"},
+  "gdk": {"repo": "https://github.com/Blockstream/gdk", "rev": "02e3646264ed10afd460e61c2c516510b9ce5cf5", "date": "2026-10-02"},
+  "muun": {"repo": "https://github.com/muun/falcon", "rev": "d6719c00f96d2ecbde2ab6588f95e54975ceea0e", "date": "2026-10-02"}
  }
 }

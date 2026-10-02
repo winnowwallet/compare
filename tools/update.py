@@ -99,31 +99,33 @@ def resolve_rule(key, spec):
         value = dig(json.loads(text), rule['json'])
     elif 'bun' in rule:
         value = bun_version(text, rule['bun'])
+    elif 'regex' in rule:
+        value = re.search(rule['regex'], text).group(1)
     elif 'cargo' in rule:
         manifest = (path.parent / 'Cargo.toml').read_text()
         value = cargo_version(text, manifest, rule['cargo'])
     else:
         raise SystemExit(f'{key}: unknown track rule {rule}')
     tag = rule['tag'].format(value)
-    return repo, remote_rev(repo, f'refs/tags/{tag}'), value.removeprefix('v'), tag
+    return repo, remote_rev(repo, f'refs/tags/{tag}'), value.removeprefix('release_').removeprefix('v'), tag
 
 
 def cargo_sources():
-    return {c['source'] for w in CONFIG['wallets'].values() for c in w['deps'].get('cargo', [])}
+    return {c['source']: c.get('dir', '') for w in CONFIG['wallets'].values() for c in w['deps'].get('cargo', [])}
 
 
-def ensure_lock(key, spec, moved):
+def ensure_lock(key, spec, moved, below=''):
     """Use the source's own Cargo.lock; generate one only when it commits none."""
     path = source_dir(key)
-    if git('ls-files', 'Cargo.lock', cwd=path):
+    if git('ls-files', str(Path(below) / 'Cargo.lock'), cwd=path):
         if spec.pop('lock', None):
             (ROOT / f'locks/{key}.Cargo.lock').unlink(missing_ok=True)
         return
     lock = ROOT / f'locks/{key}.Cargo.lock'
     if moved or not lock.exists():
-        (path / 'Cargo.lock').unlink(missing_ok=True)
-        subprocess.run(['cargo', 'generate-lockfile', '--manifest-path', str(path / 'Cargo.toml')], check=True)
-        lock.write_bytes((path / 'Cargo.lock').read_bytes())
+        (path / below / 'Cargo.lock').unlink(missing_ok=True)
+        subprocess.run(['cargo', 'generate-lockfile', '--manifest-path', str(path / below / 'Cargo.toml')], check=True)
+        lock.write_bytes((path / below / 'Cargo.lock').read_bytes())
     spec['lock'] = f'locks/{key}.Cargo.lock'
     fetch(key, spec)
 
@@ -150,7 +152,7 @@ def main():
                 spec.pop(field, None)
         fetch(key, spec)
         if key in cargo_sources():
-            ensure_lock(key, spec, moved=before.get('rev') != rev)
+            ensure_lock(key, spec, moved=before.get('rev') != rev, below=cargo_sources()[key])
         if spec.get('version_from'):
             m = re.search(spec['version_from']['pattern'], (source_dir(key) / spec['version_from']['path']).read_text())
             spec['version'] = '.'.join(str(int(g)) for g in m.groups())

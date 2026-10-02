@@ -6,6 +6,203 @@
   "patches": [],
   "copied_lines": 0
  },
+ "BlueWallet": {
+  "copied_packages": {},
+  "nested_licenses": [
+   "/blue_modules/pako/LICENSE"
+  ],
+  "binaries": [],
+  "patches": [
+   "README.md",
+   "react-native-background-fetch+4.4.2.patch",
+   "react-native-context-menu-view+1.21.0.patch",
+   "react-native-notifications+5.2.2.patch",
+   "react-native-screens+4.27.0.patch"
+  ],
+  "copied_lines": 0
+ },
+ "Green": {
+  "copied_packages": {},
+  "nested_licenses": [],
+  "binaries": [],
+  "patches": [],
+  "copied_lines": 0
+ },
+ "Muun": {
+  "copied_packages": {
+   "falcon/app/Pods/AppAuth": {
+    "lines": 4726,
+    "counted": "source"
+   },
+   "falcon/app/Pods/Dip": {
+    "lines": 1191,
+    "counted": "source"
+   },
+   "falcon/app/Pods/Firebase": {
+    "lines": 51,
+    "counted": "source"
+   },
+   "falcon/app/Pods/FirebaseAnalytics": {
+    "lines": 4098,
+    "counted": "source"
+   },
+   "falcon/app/Pods/FirebaseCore": {
+    "lines": 1934,
+    "counted": "source"
+   },
+   "falcon/app/Pods/FirebaseCoreExtension": {
+    "lines": 240,
+    "counted": "source"
+   },
+   "falcon/app/Pods/FirebaseCoreInternal": {
+    "lines": 654,
+    "counted": "source"
+   },
+   "falcon/app/Pods/FirebaseCrashlytics": {
+    "lines": 15302,
+    "counted": "source"
+   },
+   "falcon/app/Pods/FirebaseInstallations": {
+    "lines": 2465,
+    "counted": "source"
+   },
+   "falcon/app/Pods/FirebaseMessaging": {
+    "lines": 7008,
+    "counted": "source"
+   },
+   "falcon/app/Pods/FirebaseRemoteConfigInterop": {
+    "lines": 46,
+    "counted": "source"
+   },
+   "falcon/app/Pods/FirebaseSessions": {
+    "lines": 1573,
+    "counted": "source"
+   },
+   "falcon/app/Pods/GRDB.swift": {
+    "lines": 19698,
+    "counted": "source"
+   },
+   "falcon/app/Pods/GTMAppAuth": {
+    "lines": 911,
+    "counted": "source"
+   },
+   "falcon/app/Pods/GTMSessionFetcher": {
+    "lines": 8312,
+    "counted": "source"
+   },
+   "falcon/app/Pods/GoogleAPIClientForREST": {
+    "lines": 5604,
+    "counted": "source"
+   },
+   "falcon/app/Pods/GoogleDataTransport": {
+    "lines": 4808,
+    "counted": "source"
+   },
+   "falcon/app/Pods/GoogleSignIn": {
+    "lines": 3388,
+    "counted": "source"
+   },
+   "falcon/app/Pods/GoogleUtilities": {
+    "lines": 4263,
+    "counted": "source"
+   },
+   "falcon/app/Pods/PromisesObjC": {
+    "lines": 1740,
+    "counted": "source"
+   },
+   "falcon/app/Pods/PromisesSwift": {
+    "lines": 807,
+    "counted": "source"
+   },
+   "falcon/app/Pods/RxBlocking": {
+    "lines": 630,
+    "counted": "source"
+   },
+   "falcon/app/Pods/RxGRDB": {
+    "lines": 617,
+    "counted": "source"
+   },
+   "falcon/app/Pods/RxSwift": {
+    "lines": 9293,
+    "counted": "source"
+   },
+   "falcon/app/Pods/nanopb": {
+    "lines": 2335,
+    "counted": "source"
+   },
+   "falcon/app/Pods/FirebaseCrashlytics/Crashlytics/third_party/libunwind": {
+    "lines": 213,
+    "counted": "source"
+   },
+   "falcon/app/Pods/GoogleUtilities/third_party/IsAppEncrypted": {
+    "lines": 52,
+    "counted": "source"
+   }
+  },
+  "nested_licenses": [
+   "/falcon/app/Pods/AppAuth/LICENSE",
+   "/falcon/app/Pods/Dip/LICENSE",
+   "/falcon/app/Pods/Firebase/LICENSE",
+   "/falcon/app/Pods/FirebaseCore/LICENSE",
+   "/falcon/app/Pods/FirebaseCoreExtension/LICENSE",
+   "/falcon/app/Pods/FirebaseCoreInternal/LICENSE",
+   "/falcon/app/Pods/FirebaseCrashlytics/Crashlytics/LICENSE",
+   "/falcon/app/Pods/FirebaseInstallations/LICENSE",
+   "/falcon/app/Pods/FirebaseMessaging/LICENSE",
+   "/falcon/app/Pods/FirebaseRemoteConfigInterop/LICENSE",
+   "/falcon/app/Pods/FirebaseSessions/LICENSE",
+   "/falcon/app/Pods/GRDB.swift/LICENSE",
+   "/falcon/app/Pods/GTMAppAuth/LICENSE",
+   "/falcon/app/Pods/GTMSessionFetcher/LICENSE",
+   "/falcon/app/Pods/GoogleAPIClientForREST/LICENSE",
+   "/falcon/app/Pods/GoogleDataTransport/LICENSE",
+   "/falcon/app/Pods/GoogleSignIn/LICENSE",
+   "/falcon/app/Pods/GoogleUtilities/LICENSE",
+   "/falcon/app/Pods/PromisesObjC/LICENSE",
+   "/falcon/app/Pods/PromisesSwift/LICENSE",
+   "/falcon/app/Pods/RxBlocking/LICENSE.md",
+   "/falcon/app/Pods/RxGRDB/LICENSE",
+   "/falcon/app/Pods/RxSwift/LICENSE.md",
+   "/falcon/app/Pods/SwiftGen/LICENCE",
+   "/falcon/app/Pods/SwiftLint/LICENSE",
+   "/falcon/app/Pods/nanopb/LICENSE.txt",
+   "/libwallet/LICENSE",
+   "/libwallet/data/emergency_kit/resources/fonts/LICENSE",
+   "/prover/libs/plonky2-sha256/LICENSE"
+  ],
+  "binaries": [
+   "/falcon/app/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework",
+   "/falcon/app/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64/FirebaseAnalytics.framework",
+   "/falcon/app/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-maccatalyst/FirebaseAnalytics.framework",
+   "/falcon/app/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-simulator/FirebaseAnalytics.framework",
+   "/falcon/app/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/macos-arm64_x86_64/FirebaseAnalytics.framework",
+   "/falcon/app/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64/FirebaseAnalytics.framework",
+   "/falcon/app/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator/FirebaseAnalytics.framework",
+   "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework",
+   "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/ios-arm64/GoogleAppMeasurement.framework",
+   "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework",
+   "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-simulator/GoogleAppMeasurement.framework",
+   "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework",
+   "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework",
+   "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework",
+   "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework",
+   "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64/GoogleAppMeasurementIdentitySupport.framework",
+   "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurementIdentitySupport.framework",
+   "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework",
+   "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/macos-arm64_x86_64/GoogleAppMeasurementIdentitySupport.framework",
+   "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64/GoogleAppMeasurementIdentitySupport.framework",
+   "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework",
+   "/falcon/app/Pods/SwiftGen/lib/Commander.framework",
+   "/falcon/app/Pods/SwiftGen/lib/Kanna.framework",
+   "/falcon/app/Pods/SwiftGen/lib/PathKit.framework",
+   "/falcon/app/Pods/SwiftGen/lib/Stencil.framework",
+   "/falcon/app/Pods/SwiftGen/lib/StencilSwiftKit.framework",
+   "/falcon/app/Pods/SwiftGen/lib/SwiftGenKit.framework",
+   "/falcon/app/Pods/SwiftGen/lib/Yams.framework"
+  ],
+  "patches": [],
+  "copied_lines": 101959
+ },
  "Phoenix": {
   "copied_packages": {},
   "nested_licenses": [],

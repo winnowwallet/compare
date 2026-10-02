@@ -4,7 +4,7 @@ always matches the measurement; earlier rows are left as they were measured. Any
 rebuilt from the commit that recorded it."""
 import json
 
-from common import CONFIG, DATA, dumps
+from common import CONFIG, COUNTED, DATA, dumps
 
 PATH = DATA / 'history.json'
 
@@ -18,9 +18,9 @@ def row():
     for w in CONFIG['wallets']:
         a = cc[w]['all']
         wallets[w] = {
-            'lines': sum(p['code'] for p in loc[w].values()),
+            'lines': sum(p['code'] for part, p in loc[w].items() if part in COUNTED),
             **{f'lines_{part}': p['code'] for part, p in loc[w].items()},
-            'characters': sum(p['chars'] for p in loc[w].values()),
+            'characters': sum(p['chars'] for part, p in loc[w].items() if part in COUNTED),
             'functions': a['functions'], 'cc_gt_12': a['cc_gt_12'], 'cc_gt_30': a['cc_gt_30'], 'max_cc': a['max_cc'],
             'packages': deps[w]['total'], 'vendored_lines': vend[w]['copied_lines'],
         }

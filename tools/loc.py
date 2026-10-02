@@ -5,8 +5,8 @@ import json
 from common import CONFIG, DATA, LANGS, STAGE, cloc, stage, unclaimed, write_json
 
 
-def measure(refs):
-    staged, generated = stage(refs)
+def measure(refs, skip=()):
+    staged, generated = stage(refs, skip)
     rows = json.loads(cloc(['--json', '--by-file', '--include-lang=' + ','.join(LANGS), str(STAGE)]) or '{}')
     languages, files = {}, 0
     for path, row in rows.items():
@@ -30,7 +30,7 @@ def main():
         if missing:
             raise SystemExit(f'{wallet} has code that no part of sources.json counts: {", ".join(missing)}. '
                              'Add each to its code parts, or leave it out on purpose by removing it from `complete`.')
-        result[wallet] = {part: measure(refs) for part, refs in spec['code'].items()}
+        result[wallet] = {part: measure(refs, spec.get('skip', ())) for part, refs in spec['code'].items()}
         print(wallet, {p: v['code'] for p, v in result[wallet].items()})
     write_json(DATA / 'loc.json', result)
 
