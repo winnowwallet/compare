@@ -8,7 +8,7 @@
   },
   "hw_signer": {
    "value": "yes",
-   "evidence": "zeus:views/HandleAnythingQRScanner.tsx:114; zeus:views/PSBT.tsx:201-206; zeus:locales/en.json:430",
+   "evidence": "zeus:views/HandleAnythingQRScanner.tsx:114; zeus:views/PSBT.tsx:201-206; zeus:locales/en.json:426",
    "note": "Imports signer xpub and fingerprint by QR (BC-UR, JSON export) and signs by PSBT QR; no named-device pairing; labelled experimental"
   },
   "psbt": {

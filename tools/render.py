@@ -414,7 +414,7 @@ subs = {
     'PODS_NPM_Z': str(deps['Zeus']['pods_from_npm_and_react_native']), 'PODS_NPM_B': str(deps['Blixt']['pods_from_npm_and_react_native']),
     'PODS_NPM_BW': str(deps['BlueWallet']['pods_from_npm_and_react_native']),
     'KOTLIN_N': str(len(deps['Phoenix']['kotlin'])), 'GO_MUUN': f'{len(deps["Muun"]["go"]):,}',
-    'MUUN_VENDORED': f'{vend["Muun"]["copied_lines"]:,}',
+    'MUUN_VENDORED': f'{vend["Muun"]["copied_lines"]:,}', 'PHOENIX_TAG': esc(CONFIG['sources']['phoenix']['tag']),
 }
 
 

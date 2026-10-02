@@ -103,6 +103,23 @@ dependencies = ["bitcoin", "lightning 0.2.6", "lightning-types"]
         self.assertEqual(closure, ['a@1.0.0', 'b@1.0.0', 'c@1.0.0', 'c@2.0.0'])
 
 
+class Releases(unittest.TestCase):
+    def test_follows_the_highest_version_not_the_latest_name(self):
+        # Phoenix tags ios-v2.8.4 after ios-v2.8.3 and ios-v2.10.0 would sort first as text.
+        ls = ''.join(f'{sha}\trefs/tags/{name}\n' for sha, name in (
+            ('a1', 'ios-v2.8.4'), ('a2', 'ios-v2.8.4^{}'), ('b1', 'ios-v2.10.0'), ('c1', 'android-v9.9.9'), ('d1', 'ios-v2.9.0')))
+        real = update.subprocess.run
+        update.subprocess.run = lambda *a, **k: type('R', (), {'stdout': ls})()
+        try:
+            self.assertEqual(update.latest_tag('r', r'ios-v(\d+(?:\.\d+)*)'), ('ios-v2.10.0', 'b1'))
+            ls2 = ls.replace('ios-v2.10.0', 'ios-v2.8.5')
+            update.subprocess.run = lambda *a, **k: type('R', (), {'stdout': ls2})()
+            self.assertEqual(update.latest_tag('r', r'ios-v(\d+(?:\.\d+)*)'), ('ios-v2.9.0', 'd1'))
+            self.assertEqual(update.latest_tag('r', r'ios-v(2\.8\.\d+)'), ('ios-v2.8.5', 'b1'))
+        finally:
+            update.subprocess.run = real
+
+
 class Branches(unittest.TestCase):
     def test_falls_back_to_the_next_branch(self):
         # Winnow follows its Lightning branch, then main once that branch has merged and gone.

@@ -119,7 +119,7 @@
    "distribution": "App Store",
    "libraries": {
     "text": "bitcoin-kmp with secp256k1-kmp, Ktor, kotlinx-serialization, SQLDelight (Kotlin side); Firebase Messaging and a few small SwiftUI packages (Swift side)",
-    "cite": "lightning-kmp:modules/core/build.gradle.kts:65-77; phoenix:phoenix-shared/build.gradle.kts:85-93; phoenix:phoenix-ios/phoenix-ios.xcodeproj/project.pbxproj:386"
+    "cite": "lightning-kmp:modules/core/build.gradle.kts:88-100; phoenix:phoenix-shared/build.gradle.kts:85-93; phoenix:phoenix-ios/phoenix-ios.xcodeproj/project.pbxproj:387"
    },
    "bitcoin_library_not_counted": "bitcoin-kmp",
    "prebuilt": {

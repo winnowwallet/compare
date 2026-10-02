@@ -235,7 +235,7 @@ ul.evidence code{font-size:.8em}
 
 <section id="history">
 <h2>Over time</h2>
-<p>The comparison is measured again every day from each wallet’s latest code. Wallet repositories are read at the head of their main branch. Every engine and library is read at the version its wallet pins. A snapshot is recorded whenever any of them moves: {{SNAPSHOTS_N}} since {{FIRST_DAY}}, when this page began counting Bitcoin wallets only. Changes are shown against that first snapshot. Hover or focus a line for each snapshot. The {{EARLIER_N}} earlier snapshots ({{EARLIER_FIRST}} to {{EARLIER_LAST}}) compared Lightning wallets and counted their Lightning engines; they are in <a href="data.json">data.json</a>.</p>
+<p>The comparison is measured again every day from each wallet’s latest code. Wallet repositories are read at the head of their main branch, except Phoenix, which is read at its latest iOS release ({{PHOENIX_TAG}}): when we checked, its default branch was configured for testnet. Every engine and library is read at the version its wallet pins. A snapshot is recorded whenever any of them moves: {{SNAPSHOTS_N}} since {{FIRST_DAY}}, when this page began counting Bitcoin wallets only. Changes are shown against that first snapshot. Hover or focus a line for each snapshot. The {{EARLIER_N}} earlier snapshots ({{EARLIER_FIRST}} to {{EARLIER_LAST}}) compared Lightning wallets and counted their Lightning engines; they are in <a href="data.json">data.json</a>.</p>
 <div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table">
 <table class="trend">
 <thead><tr><th scope="col">Wallet</th><th scope="col">Lines of code</th><th scope="col">Third-party packages</th><th scope="col">Functions above CC 12</th></tr></thead>

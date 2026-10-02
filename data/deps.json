@@ -1392,13 +1392,12 @@
    "co.touchlab:sqliter-driver@1.3.3",
    "co.touchlab:stately-concurrency@2.1.0",
    "co.touchlab:stately-strict@2.1.0",
-   "fr.acinq.bitcoin:bitcoin-kmp@0.30.0",
-   "fr.acinq.secp256k1:secp256k1-kmp@0.23.0",
+   "fr.acinq.bitcoin:bitcoin-kmp@0.32.0",
+   "fr.acinq.secp256k1:secp256k1-kmp@0.24.0",
    "io.ktor:ktor-client-auth@3.4.1",
    "io.ktor:ktor-client-content-negotiation@3.4.1",
    "io.ktor:ktor-client-core@3.4.1",
    "io.ktor:ktor-client-darwin@3.4.1",
-   "io.ktor:ktor-client-ios@3.4.1",
    "io.ktor:ktor-client-json@3.4.1",
    "io.ktor:ktor-events@3.4.1",
    "io.ktor:ktor-http-cio@3.4.1",
@@ -1423,7 +1422,7 @@
    "org.jetbrains.kotlinx:kotlinx-serialization-json-io@1.9.0",
    "org.jetbrains.kotlinx:kotlinx-serialization-json@1.9.0"
   ],
-  "total": 59
+  "total": 58
  },
  "Bitkit": {
   "spm": [

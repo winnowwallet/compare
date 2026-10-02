@@ -75,7 +75,8 @@ site/               the published site (generated, committed); site/data.json ha
 
 | Source | Follows |
 | --- | --- |
-| Winnow, BlueWallet, Green, Muun, Phoenix, Bitkit, Blixt, Zeus | the head of their default branch |
+| Winnow, BlueWallet, Green, Muun, Bitkit, Blixt, Zeus | the head of their default branch |
+| Phoenix | its latest `ios-v*` release tag: its default branch was configured for testnet when we checked, and a release is what ships |
 | gdk | the `TAGNAME` in Green's `tools/fetch_gdk_binaries.sh` |
 | lightning-kmp | `lightningkmp` in Phoenix's `gradle/libs.versions.toml`; the Kotlin libraries use the same catalog |
 | Synonym's LDK Node, bitkit-core, Paykit, VSS client | Bitkit's `Package.resolved` |

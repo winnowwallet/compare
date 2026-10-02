@@ -11,19 +11,21 @@
   },
   "phoenix": {
    "repo": "https://github.com/ACINQ/phoenix",
-   "track": {"branch": "HEAD"},
-   "rev": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
-   "label": "ACINQ/phoenix@1facad2",
-   "date": "2026-09-23"
+   "track": {"tag_latest": "ios-v(\\d+(?:\\.\\d+)*)"},
+   "rev": "c3b0ae7882ad256c0b35e94c66d5f1f27305c208",
+   "label": "ACINQ/phoenix ios-v2.8.4",
+   "date": "2026-10-02",
+   "tag": "ios-v2.8.4",
+   "version": "2.8.4"
   },
   "lightning-kmp": {
    "repo": "https://github.com/ACINQ/lightning-kmp",
    "track": {"from": "phoenix:gradle/libs.versions.toml", "toml": "versions.lightningkmp", "tag": "v{}"},
-   "rev": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
-   "tag": "v1.12.0",
-   "version": "1.12.0",
-   "label": "ACINQ/lightning-kmp v1.12.0",
-   "date": "2026-05-19"
+   "rev": "9dacdc0b4ac981dcb8fed9be23b53e6994eab27a",
+   "tag": "v1.13.2",
+   "version": "1.13.2",
+   "label": "ACINQ/lightning-kmp v1.13.2",
+   "date": "2026-09-24"
   },
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
@@ -102,9 +104,9 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "1a6f97a71336a9202f45c169f55b250f298b6ab4",
-   "label": "ZeusLN/zeus@1a6f97a",
-   "date": "2026-10-01"
+   "rev": "97bfcb5adacde3159479ae7da9d7ede6fdd5f301",
+   "label": "ZeusLN/zeus@97bfcb5",
+   "date": "2026-10-02"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",

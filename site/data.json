@@ -13,11 +13,13 @@
   "phoenix": {
    "repo": "https://github.com/ACINQ/phoenix",
    "track": {
-    "branch": "HEAD"
+    "tag_latest": "ios-v(\\d+(?:\\.\\d+)*)"
    },
-   "rev": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
-   "label": "ACINQ/phoenix@1facad2",
-   "date": "2026-09-23"
+   "rev": "c3b0ae7882ad256c0b35e94c66d5f1f27305c208",
+   "label": "ACINQ/phoenix ios-v2.8.4",
+   "date": "2026-10-02",
+   "tag": "ios-v2.8.4",
+   "version": "2.8.4"
   },
   "lightning-kmp": {
    "repo": "https://github.com/ACINQ/lightning-kmp",
@@ -26,11 +28,11 @@
     "toml": "versions.lightningkmp",
     "tag": "v{}"
    },
-   "rev": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
-   "tag": "v1.12.0",
-   "version": "1.12.0",
-   "label": "ACINQ/lightning-kmp v1.12.0",
-   "date": "2026-05-19"
+   "rev": "9dacdc0b4ac981dcb8fed9be23b53e6994eab27a",
+   "tag": "v1.13.2",
+   "version": "1.13.2",
+   "label": "ACINQ/lightning-kmp v1.13.2",
+   "date": "2026-09-24"
   },
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
@@ -144,9 +146,9 @@
    "track": {
     "branch": "HEAD"
    },
-   "rev": "1a6f97a71336a9202f45c169f55b250f298b6ab4",
-   "label": "ZeusLN/zeus@1a6f97a",
-   "date": "2026-10-01"
+   "rev": "97bfcb5adacde3159479ae7da9d7ede6fdd5f301",
+   "label": "ZeusLN/zeus@97bfcb5",
+   "date": "2026-10-02"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
@@ -316,24 +318,24 @@
   },
   "Phoenix": {
    "app": {
-    "code": 72767,
-    "chars": 1898647,
-    "files": 516,
+    "code": 72881,
+    "chars": 1902473,
+    "files": 517,
     "languages": {
-     "Kotlin": 12512,
-     "Swift": 60255
+     "Kotlin": 12545,
+     "Swift": 60336
     },
     "generated_excluded": []
    },
    "engine": {
-    "code": 28086,
-    "chars": 1172617,
-    "files": 145,
+    "code": 28779,
+    "chars": 1208568,
+    "files": 144,
     "languages": {
-     "C/C++ Header": 4,
-     "Kotlin": 27440,
+     "C/C++ Header": 527,
+     "Kotlin": 27609,
      "Objective-C": 3,
-     "Swift": 639
+     "Swift": 640
     },
     "generated_excluded": []
    }
@@ -410,16 +412,16 @@
   },
   "Zeus": {
    "app": {
-    "code": 189836,
-    "chars": 3681169,
-    "files": 574,
+    "code": 189984,
+    "chars": 3685006,
+    "files": 575,
     "languages": {
      "C/C++ Header": 44,
      "JavaScript": 47,
      "Objective-C": 1332,
      "Objective-C++": 424,
      "Swift": 4038,
-     "TypeScript": 183951
+     "TypeScript": 184099
     },
     "generated_excluded": [
      "zeus/ios/LdkNodeMobile/LDKNode.swift"
@@ -489,12 +491,12 @@
    "C family": 0.01
   },
   "Phoenix": {
-   "Swift": 60.38,
-   "Kotlin": 39.61,
+   "Swift": 59.98,
+   "Kotlin": 39.5,
    "Rust": 0.0,
    "Go": 0.0,
    "TypeScript/JS": 0.0,
-   "C family": 0.01
+   "C family": 0.52
   },
   "Bitkit": {
    "Swift": 42.33,
@@ -516,8 +518,8 @@
    "Swift": 0.93,
    "Kotlin": 0.0,
    "Rust": 0.0,
-   "Go": 56.06,
-   "TypeScript/JS": 42.59,
+   "Go": 56.04,
+   "TypeScript/JS": 42.61,
    "C family": 0.42
   }
  },
@@ -806,15 +808,15 @@
   },
   "Phoenix": {
    "app": {
-    "functions": 4694,
+    "functions": 4703,
     "mean_cc": 2.52,
     "p90_cc": 5,
     "max_cc": 155,
-    "cc_le_2": 3410,
-    "cc_3_12": 1207,
+    "cc_le_2": 3414,
+    "cc_3_12": 1212,
     "cc_gt_12": 77,
     "cc_gt_30": 9,
-    "files": 517,
+    "files": 518,
     "files_with_parse_errors": 15,
     "most_complex": [
      {
@@ -845,12 +847,12 @@
     ]
    },
    "all": {
-    "functions": 4694,
+    "functions": 4703,
     "mean_cc": 2.52,
     "p90_cc": 5,
     "max_cc": 155,
-    "cc_le_2": 3410,
-    "cc_3_12": 1207,
+    "cc_le_2": 3414,
+    "cc_3_12": 1212,
     "cc_gt_12": 77,
     "cc_gt_30": 9
    }
@@ -959,15 +961,15 @@
   },
   "Zeus": {
    "app": {
-    "functions": 4686,
+    "functions": 4695,
     "mean_cc": 4.71,
     "p90_cc": 10,
     "max_cc": 252,
-    "cc_le_2": 2695,
-    "cc_3_12": 1647,
-    "cc_gt_12": 344,
+    "cc_le_2": 2699,
+    "cc_3_12": 1651,
+    "cc_gt_12": 345,
     "cc_gt_30": 75,
-    "files": 575,
+    "files": 576,
     "files_with_parse_errors": 13,
     "most_complex": [
      {
@@ -998,13 +1000,13 @@
     ]
    },
    "all": {
-    "functions": 4686,
+    "functions": 4695,
     "mean_cc": 4.71,
     "p90_cc": 10,
     "max_cc": 252,
-    "cc_le_2": 2695,
-    "cc_3_12": 1647,
-    "cc_gt_12": 344,
+    "cc_le_2": 2699,
+    "cc_3_12": 1651,
+    "cc_gt_12": 345,
     "cc_gt_30": 75
    }
   }
@@ -2403,13 +2405,12 @@
     "co.touchlab:sqliter-driver@1.3.3",
     "co.touchlab:stately-concurrency@2.1.0",
     "co.touchlab:stately-strict@2.1.0",
-    "fr.acinq.bitcoin:bitcoin-kmp@0.30.0",
-    "fr.acinq.secp256k1:secp256k1-kmp@0.23.0",
+    "fr.acinq.bitcoin:bitcoin-kmp@0.32.0",
+    "fr.acinq.secp256k1:secp256k1-kmp@0.24.0",
     "io.ktor:ktor-client-auth@3.4.1",
     "io.ktor:ktor-client-content-negotiation@3.4.1",
     "io.ktor:ktor-client-core@3.4.1",
     "io.ktor:ktor-client-darwin@3.4.1",
-    "io.ktor:ktor-client-ios@3.4.1",
     "io.ktor:ktor-client-json@3.4.1",
     "io.ktor:ktor-events@3.4.1",
     "io.ktor:ktor-http-cio@3.4.1",
@@ -2434,7 +2435,7 @@
     "org.jetbrains.kotlinx:kotlinx-serialization-json-io@1.9.0",
     "org.jetbrains.kotlinx:kotlinx-serialization-json@1.9.0"
    ],
-   "total": 59
+   "total": 58
   },
   "Bitkit": {
    "spm": [
@@ -6115,12 +6116,12 @@
    },
    "hw_signer": {
     "value": "no",
-    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/WalletManager.kt:47-53; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:560-581; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SwapInSigner.swift:87",
+    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/WalletManager.kt:47-53; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:583-604; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SwapInSigner.swift:87",
     "note": "Keys come from the on-phone seed and spends are signed in the app; 'Swap-in signer' is a support tool, not a device link."
    },
    "psbt": {
     "value": "no",
-    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/utils/swapin/SwapInSignerHelper.kt:73-84; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:560-581",
+    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/utils/swapin/SwapInSignerHelper.kt:73-84; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:583-604",
     "note": "No PSBT code; the Swap-in signer tool takes a raw transaction plus a server nonce, and spends are built, signed and sent in-app."
    },
    "watch_only": {
@@ -6170,7 +6171,7 @@
    },
    "seed_standard": {
     "value": "partial",
-    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/recovery phrase/RecoveryPhraseReveal.swift:106; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/crypto/LocalKeyManager.kt:42; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:158",
+    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/recovery phrase/RecoveryPhraseReveal.swift:104; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/crypto/LocalKeyManager.kt:42; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:158",
     "note": "12-word BIP39; the BIP84 final wallet restores elsewhere, but channel and swap-in funds need Phoenix and ACINQ."
    },
    "cloud_backup": {
@@ -6346,7 +6347,7 @@
    },
    "hw_signer": {
     "value": "yes",
-    "evidence": "zeus:views/HandleAnythingQRScanner.tsx:114; zeus:views/PSBT.tsx:201-206; zeus:locales/en.json:430",
+    "evidence": "zeus:views/HandleAnythingQRScanner.tsx:114; zeus:views/PSBT.tsx:201-206; zeus:locales/en.json:426",
     "note": "Imports signer xpub and fingerprint by QR (BC-UR, JSON export) and signs by PSBT QR; no named-device pairing; labelled experimental"
    },
    "psbt": {
@@ -6544,7 +6545,7 @@
    "distribution": "App Store",
    "libraries": {
     "text": "bitcoin-kmp with secp256k1-kmp, Ktor, kotlinx-serialization, SQLDelight (Kotlin side); Firebase Messaging and a few small SwiftUI packages (Swift side)",
-    "cite": "lightning-kmp:modules/core/build.gradle.kts:65-77; phoenix:phoenix-shared/build.gradle.kts:85-93; phoenix:phoenix-ios/phoenix-ios.xcodeproj/project.pbxproj:386"
+    "cite": "lightning-kmp:modules/core/build.gradle.kts:88-100; phoenix:phoenix-shared/build.gradle.kts:85-93; phoenix:phoenix-ios/phoenix-ios.xcodeproj/project.pbxproj:387"
    },
    "bitcoin_library_not_counted": "bitcoin-kmp",
    "prebuilt": {
@@ -6642,12 +6643,12 @@
    },
    "phoenix": {
     "repo": "https://github.com/ACINQ/phoenix",
-    "rev": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
+    "rev": "c3b0ae7882ad256c0b35e94c66d5f1f27305c208",
     "date": "2026-10-02"
    },
    "lightning-kmp": {
     "repo": "https://github.com/ACINQ/lightning-kmp",
-    "rev": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
+    "rev": "9dacdc0b4ac981dcb8fed9be23b53e6994eab27a",
     "date": "2026-10-02"
    },
    "bitkit": {
@@ -6692,7 +6693,7 @@
    },
    "zeus": {
     "repo": "https://github.com/ZeusLN/zeus",
-    "rev": "1a6f97a71336a9202f45c169f55b250f298b6ab4",
+    "rev": "97bfcb5adacde3159479ae7da9d7ede6fdd5f301",
     "date": "2026-10-02"
    },
    "lnd-zeus": {
@@ -6805,8 +6806,8 @@
    "method": 2,
    "sources": {
     "winnow": "7751cfd30f5e1b108fcfe322db38b76948a0bb1d",
-    "phoenix": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
-    "lightning-kmp": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
+    "phoenix": "c3b0ae7882ad256c0b35e94c66d5f1f27305c208",
+    "lightning-kmp": "9dacdc0b4ac981dcb8fed9be23b53e6994eab27a",
     "bitkit": "f751f505710e175bbbf4ee9f8cf8ca09fc471df7",
     "synonym-ldk-node": "190a17d966cf5a685444cfa17c3a419c290bf26c",
     "rust-lightning": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
@@ -6816,7 +6817,7 @@
     "blixt": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
     "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
     "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
-    "zeus": "1a6f97a71336a9202f45c169f55b250f298b6ab4",
+    "zeus": "97bfcb5adacde3159479ae7da9d7ede6fdd5f301",
     "lnd-zeus": "ae24665a916d94fa89475b21ec27e8cda0eb5845",
     "zeus-ldk-node": "921ef6370a5694ed8cf00538878420ccb5afe09d",
     "cdk": "874745d5d79b36be346efbd716393357ab898834",
@@ -6874,15 +6875,15 @@
      "vendored_lines": 101694
     },
     "Phoenix": {
-     "lines": 72767,
-     "lines_app": 72767,
-     "lines_engine": 28086,
-     "characters": 1898647,
-     "functions": 4694,
+     "lines": 72881,
+     "lines_app": 72881,
+     "lines_engine": 28779,
+     "characters": 1902473,
+     "functions": 4703,
      "cc_gt_12": 77,
      "cc_gt_30": 9,
      "max_cc": 155,
-     "packages": 59,
+     "packages": 58,
      "vendored_lines": 0
     },
     "Bitkit": {
@@ -6910,12 +6911,12 @@
      "vendored_lines": 0
     },
     "Zeus": {
-     "lines": 189836,
-     "lines_app": 189836,
+     "lines": 189984,
+     "lines_app": 189984,
      "lines_engine": 242167,
-     "characters": 3681169,
-     "functions": 4686,
-     "cc_gt_12": 344,
+     "characters": 3685006,
+     "functions": 4695,
+     "cc_gt_12": 345,
      "cc_gt_30": 75,
      "max_cc": 252,
      "packages": 1467,

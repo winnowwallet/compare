@@ -29,6 +29,21 @@ def remote_rev(repo, ref, required=True):
     return rev
 
 
+def latest_tag(repo, pattern):
+    """The tag matching `pattern` (one group: its version) with the highest version, and the commit it names."""
+    out = subprocess.run(['git', 'ls-remote', '--tags', repo], capture_output=True, text=True, check=True).stdout
+    refs = {name.removeprefix('refs/tags/'): sha for sha, name in (line.split('\t') for line in out.splitlines())}
+    found = {}
+    for name in refs:
+        m = re.fullmatch(pattern, name.removesuffix('^{}'))
+        if m:
+            found[name.removesuffix('^{}')] = tuple(int(n) for n in m.group(1).split('.'))
+    if not found:
+        raise SystemExit(f'{repo} has no tag matching {pattern}')
+    tag = max(found, key=found.get)
+    return tag, refs.get(f'{tag}^{{}}') or refs[tag]  # an annotated tag is peeled to its commit
+
+
 def first_branch(repo, branches):
     """The first of `branches` that exists, so a working branch can fall back to main once it merges."""
     for branch in [branches] if isinstance(branches, str) else branches:
@@ -78,6 +93,9 @@ def properties(text):
 def resolve_rule(key, spec):
     """Returns (repo, rev, version, tag) for a source's `track` rule."""
     rule, repo = spec['track'], spec['repo']
+    if 'tag_latest' in rule:  # the wallet's latest release, for one whose branch head is not what ships
+        tag, rev = latest_tag(repo, rule['tag_latest'])
+        return repo, rev, re.fullmatch(rule['tag_latest'], tag).group(1), tag
     if 'branch' in rule:
         repo = rule.get('repo', repo)  # a rule may move a source to another repository
         return repo, first_branch(repo, rule['branch']), None, None

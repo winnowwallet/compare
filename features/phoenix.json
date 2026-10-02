@@ -8,12 +8,12 @@
   },
   "hw_signer": {
    "value": "no",
-   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/WalletManager.kt:47-53; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:560-581; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SwapInSigner.swift:87",
+   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/WalletManager.kt:47-53; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:583-604; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SwapInSigner.swift:87",
    "note": "Keys come from the on-phone seed and spends are signed in the app; 'Swap-in signer' is a support tool, not a device link."
   },
   "psbt": {
    "value": "no",
-   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/utils/swapin/SwapInSignerHelper.kt:73-84; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:560-581",
+   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/utils/swapin/SwapInSignerHelper.kt:73-84; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:583-604",
    "note": "No PSBT code; the Swap-in signer tool takes a raw transaction plus a server nonce, and spends are built, signed and sent in-app."
   },
   "watch_only": {
@@ -63,7 +63,7 @@
   },
   "seed_standard": {
    "value": "partial",
-   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/recovery phrase/RecoveryPhraseReveal.swift:106; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/crypto/LocalKeyManager.kt:42; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:158",
+   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/recovery phrase/RecoveryPhraseReveal.swift:104; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/crypto/LocalKeyManager.kt:42; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:158",
    "note": "12-word BIP39; the BIP84 final wallet restores elsewhere, but channel and swap-in funds need Phoenix and ACINQ."
   },
   "cloud_backup": {
