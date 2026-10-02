@@ -12,6 +12,7 @@ from evidence import find, locate  # noqa: E402
 from render import scale  # noqa: E402
 import common  # noqa: E402
 import update  # noqa: E402
+from deps import npm_lock  # noqa: E402
 from update import bun_version, cargo_version, properties, spm_pin  # noqa: E402
 
 
@@ -64,6 +65,44 @@ dependencies = ["bitcoin", "lightning 0.2.6", "lightning-types"]
                          {'repository': 'hsjoberg/lnd', 'ref': 'ae185f27'})
 
 
+    def test_a_tag_read_with_a_regular_expression(self):
+        # Green's gdk release is the TAGNAME line of a shell script in the app repository.
+        with tempfile.TemporaryDirectory() as tmp:
+            script = Path(tmp) / 'green/tools'
+            script.mkdir(parents=True)
+            (script / 'fetch_gdk_binaries.sh').write_text('RELEASES_URL=x\nTAGNAME="release_0.78.0"\n')
+            spec = {'repo': 'https://example.test/gdk', 'track': {'from': 'green:tools/fetch_gdk_binaries.sh',
+                                                                  'regex': 'TAGNAME="([^"]+)"', 'tag': '{}'}}
+            real_dir, real_rev = common.SOURCES_DIR, update.remote_rev
+            common.SOURCES_DIR, update.remote_rev = Path(tmp), lambda repo, ref, required=True: 'abc' if ref == 'refs/tags/release_0.78.0' else None
+            try:
+                self.assertEqual(update.resolve_rule('gdk', spec), ('https://example.test/gdk', 'abc', '0.78.0', 'release_0.78.0'))
+            finally:
+                common.SOURCES_DIR, update.remote_rev = real_dir, real_rev
+
+    def test_npm_lock_resolves_the_way_npm_does(self):
+        # b needs c ^2; the root has c 1 and b's own copy has c 2. Only production dependencies count.
+        lock = {'packages': {
+            '': {},
+            'node_modules/a': {'version': '1.0.0', 'dependencies': {'c': '^1'}},
+            'node_modules/b': {'version': '1.0.0', 'dependencies': {'c': '^2'}},
+            'node_modules/b/node_modules/c': {'version': '2.0.0'},
+            'node_modules/c': {'version': '1.0.0'},
+            'node_modules/jest': {'version': '9.0.0', 'dev': True}}}
+        with tempfile.TemporaryDirectory() as tmp:
+            app = Path(tmp) / 'app'
+            app.mkdir()
+            (app / 'package-lock.json').write_text(__import__('json').dumps(lock))
+            (app / 'package.json').write_text('{"dependencies": {"a": "1", "b": "1"}, "devDependencies": {"jest": "9"}}')
+            real, common.SOURCES_DIR = common.SOURCES_DIR, Path(tmp)
+            try:
+                direct, closure = npm_lock({'lock': 'app:package-lock.json', 'package': 'app:package.json'})
+            finally:
+                common.SOURCES_DIR = real
+        self.assertEqual(direct, ['a', 'b'])
+        self.assertEqual(closure, ['a@1.0.0', 'b@1.0.0', 'c@1.0.0', 'c@2.0.0'])
+
+
 class Branches(unittest.TestCase):
     def test_falls_back_to_the_next_branch(self):
         # Winnow follows its Lightning branch, then main once that branch has merged and gone.
@@ -98,6 +137,24 @@ class Layout(unittest.TestCase):
                 self.assertEqual(common.unclaimed(spec), [])  # only trees listed in `complete` are checked
             finally:
                 common.SOURCES_DIR = real
+
+
+class Skips(unittest.TestCase):
+    def test_a_wallet_can_leave_paths_out_of_a_counted_tree(self):
+        # Muun's libwallet holds command-line tools and linters that never build into the app.
+        with tempfile.TemporaryDirectory() as tmp:
+            for rel in ('lib/address.go', 'lib/cmd/tool.go', 'lib/linters/check.go'):
+                path = Path(tmp) / 'muun' / rel
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text('package x\n')
+            real, common.SOURCES_DIR = common.SOURCES_DIR, Path(tmp)
+            try:
+                kept, _ = common.counted_files(['muun:lib'], skip=['muun:lib/cmd', 'muun:lib/linters'])
+                everything, _ = common.counted_files(['muun:lib'])
+            finally:
+                common.SOURCES_DIR = real
+        self.assertEqual([f.name for f in kept], ['address.go'])
+        self.assertEqual(len(everything), 3)
 
 
 class Review(unittest.TestCase):
