@@ -1,16 +1,16 @@
 {
  "reviewed": "2026-09-27",
  "reviewed_latest": "2026-10-01",
- "measured": "2026-10-01",
+ "measured": "2026-10-02",
  "citations": 247,
- "same": 247,
- "moved": 0,
+ "same": 236,
+ "moved": 11,
  "changed": 0,
  "gone": 0,
  "by_wallet": {
   "Winnow": {
-   "same": 56,
-   "moved": 0,
+   "same": 45,
+   "moved": 11,
    "changed": 0,
    "gone": 0
   },
@@ -40,5 +40,83 @@
   }
  },
  "changed_or_gone": [],
- "moved_within_file": []
+ "moved_within_file": [
+  {
+   "wallet": "Winnow",
+   "fact": "features.bolt11_receive",
+   "cite": "winnow:Sources/WinnowLightningApp/LightningAppReceiving.swift:150",
+   "status": "moved",
+   "now_at": 153
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.bolt12_receive",
+   "cite": "winnow:Sources/WinnowLightningApp/LightningProviders.swift:16",
+   "status": "moved",
+   "now_at": 18
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.offline_receive",
+   "cite": "winnow:Sources/WinnowLightningApp/LightningInputViews.swift:31",
+   "status": "moved",
+   "now_at": 32
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.offline_receive",
+   "cite": "winnow:docs/engineering/swift-lightning.md:65",
+   "status": "moved",
+   "now_at": 67
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.keysend",
+   "cite": "winnow:Sources/WinnowLightningApp/LightningInputViews.swift:76",
+   "status": "moved",
+   "now_at": 77
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.choose_peer",
+   "cite": "winnow:Sources/WinnowLightningApp/LightningProviders.swift:19",
+   "status": "moved",
+   "now_at": 21
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.choose_peer",
+   "cite": "winnow:Sources/WinnowLightningApp/LightningInputViews.swift:30",
+   "status": "moved",
+   "now_at": 31
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.jit_channels",
+   "cite": "winnow:Sources/WinnowLightningApp/LightningAppReceiving.swift:60",
+   "status": "moved",
+   "now_at": 63
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.watchtower",
+   "cite": "winnow:docs/engineering/swift-lightning.md:54-55",
+   "status": "moved",
+   "now_at": 56
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.channel_backup",
+   "cite": "winnow:docs/engineering/swift-lightning.md:40-44",
+   "status": "moved",
+   "now_at": 42
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.partner",
+   "cite": "winnow:Sources/WinnowLightningApp/LightningProviders.swift:19",
+   "status": "moved",
+   "now_at": 21
+  }
+ ]
 }

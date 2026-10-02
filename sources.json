@@ -1,12 +1,12 @@
 {
- "snapshot": "2026-10-01",
+ "snapshot": "2026-10-02",
  "method": 1,
  "sources": {
   "winnow": {
    "repo": "https://github.com/winnowwallet/winnow",
    "track": {"branch": "HEAD"},
-   "rev": "8b6606de01427e54e3d7c12651ac4eafedd910d4",
-   "label": "winnowwallet/winnow@8b6606d",
+   "rev": "6a9ff4c3cd94711d2273de320a8c0e8173209ec3",
+   "label": "winnowwallet/winnow@6a9ff4c",
    "date": "2026-10-01"
   },
   "phoenix": {
@@ -28,9 +28,9 @@
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {"branch": "HEAD"},
-   "rev": "e33dc08e799a3b476924d6580142990f78b50601",
-   "label": "synonymdev/bitkit-ios@e33dc08",
-   "date": "2026-10-01"
+   "rev": "28243f1a824f7387e6596c29dbb9c88a2779577d",
+   "label": "synonymdev/bitkit-ios@28243f1",
+   "date": "2026-10-02"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",

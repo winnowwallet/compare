@@ -1,13 +1,13 @@
 {
- "snapshot": "2026-10-01",
+ "snapshot": "2026-10-02",
  "sources": {
   "winnow": {
    "repo": "https://github.com/winnowwallet/winnow",
    "track": {
     "branch": "HEAD"
    },
-   "rev": "8b6606de01427e54e3d7c12651ac4eafedd910d4",
-   "label": "winnowwallet/winnow@8b6606d",
+   "rev": "6a9ff4c3cd94711d2273de320a8c0e8173209ec3",
+   "label": "winnowwallet/winnow@6a9ff4c",
    "date": "2026-10-01"
   },
   "phoenix": {
@@ -37,9 +37,9 @@
    "track": {
     "branch": "HEAD"
    },
-   "rev": "e33dc08e799a3b476924d6580142990f78b50601",
-   "label": "synonymdev/bitkit-ios@e33dc08",
-   "date": "2026-10-01"
+   "rev": "28243f1a824f7387e6596c29dbb9c88a2779577d",
+   "label": "synonymdev/bitkit-ios@28243f1",
+   "date": "2026-10-02"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",
@@ -195,11 +195,11 @@
  "lines": {
   "Winnow": {
    "app": {
-    "code": 12500,
-    "chars": 437129,
-    "files": 64,
+    "code": 12647,
+    "chars": 443274,
+    "files": 66,
     "languages": {
-     "Swift": 12500
+     "Swift": 12647
     },
     "generated_excluded": []
    },
@@ -213,11 +213,11 @@
     "generated_excluded": []
    },
    "lightning": {
-    "code": 7125,
-    "chars": 342083,
-    "files": 81,
+    "code": 7507,
+    "chars": 359161,
+    "files": 83,
     "languages": {
-     "Swift": 7125
+     "Swift": 7507
     },
     "generated_excluded": []
    }
@@ -248,11 +248,11 @@
   },
   "Bitkit": {
    "app": {
-    "code": 93332,
-    "chars": 2591767,
-    "files": 591,
+    "code": 93618,
+    "chars": 2600862,
+    "files": 592,
     "languages": {
-     "Swift": 93332
+     "Swift": 93618
     },
     "generated_excluded": []
    },
@@ -381,9 +381,9 @@
    "C family": 0.01
   },
   "Bitkit": {
-   "Swift": 42.24,
+   "Swift": 42.31,
    "Kotlin": 0.0,
-   "Rust": 57.76,
+   "Rust": 57.69,
    "Go": 0.0,
    "TypeScript/JS": 0.0,
    "C family": 0.0
@@ -408,15 +408,15 @@
  "complexity": {
   "Winnow": {
    "app": {
-    "functions": 953,
+    "functions": 971,
     "mean_cc": 3.08,
     "p90_cc": 6,
     "max_cc": 28,
-    "cc_le_2": 526,
-    "cc_3_12": 411,
+    "cc_le_2": 537,
+    "cc_3_12": 418,
     "cc_gt_12": 16,
     "cc_gt_30": 0,
-    "files": 64,
+    "files": 66,
     "files_with_parse_errors": 2,
     "most_complex": [
      {
@@ -486,31 +486,26 @@
     ]
    },
    "lightning": {
-    "functions": 694,
-    "mean_cc": 3.38,
+    "functions": 746,
+    "mean_cc": 3.34,
     "p90_cc": 7,
-    "max_cc": 14,
-    "cc_le_2": 334,
-    "cc_3_12": 357,
-    "cc_gt_12": 3,
+    "max_cc": 16,
+    "cc_le_2": 360,
+    "cc_3_12": 384,
+    "cc_gt_12": 2,
     "cc_gt_30": 0,
-    "files": 81,
+    "files": 83,
     "files_with_parse_errors": 5,
     "most_complex": [
      {
-      "cc": 14,
-      "function": "rejectOpening",
-      "at": "winnow/Sources/LightningCore/LightningPeerNotice.swift:36"
+      "cc": 16,
+      "function": "validateLoaded",
+      "at": "winnow/Sources/LightningCore/LightningEngine.swift:218"
      },
      {
       "cc": 13,
       "function": "amount",
       "at": "winnow/Sources/LightningCore/InvoiceRequest.swift:40"
-     },
-     {
-      "cc": 13,
-      "function": "validateLoaded",
-      "at": "winnow/Sources/LightningCore/LightningEngine.swift:214"
      },
      {
       "cc": 12,
@@ -520,18 +515,23 @@
      {
       "cc": 12,
       "function": "updateChainChannels",
-      "at": "winnow/Sources/LightningCore/LightningChain.swift:109"
+      "at": "winnow/Sources/LightningCore/LightningChain.swift:110"
+     },
+     {
+      "cc": 12,
+      "function": "search",
+      "at": "winnow/Sources/LightningCore/LightningRouteSearch.swift:40"
      }
     ]
    },
    "all": {
-    "functions": 2764,
-    "mean_cc": 3.22,
+    "functions": 2834,
+    "mean_cc": 3.2,
     "p90_cc": 7,
     "max_cc": 28,
-    "cc_le_2": 1438,
-    "cc_3_12": 1296,
-    "cc_gt_12": 30,
+    "cc_le_2": 1475,
+    "cc_3_12": 1330,
+    "cc_gt_12": 29,
     "cc_gt_30": 0
    }
   },
@@ -627,15 +627,15 @@
   },
   "Bitkit": {
    "app": {
-    "functions": 5437,
-    "mean_cc": 2.98,
+    "functions": 5461,
+    "mean_cc": 2.97,
     "p90_cc": 6,
     "max_cc": 125,
-    "cc_le_2": 3309,
-    "cc_3_12": 2037,
-    "cc_gt_12": 91,
+    "cc_le_2": 3327,
+    "cc_3_12": 2042,
+    "cc_gt_12": 92,
     "cc_gt_30": 9,
-    "files": 591,
+    "files": 592,
     "files_with_parse_errors": 4,
     "most_complex": [
      {
@@ -705,13 +705,13 @@
     ]
    },
    "all": {
-    "functions": 10785,
+    "functions": 10809,
     "mean_cc": 2.98,
     "p90_cc": 6,
     "max_cc": 174,
-    "cc_le_2": 7052,
-    "cc_3_12": 3481,
-    "cc_gt_12": 252,
+    "cc_le_2": 7070,
+    "cc_3_12": 3486,
+    "cc_gt_12": 253,
     "cc_gt_30": 48
    }
   },
@@ -4946,16 +4946,16 @@
  "drift": {
   "reviewed": "2026-09-27",
   "reviewed_latest": "2026-10-01",
-  "measured": "2026-10-01",
+  "measured": "2026-10-02",
   "citations": 247,
-  "same": 247,
-  "moved": 0,
+  "same": 236,
+  "moved": 11,
   "changed": 0,
   "gone": 0,
   "by_wallet": {
    "Winnow": {
-    "same": 56,
-    "moved": 0,
+    "same": 45,
+    "moved": 11,
     "changed": 0,
     "gone": 0
    },
@@ -4985,7 +4985,85 @@
    }
   },
   "changed_or_gone": [],
-  "moved_within_file": []
+  "moved_within_file": [
+   {
+    "wallet": "Winnow",
+    "fact": "features.bolt11_receive",
+    "cite": "winnow:Sources/WinnowLightningApp/LightningAppReceiving.swift:150",
+    "status": "moved",
+    "now_at": 153
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.bolt12_receive",
+    "cite": "winnow:Sources/WinnowLightningApp/LightningProviders.swift:16",
+    "status": "moved",
+    "now_at": 18
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.offline_receive",
+    "cite": "winnow:Sources/WinnowLightningApp/LightningInputViews.swift:31",
+    "status": "moved",
+    "now_at": 32
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.offline_receive",
+    "cite": "winnow:docs/engineering/swift-lightning.md:65",
+    "status": "moved",
+    "now_at": 67
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.keysend",
+    "cite": "winnow:Sources/WinnowLightningApp/LightningInputViews.swift:76",
+    "status": "moved",
+    "now_at": 77
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.choose_peer",
+    "cite": "winnow:Sources/WinnowLightningApp/LightningProviders.swift:19",
+    "status": "moved",
+    "now_at": 21
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.choose_peer",
+    "cite": "winnow:Sources/WinnowLightningApp/LightningInputViews.swift:30",
+    "status": "moved",
+    "now_at": 31
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.jit_channels",
+    "cite": "winnow:Sources/WinnowLightningApp/LightningAppReceiving.swift:60",
+    "status": "moved",
+    "now_at": 63
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.watchtower",
+    "cite": "winnow:docs/engineering/swift-lightning.md:54-55",
+    "status": "moved",
+    "now_at": 56
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "features.channel_backup",
+    "cite": "winnow:docs/engineering/swift-lightning.md:40-44",
+    "status": "moved",
+    "now_at": 42
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "profile.partner",
+    "cite": "winnow:Sources/WinnowLightningApp/LightningProviders.swift:19",
+    "status": "moved",
+    "now_at": 21
+   }
+  ]
  },
  "history": [
   {
@@ -5297,6 +5375,91 @@
      "characters": 6404519,
      "functions": 10785,
      "cc_gt_12": 252,
+     "cc_gt_30": 48,
+     "max_cc": 174,
+     "packages": 691,
+     "vendored_lines": 0
+    },
+    "Blixt": {
+     "lines": 275307,
+     "lines_app": 36360,
+     "lines_lightning": 238947,
+     "characters": 6481671,
+     "functions": 11465,
+     "cc_gt_12": 611,
+     "cc_gt_30": 85,
+     "max_cc": 148,
+     "packages": 681,
+     "vendored_lines": 0
+    },
+    "Zeus": {
+     "lines": 432003,
+     "lines_app": 189836,
+     "lines_lightning": 242167,
+     "characters": 9291090,
+     "functions": 15213,
+     "cc_gt_12": 909,
+     "cc_gt_30": 142,
+     "max_cc": 252,
+     "packages": 1467,
+     "vendored_lines": 4551
+    }
+   }
+  },
+  {
+   "date": "2026-10-02",
+   "method": 1,
+   "sources": {
+    "winnow": "6a9ff4c3cd94711d2273de320a8c0e8173209ec3",
+    "phoenix": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
+    "lightning-kmp": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
+    "bitkit": "28243f1a824f7387e6596c29dbb9c88a2779577d",
+    "synonym-ldk-node": "190a17d966cf5a685444cfa17c3a419c290bf26c",
+    "rust-lightning": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
+    "bitkit-core": "b53fa54a16f04940943072bb6e08dc2650302f93",
+    "paykit-rs": "24162ebbcc703251d8038f2e176d1f4cfb117c6a",
+    "vss-rust-client-ffi": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
+    "blixt": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
+    "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
+    "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
+    "zeus": "1a6f97a71336a9202f45c169f55b250f298b6ab4",
+    "lnd-zeus": "ae24665a916d94fa89475b21ec27e8cda0eb5845",
+    "zeus-ldk-node": "921ef6370a5694ed8cf00538878420ccb5afe09d",
+    "cdk": "874745d5d79b36be346efbd716393357ab898834"
+   },
+   "wallets": {
+    "Winnow": {
+     "lines": 34013,
+     "lines_app": 12647,
+     "lines_bitcoin": 13859,
+     "lines_lightning": 7507,
+     "characters": 1277038,
+     "functions": 2834,
+     "cc_gt_12": 29,
+     "cc_gt_30": 0,
+     "max_cc": 28,
+     "packages": 1,
+     "vendored_lines": 0
+    },
+    "Phoenix": {
+     "lines": 100853,
+     "lines_app": 72767,
+     "lines_lightning": 28086,
+     "characters": 3071264,
+     "functions": 7218,
+     "cc_gt_12": 132,
+     "cc_gt_30": 22,
+     "max_cc": 168,
+     "packages": 59,
+     "vendored_lines": 0
+    },
+    "Bitkit": {
+     "lines": 221264,
+     "lines_app": 93618,
+     "lines_lightning": 127646,
+     "characters": 6413614,
+     "functions": 10809,
+     "cc_gt_12": 253,
      "cc_gt_30": 48,
      "max_cc": 174,
      "packages": 691,
