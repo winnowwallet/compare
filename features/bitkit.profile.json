@@ -1,0 +1,26 @@
+{
+ "built_with": "Swift (SwiftUI) on Rust libraries",
+ "engine": {
+  "text": "LDK Node {version:synonym-ldk-node} (Synonym's fork, Rust); its on-chain wallet is BDK",
+  "cite": "synonym-ldk-node:Cargo.toml:48-51; synonym-ldk-node:src/builder.rs:1384-1402"
+ },
+ "chain_data": {
+  "text": "Synonym's Electrum server (bitkit.to); the person can change it in Settings > Advanced > Electrum Server",
+  "cite": "bitkit:Bitkit/Constants/Env.swift:191; bitkit:Bitkit/Views/Settings/Advanced/ElectrumSettingsScreen.swift:56-84"
+ },
+ "third_party": {
+  "text": "Nobody",
+  "cite": "bitkit:Bitkit/Services/LightningService.swift:796-803"
+ },
+ "distribution": "App Store",
+ "libraries": {
+  "text": "LDK Node (with BDK), bitkit-core, Paykit, VSS client, Lottie, swift-secp256k1",
+  "cite": "bitkit:Bitkit.xcodeproj/project.pbxproj:1176-1223"
+ },
+ "bitcoin_library_not_counted": "BDK, rust-bitcoin",
+ "prebuilt": {
+  "text": "LDK Node, bitkit-core, Paykit and the VSS client, as XCFrameworks",
+  "cite": "synonym-ldk-node:Package.swift:28; bitkit-core:Package.swift:29; paykit-rs:Package.swift:27; vss-rust-client-ffi:Package.swift:28"
+ },
+ "patched": "None"
+}

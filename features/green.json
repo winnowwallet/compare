@@ -1,0 +1,80 @@
+{
+ "wallet": "Green",
+ "features": {
+  "multisig": {
+   "value": "yes",
+   "evidence": "green:gaios/UserSettings/CreateAccount/CreateAccountViewModel.swift:59-65; green:gaios/Accounts/AccountCreateRecoveryKeyViewController.swift:89-115",
+   "note": "2-of-3 account: your key, a recovery key you hold (phrase or xpub) and Blockstream's key; 2-of-2 with its server also offered"
+  },
+  "hw_signer": {
+   "value": "yes",
+   "evidence": "green:gaios/HWFlow/Connect/ConnectViewModel.swift:62-78; green:hw/Jade/Jade.swift:154; green:hw/Ledger/BleLedger.swift:33; green:hw/Jade/QrJadeConnection.swift:11",
+   "note": "Jade over Bluetooth or QR and Ledger Nano X over Bluetooth sign on-chain transactions"
+  },
+  "psbt": {
+   "value": "yes",
+   "evidence": "green:gaios/Sendflow/ViewModels/SendTxConfirmViewModel.swift:131-133; green:gaios/HWFlow/Controllers/QRPsbtShowViewController.swift:102-112; green:gaios/HWFlow/Controllers/QRPsbtAquireViewController.swift:105-113",
+   "note": "Singlesig watch-only: export unsigned PSBT (QR, file, copy) and import signed (QR, file, paste); not multisig"
+  },
+  "watch_only": {
+   "value": "yes",
+   "evidence": "green:gaios/WOFlow/ViewModels/WOViewModel.swift:42-49; green:gaios/WOFlow/ViewModels/WOViewModel.swift:71-98",
+   "note": "Singlesig from xpub/ypub/zpub or descriptors; multisig by username and password; no address lists"
+  },
+  "passphrase": {
+   "value": "yes",
+   "evidence": "green:gaios/Home/Controllers/LoginViewController.swift:485-492; green:gaios/Home/Controllers/LoginViewController.swift:579-580; gdk:src/signer.cpp:32-47",
+   "note": "Wallet menu 'Log in with BIP39 passphrase' opens a different wallet from the same phrase; set at login"
+  },
+  "coin_control": {
+   "value": "yes",
+   "evidence": "green:gaios/Sendflow/Coordinators/SendCoordinator.swift:296-302; green:gaios/Sendflow/Controllers/SendAmountViewControllerLegacy.swift:396-398; green:gaios/Sendflow/Controllers/SendAmountViewControllerLegacy.swift:684-686",
+   "note": "Select coins on the amount screen lists UTXOs with filter and sort; the picked coins fund the payment"
+  },
+  "fee_bump": {
+   "value": "yes",
+   "evidence": "green:gaios/TxDetails/TxDetailsViewModel.swift:208-214; green:gaios/TxDetails/TxDetailsViewModel.swift:255-256; gdk:subprojects/gdk_rust/gdk_electrum/src/account.rs:380",
+   "note": "RBF only: Speed up Transaction on unconfirmed RBF sends; the app never uses gdk's can_cpfp"
+  },
+  "taproot": {
+   "value": "partial",
+   "evidence": "green:gaios/UserSettings/CreateAccount/Cells/AccountTypeOption.swift:10; green:gaios/UserSettings/CreateAccount/Cells/AccountTypeCellModel.swift:25-26; gdk:src/ga_auth_handlers.cpp:1257-1260",
+   "note": "Taproot account creation is commented out; a p2tr account shows only if restore finds BIP86 history"
+  },
+  "descriptors": {
+   "value": "yes",
+   "evidence": "green:gaios/WalletTabBar/ManageAsset/ManageAssetViewController.swift:600-602; green:gaios/Accounts/AccountDescriptor/Cells/AccountDescriptorCellModel.swift:7-9; green:gaios/WOFlow/ViewModels/WOViewModel.swift:92-95",
+   "note": "Singlesig accounts show, copy and QR their output descriptors; watch-only import takes descriptors; multisig none"
+  },
+  "own_server": {
+   "value": "yes",
+   "evidence": "green:gaios/AppSettings/AppSettingsViewModel.swift:52-53; green:gaios/AppSettings/AppSettingsViewController.swift:73-78; green:core/wallet/WalletManager.swift:423-425",
+   "note": "Settings: Personal Electrum server, a URL per network with TLS option; singlesig only, multisig uses Blockstream's backend"
+  },
+  "verifies_chain": {
+   "value": "no",
+   "evidence": "gdk:CHANGELOG.md:174-176; gdk:src/ga_session.cpp:2313-2316; gdk:subprojects/gdk_rust/gdk_electrum/src/account.rs:589",
+   "note": "gdk removed SPV in 0.75 and reports spv_verified as disabled; balances and history come from the server unchecked"
+  },
+  "tor": {
+   "value": "yes",
+   "evidence": "green:gaios/AppSettings/AppSettingsViewModel.swift:40; green:gaios/AppSettings/Cells/AppSettingsCell.swift:45-47; gdk:src/session_impl.cpp:101-105",
+   "note": "Settings: Connect with Tor starts gdk's built-in Tor client; a SOCKS5 proxy option is also offered"
+  },
+  "seed_standard": {
+   "value": "yes",
+   "evidence": "green:gaios/OnBoard/OnboardViewModel.swift:134; green:gaios/OnBoard/OnboardViewModel.swift:161-162; gdk:subprojects/gdk_rust/gdk_electrum/src/account.rs:781-786",
+   "note": "New wallets get a 12-word BIP39 phrase on a singlesig BIP84 account; multisig funds also need Blockstream's co-signer"
+  },
+  "cloud_backup": {
+   "value": "partial",
+   "evidence": "gdk:src/client_blob.cpp:19-20; gdk:src/ga_session.cpp:1048-1056; green:gaios/gaiosRelease.entitlements:5-17",
+   "note": "No iCloud or file backup; multisig account names and tx notes sync encrypted to Blockstream's server; phrase is manual"
+  },
+  "license": {
+   "value": "GPL-3.0",
+   "evidence": "green:README.md:31-33; green:LICENSE:1-3",
+   "note": "App is GNU GPL v3; the gdk engine it embeds is BSD-MIT licensed"
+  }
+ }
+}
