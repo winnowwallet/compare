@@ -20,7 +20,7 @@
  "bitcoin_library_not_counted": "bitcoin-kmp",
  "prebuilt": {
   "text": "Kotlin libraries (lightning-kmp, bitcoin-kmp, secp256k1-kmp native code, Ktor, SQLDelight) as compiled klibs from Maven Central; Firebase through Swift Package Manager",
-  "cite": "phoenix:phoenix-shared/build.gradle.kts:85-93"
+  "cite": "phoenix:phoenix-shared/build.gradle.kts:85-93; phoenix:build.gradle.kts:18-20"
  },
  "patched": "None"
 }
