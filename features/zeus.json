@@ -1,130 +1,80 @@
 {
  "wallet": "Zeus",
  "features": {
-  "bolt11_pay": {
-   "value": "yes",
-   "evidence": "zeus:utils/handleAnything.ts:464; zeus:views/PaymentRequest.tsx:360",
-   "note": "Scanned or pasted BOLT 11 invoices are paid through the embedded LND"
-  },
-  "bolt11_receive": {
-   "value": "yes",
-   "evidence": "zeus:views/Receive.tsx:654",
-   "note": "Receive screen creates invoices, optionally combined with an on-chain address"
-  },
-  "bolt12_pay": {
-   "value": "no",
-   "evidence": "zeus:backends/EmbeddedLND.ts:599; zeus:views/Send.tsx:1389",
-   "note": "Offers are detected but Pay is disabled on LND; works in LDK mode or with remote CLN"
-  },
-  "bolt12_receive": {
-   "value": "no",
-   "evidence": "zeus:backends/EmbeddedLND.ts:599-601",
-   "note": "No offers on LND; only available in LDK Node mode or with remote CLN"
-  },
-  "offline_receive": {
-   "value": "partial",
-   "evidence": "zeus:views/LightningAddress/index.tsx:564; zeus:stores/LightningAddressStore.ts:407",
-   "note": "Only via custodial Cashu-backed ZEUS Pay address; self-custodial Zaplocker being retired"
-  },
-  "lnurl": {
-   "value": "yes",
-   "evidence": "zeus:utils/handleAnything.ts:941-965",
-   "note": "LNURL-pay, withdraw, channel and auth are all handled"
-  },
-  "ln_address_pay": {
-   "value": "yes",
-   "evidence": "zeus:utils/handleAnything.ts:618; zeus:utils/handleAnything.ts:719",
-   "note": "user@domain looked up via LUD-16 .well-known/lnurlp"
-  },
-  "ln_address_receive": {
-   "value": "partial",
-   "evidence": "zeus:views/LightningAddress/index.tsx:564; zeus:views/LightningAddress/index.tsx:749",
-   "note": "New embedded addresses are custodial ecash only; NWC type needs remote node"
-  },
-  "bip353": {
-   "value": "partial",
-   "evidence": "zeus:utils/handleAnything.ts:672-701; zeus:views/Send.tsx:1389",
-   "note": "Resolves via Cloudflare DNS-over-HTTPS; offers can't be paid on LND, only on-chain/BOLT 11 fallbacks"
-  },
-  "mpp": {
-   "value": "yes",
-   "evidence": "zeus:views/PaymentRequest.tsx:1125; zeus:backends/EmbeddedLND.ts:573",
-   "note": "MPP toggle with max-parts setting; AMP also offered"
-  },
-  "keysend": {
-   "value": "yes",
-   "evidence": "zeus:views/Send.tsx:708; zeus:utils/LndMobileUtils.ts:254",
-   "note": "Send to a node pubkey; accept-keysend enabled for receiving"
-  },
-  "choose_peer": {
-   "value": "yes",
-   "evidence": "zeus:views/OpenChannel.tsx:237; zeus:views/Settings/LSP.tsx:235",
-   "note": "Open channels to any node URI; LSP defaults to Olympus, custom host configurable"
-  },
-  "jit_channels": {
-   "value": "yes",
-   "evidence": "zeus:views/Receive.tsx:327; zeus:stores/LSPStore.ts:527",
-   "note": "Olympus flow LSP wraps invoices with a JIT channel; LSPS1 channel purchase too"
-  },
-  "splicing": {
-   "value": "no",
-   "evidence": "zeus:backends/EmbeddedLND.ts:555-610; lnd-zeus:lnrpc/lightning.proto",
-   "note": "No splice capability in Zeus or in the LND RPCs"
-  },
-  "anchors": {
-   "value": "yes",
-   "evidence": "lnd-zeus:funding/commitment_type_negotiation.go:471; zeus:utils/LndMobileUtils.ts:257",
-   "note": "LND negotiates anchor channels by default; simple taproot channels are optional"
-  },
-  "local_pathfinding": {
-   "value": "yes",
-   "evidence": "zeus:utils/LndMobileUtils.ts:319; zeus:utils/LndMobileUtils.ts:391",
-   "note": "LND routes over its own gossip graph; Express Graph Sync; bimodal/apriori choice"
-  },
-  "watchtower": {
-   "value": "yes",
-   "evidence": "zeus:ios/LndMobile/Lnd.swift:201; zeus:views/Tools/index.tsx:325",
-   "note": "Client on by default (--wtclient.active); user adds towers under Tools"
-  },
-  "channel_backup": {
-   "value": "yes",
-   "evidence": "zeus:stores/ChannelBackupStore.ts:95; zeus:views/Settings/EmbeddedNode/DisasterRecovery.tsx:49",
-   "note": "Automatic encrypted static channel backups to the Olympus server; restore offered"
-  },
-  "onchain_independent": {
-   "value": "yes",
-   "evidence": "zeus:backends/EmbeddedLND.ts:133; zeus:backends/EmbeddedLND.ts:100",
-   "note": "Embedded LND's own single-key wallet; the channel partner is not involved"
-  },
-  "taproot": {
-   "value": "yes",
-   "evidence": "zeus:views/Receive.tsx:1127; zeus:backends/EmbeddedLND.ts:586",
-   "note": "Receive screen offers a Taproot (P2TR) address type"
-  },
   "multisig": {
    "value": "no",
-   "evidence": "zeus:views/Tools/Accounts/ImportAccount.tsx:35-42",
-   "note": "Only single-key account types; no multisig code found"
+   "evidence": "zeus:views/Tools/Accounts/ImportAccount.tsx:34-42; zeus:utils/AddressUtils.ts:73-79",
+   "note": "Single-key accounts only; account import takes one xpub or a wpkh/sh(wpkh) descriptor; no m-of-n or MuSig2 code in the app"
   },
   "hw_signer": {
    "value": "yes",
-   "evidence": "zeus:views/Tools/Accounts/ImportAccount.tsx:85; zeus:views/PSBT.tsx:210",
-   "note": "Import xpub, sign PSBT on another device, scan back via QR (experimental)"
+   "evidence": "zeus:views/HandleAnythingQRScanner.tsx:114; zeus:views/PSBT.tsx:201-206; zeus:locales/en.json:430",
+   "note": "Imports signer xpub and fingerprint by QR (BC-UR, JSON export) and signs by PSBT QR; no named-device pairing; labelled experimental"
+  },
+  "psbt": {
+   "value": "yes",
+   "evidence": "zeus:views/PSBT.tsx:201-206; zeus:utils/handleAnything.ts:1050-1051; zeus:views/HandleAnythingQRScanner.tsx:161-166",
+   "note": "Unsigned PSBT shown as animated QR (BC-UR, BBQr) or copied; signed PSBT scanned back and broadcast; for imported accounts only"
+  },
+  "watch_only": {
+   "value": "yes",
+   "evidence": "zeus:views/Tools/Accounts/ImportingAccount.tsx:164-165; zeus:components/LayerBalances/index.tsx:496-501; zeus:utils/handleAnything.ts:1122-1129",
+   "note": "Imports an xpub or wpkh/sh(wpkh) descriptor as a watch-only LND account with its own balance; embedded LND rescans from a chosen height"
+  },
+  "passphrase": {
+   "value": "no",
+   "evidence": "zeus:utils/LndMobileUtils.ts:1316-1322; zeus:views/Settings/SeedRecovery.tsx:924-931; zeus:utils/WalletCreationUtils.ts:126",
+   "note": "initWallet accepts a passphrase argument but no create or restore screen collects one; same for LDK Node"
   },
   "coin_control": {
    "value": "yes",
-   "evidence": "zeus:views/Send.tsx:1015; zeus:views/OpenChannel.tsx:1107",
-   "note": "UTXO picker when sending on-chain and when opening channels"
+   "evidence": "zeus:views/Send.tsx:1015-1020; zeus:components/UTXOPicker.tsx:208-228",
+   "note": "On-chain Send has a UTXO picker to tick coins; each account also has a Coins list; LDK Node has it too"
+  },
+  "fee_bump": {
+   "value": "yes",
+   "evidence": "zeus:views/Transaction.tsx:404-413; lnd-zeus:lnrpc/walletrpc/walletkit.proto:316-321; zeus:backends/LdkNode.ts:2177",
+   "note": "Speed up button on unconfirmed txs calls LND BumpFee on a wallet output (CPFP); LDK Node has no bump"
+  },
+  "taproot": {
+   "value": "yes",
+   "evidence": "zeus:views/Receive.tsx:1127-1133; zeus:backends/EmbeddedLND.ts:586; zeus:backends/LdkNode.ts:2176",
+   "note": "Receive settings offer Taproot (P2TR) beside P2WPKH and nested SegWit; P2WPKH is the default; LDK Node issues P2WPKH only"
+  },
+  "descriptors": {
+   "value": "partial",
+   "evidence": "zeus:utils/AddressUtils.ts:73-79; zeus:utils/handleAnything.ts:1094-1118",
+   "note": "Imports single-key wpkh() and sh(wpkh()) descriptors as an account; no descriptor export; no tr(), pkh or multi-key forms"
+  },
+  "own_server": {
+   "value": "yes",
+   "evidence": "zeus:utils/LndMobileUtils.ts:222-224; zeus:views/Settings/EmbeddedNode/Peers/NeutrinoPeers.tsx:213-218; zeus:views/Settings/EmbeddedNode/Peers/NeutrinoPeers.tsx:258-270",
+   "note": "Add Neutrino peers by host and switch on 'don't allow other peers' to use only yours; LDK Node takes a custom Esplora URL"
+  },
+  "verifies_chain": {
+   "value": "yes",
+   "evidence": "zeus:utils/LndMobileUtils.ts:270; lnd-zeus:config_builder.go:1876",
+   "note": "Embedded LND runs Neutrino: headers and BIP 157/158 filters checked on the phone; LDK Node and remote nodes trust Esplora or the node"
   },
   "tor": {
    "value": "no",
-   "evidence": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465; zeus:stores/SettingsStore.ts:1608",
-   "note": "Built-in Tor only for remote nodes; embedded LND Tor setting has no toggle"
+   "evidence": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465; zeus:stores/SettingsStore.ts:1608; zeus:views/Settings/EmbeddedNode/Advanced.tsx:66",
+   "note": "No Tor toggle for the embedded node (embeddedTor stays false); the built-in Tor client is offered only for remote nodes"
+  },
+  "seed_standard": {
+   "value": "partial",
+   "evidence": "zeus:utils/LndMobileUtils.ts:1295; lnd-zeus:aezeed/README.md:5-12; zeus:views/Settings/Seed.tsx:319-321",
+   "note": "Embedded LND shows a 24-word aezeed (LND format, not BIP 39); the LDK Node option shows a BIP 39 phrase"
+  },
+  "cloud_backup": {
+   "value": "partial",
+   "evidence": "zeus:stores/ChannelBackupStore.ts:63-69; zeus:stores/ChannelBackupStore.ts:95; zeus:utils/LdkNodeUtils.ts:47",
+   "note": "Embedded LND uploads only encrypted channel state to Olympus, no on-chain data or keys; LDK Node keeps node state on a VSS server"
   },
   "license": {
    "value": "AGPL-3.0",
-   "evidence": "zeus:LICENSE:20",
-   "note": "GNU Affero General Public License v3"
+   "evidence": "zeus:LICENSE:20-21; zeus:README.md:145",
+   "note": "GNU Affero General Public License v3; the file header also says 'or any later version'"
   }
  }
 }
