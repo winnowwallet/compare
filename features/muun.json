@@ -1,0 +1,80 @@
+{
+ "wallet": "Muun",
+ "features": {
+  "multisig": {
+   "value": "partial",
+   "evidence": "muun:falcon/app/falcon/core/Domain/Action/Address/AddressActions.swift:81-92; muun:libwallet/V4.go:47-48",
+   "note": "Fixed 2-of-2 with Muun's server (P2WSH or MuSig2 P2TR); the person holds one key, cannot add keys or choose cosigners"
+  },
+  "hw_signer": {
+   "value": "no",
+   "evidence": "muun:falcon/app/falcon/Presentation/Screen/NewOperation/NewOperationPresenter.swift:646-653; muun:libwallet/domain/action/nfc/sign_message_security_card_action_v2.go:65-82; muun:libwallet/libwallet_init/init.go:170-175",
+   "note": "Keys live in the app. A flag-gated NFC Security Card only signs a 2FA challenge (mock backend in libwallet), not transactions"
+  },
+  "psbt": {
+   "value": "no",
+   "evidence": "muun:falcon/app/falcon/core/Domain/Action/Operations/OperationActions.swift:265-269; muun:falcon/app/falcon/core/Domain/Action/Operations/OperationActions.swift:293-297",
+   "note": "Server returns a partly signed tx in Muun's own API format, the app signs and pushes it back; no PSBT import or export"
+  },
+  "watch_only": {
+   "value": "no",
+   "evidence": "muun:falcon/app/falcon/Presentation/Screen/GetStarted/GetStartedViewController.swift:50-58; muun:falcon/app/falcon/core/Domain/Action/Session/CreateFirstSessionAction.swift:49-55",
+   "note": "Get Started offers only create new wallet or recover existing (email or recovery code); every wallet holds its own key"
+  },
+  "passphrase": {
+   "value": "no",
+   "evidence": "muun:falcon/app/falcon/core/Domain/Crypto/hd/WalletPrivateKey.swift:49-56; muun:falcon/app/falcon/core/Domain/Action/Session/BuildChallengeSetupAction.swift:33-36",
+   "note": "No BIP 39 phrase: the key is a random 32-byte seed; the optional password only encrypts the key backup, it is not a wallet variant"
+  },
+  "coin_control": {
+   "value": "no",
+   "evidence": "muun:falcon/app/falcon/core/Data/Service/Houston/HoustonService.swift:487-490; muun:falcon/app/falcon/core/Domain/Model/Operations/Operation.swift:37",
+   "note": "The server supplies the ordered UTXO list (next transaction size) and a send spends in that order; no coin picker"
+  },
+  "fee_bump": {
+   "value": "partial",
+   "evidence": "muun:libwallet/operation/fees.go:84-88; muun:falcon/app/falcon/Presentation/Screen/NewOperation/ChildViews/Loading/NewOpLoadingPresenter.swift:121-125",
+   "note": "No speed-up button or RBF; a new send adds a CPFP bump for unconfirmed parent coins, only while the backend flag is on"
+  },
+  "taproot": {
+   "value": "yes",
+   "evidence": "muun:falcon/app/falcon/Presentation/Screen/Receive/ReceiveAddressTypeSelectPresenter.swift:70-80; muun:falcon/app/falcon/Presentation/Screen/Settings/Onchain/OnchainSettingsPresenter.swift:72-79; muun:libwallet/V5.go:16-24",
+   "note": "P2TR (MuSig2) offered in the Receive address picker and as default in Settings once active; default stays SegWit"
+  },
+  "descriptors": {
+   "value": "partial",
+   "evidence": "muun:libwallet/emergencykit/descriptors.go:15-22; muun:libwallet/emergencykit/emergencykit.go:39-44",
+   "note": "Emergency Kit PDF prints wsh(multi) and tr(musig) descriptors with key fingerprints, not xpubs; no descriptor import"
+  },
+  "own_server": {
+   "value": "no",
+   "evidence": "muun:falcon/app/falcon/core/Environment.swift:42; muun:falcon/app/falcon/Presentation/Screen/Settings/SettingsPresenter.swift:154-168; muun:libwallet/libwallet_init/init.go:160-161",
+   "note": "Fixed to Muun's Houston API; no server setting. libwallet's Electrum client serves only a scan RPC the app never calls"
+  },
+  "verifies_chain": {
+   "value": "no",
+   "evidence": "muun:falcon/app/falcon/core/Data/Service/Houston/HoustonService.swift:436-438; muun:falcon/app/falcon/core/Domain/Action/RealTime/RealTimeDataAction.swift:58-63",
+   "note": "History, UTXOs and block height come from Muun's server; the app has no header, filter or block checks"
+  },
+  "tor": {
+   "value": "no",
+   "evidence": "muun:falcon/app/falcon/core/Data/Service/Houston/HoustonService.swift:38-41; muun:falcon/app/falcon/Presentation/Screen/Settings/SettingsPresenter.swift:154-168",
+   "note": "No Tor, I2P or proxy setting; the app talks to Muun's Houston HTTPS endpoint and Firebase/Google services"
+  },
+  "seed_standard": {
+   "value": "partial",
+   "evidence": "muun:libwallet/recoverycode/recoverycode.go:37-53; muun:falcon/app/falcon/core/Domain/Action/Session/LogInWithRCAction.swift:31-47; muun:falcon/app/falcon/core/Domain/Crypto/hd/WalletPrivateKey.swift:49-56",
+   "note": "Recovery Code (not BIP 39) plus Emergency Kit; in-app restore asks Muun's server, outside restore needs Muun's Recovery Tool"
+  },
+  "cloud_backup": {
+   "value": "yes",
+   "evidence": "muun:falcon/app/falcon/Presentation/Screen/SecurityCenter/EmergencyKit/Share/ShareEmergencyKitPresenter.swift:96-115; muun:falcon/app/falcon/core/Data/Service/ICloudHelper.swift:36-69; muun:falcon/app/falcon/core/Domain/Selector/ExportKeys/EmergencyKitDataSelector.swift:25-38",
+   "note": "Emergency Kit PDF with keys encrypted to the Recovery Code is saved to iCloud Drive or Google Drive when the person exports it"
+  },
+  "license": {
+   "value": "MIT",
+   "evidence": "muun:LICENSE:1-3",
+   "note": "MIT, Copyright (c) 2021 Muun Wallet, Inc.; libwallet/LICENSE repeats the same text"
+  }
+ }
+}

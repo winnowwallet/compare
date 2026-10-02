@@ -1,130 +1,80 @@
 {
  "wallet": "Phoenix",
  "features": {
-  "bolt11_pay": {
-   "value": "yes",
-   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/SendManager.kt:453; phoenix:phoenix-ios/phoenix-ios/views/send/ValidateView.swift:1867",
-   "note": "payBolt11Invoice sends PayInvoice to peer via trampoline"
-  },
-  "bolt11_receive": {
-   "value": "yes",
-   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/controllers/payments/ReceiveController.kt:48; phoenix:phoenix-ios/phoenix-ios/views/receive/LightningDualView.swift:342",
-   "note": "'Single use' tab generates BOLT11 invoice via peer.createInvoice"
-  },
-  "bolt12_pay": {
-   "value": "yes",
-   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/SendManager.kt:477; phoenix:phoenix-ios/phoenix-ios/views/send/ValidateView.swift:1912",
-   "note": "payBolt12Offer sends PayOffer command"
-  },
-  "bolt12_receive": {
-   "value": "yes",
-   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/receive/LightningDualView.swift:343; phoenix:phoenix-ios/phoenix-ios/views/receive/LightningDualView.swift:710",
-   "note": "'Reusable' tab shows deterministic BOLT12 offer"
-  },
-  "offline_receive": {
-   "value": "yes",
-   "evidence": "phoenix:phoenix-ios/phoenix-notifySrvExt/NotificationService.swift:423; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:240",
-   "note": "Push notification wakes service extension, which connects and receives payment (incl. BOLT12)"
-  },
-  "lnurl": {
-   "value": "yes",
-   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/send/ValidateView.swift:2094; phoenix:phoenix-ios/phoenix-ios/views/send/ValidateView.swift:2141",
-   "note": "LNURL-pay, LNURL-withdraw, and LNURL-auth (LoginView) supported"
-  },
-  "ln_address_pay": {
-   "value": "yes",
-   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/SendManager.kt:267",
-   "note": "user@domain resolved via LNURL, with BIP353 tried first for ambiguous input"
-  },
-  "ln_address_receive": {
-   "value": "partial",
-   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/Experimental.swift:224; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/io/Peer.kt:884",
-   "note": "Experimental menu: claim BIP353 address for your BOLT12 offer; not an LNURL address"
-  },
-  "bip353": {
-   "value": "yes",
-   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/SendManager.kt:283",
-   "note": "DNS TXT lookup over DoH, checks DNSSEC AD flag, extracts offer"
-  },
-  "mpp": {
-   "value": "partial",
-   "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/payment/IncomingPaymentHandler.kt:61; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/payment/OutgoingPaymentHandler.kt:277",
-   "note": "Receives multipart; sends a single part over one channel to the trampoline"
-  },
-  "keysend": {
-   "value": "no",
-   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/SendManager.kt:13",
-   "note": "Only PayInvoice/PayOffer; no keysend code in app or lightning-kmp"
-  },
-  "choose_peer": {
-   "value": "no",
-   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/NodeParamsManager.kt:87",
-   "note": "Only peer is the hardcoded ACINQ trampoline node"
-  },
-  "jit_channels": {
-   "value": "yes",
-   "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:241; phoenix:phoenix-ios/phoenix-ios/views/configuration/fees/liquidity management/LiquidityAdsView.swift:926",
-   "note": "ACINQ opens/splices channels on the fly; manual inbound liquidity purchase via liquidity ads"
-  },
-  "splicing": {
-   "value": "yes",
-   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/send/ValidateView.swift:1970; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/io/Peer.kt:1477",
-   "note": "On-chain sends are splice-outs; swap-in deposits are spliced in automatically"
-  },
-  "anchors": {
-   "value": "yes",
-   "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/transactions/Transactions.kt:86; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/io/Peer.kt:1560",
-   "note": "Anchor-outputs format; new channels are simple-taproot, which also have anchors"
-  },
-  "local_pathfinding": {
-   "value": "no",
-   "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/payment/OutgoingPaymentHandler.kt:90",
-   "note": "No network graph; all payments routed by ACINQ trampoline node"
-  },
-  "watchtower": {
-   "value": "partial",
-   "evidence": "phoenix:phoenix-ios/phoenix-ios/officers/WatchTower.swift:336",
-   "note": "No remote watchtower client; app wakes in background to check for revoked commitments"
-  },
-  "channel_backup": {
-   "value": "yes",
-   "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:158; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:281",
-   "note": "Encrypted channel backup kept by ACINQ peer (peer storage); restorable from seed"
-  },
-  "onchain_independent": {
-   "value": "partial",
-   "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/transactions/SwapInProtocol.kt:11; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:94; phoenix:phoenix-ios/phoenix-ios/views/send/ValidateView.swift:1576",
-   "note": "Deposits are 2-of-2 with ACINQ, yours alone after about six months; sends are splice-outs with ACINQ"
-  },
-  "taproot": {
-   "value": "yes",
-   "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/transactions/SwapInProtocol.kt:25; phoenix:phoenix-ios/phoenix-ios/views/receive/SwapInView.swift:28",
-   "note": "Swap-in receive address is P2TR by default (legacy option available)"
-  },
   "multisig": {
-   "value": "no",
-   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/WalletManager.kt:48",
-   "note": "Single-seed wallet; 2-of-2 swap-in with ACINQ is internal, not user multisig"
+   "value": "partial",
+   "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/transactions/SwapInProtocol.kt:11-12; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/transactions/SwapInProtocol.kt:19; phoenix:phoenix-ios/phoenix-ios/views/receive/SwapInView.swift:336-340",
+   "note": "Swap-in address is a MuSig2 2-of-2 of the user key and ACINQ's key; the person holds one key, never several."
   },
   "hw_signer": {
    "value": "no",
-   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/WalletManager.kt:48",
-   "note": "Keys come from a LocalKeyManager built from the local seed; no PSBT/hardware wallet code"
+   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/WalletManager.kt:47-53; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:583-604; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SwapInSigner.swift:87",
+   "note": "Keys come from the on-phone seed and spends are signed in the app; 'Swap-in signer' is a support tool, not a device link."
+  },
+  "psbt": {
+   "value": "no",
+   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/utils/swapin/SwapInSignerHelper.kt:73-84; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:583-604",
+   "note": "No PSBT code; the Swap-in signer tool takes a raw transaction plus a server nonce, and spends are built, signed and sent in-app."
+  },
+  "watch_only": {
+   "value": "no",
+   "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/WalletManager.kt:47-53; phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/controllers/init/RestoreWalletController.kt:56-59",
+   "note": "Wallets are created or restored from a 12-word phrase only; no xpub, descriptor or address import."
+  },
+  "passphrase": {
+   "value": "no",
+   "evidence": "phoenix:phoenix-ios/phoenix-ios/officers/BusinessManager.swift:464-467; phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/controllers/init/RestoreWalletController.kt:59",
+   "note": "The shared code can take a passphrase, but every app call passes an empty string and no screen asks for one."
   },
   "coin_control": {
    "value": "no",
-   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:173",
-   "note": "On-chain spends are splice-outs or 'send all'; no UTXO selection"
+   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:173; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/blockchain/electrum/ElectrumMiniWallet.kt:99-106; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SwapInWalletDetails.swift:223-246",
+   "note": "On-chain spends are send-all (expired swap-ins, final wallet) or splice-outs; the swap-in UTXO list is view-only."
+  },
+  "fee_bump": {
+   "value": "partial",
+   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/inspect/SummaryView.swift:334-339; phoenix:phoenix-ios/phoenix-ios/views/inspect/SummaryView.swift:884-890; phoenix:phoenix-ios/phoenix-ios/views/inspect/CpfpView.swift:744-747",
+   "note": "'Accelerate transaction' does a CPFP splice, only for unconfirmed splice payments; no RBF and no bump for other sends."
+  },
+  "taproot": {
+   "value": "yes",
+   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/receive/SwapInView.swift:28; phoenix:phoenix-ios/phoenix-ios/views/receive/SwapInView.swift:336-340; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/transactions/SwapInProtocol.kt:25",
+   "note": "The on-chain receive tab shows a P2TR swap-in address (MuSig2 plus refund script); a legacy P2WSH address is an option."
+  },
+  "descriptors": {
+   "value": "partial",
+   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/WalletInfoView.swift:221-232; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/WalletInfoView.swift:344-356; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/crypto/KeyManager.kt:268-270",
+   "note": "Swap-in wallet shows a copyable tr() descriptor (and a legacy wsh()); final wallet shows only an xpub; nothing imports."
+  },
+  "own_server": {
+   "value": "yes",
+   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/electrum server/ElectrumConfigurationView.swift:59-60; phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/AppConnectionsDaemon.kt:265-268",
+   "note": "Electrum server screen takes a custom host and port in place of the random list; the Lightning peer stays ACINQ's."
+  },
+  "verifies_chain": {
+   "value": "no",
+   "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/blockchain/electrum/ElectrumClient.kt:144-148; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/blockchain/electrum/ElectrumMiniWallet.kt:197-200; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/blockchain/electrum/ElectrumDataTypes.kt:142-153",
+   "note": "Tip, UTXOs and history come from the Electrum server; a merkle root is computed but no header or proof check is called."
   },
   "tor": {
    "value": "partial",
-   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/tor/TorConfigurationView.swift:66",
-   "note": "Tor toggle uses .onion endpoints but needs external Orbot VPN; not bundled"
+   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/tor/TorConfigurationView.swift:66; phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/PeerManager.kt:172; phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/AppConfigurationManager.kt:66",
+   "note": "Use Tor switches to .onion Electrum and ACINQ endpoints but needs a third-party Tor VPN app such as Orbot; none is bundled."
+  },
+  "seed_standard": {
+   "value": "partial",
+   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/recovery phrase/RecoveryPhraseReveal.swift:104; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/crypto/LocalKeyManager.kt:42; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:158",
+   "note": "12-word BIP39; the BIP84 final wallet restores elsewhere, but channel and swap-in funds need Phoenix and ACINQ."
+  },
+  "cloud_backup": {
+   "value": "yes",
+   "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/recovery phrase/CloudBackupView.swift:105-106; phoenix:phoenix-ios/phoenix-ios/sync/SyncSeedManager.swift:380; phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/PaymentsBackupView.swift:78-83",
+   "note": "iCloud switch saves the phrase (CloudKit encrypted field, end-to-end only with Apple ADP) and seed-encrypted history."
   },
   "license": {
    "value": "Apache-2.0",
-   "evidence": "phoenix:LICENSE:1",
-   "note": "Apache License 2.0"
+   "evidence": "phoenix:LICENSE:1-2; phoenix:README.md:53",
+   "note": "Apache License 2.0; lightning-kmp is Apache 2.0 too."
   }
  }
 }

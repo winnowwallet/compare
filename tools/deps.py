@@ -82,6 +82,31 @@ def npm_yarn(spec):
     return sorted(roots), sorted(seen)
 
 
+def npm_lock(spec):
+    """The production closure of package.json `dependencies`, resolved the way npm does it from package-lock.json."""
+    packages = json.loads(resolve(spec['lock']).read_text())['packages']
+    roots = json.loads(resolve(spec['package']).read_text()).get('dependencies', {})
+    seen, todo = set(), [('', n) for n in roots]
+    while todo:
+        parent, name = todo.pop()
+        key, base = None, parent
+        while key is None:
+            candidate = f'{base}/node_modules/{name}' if base else f'node_modules/{name}'
+            if candidate in packages:
+                key = candidate
+            elif not base:
+                break
+            else:
+                base = base.rsplit('/node_modules/', 1)[0] if '/node_modules/' in base else ''
+        if key is None or key in seen:
+            continue
+        seen.add(key)
+        entry = packages[key]
+        for section in ('dependencies', 'optionalDependencies'):
+            todo += [(key, dep) for dep in entry.get(section, {})]
+    return sorted(roots), sorted({f"{k.rsplit('node_modules/', 1)[1]}@{packages[k].get('version')}" for k in seen})
+
+
 def npm_bun(ref):
     d = json.loads(re.sub(r',(\s*[}\]])', r'\1', resolve(ref).read_text()))  # JSONC trailing commas
     packages, roots = d['packages'], d['workspaces']['']['dependencies']
@@ -179,7 +204,7 @@ def maven(spec):
 
 # ── Rust and Go ───────────────────────────────────────────────
 def cargo(crate):
-    out = subprocess.run(['cargo', 'tree', '--manifest-path', str(source_dir(crate['source']) / 'Cargo.toml'), *crate['args'],
+    out = subprocess.run(['cargo', 'tree', '--manifest-path', str(source_dir(crate['source']) / crate.get('dir', '') / 'Cargo.toml'), *crate['args'],
                           '-e', 'normal', '--target', CONFIG['cargo_target'], '--prefix', 'none', '--format', '{p}', '--locked'],
                          capture_output=True, text=True, check=True).stdout
     engine = re.compile(CONFIG['cargo_engine_crates'])
@@ -187,13 +212,15 @@ def cargo(crate):
                    if l.strip() and '(/' not in l and not engine.match(l)})
 
 
-def go_modules(source):
-    spec = CONFIG['go']
+def go_modules(source, own=None):
+    """Modules linked into a Go library's iOS build. `own` overrides the LND settings in sources.json
+    (the directory, package, build tags and first-party module prefix)."""
+    spec = {**CONFIG['go'], **(own or {})}
     # A module replaced by another (a fork's go.mod often does this) is listed as the replacement.
     template = ('{{with .Module}}{{if not .Main}}{{.Path}} {{with .Replace}}{{.Path}}@{{.Version}}'
                 '{{else}}{{.Path}}@{{.Version}}{{end}}\n{{end}}{{end}}')
     out = subprocess.run(['go', 'list', '-deps', f'-tags={spec["tags"]}', '-f', template, spec['package']],
-                         cwd=source_dir(source), env={**os.environ, **spec['env']},
+                         cwd=source_dir(source) / spec.get('dir', ''), env={**os.environ, **spec['env']},
                          capture_output=True, text=True, check=True).stdout
     return sorted({line.split()[1] for line in out.splitlines() if line.strip() and not line.startswith(spec['first_party'])})
 
@@ -212,12 +239,14 @@ def main():
             r['rust_copies'] = sum(len(v) for v in per.values())
             r['rust_per_library'] = {k: len(v) for k, v in per.items()}
         if 'go' in d:
-            source = d['go']['source']
-            r['go'] = go[source] = go.get(source) or go_modules(source)
+            key = json.dumps(d['go'], sort_keys=True)
+            r['go'] = go[key] = go.get(key) or go_modules(d['go']['source'], {k: v for k, v in d['go'].items() if k != 'source'})
         if 'npm' in d:
             r['npm_direct'], r['npm'] = npm_yarn(d['npm'])
         if 'bun' in d:
             r['npm_direct'], r['npm'] = npm_bun(d['bun'])
+        if 'npm_lock' in d:
+            r['npm_direct'], r['npm'] = npm_lock(d['npm_lock'])
         if 'pods' in d:
             p = pods(d['pods'])
             r['pods'] = p['trunk']

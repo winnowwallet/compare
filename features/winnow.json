@@ -1,125 +1,75 @@
 {
  "wallet": "Winnow",
  "features": {
-  "bolt11_pay": {
-   "value": "yes",
-   "evidence": "winnow:Sources/WinnowApp/SendView.swift:218; winnow:Sources/WinnowLightningApp/LightningAppInvoicePayments.swift:18; winnow:Sources/LightningCore/LightningPeerRouting.swift:7",
-   "note": "Single-part payments from Send; Winnow finds the route from the invoice hints and the public graph"
-  },
-  "bolt11_receive": {
-   "value": "yes",
-   "evidence": "winnow:Sources/WinnowLightningApp/LightningReceiveView.swift:46; winnow:Sources/WinnowLightningApp/LightningAppReceiving.swift:150",
-   "note": "Single-use invoice with a provider route hint; the app must stay open"
-  },
-  "bolt12_pay": {
-   "value": "yes",
-   "evidence": "winnow:Sources/WinnowLightningApp/LightningView.swift:48; winnow:Sources/WinnowLightningApp/LightningAppOffers.swift:19; winnow:Sources/LightningCore/LightningAsyncSending.swift:14",
-   "note": "Requests an invoice from the offer over onion messages, then a separate route and fee review; async static invoices too"
-  },
-  "bolt12_receive": {
-   "value": "yes",
-   "evidence": "winnow:Sources/WinnowLightningApp/LightningView.swift:163; winnow:Sources/WinnowLightningApp/LightningProviders.swift:16",
-   "note": "Reusable offer once a channel has inbound capacity; the app must be open to answer. Offline offers need an async provider profile"
-  },
-  "offline_receive": {
-   "value": "partial",
-   "evidence": "winnow:Sources/WinnowLightningApp/LightningInputViews.swift:31; winnow:docs/engineering/swift-lightning.md:65",
-   "note": "LDK-style async hold/release via imported profile only; no push"
-  },
-  "lnurl": {
-   "value": "no",
-   "evidence": "winnow:Sources/WinnowLightningApp/LightningAppPayments.swift:15; winnow:Sources/WinnowLightningApp/LightningAppOffers.swift:41",
-   "note": "No LNURL code; send takes BOLT 11 invoices, BOLT 12 offers and BIP 353 names"
-  },
-  "ln_address_pay": {
-   "value": "no",
-   "evidence": "winnow:Sources/WinnowLightningApp/LightningAppOffers.swift:41",
-   "note": "user@domain resolves only as a BIP 353 name, not through LNURL-pay"
-  },
-  "ln_address_receive": {
-   "value": "no",
-   "evidence": "winnow:Sources/WinnowLightningApp/LightningReceiveView.swift:46; winnow:Sources/WinnowLightningApp/LightningView.swift:163",
-   "note": "Receive gives a BOLT 11 invoice or a BOLT 12 offer; no hosted address"
-  },
-  "bip353": {
-   "value": "yes",
-   "evidence": "winnow:Sources/WinnowLightningApp/LightningAppOffers.swift:41; winnow:Sources/LightningCore/BIP353Resolver.swift:8",
-   "note": "₿name@domain resolves to an offer, with DNSSEC checked on the device rather than trusting the resolver"
-  },
-  "mpp": {
-   "value": "no",
-   "evidence": "winnow:Sources/LightningCore/LightningFeatures.swift:30; winnow:Sources/LightningCore/README.md:180",
-   "note": "Single-part payments only; the advertised features exclude MPP"
-  },
-  "keysend": {
-   "value": "no",
-   "evidence": "winnow:Sources/WinnowLightningApp/LightningInputViews.swift:76; winnow:Sources/LightningCore/AsyncPaymentRoute.swift:62",
-   "note": "Keysend TLV used only internally for async payments; no user keysend"
-  },
-  "choose_peer": {
-   "value": "yes",
-   "evidence": "winnow:Sources/WinnowLightningApp/LightningProviders.swift:19; winnow:Sources/WinnowLightningApp/LightningInputViews.swift:30",
-   "note": "Olympus by ZEUS, Megalith, LNServer Wave, or import any node profile; one channel"
-  },
-  "jit_channels": {
-   "value": "partial",
-   "evidence": "winnow:Sources/WinnowLightningApp/LightningAppReceiving.swift:60; winnow:Sources/WinnowLightningApp/LightningLiquidityView.swift:116",
-   "note": "LSPS1 inbound purchase (Olympus, Megalith); the setup fee is paid from another wallet; no LSPS2"
-  },
-  "splicing": {
-   "value": "no",
-   "evidence": "winnow:Sources/LightningCore/README.md:179",
-   "note": "Not implemented or advertised"
-  },
-  "anchors": {
-   "value": "yes",
-   "evidence": "winnow:Sources/LightningCore/README.md:17; winnow:Sources/LightningCore/ChannelTransactions.swift:4",
-   "note": "Negotiates option_anchors for new channels; older channels keep static-remotekey"
-  },
-  "local_pathfinding": {
-   "value": "yes",
-   "evidence": "winnow:Sources/LightningCore/LightningPeerRouting.swift:7; winnow:Sources/LightningCore/LightningRoutingGraph.swift:16",
-   "note": "For BOLT 11, searches a graph of up to 150,000 channels fetched from its channel partner and cached for 10 minutes; one path"
-  },
-  "watchtower": {
-   "value": "partial",
-   "evidence": "winnow:docs/engineering/swift-lightning.md:54-55; winnow:Sources/WinnowLightningApp/LightningView.swift:27",
-   "note": "No external watchtower; background checks relay pre-signed recovery transactions when iOS allows"
-  },
-  "channel_backup": {
-   "value": "partial",
-   "evidence": "winnow:Sources/WinnowLightningApp/LightningBackupView.swift:35; winnow:docs/engineering/swift-lightning.md:40-44",
-   "note": "Channels are saved only in an encrypted recovery file you export by hand; it opens with the wallet’s recovery phrase. iCloud backup covers the Bitcoin wallet, not channels"
-  },
-  "onchain_independent": {
-   "value": "yes",
-   "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:664; winnow:Sources/LightningCore/README.md:45",
-   "note": "Single-key BIP86 Taproot wallet; channels are funded from it, not the reverse"
-  },
-  "taproot": {
-   "value": "yes",
-   "evidence": "winnow:README.md:8; winnow:Sources/WalletCore/Wallet/Wallet.swift:723",
-   "note": "Ordinary receive uses BIP86 P2TR"
-  },
   "multisig": {
    "value": "yes",
-   "evidence": "winnow:README.md:9; winnow:Sources/WinnowApp/VaultsView.swift:72",
-   "note": "Threshold shared savings (e.g. 2-of-3) and MuSig2 accounts"
+   "evidence": "winnow:Sources/WinnowApp/VaultsView.swift:41-42; winnow:Sources/WinnowApp/VaultsView.swift:47-48; winnow:Sources/WinnowApp/SharedSavingsViews.swift:104-105",
+   "note": "k-of-n threshold accounts and all-keys MuSig2; add this phone's key and pasted keys from other signers"
   },
   "hw_signer": {
    "value": "partial",
-   "evidence": "winnow:Sources/WinnowApp/VaultsView.swift:72; winnow:Sources/WinnowApp/VaultSpendSession.swift:410",
-   "note": "PSBT/MuSig2 cosigning with another device (Core tested); hardware wallets unverified"
+   "evidence": "winnow:Sources/WinnowApp/VaultsView.swift:72; winnow:Sources/WinnowApp/MuSig2SignView.swift:126-136",
+   "note": "Cosigns by pasting PSBTs with another Winnow or Core; hardware wallets are stated as not yet verified"
+  },
+  "psbt": {
+   "value": "partial",
+   "evidence": "winnow:Sources/WinnowApp/VaultSpendSession.swift:102-111; winnow:Sources/WinnowApp/VaultSpendSession.swift:400-403; winnow:Sources/WinnowApp/MuSig2SignView.swift:126-136",
+   "note": "Shared accounts only: copy or share a request or raw PSBT and paste one back; the everyday wallet signs in-app"
+  },
+  "watch_only": {
+   "value": "partial",
+   "evidence": "winnow:Sources/WinnowApp/OnboardingView.swift:39; winnow:Sources/WalletCore/Wallet/ImportBundle.swift:61-63; winnow:Sources/WinnowApp/SharedSavingsViews.swift:207",
+   "note": "Descriptor-only backup JSON restores watch-only; shared accounts add from a card; no xpub or address entry"
+  },
+  "passphrase": {
+   "value": "no",
+   "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:646-647; winnow:Sources/WalletCore/Wallet/ImportBundle.swift:443",
+   "note": "Seed is derived with an empty BIP39 passphrase; no passphrase field when creating, backing up or importing"
   },
   "coin_control": {
    "value": "no",
-   "evidence": "winnow:Sources/WinnowApp/AppModel.swift:2058",
-   "note": "Automatic coin selection over all spendable UTXOs; coins list read-only"
+   "evidence": "winnow:Sources/WinnowApp/AppModel.swift:1893-1897; winnow:Sources/WalletCore/Wallet/Vault.swift:589-592",
+   "note": "Send picks coins automatically, largest first, for the wallet and shared accounts; coin list is read-only"
+  },
+  "fee_bump": {
+   "value": "partial",
+   "evidence": "winnow:Sources/WinnowApp/HomeView.swift:328-329; winnow:Sources/WalletCore/Wallet/Wallet.swift:781-789; winnow:Sources/WinnowApp/AppModel.swift:2040-2046",
+   "note": "RBF Bump fee in Advanced mode for own pending sends with unspent change; none for shared accounts; no CPFP"
+  },
+  "taproot": {
+   "value": "yes",
+   "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:646-652; winnow:Sources/WinnowApp/ReceiveView.swift:151; winnow:README.md:8",
+   "note": "Receives to BIP86 bc1p addresses by default; shared accounts are Taproot too (script path or MuSig2)"
+  },
+  "descriptors": {
+   "value": "partial",
+   "evidence": "winnow:Sources/WinnowApp/AccountDetailView.swift:120-123; winnow:Sources/WinnowApp/VaultsView.swift:120-125; winnow:Sources/WalletCore/Wallet/ImportBundle.swift:32",
+   "note": "Shared accounts show a copyable descriptor in Advanced mode; the everyday wallet's is only inside its backup JSON"
+  },
+  "own_server": {
+   "value": "yes",
+   "evidence": "winnow:Sources/WinnowApp/SettingsView.swift:83-95; winnow:Sources/WinnowApp/SettingsView.swift:106; winnow:Sources/WalletCore/Network/Peers/PeerPool.swift:635-637",
+   "note": "Manual host:port peers under Advanced mode, tried first; peer must serve compact filters; pool still fills from others"
+  },
+  "verifies_chain": {
+   "value": "yes",
+   "evidence": "winnow:Sources/WalletCore/Network/Filters/FilterSync.swift:81-98; winnow:Sources/WalletCore/Network/Headers/README.md:5-6",
+   "note": "Checks header work, cross-checks filter headers across peers, matches filters locally; verifies fetched blocks"
   },
   "tor": {
    "value": "partial",
-   "evidence": "winnow:README.md:11; winnow:Sources/WalletCore/Network/Transport/TailnetGatewayDiscovery.swift:17; winnow:Sources/WinnowApp/PeerGatewaysSection.swift:17",
-   "note": "No bundled Tor; reaches Tor and I2P Bitcoin peers through a SOCKS gateway you run, found on your Tailscale network or set by hand"
+   "evidence": "winnow:README.md:11; winnow:Sources/WinnowApp/PeerGatewaysSection.swift:17-21; winnow:Sources/WalletCore/Network/Transport/TailnetGatewayDiscovery.swift:18-19",
+   "note": "No bundled Tor or I2P client; routes peers through SOCKS gateways you run, found on Tailscale or set by hand"
+  },
+  "seed_standard": {
+   "value": "yes",
+   "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:646-649; winnow:Sources/WinnowApp/BackupSection.swift:43; winnow:Sources/WalletCore/Keys/BIP86.swift:10",
+   "note": "12-word BIP39 phrase on BIP86 paths; the app restores only from its backup file, not from the words alone"
+  },
+  "cloud_backup": {
+   "value": "yes",
+   "evidence": "winnow:Sources/WinnowApp/CloudBackupController.swift:24; winnow:Sources/WalletCore/Wallet/CloudWalletBackup.swift:4-6; winnow:Sources/WinnowApp/ICloudBackupStore.swift:116-117",
+   "note": "On by default: AES-GCM backup to the person's private CloudKit database, key in iCloud Keychain; file backup too"
   },
   "license": {
    "value": "MIT",

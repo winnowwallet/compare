@@ -6,18 +6,20 @@
    "track": {
     "branch": "HEAD"
    },
-   "rev": "6a9ff4c3cd94711d2273de320a8c0e8173209ec3",
-   "label": "winnowwallet/winnow@6a9ff4c",
-   "date": "2026-10-01"
+   "rev": "7751cfd30f5e1b108fcfe322db38b76948a0bb1d",
+   "label": "winnowwallet/winnow@7751cfd",
+   "date": "2026-09-29"
   },
   "phoenix": {
    "repo": "https://github.com/ACINQ/phoenix",
    "track": {
-    "branch": "HEAD"
+    "tag_latest": "ios-v(\\d+(?:\\.\\d+)*)"
    },
-   "rev": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
-   "label": "ACINQ/phoenix@1facad2",
-   "date": "2026-09-23"
+   "rev": "c3b0ae7882ad256c0b35e94c66d5f1f27305c208",
+   "label": "ACINQ/phoenix ios-v2.8.4",
+   "date": "2026-10-02",
+   "tag": "ios-v2.8.4",
+   "version": "2.8.4"
   },
   "lightning-kmp": {
    "repo": "https://github.com/ACINQ/lightning-kmp",
@@ -26,19 +28,19 @@
     "toml": "versions.lightningkmp",
     "tag": "v{}"
    },
-   "rev": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
-   "tag": "v1.12.0",
-   "version": "1.12.0",
-   "label": "ACINQ/lightning-kmp v1.12.0",
-   "date": "2026-05-19"
+   "rev": "9dacdc0b4ac981dcb8fed9be23b53e6994eab27a",
+   "tag": "v1.13.2",
+   "version": "1.13.2",
+   "label": "ACINQ/lightning-kmp v1.13.2",
+   "date": "2026-09-24"
   },
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {
     "branch": "HEAD"
    },
-   "rev": "28243f1a824f7387e6596c29dbb9c88a2779577d",
-   "label": "synonymdev/bitkit-ios@28243f1",
+   "rev": "f751f505710e175bbbf4ee9f8cf8ca09fc471df7",
+   "label": "synonymdev/bitkit-ios@f751f50",
    "date": "2026-10-02"
   },
   "synonym-ldk-node": {
@@ -144,9 +146,9 @@
    "track": {
     "branch": "HEAD"
    },
-   "rev": "1a6f97a71336a9202f45c169f55b250f298b6ab4",
-   "label": "ZeusLN/zeus@1a6f97a",
-   "date": "2026-10-01"
+   "rev": "97bfcb5adacde3159479ae7da9d7ede6fdd5f301",
+   "label": "ZeusLN/zeus@97bfcb5",
+   "date": "2026-10-02"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
@@ -190,73 +192,165 @@
    "version": "0.17.4",
    "label": "cashubtc/cdk v0.17.4",
    "date": "2026-08-14"
+  },
+  "bluewallet": {
+   "repo": "https://github.com/BlueWallet/BlueWallet",
+   "track": {
+    "branch": "HEAD"
+   },
+   "rev": "98dafb58d86ffd1c431b0dd3c634c7d843112c63",
+   "label": "BlueWallet/BlueWallet@98dafb5",
+   "date": "2026-10-01"
+  },
+  "green": {
+   "repo": "https://github.com/Blockstream/green_ios",
+   "track": {
+    "branch": "HEAD"
+   },
+   "rev": "131f820fdef34b5368de9caa5ef7f3de4d7e0139",
+   "label": "Blockstream/green_ios@131f820",
+   "date": "2026-09-25"
+  },
+  "gdk": {
+   "repo": "https://github.com/Blockstream/gdk",
+   "track": {
+    "from": "green:tools/fetch_gdk_binaries.sh",
+    "regex": "TAGNAME=\"([^\"]+)\"",
+    "tag": "{}"
+   },
+   "rev": "02e3646264ed10afd460e61c2c516510b9ce5cf5",
+   "tag": "release_0.78.0",
+   "version": "0.78.0",
+   "label": "Blockstream/gdk release_0.78.0",
+   "date": "2026-09-10"
+  },
+  "muun": {
+   "repo": "https://github.com/muun/falcon",
+   "track": {
+    "branch": "HEAD"
+   },
+   "rev": "d6719c00f96d2ecbde2ab6588f95e54975ceea0e",
+   "label": "muun/falcon@d6719c0",
+   "date": "2026-09-28"
   }
  },
  "lines": {
   "Winnow": {
    "app": {
-    "code": 12647,
-    "chars": 443274,
-    "files": 66,
+    "code": 8965,
+    "chars": 277104,
+    "files": 33,
     "languages": {
-     "Swift": 12647
+     "Swift": 8965
     },
     "generated_excluded": []
    },
    "bitcoin": {
-    "code": 13859,
-    "chars": 474603,
-    "files": 64,
+    "code": 13032,
+    "chars": 441655,
+    "files": 59,
     "languages": {
-     "Swift": 13859
+     "Swift": 13032
+    },
+    "generated_excluded": []
+   }
+  },
+  "BlueWallet": {
+   "app": {
+    "code": 57625,
+    "chars": 1632379,
+    "files": 383,
+    "languages": {
+     "C/C++ Header": 18,
+     "JavaScript": 1523,
+     "Objective-C": 33,
+     "Objective-C++": 59,
+     "Swift": 3485,
+     "TypeScript": 52507
+    },
+    "generated_excluded": []
+   }
+  },
+  "Green": {
+   "app": {
+    "code": 70474,
+    "chars": 2032945,
+    "files": 672,
+    "languages": {
+     "Swift": 70474
     },
     "generated_excluded": []
    },
-   "lightning": {
-    "code": 7507,
-    "chars": 359161,
-    "files": 83,
+   "engine": {
+    "code": 34374,
+    "chars": 1125661,
+    "files": 135,
     "languages": {
-     "Swift": 7507
+     "C++": 19637,
+     "C/C++ Header": 4348,
+     "Rust": 9837,
+     "Swift": 552
+    },
+    "generated_excluded": []
+   }
+  },
+  "Muun": {
+   "app": {
+    "code": 59660,
+    "chars": 1732233,
+    "files": 683,
+    "languages": {
+     "Swift": 59660
+    },
+    "generated_excluded": []
+   },
+   "bitcoin": {
+    "code": 28469,
+    "chars": 703572,
+    "files": 301,
+    "languages": {
+     "C/C++ Header": 7,
+     "Go": 28350,
+     "Rust": 112
     },
     "generated_excluded": []
    }
   },
   "Phoenix": {
    "app": {
-    "code": 72767,
-    "chars": 1898647,
-    "files": 516,
+    "code": 72881,
+    "chars": 1902473,
+    "files": 517,
     "languages": {
-     "Kotlin": 12512,
-     "Swift": 60255
+     "Kotlin": 12545,
+     "Swift": 60336
     },
     "generated_excluded": []
    },
-   "lightning": {
-    "code": 28086,
-    "chars": 1172617,
-    "files": 145,
+   "engine": {
+    "code": 28779,
+    "chars": 1208568,
+    "files": 144,
     "languages": {
-     "C/C++ Header": 4,
-     "Kotlin": 27440,
+     "C/C++ Header": 527,
+     "Kotlin": 27609,
      "Objective-C": 3,
-     "Swift": 639
+     "Swift": 640
     },
     "generated_excluded": []
    }
   },
   "Bitkit": {
    "app": {
-    "code": 93618,
-    "chars": 2600862,
-    "files": 592,
+    "code": 93689,
+    "chars": 2602805,
+    "files": 593,
     "languages": {
-     "Swift": 93618
+     "Swift": 93689
     },
     "generated_excluded": []
    },
-   "lightning": {
+   "engine": {
     "code": 127646,
     "chars": 3812752,
     "files": 226,
@@ -287,7 +381,7 @@
      "blixt/speedloader-turbomodule/liblnd/x86_64/liblnd.h"
     ]
    },
-   "lightning": {
+   "engine": {
     "code": 238947,
     "chars": 5534092,
     "files": 1175,
@@ -318,22 +412,22 @@
   },
   "Zeus": {
    "app": {
-    "code": 189836,
-    "chars": 3681169,
-    "files": 574,
+    "code": 189984,
+    "chars": 3685006,
+    "files": 575,
     "languages": {
      "C/C++ Header": 44,
      "JavaScript": 47,
      "Objective-C": 1332,
      "Objective-C++": 424,
      "Swift": 4038,
-     "TypeScript": 183951
+     "TypeScript": 184099
     },
     "generated_excluded": [
      "zeus/ios/LdkNodeMobile/LDKNode.swift"
     ]
    },
-   "lightning": {
+   "engine": {
     "code": 242167,
     "chars": 5609921,
     "files": 1187,
@@ -372,18 +466,42 @@
    "TypeScript/JS": 0.0,
    "C family": 0.0
   },
-  "Phoenix": {
-   "Swift": 60.38,
-   "Kotlin": 39.61,
+  "BlueWallet": {
+   "Swift": 6.05,
+   "Kotlin": 0.0,
    "Rust": 0.0,
    "Go": 0.0,
+   "TypeScript/JS": 93.76,
+   "C family": 0.19
+  },
+  "Green": {
+   "Swift": 67.74,
+   "Kotlin": 0.0,
+   "Rust": 9.38,
+   "Go": 0.0,
+   "TypeScript/JS": 0.0,
+   "C family": 22.88
+  },
+  "Muun": {
+   "Swift": 67.7,
+   "Kotlin": 0.0,
+   "Rust": 0.13,
+   "Go": 32.17,
    "TypeScript/JS": 0.0,
    "C family": 0.01
   },
+  "Phoenix": {
+   "Swift": 59.98,
+   "Kotlin": 39.5,
+   "Rust": 0.0,
+   "Go": 0.0,
+   "TypeScript/JS": 0.0,
+   "C family": 0.52
+  },
   "Bitkit": {
-   "Swift": 42.31,
+   "Swift": 42.33,
    "Kotlin": 0.0,
-   "Rust": 57.69,
+   "Rust": 57.67,
    "Go": 0.0,
    "TypeScript/JS": 0.0,
    "C family": 0.0
@@ -400,34 +518,34 @@
    "Swift": 0.93,
    "Kotlin": 0.0,
    "Rust": 0.0,
-   "Go": 56.06,
-   "TypeScript/JS": 42.59,
+   "Go": 56.04,
+   "TypeScript/JS": 42.61,
    "C family": 0.42
   }
  },
  "complexity": {
   "Winnow": {
    "app": {
-    "functions": 971,
-    "mean_cc": 3.08,
-    "p90_cc": 6,
-    "max_cc": 28,
-    "cc_le_2": 537,
-    "cc_3_12": 418,
-    "cc_gt_12": 16,
+    "functions": 610,
+    "mean_cc": 3.28,
+    "p90_cc": 7,
+    "max_cc": 27,
+    "cc_le_2": 331,
+    "cc_3_12": 269,
+    "cc_gt_12": 10,
     "cc_gt_30": 0,
-    "files": 66,
-    "files_with_parse_errors": 2,
+    "files": 33,
+    "files_with_parse_errors": 1,
     "most_complex": [
      {
-      "cc": 28,
+      "cc": 27,
       "function": "(computed_property)",
       "at": "winnow/Sources/WinnowApp/SettingsView.swift:39"
      },
      {
       "cc": 22,
       "function": "init",
-      "at": "winnow/Sources/WinnowApp/AppModel.swift:484"
+      "at": "winnow/Sources/WinnowApp/AppModel.swift:458"
      },
      {
       "cc": 22,
@@ -447,21 +565,31 @@
     ]
    },
    "bitcoin": {
-    "functions": 1117,
-    "mean_cc": 3.22,
+    "functions": 1010,
+    "mean_cc": 3.34,
     "p90_cc": 7,
-    "max_cc": 23,
-    "cc_le_2": 578,
-    "cc_3_12": 528,
-    "cc_gt_12": 11,
+    "max_cc": 27,
+    "cc_le_2": 523,
+    "cc_3_12": 473,
+    "cc_gt_12": 14,
     "cc_gt_30": 0,
-    "files": 64,
+    "files": 59,
     "files_with_parse_errors": 3,
     "most_complex": [
+     {
+      "cc": 27,
+      "function": "decode",
+      "at": "winnow/Sources/WalletCore/Network/Protocol/Messages.swift:367"
+     },
      {
       "cc": 23,
       "function": "(computed_property)",
       "at": "winnow/Sources/WalletCore/Network/Protocol/Messages.swift:302"
+     },
+     {
+      "cc": 21,
+      "function": "validateKnownFields",
+      "at": "winnow/Sources/WalletCore/PSBT/PSBT.swift:815"
      },
      {
       "cc": 19,
@@ -469,83 +597,226 @@
       "at": "winnow/Sources/WalletCore/Network/Protocol/Messages.swift:329"
      },
      {
-      "cc": 19,
-      "function": "init",
-      "at": "winnow/Sources/WalletCore/Wallet/Wallet.swift:457"
-     },
-     {
       "cc": 18,
       "function": "replenish",
-      "at": "winnow/Sources/WalletCore/Network/Peers/PeerPool.swift:646"
-     },
-     {
-      "cc": 16,
-      "function": "canonicalIP",
-      "at": "winnow/Sources/WalletCore/Network/Peers/CensusCatalog.swift:137"
-     }
-    ]
-   },
-   "lightning": {
-    "functions": 746,
-    "mean_cc": 3.34,
-    "p90_cc": 7,
-    "max_cc": 16,
-    "cc_le_2": 360,
-    "cc_3_12": 384,
-    "cc_gt_12": 2,
-    "cc_gt_30": 0,
-    "files": 83,
-    "files_with_parse_errors": 5,
-    "most_complex": [
-     {
-      "cc": 16,
-      "function": "validateLoaded",
-      "at": "winnow/Sources/LightningCore/LightningEngine.swift:218"
-     },
-     {
-      "cc": 13,
-      "function": "amount",
-      "at": "winnow/Sources/LightningCore/InvoiceRequest.swift:40"
-     },
-     {
-      "cc": 12,
-      "function": "init",
-      "at": "winnow/Sources/LightningCore/AsyncPaymentMessage.swift:14"
-     },
-     {
-      "cc": 12,
-      "function": "updateChainChannels",
-      "at": "winnow/Sources/LightningCore/LightningChain.swift:110"
-     },
-     {
-      "cc": 12,
-      "function": "search",
-      "at": "winnow/Sources/LightningCore/LightningRouteSearch.swift:40"
+      "at": "winnow/Sources/WalletCore/Network/Peers/PeerPool.swift:627"
      }
     ]
    },
    "all": {
-    "functions": 2834,
-    "mean_cc": 3.2,
+    "functions": 1620,
+    "mean_cc": 3.32,
     "p90_cc": 7,
-    "max_cc": 28,
-    "cc_le_2": 1475,
-    "cc_3_12": 1330,
-    "cc_gt_12": 29,
+    "max_cc": 27,
+    "cc_le_2": 854,
+    "cc_3_12": 742,
+    "cc_gt_12": 24,
     "cc_gt_30": 0
+   }
+  },
+  "BlueWallet": {
+   "app": {
+    "functions": 1758,
+    "mean_cc": 5.24,
+    "p90_cc": 10,
+    "max_cc": 238,
+    "cc_le_2": 1009,
+    "cc_3_12": 610,
+    "cc_gt_12": 139,
+    "cc_gt_30": 42,
+    "files": 383,
+    "files_with_parse_errors": 6,
+    "most_complex": [
+     {
+      "cc": 238,
+      "function": "(arrow_function)",
+      "at": "bluewallet/screen/send/SendDetails.tsx:77"
+     },
+     {
+      "cc": 237,
+      "function": "(arrow_function)",
+      "at": "bluewallet/screen/transactions/TransactionStatus.tsx:164"
+     },
+     {
+      "cc": 178,
+      "function": "(arrow_function)",
+      "at": "bluewallet/screen/wallets/WalletDetails.tsx:63"
+     },
+     {
+      "cc": 124,
+      "function": "(arrow_function)",
+      "at": "bluewallet/screen/wallets/WalletTransactions.tsx:180"
+     },
+     {
+      "cc": 122,
+      "function": "(arrow_function)",
+      "at": "bluewallet/screen/receive/ReceiveDetails.tsx:149"
+     }
+    ]
+   },
+   "all": {
+    "functions": 1758,
+    "mean_cc": 5.24,
+    "p90_cc": 10,
+    "max_cc": 238,
+    "cc_le_2": 1009,
+    "cc_3_12": 610,
+    "cc_gt_12": 139,
+    "cc_gt_30": 42
+   }
+  },
+  "Green": {
+   "app": {
+    "functions": 6905,
+    "mean_cc": 2.19,
+    "p90_cc": 4,
+    "max_cc": 45,
+    "cc_le_2": 5351,
+    "cc_3_12": 1469,
+    "cc_gt_12": 85,
+    "cc_gt_30": 7,
+    "files": 674,
+    "files_with_parse_errors": 34,
+    "most_complex": [
+     {
+      "cc": 45,
+      "function": "validateTransaction",
+      "at": "green/gaios/Sendflow/ViewModels/SendAmountViewModelLegacy.swift:351"
+     },
+     {
+      "cc": 41,
+      "function": "description",
+      "at": "green/gaios/Extensions/Error.swift:11"
+     },
+     {
+      "cc": 41,
+      "function": "compareUtxos",
+      "at": "green/gaios/Sendflow/Flow/CoinControl/CoinControlViewModel.swift:110"
+     },
+     {
+      "cc": 41,
+      "function": "updateState",
+      "at": "green/gaios/Survey/SurveyViewController.swift:53"
+     },
+     {
+      "cc": 37,
+      "function": "configure",
+      "at": "green/gaios/WalletTabBar/Tabs/Cells/AlertCardCell/AlertCardCell.swift:67"
+     }
+    ]
+   },
+   "all": {
+    "functions": 6905,
+    "mean_cc": 2.19,
+    "p90_cc": 4,
+    "max_cc": 45,
+    "cc_le_2": 5351,
+    "cc_3_12": 1469,
+    "cc_gt_12": 85,
+    "cc_gt_30": 7
+   }
+  },
+  "Muun": {
+   "app": {
+    "functions": 5201,
+    "mean_cc": 1.68,
+    "p90_cc": 3,
+    "max_cc": 63,
+    "cc_le_2": 4431,
+    "cc_3_12": 749,
+    "cc_gt_12": 21,
+    "cc_gt_30": 2,
+    "files": 683,
+    "files_with_parse_errors": 20,
+    "most_complex": [
+     {
+      "cc": 63,
+      "function": "handle",
+      "at": "muun/falcon/app/falcon/core/Protobuf/wallet_service.grpc.swift:2153"
+     },
+     {
+      "cc": 63,
+      "function": "handle",
+      "at": "muun/falcon/app/falcon/core/Protobuf/wallet_service.grpc.swift:2634"
+     },
+     {
+      "cc": 22,
+      "function": "getKindOfError",
+      "at": "muun/falcon/app/falcon/core/Data/Service/Base/BaseError.swift:19"
+     },
+     {
+      "cc": 20,
+      "function": "toModel",
+      "at": "muun/falcon/app/falcon/core/Data/Service/Mapper.swift:216"
+     },
+     {
+      "cc": 20,
+      "function": "titleAndBody",
+      "at": "muun/falcon/app/falconPushNotifications/NotificationService.swift:111"
+     }
+    ]
+   },
+   "bitcoin": {
+    "functions": 1478,
+    "mean_cc": 2.77,
+    "p90_cc": 6,
+    "max_cc": 26,
+    "cc_le_2": 974,
+    "cc_3_12": 471,
+    "cc_gt_12": 33,
+    "cc_gt_30": 0,
+    "files": 301,
+    "files_with_parse_errors": 0,
+    "most_complex": [
+     {
+      "cc": 26,
+      "function": "do",
+      "at": "muun/libwallet/service/client.go:70"
+     },
+     {
+      "cc": 25,
+      "function": "GetPaymentURI",
+      "at": "muun/libwallet/address.go:52"
+     },
+     {
+      "cc": 24,
+      "function": "resolveOutpoints",
+      "at": "muun/libwallet/domain/action/lightning/external_tx_checker.go:81"
+     },
+     {
+      "cc": 21,
+      "function": "SignInput",
+      "at": "muun/libwallet/incoming_swap.go:340"
+     },
+     {
+      "cc": 21,
+      "function": "Verify",
+      "at": "muun/libwallet/partiallysignedtransaction.go:320"
+     }
+    ]
+   },
+   "all": {
+    "functions": 6679,
+    "mean_cc": 1.92,
+    "p90_cc": 4,
+    "max_cc": 63,
+    "cc_le_2": 5405,
+    "cc_3_12": 1220,
+    "cc_gt_12": 54,
+    "cc_gt_30": 2
    }
   },
   "Phoenix": {
    "app": {
-    "functions": 4694,
+    "functions": 4703,
     "mean_cc": 2.52,
     "p90_cc": 5,
     "max_cc": 155,
-    "cc_le_2": 3410,
-    "cc_3_12": 1207,
+    "cc_le_2": 3414,
+    "cc_3_12": 1212,
     "cc_gt_12": 77,
     "cc_gt_30": 9,
-    "files": 517,
+    "files": 518,
     "files_with_parse_errors": 15,
     "most_complex": [
      {
@@ -575,71 +846,32 @@
      }
     ]
    },
-   "lightning": {
-    "functions": 2524,
-    "mean_cc": 2.28,
-    "p90_cc": 4,
-    "max_cc": 168,
-    "cc_le_2": 2066,
-    "cc_3_12": 403,
-    "cc_gt_12": 55,
-    "cc_gt_30": 13,
-    "files": 146,
-    "files_with_parse_errors": 10,
-    "most_complex": [
-     {
-      "cc": 168,
-      "function": "processInternal",
-      "at": "lightning-kmp/modules/core/src/commonMain/kotlin/fr/acinq/lightning/channel/states/Normal.kt:31"
-     },
-     {
-      "cc": 92,
-      "function": "processInternal",
-      "at": "lightning-kmp/modules/core/src/commonMain/kotlin/fr/acinq/lightning/channel/states/Syncing.kt:17"
-     },
-     {
-      "cc": 88,
-      "function": "processEvent",
-      "at": "lightning-kmp/modules/core/src/commonMain/kotlin/fr/acinq/lightning/io/Peer.kt:1210"
-     },
-     {
-      "cc": 59,
-      "function": "processInternal",
-      "at": "lightning-kmp/modules/core/src/commonMain/kotlin/fr/acinq/lightning/channel/states/Closing.kt:61"
-     },
-     {
-      "cc": 57,
-      "function": "processInternal",
-      "at": "lightning-kmp/modules/core/src/commonMain/kotlin/fr/acinq/lightning/channel/states/WaitForFundingConfirmed.kt:29"
-     }
-    ]
-   },
    "all": {
-    "functions": 7218,
-    "mean_cc": 2.44,
+    "functions": 4703,
+    "mean_cc": 2.52,
     "p90_cc": 5,
-    "max_cc": 168,
-    "cc_le_2": 5476,
-    "cc_3_12": 1610,
-    "cc_gt_12": 132,
-    "cc_gt_30": 22
+    "max_cc": 155,
+    "cc_le_2": 3414,
+    "cc_3_12": 1212,
+    "cc_gt_12": 77,
+    "cc_gt_30": 9
    }
   },
   "Bitkit": {
    "app": {
-    "functions": 5461,
+    "functions": 5464,
     "mean_cc": 2.97,
     "p90_cc": 6,
-    "max_cc": 125,
+    "max_cc": 119,
     "cc_le_2": 3327,
-    "cc_3_12": 2042,
+    "cc_3_12": 2045,
     "cc_gt_12": 92,
     "cc_gt_30": 9,
-    "files": 592,
+    "files": 593,
     "files_with_parse_errors": 4,
     "most_complex": [
      {
-      "cc": 125,
+      "cc": 119,
       "function": "(computed_property)",
       "at": "bitkit/Bitkit/MainNavView.swift:492"
      },
@@ -665,54 +897,15 @@
      }
     ]
    },
-   "lightning": {
-    "functions": 5348,
-    "mean_cc": 2.98,
-    "p90_cc": 6,
-    "max_cc": 174,
-    "cc_le_2": 3743,
-    "cc_3_12": 1444,
-    "cc_gt_12": 161,
-    "cc_gt_30": 39,
-    "files": 226,
-    "files_with_parse_errors": 6,
-    "most_complex": [
-     {
-      "cc": 174,
-      "function": "read",
-      "at": "rust-lightning/lightning/src/ln/channelmanager.rs:16784"
-     },
-     {
-      "cc": 153,
-      "function": "handle_event",
-      "at": "synonym-ldk-node/src/event.rs:1184"
-     },
-     {
-      "cc": 99,
-      "function": "get_route",
-      "at": "rust-lightning/lightning/src/routing/router.rs:2449"
-     },
-     {
-      "cc": 87,
-      "function": "read",
-      "at": "rust-lightning/lightning/src/ln/channel.rs:14958"
-     },
-     {
-      "cc": 75,
-      "function": "process_events",
-      "at": "rust-lightning/lightning/src/ln/peer_handler.rs:2822"
-     }
-    ]
-   },
    "all": {
-    "functions": 10809,
-    "mean_cc": 2.98,
+    "functions": 5464,
+    "mean_cc": 2.97,
     "p90_cc": 6,
-    "max_cc": 174,
-    "cc_le_2": 7070,
-    "cc_3_12": 3486,
-    "cc_gt_12": 253,
-    "cc_gt_30": 48
+    "max_cc": 119,
+    "cc_le_2": 3327,
+    "cc_3_12": 2045,
+    "cc_gt_12": 92,
+    "cc_gt_30": 9
    }
   },
   "Blixt": {
@@ -755,67 +948,28 @@
      }
     ]
    },
-   "lightning": {
-    "functions": 10408,
-    "mean_cc": 3.91,
-    "p90_cc": 9,
-    "max_cc": 148,
-    "cc_le_2": 5896,
-    "cc_3_12": 3957,
-    "cc_gt_12": 555,
-    "cc_gt_30": 66,
-    "files": 1175,
-    "files_with_parse_errors": 0,
-    "most_complex": [
-     {
-      "cc": 148,
-      "function": "ValidateConfig",
-      "at": "lnd-blixt/config.go:1007"
-     },
-     {
-      "cc": 99,
-      "function": "WriteElement",
-      "at": "lnd-blixt/channeldb/migration/lnwire21/lnwire.go:76"
-     },
-     {
-      "cc": 96,
-      "function": "WriteElement",
-      "at": "lnd-blixt/lnwire/lnwire.go:87"
-     },
-     {
-      "cc": 93,
-      "function": "ReadElement",
-      "at": "lnd-blixt/channeldb/migration/lnwire21/lnwire.go:441"
-     },
-     {
-      "cc": 89,
-      "function": "ReadElement",
-      "at": "lnd-blixt/lnwire/lnwire.go:444"
-     }
-    ]
-   },
    "all": {
-    "functions": 11465,
-    "mean_cc": 3.88,
-    "p90_cc": 8,
-    "max_cc": 148,
-    "cc_le_2": 6681,
-    "cc_3_12": 4173,
-    "cc_gt_12": 611,
-    "cc_gt_30": 85
+    "functions": 1057,
+    "mean_cc": 3.57,
+    "p90_cc": 7,
+    "max_cc": 134,
+    "cc_le_2": 785,
+    "cc_3_12": 216,
+    "cc_gt_12": 56,
+    "cc_gt_30": 19
    }
   },
   "Zeus": {
    "app": {
-    "functions": 4686,
+    "functions": 4695,
     "mean_cc": 4.71,
     "p90_cc": 10,
     "max_cc": 252,
-    "cc_le_2": 2695,
-    "cc_3_12": 1647,
-    "cc_gt_12": 344,
+    "cc_le_2": 2699,
+    "cc_3_12": 1651,
+    "cc_gt_12": 345,
     "cc_gt_30": 75,
-    "files": 575,
+    "files": 576,
     "files_with_parse_errors": 13,
     "most_complex": [
      {
@@ -845,54 +999,15 @@
      }
     ]
    },
-   "lightning": {
-    "functions": 10527,
-    "mean_cc": 3.92,
-    "p90_cc": 9,
-    "max_cc": 147,
-    "cc_le_2": 5952,
-    "cc_3_12": 4010,
-    "cc_gt_12": 565,
-    "cc_gt_30": 67,
-    "files": 1187,
-    "files_with_parse_errors": 0,
-    "most_complex": [
-     {
-      "cc": 147,
-      "function": "ValidateConfig",
-      "at": "lnd-zeus/config.go:1007"
-     },
-     {
-      "cc": 99,
-      "function": "WriteElement",
-      "at": "lnd-zeus/channeldb/migration/lnwire21/lnwire.go:76"
-     },
-     {
-      "cc": 96,
-      "function": "WriteElement",
-      "at": "lnd-zeus/lnwire/lnwire.go:87"
-     },
-     {
-      "cc": 93,
-      "function": "ReadElement",
-      "at": "lnd-zeus/channeldb/migration/lnwire21/lnwire.go:441"
-     },
-     {
-      "cc": 89,
-      "function": "ReadElement",
-      "at": "lnd-zeus/lnwire/lnwire.go:444"
-     }
-    ]
-   },
    "all": {
-    "functions": 15213,
-    "mean_cc": 4.16,
-    "p90_cc": 9,
+    "functions": 4695,
+    "mean_cc": 4.71,
+    "p90_cc": 10,
     "max_cc": 252,
-    "cc_le_2": 8647,
-    "cc_3_12": 5657,
-    "cc_gt_12": 909,
-    "cc_gt_30": 142
+    "cc_le_2": 2699,
+    "cc_3_12": 1651,
+    "cc_gt_12": 345,
+    "cc_gt_30": 75
    }
   }
  },
@@ -902,6 +1017,1360 @@
     "swift-secp256k1@0.23.2"
    ],
    "total": 1
+  },
+  "BlueWallet": {
+   "npm_direct": [
+    "@arkade-os/boltz-swap",
+    "@arkade-os/sdk",
+    "@bugsnag/react-native",
+    "@bugsnag/source-maps",
+    "@keystonehq/bc-ur-registry",
+    "@ngraveio/bc-ur",
+    "@noble/ciphers",
+    "@noble/hashes",
+    "@noble/secp256k1",
+    "@react-native-async-storage/async-storage",
+    "@react-native-clipboard/clipboard",
+    "@react-native-community/cli",
+    "@react-native-community/cli-platform-android",
+    "@react-native-community/cli-platform-ios",
+    "@react-native-documents/picker",
+    "@react-native-vector-icons/entypo",
+    "@react-native-vector-icons/fontawesome",
+    "@react-native-vector-icons/fontawesome6",
+    "@react-native-vector-icons/ionicons",
+    "@react-native-vector-icons/material-design-icons",
+    "@react-native-vector-icons/material-icons",
+    "@react-native/babel-preset",
+    "@react-native/codegen",
+    "@react-native/gradle-plugin",
+    "@react-native/metro-config",
+    "@react-navigation/devtools",
+    "@react-navigation/drawer",
+    "@react-navigation/native",
+    "@react-navigation/native-stack",
+    "@scure/base",
+    "@spsina/bip47",
+    "aezeed",
+    "assert",
+    "base-x",
+    "bc-bech32",
+    "bech32",
+    "bignumber.js",
+    "bip21",
+    "bip32",
+    "bip38",
+    "bip39",
+    "bitcoinjs-lib",
+    "bitcoinjs-message",
+    "bolt11",
+    "buffer",
+    "coinselect",
+    "crypto-browserify",
+    "dayjs",
+    "detox",
+    "ecpair",
+    "electrum-client",
+    "electrum-mnemonic",
+    "events",
+    "lottie-react-native",
+    "pako",
+    "payjoin-client",
+    "prop-types",
+    "qr",
+    "react",
+    "react-localization",
+    "react-native",
+    "react-native-background-fetch",
+    "react-native-biometrics",
+    "react-native-blue-crypto",
+    "react-native-camera-kit-no-google",
+    "react-native-capture-protection",
+    "react-native-context-menu-view",
+    "react-native-default-preference",
+    "react-native-device-info",
+    "react-native-draggable-flatlist",
+    "react-native-fs",
+    "react-native-gesture-handler",
+    "react-native-get-random-values",
+    "react-native-handoff",
+    "react-native-haptic-feedback",
+    "react-native-image-picker",
+    "react-native-keychain",
+    "react-native-linear-gradient",
+    "react-native-localize",
+    "react-native-notifications",
+    "react-native-permissions",
+    "react-native-prompt-android",
+    "react-native-quick-actions",
+    "react-native-reanimated",
+    "react-native-safe-area-context",
+    "react-native-screens",
+    "react-native-secure-key-store",
+    "react-native-share",
+    "react-native-svg",
+    "react-native-tcp-socket",
+    "react-native-worklets",
+    "readable-stream",
+    "realm",
+    "silent-payments",
+    "slip39",
+    "stream-browserify",
+    "text-encoding",
+    "url",
+    "wif"
+   ],
+   "npm": [
+    "@ampproject/remapping@2.3.0",
+    "@arkade-os/boltz-swap@0.3.67",
+    "@arkade-os/sdk@0.4.67",
+    "@babel/code-frame@7.29.7",
+    "@babel/compat-data@7.29.7",
+    "@babel/core@7.26.10",
+    "@babel/generator@7.29.7",
+    "@babel/helper-annotate-as-pure@7.29.7",
+    "@babel/helper-compilation-targets@7.29.7",
+    "@babel/helper-create-class-features-plugin@7.29.7",
+    "@babel/helper-create-regexp-features-plugin@7.29.7",
+    "@babel/helper-define-polyfill-provider@0.6.8",
+    "@babel/helper-globals@7.29.7",
+    "@babel/helper-member-expression-to-functions@7.29.7",
+    "@babel/helper-module-imports@7.29.7",
+    "@babel/helper-module-transforms@7.29.7",
+    "@babel/helper-optimise-call-expression@7.29.7",
+    "@babel/helper-plugin-utils@7.29.7",
+    "@babel/helper-remap-async-to-generator@7.29.7",
+    "@babel/helper-replace-supers@7.29.7",
+    "@babel/helper-skip-transparent-expression-wrappers@7.29.7",
+    "@babel/helper-string-parser@7.29.7",
+    "@babel/helper-validator-identifier@7.29.7",
+    "@babel/helper-validator-option@7.29.7",
+    "@babel/helper-wrap-function@7.29.7",
+    "@babel/helpers@7.27.0",
+    "@babel/parser@7.29.7",
+    "@babel/plugin-proposal-export-default-from@7.25.9",
+    "@babel/plugin-syntax-dynamic-import@7.8.3",
+    "@babel/plugin-syntax-export-default-from@7.25.9",
+    "@babel/plugin-syntax-flow@7.28.6",
+    "@babel/plugin-syntax-jsx@7.29.7",
+    "@babel/plugin-syntax-nullish-coalescing-operator@7.8.3",
+    "@babel/plugin-syntax-optional-chaining@7.8.3",
+    "@babel/plugin-syntax-typescript@7.29.7",
+    "@babel/plugin-transform-arrow-functions@7.29.7",
+    "@babel/plugin-transform-async-generator-functions@7.29.7",
+    "@babel/plugin-transform-async-to-generator@7.29.7",
+    "@babel/plugin-transform-block-scoping@7.29.7",
+    "@babel/plugin-transform-class-properties@7.29.7",
+    "@babel/plugin-transform-classes@7.29.7",
+    "@babel/plugin-transform-destructuring@7.29.7",
+    "@babel/plugin-transform-flow-strip-types@7.27.1",
+    "@babel/plugin-transform-for-of@7.29.7",
+    "@babel/plugin-transform-modules-commonjs@7.29.7",
+    "@babel/plugin-transform-named-capturing-groups-regex@7.29.7",
+    "@babel/plugin-transform-nullish-coalescing-operator@7.29.7",
+    "@babel/plugin-transform-optional-catch-binding@7.29.7",
+    "@babel/plugin-transform-optional-chaining@7.29.7",
+    "@babel/plugin-transform-private-methods@7.29.7",
+    "@babel/plugin-transform-private-property-in-object@7.29.7",
+    "@babel/plugin-transform-react-display-name@7.25.9",
+    "@babel/plugin-transform-react-jsx-self@7.25.9",
+    "@babel/plugin-transform-react-jsx-source@7.25.9",
+    "@babel/plugin-transform-react-jsx@7.25.9",
+    "@babel/plugin-transform-regenerator@7.29.7",
+    "@babel/plugin-transform-runtime@7.26.10",
+    "@babel/plugin-transform-shorthand-properties@7.29.7",
+    "@babel/plugin-transform-template-literals@7.29.7",
+    "@babel/plugin-transform-typescript@7.29.7",
+    "@babel/plugin-transform-unicode-regex@7.29.7",
+    "@babel/preset-typescript@7.29.7",
+    "@babel/runtime@7.27.0",
+    "@babel/template@7.29.7",
+    "@babel/traverse@7.29.7",
+    "@babel/types@7.29.7",
+    "@bitcoinerlab/descriptors-core@3.1.7",
+    "@bitcoinerlab/descriptors-scure@3.1.7",
+    "@bitcoinerlab/miniscript@2.0.0",
+    "@bugsnag/core@8.9.0",
+    "@bugsnag/cuid@3.2.1",
+    "@bugsnag/delivery-react-native@8.9.0",
+    "@bugsnag/plugin-console-breadcrumbs@8.9.0",
+    "@bugsnag/plugin-network-breadcrumbs@8.9.0",
+    "@bugsnag/plugin-react-native-client-sync@8.9.0",
+    "@bugsnag/plugin-react-native-event-sync@8.9.0",
+    "@bugsnag/plugin-react-native-global-error-handler@8.9.0",
+    "@bugsnag/plugin-react-native-hermes@8.9.0",
+    "@bugsnag/plugin-react-native-session@8.9.0",
+    "@bugsnag/plugin-react-native-unhandled-rejection@8.9.0",
+    "@bugsnag/plugin-react@8.9.0",
+    "@bugsnag/react-native@8.9.0",
+    "@bugsnag/request-tracker@8.9.0",
+    "@bugsnag/safe-json-stringify@6.1.0",
+    "@bugsnag/source-maps@2.3.3",
+    "@colors/colors@1.6.0",
+    "@dabh/diagnostics@2.0.3",
+    "@egjs/hammerjs@2.0.17",
+    "@flatten-js/interval-tree@1.1.3",
+    "@hapi/hoek@9.3.0",
+    "@hapi/topo@5.1.0",
+    "@isaacs/ttlcache@1.4.1",
+    "@jest/schemas@29.6.3",
+    "@jest/types@29.6.3",
+    "@jridgewell/gen-mapping@0.3.13",
+    "@jridgewell/resolve-uri@3.1.2",
+    "@jridgewell/source-map@0.3.11",
+    "@jridgewell/sourcemap-codec@1.5.0",
+    "@jridgewell/trace-mapping@0.3.31",
+    "@keystonehq/alias-sampling@0.1.2",
+    "@keystonehq/bc-ur-registry@0.8.0",
+    "@marcbachmann/cel-js@8.0.0",
+    "@ngraveio/bc-ur@1.1.13",
+    "@noble/ciphers@1.3.0",
+    "@noble/curves@2.0.1",
+    "@noble/curves@2.4.0",
+    "@noble/hashes@1.8.0",
+    "@noble/hashes@2.0.1",
+    "@noble/hashes@2.4.0",
+    "@noble/secp256k1@1.6.3",
+    "@noble/secp256k1@3.0.0",
+    "@noble/secp256k1@3.1.0",
+    "@nodelib/fs.scandir@2.1.5",
+    "@nodelib/fs.stat@2.0.5",
+    "@nodelib/fs.walk@1.2.8",
+    "@react-native-async-storage/async-storage@2.2.0",
+    "@react-native-clipboard/clipboard@1.16.3",
+    "@react-native-community/cli-clean@20.2.0",
+    "@react-native-community/cli-config-android@20.2.0",
+    "@react-native-community/cli-config-apple@20.2.0",
+    "@react-native-community/cli-config@20.2.0",
+    "@react-native-community/cli-doctor@20.2.0",
+    "@react-native-community/cli-platform-android@20.2.0",
+    "@react-native-community/cli-platform-apple@20.2.0",
+    "@react-native-community/cli-platform-ios@20.2.0",
+    "@react-native-community/cli-server-api@20.2.0",
+    "@react-native-community/cli-tools@20.2.0",
+    "@react-native-community/cli-types@20.2.0",
+    "@react-native-community/cli@20.2.0",
+    "@react-native-documents/picker@12.0.2",
+    "@react-native-vector-icons/common@13.0.1",
+    "@react-native-vector-icons/entypo@13.1.2",
+    "@react-native-vector-icons/fontawesome6@13.1.2",
+    "@react-native-vector-icons/fontawesome@13.1.2",
+    "@react-native-vector-icons/ionicons@13.1.2",
+    "@react-native-vector-icons/material-design-icons@13.1.2",
+    "@react-native-vector-icons/material-icons@13.1.2",
+    "@react-native/assets-registry@0.85.3",
+    "@react-native/babel-plugin-codegen@0.86.2",
+    "@react-native/babel-preset@0.86.2",
+    "@react-native/codegen@0.85.3",
+    "@react-native/codegen@0.86.2",
+    "@react-native/community-cli-plugin@0.85.3",
+    "@react-native/debugger-frontend@0.85.3",
+    "@react-native/debugger-shell@0.85.3",
+    "@react-native/dev-middleware@0.85.3",
+    "@react-native/gradle-plugin@0.85.3",
+    "@react-native/gradle-plugin@0.86.2",
+    "@react-native/js-polyfills@0.85.3",
+    "@react-native/js-polyfills@0.86.2",
+    "@react-native/metro-babel-transformer@0.86.2",
+    "@react-native/metro-config@0.86.2",
+    "@react-native/normalize-colors@0.85.3",
+    "@react-native/virtualized-lists@0.85.3",
+    "@react-navigation/core@7.21.11",
+    "@react-navigation/devtools@7.1.11",
+    "@react-navigation/drawer@7.13.7",
+    "@react-navigation/elements@2.9.37",
+    "@react-navigation/native-stack@7.17.10",
+    "@react-navigation/native@7.3.15",
+    "@react-navigation/routers@7.6.4",
+    "@realm/fetch@0.1.1",
+    "@scure/base@1.1.1",
+    "@scure/base@1.2.6",
+    "@scure/base@2.0.0",
+    "@scure/base@2.2.0",
+    "@scure/base@2.4.0",
+    "@scure/bip32@2.4.0",
+    "@scure/bip39@2.0.1",
+    "@scure/btc-signer@2.0.1",
+    "@sideway/address@4.1.5",
+    "@sideway/formula@3.0.1",
+    "@sideway/pinpoint@2.0.0",
+    "@sinclair/typebox@0.27.8",
+    "@spsina/bip47@1.0.1",
+    "@transistorsoft/background-fetch-types@1.0.0",
+    "@types/bn.js@4.11.6",
+    "@types/hammerjs@2.0.46",
+    "@types/istanbul-lib-coverage@2.0.6",
+    "@types/istanbul-lib-report@3.0.3",
+    "@types/istanbul-reports@3.0.4",
+    "@types/node@10.12.18",
+    "@types/node@22.14.0",
+    "@types/normalize-package-data@2.4.4",
+    "@types/react-test-renderer@19.1.0",
+    "@types/react@19.2.14",
+    "@types/triple-beam@1.3.5",
+    "@types/yargs-parser@21.0.3",
+    "@types/yargs@17.0.33",
+    "@types/yargs@17.0.35",
+    "@vscode/sudo-prompt@9.3.2",
+    "@wix-pilot/core@3.4.2",
+    "@wix-pilot/detox@1.0.13",
+    "@xmldom/xmldom@0.9.10",
+    "abort-controller@3.0.0",
+    "accepts@1.3.8",
+    "accepts@2.0.0",
+    "acorn@8.15.0",
+    "aez@1.0.1",
+    "aezeed@0.0.5",
+    "agent-base@7.1.4",
+    "ajv@8.17.1",
+    "anser@1.4.10",
+    "ansi-fragments@0.2.1",
+    "ansi-regex@4.1.1",
+    "ansi-regex@5.0.1",
+    "ansi-styles@3.2.1",
+    "ansi-styles@4.3.0",
+    "ansi-styles@5.2.0",
+    "appdirsjs@1.2.7",
+    "argparse@2.0.1",
+    "array-back@3.1.0",
+    "array-back@4.0.2",
+    "asap@2.0.6",
+    "asn1.js@4.10.1",
+    "assert@2.1.0",
+    "astral-regex@1.0.0",
+    "async-limiter@1.0.1",
+    "async@3.2.6",
+    "asynckit@0.4.0",
+    "available-typed-arrays@1.0.7",
+    "babel-plugin-polyfill-corejs2@0.4.15",
+    "babel-plugin-polyfill-corejs3@0.11.1",
+    "babel-plugin-polyfill-regenerator@0.6.6",
+    "babel-plugin-syntax-hermes-parser@0.33.3",
+    "babel-plugin-syntax-hermes-parser@0.36.0",
+    "babel-plugin-transform-flow-enums@0.0.2",
+    "balanced-match@1.0.2",
+    "base-64@0.1.0",
+    "base-x@3.0.11",
+    "base-x@4.0.1",
+    "base-x@5.0.1",
+    "base64-js@1.5.1",
+    "baseline-browser-mapping@2.10.0",
+    "bc-bech32@None",
+    "bech32@1.1.4",
+    "bech32@2.0.0",
+    "bigi@1.4.2",
+    "bignumber.js@9.3.1",
+    "bindings@1.5.0",
+    "bip174@2.1.1",
+    "bip174@3.0.0",
+    "bip21@2.0.3",
+    "bip32@2.0.6",
+    "bip32@3.1.0",
+    "bip32@5.0.0",
+    "bip32@5.0.1",
+    "bip38@3.1.1",
+    "bip39@3.1.0",
+    "bip66@1.1.5",
+    "bip68@1.0.4",
+    "bitcoin-ops@1.4.1",
+    "bitcoinjs-lib@5.2.0",
+    "bitcoinjs-lib@6.1.7",
+    "bitcoinjs-lib@7.0.0",
+    "bitcoinjs-lib@7.0.1",
+    "bitcoinjs-message@2.2.0",
+    "bl@4.1.0",
+    "blakejs@1.2.1",
+    "bluebird@3.7.2",
+    "bn.js@4.12.1",
+    "bn.js@5.2.2",
+    "body-parser@2.2.2",
+    "bolt11@1.4.1",
+    "boolbase@1.0.0",
+    "brace-expansion@1.1.11",
+    "brace-expansion@2.0.1",
+    "braces@3.0.3",
+    "brorand@1.1.0",
+    "browser-process-hrtime@1.0.0",
+    "browserify-aes@1.2.0",
+    "browserify-cipher@1.0.1",
+    "browserify-des@1.0.2",
+    "browserify-rsa@4.1.1",
+    "browserify-sign@4.2.3",
+    "browserslist@4.28.1",
+    "bs58@4.0.1",
+    "bs58@5.0.0",
+    "bs58@6.0.0",
+    "bs58check@2.1.2",
+    "bs58check@3.0.1",
+    "bs58check@4.0.0",
+    "bser@2.1.1",
+    "bson@4.7.2",
+    "buffer-equals@1.0.4",
+    "buffer-from@1.1.2",
+    "buffer-xor@1.0.3",
+    "buffer@5.7.1",
+    "buffer@6.0.3",
+    "bunyamin@1.6.3",
+    "bunyan-debug-stream@3.1.1",
+    "bunyan@1.8.15",
+    "bunyan@2.0.5",
+    "bytes@3.1.2",
+    "caf@15.0.1",
+    "call-bind-apply-helpers@1.0.2",
+    "call-bind@1.0.8",
+    "call-bound@1.0.4",
+    "callsites@3.1.0",
+    "camelcase@5.3.1",
+    "camelcase@6.3.0",
+    "caniuse-lite@1.0.30001772",
+    "cbor-sync@1.0.4",
+    "chalk@2.4.2",
+    "chalk@4.1.2",
+    "chownr@1.1.4",
+    "chrome-launcher@0.15.2",
+    "chromium-edge-launcher@0.3.0",
+    "ci-info@2.0.0",
+    "ci-info@3.9.0",
+    "cipher-base@1.0.6",
+    "cli-cursor@3.1.0",
+    "cli-spinners@2.9.2",
+    "cliui@6.0.0",
+    "cliui@8.0.1",
+    "clone@1.0.4",
+    "coinselect@3.1.13",
+    "color-convert@1.9.3",
+    "color-convert@2.0.1",
+    "color-name@1.1.3",
+    "color-name@1.1.4",
+    "color-string@1.9.1",
+    "color@3.2.1",
+    "color@4.2.3",
+    "colorette@1.4.0",
+    "colorspace@1.1.4",
+    "combined-stream@1.0.8",
+    "command-exists@1.2.9",
+    "command-line-args@5.2.1",
+    "command-line-usage@6.1.3",
+    "commander@12.1.0",
+    "commander@2.20.3",
+    "commander@9.5.0",
+    "compressible@2.0.18",
+    "compression@1.8.1",
+    "concat-map@0.0.1",
+    "concat-stream@2.0.0",
+    "connect@3.7.0",
+    "consola@2.15.3",
+    "content-type@1.0.5",
+    "convert-source-map@2.0.0",
+    "core-js-compat@3.48.0",
+    "core-util-is@1.0.3",
+    "cosmiconfig@9.0.1",
+    "crc-32@1.2.2",
+    "crc@3.8.0",
+    "create-ecdh@4.0.4",
+    "create-hash@1.1.3",
+    "create-hash@1.2.0",
+    "create-hmac@1.1.7",
+    "cross-spawn@7.0.6",
+    "crypto-browserify@3.12.1",
+    "css-select@5.1.0",
+    "css-tree@1.1.3",
+    "css-what@6.1.0",
+    "csstype@3.2.3",
+    "dayjs@1.11.21",
+    "debug@2.6.9",
+    "debug@4.4.3",
+    "decamelize@1.2.0",
+    "decamelize@4.0.0",
+    "decode-uri-component@0.2.2",
+    "decompress-response@6.0.0",
+    "deep-extend@0.6.0",
+    "deepmerge@4.3.1",
+    "defaults@1.0.4",
+    "define-data-property@1.1.4",
+    "define-properties@1.2.1",
+    "delayed-stream@1.0.0",
+    "depd@2.0.0",
+    "des.js@1.1.0",
+    "destroy@1.2.0",
+    "detect-libc@2.0.3",
+    "detox@20.51.4",
+    "diffie-hellman@5.0.3",
+    "dom-serializer@2.0.0",
+    "domelementtype@2.3.0",
+    "domhandler@5.0.3",
+    "domutils@3.2.2",
+    "drbg.js@1.0.1",
+    "dtrace-provider@0.8.8",
+    "dunder-proto@1.0.1",
+    "duplexer2@0.1.4",
+    "easy-stack@1.0.1",
+    "ecpair@2.1.0",
+    "ecpair@3.0.0",
+    "ecpair@3.0.1",
+    "ecurve@1.0.6",
+    "ee-first@1.1.1",
+    "electron-to-chromium@1.5.302",
+    "electrum-client@3.1.1",
+    "electrum-mnemonic@2.0.0",
+    "elliptic@6.6.1",
+    "emoji-regex@8.0.0",
+    "enabled@2.0.0",
+    "encodeurl@1.0.2",
+    "encodeurl@2.0.0",
+    "end-of-stream@1.4.4",
+    "entities@4.5.0",
+    "env-paths@2.2.1",
+    "envinfo@7.21.0",
+    "error-ex@1.3.2",
+    "error-stack-parser@2.1.4",
+    "errorhandler@1.5.2",
+    "es-define-property@1.0.1",
+    "es-errors@1.3.0",
+    "es-object-atoms@1.1.1",
+    "es-set-tostringtag@2.1.0",
+    "escalade@3.2.0",
+    "escape-html@1.0.3",
+    "escape-string-regexp@1.0.5",
+    "escape-string-regexp@4.0.0",
+    "etag@1.8.1",
+    "event-pubsub@4.3.0",
+    "event-target-shim@5.0.1",
+    "eventemitter3@4.0.7",
+    "events@3.3.0",
+    "evp_bytestokey@1.0.3",
+    "execa@5.1.1",
+    "exeunt@1.1.0",
+    "expand-template@2.0.3",
+    "exponential-backoff@3.1.3",
+    "fast-base64-decode@1.0.0",
+    "fast-deep-equal@3.1.3",
+    "fast-glob@3.3.3",
+    "fast-uri@3.0.6",
+    "fast-xml-builder@1.2.0",
+    "fast-xml-parser@5.5.9",
+    "fastq@1.19.1",
+    "fb-dotslash@0.5.8",
+    "fb-watchman@2.0.2",
+    "fdir@6.5.0",
+    "fecha@4.2.3",
+    "file-uri-to-path@1.0.0",
+    "fill-range@7.1.1",
+    "filter-obj@1.1.0",
+    "finalhandler@1.1.2",
+    "find-replace@3.0.0",
+    "find-up@4.1.0",
+    "find-up@5.0.0",
+    "find-up@8.0.0",
+    "flat@5.0.2",
+    "flow-enums-runtime@0.0.6",
+    "fn.name@1.1.0",
+    "for-each@0.3.5",
+    "form-data@3.0.4",
+    "fresh@0.5.2",
+    "fs-constants@1.0.0",
+    "fs-extra@11.3.6",
+    "fs-extra@8.1.0",
+    "fs.realpath@1.0.0",
+    "function-bind@1.1.2",
+    "funpermaproxy@1.1.0",
+    "gensync@1.0.0-beta.2",
+    "get-caller-file@2.0.5",
+    "get-intrinsic@1.3.0",
+    "get-proto@1.0.1",
+    "get-stream@6.0.1",
+    "github-from-package@0.0.0",
+    "glob-parent@5.1.2",
+    "glob@6.0.4",
+    "glob@7.2.3",
+    "glob@8.1.0",
+    "gopd@1.2.0",
+    "graceful-fs@4.2.11",
+    "has-flag@3.0.0",
+    "has-flag@4.0.0",
+    "has-property-descriptors@1.0.2",
+    "has-symbols@1.1.0",
+    "has-tostringtag@1.0.2",
+    "hash-base@2.0.2",
+    "hash-base@3.0.5",
+    "hash-base@3.1.0",
+    "hash.js@1.1.7",
+    "hasown@2.0.2",
+    "hermes-compiler@250829098.0.10",
+    "hermes-estree@0.33.3",
+    "hermes-estree@0.35.0",
+    "hermes-estree@0.36.0",
+    "hermes-parser@0.33.3",
+    "hermes-parser@0.35.0",
+    "hermes-parser@0.36.0",
+    "hmac-drbg@1.0.1",
+    "hoist-non-react-statics@3.3.2",
+    "hosted-git-info@2.8.9",
+    "http-errors@2.0.1",
+    "https-proxy-agent@7.0.6",
+    "human-signals@2.1.0",
+    "iconv-lite@0.7.2",
+    "ieee754@1.2.1",
+    "image-size@1.2.1",
+    "import-fresh@3.3.1",
+    "inflight@1.0.6",
+    "inherits@2.0.4",
+    "ini@1.3.8",
+    "invariant@2.2.4",
+    "is-arguments@1.2.0",
+    "is-arrayish@0.2.1",
+    "is-arrayish@0.3.2",
+    "is-callable@1.2.7",
+    "is-core-module@2.16.1",
+    "is-docker@2.2.1",
+    "is-extglob@2.1.1",
+    "is-fullwidth-code-point@2.0.0",
+    "is-fullwidth-code-point@3.0.0",
+    "is-generator-function@1.1.0",
+    "is-glob@4.0.3",
+    "is-interactive@1.0.0",
+    "is-nan@1.3.2",
+    "is-number@7.0.0",
+    "is-plain-obj@2.1.0",
+    "is-regex@1.2.1",
+    "is-stream@2.0.1",
+    "is-typed-array@1.1.15",
+    "is-unicode-supported@0.1.0",
+    "is-wsl@1.1.0",
+    "is-wsl@2.2.0",
+    "isarray@1.0.0",
+    "isarray@2.0.5",
+    "iserror@0.0.2",
+    "isexe@2.0.0",
+    "isomorphic-ws@5.0.0",
+    "jest-environment-emit@1.2.0",
+    "jest-get-type@29.6.3",
+    "jest-util@29.7.0",
+    "jest-validate@29.7.0",
+    "jest-worker@29.7.0",
+    "joi@17.13.3",
+    "js-message@1.0.7",
+    "js-queue@2.0.2",
+    "js-tokens@4.0.0",
+    "js-yaml@4.1.1",
+    "jsbi@3.2.5",
+    "jsc-safe-url@0.2.4",
+    "jsesc@3.1.0",
+    "json-cycle@1.5.0",
+    "json-parse-even-better-errors@2.3.1",
+    "json-schema-traverse@1.0.0",
+    "json5@2.2.3",
+    "jsonfile@4.0.0",
+    "jsonfile@6.2.1",
+    "kleur@3.0.3",
+    "kuler@2.0.0",
+    "launch-editor@2.13.2",
+    "leven@3.1.0",
+    "light-bolt11-decoder@3.2.0",
+    "lighthouse-logger@1.4.2",
+    "lines-and-columns@1.2.4",
+    "localized-strings@0.2.4",
+    "locate-path@5.0.0",
+    "locate-path@6.0.0",
+    "locate-path@8.0.0",
+    "lodash.camelcase@4.3.0",
+    "lodash.debounce@4.0.8",
+    "lodash.memoize@4.1.2",
+    "lodash.merge@4.6.2",
+    "lodash.throttle@4.1.1",
+    "lodash@4.18.1",
+    "log-symbols@4.1.0",
+    "logform@2.7.0",
+    "logkitty@0.7.1",
+    "loose-envify@1.4.0",
+    "lottie-react-native@7.4.0",
+    "lru-cache@5.1.1",
+    "makeerror@1.0.12",
+    "marky@1.3.0",
+    "math-intrinsics@1.1.0",
+    "md5.js@1.3.5",
+    "mdn-data@2.0.14",
+    "media-typer@1.1.0",
+    "memoize-one@5.2.1",
+    "merge-options@3.0.4",
+    "merge-stream@2.0.0",
+    "merge2@1.4.1",
+    "merkle-lib@2.0.10",
+    "metro-babel-transformer@0.84.3",
+    "metro-cache-key@0.84.3",
+    "metro-cache@0.84.3",
+    "metro-config@0.84.3",
+    "metro-core@0.84.3",
+    "metro-file-map@0.84.3",
+    "metro-minify-terser@0.84.3",
+    "metro-resolver@0.84.3",
+    "metro-runtime@0.84.3",
+    "metro-source-map@0.84.3",
+    "metro-symbolicate@0.84.3",
+    "metro-transform-plugins@0.84.3",
+    "metro-transform-worker@0.84.3",
+    "metro@0.84.3",
+    "micro-packed@0.8.0",
+    "micromatch@4.0.8",
+    "miller-rabin@4.0.1",
+    "mime-db@1.52.0",
+    "mime-db@1.54.0",
+    "mime-types@2.1.35",
+    "mime-types@3.0.2",
+    "mime@1.6.0",
+    "mime@2.6.0",
+    "mimic-fn@2.1.0",
+    "mimic-response@3.1.0",
+    "minimalistic-assert@1.0.1",
+    "minimalistic-crypto-utils@1.0.1",
+    "minimatch@3.1.2",
+    "minimatch@5.1.9",
+    "minimist@1.2.8",
+    "mkdirp-classic@0.5.3",
+    "mkdirp@0.5.6",
+    "mkdirp@1.0.4",
+    "moment@2.30.1",
+    "ms@2.0.0",
+    "ms@2.1.3",
+    "multi-sort-stream@1.0.4",
+    "multipipe@4.0.0",
+    "mv@2.1.1",
+    "nan@2.22.2",
+    "nanoid@3.3.11",
+    "napi-build-utils@2.0.0",
+    "ncp@2.0.0",
+    "negotiator@0.6.3",
+    "negotiator@0.6.4",
+    "negotiator@1.0.0",
+    "nocache@3.0.4",
+    "node-abi@3.74.0",
+    "node-addon-api@5.1.0",
+    "node-gyp-build@4.8.4",
+    "node-int64@0.4.0",
+    "node-ipc@9.2.1",
+    "node-machine-id@1.1.12",
+    "node-releases@2.0.27",
+    "node-stream-zip@1.15.0",
+    "normalize-package-data@2.5.0",
+    "npm-run-path@4.0.1",
+    "nth-check@2.1.1",
+    "nullthrows@1.1.1",
+    "ob1@0.84.3",
+    "object-assign@4.1.1",
+    "object-inspect@1.13.4",
+    "object-is@1.1.6",
+    "object-keys@1.1.1",
+    "object.assign@4.1.7",
+    "on-finished@2.3.0",
+    "on-finished@2.4.1",
+    "on-headers@1.1.0",
+    "once@1.4.0",
+    "one-time@1.0.0",
+    "onetime@5.1.2",
+    "open@6.4.0",
+    "open@7.4.2",
+    "ora@5.4.1",
+    "p-limit@2.3.0",
+    "p-limit@3.1.0",
+    "p-limit@4.0.0",
+    "p-locate@4.1.0",
+    "p-locate@5.0.0",
+    "p-locate@6.0.0",
+    "p-try@2.2.0",
+    "pako@None",
+    "parent-module@1.0.1",
+    "parse-asn1@5.1.7",
+    "parse-json@5.2.0",
+    "parseurl@1.3.3",
+    "path-browserify@1.0.1",
+    "path-exists@4.0.0",
+    "path-expression-matcher@1.5.0",
+    "path-is-absolute@1.0.1",
+    "path-key@3.1.1",
+    "path-parse@1.0.7",
+    "payjoin-client@1.0.1",
+    "pbkdf2@3.1.3",
+    "picocolors@1.1.1",
+    "picomatch@2.3.1",
+    "picomatch@4.0.3",
+    "plist@3.1.1",
+    "pngjs@7.0.0",
+    "possible-typed-array-names@1.1.0",
+    "prebuild-install@7.1.3",
+    "pretty-format@29.7.0",
+    "process-nextick-args@2.0.1",
+    "promise@8.3.0",
+    "promisify-child-process@4.1.2",
+    "prompts@2.4.2",
+    "prop-types@15.8.1",
+    "proper-lockfile@3.2.0",
+    "public-encrypt@4.0.3",
+    "pump@3.0.2",
+    "punycode@1.4.1",
+    "pushdata-bitcoin@1.0.1",
+    "qr@0.6.0",
+    "qs@6.15.2",
+    "query-string@7.1.3",
+    "queue-microtask@1.2.3",
+    "queue@6.0.2",
+    "randombytes@2.1.0",
+    "randomfill@1.0.4",
+    "range-parser@1.2.1",
+    "raw-body@3.0.2",
+    "rc@1.2.8",
+    "react-devtools-core@6.1.5",
+    "react-freeze@1.0.4",
+    "react-is@16.13.1",
+    "react-is@18.3.1",
+    "react-is@19.2.6",
+    "react-localization@1.0.19",
+    "react-native-background-fetch@4.4.2",
+    "react-native-biometrics@3.0.1",
+    "react-native-blue-crypto@1.0.0",
+    "react-native-camera-kit-no-google@18.0.0",
+    "react-native-capture-protection@2.4.1",
+    "react-native-context-menu-view@1.21.0",
+    "react-native-default-preference@1.5.1",
+    "react-native-device-info@14.1.1",
+    "react-native-draggable-flatlist@4.0.3",
+    "react-native-drawer-layout@4.2.10",
+    "react-native-fs@2.20.0",
+    "react-native-gesture-handler@2.32.0",
+    "react-native-get-random-values@1.11.0",
+    "react-native-handoff@0.0.3",
+    "react-native-haptic-feedback@2.3.4",
+    "react-native-image-picker@8.2.1",
+    "react-native-is-edge-to-edge@1.3.1",
+    "react-native-keychain@10.0.0",
+    "react-native-linear-gradient@2.8.3",
+    "react-native-localize@3.7.0",
+    "react-native-notifications@5.2.2",
+    "react-native-permissions@5.6.1",
+    "react-native-prompt-android@1.0.0",
+    "react-native-quick-actions@0.3.13",
+    "react-native-reanimated@4.5.1",
+    "react-native-safe-area-context@5.8.1",
+    "react-native-screens@4.28.0",
+    "react-native-secure-key-store@2.0.10",
+    "react-native-share@12.2.6",
+    "react-native-svg@15.15.5",
+    "react-native-tcp-socket@6.4.2",
+    "react-native-worklets@0.10.2",
+    "react-native@0.85.3",
+    "react-refresh@0.14.2",
+    "react@19.2.3",
+    "read-pkg-up@7.0.1",
+    "read-pkg@5.2.0",
+    "readable-stream@2.3.8",
+    "readable-stream@3.6.2",
+    "realm@20.2.0",
+    "reduce-flatten@2.0.0",
+    "regenerate-unicode-properties@10.2.2",
+    "regenerate@1.4.2",
+    "regenerator-runtime@0.13.11",
+    "regenerator-runtime@0.14.1",
+    "regexpu-core@6.4.0",
+    "regjsgen@0.8.0",
+    "regjsparser@0.13.0",
+    "require-directory@2.1.1",
+    "require-from-string@2.0.2",
+    "require-main-filename@2.0.0",
+    "resolve-from@4.0.0",
+    "resolve-from@5.0.0",
+    "resolve@1.22.11",
+    "restore-cursor@3.1.0",
+    "retry@0.12.0",
+    "reusify@1.1.0",
+    "rimraf@2.4.5",
+    "ripemd160@2.0.1",
+    "ripemd160@2.0.2",
+    "run-parallel@1.2.0",
+    "safe-buffer@5.1.2",
+    "safe-buffer@5.2.1",
+    "safe-json-stringify@1.2.0",
+    "safe-regex-test@1.1.0",
+    "safe-stable-stringify@2.5.0",
+    "safer-buffer@2.1.2",
+    "sanitize-filename@1.6.3",
+    "scheduler@0.27.0",
+    "scryptsy@2.1.0",
+    "secp256k1@3.8.1",
+    "secp256k1@4.0.4",
+    "semver@5.7.2",
+    "semver@6.3.1",
+    "semver@7.7.1",
+    "semver@7.7.4",
+    "semver@7.8.5",
+    "send@0.19.2",
+    "serialize-error@2.1.0",
+    "serialize-error@8.1.0",
+    "serve-static@1.16.3",
+    "set-blocking@2.0.0",
+    "set-function-length@1.2.2",
+    "setprototypeof@1.2.0",
+    "sf-symbols-typescript@2.2.0",
+    "sha.js@2.4.12",
+    "shebang-command@2.0.0",
+    "shebang-regex@3.0.0",
+    "shell-quote@1.8.3",
+    "side-channel-list@1.0.0",
+    "side-channel-map@1.0.1",
+    "side-channel-weakmap@1.0.2",
+    "side-channel@1.1.0",
+    "signal-exit@3.0.7",
+    "silent-payments@2.2.1",
+    "simple-concat@1.0.1",
+    "simple-get@4.0.1",
+    "simple-swizzle@0.2.2",
+    "sisteransi@1.0.5",
+    "slice-ansi@2.1.0",
+    "slip39@0.1.9",
+    "source-map-support@0.5.21",
+    "source-map@0.5.7",
+    "source-map@0.6.1",
+    "spdx-correct@3.2.0",
+    "spdx-exceptions@2.5.0",
+    "spdx-expression-parse@3.0.1",
+    "spdx-license-ids@3.0.21",
+    "split-on-first@1.1.0",
+    "stack-generator@2.0.10",
+    "stack-trace@0.0.10",
+    "stackframe@1.3.4",
+    "stacktrace-parser@0.1.11",
+    "standard-navigation@0.0.8",
+    "statuses@1.5.0",
+    "statuses@2.0.2",
+    "stream-browserify@3.0.0",
+    "stream-chain@2.2.5",
+    "stream-json@1.9.1",
+    "strict-uri-encode@2.0.0",
+    "string-width@4.2.3",
+    "string_decoder@1.1.1",
+    "string_decoder@1.3.0",
+    "strip-ansi@5.2.0",
+    "strip-ansi@6.0.1",
+    "strip-final-newline@2.0.0",
+    "strip-json-comments@2.0.1",
+    "strnum@2.2.2",
+    "supports-color@5.5.0",
+    "supports-color@7.2.0",
+    "supports-color@8.1.1",
+    "supports-preserve-symlinks-flag@1.0.0",
+    "table-layout@1.0.2",
+    "tar-fs@2.1.2",
+    "tar-stream@2.2.0",
+    "telnet-client@1.2.8",
+    "terser@5.46.2",
+    "text-encoding@0.7.0",
+    "text-hex@1.0.0",
+    "throat@5.0.0",
+    "tiny-secp256k1@1.1.7",
+    "tinyglobby@0.2.15",
+    "tmp@0.2.7",
+    "tmpl@1.0.5",
+    "to-buffer@1.2.1",
+    "to-regex-range@5.0.1",
+    "toidentifier@1.0.1",
+    "trace-event-lib@1.4.1",
+    "triple-beam@1.4.1",
+    "truncate-utf8-bytes@1.0.2",
+    "tslib@2.8.1",
+    "tunnel-agent@0.6.0",
+    "type-fest@0.20.2",
+    "type-fest@0.6.0",
+    "type-fest@0.7.1",
+    "type-fest@0.8.1",
+    "type-is@2.0.1",
+    "typed-array-buffer@1.0.3",
+    "typedarray@0.0.6",
+    "typeforce@1.18.0",
+    "typical@4.0.0",
+    "typical@5.2.0",
+    "uint8array-tools@0.0.8",
+    "uint8array-tools@0.0.9",
+    "undici-types@6.21.0",
+    "unicode-canonical-property-names-ecmascript@2.0.1",
+    "unicode-match-property-ecmascript@2.0.0",
+    "unicode-match-property-value-ecmascript@2.2.1",
+    "unicode-property-aliases-ecmascript@2.2.0",
+    "unicorn-magic@0.3.0",
+    "universalify@0.1.2",
+    "universalify@2.0.1",
+    "unpipe@1.0.0",
+    "update-browserslist-db@1.2.3",
+    "url@0.11.4",
+    "use-latest-callback@0.2.6",
+    "use-sync-external-store@1.6.0",
+    "utf8-byte-length@1.0.5",
+    "utf8@3.0.0",
+    "util-deprecate@1.0.2",
+    "util@0.12.5",
+    "utils-merge@1.0.1",
+    "valibot@0.37.0",
+    "valibot@0.38.0",
+    "valibot@1.3.1",
+    "valibot@1.4.0",
+    "validate-npm-package-license@3.0.4",
+    "varuint-bitcoin@1.1.2",
+    "varuint-bitcoin@2.0.0",
+    "vary@1.1.2",
+    "vlq@1.0.1",
+    "walker@1.0.8",
+    "warn-once@0.1.1",
+    "wcwidth@1.0.1",
+    "whatwg-fetch@3.6.20",
+    "which-module@2.0.1",
+    "which-typed-array@1.1.19",
+    "which@1.3.1",
+    "which@2.0.2",
+    "wif@2.0.6",
+    "wif@5.0.0",
+    "winston-transport@4.9.0",
+    "winston@3.17.0",
+    "wordwrapjs@4.0.1",
+    "wrap-ansi@6.2.0",
+    "wrap-ansi@7.0.0",
+    "wrappy@1.0.2",
+    "ws-electrumx-client@1.0.5",
+    "ws@6.2.3",
+    "ws@7.5.10",
+    "ws@7.5.11",
+    "ws@8.21.3",
+    "xml-naming@0.1.0",
+    "xmlbuilder@15.1.1",
+    "y18n@4.0.3",
+    "y18n@5.0.8",
+    "yallist@3.1.1",
+    "yaml@2.8.2",
+    "yargs-parser@18.1.3",
+    "yargs-parser@21.1.1",
+    "yargs-unparser@2.0.0",
+    "yargs@15.4.1",
+    "yargs@17.7.2",
+    "yocto-queue@0.1.0",
+    "yocto-queue@1.2.2"
+   ],
+   "pods": [
+    "CocoaAsyncSocket",
+    "lottie-ios"
+   ],
+   "pods_from_npm_and_react_native": 109,
+   "total": 930
+  },
+  "Green": {
+   "spm": [
+    "abseil-cpp-binary@1.2024072200.0",
+    "app-check@11.2.0",
+    "asyncbluetooth@1.9.0",
+    "charts@5.1.0",
+    "commonui_sdk_ios@8.0.0",
+    "core_sdk_ios@4.0.0",
+    "countly-sdk-ios@23.6.1-ave",
+    "firebase-ios-sdk@11.10.0",
+    "gl-sdk-swift@0.2.1",
+    "googleappmeasurement@11.10.0",
+    "googledatatransport@10.1.0",
+    "googleutilities@8.1.0",
+    "grpc-binary@1.69.1",
+    "gtm-session-fetcher@3.5.0",
+    "interop-ios-for-google-sdks@101.0.0",
+    "leveldb@1.22.5",
+    "lwk-swift@0.19.1",
+    "messaging_sdk_ios@5.0.0",
+    "messagingapi_sdk_ios@5.0.0",
+    "nanopb@2.30910.0",
+    "promises@2.4.0",
+    "rive-ios@3.1.10",
+    "screenshield@1.2.2",
+    "sdkconfigurations_sdk_ios@3.0.0",
+    "semaphore@0.0.8",
+    "support_providers_sdk_ios@7.0.0",
+    "support_sdk_ios@7.0.0",
+    "swift-async-algorithms@1.1.2",
+    "swift-collections@1.3.0",
+    "swift-protobuf@1.26.0",
+    "swiftcbor@0.6.0"
+   ],
+   "rust": [
+    "adler2 v2.0.1",
+    "aead v0.4.3",
+    "aes v0.7.5",
+    "aes-gcm-siv v0.10.1",
+    "alloc-no-stdlib v2.0.3",
+    "alloc-stdlib v0.2.1",
+    "arrayvec v0.7.6",
+    "base58ck v0.1.0",
+    "base64 v0.13.0",
+    "base64 v0.22.1",
+    "bech32 v0.11.0",
+    "bech32 v0.9.1",
+    "bitcoin v0.29.1",
+    "bitcoin v0.32.4",
+    "bitcoin-internals v0.3.0",
+    "bitcoin-io v0.1.2",
+    "bitcoin-private v0.1.0",
+    "bitcoin-units v0.1.2",
+    "bitcoin_hashes v0.11.0",
+    "bitcoin_hashes v0.14.0",
+    "block-buffer v0.10.4",
+    "block-modes v0.8.1",
+    "block-padding v0.2.1",
+    "brotli-decompressor v5.0.0",
+    "byteorder v1.4.3",
+    "bytes v1.11.1",
+    "cfg-if v1.0.0",
+    "cipher v0.3.0",
+    "cpufeatures v0.2.5",
+    "crc32fast v1.3.2",
+    "crypto-common v0.1.6",
+    "ctr v0.7.0",
+    "digest v0.10.7",
+    "displaydoc v0.2.5 (proc-macro)",
+    "electrum-client v0.24.1",
+    "elements v0.25.1",
+    "elements-miniscript v0.4.0",
+    "flate2 v1.1.2",
+    "fnv v1.0.7",
+    "form_urlencoded v1.2.1",
+    "generic-array v0.14.5",
+    "getrandom v0.2.14",
+    "half v1.8.2",
+    "hex-conservative v0.2.1",
+    "hex_lit v0.1.1",
+    "hmac v0.12.1",
+    "http v1.3.1",
+    "httparse v1.10.1",
+    "icu_collections v1.5.0",
+    "icu_locid v1.5.0",
+    "icu_locid_transform v1.5.0",
+    "icu_locid_transform_data v1.5.0",
+    "icu_normalizer v1.5.0",
+    "icu_normalizer_data v1.5.0",
+    "icu_properties v1.5.1",
+    "icu_properties_data v1.5.0",
+    "icu_provider v1.5.0",
+    "icu_provider_macros v1.5.0 (proc-macro)",
+    "idna v1.0.3",
+    "idna_adapter v1.2.0",
+    "itoa v1.0.2",
+    "libc v0.2.170",
+    "litemap v0.7.4",
+    "log v0.4.27",
+    "memchr v2.7.4",
+    "miniscript v12.2.0",
+    "miniz_oxide v0.8.9",
+    "once_cell v1.21.3",
+    "opaque-debug v0.3.0",
+    "pbkdf2 v0.12.2",
+    "percent-encoding v2.3.1",
+    "polyval v0.5.3",
+    "ppv-lite86 v0.2.16",
+    "proc-macro2 v1.0.87",
+    "quote v1.0.37",
+    "rand v0.8.6",
+    "rand_chacha v0.3.1",
+    "rand_core v0.6.3",
+    "ring v0.17.14",
+    "rustls v0.23.37",
+    "rustls-pki-types v1.14.0",
+    "rustls-webpki v0.103.13",
+    "secp256k1 v0.24.2",
+    "secp256k1 v0.29.1",
+    "secp256k1-sys v0.10.1",
+    "secp256k1-sys v0.6.0",
+    "secp256k1-zkp v0.11.0",
+    "secp256k1-zkp-sys v0.10.1",
+    "serde v1.0.228",
+    "serde_cbor v0.11.2",
+    "serde_core v1.0.228",
+    "serde_derive v1.0.228 (proc-macro)",
+    "serde_json v1.0.149",
+    "sha2 v0.10.8",
+    "smallvec v1.13.2",
+    "socks v0.3.4",
+    "stable_deref_trait v1.2.0",
+    "subtle v2.5.0",
+    "syn v1.0.96",
+    "syn v2.0.87",
+    "synstructure v0.13.1",
+    "thiserror v1.0.31",
+    "thiserror-impl v1.0.31 (proc-macro)",
+    "tinystr v0.7.6",
+    "typenum v1.15.0",
+    "unicode-ident v1.0.1",
+    "universal-hash v0.4.0",
+    "untrusted v0.9.0",
+    "ureq v3.3.0",
+    "ureq-proto v0.6.0",
+    "url v2.5.4",
+    "utf16_iter v1.0.5",
+    "utf8-zero v0.8.1",
+    "utf8_iter v1.0.4",
+    "webpki-roots v0.25.4",
+    "webpki-roots v1.0.6",
+    "write16 v1.0.0",
+    "writeable v0.5.5",
+    "yoke v0.7.5",
+    "yoke-derive v0.7.5 (proc-macro)",
+    "zerofrom v0.1.5",
+    "zerofrom-derive v0.1.5 (proc-macro)",
+    "zeroize v1.8.2",
+    "zerovec v0.10.4",
+    "zerovec-derive v0.10.3 (proc-macro)",
+    "zmij v1.0.21"
+   ],
+   "rust_copies": 126,
+   "rust_per_library": {
+    "gdk": 126
+   },
+   "total": 157
+  },
+  "Muun": {
+   "go": [
+    "github.com/Nvveen/Gotty@v0.0.0-20120604004816-cd527374f1e5",
+    "github.com/aead/chacha20@v0.0.0-20180709150244-8b13a72661da",
+    "github.com/aead/siphash@v1.0.1",
+    "github.com/btcsuite/btcd/btcec/v2@v2.3.3",
+    "github.com/btcsuite/btcd/btcutil/psbt@v1.1.8",
+    "github.com/btcsuite/btcd/btcutil@v1.1.5",
+    "github.com/btcsuite/btcd/chaincfg/chainhash@v1.1.0",
+    "github.com/btcsuite/btcd@v0.24.2-beta.rc1.0.20240403021926-ae5533602c46",
+    "github.com/btcsuite/btclog@v0.0.0-20170628155309-84c8d2346e9f",
+    "github.com/btcsuite/btcwallet/wallet/txauthor@v1.3.4",
+    "github.com/btcsuite/btcwallet/wallet/txrules@v1.2.1",
+    "github.com/btcsuite/btcwallet/wallet/txsizes@v1.2.4",
+    "github.com/btcsuite/btcwallet/walletdb@v1.4.2",
+    "github.com/btcsuite/btcwallet/wtxmgr@v1.5.3",
+    "github.com/btcsuite/btcwallet@v0.16.10-0.20240404104514-b2f31f9045fb",
+    "github.com/btcsuite/go-socks@v0.0.0-20170105172521-4720035b7bfd",
+    "github.com/btcsuite/websocket@v0.0.0-20150119174127-31079b680792",
+    "github.com/cenkalti/backoff/v4@v4.3.0",
+    "github.com/containerd/continuity@v0.3.0",
+    "github.com/davecgh/go-spew@v1.1.1",
+    "github.com/decred/dcrd/crypto/blake256@v1.0.1",
+    "github.com/decred/dcrd/dcrec/secp256k1/v4@v4.3.0",
+    "github.com/decred/dcrd/lru@v1.1.2",
+    "github.com/docker/cli@v20.10.17+incompatible",
+    "github.com/docker/docker@v24.0.7+incompatible",
+    "github.com/docker/go-connections@v0.4.0",
+    "github.com/docker/go-units@v0.5.0",
+    "github.com/dustin/go-humanize@v1.0.1",
+    "github.com/fiatjaf/go-lnurl@v1.13.1",
+    "github.com/go-errors/errors@v1.5.1",
+    "github.com/gogo/protobuf@v1.3.2",
+    "github.com/golang-migrate/migrate/v4@v4.17.0",
+    "github.com/google/shlex@v0.0.0-20191202100458-e7afc7fbc510",
+    "github.com/google/uuid@v1.6.0",
+    "github.com/hashicorp/errwrap@v1.1.0",
+    "github.com/hashicorp/go-multierror@v1.1.1",
+    "github.com/hhrutter/lzw@v0.0.0-20190829144645-6f07a24e8650",
+    "github.com/hhrutter/tiff@v0.0.0-20190829141212-736cae8d0bc7",
+    "github.com/imdario/mergo@v0.3.12",
+    "github.com/jackc/chunkreader/v2@v2.0.1",
+    "github.com/jackc/pgconn@v1.14.3",
+    "github.com/jackc/pgerrcode@v0.0.0-20240316143900-6e2875d9b438",
+    "github.com/jackc/pgio@v1.0.0",
+    "github.com/jackc/pgpassfile@v1.0.0",
+    "github.com/jackc/pgproto3/v2@v2.3.3",
+    "github.com/jackc/pgservicefile@v0.0.0-20221227161230-091c0ba34f0a",
+    "github.com/jackc/pgtype@v1.14.0",
+    "github.com/jackc/pgx/v4@v4.18.2",
+    "github.com/jinzhu/gorm@v1.9.16",
+    "github.com/jinzhu/inflection@v1.0.0",
+    "github.com/jrick/logrotate@v1.0.0",
+    "github.com/kkdai/bstream@v1.0.0",
+    "github.com/lib/pq@v1.10.9",
+    "github.com/lightninglabs/gozmq@v0.0.0-20191113021534-d20a764486bf",
+    "github.com/lightninglabs/neutrino/cache@v1.1.2",
+    "github.com/lightninglabs/neutrino@v0.16.1-0.20240425105051-602843d34ffd",
+    "github.com/lightningnetwork/lightning-onion@v1.2.1-0.20230823005744-06182b1d7d2f",
+    "github.com/lightningnetwork/lnd/clock@v1.1.1",
+    "github.com/lightningnetwork/lnd/fn@v1.0.5",
+    "github.com/lightningnetwork/lnd/healthcheck@v1.2.4",
+    "github.com/lightningnetwork/lnd/kvdb@v1.4.8",
+    "github.com/lightningnetwork/lnd/queue@v1.1.1",
+    "github.com/lightningnetwork/lnd/sqldb@v1.0.2",
+    "github.com/lightningnetwork/lnd/ticker@v1.1.1",
+    "github.com/lightningnetwork/lnd/tlv@v1.2.3",
+    "github.com/lightningnetwork/lnd/tor@v1.1.2",
+    "github.com/lightningnetwork/lnd@v0.18.0-beta",
+    "github.com/ltcsuite/ltcd@v0.0.0-20190101042124-f37f8bf35796",
+    "github.com/mattn/go-isatty@v0.0.20",
+    "github.com/mattn/go-sqlite3@v1.14.16",
+    "github.com/miekg/dns@v1.1.43",
+    "github.com/mitchellh/mapstructure@v1.4.1",
+    "github.com/moby/term@v0.5.0",
+    "github.com/nbd-wtf/ln-decodepay@v1.6.0",
+    "github.com/ncruces/go-strftime@v0.1.9",
+    "github.com/opencontainers/go-digest@v1.0.0",
+    "github.com/opencontainers/image-spec@v1.0.2",
+    "github.com/opencontainers/runc@v1.1.12",
+    "github.com/ory/dockertest/v3@v3.10.0",
+    "github.com/pdfcpu/pdfcpu@v0.3.11",
+    "github.com/phpdave11/gofpdf@v1.4.3",
+    "github.com/pkg/errors@v0.9.1",
+    "github.com/pmezard/go-difflib@v1.0.0",
+    "github.com/remyoudompheng/bigfft@v0.0.0-20230129092748-24d4a6f8daec",
+    "github.com/shopspring/decimal@v1.2.0",
+    "github.com/sirupsen/logrus@v1.9.2",
+    "github.com/stretchr/objx@v0.5.2",
+    "github.com/stretchr/testify@v1.11.1",
+    "github.com/tidwall/gjson@v1.9.3",
+    "github.com/tidwall/match@v1.1.1",
+    "github.com/tidwall/pretty@v1.2.0",
+    "github.com/xeipuuv/gojsonpointer@v0.0.0-20180127040702-4e3ac2762d5f",
+    "github.com/xeipuuv/gojsonreference@v0.0.0-20180127040603-bd5ef7bd5415",
+    "github.com/xeipuuv/gojsonschema@v1.2.0",
+    "go.etcd.io/bbolt@v1.3.7",
+    "go.uber.org/atomic@v1.7.0",
+    "golang.org/x/crypto@v0.25.0",
+    "golang.org/x/exp@v0.0.0-20240325151524-a685a6edb6d8",
+    "golang.org/x/image@v0.18.0",
+    "golang.org/x/net@v0.27.0",
+    "golang.org/x/sys@v0.41.0",
+    "golang.org/x/term@v0.40.0",
+    "golang.org/x/text@v0.16.0",
+    "google.golang.org/protobuf@v1.36.3",
+    "gopkg.in/gormigrate.v1@v1.6.0",
+    "gopkg.in/yaml.v2@v2.4.0",
+    "gopkg.in/yaml.v3@v3.0.1",
+    "modernc.org/libc@v1.49.3",
+    "modernc.org/mathutil@v1.6.0",
+    "modernc.org/memory@v1.8.0",
+    "modernc.org/sqlite@v1.29.8"
+   ],
+   "pods": [
+    "AppAuth",
+    "Dip",
+    "Firebase",
+    "FirebaseAnalytics",
+    "FirebaseCore",
+    "FirebaseCoreExtension",
+    "FirebaseCoreInternal",
+    "FirebaseCrashlytics",
+    "FirebaseInstallations",
+    "FirebaseMessaging",
+    "FirebaseRemoteConfigInterop",
+    "FirebaseSessions",
+    "GRDB.swift",
+    "GTMAppAuth",
+    "GTMSessionFetcher",
+    "GoogleAPIClientForREST",
+    "GoogleAppMeasurement",
+    "GoogleDataTransport",
+    "GoogleSignIn",
+    "GoogleUtilities",
+    "PromisesObjC",
+    "PromisesSwift",
+    "RxBlocking",
+    "RxGRDB",
+    "RxSwift",
+    "SwiftGen",
+    "SwiftLint",
+    "nanopb"
+   ],
+   "pods_from_npm_and_react_native": 0,
+   "total": 139
   },
   "Phoenix": {
    "spm": [
@@ -936,13 +2405,12 @@
     "co.touchlab:sqliter-driver@1.3.3",
     "co.touchlab:stately-concurrency@2.1.0",
     "co.touchlab:stately-strict@2.1.0",
-    "fr.acinq.bitcoin:bitcoin-kmp@0.30.0",
-    "fr.acinq.secp256k1:secp256k1-kmp@0.23.0",
+    "fr.acinq.bitcoin:bitcoin-kmp@0.32.0",
+    "fr.acinq.secp256k1:secp256k1-kmp@0.24.0",
     "io.ktor:ktor-client-auth@3.4.1",
     "io.ktor:ktor-client-content-negotiation@3.4.1",
     "io.ktor:ktor-client-core@3.4.1",
     "io.ktor:ktor-client-darwin@3.4.1",
-    "io.ktor:ktor-client-ios@3.4.1",
     "io.ktor:ktor-client-json@3.4.1",
     "io.ktor:ktor-events@3.4.1",
     "io.ktor:ktor-http-cio@3.4.1",
@@ -967,7 +2435,7 @@
     "org.jetbrains.kotlinx:kotlinx-serialization-json-io@1.9.0",
     "org.jetbrains.kotlinx:kotlinx-serialization-json@1.9.0"
    ],
-   "total": 59
+   "total": 58
   },
   "Bitkit": {
    "spm": [
@@ -4060,6 +5528,216 @@
    "patches": [],
    "copied_lines": 0
   },
+  "BlueWallet": {
+   "copied_packages": {
+    "blue_modules/pako": {
+     "lines": 3806,
+     "counted": "source"
+    },
+    "blue_modules/bc-ur": {
+     "lines": 222,
+     "counted": "published build output"
+    },
+    "blue_modules/bc-bech32": {
+     "lines": 209,
+     "counted": "published build output"
+    },
+    "blue_modules/bbqr": {
+     "lines": 638,
+     "counted": "source"
+    },
+    "blue_modules/uint8array-extras": {
+     "lines": 261,
+     "counted": "source"
+    }
+   },
+   "nested_licenses": [
+    "/blue_modules/pako/LICENSE"
+   ],
+   "binaries": [],
+   "patches": [
+    "README.md",
+    "react-native-background-fetch+4.4.2.patch",
+    "react-native-context-menu-view+1.21.0.patch",
+    "react-native-notifications+5.2.2.patch",
+    "react-native-screens+4.27.0.patch"
+   ],
+   "copied_lines": 5136
+  },
+  "Green": {
+   "copied_packages": {},
+   "nested_licenses": [],
+   "binaries": [],
+   "patches": [],
+   "copied_lines": 0
+  },
+  "Muun": {
+   "copied_packages": {
+    "falcon/app/Pods/AppAuth": {
+     "lines": 4726,
+     "counted": "source"
+    },
+    "falcon/app/Pods/Dip": {
+     "lines": 1191,
+     "counted": "source"
+    },
+    "falcon/app/Pods/Firebase": {
+     "lines": 51,
+     "counted": "source"
+    },
+    "falcon/app/Pods/FirebaseAnalytics": {
+     "lines": 4098,
+     "counted": "source"
+    },
+    "falcon/app/Pods/FirebaseCore": {
+     "lines": 1934,
+     "counted": "source"
+    },
+    "falcon/app/Pods/FirebaseCoreExtension": {
+     "lines": 240,
+     "counted": "source"
+    },
+    "falcon/app/Pods/FirebaseCoreInternal": {
+     "lines": 654,
+     "counted": "source"
+    },
+    "falcon/app/Pods/FirebaseCrashlytics": {
+     "lines": 15302,
+     "counted": "source"
+    },
+    "falcon/app/Pods/FirebaseInstallations": {
+     "lines": 2465,
+     "counted": "source"
+    },
+    "falcon/app/Pods/FirebaseMessaging": {
+     "lines": 7008,
+     "counted": "source"
+    },
+    "falcon/app/Pods/FirebaseRemoteConfigInterop": {
+     "lines": 46,
+     "counted": "source"
+    },
+    "falcon/app/Pods/FirebaseSessions": {
+     "lines": 1573,
+     "counted": "source"
+    },
+    "falcon/app/Pods/GRDB.swift": {
+     "lines": 19698,
+     "counted": "source"
+    },
+    "falcon/app/Pods/GTMAppAuth": {
+     "lines": 911,
+     "counted": "source"
+    },
+    "falcon/app/Pods/GTMSessionFetcher": {
+     "lines": 8312,
+     "counted": "source"
+    },
+    "falcon/app/Pods/GoogleAPIClientForREST": {
+     "lines": 5604,
+     "counted": "source"
+    },
+    "falcon/app/Pods/GoogleDataTransport": {
+     "lines": 4808,
+     "counted": "source"
+    },
+    "falcon/app/Pods/GoogleSignIn": {
+     "lines": 3388,
+     "counted": "source"
+    },
+    "falcon/app/Pods/GoogleUtilities": {
+     "lines": 4263,
+     "counted": "source"
+    },
+    "falcon/app/Pods/PromisesObjC": {
+     "lines": 1740,
+     "counted": "source"
+    },
+    "falcon/app/Pods/PromisesSwift": {
+     "lines": 807,
+     "counted": "source"
+    },
+    "falcon/app/Pods/RxBlocking": {
+     "lines": 630,
+     "counted": "source"
+    },
+    "falcon/app/Pods/RxGRDB": {
+     "lines": 617,
+     "counted": "source"
+    },
+    "falcon/app/Pods/RxSwift": {
+     "lines": 9293,
+     "counted": "source"
+    },
+    "falcon/app/Pods/nanopb": {
+     "lines": 2335,
+     "counted": "source"
+    }
+   },
+   "nested_licenses": [
+    "/falcon/app/Pods/AppAuth/LICENSE",
+    "/falcon/app/Pods/Dip/LICENSE",
+    "/falcon/app/Pods/Firebase/LICENSE",
+    "/falcon/app/Pods/FirebaseCore/LICENSE",
+    "/falcon/app/Pods/FirebaseCoreExtension/LICENSE",
+    "/falcon/app/Pods/FirebaseCoreInternal/LICENSE",
+    "/falcon/app/Pods/FirebaseCrashlytics/Crashlytics/LICENSE",
+    "/falcon/app/Pods/FirebaseInstallations/LICENSE",
+    "/falcon/app/Pods/FirebaseMessaging/LICENSE",
+    "/falcon/app/Pods/FirebaseRemoteConfigInterop/LICENSE",
+    "/falcon/app/Pods/FirebaseSessions/LICENSE",
+    "/falcon/app/Pods/GRDB.swift/LICENSE",
+    "/falcon/app/Pods/GTMAppAuth/LICENSE",
+    "/falcon/app/Pods/GTMSessionFetcher/LICENSE",
+    "/falcon/app/Pods/GoogleAPIClientForREST/LICENSE",
+    "/falcon/app/Pods/GoogleDataTransport/LICENSE",
+    "/falcon/app/Pods/GoogleSignIn/LICENSE",
+    "/falcon/app/Pods/GoogleUtilities/LICENSE",
+    "/falcon/app/Pods/PromisesObjC/LICENSE",
+    "/falcon/app/Pods/PromisesSwift/LICENSE",
+    "/falcon/app/Pods/RxBlocking/LICENSE.md",
+    "/falcon/app/Pods/RxGRDB/LICENSE",
+    "/falcon/app/Pods/RxSwift/LICENSE.md",
+    "/falcon/app/Pods/SwiftGen/LICENCE",
+    "/falcon/app/Pods/SwiftLint/LICENSE",
+    "/falcon/app/Pods/nanopb/LICENSE.txt",
+    "/libwallet/LICENSE",
+    "/libwallet/data/emergency_kit/resources/fonts/LICENSE",
+    "/prover/libs/plonky2-sha256/LICENSE"
+   ],
+   "binaries": [
+    "/falcon/app/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework",
+    "/falcon/app/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64/FirebaseAnalytics.framework",
+    "/falcon/app/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-maccatalyst/FirebaseAnalytics.framework",
+    "/falcon/app/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-simulator/FirebaseAnalytics.framework",
+    "/falcon/app/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/macos-arm64_x86_64/FirebaseAnalytics.framework",
+    "/falcon/app/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64/FirebaseAnalytics.framework",
+    "/falcon/app/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator/FirebaseAnalytics.framework",
+    "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework",
+    "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/ios-arm64/GoogleAppMeasurement.framework",
+    "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework",
+    "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-simulator/GoogleAppMeasurement.framework",
+    "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework",
+    "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework",
+    "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework",
+    "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework",
+    "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64/GoogleAppMeasurementIdentitySupport.framework",
+    "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurementIdentitySupport.framework",
+    "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework",
+    "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/macos-arm64_x86_64/GoogleAppMeasurementIdentitySupport.framework",
+    "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64/GoogleAppMeasurementIdentitySupport.framework",
+    "/falcon/app/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework",
+    "/falcon/app/Pods/SwiftGen/lib/Commander.framework",
+    "/falcon/app/Pods/SwiftGen/lib/Kanna.framework",
+    "/falcon/app/Pods/SwiftGen/lib/PathKit.framework",
+    "/falcon/app/Pods/SwiftGen/lib/Stencil.framework",
+    "/falcon/app/Pods/SwiftGen/lib/StencilSwiftKit.framework",
+    "/falcon/app/Pods/SwiftGen/lib/SwiftGenKit.framework",
+    "/falcon/app/Pods/SwiftGen/lib/Yams.framework"
+   ],
+   "patches": [],
+   "copied_lines": 101694
+  },
   "Phoenix": {
    "copied_packages": {},
    "nested_licenses": [],
@@ -4123,125 +5801,75 @@
  },
  "features": {
   "Winnow": {
-   "bolt11_pay": {
-    "value": "yes",
-    "evidence": "winnow:Sources/WinnowApp/SendView.swift:218; winnow:Sources/WinnowLightningApp/LightningAppInvoicePayments.swift:18; winnow:Sources/LightningCore/LightningPeerRouting.swift:7",
-    "note": "Single-part payments from Send; Winnow finds the route from the invoice hints and the public graph"
-   },
-   "bolt11_receive": {
-    "value": "yes",
-    "evidence": "winnow:Sources/WinnowLightningApp/LightningReceiveView.swift:46; winnow:Sources/WinnowLightningApp/LightningAppReceiving.swift:150",
-    "note": "Single-use invoice with a provider route hint; the app must stay open"
-   },
-   "bolt12_pay": {
-    "value": "yes",
-    "evidence": "winnow:Sources/WinnowLightningApp/LightningView.swift:48; winnow:Sources/WinnowLightningApp/LightningAppOffers.swift:19; winnow:Sources/LightningCore/LightningAsyncSending.swift:14",
-    "note": "Requests an invoice from the offer over onion messages, then a separate route and fee review; async static invoices too"
-   },
-   "bolt12_receive": {
-    "value": "yes",
-    "evidence": "winnow:Sources/WinnowLightningApp/LightningView.swift:163; winnow:Sources/WinnowLightningApp/LightningProviders.swift:16",
-    "note": "Reusable offer once a channel has inbound capacity; the app must be open to answer. Offline offers need an async provider profile"
-   },
-   "offline_receive": {
-    "value": "partial",
-    "evidence": "winnow:Sources/WinnowLightningApp/LightningInputViews.swift:31; winnow:docs/engineering/swift-lightning.md:65",
-    "note": "LDK-style async hold/release via imported profile only; no push"
-   },
-   "lnurl": {
-    "value": "no",
-    "evidence": "winnow:Sources/WinnowLightningApp/LightningAppPayments.swift:15; winnow:Sources/WinnowLightningApp/LightningAppOffers.swift:41",
-    "note": "No LNURL code; send takes BOLT 11 invoices, BOLT 12 offers and BIP 353 names"
-   },
-   "ln_address_pay": {
-    "value": "no",
-    "evidence": "winnow:Sources/WinnowLightningApp/LightningAppOffers.swift:41",
-    "note": "user@domain resolves only as a BIP 353 name, not through LNURL-pay"
-   },
-   "ln_address_receive": {
-    "value": "no",
-    "evidence": "winnow:Sources/WinnowLightningApp/LightningReceiveView.swift:46; winnow:Sources/WinnowLightningApp/LightningView.swift:163",
-    "note": "Receive gives a BOLT 11 invoice or a BOLT 12 offer; no hosted address"
-   },
-   "bip353": {
-    "value": "yes",
-    "evidence": "winnow:Sources/WinnowLightningApp/LightningAppOffers.swift:41; winnow:Sources/LightningCore/BIP353Resolver.swift:8",
-    "note": "₿name@domain resolves to an offer, with DNSSEC checked on the device rather than trusting the resolver"
-   },
-   "mpp": {
-    "value": "no",
-    "evidence": "winnow:Sources/LightningCore/LightningFeatures.swift:30; winnow:Sources/LightningCore/README.md:180",
-    "note": "Single-part payments only; the advertised features exclude MPP"
-   },
-   "keysend": {
-    "value": "no",
-    "evidence": "winnow:Sources/WinnowLightningApp/LightningInputViews.swift:76; winnow:Sources/LightningCore/AsyncPaymentRoute.swift:62",
-    "note": "Keysend TLV used only internally for async payments; no user keysend"
-   },
-   "choose_peer": {
-    "value": "yes",
-    "evidence": "winnow:Sources/WinnowLightningApp/LightningProviders.swift:19; winnow:Sources/WinnowLightningApp/LightningInputViews.swift:30",
-    "note": "Olympus by ZEUS, Megalith, LNServer Wave, or import any node profile; one channel"
-   },
-   "jit_channels": {
-    "value": "partial",
-    "evidence": "winnow:Sources/WinnowLightningApp/LightningAppReceiving.swift:60; winnow:Sources/WinnowLightningApp/LightningLiquidityView.swift:116",
-    "note": "LSPS1 inbound purchase (Olympus, Megalith); the setup fee is paid from another wallet; no LSPS2"
-   },
-   "splicing": {
-    "value": "no",
-    "evidence": "winnow:Sources/LightningCore/README.md:179",
-    "note": "Not implemented or advertised"
-   },
-   "anchors": {
-    "value": "yes",
-    "evidence": "winnow:Sources/LightningCore/README.md:17; winnow:Sources/LightningCore/ChannelTransactions.swift:4",
-    "note": "Negotiates option_anchors for new channels; older channels keep static-remotekey"
-   },
-   "local_pathfinding": {
-    "value": "yes",
-    "evidence": "winnow:Sources/LightningCore/LightningPeerRouting.swift:7; winnow:Sources/LightningCore/LightningRoutingGraph.swift:16",
-    "note": "For BOLT 11, searches a graph of up to 150,000 channels fetched from its channel partner and cached for 10 minutes; one path"
-   },
-   "watchtower": {
-    "value": "partial",
-    "evidence": "winnow:docs/engineering/swift-lightning.md:54-55; winnow:Sources/WinnowLightningApp/LightningView.swift:27",
-    "note": "No external watchtower; background checks relay pre-signed recovery transactions when iOS allows"
-   },
-   "channel_backup": {
-    "value": "partial",
-    "evidence": "winnow:Sources/WinnowLightningApp/LightningBackupView.swift:35; winnow:docs/engineering/swift-lightning.md:40-44",
-    "note": "Channels are saved only in an encrypted recovery file you export by hand; it opens with the wallet’s recovery phrase. iCloud backup covers the Bitcoin wallet, not channels"
-   },
-   "onchain_independent": {
-    "value": "yes",
-    "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:664; winnow:Sources/LightningCore/README.md:45",
-    "note": "Single-key BIP86 Taproot wallet; channels are funded from it, not the reverse"
-   },
-   "taproot": {
-    "value": "yes",
-    "evidence": "winnow:README.md:8; winnow:Sources/WalletCore/Wallet/Wallet.swift:723",
-    "note": "Ordinary receive uses BIP86 P2TR"
-   },
    "multisig": {
     "value": "yes",
-    "evidence": "winnow:README.md:9; winnow:Sources/WinnowApp/VaultsView.swift:72",
-    "note": "Threshold shared savings (e.g. 2-of-3) and MuSig2 accounts"
+    "evidence": "winnow:Sources/WinnowApp/VaultsView.swift:41-42; winnow:Sources/WinnowApp/VaultsView.swift:47-48; winnow:Sources/WinnowApp/SharedSavingsViews.swift:104-105",
+    "note": "k-of-n threshold accounts and all-keys MuSig2; add this phone's key and pasted keys from other signers"
    },
    "hw_signer": {
     "value": "partial",
-    "evidence": "winnow:Sources/WinnowApp/VaultsView.swift:72; winnow:Sources/WinnowApp/VaultSpendSession.swift:410",
-    "note": "PSBT/MuSig2 cosigning with another device (Core tested); hardware wallets unverified"
+    "evidence": "winnow:Sources/WinnowApp/VaultsView.swift:72; winnow:Sources/WinnowApp/MuSig2SignView.swift:126-136",
+    "note": "Cosigns by pasting PSBTs with another Winnow or Core; hardware wallets are stated as not yet verified"
+   },
+   "psbt": {
+    "value": "partial",
+    "evidence": "winnow:Sources/WinnowApp/VaultSpendSession.swift:102-111; winnow:Sources/WinnowApp/VaultSpendSession.swift:400-403; winnow:Sources/WinnowApp/MuSig2SignView.swift:126-136",
+    "note": "Shared accounts only: copy or share a request or raw PSBT and paste one back; the everyday wallet signs in-app"
+   },
+   "watch_only": {
+    "value": "partial",
+    "evidence": "winnow:Sources/WinnowApp/OnboardingView.swift:39; winnow:Sources/WalletCore/Wallet/ImportBundle.swift:61-63; winnow:Sources/WinnowApp/SharedSavingsViews.swift:207",
+    "note": "Descriptor-only backup JSON restores watch-only; shared accounts add from a card; no xpub or address entry"
+   },
+   "passphrase": {
+    "value": "no",
+    "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:646-647; winnow:Sources/WalletCore/Wallet/ImportBundle.swift:443",
+    "note": "Seed is derived with an empty BIP39 passphrase; no passphrase field when creating, backing up or importing"
    },
    "coin_control": {
     "value": "no",
-    "evidence": "winnow:Sources/WinnowApp/AppModel.swift:2058",
-    "note": "Automatic coin selection over all spendable UTXOs; coins list read-only"
+    "evidence": "winnow:Sources/WinnowApp/AppModel.swift:1893-1897; winnow:Sources/WalletCore/Wallet/Vault.swift:589-592",
+    "note": "Send picks coins automatically, largest first, for the wallet and shared accounts; coin list is read-only"
+   },
+   "fee_bump": {
+    "value": "partial",
+    "evidence": "winnow:Sources/WinnowApp/HomeView.swift:328-329; winnow:Sources/WalletCore/Wallet/Wallet.swift:781-789; winnow:Sources/WinnowApp/AppModel.swift:2040-2046",
+    "note": "RBF Bump fee in Advanced mode for own pending sends with unspent change; none for shared accounts; no CPFP"
+   },
+   "taproot": {
+    "value": "yes",
+    "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:646-652; winnow:Sources/WinnowApp/ReceiveView.swift:151; winnow:README.md:8",
+    "note": "Receives to BIP86 bc1p addresses by default; shared accounts are Taproot too (script path or MuSig2)"
+   },
+   "descriptors": {
+    "value": "partial",
+    "evidence": "winnow:Sources/WinnowApp/AccountDetailView.swift:120-123; winnow:Sources/WinnowApp/VaultsView.swift:120-125; winnow:Sources/WalletCore/Wallet/ImportBundle.swift:32",
+    "note": "Shared accounts show a copyable descriptor in Advanced mode; the everyday wallet's is only inside its backup JSON"
+   },
+   "own_server": {
+    "value": "yes",
+    "evidence": "winnow:Sources/WinnowApp/SettingsView.swift:83-95; winnow:Sources/WinnowApp/SettingsView.swift:106; winnow:Sources/WalletCore/Network/Peers/PeerPool.swift:635-637",
+    "note": "Manual host:port peers under Advanced mode, tried first; peer must serve compact filters; pool still fills from others"
+   },
+   "verifies_chain": {
+    "value": "yes",
+    "evidence": "winnow:Sources/WalletCore/Network/Filters/FilterSync.swift:81-98; winnow:Sources/WalletCore/Network/Headers/README.md:5-6",
+    "note": "Checks header work, cross-checks filter headers across peers, matches filters locally; verifies fetched blocks"
    },
    "tor": {
     "value": "partial",
-    "evidence": "winnow:README.md:11; winnow:Sources/WalletCore/Network/Transport/TailnetGatewayDiscovery.swift:17; winnow:Sources/WinnowApp/PeerGatewaysSection.swift:17",
-    "note": "No bundled Tor; reaches Tor and I2P Bitcoin peers through a SOCKS gateway you run, found on your Tailscale network or set by hand"
+    "evidence": "winnow:README.md:11; winnow:Sources/WinnowApp/PeerGatewaysSection.swift:17-21; winnow:Sources/WalletCore/Network/Transport/TailnetGatewayDiscovery.swift:18-19",
+    "note": "No bundled Tor or I2P client; routes peers through SOCKS gateways you run, found on Tailscale or set by hand"
+   },
+   "seed_standard": {
+    "value": "yes",
+    "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:646-649; winnow:Sources/WinnowApp/BackupSection.swift:43; winnow:Sources/WalletCore/Keys/BIP86.swift:10",
+    "note": "12-word BIP39 phrase on BIP86 paths; the app restores only from its backup file, not from the words alone"
+   },
+   "cloud_backup": {
+    "value": "yes",
+    "evidence": "winnow:Sources/WinnowApp/CloudBackupController.swift:24; winnow:Sources/WalletCore/Wallet/CloudWalletBackup.swift:4-6; winnow:Sources/WinnowApp/ICloudBackupStore.swift:116-117",
+    "note": "On by default: AES-GCM backup to the person's private CloudKit database, key in iCloud Keychain; file backup too"
    },
    "license": {
     "value": "MIT",
@@ -4249,577 +5877,701 @@
     "note": "MIT License"
    }
   },
-  "Phoenix": {
-   "bolt11_pay": {
-    "value": "yes",
-    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/SendManager.kt:453; phoenix:phoenix-ios/phoenix-ios/views/send/ValidateView.swift:1867",
-    "note": "payBolt11Invoice sends PayInvoice to peer via trampoline"
-   },
-   "bolt11_receive": {
-    "value": "yes",
-    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/controllers/payments/ReceiveController.kt:48; phoenix:phoenix-ios/phoenix-ios/views/receive/LightningDualView.swift:342",
-    "note": "'Single use' tab generates BOLT11 invoice via peer.createInvoice"
-   },
-   "bolt12_pay": {
-    "value": "yes",
-    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/SendManager.kt:477; phoenix:phoenix-ios/phoenix-ios/views/send/ValidateView.swift:1912",
-    "note": "payBolt12Offer sends PayOffer command"
-   },
-   "bolt12_receive": {
-    "value": "yes",
-    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/receive/LightningDualView.swift:343; phoenix:phoenix-ios/phoenix-ios/views/receive/LightningDualView.swift:710",
-    "note": "'Reusable' tab shows deterministic BOLT12 offer"
-   },
-   "offline_receive": {
-    "value": "yes",
-    "evidence": "phoenix:phoenix-ios/phoenix-notifySrvExt/NotificationService.swift:423; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:240",
-    "note": "Push notification wakes service extension, which connects and receives payment (incl. BOLT12)"
-   },
-   "lnurl": {
-    "value": "yes",
-    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/send/ValidateView.swift:2094; phoenix:phoenix-ios/phoenix-ios/views/send/ValidateView.swift:2141",
-    "note": "LNURL-pay, LNURL-withdraw, and LNURL-auth (LoginView) supported"
-   },
-   "ln_address_pay": {
-    "value": "yes",
-    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/SendManager.kt:267",
-    "note": "user@domain resolved via LNURL, with BIP353 tried first for ambiguous input"
-   },
-   "ln_address_receive": {
-    "value": "partial",
-    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/Experimental.swift:224; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/io/Peer.kt:884",
-    "note": "Experimental menu: claim BIP353 address for your BOLT12 offer; not an LNURL address"
-   },
-   "bip353": {
-    "value": "yes",
-    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/SendManager.kt:283",
-    "note": "DNS TXT lookup over DoH, checks DNSSEC AD flag, extracts offer"
-   },
-   "mpp": {
-    "value": "partial",
-    "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/payment/IncomingPaymentHandler.kt:61; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/payment/OutgoingPaymentHandler.kt:277",
-    "note": "Receives multipart; sends a single part over one channel to the trampoline"
-   },
-   "keysend": {
-    "value": "no",
-    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/SendManager.kt:13",
-    "note": "Only PayInvoice/PayOffer; no keysend code in app or lightning-kmp"
-   },
-   "choose_peer": {
-    "value": "no",
-    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/NodeParamsManager.kt:87",
-    "note": "Only peer is the hardcoded ACINQ trampoline node"
-   },
-   "jit_channels": {
-    "value": "yes",
-    "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:241; phoenix:phoenix-ios/phoenix-ios/views/configuration/fees/liquidity management/LiquidityAdsView.swift:926",
-    "note": "ACINQ opens/splices channels on the fly; manual inbound liquidity purchase via liquidity ads"
-   },
-   "splicing": {
-    "value": "yes",
-    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/send/ValidateView.swift:1970; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/io/Peer.kt:1477",
-    "note": "On-chain sends are splice-outs; swap-in deposits are spliced in automatically"
-   },
-   "anchors": {
-    "value": "yes",
-    "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/transactions/Transactions.kt:86; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/io/Peer.kt:1560",
-    "note": "Anchor-outputs format; new channels are simple-taproot, which also have anchors"
-   },
-   "local_pathfinding": {
-    "value": "no",
-    "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/payment/OutgoingPaymentHandler.kt:90",
-    "note": "No network graph; all payments routed by ACINQ trampoline node"
-   },
-   "watchtower": {
-    "value": "partial",
-    "evidence": "phoenix:phoenix-ios/phoenix-ios/officers/WatchTower.swift:336",
-    "note": "No remote watchtower client; app wakes in background to check for revoked commitments"
-   },
-   "channel_backup": {
-    "value": "yes",
-    "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:158; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:281",
-    "note": "Encrypted channel backup kept by ACINQ peer (peer storage); restorable from seed"
-   },
-   "onchain_independent": {
-    "value": "partial",
-    "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/transactions/SwapInProtocol.kt:11; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:94; phoenix:phoenix-ios/phoenix-ios/views/send/ValidateView.swift:1576",
-    "note": "Deposits are 2-of-2 with ACINQ, yours alone after about six months; sends are splice-outs with ACINQ"
-   },
-   "taproot": {
-    "value": "yes",
-    "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/transactions/SwapInProtocol.kt:25; phoenix:phoenix-ios/phoenix-ios/views/receive/SwapInView.swift:28",
-    "note": "Swap-in receive address is P2TR by default (legacy option available)"
-   },
+  "BlueWallet": {
    "multisig": {
-    "value": "no",
-    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/WalletManager.kt:48",
-    "note": "Single-seed wallet; 2-of-2 swap-in with ACINQ is internal, not user multisig"
-   },
-   "hw_signer": {
-    "value": "no",
-    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/WalletManager.kt:48",
-    "note": "Keys come from a LocalKeyManager built from the local seed; no PSBT/hardware wallet code"
-   },
-   "coin_control": {
-    "value": "no",
-    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:173",
-    "note": "On-chain spends are splice-outs or 'send all'; no UTXO selection"
-   },
-   "tor": {
-    "value": "partial",
-    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/tor/TorConfigurationView.swift:66",
-    "note": "Tor toggle uses .onion endpoints but needs external Orbot VPN; not bundled"
-   },
-   "license": {
-    "value": "Apache-2.0",
-    "evidence": "phoenix:LICENSE:1",
-    "note": "Apache License 2.0"
-   }
-  },
-  "Bitkit": {
-   "bolt11_pay": {
     "value": "yes",
-    "evidence": "bitkit:Bitkit/Services/LightningService.swift:811; bitkit:Bitkit/ViewModels/WalletViewModel.swift:892",
-    "note": "Scanned/pasted invoices paid via LDK Node bolt11Payment().send"
-   },
-   "bolt11_receive": {
-    "value": "yes",
-    "evidence": "bitkit:Bitkit/Services/LightningService.swift:712; bitkit:Bitkit/ViewModels/WalletViewModel.swift:1417",
-    "note": "Receive screen shows BIP21 with an embedded bolt11 invoice"
-   },
-   "bolt12_pay": {
-    "value": "engine-only",
-    "evidence": "synonym-ldk-node:src/lib.rs:1058; bitkit:Bitkit/ViewModels/AppViewModel.swift:831",
-    "note": "The app never calls bolt12Payment; offers fall through to 'Unsupported' toast"
-   },
-   "bolt12_receive": {
-    "value": "engine-only",
-    "evidence": "synonym-ldk-node:src/lib.rs:1058; bitkit:Bitkit/Services/LightningService.swift:712",
-    "note": "The app creates only bolt11 invoices, never offers"
-   },
-   "offline_receive": {
-    "value": "partial",
-    "evidence": "bitkit:BitkitNotification/NotificationService.swift:7; bitkit:Bitkit/Constants/Env.swift:328",
-    "note": "Blocktank push asks user to open app; extension doesn't start node"
-   },
-   "lnurl": {
-    "value": "yes",
-    "evidence": "bitkit:Bitkit/ViewModels/AppViewModel.swift:791; bitkit:Bitkit/Views/Wallets/LnurlWithdraw/LnurlWithdrawConfirm.swift:73",
-    "note": "LNURL-pay, withdraw, channel and auth all handled"
-   },
-   "ln_address_pay": {
-    "value": "yes",
-    "evidence": "bitkit:Bitkit/Utilities/PaymentNavigationHelper.swift:65; bitkit:Bitkit/ViewModels/AppViewModel.swift:637",
-    "note": "bitkit-core decode turns user@domain into LNURL-pay (source not in scratchpad)"
-   },
-   "ln_address_receive": {
-    "value": "no",
-    "evidence": "bitkit:Bitkit/ViewModels/WalletViewModel.swift:1417; bitkit:Bitkit/Components/CopyAddressCard.swift:35",
-    "note": "Receive offers only on-chain/bolt11; Pubky/Paykit profile keys are a separate system"
-   },
-   "bip353": {
-    "value": "no",
-    "evidence": "synonym-ldk-node:src/payment/unified_qr.rs:29; bitkit:Bitkit/ViewModels/AppViewModel.swift:831",
-    "note": "No DNS/HRN resolution in fork or app; user@domain resolves as LNURL"
-   },
-   "mpp": {
-    "value": "yes",
-    "evidence": "rust-lightning:lightning/src/routing/router.rs:794; synonym-ldk-node:src/payment/bolt11.rs:122",
-    "note": "LDK router splits payments automatically, up to 10 paths by default"
-   },
-   "keysend": {
-    "value": "engine-only",
-    "evidence": "synonym-ldk-node:src/payment/spontaneous.rs:55; bitkit:Bitkit/Services/LightningService.swift:1790",
-    "note": "App uses spontaneous only for probes in the hidden dev settings"
-   },
-   "choose_peer": {
-    "value": "yes",
-    "evidence": "bitkit:Bitkit/Views/Transfer/FundAdvancedOptions.swift:37; bitkit:Bitkit/ViewModels/TransferViewModel.swift:1296",
-    "note": "Default LSP is Blocktank; manual open to any node URI, or LNURL-channel from other LSPs"
-   },
-   "jit_channels": {
-    "value": "yes",
-    "evidence": "bitkit:Bitkit/ViewModels/BlocktankViewModel.swift:169; bitkit:Bitkit/ViewModels/BlocktankViewModel.swift:347",
-    "note": "Blocktank CJIT on receive, plus paid orders for inbound liquidity"
-   },
-   "splicing": {
-    "value": "engine-only",
-    "evidence": "synonym-ldk-node:src/lib.rs:1526; bitkit:Bitkit/Services/LightningService.swift:1528",
-    "note": "App only logs splice events and never calls spliceIn/spliceOut"
-   },
-   "anchors": {
-    "value": "yes",
-    "evidence": "bitkit:Bitkit/Services/LightningService.swift:107; synonym-ldk-node:src/config.rs:432",
-    "note": "Anchor channels config is set, with zero reserve for trusted Blocktank peers"
-   },
-   "local_pathfinding": {
-    "value": "yes",
-    "evidence": "bitkit:Bitkit/Services/LightningService.swift:1116; bitkit:Bitkit/Constants/Env.swift:255",
-    "note": "Local LDK routing using Blocktank RGS snapshot and Blocktank-hosted scorer"
-   },
-   "watchtower": {
-    "value": "no",
-    "evidence": "bitkit:Bitkit/Services/LightningService.swift:120; synonym-ldk-node:src/builder.rs:483",
-    "note": "No watchtower client configured in app or offered by LDK Node"
-   },
-   "channel_backup": {
-    "value": "yes",
-    "evidence": "bitkit:Bitkit/Services/LightningService.swift:168; bitkit:Bitkit/Constants/Env.swift:340",
-    "note": "All LDK state stored remotely in Synonym VSS server (bitkit.to)"
-   },
-   "onchain_independent": {
-    "value": "yes",
-    "evidence": "bitkit:Bitkit/Services/LightningService.swift:641; bitkit:Bitkit/Services/LightningService.swift:797",
-    "note": "LDK Node's single-key on-chain wallet; sends do not involve Blocktank"
-   },
-   "taproot": {
-    "value": "yes",
-    "evidence": "bitkit:Bitkit/Extensions/LDKNode+AddressType.swift:7; bitkit:Bitkit/Views/Settings/Advanced/AddressTypePreferenceView.swift:109",
-    "note": "Selectable address type in Advanced settings; default is native segwit"
-   },
-   "multisig": {
-    "value": "no",
-    "evidence": "bitkit:Bitkit/Extensions/LDKNode+AddressType.swift:7",
-    "note": "Only single-sig address types; no multisig or shared accounts found"
+    "evidence": "bluewallet:screen/wallets/Add.tsx:294; bluewallet:screen/wallets/WalletsAddMultisig.tsx:54-58; bluewallet:screen/wallets/addMultisigStep2.tsx:226-232",
+    "note": "Vault wallet type: m-of-n (default 2-of-3); person can generate or import several keys in the app"
    },
    "hw_signer": {
     "value": "yes",
-    "evidence": "bitkit:Bitkit/Services/Trezor/TrezorService.swift:157; bitkit:Bitkit/Views/Settings/General/HardwareWalletsSettingsScreen.swift:35",
-    "note": "Trezor pairing (BLE); on-chain sends and transfers signed on device"
+    "evidence": "bluewallet:class/wallets/abstract-wallet.ts:321-337; bluewallet:class/wallets/abstract-wallet.ts:339-347; bluewallet:screen/send/ScanQRCode.tsx:165-170; bluewallet:screen/wallets/WalletDetails.tsx:813",
+    "note": "Imports Coldcard/Cobo/Keystone-style keys by QR or file and signs via PSBT QR or file; no USB, Bluetooth or NFC link"
+   },
+   "psbt": {
+    "value": "yes",
+    "evidence": "bluewallet:screen/send/psbtWithHardwareWallet.tsx:259; bluewallet:screen/send/psbtWithHardwareWallet.tsx:270-280; bluewallet:screen/send/psbtWithHardwareWallet.tsx:314",
+    "note": "Unsigned PSBT shows as animated QR, file or clipboard; signed PSBT is scanned or opened from a file"
+   },
+   "watch_only": {
+    "value": "yes",
+    "evidence": "bluewallet:class/wallet-import.ts:502-528; bluewallet:class/wallets/watch-only-wallet.ts:64-72",
+    "note": "Imports xpub/ypub/zpub, single-key descriptors or one address as watch-only; shows balance and history"
+   },
+   "passphrase": {
+    "value": "partial",
+    "evidence": "bluewallet:navigation/AddWalletStack.tsx:246-262; bluewallet:class/wallet-import.ts:146-148; bluewallet:class/wallets/abstract-hd-wallet.ts:79-80",
+    "note": "Passphrase prompt only when importing a seed or adding a multisig seed key; creating a new wallet offers none"
    },
    "coin_control": {
     "value": "yes",
-    "evidence": "bitkit:Bitkit/Views/Wallets/Send/SendUtxoSelectionView.swift:4; bitkit:Bitkit/Services/LightningService.swift:773",
-    "note": "Manual coin selection mode lets user pick UTXOs for on-chain sends"
+    "evidence": "bluewallet:screen/send/SendDetails.tsx:1056-1061; bluewallet:screen/send/CoinControl.tsx:289-291; bluewallet:screen/send/CoinControl.tsx:301-303",
+    "note": "Coin Control screen selects UTXOs and hands them to Send; coins can also be frozen"
+   },
+   "fee_bump": {
+    "value": "partial",
+    "evidence": "bluewallet:class/wallets/abstract-wallet.ts:170-172; bluewallet:class/wallets/hd-segwit-bech32-wallet.ts:22-24; bluewallet:screen/transactions/TransactionStatus.tsx:1128-1150",
+    "note": "RBF bump, RBF cancel and CPFP exist, but allowRBF() is true only for native SegWit (and aezeed) wallets"
+   },
+   "taproot": {
+    "value": "yes",
+    "evidence": "bluewallet:navigation/AddWalletStack.tsx:155-159; bluewallet:screen/wallets/Add.tsx:250-252; bluewallet:class/wallets/hd-taproot-wallet.ts:47-57",
+    "note": "Taproot (BIP86) is a wallet-type choice in Add Wallet; receive addresses are bc1p; default type is native SegWit"
+   },
+   "descriptors": {
+    "value": "yes",
+    "evidence": "bluewallet:class/wallets/abstract-wallet.ts:238-244; bluewallet:class/wallets/multisig-hd-wallet.ts:634-640; bluewallet:screen/wallets/xpub.tsx:72-78",
+    "note": "Imports wpkh/sh/pkh/tr and sortedmulti descriptors; exports a descriptor (tr()) only for Taproot wallets"
+   },
+   "own_server": {
+    "value": "yes",
+    "evidence": "bluewallet:screen/settings/ElectrumSettings.tsx:193-198; bluewallet:screen/settings/ElectrumSettings.tsx:210-212; bluewallet:blue_modules/BlueElectrum.ts:90-97",
+    "note": "Electrum server setting takes any host and TCP/SSL port after a connection test; defaults are a hardcoded peer list"
+   },
+   "verifies_chain": {
+    "value": "no",
+    "evidence": "bluewallet:blue_modules/BlueElectrum.ts:1034-1038; bluewallet:blue_modules/BlueElectrum.ts:1128-1131; bluewallet:blue_modules/BlueElectrum.ts:1609-1616",
+    "note": "Balances and history are taken straight from Electrum replies; headers are fetched only for timestamps, no proofs"
    },
    "tor": {
+    "value": "partial",
+    "evidence": "bluewallet:screen/settings/ElectrumSettings.tsx:199-202; bluewallet:loc/en.json:253; bluewallet:blue_modules/BlueElectrum.ts:1453",
+    "note": ".onion Electrum hosts are accepted; no Tor in the app, the error text asks the person to connect the Orbot app"
+   },
+   "seed_standard": {
+    "value": "yes",
+    "evidence": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:168-171; bluewallet:screen/wallets/PleaseBackup.tsx:71; bluewallet:screen/wallets/Add.tsx:284-286",
+    "note": "New on-chain wallets get a 12-word BIP39 phrase (16 bytes of entropy), shown on a backup screen"
+   },
+   "cloud_backup": {
     "value": "no",
-    "evidence": "bitkit:Bitkit/Resources/Localization/en.lproj/Localizable.strings:323",
-    "note": "No Tor code; UI string says 'Bitkit cannot add Tor nodes'"
+    "evidence": "bluewallet:class/blue-app.ts:133; bluewallet:class/blue-app.ts:302; bluewallet:class/blue-app.ts:709",
+    "note": "Wallet data saved in a this-device-only keychain item and Realm excluded from iCloud backup; only manual seed display"
    },
    "license": {
     "value": "MIT",
-    "evidence": "bitkit:LICENSE:1",
+    "evidence": "bluewallet:LICENSE:1; bluewallet:package.json:4",
+    "note": "MIT License, copyright BlueWallet developers; package.json also declares MIT"
+   }
+  },
+  "Green": {
+   "multisig": {
+    "value": "yes",
+    "evidence": "green:gaios/UserSettings/CreateAccount/CreateAccountViewModel.swift:59-65; green:gaios/Accounts/AccountCreateRecoveryKeyViewController.swift:89-115",
+    "note": "2-of-3 account: your key, a recovery key you hold (phrase or xpub) and Blockstream's key; 2-of-2 with its server also offered"
+   },
+   "hw_signer": {
+    "value": "yes",
+    "evidence": "green:gaios/HWFlow/Connect/ConnectViewModel.swift:62-78; green:hw/Jade/Jade.swift:154; green:hw/Ledger/BleLedger.swift:33; green:hw/Jade/QrJadeConnection.swift:11",
+    "note": "Jade over Bluetooth or QR and Ledger Nano X over Bluetooth sign on-chain transactions"
+   },
+   "psbt": {
+    "value": "yes",
+    "evidence": "green:gaios/Sendflow/ViewModels/SendTxConfirmViewModel.swift:131-133; green:gaios/HWFlow/Controllers/QRPsbtShowViewController.swift:102-112; green:gaios/HWFlow/Controllers/QRPsbtAquireViewController.swift:105-113",
+    "note": "Singlesig watch-only: export unsigned PSBT (QR, file, copy) and import signed (QR, file, paste); not multisig"
+   },
+   "watch_only": {
+    "value": "yes",
+    "evidence": "green:gaios/WOFlow/ViewModels/WOViewModel.swift:42-49; green:gaios/WOFlow/ViewModels/WOViewModel.swift:71-98",
+    "note": "Singlesig from xpub/ypub/zpub or descriptors; multisig by username and password; no address lists"
+   },
+   "passphrase": {
+    "value": "yes",
+    "evidence": "green:gaios/Home/Controllers/LoginViewController.swift:485-492; green:gaios/Home/Controllers/LoginViewController.swift:579-580; gdk:src/signer.cpp:32-47",
+    "note": "Wallet menu 'Log in with BIP39 passphrase' opens a different wallet from the same phrase; set at login"
+   },
+   "coin_control": {
+    "value": "yes",
+    "evidence": "green:gaios/Sendflow/Coordinators/SendCoordinator.swift:296-302; green:gaios/Sendflow/Controllers/SendAmountViewControllerLegacy.swift:396-398; green:gaios/Sendflow/Controllers/SendAmountViewControllerLegacy.swift:684-686",
+    "note": "Select coins on the amount screen lists UTXOs with filter and sort; the picked coins fund the payment"
+   },
+   "fee_bump": {
+    "value": "yes",
+    "evidence": "green:gaios/TxDetails/TxDetailsViewModel.swift:208-214; green:gaios/TxDetails/TxDetailsViewModel.swift:255-256; gdk:subprojects/gdk_rust/gdk_electrum/src/account.rs:380",
+    "note": "RBF only: Speed up Transaction on unconfirmed RBF sends; the app never uses gdk's can_cpfp"
+   },
+   "taproot": {
+    "value": "partial",
+    "evidence": "green:gaios/UserSettings/CreateAccount/Cells/AccountTypeOption.swift:10; green:gaios/UserSettings/CreateAccount/Cells/AccountTypeCellModel.swift:25-26; gdk:src/ga_auth_handlers.cpp:1257-1260",
+    "note": "Taproot account creation is commented out; a p2tr account shows only if restore finds BIP86 history"
+   },
+   "descriptors": {
+    "value": "yes",
+    "evidence": "green:gaios/WalletTabBar/ManageAsset/ManageAssetViewController.swift:600-602; green:gaios/Accounts/AccountDescriptor/Cells/AccountDescriptorCellModel.swift:7-9; green:gaios/WOFlow/ViewModels/WOViewModel.swift:92-95",
+    "note": "Singlesig accounts show, copy and QR their output descriptors; watch-only import takes descriptors; multisig none"
+   },
+   "own_server": {
+    "value": "yes",
+    "evidence": "green:gaios/AppSettings/AppSettingsViewModel.swift:52-53; green:gaios/AppSettings/AppSettingsViewController.swift:73-78; green:core/wallet/WalletManager.swift:423-425",
+    "note": "Settings: Personal Electrum server, a URL per network with TLS option; singlesig only, multisig uses Blockstream's backend"
+   },
+   "verifies_chain": {
+    "value": "no",
+    "evidence": "gdk:CHANGELOG.md:174-176; gdk:src/ga_session.cpp:2313-2316; gdk:subprojects/gdk_rust/gdk_electrum/src/account.rs:589",
+    "note": "gdk removed SPV in 0.75 and reports spv_verified as disabled; balances and history come from the server unchecked"
+   },
+   "tor": {
+    "value": "yes",
+    "evidence": "green:gaios/AppSettings/AppSettingsViewModel.swift:40; green:gaios/AppSettings/Cells/AppSettingsCell.swift:45-47; gdk:src/session_impl.cpp:101-105",
+    "note": "Settings: Connect with Tor starts gdk's built-in Tor client; a SOCKS5 proxy option is also offered"
+   },
+   "seed_standard": {
+    "value": "yes",
+    "evidence": "green:gaios/OnBoard/OnboardViewModel.swift:134; green:gaios/OnBoard/OnboardViewModel.swift:161-162; gdk:subprojects/gdk_rust/gdk_electrum/src/account.rs:781-786",
+    "note": "New wallets get a 12-word BIP39 phrase on a singlesig BIP84 account; multisig funds also need Blockstream's co-signer"
+   },
+   "cloud_backup": {
+    "value": "partial",
+    "evidence": "gdk:src/client_blob.cpp:19-20; gdk:src/ga_session.cpp:1048-1056; green:gaios/gaiosRelease.entitlements:5-17",
+    "note": "No iCloud or file backup; multisig account names and tx notes sync encrypted to Blockstream's server; phrase is manual"
+   },
+   "license": {
+    "value": "GPL-3.0",
+    "evidence": "green:README.md:31-33; green:LICENSE:1-3",
+    "note": "App is GNU GPL v3; the gdk engine it embeds is BSD-MIT licensed"
+   }
+  },
+  "Muun": {
+   "multisig": {
+    "value": "partial",
+    "evidence": "muun:falcon/app/falcon/core/Domain/Action/Address/AddressActions.swift:81-92; muun:libwallet/V4.go:47-48",
+    "note": "Fixed 2-of-2 with Muun's server (P2WSH or MuSig2 P2TR); the person holds one key, cannot add keys or choose cosigners"
+   },
+   "hw_signer": {
+    "value": "no",
+    "evidence": "muun:falcon/app/falcon/Presentation/Screen/NewOperation/NewOperationPresenter.swift:646-653; muun:libwallet/domain/action/nfc/sign_message_security_card_action_v2.go:65-82; muun:libwallet/libwallet_init/init.go:170-175",
+    "note": "Keys live in the app. A flag-gated NFC Security Card only signs a 2FA challenge (mock backend in libwallet), not transactions"
+   },
+   "psbt": {
+    "value": "no",
+    "evidence": "muun:falcon/app/falcon/core/Domain/Action/Operations/OperationActions.swift:265-269; muun:falcon/app/falcon/core/Domain/Action/Operations/OperationActions.swift:293-297",
+    "note": "Server returns a partly signed tx in Muun's own API format, the app signs and pushes it back; no PSBT import or export"
+   },
+   "watch_only": {
+    "value": "no",
+    "evidence": "muun:falcon/app/falcon/Presentation/Screen/GetStarted/GetStartedViewController.swift:50-58; muun:falcon/app/falcon/core/Domain/Action/Session/CreateFirstSessionAction.swift:49-55",
+    "note": "Get Started offers only create new wallet or recover existing (email or recovery code); every wallet holds its own key"
+   },
+   "passphrase": {
+    "value": "no",
+    "evidence": "muun:falcon/app/falcon/core/Domain/Crypto/hd/WalletPrivateKey.swift:49-56; muun:falcon/app/falcon/core/Domain/Action/Session/BuildChallengeSetupAction.swift:33-36",
+    "note": "No BIP 39 phrase: the key is a random 32-byte seed; the optional password only encrypts the key backup, it is not a wallet variant"
+   },
+   "coin_control": {
+    "value": "no",
+    "evidence": "muun:falcon/app/falcon/core/Data/Service/Houston/HoustonService.swift:487-490; muun:falcon/app/falcon/core/Domain/Model/Operations/Operation.swift:37",
+    "note": "The server supplies the ordered UTXO list (next transaction size) and a send spends in that order; no coin picker"
+   },
+   "fee_bump": {
+    "value": "partial",
+    "evidence": "muun:libwallet/operation/fees.go:84-88; muun:falcon/app/falcon/Presentation/Screen/NewOperation/ChildViews/Loading/NewOpLoadingPresenter.swift:121-125",
+    "note": "No speed-up button or RBF; a new send adds a CPFP bump for unconfirmed parent coins, only while the backend flag is on"
+   },
+   "taproot": {
+    "value": "yes",
+    "evidence": "muun:falcon/app/falcon/Presentation/Screen/Receive/ReceiveAddressTypeSelectPresenter.swift:70-80; muun:falcon/app/falcon/Presentation/Screen/Settings/Onchain/OnchainSettingsPresenter.swift:72-79; muun:libwallet/V5.go:16-24",
+    "note": "P2TR (MuSig2) offered in the Receive address picker and as default in Settings once active; default stays SegWit"
+   },
+   "descriptors": {
+    "value": "partial",
+    "evidence": "muun:libwallet/emergencykit/descriptors.go:15-22; muun:libwallet/emergencykit/emergencykit.go:39-44",
+    "note": "Emergency Kit PDF prints wsh(multi) and tr(musig) descriptors with key fingerprints, not xpubs; no descriptor import"
+   },
+   "own_server": {
+    "value": "no",
+    "evidence": "muun:falcon/app/falcon/core/Environment.swift:42; muun:falcon/app/falcon/Presentation/Screen/Settings/SettingsPresenter.swift:154-168; muun:libwallet/libwallet_init/init.go:160-161",
+    "note": "Fixed to Muun's Houston API; no server setting. libwallet's Electrum client serves only a scan RPC the app never calls"
+   },
+   "verifies_chain": {
+    "value": "no",
+    "evidence": "muun:falcon/app/falcon/core/Data/Service/Houston/HoustonService.swift:436-438; muun:falcon/app/falcon/core/Domain/Action/RealTime/RealTimeDataAction.swift:58-63",
+    "note": "History, UTXOs and block height come from Muun's server; the app has no header, filter or block checks"
+   },
+   "tor": {
+    "value": "no",
+    "evidence": "muun:falcon/app/falcon/core/Data/Service/Houston/HoustonService.swift:38-41; muun:falcon/app/falcon/Presentation/Screen/Settings/SettingsPresenter.swift:154-168",
+    "note": "No Tor, I2P or proxy setting; the app talks to Muun's Houston HTTPS endpoint and Firebase/Google services"
+   },
+   "seed_standard": {
+    "value": "partial",
+    "evidence": "muun:libwallet/recoverycode/recoverycode.go:37-53; muun:falcon/app/falcon/core/Domain/Action/Session/LogInWithRCAction.swift:31-47; muun:falcon/app/falcon/core/Domain/Crypto/hd/WalletPrivateKey.swift:49-56",
+    "note": "Recovery Code (not BIP 39) plus Emergency Kit; in-app restore asks Muun's server, outside restore needs Muun's Recovery Tool"
+   },
+   "cloud_backup": {
+    "value": "yes",
+    "evidence": "muun:falcon/app/falcon/Presentation/Screen/SecurityCenter/EmergencyKit/Share/ShareEmergencyKitPresenter.swift:96-115; muun:falcon/app/falcon/core/Data/Service/ICloudHelper.swift:36-69; muun:falcon/app/falcon/core/Domain/Selector/ExportKeys/EmergencyKitDataSelector.swift:25-38",
+    "note": "Emergency Kit PDF with keys encrypted to the Recovery Code is saved to iCloud Drive or Google Drive when the person exports it"
+   },
+   "license": {
+    "value": "MIT",
+    "evidence": "muun:LICENSE:1-3",
+    "note": "MIT, Copyright (c) 2021 Muun Wallet, Inc.; libwallet/LICENSE repeats the same text"
+   }
+  },
+  "Phoenix": {
+   "multisig": {
+    "value": "partial",
+    "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/transactions/SwapInProtocol.kt:11-12; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/transactions/SwapInProtocol.kt:19; phoenix:phoenix-ios/phoenix-ios/views/receive/SwapInView.swift:336-340",
+    "note": "Swap-in address is a MuSig2 2-of-2 of the user key and ACINQ's key; the person holds one key, never several."
+   },
+   "hw_signer": {
+    "value": "no",
+    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/WalletManager.kt:47-53; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:583-604; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SwapInSigner.swift:87",
+    "note": "Keys come from the on-phone seed and spends are signed in the app; 'Swap-in signer' is a support tool, not a device link."
+   },
+   "psbt": {
+    "value": "no",
+    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/utils/swapin/SwapInSignerHelper.kt:73-84; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:583-604",
+    "note": "No PSBT code; the Swap-in signer tool takes a raw transaction plus a server nonce, and spends are built, signed and sent in-app."
+   },
+   "watch_only": {
+    "value": "no",
+    "evidence": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/WalletManager.kt:47-53; phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/controllers/init/RestoreWalletController.kt:56-59",
+    "note": "Wallets are created or restored from a 12-word phrase only; no xpub, descriptor or address import."
+   },
+   "passphrase": {
+    "value": "no",
+    "evidence": "phoenix:phoenix-ios/phoenix-ios/officers/BusinessManager.swift:464-467; phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/controllers/init/RestoreWalletController.kt:59",
+    "note": "The shared code can take a passphrase, but every app call passes an empty string and no screen asks for one."
+   },
+   "coin_control": {
+    "value": "no",
+    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SpendOnChainFunds.swift:173; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/blockchain/electrum/ElectrumMiniWallet.kt:99-106; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/SwapInWalletDetails.swift:223-246",
+    "note": "On-chain spends are send-all (expired swap-ins, final wallet) or splice-outs; the swap-in UTXO list is view-only."
+   },
+   "fee_bump": {
+    "value": "partial",
+    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/inspect/SummaryView.swift:334-339; phoenix:phoenix-ios/phoenix-ios/views/inspect/SummaryView.swift:884-890; phoenix:phoenix-ios/phoenix-ios/views/inspect/CpfpView.swift:744-747",
+    "note": "'Accelerate transaction' does a CPFP splice, only for unconfirmed splice payments; no RBF and no bump for other sends."
+   },
+   "taproot": {
+    "value": "yes",
+    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/receive/SwapInView.swift:28; phoenix:phoenix-ios/phoenix-ios/views/receive/SwapInView.swift:336-340; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/transactions/SwapInProtocol.kt:25",
+    "note": "The on-chain receive tab shows a P2TR swap-in address (MuSig2 plus refund script); a legacy P2WSH address is an option."
+   },
+   "descriptors": {
+    "value": "partial",
+    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/WalletInfoView.swift:221-232; phoenix:phoenix-ios/phoenix-ios/views/configuration/advanced/wallet/WalletInfoView.swift:344-356; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/crypto/KeyManager.kt:268-270",
+    "note": "Swap-in wallet shows a copyable tr() descriptor (and a legacy wsh()); final wallet shows only an xpub; nothing imports."
+   },
+   "own_server": {
+    "value": "yes",
+    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/electrum server/ElectrumConfigurationView.swift:59-60; phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/AppConnectionsDaemon.kt:265-268",
+    "note": "Electrum server screen takes a custom host and port in place of the random list; the Lightning peer stays ACINQ's."
+   },
+   "verifies_chain": {
+    "value": "no",
+    "evidence": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/blockchain/electrum/ElectrumClient.kt:144-148; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/blockchain/electrum/ElectrumMiniWallet.kt:197-200; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/blockchain/electrum/ElectrumDataTypes.kt:142-153",
+    "note": "Tip, UTXOs and history come from the Electrum server; a merkle root is computed but no header or proof check is called."
+   },
+   "tor": {
+    "value": "partial",
+    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/tor/TorConfigurationView.swift:66; phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/PeerManager.kt:172; phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/AppConfigurationManager.kt:66",
+    "note": "Use Tor switches to .onion Electrum and ACINQ endpoints but needs a third-party Tor VPN app such as Orbot; none is bundled."
+   },
+   "seed_standard": {
+    "value": "partial",
+    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/recovery phrase/RecoveryPhraseReveal.swift:104; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/crypto/LocalKeyManager.kt:42; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:158",
+    "note": "12-word BIP39; the BIP84 final wallet restores elsewhere, but channel and swap-in funds need Phoenix and ACINQ."
+   },
+   "cloud_backup": {
+    "value": "yes",
+    "evidence": "phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/recovery phrase/CloudBackupView.swift:105-106; phoenix:phoenix-ios/phoenix-ios/sync/SyncSeedManager.swift:380; phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/PaymentsBackupView.swift:78-83",
+    "note": "iCloud switch saves the phrase (CloudKit encrypted field, end-to-end only with Apple ADP) and seed-encrypted history."
+   },
+   "license": {
+    "value": "Apache-2.0",
+    "evidence": "phoenix:LICENSE:1-2; phoenix:README.md:53",
+    "note": "Apache License 2.0; lightning-kmp is Apache 2.0 too."
+   }
+  },
+  "Bitkit": {
+   "multisig": {
+    "value": "no",
+    "evidence": "synonym-ldk-node:src/builder.rs:1385-1404; bitkit:Bitkit/Extensions/LDKNode+AddressType.swift:7",
+    "note": "Single-key accounts only (BIP 44/49/84/86 templates); no multisig or shared-account flow"
+   },
+   "hw_signer": {
+    "value": "yes",
+    "evidence": "bitkit:Bitkit/Views/Settings/General/HardwareWalletsSettingsScreen.swift:31-36; bitkit:Bitkit/Views/Wallets/Send/HwSendSignView.swift:115; bitkit:Bitkit/Services/Trezor/TrezorTransport.swift:37-48",
+    "note": "Trezor over Bluetooth; on-chain sends signed on the device. Only Trezor; bitkit-core's Jade code is never called"
+   },
+   "psbt": {
+    "value": "no",
+    "evidence": "bitkit:Bitkit/Managers/HwWalletManager.swift:1177; bitkit:Bitkit/Views/Settings/DevSettingsView.swift:59-61; bitkit:Bitkit/Views/Trezor/TrezorSendTransactionView.swift:269-274",
+    "note": "PSBT is internal to Trezor signing; only a hidden dev screen copies an unsigned one; no import, file, QR or share"
+   },
+   "watch_only": {
+    "value": "partial",
+    "evidence": "bitkit:Bitkit/Managers/HwWalletManager.swift:5-7; bitkit:Bitkit/Views/Wallets/HardwareWalletScreen.swift:4-7; bitkit:Bitkit/Views/Trezor/TrezorWatcherView.swift:16-19",
+    "note": "Paired Trezor accounts are tracked by xpub (balance, history); pasting an xpub or address works only in hidden dev settings"
+   },
+   "passphrase": {
+    "value": "yes",
+    "evidence": "bitkit:Bitkit/Views/Onboarding/OnboardingSlider.swift:11-16; bitkit:Bitkit/Views/Onboarding/CreateWalletWithPassphraseView.swift:65; bitkit:Bitkit/Views/Onboarding/RestoreWalletView.swift:198-201",
+    "note": "Advanced setup adds a passphrase to a new wallet; restore takes an optional one; both feed the BIP 39 seed"
+   },
+   "coin_control": {
+    "value": "yes",
+    "evidence": "bitkit:Bitkit/Views/Settings/Advanced/CoinSelectionSettingsView.swift:128-135; bitkit:Bitkit/Views/Wallets/Send/SendAmountView.swift:302-323; bitkit:Bitkit/Views/Wallets/Send/SendUtxoSelectionView.swift:74",
+    "note": "Manual coin selection setting; the send flow then lists UTXOs to tick and spends exactly those"
+   },
+   "fee_bump": {
+    "value": "yes",
+    "evidence": "bitkit:Bitkit/Services/CoreService.swift:1648-1675; bitkit:Bitkit/Views/Wallets/Activity/ActivityItemView.swift:562-572; synonym-ldk-node:src/wallet/mod.rs:827",
+    "note": "Boost button on an unconfirmed on-chain activity: RBF for sent, CPFP for received; off for hardware wallet activity"
+   },
+   "taproot": {
+    "value": "yes",
+    "evidence": "bitkit:Bitkit/Views/Settings/Advanced/AddressTypePreferenceView.swift:109-125; bitkit:Bitkit/ViewModels/SettingsViewModel.swift:576; synonym-ldk-node:src/builder.rs:1399-1402",
+    "note": "Advanced > Address Type offers Taproot (BIP 86, bc1p); new wallets default to native SegWit"
+   },
+   "descriptors": {
+    "value": "yes",
+    "evidence": "bitkit:Bitkit/Services/SamRockService.swift:273; bitkit:Bitkit/Services/SamRockService.swift:333-339; bitkit-core:src/modules/onchain/implementation.rs:194-232",
+    "note": "Scanning a BTCPay SamRock QR sends the account's output descriptor to the store; no descriptor import or copy screen"
+   },
+   "own_server": {
+    "value": "yes",
+    "evidence": "bitkit:Bitkit/Views/Settings/Advanced/AdvancedSettingsView.swift:100-107; bitkit:Bitkit/Views/Settings/Advanced/ElectrumSettingsScreen.swift:56-84; bitkit:Bitkit/ViewModels/Extensions/SettingsViewModel+Electrum.swift:46-50",
+    "note": "Settings > Advanced > Electrum Server takes host, port and TCP or TLS; default is Synonym's bitkit.to"
+   },
+   "verifies_chain": {
+    "value": "partial",
+    "evidence": "synonym-ldk-node:src/chain/electrum.rs:671; synonym-ldk-node:src/chain/electrum.rs:785; synonym-ldk-node:Cargo.toml:50",
+    "note": "Electrum sync through BDK, which checks merkle proofs against headers the server sends; no PoW, filter or block check"
+   },
+   "tor": {
+    "value": "no",
+    "evidence": "synonym-ldk-node:src/chain/electrum.rs:660-666; bitkit:Bitkit/Views/Settings/Advanced/ElectrumSettingsScreen.swift:83-84",
+    "note": "Electrum client is built with no proxy; settings offer only host, port and TCP/TLS; no Tor or I2P code in the app"
+   },
+   "seed_standard": {
+    "value": "yes",
+    "evidence": "bitkit:Bitkit/Utilities/StartupHandler.swift:13; bitkit:Bitkit/Views/Backup/BackupMnemonic.swift:114; synonym-ldk-node:src/builder.rs:1385-1404",
+    "note": "12-word BIP 39 phrase shown for backup; accounts use standard BIP 44/49/84/86 paths; restore takes 12 or 24 words"
+   },
+   "cloud_backup": {
+    "value": "partial",
+    "evidence": "bitkit:Bitkit/Services/BackupService.swift:220; bitkit:Bitkit/Constants/Env.swift:340-343; vss-rust-client-ffi:src/implementation.rs:248-256",
+    "note": "Settings, tags, activity and transfer records go encrypted to Synonym's fixed VSS server; no keys, no iCloud"
+   },
+   "license": {
+    "value": "MIT",
+    "evidence": "bitkit:LICENSE:1; bitkit:README.md:258-261",
     "note": "MIT License, Copyright (c) 2024 Synonym"
    }
   },
   "Blixt": {
-   "bolt11_pay": {
-    "value": "yes",
-    "evidence": "blixt:src/state/Send.ts:140; blixt:src/state/Send.ts:408",
-    "note": "Decodes lnbc invoice, pays via LND routerSendPaymentV2"
-   },
-   "bolt11_receive": {
-    "value": "yes",
-    "evidence": "blixt:src/state/Receive.ts:147",
-    "note": "Receive screen creates invoices via LND addInvoice"
-   },
-   "bolt12_pay": {
+   "multisig": {
     "value": "no",
-    "evidence": "blixt:src/hooks/useEvaluateLightningCode.ts:24; blixt:src/state/Send.ts:130",
-    "note": "Parser only accepts lnurl/lnbc/lntb; LND 0.21.3 lacks BOLT12 offers"
+    "evidence": "blixt:src/state/index.ts:795-797; blixt:src/state/OnChain.ts:165-174",
+    "note": "One wallet from one 24-word seed; the app has no m-of-n or MuSig2 account (LND signing RPCs are never called)"
    },
-   "bolt12_receive": {
+   "hw_signer": {
     "value": "no",
-    "evidence": "blixt:src/state/Receive.ts:147",
-    "note": "Only BOLT11 invoices; no offer code in app or LND"
+    "evidence": "blixt:src/state/index.ts:795-797; blixt:src/state/index.ts:674-698",
+    "note": "Keys come from the on-phone seed; the generated lnd.conf has no remote signer and no device code exists in the app"
    },
-   "offline_receive": {
+   "psbt": {
     "value": "no",
-    "evidence": "blixt:src/components/Drawer.tsx:221; blixt:src/utils/push-notification.ts:5",
-    "note": "Lightning Box is Android-only; iOS has only local notifications, no push-woken receive"
+    "evidence": "blixt:src/windows/OnChain/Withdraw.tsx:50-65; blixt:src/state/OnChain.ts:217-226",
+    "note": "Withdraw signs and broadcasts through LND sendCoins; there is no PSBT import, export or share"
    },
-   "lnurl": {
-    "value": "yes",
-    "evidence": "blixt:src/state/LNURL.ts:30; blixt:src/windows/LNURL/index.tsx:33",
-    "note": "pay, withdraw, channel and auth all supported"
-   },
-   "ln_address_pay": {
-    "value": "yes",
-    "evidence": "blixt:src/components/Drawer.tsx:161; blixt:src/state/LNURL.ts:633",
-    "note": "'Send to Lightning Address' menu item, LUD-16 resolution"
-   },
-   "ln_address_receive": {
+   "watch_only": {
     "value": "no",
-    "evidence": "blixt:src/components/Drawer.tsx:221; blixt:src/windows/Settings/Settings.tsx:1938",
-    "note": "Lightning Box address menu/settings gated to Android only"
+    "evidence": "blixt:src/windows/Welcome/Restore.tsx:69-73; blixt:src/state/index.ts:778-782",
+    "note": "Restore accepts a 24-word seed only; no xpub, descriptor or address import in the app"
    },
-   "bip353": {
+   "passphrase": {
+    "value": "partial",
+    "evidence": "blixt:src/windows/Welcome/Start.tsx:63-92; blixt:src/windows/Welcome/Restore.tsx:310-314; lnd-blixt:aezeed/errors.go:10-12",
+    "note": "Optional aezeed passphrase on create and restore; not BIP 39: a wrong one is rejected, it does not open another wallet"
+   },
+   "coin_control": {
     "value": "no",
-    "evidence": "blixt:src/hooks/useEvaluateLightningCode.ts:71; blixt:src/state/LNURL.ts:647",
-    "note": "user@domain resolved only via .well-known/lnurlp; no DNS lookup"
+    "evidence": "blixt:src/state/OnChain.ts:217-226; blixt:src/windows/OnChain/Withdraw.tsx:50-65",
+    "note": "sendCoins gets address, amount and fee rate only, no outpoints; no coin list in the app (LND would accept outpoints)"
    },
-   "mpp": {
-    "value": "yes",
-    "evidence": "blixt:src/state/Send.ts:392; blixt:src/storage/app.ts:303",
-    "note": "MPP on by default (maxParts 16), toggle in settings"
-   },
-   "keysend": {
-    "value": "yes",
-    "evidence": "blixt:src/components/Drawer.tsx:210; blixt:src/state/index.ts:680",
-    "note": "Keysend screen under drawer 'show more'; accept-keysend=1 for receiving"
-   },
-   "choose_peer": {
-    "value": "yes",
-    "evidence": "blixt:src/windows/LightningInfo/LightningInfo.tsx:216; blixt:src/state/Channel.ts:323",
-    "note": "Open channel to any pubkey@host; also autopilot (Blixt node) and Dunder LSP"
-   },
-   "jit_channels": {
-    "value": "yes",
-    "evidence": "blixt:src/windows/Receive/ReceiveSetupLsp.tsx:90; blixt:src/state/BlixtLsp.ts:253",
-    "note": "Dunder LSP opens channel on receive; on by default (README checkbox outdated)"
-   },
-   "splicing": {
-    "value": "no",
-    "evidence": "lnd-blixt:lnrpc/lightning.proto",
-    "note": "No splice RPC in Blixt’s LND; nothing in app"
-   },
-   "anchors": {
-    "value": "yes",
-    "evidence": "blixt:src/state/Channel.ts:345",
-    "note": "Channel open refuses peers without anchor support (feature bit 23)"
-   },
-   "local_pathfinding": {
-    "value": "yes",
-    "evidence": "blixt:src/state/index.ts:406; blixt:src/storage/app.ts:331",
-    "note": "Embedded LND routes from local graph; speedloader gossip sync on by default"
-   },
-   "watchtower": {
-    "value": "engine-only",
-    "evidence": "blixt:src/state/index.ts:674; lnd-blixt:lncfg/wtclient.go:16",
-    "note": "LND wtclient exists but app config/UI never enables it"
-   },
-   "channel_backup": {
-    "value": "yes",
-    "evidence": "blixt:src/state/ICloudBackup.ts:12; blixt:src/windows/Settings/Settings.tsx:1568",
-    "note": "SCB exported to iCloud (auto) and restorable at wallet restore"
-   },
-   "onchain_independent": {
-    "value": "yes",
-    "evidence": "blixt:src/state/OnChain.ts:177; blixt:src/state/OnChain.ts:218",
-    "note": "LND's own single-key wallet; the channel partner is not involved"
+   "fee_bump": {
+    "value": "partial",
+    "evidence": "blixt:src/components/PendingChannelCard.tsx:117-148; blixt:src/components/PendingChannelCard.tsx:176-185; blixt:src/state/OnChain.ts:239-248",
+    "note": "Bump Fee does CPFP on the change of a pending channel-open tx only; ordinary on-chain sends have no bump"
    },
    "taproot": {
     "value": "yes",
-    "evidence": "blixt:src/state/OnChain.ts:173; blixt:src/windows/OnChain/OnChainInfo.tsx:62",
-    "note": "Default receive address is P2TR; long-press for P2WPKH"
+    "evidence": "blixt:src/state/OnChain.ts:164-174; blixt:src/windows/OnChain/OnChainInfo.tsx:62-63",
+    "note": "Default receive address is P2TR (bc1p); long-pressing New Address gives P2WPKH"
    },
-   "multisig": {
+   "descriptors": {
     "value": "no",
-    "evidence": "blixt:src/state/OnChain.ts:217",
-    "note": "Single-sig LND wallet only; no multisig/shared account code"
+    "evidence": "blixt:src/windows/OnChain/index.tsx:19-29; blixt:src/windows/OnChain/OnChainInfo.tsx:129-150",
+    "note": "On-chain screens are address, history, details and withdraw; no descriptor or xpub export or import"
    },
-   "hw_signer": {
-    "value": "engine-only",
-    "evidence": "lnd-blixt:lnrpc/walletrpc/walletkit.proto:329; lnd-blixt:lncfg/remotesigner.go:17",
-    "note": "LND has PSBT/remote signer; app has no PSBT or signer code"
+   "own_server": {
+    "value": "yes",
+    "evidence": "blixt:src/windows/Settings/Settings.tsx:1670-1680; blixt:src/windows/Settings/Settings.tsx:750-785; blixt:src/windows/Settings/PowerUserTools.tsx:696-704",
+    "note": "Settings > Bitcoin Node takes any BIP 157 peer. A bitcoind mode sits behind a hidden debug gate; the fee URL is fixed"
    },
-   "coin_control": {
-    "value": "engine-only",
-    "evidence": "blixt:src/state/OnChain.ts:218; lnd-blixt:lnrpc/lightning.proto:1157",
-    "note": "App sendCoins passes no outpoints; LND supports outpoint selection"
+   "verifies_chain": {
+    "value": "yes",
+    "evidence": "blixt:src/state/index.ts:695-708; lnd-blixt:config_builder.go:1872",
+    "note": "Embedded LND runs neutrino (BIP 157/158): headers and filters are checked on the phone, not a server's balances"
    },
    "tor": {
     "value": "yes",
-    "evidence": "blixt:src/windows/Settings/Settings.tsx:1867; blixt:src/state/index.ts:312",
-    "note": "Experimental toggle on iOS; embedded Tor via react-native-nitro-tor"
+    "evidence": "blixt:src/windows/Settings/Settings.tsx:1867-1877; blixt:src/state/index.ts:295-316; blixt:locales/en.json:958",
+    "note": "Experimental toggle starts embedded Tor; Bitcoin and LN peers use it, rates and mempool.space calls stay clearnet"
+   },
+   "seed_standard": {
+    "value": "partial",
+    "evidence": "blixt:src/state/index.ts:628-632; blixt:src/windows/Welcome/Restore.tsx:70-76; lnd-blixt:aezeed/cipherseed.go:15-26",
+    "note": "24-word aezeed phrase (LND), not BIP 39; BIP 39 wallets cannot restore it and the app cannot import a BIP 39 phrase"
+   },
+   "cloud_backup": {
+    "value": "no",
+    "evidence": "blixt:src/state/ICloudBackup.ts:102-108; blixt:locales/en.json:1241-1242",
+    "note": "iCloud backup holds encrypted channel state only (off-chain funds); on-chain funds restore from the written phrase"
    },
    "license": {
     "value": "MIT",
-    "evidence": "blixt:LICENSE:1",
-    "note": "MIT license text, copyright Hampus Sjöberg"
+    "evidence": "blixt:README.md:157-159; blixt:LICENSE:3",
+    "note": "README states MIT; LICENSE carries the MIT permission text, copyright Hampus Sjoberg"
    }
   },
   "Zeus": {
-   "bolt11_pay": {
-    "value": "yes",
-    "evidence": "zeus:utils/handleAnything.ts:464; zeus:views/PaymentRequest.tsx:360",
-    "note": "Scanned or pasted BOLT 11 invoices are paid through the embedded LND"
-   },
-   "bolt11_receive": {
-    "value": "yes",
-    "evidence": "zeus:views/Receive.tsx:654",
-    "note": "Receive screen creates invoices, optionally combined with an on-chain address"
-   },
-   "bolt12_pay": {
-    "value": "no",
-    "evidence": "zeus:backends/EmbeddedLND.ts:599; zeus:views/Send.tsx:1389",
-    "note": "Offers are detected but Pay is disabled on LND; works in LDK mode or with remote CLN"
-   },
-   "bolt12_receive": {
-    "value": "no",
-    "evidence": "zeus:backends/EmbeddedLND.ts:599-601",
-    "note": "No offers on LND; only available in LDK Node mode or with remote CLN"
-   },
-   "offline_receive": {
-    "value": "partial",
-    "evidence": "zeus:views/LightningAddress/index.tsx:564; zeus:stores/LightningAddressStore.ts:407",
-    "note": "Only via custodial Cashu-backed ZEUS Pay address; self-custodial Zaplocker being retired"
-   },
-   "lnurl": {
-    "value": "yes",
-    "evidence": "zeus:utils/handleAnything.ts:941-965",
-    "note": "LNURL-pay, withdraw, channel and auth are all handled"
-   },
-   "ln_address_pay": {
-    "value": "yes",
-    "evidence": "zeus:utils/handleAnything.ts:618; zeus:utils/handleAnything.ts:719",
-    "note": "user@domain looked up via LUD-16 .well-known/lnurlp"
-   },
-   "ln_address_receive": {
-    "value": "partial",
-    "evidence": "zeus:views/LightningAddress/index.tsx:564; zeus:views/LightningAddress/index.tsx:749",
-    "note": "New embedded addresses are custodial ecash only; NWC type needs remote node"
-   },
-   "bip353": {
-    "value": "partial",
-    "evidence": "zeus:utils/handleAnything.ts:672-701; zeus:views/Send.tsx:1389",
-    "note": "Resolves via Cloudflare DNS-over-HTTPS; offers can't be paid on LND, only on-chain/BOLT 11 fallbacks"
-   },
-   "mpp": {
-    "value": "yes",
-    "evidence": "zeus:views/PaymentRequest.tsx:1125; zeus:backends/EmbeddedLND.ts:573",
-    "note": "MPP toggle with max-parts setting; AMP also offered"
-   },
-   "keysend": {
-    "value": "yes",
-    "evidence": "zeus:views/Send.tsx:708; zeus:utils/LndMobileUtils.ts:254",
-    "note": "Send to a node pubkey; accept-keysend enabled for receiving"
-   },
-   "choose_peer": {
-    "value": "yes",
-    "evidence": "zeus:views/OpenChannel.tsx:237; zeus:views/Settings/LSP.tsx:235",
-    "note": "Open channels to any node URI; LSP defaults to Olympus, custom host configurable"
-   },
-   "jit_channels": {
-    "value": "yes",
-    "evidence": "zeus:views/Receive.tsx:327; zeus:stores/LSPStore.ts:527",
-    "note": "Olympus flow LSP wraps invoices with a JIT channel; LSPS1 channel purchase too"
-   },
-   "splicing": {
-    "value": "no",
-    "evidence": "zeus:backends/EmbeddedLND.ts:555-610; lnd-zeus:lnrpc/lightning.proto",
-    "note": "No splice capability in Zeus or in the LND RPCs"
-   },
-   "anchors": {
-    "value": "yes",
-    "evidence": "lnd-zeus:funding/commitment_type_negotiation.go:471; zeus:utils/LndMobileUtils.ts:257",
-    "note": "LND negotiates anchor channels by default; simple taproot channels are optional"
-   },
-   "local_pathfinding": {
-    "value": "yes",
-    "evidence": "zeus:utils/LndMobileUtils.ts:319; zeus:utils/LndMobileUtils.ts:391",
-    "note": "LND routes over its own gossip graph; Express Graph Sync; bimodal/apriori choice"
-   },
-   "watchtower": {
-    "value": "yes",
-    "evidence": "zeus:ios/LndMobile/Lnd.swift:201; zeus:views/Tools/index.tsx:325",
-    "note": "Client on by default (--wtclient.active); user adds towers under Tools"
-   },
-   "channel_backup": {
-    "value": "yes",
-    "evidence": "zeus:stores/ChannelBackupStore.ts:95; zeus:views/Settings/EmbeddedNode/DisasterRecovery.tsx:49",
-    "note": "Automatic encrypted static channel backups to the Olympus server; restore offered"
-   },
-   "onchain_independent": {
-    "value": "yes",
-    "evidence": "zeus:backends/EmbeddedLND.ts:133; zeus:backends/EmbeddedLND.ts:100",
-    "note": "Embedded LND's own single-key wallet; the channel partner is not involved"
-   },
-   "taproot": {
-    "value": "yes",
-    "evidence": "zeus:views/Receive.tsx:1127; zeus:backends/EmbeddedLND.ts:586",
-    "note": "Receive screen offers a Taproot (P2TR) address type"
-   },
    "multisig": {
     "value": "no",
-    "evidence": "zeus:views/Tools/Accounts/ImportAccount.tsx:35-42",
-    "note": "Only single-key account types; no multisig code found"
+    "evidence": "zeus:views/Tools/Accounts/ImportAccount.tsx:34-42; zeus:utils/AddressUtils.ts:73-79",
+    "note": "Single-key accounts only; account import takes one xpub or a wpkh/sh(wpkh) descriptor; no m-of-n or MuSig2 code in the app"
    },
    "hw_signer": {
     "value": "yes",
-    "evidence": "zeus:views/Tools/Accounts/ImportAccount.tsx:85; zeus:views/PSBT.tsx:210",
-    "note": "Import xpub, sign PSBT on another device, scan back via QR (experimental)"
+    "evidence": "zeus:views/HandleAnythingQRScanner.tsx:114; zeus:views/PSBT.tsx:201-206; zeus:locales/en.json:426",
+    "note": "Imports signer xpub and fingerprint by QR (BC-UR, JSON export) and signs by PSBT QR; no named-device pairing; labelled experimental"
+   },
+   "psbt": {
+    "value": "yes",
+    "evidence": "zeus:views/PSBT.tsx:201-206; zeus:utils/handleAnything.ts:1050-1051; zeus:views/HandleAnythingQRScanner.tsx:161-166",
+    "note": "Unsigned PSBT shown as animated QR (BC-UR, BBQr) or copied; signed PSBT scanned back and broadcast; for imported accounts only"
+   },
+   "watch_only": {
+    "value": "yes",
+    "evidence": "zeus:views/Tools/Accounts/ImportingAccount.tsx:164-165; zeus:components/LayerBalances/index.tsx:496-501; zeus:utils/handleAnything.ts:1122-1129",
+    "note": "Imports an xpub or wpkh/sh(wpkh) descriptor as a watch-only LND account with its own balance; embedded LND rescans from a chosen height"
+   },
+   "passphrase": {
+    "value": "no",
+    "evidence": "zeus:utils/LndMobileUtils.ts:1316-1322; zeus:views/Settings/SeedRecovery.tsx:924-931; zeus:utils/WalletCreationUtils.ts:126",
+    "note": "initWallet accepts a passphrase argument but no create or restore screen collects one; same for LDK Node"
    },
    "coin_control": {
     "value": "yes",
-    "evidence": "zeus:views/Send.tsx:1015; zeus:views/OpenChannel.tsx:1107",
-    "note": "UTXO picker when sending on-chain and when opening channels"
+    "evidence": "zeus:views/Send.tsx:1015-1020; zeus:components/UTXOPicker.tsx:208-228",
+    "note": "On-chain Send has a UTXO picker to tick coins; each account also has a Coins list; LDK Node has it too"
+   },
+   "fee_bump": {
+    "value": "yes",
+    "evidence": "zeus:views/Transaction.tsx:404-413; lnd-zeus:lnrpc/walletrpc/walletkit.proto:316-321; zeus:backends/LdkNode.ts:2177",
+    "note": "Speed up button on unconfirmed txs calls LND BumpFee on a wallet output (CPFP); LDK Node has no bump"
+   },
+   "taproot": {
+    "value": "yes",
+    "evidence": "zeus:views/Receive.tsx:1127-1133; zeus:backends/EmbeddedLND.ts:586; zeus:backends/LdkNode.ts:2176",
+    "note": "Receive settings offer Taproot (P2TR) beside P2WPKH and nested SegWit; P2WPKH is the default; LDK Node issues P2WPKH only"
+   },
+   "descriptors": {
+    "value": "partial",
+    "evidence": "zeus:utils/AddressUtils.ts:73-79; zeus:utils/handleAnything.ts:1094-1118",
+    "note": "Imports single-key wpkh() and sh(wpkh()) descriptors as an account; no descriptor export; no tr(), pkh or multi-key forms"
+   },
+   "own_server": {
+    "value": "yes",
+    "evidence": "zeus:utils/LndMobileUtils.ts:222-224; zeus:views/Settings/EmbeddedNode/Peers/NeutrinoPeers.tsx:213-218; zeus:views/Settings/EmbeddedNode/Peers/NeutrinoPeers.tsx:258-270",
+    "note": "Add Neutrino peers by host and switch on 'don't allow other peers' to use only yours; LDK Node takes a custom Esplora URL"
+   },
+   "verifies_chain": {
+    "value": "yes",
+    "evidence": "zeus:utils/LndMobileUtils.ts:270; lnd-zeus:config_builder.go:1876",
+    "note": "Embedded LND runs Neutrino: headers and BIP 157/158 filters checked on the phone; LDK Node and remote nodes trust Esplora or the node"
    },
    "tor": {
     "value": "no",
-    "evidence": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465; zeus:stores/SettingsStore.ts:1608",
-    "note": "Built-in Tor only for remote nodes; embedded LND Tor setting has no toggle"
+    "evidence": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465; zeus:stores/SettingsStore.ts:1608; zeus:views/Settings/EmbeddedNode/Advanced.tsx:66",
+    "note": "No Tor toggle for the embedded node (embeddedTor stays false); the built-in Tor client is offered only for remote nodes"
+   },
+   "seed_standard": {
+    "value": "partial",
+    "evidence": "zeus:utils/LndMobileUtils.ts:1295; lnd-zeus:aezeed/README.md:5-12; zeus:views/Settings/Seed.tsx:319-321",
+    "note": "Embedded LND shows a 24-word aezeed (LND format, not BIP 39); the LDK Node option shows a BIP 39 phrase"
+   },
+   "cloud_backup": {
+    "value": "partial",
+    "evidence": "zeus:stores/ChannelBackupStore.ts:63-69; zeus:stores/ChannelBackupStore.ts:95; zeus:utils/LdkNodeUtils.ts:47",
+    "note": "Embedded LND uploads only encrypted channel state to Olympus, no on-chain data or keys; LDK Node keeps node state on a VSS server"
    },
    "license": {
     "value": "AGPL-3.0",
-    "evidence": "zeus:LICENSE:20",
-    "note": "GNU Affero General Public License v3"
+    "evidence": "zeus:LICENSE:20-21; zeus:README.md:145",
+    "note": "GNU Affero General Public License v3; the file header also says 'or any later version'"
    }
   }
  },
  "profiles": {
   "Winnow": {
-   "built_with": "Swift",
-   "engine": "Its own, in Swift, in the same repository as the wallet",
-   "chain_data": {
-    "text": "Compact block filters (BIP157/158) from Bitcoin peers Winnow finds itself",
-    "cite": "winnow:README.md:7"
+   "built_with": "Swift (SwiftUI)",
+   "engine": {
+    "text": "Its own, in Swift (WalletCore), in the same repository: keys, PSBTs, scripts, compact-filter sync, peer networking",
+    "cite": "winnow:Package.swift:19-21; winnow:README.md:7"
    },
-   "partner": {
-    "text": "Your choice of Olympus, Megalith or LNServer",
-    "cite": "winnow:Sources/WinnowLightningApp/LightningProviders.swift:19"
+   "chain_data": {
+    "text": "BIP157/158 compact filters from Bitcoin peers found through a signed peer list and DNS seeds; Advanced mode adds your own peers",
+    "cite": "winnow:README.md:7; winnow:Sources/WalletCore/Network/Peers/CensusCatalog.swift:28; winnow:Sources/WinnowApp/SettingsView.swift:83-107"
+   },
+   "third_party": {
+    "text": "Nobody for the everyday wallet; shared accounts need the co-owners' keys, with no co-signing server",
+    "cite": "winnow:README.md:9; winnow:Sources/WinnowApp/SharedSavingsViews.swift:104-105"
    },
    "distribution": {
-    "text": "Built into the Winnow app and in its TestFlight builds since 0.8.0; labelled experimental",
-    "cite": "winnow:docs/engineering/lightning-release.md:3; winnow:.github/workflows/release.yml:183-206; winnow:Sources/WinnowLightningApp/LightningView.swift:27"
+    "text": "App Store; pre-release builds on TestFlight",
+    "cite": "winnow:README.md:5; winnow:.github/workflows/appstore-submit.yml:3-6"
    },
    "libraries": {
-    "text": "libsecp256k1, through swift-secp256k1. Nothing else.",
-    "cite": "winnow:Package.swift:19"
+    "text": "swift-secp256k1 0.23.2 (Bitcoin Core's libsecp256k1), the only third-party dependency",
+    "cite": "winnow:Package.swift:16; winnow:README.md:11"
    },
    "bitcoin_library_not_counted": null,
    "prebuilt": {
-    "text": "None"
+    "text": "None in the repository; the app links the swift-secp256k1 package that SwiftPM fetches",
+    "cite": "winnow:Package.swift:16-21"
    },
    "patched": "None"
   },
-  "Phoenix": {
-   "built_with": "Swift on Kotlin Multiplatform",
-   "engine": "lightning-kmp {version:lightning-kmp} (Kotlin)",
-   "chain_data": {
-    "text": "An Electrum server picked at random from a built-in list of 15",
-    "cite": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/AppConfigurationManager.kt:66"
+  "BlueWallet": {
+   "built_with": "React Native (TypeScript) with small native modules",
+   "engine": {
+    "text": "Its own TypeScript (class/wallets) on bitcoinjs-lib 7 and @noble/secp256k1; chain data through a fork of the Electrum client",
+    "cite": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:1075; bluewallet:package.json:132-135; bluewallet:package.json:144"
    },
-   "partner": {
-    "text": "ACINQ",
-    "cite": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/NodeParamsManager.kt:87"
+   "chain_data": {
+    "text": "Electrum servers: electrum1.bluewallet.io by default, a short hardcoded fallback list; any host and port can be set in Settings > Network",
+    "cite": "bluewallet:blue_modules/BlueElectrum.ts:90-97; bluewallet:screen/settings/ElectrumSettings.tsx:193-212"
+   },
+   "third_party": {
+    "text": "Nobody for on-chain funds. The optional LNDhub (custodial) and Ark wallet types depend on their own servers",
+    "cite": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:1075; bluewallet:class/wallets/lightning-custodian-wallet.ts:80; bluewallet:class/wallets/lightning-ark-wallet.ts:94"
+   },
+   "distribution": {
+    "text": "App Store; builds go through TestFlight",
+    "cite": "bluewallet:README.md:10; bluewallet:fastlane/Fastfile:1306-1344"
+   },
+   "libraries": {
+    "text": "bitcoinjs-lib, bip32, bip39, ecpair, @noble/secp256k1, BlueWallet forks of coinselect, rn-electrum-client, bip47, SilentPayments and slip39-js, aezeed, bolt11, payjoin-client, bc-ur (Keystone and NGRAVE), realm, react-native-keychain, @arkade-os/sdk and boltz-swap, Bugsnag.",
+    "cite": "bluewallet:package.json:93-190"
+   },
+   "bitcoin_library_not_counted": "bitcoinjs-lib, bip32 and @noble/secp256k1, from npm",
+   "prebuilt": {
+    "text": "No binaries are checked in. The build links React Native's prebuilt Hermes and React-Core-prebuilt pods, and the patched react-native-background-fetch pod vendors the npm package's TSBackgroundFetch.xcframework.",
+    "cite": "bluewallet:ios/Podfile.lock:28-30; bluewallet:ios/Podfile.lock:97; bluewallet:patches/react-native-background-fetch+4.4.2.patch:8-12"
+   },
+   "patched": "Four patch-package patches on npm packages: react-native-background-fetch (iOS xcframework with Catalyst), react-native-notifications (Android token), react-native-context-menu-view (Android menus), react-native-screens (iOS accessibility id; patch is for 4.27.0 while package.json pins 4.28.0). Several dependencies also come from BlueWallet forks pinned to git commits."
+  },
+  "Green": {
+   "built_with": "Swift (UIKit) over Blockstream's gdk",
+   "engine": {
+    "text": "gdk {version:gdk} (C++ for multisig, Rust for singlesig), linked as a prebuilt static library",
+    "cite": "green:tools/fetch_gdk_binaries.sh:29; gdk:src/session_impl.cpp:79-82"
+   },
+   "chain_data": {
+    "text": "Singlesig: Blockstream's Electrum server, or your own in Settings. Multisig: Blockstream's backend, not replaceable",
+    "cite": "gdk:src/network_parameters.cpp:472; gdk:src/network_parameters.cpp:333; green:gaios/AppSettings/AppSettingsViewModel.swift:52-53"
+   },
+   "third_party": {
+    "text": "Nobody for singlesig. Multisig (2-of-2, 2-of-3) needs Blockstream's server to co-sign every spend",
+    "cite": "gdk:src/ga_auth_handlers.cpp:808; gdk:src/ga_auth_handlers.cpp:835-844"
    },
    "distribution": "App Store",
    "libraries": {
-    "text": "bitcoin-kmp, secp256k1-kmp, Ktor, SQLDelight, Firebase Messaging",
-    "cite": "phoenix:phoenix-ios/phoenix-ios.xcodeproj/project.pbxproj:386"
+    "text": "gdk (libwally-core, rust-bitcoin, Tor), Liquid Wallet Kit, Greenlight SDK, Firebase, Countly, Zendesk, Rive, Charts, SwiftCBOR, AsyncBluetooth",
+    "cite": "green:gaios.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved:77; green:gaios.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved:149; green:gaios.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved:68"
+   },
+   "bitcoin_library_not_counted": "libwally-core, rust-bitcoin, rust-elements (inside the prebuilt gdk)",
+   "prebuilt": {
+    "text": "gdk static library (libgreen_gdk_full.a) from Blockstream's release tarballs, checked against pinned SHA-256 sums; Google's grpc-binary and abseil-cpp-binary packages",
+    "cite": "green:tools/fetch_gdk_binaries.sh:29-37"
+   },
+   "patched": "Countly's iOS SDK comes from a fork (angelix/countly-sdk-ios 23.6.1-ave). gdk's own build patches libevent and bc-ur, outside the app."
+  },
+  "Muun": {
+   "built_with": "Swift (UIKit) with a Go library, libwallet",
+   "engine": {
+    "text": "libwallet, Muun's own Go library in the same repository: keys, 2-of-2 and MuSig2 signing, addresses, fees. Muun's server holds the second key",
+    "cite": "muun:README.md:26; muun:libwallet/V5.go:16-24"
+   },
+   "chain_data": {
+    "text": "Muun's own server (Houston API): history, spendable coins, fees and block height. The person cannot change it",
+    "cite": "muun:falcon/app/falcon/core/Environment.swift:42; muun:falcon/app/falcon/Presentation/Screen/Settings/SettingsPresenter.swift:154-168; muun:libwallet/libwallet_init/init.go:160-161"
+   },
+   "third_party": {
+    "text": "Muun's server must co-sign every spend. Without it the person needs the Emergency Kit, the Recovery Code and Muun's separate Recovery Tool",
+    "cite": "muun:libwallet/V4.go:47-48; muun:libwallet/V5.go:26-35; muun:falcon/app/falcon/Presentation/Screen/SecurityCenter/EmergencyKit/RecoveryTool/RecoveryToolViewController.swift:69"
+   },
+   "distribution": "App Store, per its fastlane release lane",
+   "libraries": {
+    "text": "Swift: Firebase (Analytics, Crashlytics, Messaging), GoogleSignIn and Google Drive API, GRDB.swift, RxSwift, Dip, grpc-swift, Lottie. Go: btcd, lnd (lnwire, zpay32), lightning-onion, go-lnurl, gofpdf, pdfcpu, gorm with SQLite, gRPC.",
+    "cite": "muun:falcon/app/Podfile:15-31; muun:falcon/app/SPM/Package.swift:15-18; muun:libwallet/go.mod:6-35"
+   },
+   "bitcoin_library_not_counted": "btcd and lnd, as Go modules. Copies inside libwallet (btcsuitew, musig2v040) are counted",
+   "prebuilt": {
+    "text": "Rust zero-knowledge proof verifier (plonky2) linked as the static library multi-apple-ios-librs.a, built by libwallet/librs/makelibs.sh and not in the tree; FirebaseAnalytics and GoogleAppMeasurement xcframeworks from dl.google.com",
+    "cite": "muun:libwallet/librs/librs.go:16; muun:falcon/app/pods_dependency_registry.txt:4; muun:falcon/app/pods_dependency_registry.txt:14"
+   },
+   "patched": "Go 1.24.7 toolchain is patched for cgo struct alignment (falcon/0001-align-to-ptrsize.patch); golang.org/x/mobile is replaced by the muun/mobile fork (libwallet/go.mod:200)"
+  },
+  "Phoenix": {
+   "built_with": "Swift (SwiftUI) over Kotlin Multiplatform shared code",
+   "engine": {
+    "text": "lightning-kmp {version:lightning-kmp} (Kotlin Multiplatform): Electrum client, swap-in wallet and final (BIP84) wallet",
+    "cite": "phoenix:phoenix-shared/build.gradle.kts:85; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/blockchain/electrum/SwapInWallet.kt:14-28; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/blockchain/electrum/FinalWallet.kt:15-26"
+   },
+   "chain_data": {
+    "text": "An Electrum server picked at random from a built-in list of 15, trusted as given; the person can enter their own server in Settings",
+    "cite": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/AppConfigurationManager.kt:66; phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/electrum server/ElectrumConfigurationView.swift:59-60"
+   },
+   "third_party": {
+    "text": "ACINQ co-signs swap-in deposits (MuSig2 2-of-2) until a refund delay of about six months, and is the channel peer for every on-chain send. The final wallet is the person's alone",
+    "cite": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/transactions/SwapInProtocol.kt:11-12; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:94; phoenix:phoenix-ios/phoenix-ios/views/send/ValidateView.swift:1970-1973"
+   },
+   "distribution": "App Store",
+   "libraries": {
+    "text": "bitcoin-kmp with secp256k1-kmp, Ktor, kotlinx-serialization, SQLDelight (Kotlin side); Firebase Messaging and a few small SwiftUI packages (Swift side)",
+    "cite": "lightning-kmp:modules/core/build.gradle.kts:88-100; phoenix:phoenix-shared/build.gradle.kts:85-93; phoenix:phoenix-ios/phoenix-ios.xcodeproj/project.pbxproj:387"
    },
    "bitcoin_library_not_counted": "bitcoin-kmp",
    "prebuilt": {
-    "text": "Kotlin libraries, as compiled klibs from Maven Central"
+    "text": "Kotlin libraries (lightning-kmp, bitcoin-kmp, secp256k1-kmp native code, Ktor, SQLDelight) as compiled klibs from Maven Central; Firebase through Swift Package Manager",
+    "cite": "phoenix:phoenix-shared/build.gradle.kts:85-93; phoenix:build.gradle.kts:18-20"
    },
    "patched": "None"
   },
   "Bitkit": {
-   "built_with": "Swift",
-   "engine": "LDK Node (Synonym’s fork) on rust-lightning {version:rust-lightning} (Rust)",
-   "chain_data": {
-    "text": "Synonym’s Electrum server",
-    "cite": "bitkit:Bitkit/Constants/Env.swift:191"
+   "built_with": "Swift (SwiftUI) on Rust libraries",
+   "engine": {
+    "text": "LDK Node {version:synonym-ldk-node} (Synonym's fork, Rust); its on-chain wallet is BDK",
+    "cite": "synonym-ldk-node:Cargo.toml:48-51; synonym-ldk-node:src/builder.rs:1384-1402"
    },
-   "partner": {
-    "text": "Blocktank, run by Synonym",
-    "cite": "bitkit:Bitkit/Constants/Env.swift:295"
+   "chain_data": {
+    "text": "Synonym's Electrum server (bitkit.to); the person can change it in Settings > Advanced > Electrum Server",
+    "cite": "bitkit:Bitkit/Constants/Env.swift:191; bitkit:Bitkit/Views/Settings/Advanced/ElectrumSettingsScreen.swift:56-84"
+   },
+   "third_party": {
+    "text": "Nobody",
+    "cite": "bitkit:Bitkit/Services/LightningService.swift:796-803"
    },
    "distribution": "App Store",
    "libraries": {
-    "text": "BDK (inside LDK Node), bitkit-core, Paykit, VSS client, Lottie"
+    "text": "LDK Node (with BDK), bitkit-core, Paykit, VSS client, Lottie, swift-secp256k1",
+    "cite": "bitkit:Bitkit.xcodeproj/project.pbxproj:1176-1223"
    },
    "bitcoin_library_not_counted": "BDK, rust-bitcoin",
    "prebuilt": {
@@ -4829,48 +6581,56 @@
    "patched": "None"
   },
   "Blixt": {
-   "built_with": "React Native (TypeScript)",
-   "engine": "Embedded LND {version:lnd-blixt} (Go)",
-   "chain_data": {
-    "text": "Neutrino (BIP157) through six default peers, four run by Blixt",
-    "cite": "blixt:src/utils/constants.ts:30"
+   "built_with": "React Native (TypeScript) with Go (LND)",
+   "engine": {
+    "text": "Embedded LND {version:lnd-blixt} (Go); the on-chain wallet is btcwallet, run in-process through react-native-turbo-lnd",
+    "cite": "lnd-blixt:lnwallet/btcwallet/btcwallet.go:83-88"
    },
-   "partner": {
-    "text": "Dunder, run by Blixt, or any node",
-    "cite": "blixt:src/utils/constants.ts:51"
+   "chain_data": {
+    "text": "Neutrino (BIP157/158) through six default peers, four run by Blixt; the person can change the peers in Settings",
+    "cite": "blixt:src/utils/constants.ts:30-38; blixt:src/windows/Settings/Settings.tsx:1670-1680"
+   },
+   "third_party": {
+    "text": "Nobody",
+    "cite": "blixt:src/state/OnChain.ts:217-226"
    },
    "distribution": "TestFlight",
    "libraries": {
-    "text": "React Native, react-native-turbo-lnd, secp256k1, protobuf, Nitro Tor"
+    "text": "React Native, react-native-turbo-lnd, @bufbuild/protobuf, secp256k1, bech32, react-native-nitro-tor, react-native-keychain, easy-peasy",
+    "cite": "blixt:package.json:70; blixt:package.json:104; blixt:package.json:122; blixt:package.json:134; blixt:package.json:145"
    },
-   "bitcoin_library_not_counted": "btcd, btcwallet, neutrino",
+   "bitcoin_library_not_counted": "btcwallet (with btcd, neutrino) under LND",
    "prebuilt": {
-    "text": "LND, from react-native-turbo-lnd releases",
-    "cite": "blixt:package.json:134"
+    "text": "Lndmobile.xcframework (LND), downloaded from the react-native-turbo-lnd release for the pinned LND commit",
+    "cite": "turbo-lnd:react-native-turbo-lnd.podspec:19"
    },
-   "patched": "None"
+   "patched": "None in the app (no patch files); LND is Blixt's own fork (hsjoberg/lnd) with an added gossip speedloader"
   },
   "Zeus": {
-   "built_with": "React Native (TypeScript)",
-   "engine": "Embedded LND {version:lnd-zeus} (Go). LDK Node is an option, and Zeus can also drive a remote node.",
-   "chain_data": {
-    "text": "Neutrino (BIP157) through five default peers, two run by Olympus; the LDK Node option uses an Esplora server",
-    "cite": "zeus:stores/SettingsStore.ts:1476"
+   "built_with": "React Native (TypeScript) with native modules and prebuilt Go and Rust libraries",
+   "engine": {
+    "text": "Embedded LND {version:lnd-zeus} (Go, Zeus's fork); the on-chain wallet is btcwallet. LDK Node (BDK) is an option, and remote nodes can be driven too",
+    "cite": "lnd-zeus:lnwallet/btcwallet/btcwallet.go:83-88; zeus:utils/WalletCreationUtils.ts:109-126; zeus:utils/WalletCreationUtils.ts:71-78"
    },
-   "partner": {
-    "text": "Olympus, run by Zeus, or any node",
-    "cite": "zeus:stores/SettingsStore.ts:1305"
+   "chain_data": {
+    "text": "Neutrino (BIP157/158) through five default peers, two run by Olympus; the person can add peers or allow only their own. The LDK Node option uses an Esplora server",
+    "cite": "zeus:stores/SettingsStore.ts:1476-1482; zeus:utils/LndMobileUtils.ts:222-224; zeus:utils/LdkNodeUtils.ts:26-27"
+   },
+   "third_party": {
+    "text": "Nobody for on-chain funds; they sit in the embedded wallet under one key on the phone",
+    "cite": "zeus:backends/EmbeddedLND.ts:100-107; lnd-zeus:lnwallet/btcwallet/btcwallet.go:83-88"
    },
    "distribution": "App Store",
    "libraries": {
-    "text": "React Native, bitcoinjs-lib, noble and scure cryptography, Cashu CDK, Nostr (NDK)"
+    "text": "React Native, bitcoinjs-lib, noble and scure cryptography, bc-ur registries (Keystone, NGRAVE), Nostr (NDK), react-native-nitro-tor, Cashu CDK",
+    "cite": "zeus:package.json:53; zeus:package.json:55; zeus:package.json:56; zeus:package.json:59; zeus:package.json:77; zeus:package.json:86; zeus:package.json:117; zeus:package.json:148"
    },
-   "bitcoin_library_not_counted": "btcd, btcwallet, neutrino",
+   "bitcoin_library_not_counted": "btcwallet (with btcd, neutrino) under LND; bitcoinjs-lib; BDK in the optional LDK Node",
    "prebuilt": {
-    "text": "LND, LDK Node and Cashu CDK, pinned by SHA-256",
-    "cite": "zeus:fetch-libraries-versions.json:2"
+    "text": "Lndmobile.xcframework (LND), LDKNodeFFI.xcframework (LDK Node), and the Cashu CDK and restore xcframeworks, downloaded from release archives pinned by SHA-256",
+    "cite": "zeus:fetch-libraries-versions.json:2-6; zeus:fetch-libraries.sh:37-38"
    },
-   "patched": "Five iOS-relevant scripts rewrite installed npm packages (a sixth targets Android); rn-nodeify shims crypto and stream"
+   "patched": "Six postinstall scripts rewrite installed npm packages (two are Android-only: jcenter and notifications; four reach iOS: NativeEventEmitter, keychain cloudSync, noble-hashes exports, reanimated C++); rn-nodeify shims crypto, stream and dgram"
   }
  },
  "reviewed": {
@@ -4878,542 +6638,177 @@
   "sources": {
    "winnow": {
     "repo": "https://github.com/winnowwallet/winnow",
-    "rev": "8b6606de01427e54e3d7c12651ac4eafedd910d4",
-    "date": "2026-10-01"
+    "rev": "7751cfd30f5e1b108fcfe322db38b76948a0bb1d",
+    "date": "2026-10-02"
    },
    "phoenix": {
     "repo": "https://github.com/ACINQ/phoenix",
-    "rev": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
-    "date": "2026-09-27"
+    "rev": "c3b0ae7882ad256c0b35e94c66d5f1f27305c208",
+    "date": "2026-10-02"
    },
    "lightning-kmp": {
     "repo": "https://github.com/ACINQ/lightning-kmp",
-    "rev": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
-    "date": "2026-09-27"
+    "rev": "9dacdc0b4ac981dcb8fed9be23b53e6994eab27a",
+    "date": "2026-10-02"
    },
    "bitkit": {
     "repo": "https://github.com/synonymdev/bitkit-ios",
-    "rev": "e33dc08e799a3b476924d6580142990f78b50601",
-    "date": "2026-10-01"
+    "rev": "f751f505710e175bbbf4ee9f8cf8ca09fc471df7",
+    "date": "2026-10-02"
    },
    "synonym-ldk-node": {
     "repo": "https://github.com/synonymdev/ldk-node",
     "rev": "190a17d966cf5a685444cfa17c3a419c290bf26c",
-    "date": "2026-09-27"
+    "date": "2026-10-02"
    },
    "rust-lightning": {
     "repo": "https://github.com/lightningdevkit/rust-lightning",
-    "rev": "311ad94772722ff9c54ec0f7656a4b811be5b846",
-    "date": "2026-09-27"
+    "rev": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
+    "date": "2026-10-02"
    },
    "bitkit-core": {
     "repo": "https://github.com/synonymdev/bitkit-core",
     "rev": "b53fa54a16f04940943072bb6e08dc2650302f93",
-    "date": "2026-09-27"
+    "date": "2026-10-02"
    },
    "paykit-rs": {
     "repo": "https://github.com/pubky/paykit-rs",
-    "rev": "4613beee25d1680ed8bc849446498e9bfb2cdb16",
-    "date": "2026-09-27"
+    "rev": "24162ebbcc703251d8038f2e176d1f4cfb117c6a",
+    "date": "2026-10-02"
    },
    "vss-rust-client-ffi": {
     "repo": "https://github.com/synonymdev/vss-rust-client-ffi",
     "rev": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
-    "date": "2026-09-27"
+    "date": "2026-10-02"
    },
    "blixt": {
     "repo": "https://github.com/hsjoberg/blixt-wallet",
     "rev": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
-    "date": "2026-09-27"
+    "date": "2026-10-02"
    },
    "lnd-blixt": {
     "repo": "https://github.com/hsjoberg/lnd",
     "rev": "ae185f27e097a4106d04437f0a2be6edacf40910",
-    "date": "2026-09-27"
+    "date": "2026-10-02"
    },
    "zeus": {
     "repo": "https://github.com/ZeusLN/zeus",
-    "rev": "1a6f97a71336a9202f45c169f55b250f298b6ab4",
-    "date": "2026-10-01"
+    "rev": "97bfcb5adacde3159479ae7da9d7ede6fdd5f301",
+    "date": "2026-10-02"
    },
    "lnd-zeus": {
     "repo": "https://github.com/ZeusLN/lnd",
     "rev": "ae24665a916d94fa89475b21ec27e8cda0eb5845",
-    "date": "2026-09-27"
+    "date": "2026-10-02"
+   },
+   "turbo-lnd": {
+    "repo": "https://github.com/hsjoberg/react-native-turbo-lnd",
+    "rev": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
+    "date": "2026-10-02"
+   },
+   "zeus-ldk-node": {
+    "repo": "https://github.com/ZeusLN/ldk-node",
+    "rev": "921ef6370a5694ed8cf00538878420ccb5afe09d",
+    "date": "2026-10-02"
+   },
+   "cdk": {
+    "repo": "https://github.com/cashubtc/cdk",
+    "rev": "874745d5d79b36be346efbd716393357ab898834",
+    "date": "2026-10-02"
+   },
+   "bluewallet": {
+    "repo": "https://github.com/BlueWallet/BlueWallet",
+    "rev": "98dafb58d86ffd1c431b0dd3c634c7d843112c63",
+    "date": "2026-10-02"
+   },
+   "green": {
+    "repo": "https://github.com/Blockstream/green_ios",
+    "rev": "131f820fdef34b5368de9caa5ef7f3de4d7e0139",
+    "date": "2026-10-02"
+   },
+   "gdk": {
+    "repo": "https://github.com/Blockstream/gdk",
+    "rev": "02e3646264ed10afd460e61c2c516510b9ce5cf5",
+    "date": "2026-10-02"
+   },
+   "muun": {
+    "repo": "https://github.com/muun/falcon",
+    "rev": "d6719c00f96d2ecbde2ab6588f95e54975ceea0e",
+    "date": "2026-10-02"
    }
   }
  },
  "drift": {
-  "reviewed": "2026-09-27",
-  "reviewed_latest": "2026-10-01",
+  "reviewed": "2026-10-02",
+  "reviewed_latest": "2026-10-02",
   "measured": "2026-10-02",
-  "citations": 247,
-  "same": 236,
-  "moved": 11,
+  "citations": 420,
+  "same": 420,
+  "moved": 0,
   "changed": 0,
   "gone": 0,
   "by_wallet": {
    "Winnow": {
-    "same": 45,
-    "moved": 11,
-    "changed": 0,
-    "gone": 0
-   },
-   "Phoenix": {
-    "same": 43,
+    "same": 52,
     "moved": 0,
     "changed": 0,
     "gone": 0
    },
-   "Bitkit": {
+   "BlueWallet": {
+    "same": 58,
+    "moved": 0,
+    "changed": 0,
+    "gone": 0
+   },
+   "Green": {
+    "same": 54,
+    "moved": 0,
+    "changed": 0,
+    "gone": 0
+   },
+   "Muun": {
+    "same": 48,
+    "moved": 0,
+    "changed": 0,
+    "gone": 0
+   },
+   "Phoenix": {
     "same": 53,
     "moved": 0,
     "changed": 0,
     "gone": 0
    },
+   "Bitkit": {
+    "same": 52,
+    "moved": 0,
+    "changed": 0,
+    "gone": 0
+   },
    "Blixt": {
-    "same": 47,
+    "same": 45,
     "moved": 0,
     "changed": 0,
     "gone": 0
    },
    "Zeus": {
-    "same": 48,
+    "same": 58,
     "moved": 0,
     "changed": 0,
     "gone": 0
    }
   },
   "changed_or_gone": [],
-  "moved_within_file": [
-   {
-    "wallet": "Winnow",
-    "fact": "features.bolt11_receive",
-    "cite": "winnow:Sources/WinnowLightningApp/LightningAppReceiving.swift:150",
-    "status": "moved",
-    "now_at": 153
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.bolt12_receive",
-    "cite": "winnow:Sources/WinnowLightningApp/LightningProviders.swift:16",
-    "status": "moved",
-    "now_at": 18
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.offline_receive",
-    "cite": "winnow:Sources/WinnowLightningApp/LightningInputViews.swift:31",
-    "status": "moved",
-    "now_at": 32
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.offline_receive",
-    "cite": "winnow:docs/engineering/swift-lightning.md:65",
-    "status": "moved",
-    "now_at": 67
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.keysend",
-    "cite": "winnow:Sources/WinnowLightningApp/LightningInputViews.swift:76",
-    "status": "moved",
-    "now_at": 77
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.choose_peer",
-    "cite": "winnow:Sources/WinnowLightningApp/LightningProviders.swift:19",
-    "status": "moved",
-    "now_at": 21
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.choose_peer",
-    "cite": "winnow:Sources/WinnowLightningApp/LightningInputViews.swift:30",
-    "status": "moved",
-    "now_at": 31
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.jit_channels",
-    "cite": "winnow:Sources/WinnowLightningApp/LightningAppReceiving.swift:60",
-    "status": "moved",
-    "now_at": 63
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.watchtower",
-    "cite": "winnow:docs/engineering/swift-lightning.md:54-55",
-    "status": "moved",
-    "now_at": 56
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "features.channel_backup",
-    "cite": "winnow:docs/engineering/swift-lightning.md:40-44",
-    "status": "moved",
-    "now_at": 42
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "profile.partner",
-    "cite": "winnow:Sources/WinnowLightningApp/LightningProviders.swift:19",
-    "status": "moved",
-    "now_at": 21
-   }
-  ]
+  "moved_within_file": []
  },
  "history": [
   {
-   "date": "2026-09-27",
-   "method": 1,
-   "sources": {
-    "winnow": "1f1bfdd956c84765c444ed6b0667806b20626c55",
-    "phoenix": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
-    "lightning-kmp": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
-    "bitkit": "c906d5af336dd1ceec22bcbbb1c7d9f115e2d021",
-    "synonym-ldk-node": "190a17d966cf5a685444cfa17c3a419c290bf26c",
-    "rust-lightning": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
-    "bitkit-core": "b53fa54a16f04940943072bb6e08dc2650302f93",
-    "paykit-rs": "4613beee25d1680ed8bc849446498e9bfb2cdb16",
-    "vss-rust-client-ffi": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
-    "blixt": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
-    "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
-    "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
-    "zeus": "5792769159aec740c31d8f28a0d606c96ccd1618",
-    "lnd-zeus": "ae24665a916d94fa89475b21ec27e8cda0eb5845",
-    "zeus-ldk-node": "921ef6370a5694ed8cf00538878420ccb5afe09d",
-    "cdk": "874745d5d79b36be346efbd716393357ab898834"
-   },
-   "wallets": {
-    "Winnow": {
-     "lines": 29192,
-     "lines_app": 10576,
-     "lines_bitcoin": 13132,
-     "lines_lightning": 5484,
-     "characters": 1052232,
-     "functions": 2230,
-     "cc_gt_12": 32,
-     "cc_gt_30": 1,
-     "max_cc": 31,
-     "packages": 1,
-     "vendored_lines": 0
-    },
-    "Phoenix": {
-     "lines": 100853,
-     "lines_app": 72767,
-     "lines_lightning": 28086,
-     "characters": 3071264,
-     "functions": 7218,
-     "cc_gt_12": 132,
-     "cc_gt_30": 22,
-     "max_cc": 168,
-     "packages": 59,
-     "vendored_lines": 0
-    },
-    "Bitkit": {
-     "lines": 219539,
-     "lines_app": 91893,
-     "lines_lightning": 127646,
-     "characters": 6353943,
-     "functions": 10679,
-     "cc_gt_12": 246,
-     "cc_gt_30": 47,
-     "max_cc": 174,
-     "packages": 691,
-     "vendored_lines": 0
-    },
-    "Blixt": {
-     "lines": 275307,
-     "lines_app": 36360,
-     "lines_lightning": 238947,
-     "characters": 6481671,
-     "functions": 11465,
-     "cc_gt_12": 611,
-     "cc_gt_30": 85,
-     "max_cc": 148,
-     "packages": 681,
-     "vendored_lines": 0
-    },
-    "Zeus": {
-     "lines": 431736,
-     "lines_app": 189569,
-     "lines_lightning": 242167,
-     "characters": 9284431,
-     "functions": 15200,
-     "cc_gt_12": 909,
-     "cc_gt_30": 142,
-     "max_cc": 252,
-     "packages": 1447,
-     "vendored_lines": 4551
-    }
-   }
-  },
-  {
-   "date": "2026-09-29",
-   "method": 1,
-   "sources": {
-    "winnow": "bd8714549c90b68a4ddace01972109e5bcf333ba",
-    "phoenix": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
-    "lightning-kmp": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
-    "bitkit": "2a0cb7bf5055ba7b9d0e907822a6fcf57f770932",
-    "synonym-ldk-node": "190a17d966cf5a685444cfa17c3a419c290bf26c",
-    "rust-lightning": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
-    "bitkit-core": "b53fa54a16f04940943072bb6e08dc2650302f93",
-    "paykit-rs": "4613beee25d1680ed8bc849446498e9bfb2cdb16",
-    "vss-rust-client-ffi": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
-    "blixt": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
-    "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
-    "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
-    "zeus": "605b88bfc55a71992d00ca754b9046a7b8a778fb",
-    "lnd-zeus": "ae24665a916d94fa89475b21ec27e8cda0eb5845",
-    "zeus-ldk-node": "921ef6370a5694ed8cf00538878420ccb5afe09d",
-    "cdk": "874745d5d79b36be346efbd716393357ab898834"
-   },
-   "wallets": {
-    "Winnow": {
-     "lines": 33096,
-     "lines_app": 12294,
-     "lines_bitcoin": 13685,
-     "lines_lightning": 7117,
-     "characters": 1248410,
-     "functions": 2751,
-     "cc_gt_12": 30,
-     "cc_gt_30": 1,
-     "max_cc": 34,
-     "packages": 1,
-     "vendored_lines": 0
-    },
-    "Phoenix": {
-     "lines": 100853,
-     "lines_app": 72767,
-     "lines_lightning": 28086,
-     "characters": 3071264,
-     "functions": 7218,
-     "cc_gt_12": 132,
-     "cc_gt_30": 22,
-     "max_cc": 168,
-     "packages": 59,
-     "vendored_lines": 0
-    },
-    "Bitkit": {
-     "lines": 219682,
-     "lines_app": 92036,
-     "lines_lightning": 127646,
-     "characters": 6363674,
-     "functions": 10717,
-     "cc_gt_12": 247,
-     "cc_gt_30": 47,
-     "max_cc": 174,
-     "packages": 691,
-     "vendored_lines": 0
-    },
-    "Blixt": {
-     "lines": 275307,
-     "lines_app": 36360,
-     "lines_lightning": 238947,
-     "characters": 6481671,
-     "functions": 11465,
-     "cc_gt_12": 611,
-     "cc_gt_30": 85,
-     "max_cc": 148,
-     "packages": 681,
-     "vendored_lines": 0
-    },
-    "Zeus": {
-     "lines": 431791,
-     "lines_app": 189624,
-     "lines_lightning": 242167,
-     "characters": 9287536,
-     "functions": 15211,
-     "cc_gt_12": 909,
-     "cc_gt_30": 142,
-     "max_cc": 252,
-     "packages": 1481,
-     "vendored_lines": 4551
-    }
-   }
-  },
-  {
-   "date": "2026-09-30",
-   "method": 1,
-   "sources": {
-    "winnow": "0045bef8670f43526b7eae9f4474c35eaa008df8",
-    "phoenix": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
-    "lightning-kmp": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
-    "bitkit": "202373a9a07a47c859623a2f78702d5774f072ac",
-    "synonym-ldk-node": "190a17d966cf5a685444cfa17c3a419c290bf26c",
-    "rust-lightning": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
-    "bitkit-core": "b53fa54a16f04940943072bb6e08dc2650302f93",
-    "paykit-rs": "24162ebbcc703251d8038f2e176d1f4cfb117c6a",
-    "vss-rust-client-ffi": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
-    "blixt": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
-    "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
-    "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
-    "zeus": "bf3e016c473dd0e5f3f75343359d8babcc721051",
-    "lnd-zeus": "ae24665a916d94fa89475b21ec27e8cda0eb5845",
-    "zeus-ldk-node": "921ef6370a5694ed8cf00538878420ccb5afe09d",
-    "cdk": "874745d5d79b36be346efbd716393357ab898834"
-   },
-   "wallets": {
-    "Winnow": {
-     "lines": 33096,
-     "lines_app": 12294,
-     "lines_bitcoin": 13685,
-     "lines_lightning": 7117,
-     "characters": 1248410,
-     "functions": 2751,
-     "cc_gt_12": 30,
-     "cc_gt_30": 1,
-     "max_cc": 34,
-     "packages": 1,
-     "vendored_lines": 0
-    },
-    "Phoenix": {
-     "lines": 100853,
-     "lines_app": 72767,
-     "lines_lightning": 28086,
-     "characters": 3071264,
-     "functions": 7218,
-     "cc_gt_12": 132,
-     "cc_gt_30": 22,
-     "max_cc": 168,
-     "packages": 59,
-     "vendored_lines": 0
-    },
-    "Bitkit": {
-     "lines": 219916,
-     "lines_app": 92270,
-     "lines_lightning": 127646,
-     "characters": 6370962,
-     "functions": 10728,
-     "cc_gt_12": 249,
-     "cc_gt_30": 47,
-     "max_cc": 174,
-     "packages": 691,
-     "vendored_lines": 0
-    },
-    "Blixt": {
-     "lines": 275307,
-     "lines_app": 36360,
-     "lines_lightning": 238947,
-     "characters": 6481671,
-     "functions": 11465,
-     "cc_gt_12": 611,
-     "cc_gt_30": 85,
-     "max_cc": 148,
-     "packages": 681,
-     "vendored_lines": 0
-    },
-    "Zeus": {
-     "lines": 431809,
-     "lines_app": 189642,
-     "lines_lightning": 242167,
-     "characters": 9287885,
-     "functions": 15211,
-     "cc_gt_12": 909,
-     "cc_gt_30": 142,
-     "max_cc": 252,
-     "packages": 1481,
-     "vendored_lines": 4551
-    }
-   }
-  },
-  {
-   "date": "2026-10-01",
-   "method": 1,
-   "sources": {
-    "winnow": "8b6606de01427e54e3d7c12651ac4eafedd910d4",
-    "phoenix": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
-    "lightning-kmp": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
-    "bitkit": "e33dc08e799a3b476924d6580142990f78b50601",
-    "synonym-ldk-node": "190a17d966cf5a685444cfa17c3a419c290bf26c",
-    "rust-lightning": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
-    "bitkit-core": "b53fa54a16f04940943072bb6e08dc2650302f93",
-    "paykit-rs": "24162ebbcc703251d8038f2e176d1f4cfb117c6a",
-    "vss-rust-client-ffi": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
-    "blixt": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
-    "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
-    "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
-    "zeus": "1a6f97a71336a9202f45c169f55b250f298b6ab4",
-    "lnd-zeus": "ae24665a916d94fa89475b21ec27e8cda0eb5845",
-    "zeus-ldk-node": "921ef6370a5694ed8cf00538878420ccb5afe09d",
-    "cdk": "874745d5d79b36be346efbd716393357ab898834"
-   },
-   "wallets": {
-    "Winnow": {
-     "lines": 33484,
-     "lines_app": 12500,
-     "lines_bitcoin": 13859,
-     "lines_lightning": 7125,
-     "characters": 1253815,
-     "functions": 2764,
-     "cc_gt_12": 30,
-     "cc_gt_30": 0,
-     "max_cc": 28,
-     "packages": 1,
-     "vendored_lines": 0
-    },
-    "Phoenix": {
-     "lines": 100853,
-     "lines_app": 72767,
-     "lines_lightning": 28086,
-     "characters": 3071264,
-     "functions": 7218,
-     "cc_gt_12": 132,
-     "cc_gt_30": 22,
-     "max_cc": 168,
-     "packages": 59,
-     "vendored_lines": 0
-    },
-    "Bitkit": {
-     "lines": 220978,
-     "lines_app": 93332,
-     "lines_lightning": 127646,
-     "characters": 6404519,
-     "functions": 10785,
-     "cc_gt_12": 252,
-     "cc_gt_30": 48,
-     "max_cc": 174,
-     "packages": 691,
-     "vendored_lines": 0
-    },
-    "Blixt": {
-     "lines": 275307,
-     "lines_app": 36360,
-     "lines_lightning": 238947,
-     "characters": 6481671,
-     "functions": 11465,
-     "cc_gt_12": 611,
-     "cc_gt_30": 85,
-     "max_cc": 148,
-     "packages": 681,
-     "vendored_lines": 0
-    },
-    "Zeus": {
-     "lines": 432003,
-     "lines_app": 189836,
-     "lines_lightning": 242167,
-     "characters": 9291090,
-     "functions": 15213,
-     "cc_gt_12": 909,
-     "cc_gt_30": 142,
-     "max_cc": 252,
-     "packages": 1467,
-     "vendored_lines": 4551
-    }
-   }
-  },
-  {
    "date": "2026-10-02",
-   "method": 1,
+   "method": 2,
    "sources": {
-    "winnow": "6a9ff4c3cd94711d2273de320a8c0e8173209ec3",
-    "phoenix": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
-    "lightning-kmp": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
-    "bitkit": "28243f1a824f7387e6596c29dbb9c88a2779577d",
+    "winnow": "7751cfd30f5e1b108fcfe322db38b76948a0bb1d",
+    "phoenix": "c3b0ae7882ad256c0b35e94c66d5f1f27305c208",
+    "lightning-kmp": "9dacdc0b4ac981dcb8fed9be23b53e6994eab27a",
+    "bitkit": "f751f505710e175bbbf4ee9f8cf8ca09fc471df7",
     "synonym-ldk-node": "190a17d966cf5a685444cfa17c3a419c290bf26c",
     "rust-lightning": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
     "bitkit-core": "b53fa54a16f04940943072bb6e08dc2650302f93",
@@ -5422,69 +6817,107 @@
     "blixt": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
     "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
     "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
-    "zeus": "1a6f97a71336a9202f45c169f55b250f298b6ab4",
+    "zeus": "97bfcb5adacde3159479ae7da9d7ede6fdd5f301",
     "lnd-zeus": "ae24665a916d94fa89475b21ec27e8cda0eb5845",
     "zeus-ldk-node": "921ef6370a5694ed8cf00538878420ccb5afe09d",
-    "cdk": "874745d5d79b36be346efbd716393357ab898834"
+    "cdk": "874745d5d79b36be346efbd716393357ab898834",
+    "bluewallet": "98dafb58d86ffd1c431b0dd3c634c7d843112c63",
+    "green": "131f820fdef34b5368de9caa5ef7f3de4d7e0139",
+    "gdk": "02e3646264ed10afd460e61c2c516510b9ce5cf5",
+    "muun": "d6719c00f96d2ecbde2ab6588f95e54975ceea0e"
    },
    "wallets": {
     "Winnow": {
-     "lines": 34013,
-     "lines_app": 12647,
-     "lines_bitcoin": 13859,
-     "lines_lightning": 7507,
-     "characters": 1277038,
-     "functions": 2834,
-     "cc_gt_12": 29,
+     "lines": 21997,
+     "lines_app": 8965,
+     "lines_bitcoin": 13032,
+     "characters": 718759,
+     "functions": 1620,
+     "cc_gt_12": 24,
      "cc_gt_30": 0,
-     "max_cc": 28,
+     "max_cc": 27,
      "packages": 1,
      "vendored_lines": 0
     },
+    "BlueWallet": {
+     "lines": 57625,
+     "lines_app": 57625,
+     "characters": 1632379,
+     "functions": 1758,
+     "cc_gt_12": 139,
+     "cc_gt_30": 42,
+     "max_cc": 238,
+     "packages": 930,
+     "vendored_lines": 5136
+    },
+    "Green": {
+     "lines": 70474,
+     "lines_app": 70474,
+     "lines_engine": 34374,
+     "characters": 2032945,
+     "functions": 6905,
+     "cc_gt_12": 85,
+     "cc_gt_30": 7,
+     "max_cc": 45,
+     "packages": 157,
+     "vendored_lines": 0
+    },
+    "Muun": {
+     "lines": 88129,
+     "lines_app": 59660,
+     "lines_bitcoin": 28469,
+     "characters": 2435805,
+     "functions": 6679,
+     "cc_gt_12": 54,
+     "cc_gt_30": 2,
+     "max_cc": 63,
+     "packages": 139,
+     "vendored_lines": 101694
+    },
     "Phoenix": {
-     "lines": 100853,
-     "lines_app": 72767,
-     "lines_lightning": 28086,
-     "characters": 3071264,
-     "functions": 7218,
-     "cc_gt_12": 132,
-     "cc_gt_30": 22,
-     "max_cc": 168,
-     "packages": 59,
+     "lines": 72881,
+     "lines_app": 72881,
+     "lines_engine": 28779,
+     "characters": 1902473,
+     "functions": 4703,
+     "cc_gt_12": 77,
+     "cc_gt_30": 9,
+     "max_cc": 155,
+     "packages": 58,
      "vendored_lines": 0
     },
     "Bitkit": {
-     "lines": 221264,
-     "lines_app": 93618,
-     "lines_lightning": 127646,
-     "characters": 6413614,
-     "functions": 10809,
-     "cc_gt_12": 253,
-     "cc_gt_30": 48,
-     "max_cc": 174,
+     "lines": 93689,
+     "lines_app": 93689,
+     "lines_engine": 127646,
+     "characters": 2602805,
+     "functions": 5464,
+     "cc_gt_12": 92,
+     "cc_gt_30": 9,
+     "max_cc": 119,
      "packages": 691,
      "vendored_lines": 0
     },
     "Blixt": {
-     "lines": 275307,
+     "lines": 36360,
      "lines_app": 36360,
-     "lines_lightning": 238947,
-     "characters": 6481671,
-     "functions": 11465,
-     "cc_gt_12": 611,
-     "cc_gt_30": 85,
-     "max_cc": 148,
+     "lines_engine": 238947,
+     "characters": 947579,
+     "functions": 1057,
+     "cc_gt_12": 56,
+     "cc_gt_30": 19,
+     "max_cc": 134,
      "packages": 681,
      "vendored_lines": 0
     },
     "Zeus": {
-     "lines": 432003,
-     "lines_app": 189836,
-     "lines_lightning": 242167,
-     "characters": 9291090,
-     "functions": 15213,
-     "cc_gt_12": 909,
-     "cc_gt_30": 142,
+     "lines": 189984,
+     "lines_app": 189984,
+     "lines_engine": 242167,
+     "characters": 3685006,
+     "functions": 4695,
+     "cc_gt_12": 345,
+     "cc_gt_30": 75,
      "max_cc": 252,
      "packages": 1467,
      "vendored_lines": 4551

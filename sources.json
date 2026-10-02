@@ -1,35 +1,37 @@
 {
  "snapshot": "2026-10-02",
- "method": 1,
+ "method": 2,
  "sources": {
   "winnow": {
    "repo": "https://github.com/winnowwallet/winnow",
    "track": {"branch": "HEAD"},
-   "rev": "6a9ff4c3cd94711d2273de320a8c0e8173209ec3",
-   "label": "winnowwallet/winnow@6a9ff4c",
-   "date": "2026-10-01"
+   "rev": "7751cfd30f5e1b108fcfe322db38b76948a0bb1d",
+   "label": "winnowwallet/winnow@7751cfd",
+   "date": "2026-09-29"
   },
   "phoenix": {
    "repo": "https://github.com/ACINQ/phoenix",
-   "track": {"branch": "HEAD"},
-   "rev": "1facad2762acb9cfac3e418ae5a326a0bab167c3",
-   "label": "ACINQ/phoenix@1facad2",
-   "date": "2026-09-23"
+   "track": {"tag_latest": "ios-v(\\d+(?:\\.\\d+)*)"},
+   "rev": "c3b0ae7882ad256c0b35e94c66d5f1f27305c208",
+   "label": "ACINQ/phoenix ios-v2.8.4",
+   "date": "2026-10-02",
+   "tag": "ios-v2.8.4",
+   "version": "2.8.4"
   },
   "lightning-kmp": {
    "repo": "https://github.com/ACINQ/lightning-kmp",
    "track": {"from": "phoenix:gradle/libs.versions.toml", "toml": "versions.lightningkmp", "tag": "v{}"},
-   "rev": "77f2f788509fb8452177e86ba6ea4b731cb840e9",
-   "tag": "v1.12.0",
-   "version": "1.12.0",
-   "label": "ACINQ/lightning-kmp v1.12.0",
-   "date": "2026-05-19"
+   "rev": "9dacdc0b4ac981dcb8fed9be23b53e6994eab27a",
+   "tag": "v1.13.2",
+   "version": "1.13.2",
+   "label": "ACINQ/lightning-kmp v1.13.2",
+   "date": "2026-09-24"
   },
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {"branch": "HEAD"},
-   "rev": "28243f1a824f7387e6596c29dbb9c88a2779577d",
-   "label": "synonymdev/bitkit-ios@28243f1",
+   "rev": "f751f505710e175bbbf4ee9f8cf8ca09fc471df7",
+   "label": "synonymdev/bitkit-ios@f751f50",
    "date": "2026-10-02"
   },
   "synonym-ldk-node": {
@@ -102,9 +104,9 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "1a6f97a71336a9202f45c169f55b250f298b6ab4",
-   "label": "ZeusLN/zeus@1a6f97a",
-   "date": "2026-10-01"
+   "rev": "97bfcb5adacde3159479ae7da9d7ede6fdd5f301",
+   "label": "ZeusLN/zeus@97bfcb5",
+   "date": "2026-10-02"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
@@ -133,24 +135,107 @@
    "version": "0.17.4",
    "label": "cashubtc/cdk v0.17.4",
    "date": "2026-08-14"
+  },
+  "bluewallet": {
+   "repo": "https://github.com/BlueWallet/BlueWallet",
+   "track": {"branch": "HEAD"},
+   "rev": "98dafb58d86ffd1c431b0dd3c634c7d843112c63",
+   "label": "BlueWallet/BlueWallet@98dafb5",
+   "date": "2026-10-01"
+  },
+  "green": {
+   "repo": "https://github.com/Blockstream/green_ios",
+   "track": {"branch": "HEAD"},
+   "rev": "131f820fdef34b5368de9caa5ef7f3de4d7e0139",
+   "label": "Blockstream/green_ios@131f820",
+   "date": "2026-09-25"
+  },
+  "gdk": {
+   "repo": "https://github.com/Blockstream/gdk",
+   "track": {"from": "green:tools/fetch_gdk_binaries.sh", "regex": "TAGNAME=\"([^\"]+)\"", "tag": "{}"},
+   "rev": "02e3646264ed10afd460e61c2c516510b9ce5cf5",
+   "tag": "release_0.78.0",
+   "version": "0.78.0",
+   "label": "Blockstream/gdk release_0.78.0",
+   "date": "2026-09-10"
+  },
+  "muun": {
+   "repo": "https://github.com/muun/falcon",
+   "track": {"branch": "HEAD"},
+   "rev": "d6719c00f96d2ecbde2ab6588f95e54975ceea0e",
+   "label": "muun/falcon@d6719c0",
+   "date": "2026-09-28"
   }
  },
  "wallets": {
   "Winnow": {
    "app_source": "winnow",
-   "code": {
-    "app": ["winnow:Sources/WinnowApp", "winnow:Sources/WinnowLightningApp"],
-    "bitcoin": ["winnow:Sources/WalletCore"],
-    "lightning": ["winnow:Sources/LightningCore"]
-   },
+   "code": {"app": ["winnow:Sources/WinnowApp"], "bitcoin": ["winnow:Sources/WalletCore"]},
    "deps": {"spm": "winnow:Package.resolved"},
    "complete": ["winnow:Sources"]
+  },
+  "BlueWallet": {
+   "app_source": "bluewallet",
+   "code": {
+    "app": [
+     "bluewallet:App.tsx",
+     "bluewallet:NavigationService.ts",
+     "bluewallet:index.js",
+     "bluewallet:shim.js",
+     "bluewallet:bugsnag.js",
+     "bluewallet:blue_modules",
+     "bluewallet:class",
+     "bluewallet:components",
+     "bluewallet:helpers",
+     "bluewallet:hooks",
+     "bluewallet:models",
+     "bluewallet:navigation",
+     "bluewallet:screen",
+     "bluewallet:util",
+     "bluewallet:ios"
+    ]
+   },
+   "deps": {"npm_lock": {"lock": "bluewallet:package-lock.json", "package": "bluewallet:package.json"}, "pods": "bluewallet:ios/Podfile.lock"},
+   "vendored": [
+    "bluewallet:blue_modules/pako",
+    "bluewallet:blue_modules/bc-ur",
+    "bluewallet:blue_modules/bc-bech32",
+    "bluewallet:blue_modules/bbqr",
+    "bluewallet:blue_modules/uint8array-extras"
+   ]
+  },
+  "Green": {
+   "app_source": "green",
+   "code": {
+    "app": ["green:gaios", "green:core", "green:hw", "green:lightning", "green:greenaddress", "green:NotificationService"],
+    "engine": ["gdk:src", "gdk:subprojects/gdk_rust"]
+   },
+   "deps": {
+    "spm": "green:gaios.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
+    "cargo": [{"source": "gdk", "dir": "subprojects/gdk_rust", "args": ["-p", "gdk-rust"]}]
+   }
+  },
+  "Muun": {
+   "app_source": "muun",
+   "code": {"app": ["muun:falcon/app/falcon", "muun:falcon/app/falconPushNotifications"], "bitcoin": ["muun:libwallet"]},
+   "skip": ["muun:libwallet/cmd", "muun:libwallet/linters", "muun:libwallet/docker"],
+   "deps": {
+    "pods": "muun:falcon/app/Podfile.lock",
+    "go": {
+     "source": "muun",
+     "dir": "libwallet",
+     "package": ".",
+     "tags": "",
+     "first_party": "github.com/muun/libwallet",
+     "env": {"GOOS": "ios", "GOARCH": "arm64", "CGO_ENABLED": "1"}
+    }
+   }
   },
   "Phoenix": {
    "app_source": "phoenix",
    "code": {
     "app": ["phoenix:phoenix-ios/phoenix-ios", "phoenix:phoenix-ios/phoenix-notifySrvExt", "phoenix:phoenix-shared/src"],
-    "lightning": ["lightning-kmp:modules"]
+    "engine": ["lightning-kmp:modules"]
    },
    "deps": {
     "spm": "phoenix:phoenix-ios/phoenix-ios.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
@@ -173,7 +258,7 @@
    "app_source": "bitkit",
    "code": {
     "app": ["bitkit:Bitkit", "bitkit:BitkitNotification", "bitkit:BitkitWidget"],
-    "lightning": [
+    "engine": [
      "synonym-ldk-node:src",
      "rust-lightning:lightning/src",
      "rust-lightning:lightning-types/src",
@@ -203,7 +288,7 @@
    "app_source": "blixt",
    "code": {
     "app": ["blixt:src", "blixt:index.js", "blixt:ios/BlixtWallet", "blixt:ios/LndMobile", "blixt:speedloader-turbomodule"],
-    "lightning": ["lnd-blixt:."]
+    "engine": ["lnd-blixt:."]
    },
    "deps": {"bun": "blixt:bun.lock", "pods": "blixt:ios/Podfile.lock", "go": {"source": "lnd-blixt"}}
   },
@@ -242,7 +327,7 @@
      "zeus:ios/KeychainAudit.h",
      "zeus:ios/KeychainAudit.m"
     ],
-    "lightning": ["lnd-zeus:."]
+    "engine": ["lnd-zeus:."]
    },
    "deps": {
     "npm": {"package": "zeus:package.json", "yarn": "zeus:yarn.lock"},

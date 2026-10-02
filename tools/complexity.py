@@ -13,7 +13,7 @@ from pathlib import Path
 
 from tree_sitter_language_pack import get_parser
 
-from common import CONFIG, DATA, STAGE, stage, write_json
+from common import CONFIG, COUNTED, DATA, STAGE, left_out, stage, write_json
 
 LANG = {'.swift': 'swift', '.kt': 'kotlin', '.kts': 'kotlin', '.ts': 'typescript', '.tsx': 'tsx',
         '.js': 'javascript', '.jsx': 'javascript', '.go': 'go', '.rs': 'rust', '.m': 'objc', '.mm': 'objc',
@@ -119,7 +119,9 @@ def main():
         for wallet, spec in CONFIG['wallets'].items():
             out[wallet], every = {}, []
             for part, refs in spec['code'].items():
-                staged, _ = stage(refs)
+                if part not in COUNTED:
+                    continue
+                staged, _ = stage(refs, left_out(spec))
                 files = sorted(str(f) for f in staged if f.suffix in LANG)
                 fns, errors = [], 0
                 for path, (found, has_error) in zip(files, pool.map(analyze, files, chunksize=8)):

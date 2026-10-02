@@ -9,7 +9,7 @@ import math
 import re
 from datetime import date
 
-from common import CONFIG, DATA, REVIEWED, ROOT, write_json
+from common import CONFIG, COUNTED, DATA, REVIEWED, ROOT, write_json
 from evidence import blob
 
 esc = html.escape
@@ -20,8 +20,10 @@ cc = json.loads((DATA / 'complexity.json').read_text())
 deps = json.loads((DATA / 'deps.json').read_text())
 vend = json.loads((DATA / 'vendored.json').read_text())
 drift = json.loads((DATA / 'drift.json').read_text())
-history = json.loads((DATA / 'history.json').read_text())['snapshots']
+history_all = json.loads((DATA / 'history.json').read_text())['snapshots']
+history = [r for r in history_all if r['method'] == CONFIG['method']]  # earlier rules counted different things
 features = {w: json.loads((ROOT / f'features/{w.lower()}.json').read_text())['features'] for w in ORDER}
+ROWS = json.loads((ROOT / 'features/rows.json').read_text())
 P = PROFILES['profiles']
 SNAPSHOT = date.fromisoformat(CONFIG['snapshot'])
 
@@ -71,14 +73,15 @@ def fact(value):
 # ── at a glance ────────────────────────────────────────────────
 glance = '\n'.join(
     f'<tr>{name_cell(w)}<td>{fact(P[w]["built_with"])}</td><td>{fact(P[w]["engine"])}</td><td>{fact(P[w]["chain_data"])}</td>'
-    f'<td>{fact(P[w]["partner"])}</td><td>{fact(P[w]["distribution"])}</td></tr>' for w in ORDER)
+    f'<td>{fact(P[w]["third_party"])}</td><td>{fact(P[w]["distribution"])}</td></tr>' for w in ORDER)
 
 # ── code size chart and table ──────────────────────────────────
-ROLES = [('app', 'App', 'app'), ('lightning', 'Lightning engine', 'ln'), ('bitcoin', 'Bitcoin library', 'btc')]
+ROLES = [('app', 'App', 'app'), ('bitcoin', 'Own Bitcoin library', 'btc')]
 
 
 def tot(w, key):
-    return sum(p[key] for p in loc[w].values())
+    """The wallet's own code: its app, and the Bitcoin library in its repository if it has one."""
+    return sum(p[key] for part, p in loc[w].items() if part in COUNTED)
 
 
 def k(n):
@@ -129,10 +132,15 @@ for w in ORDER:
         if role in loc[w]:
             cells.append(f'<td class="{"lib" if role == "bitcoin" else "num"}">{loc[w][role]["code"]:,}</td>')
         else:
-            cells.append(f'<td class="lib">Not counted ({P[w]["bitcoin_library_not_counted"]})</td>')
+            cells.append('<td class="lib dim">—</td>')
+    if 'engine' in loc[w]:
+        names = ', '.join(dict.fromkeys(CONFIG['sources'][r.split(':')[0]]['label'] for r in CONFIG['wallets'][w]['code']['engine']))
+        engine_cell = f'<td class="lib">{loc[w]["engine"]["code"]:,} <span class="dim">{esc(names)}</span></td>'
+    else:
+        engine_cell = '<td class="lib dim">None embedded</td>'
     rel = '—' if w == 'Winnow' else f'{L / W_L:.1f}× · {C / W_C:.1f}×'
     size_table.append(f'<tr>{name_cell(w)}{"".join(cells)}<td class="num"><strong>{L:,}</strong></td>'
-                      f'<td class="num">{C / 1e6:.2f}M</td><td class="num">{rel}</td></tr>')
+                      f'<td class="num">{C / 1e6:.2f}M</td><td class="num">{rel}</td>{engine_cell}</tr>')
 axis = [''.join(f'<span class="u-{u}" style="left:{100 * v / MAX[u]:.3f}%">{t}</span>' for v, t in TICKS[u]) for u in 'lc']
 
 # ── languages ──────────────────────────────────────────────────
@@ -174,14 +182,6 @@ for w in ORDER:
                             f'<td class="num">{p["cc_gt_12"]:,}</td><td class="num">{p["cc_gt_30"]:,}</td>'
                             f'<td>{link(source, path, line, text=top["function"][:32])}</td></tr>')
 
-lnd_b, lnd_z = CONFIG['sources']['lnd-blixt'], CONFIG['sources']['lnd-zeus']
-if lnd_b['rev'] == lnd_z['rev']:
-    lnd_note = 'Blixt and Zeus build the same LND, so their engine rows match.'
-else:
-    repo = lambda spec: esc(spec['repo'].removeprefix('https://github.com/'))
-    lnd_note = (f'Blixt and Zeus each build their own LND: Blixt LND {lnd_b["version"]} from {repo(lnd_b)}, '
-                f'Zeus LND {lnd_z["version"]} from {repo(lnd_z)}.')
-
 # ── dependencies ───────────────────────────────────────────────
 def dep_cell(w, key):
     v = deps[w].get(key)
@@ -192,7 +192,7 @@ dep_rows = '\n'.join([
     '<tr><th scope="row">Swift packages</th>' + ''.join(dep_cell(w, 'spm') for w in ORDER) + '</tr>',
     '<tr><th scope="row">Kotlin libraries</th>' + ''.join(dep_cell(w, 'kotlin') for w in ORDER) + '</tr>',
     '<tr><th scope="row">Rust crates, inside prebuilt libraries</th>' + ''.join(dep_cell(w, 'rust') for w in ORDER) + '</tr>',
-    '<tr><th scope="row">Go modules, inside LND</th>' + ''.join(dep_cell(w, 'go') for w in ORDER) + '</tr>',
+    '<tr><th scope="row">Go modules, inside the Go library</th>' + ''.join(dep_cell(w, 'go') for w in ORDER) + '</tr>',
     '<tr><th scope="row">npm packages</th>' + ''.join(dep_cell(w, 'npm') for w in ORDER) + '</tr>',
     '<tr><th scope="row">CocoaPods from the trunk</th>' + ''.join(dep_cell(w, 'pods') for w in ORDER) + '</tr>',
     '<tr class="sum"><th scope="row">Third-party packages</th>' + ''.join(f'<td class="num"><strong>{deps[w]["total"]:,}</strong></td>' for w in ORDER) + '</tr>',
@@ -203,28 +203,19 @@ def vendored_text(w):
     v = vend[w]
     if not v['copied_packages']:
         return 'None'
-    names = ', '.join(re.sub(r'^[^/]+/', '', p).removesuffix('.ts') for p in v['copied_packages'])
-    folder = sorted({p.split('/')[0] for p in v['copied_packages']})
-    return f'{v["copied_lines"]:,} lines in {", ".join(f"<code>{esc(f)}</code>" for f in folder)}: {esc(names)}'
+    biggest = sorted(v['copied_packages'].items(), key=lambda kv: -kv[1]['lines'])
+    shown = ', '.join(re.sub(r'^.*/', '', p).removesuffix('.ts') for p, _ in biggest[:6])
+    more = f' and {len(biggest) - 6} more' if len(biggest) > 6 else ''
+    folder = sorted({p.rsplit('/', 1)[0] for p in v['copied_packages']})
+    return f'{v["copied_lines"]:,} lines in {", ".join(f"<code>{esc(f)}</code>" for f in folder)}: {esc(shown)}{esc(more)}'
 
 
-dep_text = '\n'.join(f'<tr>{name_cell(w)}<td>{fact(P[w]["libraries"])}</td><td>{fact(P[w]["prebuilt"])}</td>'
-                     f'<td>{vendored_text(w)}</td><td>{esc(P[w]["patched"])}</td></tr>' for w in ORDER)
+dep_text = '\n'.join(f'<tr>{name_cell(w)}<td>{fact(P[w]["libraries"])}</td>'
+                     f'<td>{esc(P[w]["bitcoin_library_not_counted"]) if P[w]["bitcoin_library_not_counted"] else "—"}</td>'
+                     f'<td>{fact(P[w]["prebuilt"])}</td><td>{vendored_text(w)}</td><td>{esc(P[w]["patched"])}</td></tr>' for w in ORDER)
 
 # ── features ───────────────────────────────────────────────────
-GROUPS = [
-    ('Paying and receiving', [('bolt11_pay', 'Pay a BOLT 11 invoice'), ('bolt11_receive', 'Receive with a BOLT 11 invoice'),
-                              ('bolt12_pay', 'Pay a BOLT 12 offer'), ('bolt12_receive', 'Receive with a reusable BOLT 12 offer'),
-                              ('offline_receive', 'Receive while the app is closed'), ('lnurl', 'LNURL'),
-                              ('ln_address_pay', 'Pay a Lightning address'), ('ln_address_receive', 'Your own Lightning address'),
-                              ('bip353', 'Pay a BIP 353 name'), ('mpp', 'Multipath payments'), ('keysend', 'Keysend')]),
-    ('Channels and routing', [('choose_peer', 'Choose your channel partner'), ('jit_channels', 'Inbound channels from a provider'),
-                              ('splicing', 'Splicing'), ('anchors', 'Anchor channels'), ('local_pathfinding', 'Finds its own routes')]),
-    ('Safety and recovery', [('watchtower', 'Watchtower'), ('channel_backup', 'Channel backup off the phone')]),
-    ('On-chain and privacy', [('onchain_independent', 'On-chain funds without the channel partner'),
-                              ('taproot', 'Taproot receive addresses'), ('multisig', 'Multisig or shared accounts'),
-                              ('hw_signer', 'Hardware or external signer'), ('coin_control', 'Coin control'), ('tor', 'Built-in Tor')]),
-]
+GROUPS = [(g['title'], [(r['key'], r['label']) for r in g['rows']]) for g in ROWS['groups']]
 MARK = {'yes': ('f-yes', '✓', 'Yes'), 'partial': ('f-partial', '◐', 'Partial'), 'engine-only': ('f-engine', '○', 'Engine only'),
         'no': ('f-no', '–', 'No'), 'unknown': ('f-no', '?', 'Unknown')}
 feat_rows = []
@@ -250,7 +241,7 @@ used = {w: [r.split(':')[0] for part in CONFIG['wallets'][w]['code'].values() fo
 source_rows = []
 for w in ORDER:
     app_key = CONFIG['wallets'][w]['app_source']
-    engines = sorted({k for k in used[w] if k != app_key}, key=list(CONFIG['sources']).index)
+    engines = sorted({k for k in used[w] if k != app_key}, key=list(CONFIG['sources']).index)  # embedded engines
     extra = sorted({c['source'] for c in CONFIG['wallets'][w]['deps'].get('cargo', [])} - set(engines) - {app_key},
                    key=list(CONFIG['sources']).index)
 
@@ -260,12 +251,13 @@ for w in ORDER:
     engine_cell = ', '.join(src(k) for k in engines) or 'In the same repository'
     extra_cell = ', '.join(src(k) for k in extra) or '—'
     source_rows.append(f'<tr>{name_cell(w)}<td>{src(app_key)}</td><td>{engine_cell}</td><td>{extra_cell}</td></tr>')
-other = '\n'.join(f'<li><strong>{esc(n)}</strong> {esc(t)}</li>' for n, t in PROFILES['other_approaches'])
+other = '\n'.join(f'<li><strong>{esc(n)}</strong> {esc(t)}</li>' for n, t in PROFILES['not_compared'])
 
 # ── over time ──────────────────────────────────────────────────
 TRENDS = [('lines', 'Lines of code'), ('packages', 'Third-party packages'), ('cc_gt_12', 'Functions above CC 12')]
 SPARK_W, SPARK_H, PAD = 144, 32, 6
 first_day = date.fromisoformat(history[0]['date'])
+earlier = [r for r in history_all if r['method'] != CONFIG['method']]
 
 
 def spark(w, key, label):
@@ -342,8 +334,8 @@ else:
              f'{drift["moved"]} have moved within their file' if drift['moved'] else '']
     drift_text = f'Since that review, {" and ".join(p for p in parts if p)} in the code measured below.'
 FACT_LABELS = {f'features.{key}': label for _, items in GROUPS for key, label in items} | {
-    'profile.chain_data': 'Chain data', 'profile.partner': 'Channel partner', 'profile.libraries': 'Main libraries',
-    'profile.prebuilt': 'Prebuilt binaries', 'profile.engine': 'Lightning engine', 'features.license': 'Source license'}
+    'profile.chain_data': 'Chain data', 'profile.third_party': 'Who else must sign', 'profile.libraries': 'Main libraries',
+    'profile.prebuilt': 'Prebuilt binaries', 'profile.engine': 'Where the on-chain wallet lives', 'features.license': 'Source license'}
 drift_items = ''.join(
     f'<li>{esc(r["wallet"])}, {esc(FACT_LABELS.get(r["fact"], r["fact"]))}: '
     f'{cite_links(r["cite"])} {"no longer exists" if r["status"] == "gone" else "has changed"}</li>' for r in drift['changed_or_gone'])
@@ -363,10 +355,9 @@ parse_errors = max(100 * sum(p.get('files_with_parse_errors', 0) for kk, p in cc
 
 # What the page says about Winnow's own project, and the file at the pinned revision that has to keep saying it.
 WINNOW_STATEMENTS = [
-    ('docs/engineering/lightning-release.md', ['Lightning ships inside Winnow'], 'Lightning is built into the app and released with it'),
-    ('docs/engineering/swift-lightning.md', ['in both modes'], 'Lightning is in both Simple and Advanced mode'),
-    ('Sources/WinnowLightningApp/LightningView.swift', ['Experimental Lightning'], 'the app labels Lightning experimental'),
-    ('docs/crap.md', ['The gate is 12'], 'Winnow’s CI gates every method at CRAP 12'),
+    ('README.md', ['BIP157/158'], 'Winnow checks the chain with compact block filters from Bitcoin peers'),
+    ('README.md', ['Taproot today'], 'Winnow receives to Taproot (P2TR) addresses'),
+    ('README.md', ['SOCKS gateways'], 'Winnow reaches Tor and I2P through gateways, with no client of its own'),
     ('.swiftlint.yml', ['error: 8', 'ignores_case_statements: true'], 'Winnow’s CI rejects a function over 8 as SwiftLint counts it, leaving out case arms'),
 ]
 
@@ -379,45 +370,51 @@ def claims():
         wrong += [f'"{statement}" needs {path} to contain {needle!r} at winnow@{CONFIG["sources"]["winnow"]["rev"][:7]}'
                   for needle in needles if needle not in text]
     if lr[0] <= 1:
-        wrong.append('"The other wallets ship … times as many lines" needs every other wallet above Winnow')
+        wrong.append('"The other wallets count … times as many lines" needs every other wallet above Winnow')
     if cpl['Winnow'] <= ocpl[-1]:
         wrong.append('"Winnow’s lines are denser" needs Winnow’s characters per line above every other wallet’s')
-    if not all(cc['Winnow']['all']['mean_cc'] > cc[w]['all']['mean_cc'] for w in ('Phoenix', 'Bitkit')):
-        wrong.append('"Its average is … higher than Phoenix’s and Bitkit’s" no longer holds')
     if [p.split('@')[0] for p in deps['Winnow'].get('spm', [])] != ['swift-secp256k1'] or deps['Winnow']['total'] != 1:
         wrong.append('"Winnow depends on 1 third-party package: swift-secp256k1" no longer holds')
     if sum(1 for v in languages['Winnow'].values() if v) != 1:
         wrong.append('"Winnow is written in one language" no longer holds')
     if len(CONFIG['wallets']['Bitkit']['deps']['cargo']) != 4:
         wrong.append('"Bitkit’s four libraries" no longer matches sources.json')
+    if not vend['Muun']['copied_lines']:
+        wrong.append('"Muun commits the sources of its CocoaPods" no longer holds')
     if wrong:
         raise SystemExit('Page sentences that are no longer true; reword them in page/template.html:\n  ' + '\n  '.join(wrong))
 
 
+NUMBER_WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
+means = sorted(cc[w]['all']['mean_cc'] for w in others)
 subs = {
     'GLANCE': glance, 'ROWS': '\n'.join(rows), 'AXIS_L': axis[0], 'AXIS_C': axis[1], 'SIZE_TABLE': '\n'.join(size_table),
     'LANG_ROWS': '\n'.join(lang_rows), 'CC_ROWS': '\n'.join(cc_rows), 'CC_PARTS': '\n'.join(cc_parts),
     'DEP_ROWS': dep_rows, 'DEP_TEXT': dep_text, 'FEAT_ROWS': '\n'.join(feat_rows), 'EVIDENCE': '\n'.join(evidence),
     'WALLET_TH': ''.join(f'<th scope="col">{w}</th>' for w in ORDER), 'SOURCE_ROWS': '\n'.join(source_rows), 'OTHER': other,
-    'SNAPSHOT': SNAPSHOT_TEXT, 'WINNOW_CRAP_DOC': link('winnow', 'docs/crap.md', text='docs/crap.md'),
+    'SNAPSHOT': SNAPSHOT_TEXT, 'N_OTHERS': NUMBER_WORDS[len(others)], 'N_WALLETS': NUMBER_WORDS[len(ORDER)],
     'W_L': f'{W_L:,}', 'W_APP': f'{loc["Winnow"]["app"]["code"]:,}', 'W_BTC': f'{loc["Winnow"]["bitcoin"]["code"]:,}',
-    'W_LN': f'{loc["Winnow"]["lightning"]["code"]:,}', 'LR_MIN': f'{lr[0]:.1f}', 'LR_MAX': f'{lr[-1]:.0f}',
+    'LR_MIN': f'{lr[0]:.1f}', 'LR_MAX': f'{lr[-1]:.1f}',
     'CR_MIN': f'{cr[0]:.1f}', 'CR_MAX': f'{cr[-1]:.1f}', 'W_CPL': f'{cpl["Winnow"]:.0f}',
     'O_CPL_MIN': f'{ocpl[0]:.0f}', 'O_CPL_MAX': f'{ocpl[-1]:.0f}',
-    'E_PHX': f'{loc["Phoenix"]["lightning"]["code"]:,}', 'E_BITKIT': f'{loc["Bitkit"]["lightning"]["code"]:,}',
-    'E_LND_Z': f'{loc["Zeus"]["lightning"]["code"]:,}', 'E_LND_B': f'{loc["Blixt"]["lightning"]["code"]:,}',
-    'LND_NOTE': lnd_note, 'GRID_L': GRID['l'], 'GRID_C': GRID['c'],
+    'GRID_L': GRID['l'], 'GRID_C': GRID['c'],
     'TREND_ROWS': trend_rows, 'SNAPSHOT_TABLES': '\n'.join(snapshot_tables), 'OLDER': older,
     'FIRST_DAY': day(first_day), 'SNAPSHOTS_N': f'{len(history):,}',
+    'EARLIER_N': f'{len(earlier):,}', 'EARLIER_FIRST': day(earlier[0]['date']) if earlier else '', 'EARLIER_LAST': day(earlier[-1]['date']) if earlier else '',
     'REVIEWED': reviewed_text, 'DRIFT_TEXT': drift_text, 'DRIFT_LIST': drift_list, 'CITES': str(drift['citations']),
     'P12_W': f'{p12["Winnow"]:.1f}', 'P12_MIN': f'{min(p12[w] for w in others):.1f}', 'P12_MAX': f'{max(p12[w] for w in others):.1f}',
-    'W_MAXCC': str(cc['Winnow']['all']['max_cc']), 'W_MEAN': f'{cc["Winnow"]["all"]["mean_cc"]:.1f}', 'PE_MAX': f'{parse_errors:.0f}',
-    'DEP_W': f'{deps["Winnow"]["total"]:,}', 'DEP_P': f'{deps["Phoenix"]["total"]:,}',
+    'W_MAXCC': str(cc['Winnow']['all']['max_cc']), 'W_MEAN': f'{cc["Winnow"]["all"]["mean_cc"]:.1f}',
+    'MEAN_MIN': f'{means[0]:.1f}', 'MEAN_MAX': f'{means[-1]:.1f}', 'PE_MAX': f'{parse_errors:.0f}',
+    'DEP_W': f'{deps["Winnow"]["total"]:,}', 'DEP_MIN': f'{min(deps[w]["total"] for w in others):,}',
     'DEP_MAX': f'{max(deps[w]["total"] for w in others):,}',
     'RUST_COPIES_B': f'{deps["Bitkit"]["rust_copies"]:,}', 'RUST_B': f'{len(deps["Bitkit"]["rust"]):,}',
+    'RUST_G': f'{len(deps["Green"]["rust"]):,}',
     'NPM_DIRECT_Z': str(len(deps['Zeus']['npm_direct'])), 'NPM_DIRECT_B': str(len(deps['Blixt']['npm_direct'])),
+    'NPM_DIRECT_BW': str(len(deps['BlueWallet']['npm_direct'])),
     'PODS_NPM_Z': str(deps['Zeus']['pods_from_npm_and_react_native']), 'PODS_NPM_B': str(deps['Blixt']['pods_from_npm_and_react_native']),
-    'KOTLIN_N': str(len(deps['Phoenix']['kotlin'])),
+    'PODS_NPM_BW': str(deps['BlueWallet']['pods_from_npm_and_react_native']),
+    'KOTLIN_N': str(len(deps['Phoenix']['kotlin'])), 'GO_MUUN': f'{len(deps["Muun"]["go"]):,}',
+    'MUUN_VENDORED': f'{vend["Muun"]["copied_lines"]:,}', 'PHOENIX_TAG': esc(CONFIG['sources']['phoenix']['tag']),
 }
 
 

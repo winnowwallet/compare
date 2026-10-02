@@ -1,13 +1,14 @@
 # Winnow compare
 
-A reproducible comparison of open-source iPhone Lightning wallets, published at
+A reproducible comparison of open-source iPhone Bitcoin wallets, published at
 **https://compare.winnowwallet.com/**.
 
-It measures [Winnow](https://github.com/winnowwallet/winnow)'s Lightning beside the
-open-source iPhone wallets that run a Lightning node on the phone (Phoenix, Bitkit, Blixt and Zeus):
-features, lines of code, languages, cyclomatic complexity and CRAP, third-party dependencies,
-prebuilt binaries, vendored code and patched dependencies. Every project is pinned to an exact
-commit, and every number on the site comes out of `./build`.
+It measures [Winnow](https://github.com/winnowwallet/winnow) beside seven other open-source iPhone
+wallets (BlueWallet, Blockstream Green, Muun, Phoenix, Bitkit, Blixt and Zeus), looking only at
+their Bitcoin wallet and not at Lightning: features, lines of code, languages, cyclomatic
+complexity and CRAP, third-party dependencies, prebuilt binaries, vendored code and patched
+dependencies. Every project is pinned to an exact commit, and every number on the site comes out of
+`./build`.
 
 It is measured again every day. The Daily workflow moves each pin to what the wallet ships that
 day, rebuilds, and records a snapshot in `data/history.json` whenever anything moved; the page
@@ -36,14 +37,19 @@ on every pull request and fails if anything it produces differs from what is com
 | Lines of code | [cloc](https://github.com/AlDanial/cloc) 2.06 | Non-blank, non-comment lines in programming languages, for code that builds into the iPhone app. Characters are counted with comments and whitespace removed, so dense code is not rewarded. |
 | Complexity | [tree-sitter](https://tree-sitter.github.io/) grammars | Cyclomatic complexity per function: 1 plus each `if`/`guard`, loop, non-default `case`/`when`/`match` arm, `catch`, ternary, `&&`, `\|\|`, `??` and elvis. Closures and nested functions count toward the function that contains them. |
 | CRAP | from complexity | `CRAP = CC² × (1 − coverage)³ + CC`. Coverage needs each project's tests run with instrumentation (on a Mac for the Swift apps) and is not measured, so the site reports the floor CRAP cannot go below: CC. |
-| Dependencies | the apps' own lockfiles | SwiftPM and CocoaPods lockfiles; npm production closures from yarn/bun lockfiles; Kotlin libraries resolved for `ios_arm64` from Maven Central metadata; Rust crates from `cargo tree --target aarch64-apple-ios`; Go modules from `go list -deps` with LND's iOS build tags. |
-| Vendored code | `tools/vendored.py` | Third-party packages committed into an app's repository, counted by source (or by published build output when only that was copied), plus committed binaries and dependency patches. |
+| Dependencies | the apps' own lockfiles | SwiftPM and CocoaPods lockfiles; npm production closures from package-lock.json, yarn and bun lockfiles; Kotlin libraries resolved for `ios_arm64` from Maven Central metadata; Rust crates from `cargo tree --target aarch64-apple-ios`; Go modules from `go list -deps` for iOS. |
+| Vendored code | `tools/vendored.py` | Third-party packages committed into an app's repository (including a committed CocoaPods `Pods/`), counted by source (or by published build output when only that was copied), plus committed binaries and dependency patches. |
 | Features | reviewed by hand | Each cell in `features/` cites the code that establishes it, at the revision in `reviewed.json`. `./build evidence` fails if a citation does not resolve there, and writes `data/drift.json`: which cited passages have changed in the code measured since. |
 
 Excluded everywhere: tests, Android/desktop/web code, build tooling, files marked as generated
 (protobuf, sqlc, UniFFI bindings) and vendored code. Rust test modules inside source files are
-removed before counting. Lightning engines are counted at the version each app pins, as the named
-library only.
+removed before counting.
+
+The totals and the complexity are the wallet's own code: its `app` part and, where its repository
+holds one, its own `bitcoin` library (Winnow's WalletCore, Muun's libwallet). An `engine` part is a
+separate project the app embeds (lightning-kmp, LDK Node with rust-lightning, LND, gdk). It is
+counted at the version the app pins and shown beside the totals, but is in none of them. A wallet can
+leave paths out on purpose with `skip` in `sources.json`.
 
 ## Layout
 
@@ -51,8 +57,9 @@ library only.
 sources.json        every project, how its pin is found, its exact commit, what counts as app and
                     engine, dependency inputs
 reviewed.json       the revision each hand-reviewed fact was checked against, and when
-wallets.json        hand-reviewed profile facts (engine, chain data, channel partner…) with citations
-features/           hand-reviewed feature cells, one file per wallet, each with code citations
+wallets.json        hand-reviewed profile facts (engine, chain data, who else must sign…) with citations
+features/           rows.json defines every feature row and what yes/partial/no mean; one file per
+                    wallet holds its cells, each with code citations
 locks/              a Cargo.lock for a pinned source that does not commit one
 tools/              update, fetch, loc, complexity, deps, vendored, history, evidence, render
 tests/              hand-counted cases that pin the counting rules, and the pin and review rules
@@ -68,8 +75,9 @@ site/               the published site (generated, committed); site/data.json ha
 
 | Source | Follows |
 | --- | --- |
-| Winnow | the `lightning` branch of winnowwallet/winnow, where Lightning is being added to the app, then `main` once it merges |
-| Phoenix, Bitkit, Blixt, Zeus | the head of their default branch |
+| Winnow, BlueWallet, Green, Muun, Bitkit, Blixt, Zeus | the head of their default branch |
+| Phoenix | its latest `ios-v*` release tag: its default branch was configured for testnet when we checked, and a release is what ships |
+| gdk | the `TAGNAME` in Green's `tools/fetch_gdk_binaries.sh` |
 | lightning-kmp | `lightningkmp` in Phoenix's `gradle/libs.versions.toml`; the Kotlin libraries use the same catalog |
 | Synonym's LDK Node, bitkit-core, Paykit, VSS client | Bitkit's `Package.resolved` |
 | rust-lightning | the `lightning` version in LDK Node's Cargo.lock |
@@ -97,7 +105,8 @@ python3 tools/evidence.py --adopt winnow   # or several sources, or none for all
 
 That moves the named sources in `reviewed.json` to today's pins, follows citations whose code only
 moved within its file, and lists the ones to check by hand. Fix those cells and citations, then
-`./build evidence render`.
+`./build evidence render`. A wallet's cells are judged against `features/rows.json`: what the iPhone
+app lets a person do, shown by code, never what a library underneath could do.
 
 ## Deploying
 

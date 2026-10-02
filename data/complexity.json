@@ -1,26 +1,26 @@
 {
  "Winnow": {
   "app": {
-   "functions": 971,
-   "mean_cc": 3.08,
-   "p90_cc": 6,
-   "max_cc": 28,
-   "cc_le_2": 537,
-   "cc_3_12": 418,
-   "cc_gt_12": 16,
+   "functions": 610,
+   "mean_cc": 3.28,
+   "p90_cc": 7,
+   "max_cc": 27,
+   "cc_le_2": 331,
+   "cc_3_12": 269,
+   "cc_gt_12": 10,
    "cc_gt_30": 0,
-   "files": 66,
-   "files_with_parse_errors": 2,
+   "files": 33,
+   "files_with_parse_errors": 1,
    "most_complex": [
     {
-     "cc": 28,
+     "cc": 27,
      "function": "(computed_property)",
      "at": "winnow/Sources/WinnowApp/SettingsView.swift:39"
     },
     {
      "cc": 22,
      "function": "init",
-     "at": "winnow/Sources/WinnowApp/AppModel.swift:484"
+     "at": "winnow/Sources/WinnowApp/AppModel.swift:458"
     },
     {
      "cc": 22,
@@ -40,21 +40,31 @@
    ]
   },
   "bitcoin": {
-   "functions": 1117,
-   "mean_cc": 3.22,
+   "functions": 1010,
+   "mean_cc": 3.34,
    "p90_cc": 7,
-   "max_cc": 23,
-   "cc_le_2": 578,
-   "cc_3_12": 528,
-   "cc_gt_12": 11,
+   "max_cc": 27,
+   "cc_le_2": 523,
+   "cc_3_12": 473,
+   "cc_gt_12": 14,
    "cc_gt_30": 0,
-   "files": 64,
+   "files": 59,
    "files_with_parse_errors": 3,
    "most_complex": [
+    {
+     "cc": 27,
+     "function": "decode",
+     "at": "winnow/Sources/WalletCore/Network/Protocol/Messages.swift:367"
+    },
     {
      "cc": 23,
      "function": "(computed_property)",
      "at": "winnow/Sources/WalletCore/Network/Protocol/Messages.swift:302"
+    },
+    {
+     "cc": 21,
+     "function": "validateKnownFields",
+     "at": "winnow/Sources/WalletCore/PSBT/PSBT.swift:815"
     },
     {
      "cc": 19,
@@ -62,83 +72,226 @@
      "at": "winnow/Sources/WalletCore/Network/Protocol/Messages.swift:329"
     },
     {
-     "cc": 19,
-     "function": "init",
-     "at": "winnow/Sources/WalletCore/Wallet/Wallet.swift:457"
-    },
-    {
      "cc": 18,
      "function": "replenish",
-     "at": "winnow/Sources/WalletCore/Network/Peers/PeerPool.swift:646"
-    },
-    {
-     "cc": 16,
-     "function": "canonicalIP",
-     "at": "winnow/Sources/WalletCore/Network/Peers/CensusCatalog.swift:137"
-    }
-   ]
-  },
-  "lightning": {
-   "functions": 746,
-   "mean_cc": 3.34,
-   "p90_cc": 7,
-   "max_cc": 16,
-   "cc_le_2": 360,
-   "cc_3_12": 384,
-   "cc_gt_12": 2,
-   "cc_gt_30": 0,
-   "files": 83,
-   "files_with_parse_errors": 5,
-   "most_complex": [
-    {
-     "cc": 16,
-     "function": "validateLoaded",
-     "at": "winnow/Sources/LightningCore/LightningEngine.swift:218"
-    },
-    {
-     "cc": 13,
-     "function": "amount",
-     "at": "winnow/Sources/LightningCore/InvoiceRequest.swift:40"
-    },
-    {
-     "cc": 12,
-     "function": "init",
-     "at": "winnow/Sources/LightningCore/AsyncPaymentMessage.swift:14"
-    },
-    {
-     "cc": 12,
-     "function": "updateChainChannels",
-     "at": "winnow/Sources/LightningCore/LightningChain.swift:110"
-    },
-    {
-     "cc": 12,
-     "function": "search",
-     "at": "winnow/Sources/LightningCore/LightningRouteSearch.swift:40"
+     "at": "winnow/Sources/WalletCore/Network/Peers/PeerPool.swift:627"
     }
    ]
   },
   "all": {
-   "functions": 2834,
-   "mean_cc": 3.2,
+   "functions": 1620,
+   "mean_cc": 3.32,
    "p90_cc": 7,
-   "max_cc": 28,
-   "cc_le_2": 1475,
-   "cc_3_12": 1330,
-   "cc_gt_12": 29,
+   "max_cc": 27,
+   "cc_le_2": 854,
+   "cc_3_12": 742,
+   "cc_gt_12": 24,
    "cc_gt_30": 0
+  }
+ },
+ "BlueWallet": {
+  "app": {
+   "functions": 1758,
+   "mean_cc": 5.24,
+   "p90_cc": 10,
+   "max_cc": 238,
+   "cc_le_2": 1009,
+   "cc_3_12": 610,
+   "cc_gt_12": 139,
+   "cc_gt_30": 42,
+   "files": 383,
+   "files_with_parse_errors": 6,
+   "most_complex": [
+    {
+     "cc": 238,
+     "function": "(arrow_function)",
+     "at": "bluewallet/screen/send/SendDetails.tsx:77"
+    },
+    {
+     "cc": 237,
+     "function": "(arrow_function)",
+     "at": "bluewallet/screen/transactions/TransactionStatus.tsx:164"
+    },
+    {
+     "cc": 178,
+     "function": "(arrow_function)",
+     "at": "bluewallet/screen/wallets/WalletDetails.tsx:63"
+    },
+    {
+     "cc": 124,
+     "function": "(arrow_function)",
+     "at": "bluewallet/screen/wallets/WalletTransactions.tsx:180"
+    },
+    {
+     "cc": 122,
+     "function": "(arrow_function)",
+     "at": "bluewallet/screen/receive/ReceiveDetails.tsx:149"
+    }
+   ]
+  },
+  "all": {
+   "functions": 1758,
+   "mean_cc": 5.24,
+   "p90_cc": 10,
+   "max_cc": 238,
+   "cc_le_2": 1009,
+   "cc_3_12": 610,
+   "cc_gt_12": 139,
+   "cc_gt_30": 42
+  }
+ },
+ "Green": {
+  "app": {
+   "functions": 6905,
+   "mean_cc": 2.19,
+   "p90_cc": 4,
+   "max_cc": 45,
+   "cc_le_2": 5351,
+   "cc_3_12": 1469,
+   "cc_gt_12": 85,
+   "cc_gt_30": 7,
+   "files": 674,
+   "files_with_parse_errors": 34,
+   "most_complex": [
+    {
+     "cc": 45,
+     "function": "validateTransaction",
+     "at": "green/gaios/Sendflow/ViewModels/SendAmountViewModelLegacy.swift:351"
+    },
+    {
+     "cc": 41,
+     "function": "description",
+     "at": "green/gaios/Extensions/Error.swift:11"
+    },
+    {
+     "cc": 41,
+     "function": "compareUtxos",
+     "at": "green/gaios/Sendflow/Flow/CoinControl/CoinControlViewModel.swift:110"
+    },
+    {
+     "cc": 41,
+     "function": "updateState",
+     "at": "green/gaios/Survey/SurveyViewController.swift:53"
+    },
+    {
+     "cc": 37,
+     "function": "configure",
+     "at": "green/gaios/WalletTabBar/Tabs/Cells/AlertCardCell/AlertCardCell.swift:67"
+    }
+   ]
+  },
+  "all": {
+   "functions": 6905,
+   "mean_cc": 2.19,
+   "p90_cc": 4,
+   "max_cc": 45,
+   "cc_le_2": 5351,
+   "cc_3_12": 1469,
+   "cc_gt_12": 85,
+   "cc_gt_30": 7
+  }
+ },
+ "Muun": {
+  "app": {
+   "functions": 5201,
+   "mean_cc": 1.68,
+   "p90_cc": 3,
+   "max_cc": 63,
+   "cc_le_2": 4431,
+   "cc_3_12": 749,
+   "cc_gt_12": 21,
+   "cc_gt_30": 2,
+   "files": 683,
+   "files_with_parse_errors": 20,
+   "most_complex": [
+    {
+     "cc": 63,
+     "function": "handle",
+     "at": "muun/falcon/app/falcon/core/Protobuf/wallet_service.grpc.swift:2153"
+    },
+    {
+     "cc": 63,
+     "function": "handle",
+     "at": "muun/falcon/app/falcon/core/Protobuf/wallet_service.grpc.swift:2634"
+    },
+    {
+     "cc": 22,
+     "function": "getKindOfError",
+     "at": "muun/falcon/app/falcon/core/Data/Service/Base/BaseError.swift:19"
+    },
+    {
+     "cc": 20,
+     "function": "toModel",
+     "at": "muun/falcon/app/falcon/core/Data/Service/Mapper.swift:216"
+    },
+    {
+     "cc": 20,
+     "function": "titleAndBody",
+     "at": "muun/falcon/app/falconPushNotifications/NotificationService.swift:111"
+    }
+   ]
+  },
+  "bitcoin": {
+   "functions": 1478,
+   "mean_cc": 2.77,
+   "p90_cc": 6,
+   "max_cc": 26,
+   "cc_le_2": 974,
+   "cc_3_12": 471,
+   "cc_gt_12": 33,
+   "cc_gt_30": 0,
+   "files": 301,
+   "files_with_parse_errors": 0,
+   "most_complex": [
+    {
+     "cc": 26,
+     "function": "do",
+     "at": "muun/libwallet/service/client.go:70"
+    },
+    {
+     "cc": 25,
+     "function": "GetPaymentURI",
+     "at": "muun/libwallet/address.go:52"
+    },
+    {
+     "cc": 24,
+     "function": "resolveOutpoints",
+     "at": "muun/libwallet/domain/action/lightning/external_tx_checker.go:81"
+    },
+    {
+     "cc": 21,
+     "function": "SignInput",
+     "at": "muun/libwallet/incoming_swap.go:340"
+    },
+    {
+     "cc": 21,
+     "function": "Verify",
+     "at": "muun/libwallet/partiallysignedtransaction.go:320"
+    }
+   ]
+  },
+  "all": {
+   "functions": 6679,
+   "mean_cc": 1.92,
+   "p90_cc": 4,
+   "max_cc": 63,
+   "cc_le_2": 5405,
+   "cc_3_12": 1220,
+   "cc_gt_12": 54,
+   "cc_gt_30": 2
   }
  },
  "Phoenix": {
   "app": {
-   "functions": 4694,
+   "functions": 4703,
    "mean_cc": 2.52,
    "p90_cc": 5,
    "max_cc": 155,
-   "cc_le_2": 3410,
-   "cc_3_12": 1207,
+   "cc_le_2": 3414,
+   "cc_3_12": 1212,
    "cc_gt_12": 77,
    "cc_gt_30": 9,
-   "files": 517,
+   "files": 518,
    "files_with_parse_errors": 15,
    "most_complex": [
     {
@@ -168,71 +321,32 @@
     }
    ]
   },
-  "lightning": {
-   "functions": 2524,
-   "mean_cc": 2.28,
-   "p90_cc": 4,
-   "max_cc": 168,
-   "cc_le_2": 2066,
-   "cc_3_12": 403,
-   "cc_gt_12": 55,
-   "cc_gt_30": 13,
-   "files": 146,
-   "files_with_parse_errors": 10,
-   "most_complex": [
-    {
-     "cc": 168,
-     "function": "processInternal",
-     "at": "lightning-kmp/modules/core/src/commonMain/kotlin/fr/acinq/lightning/channel/states/Normal.kt:31"
-    },
-    {
-     "cc": 92,
-     "function": "processInternal",
-     "at": "lightning-kmp/modules/core/src/commonMain/kotlin/fr/acinq/lightning/channel/states/Syncing.kt:17"
-    },
-    {
-     "cc": 88,
-     "function": "processEvent",
-     "at": "lightning-kmp/modules/core/src/commonMain/kotlin/fr/acinq/lightning/io/Peer.kt:1210"
-    },
-    {
-     "cc": 59,
-     "function": "processInternal",
-     "at": "lightning-kmp/modules/core/src/commonMain/kotlin/fr/acinq/lightning/channel/states/Closing.kt:61"
-    },
-    {
-     "cc": 57,
-     "function": "processInternal",
-     "at": "lightning-kmp/modules/core/src/commonMain/kotlin/fr/acinq/lightning/channel/states/WaitForFundingConfirmed.kt:29"
-    }
-   ]
-  },
   "all": {
-   "functions": 7218,
-   "mean_cc": 2.44,
+   "functions": 4703,
+   "mean_cc": 2.52,
    "p90_cc": 5,
-   "max_cc": 168,
-   "cc_le_2": 5476,
-   "cc_3_12": 1610,
-   "cc_gt_12": 132,
-   "cc_gt_30": 22
+   "max_cc": 155,
+   "cc_le_2": 3414,
+   "cc_3_12": 1212,
+   "cc_gt_12": 77,
+   "cc_gt_30": 9
   }
  },
  "Bitkit": {
   "app": {
-   "functions": 5461,
+   "functions": 5464,
    "mean_cc": 2.97,
    "p90_cc": 6,
-   "max_cc": 125,
+   "max_cc": 119,
    "cc_le_2": 3327,
-   "cc_3_12": 2042,
+   "cc_3_12": 2045,
    "cc_gt_12": 92,
    "cc_gt_30": 9,
-   "files": 592,
+   "files": 593,
    "files_with_parse_errors": 4,
    "most_complex": [
     {
-     "cc": 125,
+     "cc": 119,
      "function": "(computed_property)",
      "at": "bitkit/Bitkit/MainNavView.swift:492"
     },
@@ -258,54 +372,15 @@
     }
    ]
   },
-  "lightning": {
-   "functions": 5348,
-   "mean_cc": 2.98,
-   "p90_cc": 6,
-   "max_cc": 174,
-   "cc_le_2": 3743,
-   "cc_3_12": 1444,
-   "cc_gt_12": 161,
-   "cc_gt_30": 39,
-   "files": 226,
-   "files_with_parse_errors": 6,
-   "most_complex": [
-    {
-     "cc": 174,
-     "function": "read",
-     "at": "rust-lightning/lightning/src/ln/channelmanager.rs:16784"
-    },
-    {
-     "cc": 153,
-     "function": "handle_event",
-     "at": "synonym-ldk-node/src/event.rs:1184"
-    },
-    {
-     "cc": 99,
-     "function": "get_route",
-     "at": "rust-lightning/lightning/src/routing/router.rs:2449"
-    },
-    {
-     "cc": 87,
-     "function": "read",
-     "at": "rust-lightning/lightning/src/ln/channel.rs:14958"
-    },
-    {
-     "cc": 75,
-     "function": "process_events",
-     "at": "rust-lightning/lightning/src/ln/peer_handler.rs:2822"
-    }
-   ]
-  },
   "all": {
-   "functions": 10809,
-   "mean_cc": 2.98,
+   "functions": 5464,
+   "mean_cc": 2.97,
    "p90_cc": 6,
-   "max_cc": 174,
-   "cc_le_2": 7070,
-   "cc_3_12": 3486,
-   "cc_gt_12": 253,
-   "cc_gt_30": 48
+   "max_cc": 119,
+   "cc_le_2": 3327,
+   "cc_3_12": 2045,
+   "cc_gt_12": 92,
+   "cc_gt_30": 9
   }
  },
  "Blixt": {
@@ -348,67 +423,28 @@
     }
    ]
   },
-  "lightning": {
-   "functions": 10408,
-   "mean_cc": 3.91,
-   "p90_cc": 9,
-   "max_cc": 148,
-   "cc_le_2": 5896,
-   "cc_3_12": 3957,
-   "cc_gt_12": 555,
-   "cc_gt_30": 66,
-   "files": 1175,
-   "files_with_parse_errors": 0,
-   "most_complex": [
-    {
-     "cc": 148,
-     "function": "ValidateConfig",
-     "at": "lnd-blixt/config.go:1007"
-    },
-    {
-     "cc": 99,
-     "function": "WriteElement",
-     "at": "lnd-blixt/channeldb/migration/lnwire21/lnwire.go:76"
-    },
-    {
-     "cc": 96,
-     "function": "WriteElement",
-     "at": "lnd-blixt/lnwire/lnwire.go:87"
-    },
-    {
-     "cc": 93,
-     "function": "ReadElement",
-     "at": "lnd-blixt/channeldb/migration/lnwire21/lnwire.go:441"
-    },
-    {
-     "cc": 89,
-     "function": "ReadElement",
-     "at": "lnd-blixt/lnwire/lnwire.go:444"
-    }
-   ]
-  },
   "all": {
-   "functions": 11465,
-   "mean_cc": 3.88,
-   "p90_cc": 8,
-   "max_cc": 148,
-   "cc_le_2": 6681,
-   "cc_3_12": 4173,
-   "cc_gt_12": 611,
-   "cc_gt_30": 85
+   "functions": 1057,
+   "mean_cc": 3.57,
+   "p90_cc": 7,
+   "max_cc": 134,
+   "cc_le_2": 785,
+   "cc_3_12": 216,
+   "cc_gt_12": 56,
+   "cc_gt_30": 19
   }
  },
  "Zeus": {
   "app": {
-   "functions": 4686,
+   "functions": 4695,
    "mean_cc": 4.71,
    "p90_cc": 10,
    "max_cc": 252,
-   "cc_le_2": 2695,
-   "cc_3_12": 1647,
-   "cc_gt_12": 344,
+   "cc_le_2": 2699,
+   "cc_3_12": 1651,
+   "cc_gt_12": 345,
    "cc_gt_30": 75,
-   "files": 575,
+   "files": 576,
    "files_with_parse_errors": 13,
    "most_complex": [
     {
@@ -438,54 +474,15 @@
     }
    ]
   },
-  "lightning": {
-   "functions": 10527,
-   "mean_cc": 3.92,
-   "p90_cc": 9,
-   "max_cc": 147,
-   "cc_le_2": 5952,
-   "cc_3_12": 4010,
-   "cc_gt_12": 565,
-   "cc_gt_30": 67,
-   "files": 1187,
-   "files_with_parse_errors": 0,
-   "most_complex": [
-    {
-     "cc": 147,
-     "function": "ValidateConfig",
-     "at": "lnd-zeus/config.go:1007"
-    },
-    {
-     "cc": 99,
-     "function": "WriteElement",
-     "at": "lnd-zeus/channeldb/migration/lnwire21/lnwire.go:76"
-    },
-    {
-     "cc": 96,
-     "function": "WriteElement",
-     "at": "lnd-zeus/lnwire/lnwire.go:87"
-    },
-    {
-     "cc": 93,
-     "function": "ReadElement",
-     "at": "lnd-zeus/channeldb/migration/lnwire21/lnwire.go:441"
-    },
-    {
-     "cc": 89,
-     "function": "ReadElement",
-     "at": "lnd-zeus/lnwire/lnwire.go:444"
-    }
-   ]
-  },
   "all": {
-   "functions": 15213,
-   "mean_cc": 4.16,
-   "p90_cc": 9,
+   "functions": 4695,
+   "mean_cc": 4.71,
+   "p90_cc": 10,
    "max_cc": 252,
-   "cc_le_2": 8647,
-   "cc_3_12": 5657,
-   "cc_gt_12": 909,
-   "cc_gt_30": 142
+   "cc_le_2": 2699,
+   "cc_3_12": 1651,
+   "cc_gt_12": 345,
+   "cc_gt_30": 75
   }
  }
 }

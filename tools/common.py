@@ -15,6 +15,9 @@ CONFIG_PATH = ROOT / 'sources.json'
 CONFIG = json.loads(CONFIG_PATH.read_text())
 REVIEWED = json.loads((ROOT / 'reviewed.json').read_text())
 WALLETS = list(CONFIG['wallets'])
+# The wallet's own code. An `engine` part is a separate project the app embeds (a node or wallet library);
+# it is measured and shown beside the totals, and is not in them.
+COUNTED = ('app', 'bitcoin')
 
 # Programming languages only: no JSON, XML, Markdown, assets or build scripts.
 LANGS = ['Swift', 'Kotlin', 'Objective-C', 'Objective-C++', 'C', 'C++', 'C/C++ Header',
@@ -120,10 +123,17 @@ def unclaimed(spec):
     return missing
 
 
-def counted_files(refs):
+def left_out(spec):
+    """Paths a wallet's own code leaves out: `skip` (never built into the app) and `vendored`
+    (third-party copies, counted as vendored code instead)."""
+    return spec.get('skip', []) + spec.get('vendored', [])
+
+
+def counted_files(refs, skip=()):
     """The files a part of a wallet ships: programming-language sources that build into the
     iPhone app, minus tests, other platforms and generated files. Returns (kept, generated)."""
     kept, generated = [], []
+    left_out = [resolve(s).resolve() for s in skip]
     for ref in refs:
         src = resolve(ref)
         if not src.exists():
@@ -131,6 +141,8 @@ def counted_files(refs):
         files = [src] if src.is_file() else sorted(f for f in src.rglob('*') if f.is_file())
         for f in files:
             rel = str(f.relative_to(SOURCES_DIR))
+            if any(s in f.resolve().parents for s in left_out):
+                continue
             if f.suffix not in EXTENSIONS or SKIP_DIRS & set(f.relative_to(SOURCES_DIR).parts[:-1]):
                 continue
             if TEST_FILE.search(rel) or TEST_PATH.search('/' + rel):
@@ -142,10 +154,10 @@ def counted_files(refs):
     return kept, generated
 
 
-def stage(refs):
+def stage(refs, skip=()):
     """Copy a part's counted files into .stage/ (Rust inline tests removed) and return them."""
     shutil.rmtree(STAGE, ignore_errors=True)
-    kept, generated = counted_files(refs)
+    kept, generated = counted_files(refs, skip)
     staged = []
     for f in kept:
         text = f.read_text(errors='ignore')
