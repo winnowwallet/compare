@@ -1,0 +1,29 @@
+{
+ "built_with": "Swift (SwiftUI)",
+ "engine": {
+  "text": "Its own, in Swift (WalletCore), in the same repository as the app: keys, PSBTs, scripts, descriptors, compact-filter sync and peer networking",
+  "cite": "winnow:Package.swift:19-21; winnow:README.md:7"
+ },
+ "chain_data": {
+  "text": "BIP157/158 compact block filters from Bitcoin peers found through a signed peer list (census.winnowwallet.com) and DNS seeds; Advanced mode lets you add your own peers",
+  "cite": "winnow:README.md:7; winnow:Sources/WalletCore/Network/Peers/CensusCatalog.swift:28; winnow:Sources/WinnowApp/SettingsView.swift:83-107"
+ },
+ "third_party": {
+  "text": "Nobody for the everyday wallet; shared accounts need the other co-owners' keys, and there is no co-signing server",
+  "cite": "winnow:README.md:9; winnow:Sources/WinnowApp/SharedSavingsViews.swift:104-105"
+ },
+ "distribution": {
+  "text": "App Store; pre-release builds on TestFlight",
+  "cite": "winnow:README.md:5; winnow:.github/workflows/appstore-submit.yml:3-6"
+ },
+ "libraries": {
+  "text": "swift-secp256k1 0.23.2 (Bitcoin Core's libsecp256k1), the only third-party dependency",
+  "cite": "winnow:Package.swift:16; winnow:README.md:11"
+ },
+ "bitcoin_library_not_counted": null,
+ "prebuilt": {
+  "text": "None in the repository; the app links the swift-secp256k1 package that SwiftPM fetches",
+  "cite": "winnow:Package.swift:16-21"
+ },
+ "patched": "None"
+}
