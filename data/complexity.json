@@ -91,15 +91,15 @@
  },
  "BlueWallet": {
   "app": {
-   "functions": 1953,
-   "mean_cc": 5.39,
-   "p90_cc": 11,
+   "functions": 1758,
+   "mean_cc": 5.24,
+   "p90_cc": 10,
    "max_cc": 238,
-   "cc_le_2": 1105,
-   "cc_3_12": 689,
-   "cc_gt_12": 159,
-   "cc_gt_30": 47,
-   "files": 414,
+   "cc_le_2": 1009,
+   "cc_3_12": 610,
+   "cc_gt_12": 139,
+   "cc_gt_30": 42,
+   "files": 383,
    "files_with_parse_errors": 6,
    "most_complex": [
     {
@@ -113,11 +113,6 @@
      "at": "bluewallet/screen/transactions/TransactionStatus.tsx:164"
     },
     {
-     "cc": 235,
-     "function": "(arrow_function)",
-     "at": "bluewallet/blue_modules/pako/lib/zlib/inflate.js:383"
-    },
-    {
      "cc": 178,
      "function": "(arrow_function)",
      "at": "bluewallet/screen/wallets/WalletDetails.tsx:63"
@@ -126,18 +121,23 @@
      "cc": 124,
      "function": "(arrow_function)",
      "at": "bluewallet/screen/wallets/WalletTransactions.tsx:180"
+    },
+    {
+     "cc": 122,
+     "function": "(arrow_function)",
+     "at": "bluewallet/screen/receive/ReceiveDetails.tsx:149"
     }
    ]
   },
   "all": {
-   "functions": 1953,
-   "mean_cc": 5.39,
-   "p90_cc": 11,
+   "functions": 1758,
+   "mean_cc": 5.24,
+   "p90_cc": 10,
    "max_cc": 238,
-   "cc_le_2": 1105,
-   "cc_3_12": 689,
-   "cc_gt_12": 159,
-   "cc_gt_30": 47
+   "cc_le_2": 1009,
+   "cc_3_12": 610,
+   "cc_gt_12": 139,
+   "cc_gt_30": 42
   }
  },
  "Green": {

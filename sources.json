@@ -193,7 +193,14 @@
      "bluewallet:ios"
     ]
    },
-   "deps": {"npm_lock": {"lock": "bluewallet:package-lock.json", "package": "bluewallet:package.json"}, "pods": "bluewallet:ios/Podfile.lock"}
+   "deps": {"npm_lock": {"lock": "bluewallet:package-lock.json", "package": "bluewallet:package.json"}, "pods": "bluewallet:ios/Podfile.lock"},
+   "vendored": [
+    "bluewallet:blue_modules/pako",
+    "bluewallet:blue_modules/bc-ur",
+    "bluewallet:blue_modules/bc-bech32",
+    "bluewallet:blue_modules/bbqr",
+    "bluewallet:blue_modules/uint8array-extras"
+   ]
   },
   "Green": {
    "app_source": "green",

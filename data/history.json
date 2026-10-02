@@ -380,15 +380,15 @@
      "vendored_lines": 0
     },
     "BlueWallet": {
-     "lines": 62779,
-     "lines_app": 62779,
-     "characters": 1740692,
-     "functions": 1953,
-     "cc_gt_12": 159,
-     "cc_gt_30": 47,
+     "lines": 57625,
+     "lines_app": 57625,
+     "characters": 1632379,
+     "functions": 1758,
+     "cc_gt_12": 139,
+     "cc_gt_30": 42,
      "max_cc": 238,
      "packages": 930,
-     "vendored_lines": 0
+     "vendored_lines": 5136
     },
     "Green": {
      "lines": 70474,
@@ -412,7 +412,7 @@
      "cc_gt_30": 2,
      "max_cc": 63,
      "packages": 139,
-     "vendored_lines": 101959
+     "vendored_lines": 101694
     },
     "Phoenix": {
      "lines": 72767,

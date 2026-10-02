@@ -21,16 +21,16 @@
  },
  "BlueWallet": {
   "app": {
-   "code": 62779,
-   "chars": 1740692,
-   "files": 414,
+   "code": 57625,
+   "chars": 1632379,
+   "files": 383,
    "languages": {
     "C/C++ Header": 18,
-    "JavaScript": 6021,
+    "JavaScript": 1523,
     "Objective-C": 33,
     "Objective-C++": 59,
     "Swift": 3485,
-    "TypeScript": 53163
+    "TypeScript": 52507
    },
    "generated_excluded": []
   }

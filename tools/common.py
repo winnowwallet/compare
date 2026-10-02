@@ -123,6 +123,12 @@ def unclaimed(spec):
     return missing
 
 
+def left_out(spec):
+    """Paths a wallet's own code leaves out: `skip` (never built into the app) and `vendored`
+    (third-party copies, counted as vendored code instead)."""
+    return spec.get('skip', []) + spec.get('vendored', [])
+
+
 def counted_files(refs, skip=()):
     """The files a part of a wallet ships: programming-language sources that build into the
     iPhone app, minus tests, other platforms and generated files. Returns (kept, generated)."""

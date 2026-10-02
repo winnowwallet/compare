@@ -7,7 +7,28 @@
   "copied_lines": 0
  },
  "BlueWallet": {
-  "copied_packages": {},
+  "copied_packages": {
+   "blue_modules/pako": {
+    "lines": 3806,
+    "counted": "source"
+   },
+   "blue_modules/bc-ur": {
+    "lines": 222,
+    "counted": "published build output"
+   },
+   "blue_modules/bc-bech32": {
+    "lines": 209,
+    "counted": "published build output"
+   },
+   "blue_modules/bbqr": {
+    "lines": 638,
+    "counted": "source"
+   },
+   "blue_modules/uint8array-extras": {
+    "lines": 261,
+    "counted": "source"
+   }
+  },
   "nested_licenses": [
    "/blue_modules/pako/LICENSE"
   ],
@@ -19,7 +40,7 @@
    "react-native-notifications+5.2.2.patch",
    "react-native-screens+4.27.0.patch"
   ],
-  "copied_lines": 0
+  "copied_lines": 5136
  },
  "Green": {
   "copied_packages": {},
@@ -129,14 +150,6 @@
    "falcon/app/Pods/nanopb": {
     "lines": 2335,
     "counted": "source"
-   },
-   "falcon/app/Pods/FirebaseCrashlytics/Crashlytics/third_party/libunwind": {
-    "lines": 213,
-    "counted": "source"
-   },
-   "falcon/app/Pods/GoogleUtilities/third_party/IsAppEncrypted": {
-    "lines": 52,
-    "counted": "source"
    }
   },
   "nested_licenses": [
@@ -201,7 +214,7 @@
    "/falcon/app/Pods/SwiftGen/lib/Yams.framework"
   ],
   "patches": [],
-  "copied_lines": 101959
+  "copied_lines": 101694
  },
  "Phoenix": {
   "copied_packages": {},

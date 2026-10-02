@@ -132,16 +132,15 @@ for w in ORDER:
         if role in loc[w]:
             cells.append(f'<td class="{"lib" if role == "bitcoin" else "num"}">{loc[w][role]["code"]:,}</td>')
         else:
-            named = P[w].get('bitcoin_library_not_counted')
-            cells.append(f'<td class="lib">{f"Not counted ({esc(named)})" if named else "—"}</td>')
+            cells.append('<td class="lib dim">—</td>')
     if 'engine' in loc[w]:
         names = ', '.join(dict.fromkeys(CONFIG['sources'][r.split(':')[0]]['label'] for r in CONFIG['wallets'][w]['code']['engine']))
-        cells.append(f'<td class="lib num">{loc[w]["engine"]["code"]:,} <span class="dim">{esc(names)}</span></td>')
+        engine_cell = f'<td class="lib">{loc[w]["engine"]["code"]:,} <span class="dim">{esc(names)}</span></td>'
     else:
-        cells.append('<td class="lib dim">None embedded</td>')
+        engine_cell = '<td class="lib dim">None embedded</td>'
     rel = '—' if w == 'Winnow' else f'{L / W_L:.1f}× · {C / W_C:.1f}×'
     size_table.append(f'<tr>{name_cell(w)}{"".join(cells)}<td class="num"><strong>{L:,}</strong></td>'
-                      f'<td class="num">{C / 1e6:.2f}M</td><td class="num">{rel}</td></tr>')
+                      f'<td class="num">{C / 1e6:.2f}M</td><td class="num">{rel}</td>{engine_cell}</tr>')
 axis = [''.join(f'<span class="u-{u}" style="left:{100 * v / MAX[u]:.3f}%">{t}</span>' for v, t in TICKS[u]) for u in 'lc']
 
 # ── languages ──────────────────────────────────────────────────
@@ -211,8 +210,9 @@ def vendored_text(w):
     return f'{v["copied_lines"]:,} lines in {", ".join(f"<code>{esc(f)}</code>" for f in folder)}: {esc(shown)}{esc(more)}'
 
 
-dep_text = '\n'.join(f'<tr>{name_cell(w)}<td>{fact(P[w]["libraries"])}</td><td>{fact(P[w]["prebuilt"])}</td>'
-                     f'<td>{vendored_text(w)}</td><td>{esc(P[w]["patched"])}</td></tr>' for w in ORDER)
+dep_text = '\n'.join(f'<tr>{name_cell(w)}<td>{fact(P[w]["libraries"])}</td>'
+                     f'<td>{esc(P[w]["bitcoin_library_not_counted"]) if P[w]["bitcoin_library_not_counted"] else "—"}</td>'
+                     f'<td>{fact(P[w]["prebuilt"])}</td><td>{vendored_text(w)}</td><td>{esc(P[w]["patched"])}</td></tr>' for w in ORDER)
 
 # ── features ───────────────────────────────────────────────────
 GROUPS = [(g['title'], [(r['key'], r['label']) for r in g['rows']]) for g in ROWS['groups']]

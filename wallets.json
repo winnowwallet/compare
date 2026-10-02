@@ -1,67 +1,211 @@
 {
-  "order": ["Winnow", "Phoenix", "Bitkit", "Blixt", "Zeus"],
-  "profiles": {
-    "Winnow": {
-      "built_with": "Swift",
-      "engine": "Its own, in Swift, in the same repository as the wallet",
-      "chain_data": {"text": "Compact block filters (BIP157/158) from Bitcoin peers Winnow finds itself", "cite": "winnow:README.md:7"},
-      "partner": {"text": "Your choice of Olympus, Megalith or LNServer", "cite": "winnow:Sources/WinnowLightningApp/LightningProviders.swift:19"},
-      "distribution": {"text": "Built into the Winnow app and in its TestFlight builds since 0.8.0; labelled experimental", "cite": "winnow:docs/engineering/lightning-release.md:3; winnow:.github/workflows/release.yml:183-206; winnow:Sources/WinnowLightningApp/LightningView.swift:27"},
-      "libraries": {"text": "libsecp256k1, through swift-secp256k1. Nothing else.", "cite": "winnow:Package.swift:19"},
-      "bitcoin_library_not_counted": null,
-      "prebuilt": {"text": "None"},
-      "patched": "None"
-    },
-    "Phoenix": {
-      "built_with": "Swift on Kotlin Multiplatform",
-      "engine": "lightning-kmp {version:lightning-kmp} (Kotlin)",
-      "chain_data": {"text": "An Electrum server picked at random from a built-in list of 15", "cite": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/AppConfigurationManager.kt:66"},
-      "partner": {"text": "ACINQ", "cite": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/NodeParamsManager.kt:87"},
-      "distribution": "App Store",
-      "libraries": {"text": "bitcoin-kmp, secp256k1-kmp, Ktor, SQLDelight, Firebase Messaging", "cite": "phoenix:phoenix-ios/phoenix-ios.xcodeproj/project.pbxproj:386"},
-      "bitcoin_library_not_counted": "bitcoin-kmp",
-      "prebuilt": {"text": "Kotlin libraries, as compiled klibs from Maven Central"},
-      "patched": "None"
-    },
-    "Bitkit": {
-      "built_with": "Swift",
-      "engine": "LDK Node (Synonym’s fork) on rust-lightning {version:rust-lightning} (Rust)",
-      "chain_data": {"text": "Synonym’s Electrum server", "cite": "bitkit:Bitkit/Constants/Env.swift:191"},
-      "partner": {"text": "Blocktank, run by Synonym", "cite": "bitkit:Bitkit/Constants/Env.swift:295"},
-      "distribution": "App Store",
-      "libraries": {"text": "BDK (inside LDK Node), bitkit-core, Paykit, VSS client, Lottie"},
-      "bitcoin_library_not_counted": "BDK, rust-bitcoin",
-      "prebuilt": {"text": "LDK Node, bitkit-core, Paykit and the VSS client, as XCFrameworks", "cite": "synonym-ldk-node:Package.swift:28; bitkit-core:Package.swift:29; paykit-rs:Package.swift:27; vss-rust-client-ffi:Package.swift:28"},
-      "patched": "None"
-    },
-    "Blixt": {
-      "built_with": "React Native (TypeScript)",
-      "engine": "Embedded LND {version:lnd-blixt} (Go)",
-      "chain_data": {"text": "Neutrino (BIP157) through six default peers, four run by Blixt", "cite": "blixt:src/utils/constants.ts:30"},
-      "partner": {"text": "Dunder, run by Blixt, or any node", "cite": "blixt:src/utils/constants.ts:51"},
-      "distribution": "TestFlight",
-      "libraries": {"text": "React Native, react-native-turbo-lnd, secp256k1, protobuf, Nitro Tor"},
-      "bitcoin_library_not_counted": "btcd, btcwallet, neutrino",
-      "prebuilt": {"text": "LND, from react-native-turbo-lnd releases", "cite": "blixt:package.json:134"},
-      "patched": "None"
-    },
-    "Zeus": {
-      "built_with": "React Native (TypeScript)",
-      "engine": "Embedded LND {version:lnd-zeus} (Go). LDK Node is an option, and Zeus can also drive a remote node.",
-      "chain_data": {"text": "Neutrino (BIP157) through five default peers, two run by Olympus; the LDK Node option uses an Esplora server", "cite": "zeus:stores/SettingsStore.ts:1476"},
-      "partner": {"text": "Olympus, run by Zeus, or any node", "cite": "zeus:stores/SettingsStore.ts:1305"},
-      "distribution": "App Store",
-      "libraries": {"text": "React Native, bitcoinjs-lib, noble and scure cryptography, Cashu CDK, Nostr (NDK)"},
-      "bitcoin_library_not_counted": "btcd, btcwallet, neutrino",
-      "prebuilt": {"text": "LND, LDK Node and Cashu CDK, pinned by SHA-256", "cite": "zeus:fetch-libraries-versions.json:2"},
-      "patched": "Five iOS-relevant scripts rewrite installed npm packages (a sixth targets Android); rn-nodeify shims crypto and stream"
-    }
+ "order": ["Winnow", "BlueWallet", "Green", "Muun", "Phoenix", "Bitkit", "Blixt", "Zeus"],
+ "profiles": {
+  "Winnow": {
+   "built_with": "Swift (SwiftUI)",
+   "engine": {
+    "text": "Its own, in Swift (WalletCore), in the same repository: keys, PSBTs, scripts, compact-filter sync, peer networking",
+    "cite": "winnow:Package.swift:19-21; winnow:README.md:7"
+   },
+   "chain_data": {
+    "text": "BIP157/158 compact filters from Bitcoin peers found through a signed peer list and DNS seeds; Advanced mode adds your own peers",
+    "cite": "winnow:README.md:7; winnow:Sources/WalletCore/Network/Peers/CensusCatalog.swift:28; winnow:Sources/WinnowApp/SettingsView.swift:83-107"
+   },
+   "third_party": {
+    "text": "Nobody for the everyday wallet; shared accounts need the co-owners' keys, with no co-signing server",
+    "cite": "winnow:README.md:9; winnow:Sources/WinnowApp/SharedSavingsViews.swift:104-105"
+   },
+   "distribution": {"text": "App Store; pre-release builds on TestFlight", "cite": "winnow:README.md:5; winnow:.github/workflows/appstore-submit.yml:3-6"},
+   "libraries": {
+    "text": "swift-secp256k1 0.23.2 (Bitcoin Core's libsecp256k1), the only third-party dependency",
+    "cite": "winnow:Package.swift:16; winnow:README.md:11"
+   },
+   "bitcoin_library_not_counted": null,
+   "prebuilt": {"text": "None in the repository; the app links the swift-secp256k1 package that SwiftPM fetches", "cite": "winnow:Package.swift:16-21"},
+   "patched": "None"
   },
-  "other_approaches": [
-    ["Misty Breez", "holds Liquid funds and swaps to and from Lightning with Breez SDK – Liquid. On 20 September 2026 that SDK’s public repository was replaced with a notice pointing builders to Breez SDK – Spark."],
-    ["Aqua", "is a Bitcoin and Liquid wallet that pays and receives Lightning through Boltz swaps."],
-    ["Muun", "is a 2-of-2 multisig wallet shared with Muun’s server. Its Lightning payments are swaps against that server."],
-    ["BlueWallet", "reaches Lightning through an LNDHub server, which holds the Lightning funds."],
-    ["Alby Go", "controls a wallet that runs elsewhere, such as Alby Hub, over Nostr Wallet Connect."]
+  "BlueWallet": {
+   "built_with": "React Native (TypeScript) with small native modules",
+   "engine": {
+    "text": "Its own TypeScript (class/wallets) on bitcoinjs-lib 7 and @noble/secp256k1; chain data through a fork of the Electrum client",
+    "cite": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:1075; bluewallet:package.json:132-135; bluewallet:package.json:144"
+   },
+   "chain_data": {
+    "text": "Electrum servers: electrum1.bluewallet.io by default, a short hardcoded fallback list; any host and port can be set in Settings > Network",
+    "cite": "bluewallet:blue_modules/BlueElectrum.ts:90-97; bluewallet:screen/settings/ElectrumSettings.tsx:193-212"
+   },
+   "third_party": {
+    "text": "Nobody for on-chain funds. The optional LNDhub (custodial) and Ark wallet types depend on their own servers",
+    "cite": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:1075; bluewallet:class/wallets/lightning-custodian-wallet.ts:80; bluewallet:class/wallets/lightning-ark-wallet.ts:94"
+   },
+   "distribution": {"text": "App Store; builds go through TestFlight", "cite": "bluewallet:README.md:10; bluewallet:fastlane/Fastfile:1306-1344"},
+   "libraries": {
+    "text": "bitcoinjs-lib, bip32, bip39, ecpair, @noble/secp256k1, BlueWallet forks of coinselect, rn-electrum-client, bip47, SilentPayments and slip39-js, aezeed, bolt11, payjoin-client, bc-ur (Keystone and NGRAVE), realm, react-native-keychain, @arkade-os/sdk and boltz-swap, Bugsnag.",
+    "cite": "bluewallet:package.json:93-190"
+   },
+   "bitcoin_library_not_counted": "bitcoinjs-lib, bip32 and @noble/secp256k1, from npm",
+   "prebuilt": {
+    "text": "No binaries are checked in. The build links React Native's prebuilt Hermes and React-Core-prebuilt pods, and the patched react-native-background-fetch pod vendors the npm package's TSBackgroundFetch.xcframework.",
+    "cite": "bluewallet:ios/Podfile.lock:28-30; bluewallet:ios/Podfile.lock:97; bluewallet:patches/react-native-background-fetch+4.4.2.patch:8-12"
+   },
+   "patched": "Four patch-package patches on npm packages: react-native-background-fetch (iOS xcframework with Catalyst), react-native-notifications (Android token), react-native-context-menu-view (Android menus), react-native-screens (iOS accessibility id; patch is for 4.27.0 while package.json pins 4.28.0). Several dependencies also come from BlueWallet forks pinned to git commits."
+  },
+  "Green": {
+   "built_with": "Swift (UIKit) over Blockstream's gdk",
+   "engine": {
+    "text": "gdk {version:gdk} (C++ for multisig, Rust for singlesig), linked as a prebuilt static library",
+    "cite": "green:tools/fetch_gdk_binaries.sh:29; gdk:src/session_impl.cpp:79-82"
+   },
+   "chain_data": {
+    "text": "Singlesig: Blockstream's Electrum server, or your own in Settings. Multisig: Blockstream's backend, not replaceable",
+    "cite": "gdk:src/network_parameters.cpp:472; gdk:src/network_parameters.cpp:333; green:gaios/AppSettings/AppSettingsViewModel.swift:52-53"
+   },
+   "third_party": {
+    "text": "Nobody for singlesig. Multisig (2-of-2, 2-of-3) needs Blockstream's server to co-sign every spend",
+    "cite": "gdk:src/ga_auth_handlers.cpp:808; gdk:src/ga_auth_handlers.cpp:835-844"
+   },
+   "distribution": "App Store",
+   "libraries": {
+    "text": "gdk (libwally-core, rust-bitcoin, Tor), Liquid Wallet Kit, Greenlight SDK, Firebase, Countly, Zendesk, Rive, Charts, SwiftCBOR, AsyncBluetooth",
+    "cite": "green:gaios.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved:77; green:gaios.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved:149; green:gaios.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved:68"
+   },
+   "bitcoin_library_not_counted": "libwally-core, rust-bitcoin, rust-elements (inside the prebuilt gdk)",
+   "prebuilt": {
+    "text": "gdk static library (libgreen_gdk_full.a) from Blockstream's release tarballs, checked against pinned SHA-256 sums; Google's grpc-binary and abseil-cpp-binary packages",
+    "cite": "green:tools/fetch_gdk_binaries.sh:29-37"
+   },
+   "patched": "Countly's iOS SDK comes from a fork (angelix/countly-sdk-ios 23.6.1-ave). gdk's own build patches libevent and bc-ur, outside the app."
+  },
+  "Muun": {
+   "built_with": "Swift (UIKit) with a Go library, libwallet",
+   "engine": {
+    "text": "libwallet, Muun's own Go library in the same repository: keys, 2-of-2 and MuSig2 signing, addresses, fees. Muun's server holds the second key",
+    "cite": "muun:README.md:26; muun:libwallet/V5.go:16-24"
+   },
+   "chain_data": {
+    "text": "Muun's own server (Houston API): history, spendable coins, fees and block height. The person cannot change it",
+    "cite": "muun:falcon/app/falcon/core/Environment.swift:42; muun:falcon/app/falcon/Presentation/Screen/Settings/SettingsPresenter.swift:154-168; muun:libwallet/libwallet_init/init.go:160-161"
+   },
+   "third_party": {
+    "text": "Muun's server must co-sign every spend. Without it the person needs the Emergency Kit, the Recovery Code and Muun's separate Recovery Tool",
+    "cite": "muun:libwallet/V4.go:47-48; muun:libwallet/V5.go:26-35; muun:falcon/app/falcon/Presentation/Screen/SecurityCenter/EmergencyKit/RecoveryTool/RecoveryToolViewController.swift:69"
+   },
+   "distribution": "App Store, per its fastlane release lane",
+   "libraries": {
+    "text": "Swift: Firebase (Analytics, Crashlytics, Messaging), GoogleSignIn and Google Drive API, GRDB.swift, RxSwift, Dip, grpc-swift, Lottie. Go: btcd, lnd (lnwire, zpay32), lightning-onion, go-lnurl, gofpdf, pdfcpu, gorm with SQLite, gRPC.",
+    "cite": "muun:falcon/app/Podfile:15-31; muun:falcon/app/SPM/Package.swift:15-18; muun:libwallet/go.mod:6-35"
+   },
+   "bitcoin_library_not_counted": "btcd and lnd, as Go modules. Copies inside libwallet (btcsuitew, musig2v040) are counted",
+   "prebuilt": {
+    "text": "Rust zero-knowledge proof verifier (plonky2) linked as the static library multi-apple-ios-librs.a, built by libwallet/librs/makelibs.sh and not in the tree; FirebaseAnalytics and GoogleAppMeasurement xcframeworks from dl.google.com",
+    "cite": "muun:libwallet/librs/librs.go:16; muun:falcon/app/pods_dependency_registry.txt:4; muun:falcon/app/pods_dependency_registry.txt:14"
+   },
+   "patched": "Go 1.24.7 toolchain is patched for cgo struct alignment (falcon/0001-align-to-ptrsize.patch); golang.org/x/mobile is replaced by the muun/mobile fork (libwallet/go.mod:200)"
+  },
+  "Phoenix": {
+   "built_with": "Swift (SwiftUI) over Kotlin Multiplatform shared code",
+   "engine": {
+    "text": "lightning-kmp {version:lightning-kmp} (Kotlin Multiplatform): Electrum client, swap-in wallet and final (BIP84) wallet",
+    "cite": "phoenix:phoenix-shared/build.gradle.kts:85; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/blockchain/electrum/SwapInWallet.kt:14-28; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/blockchain/electrum/FinalWallet.kt:15-26"
+   },
+   "chain_data": {
+    "text": "An Electrum server picked at random from a built-in list of 15, trusted as given; the person can enter their own server in Settings",
+    "cite": "phoenix:phoenix-shared/src/commonMain/kotlin/fr.acinq.phoenix/managers/AppConfigurationManager.kt:66; phoenix:phoenix-ios/phoenix-ios/views/configuration/privacy and security/electrum server/ElectrumConfigurationView.swift:59-60"
+   },
+   "third_party": {
+    "text": "ACINQ co-signs swap-in deposits (MuSig2 2-of-2) until a refund delay of about six months, and is the channel peer for every on-chain send. The final wallet is the person's alone",
+    "cite": "lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/transactions/SwapInProtocol.kt:11-12; lightning-kmp:modules/core/src/commonMain/kotlin/fr/acinq/lightning/NodeParams.kt:94; phoenix:phoenix-ios/phoenix-ios/views/send/ValidateView.swift:1970-1973"
+   },
+   "distribution": "App Store",
+   "libraries": {
+    "text": "bitcoin-kmp with secp256k1-kmp, Ktor, kotlinx-serialization, SQLDelight (Kotlin side); Firebase Messaging and a few small SwiftUI packages (Swift side)",
+    "cite": "lightning-kmp:modules/core/build.gradle.kts:65-77; phoenix:phoenix-shared/build.gradle.kts:85-93; phoenix:phoenix-ios/phoenix-ios.xcodeproj/project.pbxproj:386"
+   },
+   "bitcoin_library_not_counted": "bitcoin-kmp",
+   "prebuilt": {
+    "text": "Kotlin libraries (lightning-kmp, bitcoin-kmp, secp256k1-kmp native code, Ktor, SQLDelight) as compiled klibs from Maven Central; Firebase through Swift Package Manager",
+    "cite": "phoenix:phoenix-shared/build.gradle.kts:85-93; phoenix:build.gradle.kts:18-20"
+   },
+   "patched": "None"
+  },
+  "Bitkit": {
+   "built_with": "Swift (SwiftUI) on Rust libraries",
+   "engine": {
+    "text": "LDK Node {version:synonym-ldk-node} (Synonym's fork, Rust); its on-chain wallet is BDK",
+    "cite": "synonym-ldk-node:Cargo.toml:48-51; synonym-ldk-node:src/builder.rs:1384-1402"
+   },
+   "chain_data": {
+    "text": "Synonym's Electrum server (bitkit.to); the person can change it in Settings > Advanced > Electrum Server",
+    "cite": "bitkit:Bitkit/Constants/Env.swift:191; bitkit:Bitkit/Views/Settings/Advanced/ElectrumSettingsScreen.swift:56-84"
+   },
+   "third_party": {"text": "Nobody", "cite": "bitkit:Bitkit/Services/LightningService.swift:796-803"},
+   "distribution": "App Store",
+   "libraries": {
+    "text": "LDK Node (with BDK), bitkit-core, Paykit, VSS client, Lottie, swift-secp256k1",
+    "cite": "bitkit:Bitkit.xcodeproj/project.pbxproj:1176-1223"
+   },
+   "bitcoin_library_not_counted": "BDK, rust-bitcoin",
+   "prebuilt": {
+    "text": "LDK Node, bitkit-core, Paykit and the VSS client, as XCFrameworks",
+    "cite": "synonym-ldk-node:Package.swift:28; bitkit-core:Package.swift:29; paykit-rs:Package.swift:27; vss-rust-client-ffi:Package.swift:28"
+   },
+   "patched": "None"
+  },
+  "Blixt": {
+   "built_with": "React Native (TypeScript) with Go (LND)",
+   "engine": {
+    "text": "Embedded LND {version:lnd-blixt} (Go); the on-chain wallet is btcwallet, run in-process through react-native-turbo-lnd",
+    "cite": "lnd-blixt:lnwallet/btcwallet/btcwallet.go:83-88"
+   },
+   "chain_data": {
+    "text": "Neutrino (BIP157/158) through six default peers, four run by Blixt; the person can change the peers in Settings",
+    "cite": "blixt:src/utils/constants.ts:30-38; blixt:src/windows/Settings/Settings.tsx:1670-1680"
+   },
+   "third_party": {"text": "Nobody", "cite": "blixt:src/state/OnChain.ts:217-226"},
+   "distribution": "TestFlight",
+   "libraries": {
+    "text": "React Native, react-native-turbo-lnd, @bufbuild/protobuf, secp256k1, bech32, react-native-nitro-tor, react-native-keychain, easy-peasy",
+    "cite": "blixt:package.json:70; blixt:package.json:104; blixt:package.json:122; blixt:package.json:134; blixt:package.json:145"
+   },
+   "bitcoin_library_not_counted": "btcwallet (with btcd, neutrino) under LND",
+   "prebuilt": {
+    "text": "Lndmobile.xcframework (LND), downloaded from the react-native-turbo-lnd release for the pinned LND commit",
+    "cite": "turbo-lnd:react-native-turbo-lnd.podspec:19"
+   },
+   "patched": "None in the app (no patch files); LND is Blixt's own fork (hsjoberg/lnd) with an added gossip speedloader"
+  },
+  "Zeus": {
+   "built_with": "React Native (TypeScript) with native modules and prebuilt Go and Rust libraries",
+   "engine": {
+    "text": "Embedded LND {version:lnd-zeus} (Go, Zeus's fork); the on-chain wallet is btcwallet. LDK Node (BDK) is an option, and remote nodes can be driven too",
+    "cite": "lnd-zeus:lnwallet/btcwallet/btcwallet.go:83-88; zeus:utils/WalletCreationUtils.ts:109-126; zeus:utils/WalletCreationUtils.ts:71-78"
+   },
+   "chain_data": {
+    "text": "Neutrino (BIP157/158) through five default peers, two run by Olympus; the person can add peers or allow only their own. The LDK Node option uses an Esplora server",
+    "cite": "zeus:stores/SettingsStore.ts:1476-1482; zeus:utils/LndMobileUtils.ts:222-224; zeus:utils/LdkNodeUtils.ts:26-27"
+   },
+   "third_party": {
+    "text": "Nobody for on-chain funds; they sit in the embedded wallet under one key on the phone",
+    "cite": "zeus:backends/EmbeddedLND.ts:100-107; lnd-zeus:lnwallet/btcwallet/btcwallet.go:83-88"
+   },
+   "distribution": "App Store",
+   "libraries": {
+    "text": "React Native, bitcoinjs-lib, noble and scure cryptography, bc-ur registries (Keystone, NGRAVE), Nostr (NDK), react-native-nitro-tor, Cashu CDK",
+    "cite": "zeus:package.json:53; zeus:package.json:55; zeus:package.json:56; zeus:package.json:59; zeus:package.json:77; zeus:package.json:86; zeus:package.json:117; zeus:package.json:148"
+   },
+   "bitcoin_library_not_counted": "btcwallet (with btcd, neutrino) under LND; bitcoinjs-lib; BDK in the optional LDK Node",
+   "prebuilt": {
+    "text": "Lndmobile.xcframework (LND), LDKNodeFFI.xcframework (LDK Node), and the Cashu CDK and restore xcframeworks, downloaded from release archives pinned by SHA-256",
+    "cite": "zeus:fetch-libraries-versions.json:2-6; zeus:fetch-libraries.sh:37-38"
+   },
+   "patched": "Six postinstall scripts rewrite installed npm packages (two are Android-only: jcenter and notifications; four reach iOS: NativeEventEmitter, keychain cloudSync, noble-hashes exports, reanimated C++); rn-nodeify shims crypto, stream and dgram"
+  }
+ },
+ "not_compared": [
+  ["Exodus, Cash App and Strike", "are widely used iPhone wallets whose apps are closed source, so there is no code to measure or cite."],
+  [
+   "Envoy, Bull Bitcoin, Bitcoin Keeper, Cake Wallet and Edge",
+   "publish source code and may be added. Each needs a measured iPhone build and a hand review of its features."
   ]
+ ]
 }

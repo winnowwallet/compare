@@ -7,7 +7,7 @@ counted twice, and files marked as generated are skipped."""
 import json
 import re
 
-from common import CONFIG, DATA, GENERATED, LANGS, cloc, source_dir, write_json
+from common import CONFIG, DATA, GENERATED, LANGS, cloc, resolve, source_dir, write_json
 
 IGNORE = re.compile(r'/(\.git|node_modules|android|phoenix-android|build|target)(/|$)')
 VENDOR_DIR = re.compile(r'^(vendor|vendored|third[_-]?party|thirdparty|external|externals|zeus_modules|Pods)$', re.I)
@@ -50,11 +50,13 @@ def packages_in(vendor_dir):
 
 def scan(root):
     found = {'copied_packages': {}, 'nested_licenses': [], 'binaries': [], 'patches': []}
+    vendor_dirs = []  # a vendor directory inside another (Pods/GoogleUtilities/third_party) is already counted by its parent
     for p in sorted(root.rglob('*')):
         rel = '/' + str(p.relative_to(root))
         if IGNORE.search(rel):
             continue
-        if p.is_dir() and VENDOR_DIR.match(p.name):
+        if p.is_dir() and VENDOR_DIR.match(p.name) and not any(v in p.parents for v in vendor_dirs):
+            vendor_dirs.append(p)
             for pkg in packages_in(p):
                 lines, counted = package_lines(pkg)
                 if lines:
@@ -74,6 +76,13 @@ def scan(root):
 
 def main():
     out = {wallet: scan(source_dir(spec['app_source'])) for wallet, spec in CONFIG['wallets'].items()}
+    for wallet, spec in CONFIG['wallets'].items():  # copies a wallet names itself, such as BlueWallet's blue_modules/pako
+        root = source_dir(spec['app_source'])
+        for ref in spec.get('vendored', []):
+            tree = resolve(ref)
+            lines, counted = package_lines(tree)
+            out[wallet]['copied_packages'][str(tree.relative_to(root))] = {'lines': lines, 'counted': counted}
+        out[wallet]['copied_lines'] = sum(v['lines'] for v in out[wallet]['copied_packages'].values())
     for wallet, f in out.items():
         print(wallet, f['copied_lines'], 'copied lines;', len(f['patches']), 'patch scripts;', len(f['binaries']), 'binaries')
     write_json(DATA / 'vendored.json', out)

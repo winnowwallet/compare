@@ -215,8 +215,8 @@ ul.evidence code{font-size:.8em}
 </div>
 <div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table">
 <table class="deps-text">
-<caption>Main libraries, and code that arrives other than as source packages</caption>
-<thead><tr><th scope="col">Wallet</th><th scope="col">Main libraries</th><th scope="col">Prebuilt binaries</th><th scope="col">Third-party code copied into the repository</th><th scope="col">Patched dependencies</th></tr></thead>
+<caption>Main libraries, the Bitcoin code outside the counted code, and code that arrives other than as source packages</caption>
+<thead><tr><th scope="col">Wallet</th><th scope="col">Main libraries</th><th scope="col">Bitcoin code not counted above</th><th scope="col">Prebuilt binaries</th><th scope="col">Third-party code copied into the repository</th><th scope="col">Patched dependencies</th></tr></thead>
 <tbody>
 {{DEP_TEXT}}
 </tbody>
@@ -267,7 +267,7 @@ ul.evidence code{font-size:.8em}
 <h2>How we measured</h2>
 <ul>
 <li><strong>Lines:</strong> <a href="https://github.com/AlDanial/cloc">cloc</a> 2.06 counted non-blank, non-comment lines in each app’s programming languages, for code that builds into the iPhone app. Characters were counted after removing comments and all whitespace. Excluded: tests; Android, desktop and web code; build tools; files marked as generated (protobuf, sqlc and UniFFI bindings); and vendored third-party code. Rust test modules inside source files were removed.</li>
-<li><strong>Complexity:</strong> each file was parsed with <a href="https://tree-sitter.github.io/">tree-sitter</a>, and one rule applied to every language. CC is 1, plus 1 for each <code>if</code> or <code>guard</code>, loop, <code>catch</code>, ternary, <code>&amp;&amp;</code>, <code>||</code>, <code>??</code> or elvis, and non-default <code>case</code>, <code>when</code> or <code>match</code> arm. Closures, lambdas and nested functions count toward the function that contains them. Tree-sitter could not fully parse at most {{PE_MAX}}% of any wallet’s files; it recovers locally, so their functions are still counted.</li>
+<li><strong>Complexity:</strong> each file was parsed with <a href="https://tree-sitter.github.io/">tree-sitter</a>, and one rule applied to every language. CC is 1, plus 1 for each <code>if</code> or <code>guard</code>, loop, <code>catch</code>, ternary, <code>&amp;&amp;</code>, <code>||</code>, <code>??</code> or elvis, and non-default <code>case</code>, <code>when</code> or <code>match</code> arm. Closures, lambdas and nested functions count toward the function that contains them, so a React screen written as one function component counts as one function. Tree-sitter could not fully parse at most {{PE_MAX}}% of any wallet’s files; it recovers locally, so their functions are still counted.</li>
 <li><strong>Dependencies:</strong> read from each app’s own lockfiles (Swift Package Manager, CocoaPods, npm, yarn and bun). Kotlin libraries were resolved from Maven Central’s metadata for the iPhone target. Rust crates come from <code>cargo tree</code> for <code>aarch64-apple-ios</code> at each prebuilt library’s pinned source. Go modules come from <code>go list -deps</code> for iOS, with the build tags LND’s own iOS build uses or, for Muun, none.</li>
 <li><strong>Vendored code:</strong> each repository was searched for third-party code committed into it: vendor directories, committed CocoaPods, copied npm packages, license files below the root, committed binaries and dependency patches.</li>
 <li><strong>Features:</strong> each cell was checked by hand in the app’s and the engine’s source {{REVIEWED}}, at the revisions in <code>reviewed.json</code>. The build compares every cited passage with today’s code and lists any that have changed. The rows and what each value means are in <code>features/rows.json</code>.</li>

@@ -2,7 +2,7 @@
 whitespace-free characters, which do not reward long lines."""
 import json
 
-from common import CONFIG, DATA, LANGS, STAGE, cloc, stage, unclaimed, write_json
+from common import CONFIG, DATA, LANGS, STAGE, cloc, left_out, stage, unclaimed, write_json
 
 
 def measure(refs, skip=()):
@@ -30,7 +30,7 @@ def main():
         if missing:
             raise SystemExit(f'{wallet} has code that no part of sources.json counts: {", ".join(missing)}. '
                              'Add each to its code parts, or leave it out on purpose by removing it from `complete`.')
-        result[wallet] = {part: measure(refs, spec.get('skip', ())) for part, refs in spec['code'].items()}
+        result[wallet] = {part: measure(refs, left_out(spec)) for part, refs in spec['code'].items()}
         print(wallet, {p: v['code'] for p, v in result[wallet].items()})
     write_json(DATA / 'loc.json', result)
 
