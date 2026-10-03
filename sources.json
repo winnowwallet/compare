@@ -1,13 +1,13 @@
 {
- "snapshot": "2026-10-02",
+ "snapshot": "2026-10-03",
  "method": 2,
  "sources": {
   "winnow": {
    "repo": "https://github.com/winnowwallet/winnow",
    "track": {"branch": "HEAD"},
-   "rev": "7751cfd30f5e1b108fcfe322db38b76948a0bb1d",
-   "label": "winnowwallet/winnow@7751cfd",
-   "date": "2026-09-29"
+   "rev": "13db07a9017088db9ca51852c0d55c08de7891d9",
+   "label": "winnowwallet/winnow@13db07a",
+   "date": "2026-10-02"
   },
   "phoenix": {
    "repo": "https://github.com/ACINQ/phoenix",
@@ -104,19 +104,19 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "97bfcb5adacde3159479ae7da9d7ede6fdd5f301",
-   "label": "ZeusLN/zeus@97bfcb5",
+   "rev": "2b81e4ecbbc7f212b765ec57213862a4aeae39c1",
+   "label": "ZeusLN/zeus@2b81e4e",
    "date": "2026-10-02"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
    "track": {"from": "zeus:fetch-libraries-versions.json", "json": "embedded-lnd.version", "tag": "{}"},
    "version_from": {"path": "build/version.go", "pattern": "AppMajor uint = (\\d+)[\\s\\S]*?AppMinor uint = (\\d+)[\\s\\S]*?AppPatch uint = (\\d+)"},
-   "rev": "ae24665a916d94fa89475b21ec27e8cda0eb5845",
-   "tag": "v0.21.3-beta-zeus",
-   "version": "0.21.3",
-   "label": "ZeusLN/lnd v0.21.3-beta-zeus",
-   "date": "2026-09-02"
+   "rev": "124fec6c02f9d5ff81e45a8a3d87e0f6fab49fc7",
+   "tag": "v0.21.4-beta-zeus",
+   "version": "0.21.4",
+   "label": "ZeusLN/lnd v0.21.4-beta-zeus",
+   "date": "2026-10-01"
   },
   "zeus-ldk-node": {
    "repo": "https://github.com/ZeusLN/ldk-node",

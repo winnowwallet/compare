@@ -1,14 +1,14 @@
 {
- "snapshot": "2026-10-02",
+ "snapshot": "2026-10-03",
  "sources": {
   "winnow": {
    "repo": "https://github.com/winnowwallet/winnow",
    "track": {
     "branch": "HEAD"
    },
-   "rev": "7751cfd30f5e1b108fcfe322db38b76948a0bb1d",
-   "label": "winnowwallet/winnow@7751cfd",
-   "date": "2026-09-29"
+   "rev": "13db07a9017088db9ca51852c0d55c08de7891d9",
+   "label": "winnowwallet/winnow@13db07a",
+   "date": "2026-10-02"
   },
   "phoenix": {
    "repo": "https://github.com/ACINQ/phoenix",
@@ -146,8 +146,8 @@
    "track": {
     "branch": "HEAD"
    },
-   "rev": "97bfcb5adacde3159479ae7da9d7ede6fdd5f301",
-   "label": "ZeusLN/zeus@97bfcb5",
+   "rev": "2b81e4ecbbc7f212b765ec57213862a4aeae39c1",
+   "label": "ZeusLN/zeus@2b81e4e",
    "date": "2026-10-02"
   },
   "lnd-zeus": {
@@ -161,11 +161,11 @@
     "path": "build/version.go",
     "pattern": "AppMajor uint = (\\d+)[\\s\\S]*?AppMinor uint = (\\d+)[\\s\\S]*?AppPatch uint = (\\d+)"
    },
-   "rev": "ae24665a916d94fa89475b21ec27e8cda0eb5845",
-   "tag": "v0.21.3-beta-zeus",
-   "version": "0.21.3",
-   "label": "ZeusLN/lnd v0.21.3-beta-zeus",
-   "date": "2026-09-02"
+   "rev": "124fec6c02f9d5ff81e45a8a3d87e0f6fab49fc7",
+   "tag": "v0.21.4-beta-zeus",
+   "version": "0.21.4",
+   "label": "ZeusLN/lnd v0.21.4-beta-zeus",
+   "date": "2026-10-01"
   },
   "zeus-ldk-node": {
    "repo": "https://github.com/ZeusLN/ldk-node",
@@ -412,8 +412,8 @@
   },
   "Zeus": {
    "app": {
-    "code": 189984,
-    "chars": 3685006,
+    "code": 190005,
+    "chars": 3685392,
     "files": 575,
     "languages": {
      "C/C++ Header": 44,
@@ -421,18 +421,18 @@
      "Objective-C": 1332,
      "Objective-C++": 424,
      "Swift": 4038,
-     "TypeScript": 184099
+     "TypeScript": 184120
     },
     "generated_excluded": [
      "zeus/ios/LdkNodeMobile/LDKNode.swift"
     ]
    },
    "engine": {
-    "code": 242167,
-    "chars": 5609921,
-    "files": 1187,
+    "code": 242907,
+    "chars": 5627815,
+    "files": 1188,
     "languages": {
-     "Go": 242167
+     "Go": 242907
     },
     "generated_excluded": [
      "lnd-zeus/graph/db/migration1/sqlc/db.go",
@@ -518,8 +518,8 @@
    "Swift": 0.93,
    "Kotlin": 0.0,
    "Rust": 0.0,
-   "Go": 56.04,
-   "TypeScript/JS": 42.61,
+   "Go": 56.11,
+   "TypeScript/JS": 42.54,
    "C family": 0.42
   }
  },
@@ -965,9 +965,9 @@
     "mean_cc": 4.71,
     "p90_cc": 10,
     "max_cc": 252,
-    "cc_le_2": 2699,
+    "cc_le_2": 2698,
     "cc_3_12": 1651,
-    "cc_gt_12": 345,
+    "cc_gt_12": 346,
     "cc_gt_30": 75,
     "files": 576,
     "files_with_parse_errors": 13,
@@ -1004,9 +1004,9 @@
     "mean_cc": 4.71,
     "p90_cc": 10,
     "max_cc": 252,
-    "cc_le_2": 2699,
+    "cc_le_2": 2698,
     "cc_3_12": 1651,
-    "cc_gt_12": 345,
+    "cc_gt_12": 346,
     "cc_gt_30": 75
    }
   }
@@ -4344,7 +4344,7 @@
     "github.com/NebulousLabs/go-upnp@v0.0.0-20180202185039-29b680b06c82",
     "github.com/Nvveen/Gotty@v0.0.0-20120604004816-cd527374f1e5",
     "github.com/Yawning/aez@v0.0.0-20211027044916-e49e68abd344",
-    "github.com/ZeusLN/btcwallet@v0.16.19-zeus",
+    "github.com/ZeusLN/btcwallet@v0.16.19-7-zeus",
     "github.com/ZeusLN/chantools@v0.14.2-zeus",
     "github.com/ZeusLN/lightning-terminal@v0.10.5-alpha-zeus",
     "github.com/aead/chacha20@v0.0.0-20180709150244-8b13a72661da",
@@ -4361,7 +4361,7 @@
     "github.com/btcsuite/btcwallet/wallet/txauthor@v1.3.5",
     "github.com/btcsuite/btcwallet/wallet/txrules@v1.2.2",
     "github.com/btcsuite/btcwallet/wallet/txsizes@v1.2.5",
-    "github.com/btcsuite/btcwallet/wtxmgr@v1.5.6",
+    "github.com/btcsuite/btcwallet/wtxmgr@v1.5.7-0.20260915140118-f2c79d772865",
     "github.com/btcsuite/go-socks@v0.0.0-20170105172521-4720035b7bfd",
     "github.com/btcsuite/websocket@v0.0.0-20150119174127-31079b680792",
     "github.com/cenkalti/backoff/v4@v4.2.1",
@@ -4402,7 +4402,7 @@
     "github.com/jackc/pgservicefile@v0.0.0-20240606120523-5a60cdf6a761",
     "github.com/jackc/pgtype@v1.14.4",
     "github.com/jackc/pgx/v4@v4.18.3",
-    "github.com/jackc/pgx/v5@v5.7.4",
+    "github.com/jackc/pgx/v5@v5.11.0",
     "github.com/jackc/puddle/v2@v2.2.2",
     "github.com/jackpal/gateway@v1.0.5",
     "github.com/jackpal/go-nat-pmp@v0.0.0-20170405195558-28a68d0c24ad",
@@ -4426,13 +4426,13 @@
     "github.com/lightningnetwork/lightning-onion@v1.3.0",
     "github.com/ltcsuite/ltcd@v0.22.1-beta",
     "github.com/mattn/go-colorable@v0.1.14",
-    "github.com/mattn/go-isatty@v0.0.20",
+    "github.com/mattn/go-isatty@v0.0.24",
     "github.com/miekg/dns@v1.1.50",
     "github.com/mitchellh/mapstructure@v1.5.0",
     "github.com/moby/docker-image-spec@v1.3.1",
     "github.com/moby/sys/user@v0.3.0",
     "github.com/moby/term@v0.5.2",
-    "github.com/ncruces/go-strftime@v0.1.9",
+    "github.com/ncruces/go-strftime@v1.0.0",
     "github.com/opencontainers/go-digest@v1.0.0",
     "github.com/opencontainers/image-spec@v1.1.1",
     "github.com/opencontainers/runc@v1.2.8",
@@ -4455,14 +4455,14 @@
     "gitlab.com/yawning/bsaes.git@v0.0.0-20190805113838-0a714cd429ec",
     "go.etcd.io/bbolt@v1.4.3",
     "go.uber.org/atomic@v1.10.0",
-    "golang.org/x/crypto@v0.51.0",
+    "golang.org/x/crypto@v0.54.0",
     "golang.org/x/exp@v0.0.0-20250811191247-51f88131bc50",
     "golang.org/x/mobile@v0.0.0-20190719004257-d2bd2a29d028",
-    "golang.org/x/net@v0.55.0",
-    "golang.org/x/sync@v0.20.0",
-    "golang.org/x/sys@v0.45.0",
-    "golang.org/x/term@v0.43.0",
-    "golang.org/x/text@v0.37.0",
+    "golang.org/x/net@v0.57.0",
+    "golang.org/x/sync@v0.22.0",
+    "golang.org/x/sys@v0.47.0",
+    "golang.org/x/term@v0.45.0",
+    "golang.org/x/text@v0.40.0",
     "golang.org/x/time@v0.5.0",
     "google.golang.org/genproto/googleapis/api@v0.0.0-20260526163538-3dc84a4a5aaa",
     "google.golang.org/genproto/googleapis/rpc@v0.0.0-20260526163538-3dc84a4a5aaa",
@@ -4472,10 +4472,10 @@
     "gopkg.in/macaroon.v2@v2.1.0",
     "gopkg.in/natefinch/lumberjack.v2@v2.2.1",
     "gopkg.in/yaml.v3@v3.0.1",
-    "modernc.org/libc@v1.55.3",
-    "modernc.org/mathutil@v1.6.0",
-    "modernc.org/memory@v1.8.0",
-    "modernc.org/sqlite@v1.34.5",
+    "modernc.org/libc@v1.75.7",
+    "modernc.org/mathutil@v1.7.1",
+    "modernc.org/memory@v1.12.1",
+    "modernc.org/sqlite@v1.59.0",
     "nhooyr.io/websocket@v1.8.7",
     "pgregory.net/rapid@v1.2.0"
    ],
@@ -4573,7 +4573,6 @@
     "react-native-restart",
     "react-native-safe-area-context",
     "react-native-screens",
-    "react-native-securerandom",
     "react-native-share",
     "react-native-svg",
     "react-native-svg-transformer",
@@ -5324,7 +5323,6 @@
     "react-native-restart@0.0.29",
     "react-native-safe-area-context@5.10.0",
     "react-native-screens@4.28.0",
-    "react-native-securerandom@1.0.1",
     "react-native-share@12.3.1",
     "react-native-size-matters@0.4.2",
     "react-native-svg-transformer@1.5.3",
@@ -5516,8 +5514,8 @@
     "SwiftProtobuf",
     "lottie-ios"
    ],
-   "pods_from_npm_and_react_native": 113,
-   "total": 1467
+   "pods_from_npm_and_react_native": 112,
+   "total": 1466
   }
  },
  "vendored": {
@@ -6741,17 +6739,17 @@
  "drift": {
   "reviewed": "2026-10-02",
   "reviewed_latest": "2026-10-02",
-  "measured": "2026-10-02",
+  "measured": "2026-10-03",
   "citations": 420,
-  "same": 420,
-  "moved": 0,
-  "changed": 0,
+  "same": 409,
+  "moved": 8,
+  "changed": 3,
   "gone": 0,
   "by_wallet": {
    "Winnow": {
-    "same": 52,
-    "moved": 0,
-    "changed": 0,
+    "same": 49,
+    "moved": 1,
+    "changed": 2,
     "gone": 0
    },
    "BlueWallet": {
@@ -6791,14 +6789,90 @@
     "gone": 0
    },
    "Zeus": {
-    "same": 58,
-    "moved": 0,
-    "changed": 0,
+    "same": 50,
+    "moved": 7,
+    "changed": 1,
     "gone": 0
    }
   },
-  "changed_or_gone": [],
-  "moved_within_file": []
+  "changed_or_gone": [
+   {
+    "wallet": "Winnow",
+    "fact": "profile.engine",
+    "cite": "winnow:README.md:7",
+    "status": "changed"
+   },
+   {
+    "wallet": "Winnow",
+    "fact": "profile.chain_data",
+    "cite": "winnow:README.md:7",
+    "status": "changed"
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "profile.prebuilt",
+    "cite": "zeus:fetch-libraries-versions.json:2-6",
+    "status": "changed"
+   }
+  ],
+  "moved_within_file": [
+   {
+    "wallet": "Winnow",
+    "fact": "features.license",
+    "cite": "winnow:README.md:162",
+    "status": "moved",
+    "now_at": 148
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.passphrase",
+    "cite": "zeus:utils/LndMobileUtils.ts:1316-1322",
+    "status": "moved",
+    "now_at": 1315
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.fee_bump",
+    "cite": "lnd-zeus:lnrpc/walletrpc/walletkit.proto:316-321",
+    "status": "moved",
+    "now_at": 323
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.own_server",
+    "cite": "zeus:utils/LndMobileUtils.ts:222-224",
+    "status": "moved",
+    "now_at": 220
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.verifies_chain",
+    "cite": "zeus:utils/LndMobileUtils.ts:270",
+    "status": "moved",
+    "now_at": 268
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.seed_standard",
+    "cite": "zeus:utils/LndMobileUtils.ts:1295",
+    "status": "moved",
+    "now_at": 1293
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "profile.chain_data",
+    "cite": "zeus:utils/LndMobileUtils.ts:222-224",
+    "status": "moved",
+    "now_at": 220
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "profile.libraries",
+    "cite": "zeus:package.json:148",
+    "status": "moved",
+    "now_at": 147
+   }
+  ]
  },
  "history": [
   {
@@ -6920,6 +6994,129 @@
      "cc_gt_30": 75,
      "max_cc": 252,
      "packages": 1467,
+     "vendored_lines": 4551
+    }
+   }
+  },
+  {
+   "date": "2026-10-03",
+   "method": 2,
+   "sources": {
+    "winnow": "13db07a9017088db9ca51852c0d55c08de7891d9",
+    "phoenix": "c3b0ae7882ad256c0b35e94c66d5f1f27305c208",
+    "lightning-kmp": "9dacdc0b4ac981dcb8fed9be23b53e6994eab27a",
+    "bitkit": "f751f505710e175bbbf4ee9f8cf8ca09fc471df7",
+    "synonym-ldk-node": "190a17d966cf5a685444cfa17c3a419c290bf26c",
+    "rust-lightning": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
+    "bitkit-core": "b53fa54a16f04940943072bb6e08dc2650302f93",
+    "paykit-rs": "24162ebbcc703251d8038f2e176d1f4cfb117c6a",
+    "vss-rust-client-ffi": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
+    "blixt": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
+    "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
+    "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
+    "zeus": "2b81e4ecbbc7f212b765ec57213862a4aeae39c1",
+    "lnd-zeus": "124fec6c02f9d5ff81e45a8a3d87e0f6fab49fc7",
+    "zeus-ldk-node": "921ef6370a5694ed8cf00538878420ccb5afe09d",
+    "cdk": "874745d5d79b36be346efbd716393357ab898834",
+    "bluewallet": "98dafb58d86ffd1c431b0dd3c634c7d843112c63",
+    "green": "131f820fdef34b5368de9caa5ef7f3de4d7e0139",
+    "gdk": "02e3646264ed10afd460e61c2c516510b9ce5cf5",
+    "muun": "d6719c00f96d2ecbde2ab6588f95e54975ceea0e"
+   },
+   "wallets": {
+    "Winnow": {
+     "lines": 21997,
+     "lines_app": 8965,
+     "lines_bitcoin": 13032,
+     "characters": 718759,
+     "functions": 1620,
+     "cc_gt_12": 24,
+     "cc_gt_30": 0,
+     "max_cc": 27,
+     "packages": 1,
+     "vendored_lines": 0
+    },
+    "BlueWallet": {
+     "lines": 57625,
+     "lines_app": 57625,
+     "characters": 1632379,
+     "functions": 1758,
+     "cc_gt_12": 139,
+     "cc_gt_30": 42,
+     "max_cc": 238,
+     "packages": 930,
+     "vendored_lines": 5136
+    },
+    "Green": {
+     "lines": 70474,
+     "lines_app": 70474,
+     "lines_engine": 34374,
+     "characters": 2032945,
+     "functions": 6905,
+     "cc_gt_12": 85,
+     "cc_gt_30": 7,
+     "max_cc": 45,
+     "packages": 157,
+     "vendored_lines": 0
+    },
+    "Muun": {
+     "lines": 88129,
+     "lines_app": 59660,
+     "lines_bitcoin": 28469,
+     "characters": 2435805,
+     "functions": 6679,
+     "cc_gt_12": 54,
+     "cc_gt_30": 2,
+     "max_cc": 63,
+     "packages": 139,
+     "vendored_lines": 101694
+    },
+    "Phoenix": {
+     "lines": 72881,
+     "lines_app": 72881,
+     "lines_engine": 28779,
+     "characters": 1902473,
+     "functions": 4703,
+     "cc_gt_12": 77,
+     "cc_gt_30": 9,
+     "max_cc": 155,
+     "packages": 58,
+     "vendored_lines": 0
+    },
+    "Bitkit": {
+     "lines": 93689,
+     "lines_app": 93689,
+     "lines_engine": 127646,
+     "characters": 2602805,
+     "functions": 5464,
+     "cc_gt_12": 92,
+     "cc_gt_30": 9,
+     "max_cc": 119,
+     "packages": 691,
+     "vendored_lines": 0
+    },
+    "Blixt": {
+     "lines": 36360,
+     "lines_app": 36360,
+     "lines_engine": 238947,
+     "characters": 947579,
+     "functions": 1057,
+     "cc_gt_12": 56,
+     "cc_gt_30": 19,
+     "max_cc": 134,
+     "packages": 681,
+     "vendored_lines": 0
+    },
+    "Zeus": {
+     "lines": 190005,
+     "lines_app": 190005,
+     "lines_engine": 242907,
+     "characters": 3685392,
+     "functions": 4695,
+     "cc_gt_12": 346,
+     "cc_gt_30": 75,
+     "max_cc": 252,
+     "packages": 1466,
      "vendored_lines": 4551
     }
    }

@@ -176,8 +176,8 @@
  },
  "Zeus": {
   "app": {
-   "code": 189984,
-   "chars": 3685006,
+   "code": 190005,
+   "chars": 3685392,
    "files": 575,
    "languages": {
     "C/C++ Header": 44,
@@ -185,18 +185,18 @@
     "Objective-C": 1332,
     "Objective-C++": 424,
     "Swift": 4038,
-    "TypeScript": 184099
+    "TypeScript": 184120
    },
    "generated_excluded": [
     "zeus/ios/LdkNodeMobile/LDKNode.swift"
    ]
   },
   "engine": {
-   "code": 242167,
-   "chars": 5609921,
-   "files": 1187,
+   "code": 242907,
+   "chars": 5627815,
+   "files": 1188,
    "languages": {
-    "Go": 242167
+    "Go": 242907
    },
    "generated_excluded": [
     "lnd-zeus/graph/db/migration1/sqlc/db.go",

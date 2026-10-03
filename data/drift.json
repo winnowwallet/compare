@@ -1,17 +1,17 @@
 {
  "reviewed": "2026-10-02",
  "reviewed_latest": "2026-10-02",
- "measured": "2026-10-02",
+ "measured": "2026-10-03",
  "citations": 420,
- "same": 420,
- "moved": 0,
- "changed": 0,
+ "same": 409,
+ "moved": 8,
+ "changed": 3,
  "gone": 0,
  "by_wallet": {
   "Winnow": {
-   "same": 52,
-   "moved": 0,
-   "changed": 0,
+   "same": 49,
+   "moved": 1,
+   "changed": 2,
    "gone": 0
   },
   "BlueWallet": {
@@ -51,12 +51,88 @@
    "gone": 0
   },
   "Zeus": {
-   "same": 58,
-   "moved": 0,
-   "changed": 0,
+   "same": 50,
+   "moved": 7,
+   "changed": 1,
    "gone": 0
   }
  },
- "changed_or_gone": [],
- "moved_within_file": []
+ "changed_or_gone": [
+  {
+   "wallet": "Winnow",
+   "fact": "profile.engine",
+   "cite": "winnow:README.md:7",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.chain_data",
+   "cite": "winnow:README.md:7",
+   "status": "changed"
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.prebuilt",
+   "cite": "zeus:fetch-libraries-versions.json:2-6",
+   "status": "changed"
+  }
+ ],
+ "moved_within_file": [
+  {
+   "wallet": "Winnow",
+   "fact": "features.license",
+   "cite": "winnow:README.md:162",
+   "status": "moved",
+   "now_at": 148
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.passphrase",
+   "cite": "zeus:utils/LndMobileUtils.ts:1316-1322",
+   "status": "moved",
+   "now_at": 1315
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.fee_bump",
+   "cite": "lnd-zeus:lnrpc/walletrpc/walletkit.proto:316-321",
+   "status": "moved",
+   "now_at": 323
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.own_server",
+   "cite": "zeus:utils/LndMobileUtils.ts:222-224",
+   "status": "moved",
+   "now_at": 220
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.verifies_chain",
+   "cite": "zeus:utils/LndMobileUtils.ts:270",
+   "status": "moved",
+   "now_at": 268
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.seed_standard",
+   "cite": "zeus:utils/LndMobileUtils.ts:1295",
+   "status": "moved",
+   "now_at": 1293
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.chain_data",
+   "cite": "zeus:utils/LndMobileUtils.ts:222-224",
+   "status": "moved",
+   "now_at": 220
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.libraries",
+   "cite": "zeus:package.json:148",
+   "status": "moved",
+   "now_at": 147
+  }
+ ]
 }
