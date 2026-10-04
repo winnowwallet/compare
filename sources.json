@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-10-03",
+ "snapshot": "2026-10-04",
  "method": 2,
  "sources": {
   "winnow": {
@@ -104,9 +104,9 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "2b81e4ecbbc7f212b765ec57213862a4aeae39c1",
-   "label": "ZeusLN/zeus@2b81e4e",
-   "date": "2026-10-02"
+   "rev": "7881a9e8b0d9b52a87fe1e8c0087df365a73181b",
+   "label": "ZeusLN/zeus@7881a9e",
+   "date": "2026-10-04"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
@@ -139,9 +139,9 @@
   "bluewallet": {
    "repo": "https://github.com/BlueWallet/BlueWallet",
    "track": {"branch": "HEAD"},
-   "rev": "98dafb58d86ffd1c431b0dd3c634c7d843112c63",
-   "label": "BlueWallet/BlueWallet@98dafb5",
-   "date": "2026-10-01"
+   "rev": "0cc68854189d9bd54b69ee458e9108f7b10c35d2",
+   "label": "BlueWallet/BlueWallet@0cc6885",
+   "date": "2026-10-04"
   },
   "green": {
    "repo": "https://github.com/Blockstream/green_ios",

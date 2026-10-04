@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-10-03",
+ "snapshot": "2026-10-04",
  "sources": {
   "winnow": {
    "repo": "https://github.com/winnowwallet/winnow",
@@ -146,9 +146,9 @@
    "track": {
     "branch": "HEAD"
    },
-   "rev": "2b81e4ecbbc7f212b765ec57213862a4aeae39c1",
-   "label": "ZeusLN/zeus@2b81e4e",
-   "date": "2026-10-02"
+   "rev": "7881a9e8b0d9b52a87fe1e8c0087df365a73181b",
+   "label": "ZeusLN/zeus@7881a9e",
+   "date": "2026-10-04"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
@@ -198,9 +198,9 @@
    "track": {
     "branch": "HEAD"
    },
-   "rev": "98dafb58d86ffd1c431b0dd3c634c7d843112c63",
-   "label": "BlueWallet/BlueWallet@98dafb5",
-   "date": "2026-10-01"
+   "rev": "0cc68854189d9bd54b69ee458e9108f7b10c35d2",
+   "label": "BlueWallet/BlueWallet@0cc6885",
+   "date": "2026-10-04"
   },
   "green": {
    "repo": "https://github.com/Blockstream/green_ios",
@@ -257,16 +257,16 @@
   },
   "BlueWallet": {
    "app": {
-    "code": 57625,
-    "chars": 1632379,
-    "files": 383,
+    "code": 57816,
+    "chars": 1636747,
+    "files": 382,
     "languages": {
      "C/C++ Header": 18,
      "JavaScript": 1523,
      "Objective-C": 33,
      "Objective-C++": 59,
-     "Swift": 3485,
-     "TypeScript": 52507
+     "Swift": 3492,
+     "TypeScript": 52691
     },
     "generated_excluded": []
    }
@@ -412,8 +412,8 @@
   },
   "Zeus": {
    "app": {
-    "code": 190005,
-    "chars": 3685392,
+    "code": 190001,
+    "chars": 3685207,
     "files": 575,
     "languages": {
      "C/C++ Header": 44,
@@ -421,7 +421,7 @@
      "Objective-C": 1332,
      "Objective-C++": 424,
      "Swift": 4038,
-     "TypeScript": 184120
+     "TypeScript": 184116
     },
     "generated_excluded": [
      "zeus/ios/LdkNodeMobile/LDKNode.swift"
@@ -467,11 +467,11 @@
    "C family": 0.0
   },
   "BlueWallet": {
-   "Swift": 6.05,
+   "Swift": 6.04,
    "Kotlin": 0.0,
    "Rust": 0.0,
    "Go": 0.0,
-   "TypeScript/JS": 93.76,
+   "TypeScript/JS": 93.77,
    "C family": 0.19
   },
   "Green": {
@@ -616,26 +616,26 @@
   },
   "BlueWallet": {
    "app": {
-    "functions": 1758,
-    "mean_cc": 5.24,
+    "functions": 1760,
+    "mean_cc": 5.27,
     "p90_cc": 10,
-    "max_cc": 238,
-    "cc_le_2": 1009,
-    "cc_3_12": 610,
-    "cc_gt_12": 139,
+    "max_cc": 242,
+    "cc_le_2": 1013,
+    "cc_3_12": 606,
+    "cc_gt_12": 141,
     "cc_gt_30": 42,
-    "files": 383,
+    "files": 382,
     "files_with_parse_errors": 6,
     "most_complex": [
+     {
+      "cc": 242,
+      "function": "(arrow_function)",
+      "at": "bluewallet/screen/transactions/TransactionStatus.tsx:165"
+     },
      {
       "cc": 238,
       "function": "(arrow_function)",
       "at": "bluewallet/screen/send/SendDetails.tsx:77"
-     },
-     {
-      "cc": 237,
-      "function": "(arrow_function)",
-      "at": "bluewallet/screen/transactions/TransactionStatus.tsx:164"
      },
      {
       "cc": 178,
@@ -643,9 +643,9 @@
       "at": "bluewallet/screen/wallets/WalletDetails.tsx:63"
      },
      {
-      "cc": 124,
+      "cc": 133,
       "function": "(arrow_function)",
-      "at": "bluewallet/screen/wallets/WalletTransactions.tsx:180"
+      "at": "bluewallet/screen/settings/ElectrumSettings.tsx:45"
      },
      {
       "cc": 122,
@@ -655,13 +655,13 @@
     ]
    },
    "all": {
-    "functions": 1758,
-    "mean_cc": 5.24,
+    "functions": 1760,
+    "mean_cc": 5.27,
     "p90_cc": 10,
-    "max_cc": 238,
-    "cc_le_2": 1009,
-    "cc_3_12": 610,
-    "cc_gt_12": 139,
+    "max_cc": 242,
+    "cc_le_2": 1013,
+    "cc_3_12": 606,
+    "cc_gt_12": 141,
     "cc_gt_30": 42
    }
   },
@@ -965,9 +965,9 @@
     "mean_cc": 4.71,
     "p90_cc": 10,
     "max_cc": 252,
-    "cc_le_2": 2698,
-    "cc_3_12": 1651,
-    "cc_gt_12": 346,
+    "cc_le_2": 2699,
+    "cc_3_12": 1649,
+    "cc_gt_12": 347,
     "cc_gt_30": 75,
     "files": 576,
     "files_with_parse_errors": 13,
@@ -995,7 +995,7 @@
      {
       "cc": 134,
       "function": "fetchDataCore",
-      "at": "zeus/views/Wallet/Wallet.tsx:583"
+      "at": "zeus/views/Wallet/Wallet.tsx:575"
      }
     ]
    },
@@ -1004,9 +1004,9 @@
     "mean_cc": 4.71,
     "p90_cc": 10,
     "max_cc": 252,
-    "cc_le_2": 2698,
-    "cc_3_12": 1651,
-    "cc_gt_12": 346,
+    "cc_le_2": 2699,
+    "cc_3_12": 1649,
+    "cc_gt_12": 347,
     "cc_gt_30": 75
    }
   }
@@ -6739,11 +6739,11 @@
  "drift": {
   "reviewed": "2026-10-02",
   "reviewed_latest": "2026-10-02",
-  "measured": "2026-10-03",
+  "measured": "2026-10-04",
   "citations": 420,
-  "same": 409,
-  "moved": 8,
-  "changed": 3,
+  "same": 403,
+  "moved": 13,
+  "changed": 4,
   "gone": 0,
   "by_wallet": {
    "Winnow": {
@@ -6753,9 +6753,9 @@
     "gone": 0
    },
    "BlueWallet": {
-    "same": 58,
-    "moved": 0,
-    "changed": 0,
+    "same": 53,
+    "moved": 4,
+    "changed": 1,
     "gone": 0
    },
    "Green": {
@@ -6789,13 +6789,19 @@
     "gone": 0
    },
    "Zeus": {
-    "same": 50,
-    "moved": 7,
+    "same": 49,
+    "moved": 8,
     "changed": 1,
     "gone": 0
    }
   },
   "changed_or_gone": [
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.fee_bump",
+    "cite": "bluewallet:screen/transactions/TransactionStatus.tsx:1128-1150",
+    "status": "changed"
+   },
    {
     "wallet": "Winnow",
     "fact": "profile.engine",
@@ -6822,6 +6828,34 @@
     "cite": "winnow:README.md:162",
     "status": "moved",
     "now_at": 148
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.own_server",
+    "cite": "bluewallet:screen/settings/ElectrumSettings.tsx:193-198",
+    "status": "moved",
+    "now_at": 247
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.own_server",
+    "cite": "bluewallet:screen/settings/ElectrumSettings.tsx:210-212",
+    "status": "moved",
+    "now_at": 264
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.tor",
+    "cite": "bluewallet:screen/settings/ElectrumSettings.tsx:199-202",
+    "status": "moved",
+    "now_at": 253
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.watch_only",
+    "cite": "zeus:components/LayerBalances/index.tsx:496-501",
+    "status": "moved",
+    "now_at": 497
    },
    {
     "wallet": "Zeus",
@@ -6857,6 +6891,13 @@
     "cite": "zeus:utils/LndMobileUtils.ts:1295",
     "status": "moved",
     "now_at": 1293
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "profile.chain_data",
+    "cite": "bluewallet:screen/settings/ElectrumSettings.tsx:193-212",
+    "status": "moved",
+    "now_at": 247
    },
    {
     "wallet": "Zeus",
@@ -7114,6 +7155,129 @@
      "characters": 3685392,
      "functions": 4695,
      "cc_gt_12": 346,
+     "cc_gt_30": 75,
+     "max_cc": 252,
+     "packages": 1466,
+     "vendored_lines": 4551
+    }
+   }
+  },
+  {
+   "date": "2026-10-04",
+   "method": 2,
+   "sources": {
+    "winnow": "13db07a9017088db9ca51852c0d55c08de7891d9",
+    "phoenix": "c3b0ae7882ad256c0b35e94c66d5f1f27305c208",
+    "lightning-kmp": "9dacdc0b4ac981dcb8fed9be23b53e6994eab27a",
+    "bitkit": "f751f505710e175bbbf4ee9f8cf8ca09fc471df7",
+    "synonym-ldk-node": "190a17d966cf5a685444cfa17c3a419c290bf26c",
+    "rust-lightning": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
+    "bitkit-core": "b53fa54a16f04940943072bb6e08dc2650302f93",
+    "paykit-rs": "24162ebbcc703251d8038f2e176d1f4cfb117c6a",
+    "vss-rust-client-ffi": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
+    "blixt": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
+    "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
+    "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
+    "zeus": "7881a9e8b0d9b52a87fe1e8c0087df365a73181b",
+    "lnd-zeus": "124fec6c02f9d5ff81e45a8a3d87e0f6fab49fc7",
+    "zeus-ldk-node": "921ef6370a5694ed8cf00538878420ccb5afe09d",
+    "cdk": "874745d5d79b36be346efbd716393357ab898834",
+    "bluewallet": "0cc68854189d9bd54b69ee458e9108f7b10c35d2",
+    "green": "131f820fdef34b5368de9caa5ef7f3de4d7e0139",
+    "gdk": "02e3646264ed10afd460e61c2c516510b9ce5cf5",
+    "muun": "d6719c00f96d2ecbde2ab6588f95e54975ceea0e"
+   },
+   "wallets": {
+    "Winnow": {
+     "lines": 21997,
+     "lines_app": 8965,
+     "lines_bitcoin": 13032,
+     "characters": 718759,
+     "functions": 1620,
+     "cc_gt_12": 24,
+     "cc_gt_30": 0,
+     "max_cc": 27,
+     "packages": 1,
+     "vendored_lines": 0
+    },
+    "BlueWallet": {
+     "lines": 57816,
+     "lines_app": 57816,
+     "characters": 1636747,
+     "functions": 1760,
+     "cc_gt_12": 141,
+     "cc_gt_30": 42,
+     "max_cc": 242,
+     "packages": 930,
+     "vendored_lines": 5136
+    },
+    "Green": {
+     "lines": 70474,
+     "lines_app": 70474,
+     "lines_engine": 34374,
+     "characters": 2032945,
+     "functions": 6905,
+     "cc_gt_12": 85,
+     "cc_gt_30": 7,
+     "max_cc": 45,
+     "packages": 157,
+     "vendored_lines": 0
+    },
+    "Muun": {
+     "lines": 88129,
+     "lines_app": 59660,
+     "lines_bitcoin": 28469,
+     "characters": 2435805,
+     "functions": 6679,
+     "cc_gt_12": 54,
+     "cc_gt_30": 2,
+     "max_cc": 63,
+     "packages": 139,
+     "vendored_lines": 101694
+    },
+    "Phoenix": {
+     "lines": 72881,
+     "lines_app": 72881,
+     "lines_engine": 28779,
+     "characters": 1902473,
+     "functions": 4703,
+     "cc_gt_12": 77,
+     "cc_gt_30": 9,
+     "max_cc": 155,
+     "packages": 58,
+     "vendored_lines": 0
+    },
+    "Bitkit": {
+     "lines": 93689,
+     "lines_app": 93689,
+     "lines_engine": 127646,
+     "characters": 2602805,
+     "functions": 5464,
+     "cc_gt_12": 92,
+     "cc_gt_30": 9,
+     "max_cc": 119,
+     "packages": 691,
+     "vendored_lines": 0
+    },
+    "Blixt": {
+     "lines": 36360,
+     "lines_app": 36360,
+     "lines_engine": 238947,
+     "characters": 947579,
+     "functions": 1057,
+     "cc_gt_12": 56,
+     "cc_gt_30": 19,
+     "max_cc": 134,
+     "packages": 681,
+     "vendored_lines": 0
+    },
+    "Zeus": {
+     "lines": 190001,
+     "lines_app": 190001,
+     "lines_engine": 242907,
+     "characters": 3685207,
+     "functions": 4695,
+     "cc_gt_12": 347,
      "cc_gt_30": 75,
      "max_cc": 252,
      "packages": 1466,

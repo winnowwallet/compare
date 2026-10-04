@@ -1,11 +1,11 @@
 {
  "reviewed": "2026-10-02",
  "reviewed_latest": "2026-10-02",
- "measured": "2026-10-03",
+ "measured": "2026-10-04",
  "citations": 420,
- "same": 409,
- "moved": 8,
- "changed": 3,
+ "same": 403,
+ "moved": 13,
+ "changed": 4,
  "gone": 0,
  "by_wallet": {
   "Winnow": {
@@ -15,9 +15,9 @@
    "gone": 0
   },
   "BlueWallet": {
-   "same": 58,
-   "moved": 0,
-   "changed": 0,
+   "same": 53,
+   "moved": 4,
+   "changed": 1,
    "gone": 0
   },
   "Green": {
@@ -51,13 +51,19 @@
    "gone": 0
   },
   "Zeus": {
-   "same": 50,
-   "moved": 7,
+   "same": 49,
+   "moved": 8,
    "changed": 1,
    "gone": 0
   }
  },
  "changed_or_gone": [
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.fee_bump",
+   "cite": "bluewallet:screen/transactions/TransactionStatus.tsx:1128-1150",
+   "status": "changed"
+  },
   {
    "wallet": "Winnow",
    "fact": "profile.engine",
@@ -84,6 +90,34 @@
    "cite": "winnow:README.md:162",
    "status": "moved",
    "now_at": 148
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.own_server",
+   "cite": "bluewallet:screen/settings/ElectrumSettings.tsx:193-198",
+   "status": "moved",
+   "now_at": 247
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.own_server",
+   "cite": "bluewallet:screen/settings/ElectrumSettings.tsx:210-212",
+   "status": "moved",
+   "now_at": 264
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.tor",
+   "cite": "bluewallet:screen/settings/ElectrumSettings.tsx:199-202",
+   "status": "moved",
+   "now_at": 253
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.watch_only",
+   "cite": "zeus:components/LayerBalances/index.tsx:496-501",
+   "status": "moved",
+   "now_at": 497
   },
   {
    "wallet": "Zeus",
@@ -119,6 +153,13 @@
    "cite": "zeus:utils/LndMobileUtils.ts:1295",
    "status": "moved",
    "now_at": 1293
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "profile.chain_data",
+   "cite": "bluewallet:screen/settings/ElectrumSettings.tsx:193-212",
+   "status": "moved",
+   "now_at": 247
   },
   {
    "wallet": "Zeus",
