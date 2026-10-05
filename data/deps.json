@@ -3139,7 +3139,7 @@
    "plain v0.2.3",
    "portable-atomic v1.13.1",
    "possiblyrandom v0.2.1",
-   "possiblyrandom v0.2.1 (https://github.com/ZeusLN/rust-lightning?branch=zeus-0.2#24130051)",
+   "possiblyrandom v0.2.1 (https://github.com/ZeusLN/rust-lightning?rev=4e5cba988c52903a8f50186048a6b2c37465f9cc#4e5cba98)",
    "potential_utf v0.1.4",
    "potential_utf v0.1.5",
    "powerfmt v0.2.0",

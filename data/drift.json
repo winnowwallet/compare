@@ -1,10 +1,10 @@
 {
  "reviewed": "2026-10-02",
  "reviewed_latest": "2026-10-02",
- "measured": "2026-10-04",
+ "measured": "2026-10-05",
  "citations": 420,
- "same": 403,
- "moved": 13,
+ "same": 399,
+ "moved": 17,
  "changed": 4,
  "gone": 0,
  "by_wallet": {
@@ -51,8 +51,8 @@
    "gone": 0
   },
   "Zeus": {
-   "same": 49,
-   "moved": 8,
+   "same": 45,
+   "moved": 12,
    "changed": 1,
    "gone": 0
   }
@@ -114,6 +114,13 @@
   },
   {
    "wallet": "Zeus",
+   "fact": "features.hw_signer",
+   "cite": "zeus:locales/en.json:426",
+   "status": "moved",
+   "now_at": 427
+  },
+  {
+   "wallet": "Zeus",
    "fact": "features.watch_only",
    "cite": "zeus:components/LayerBalances/index.tsx:496-501",
    "status": "moved",
@@ -149,6 +156,20 @@
   },
   {
    "wallet": "Zeus",
+   "fact": "features.tor",
+   "cite": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465",
+   "status": "moved",
+   "now_at": 1465
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.tor",
+   "cite": "zeus:stores/SettingsStore.ts:1608",
+   "status": "moved",
+   "now_at": 1615
+  },
+  {
+   "wallet": "Zeus",
    "fact": "features.seed_standard",
    "cite": "zeus:utils/LndMobileUtils.ts:1295",
    "status": "moved",
@@ -160,6 +181,13 @@
    "cite": "bluewallet:screen/settings/ElectrumSettings.tsx:193-212",
    "status": "moved",
    "now_at": 247
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.chain_data",
+   "cite": "zeus:stores/SettingsStore.ts:1476-1482",
+   "status": "moved",
+   "now_at": 1483
   },
   {
    "wallet": "Zeus",

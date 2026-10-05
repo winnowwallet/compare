@@ -244,7 +244,7 @@
     "counted": "source"
    },
    "zeus_modules/@lightninglabs/lnc-rn": {
-    "lines": 276,
+    "lines": 330,
     "counted": "source"
    },
    "zeus_modules/bc-bech32": {
@@ -274,6 +274,6 @@
    "patch-react-native-notifications.mjs",
    "patch-reanimated-set-fixes.mjs"
   ],
-  "copied_lines": 4551
+  "copied_lines": 4605
  }
 }

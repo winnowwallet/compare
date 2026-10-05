@@ -334,13 +334,13 @@
  },
  "Bitkit": {
   "app": {
-   "functions": 5464,
+   "functions": 5554,
    "mean_cc": 2.97,
    "p90_cc": 6,
    "max_cc": 119,
-   "cc_le_2": 3327,
-   "cc_3_12": 2045,
-   "cc_gt_12": 92,
+   "cc_le_2": 3378,
+   "cc_3_12": 2083,
+   "cc_gt_12": 93,
    "cc_gt_30": 9,
    "files": 593,
    "files_with_parse_errors": 4,
@@ -373,13 +373,13 @@
    ]
   },
   "all": {
-   "functions": 5464,
+   "functions": 5554,
    "mean_cc": 2.97,
    "p90_cc": 6,
    "max_cc": 119,
-   "cc_le_2": 3327,
-   "cc_3_12": 2045,
-   "cc_gt_12": 92,
+   "cc_le_2": 3378,
+   "cc_3_12": 2083,
+   "cc_gt_12": 93,
    "cc_gt_30": 9
   }
  },
@@ -436,15 +436,15 @@
  },
  "Zeus": {
   "app": {
-   "functions": 4695,
-   "mean_cc": 4.71,
+   "functions": 4728,
+   "mean_cc": 4.7,
    "p90_cc": 10,
    "max_cc": 252,
-   "cc_le_2": 2699,
-   "cc_3_12": 1649,
+   "cc_le_2": 2716,
+   "cc_3_12": 1665,
    "cc_gt_12": 347,
    "cc_gt_30": 75,
-   "files": 576,
+   "files": 578,
    "files_with_parse_errors": 13,
    "most_complex": [
     {
@@ -455,7 +455,7 @@
     {
      "cc": 225,
      "function": "render",
-     "at": "zeus/views/Settings/WalletConfiguration.tsx:1389"
+     "at": "zeus/views/Settings/WalletConfiguration.tsx:1392"
     },
     {
      "cc": 164,
@@ -468,19 +468,19 @@
      "at": "zeus/views/Settings/SeedRecovery.tsx:499"
     },
     {
-     "cc": 134,
-     "function": "fetchDataCore",
-     "at": "zeus/views/Wallet/Wallet.tsx:575"
+     "cc": 131,
+     "function": "LightningLoadingPattern",
+     "at": "zeus/components/LightningLoadingPattern.tsx:12"
     }
    ]
   },
   "all": {
-   "functions": 4695,
-   "mean_cc": 4.71,
+   "functions": 4728,
+   "mean_cc": 4.7,
    "p90_cc": 10,
    "max_cc": 252,
-   "cc_le_2": 2699,
-   "cc_3_12": 1649,
+   "cc_le_2": 2716,
+   "cc_3_12": 1665,
    "cc_gt_12": 347,
    "cc_gt_30": 75
   }

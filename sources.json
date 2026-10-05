@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-10-04",
+ "snapshot": "2026-10-05",
  "method": 2,
  "sources": {
   "winnow": {
@@ -30,9 +30,9 @@
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {"branch": "HEAD"},
-   "rev": "f751f505710e175bbbf4ee9f8cf8ca09fc471df7",
-   "label": "synonymdev/bitkit-ios@f751f50",
-   "date": "2026-10-02"
+   "rev": "62563af370403ea10af635a8c6d27487e5194f3d",
+   "label": "synonymdev/bitkit-ios@62563af",
+   "date": "2026-10-05"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",
@@ -104,9 +104,9 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "7881a9e8b0d9b52a87fe1e8c0087df365a73181b",
-   "label": "ZeusLN/zeus@7881a9e",
-   "date": "2026-10-04"
+   "rev": "0d736e44b79e3d69e35d37c1c94bb55f57010ef2",
+   "label": "ZeusLN/zeus@0d736e4",
+   "date": "2026-10-05"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
@@ -121,11 +121,11 @@
   "zeus-ldk-node": {
    "repo": "https://github.com/ZeusLN/ldk-node",
    "track": {"from": "zeus:fetch-libraries-versions.json", "json": "ldk-node.version", "tag": "{}"},
-   "rev": "921ef6370a5694ed8cf00538878420ccb5afe09d",
-   "tag": "v0.7.0-zeus-rl-0.2.5",
-   "version": "0.7.0-zeus-rl-0.2.5",
-   "label": "ZeusLN/ldk-node v0.7.0-zeus-rl-0.2.5",
-   "date": "2026-08-27"
+   "rev": "4687d9fe5e4348ecfa059decfd870e154d19262e",
+   "tag": "v0.7.0-zeus-rl-0.2.7",
+   "version": "0.7.0-zeus-rl-0.2.7",
+   "label": "ZeusLN/ldk-node v0.7.0-zeus-rl-0.2.7",
+   "date": "2026-10-02"
   },
   "cdk": {
    "repo": "https://github.com/cashubtc/cdk",
@@ -139,8 +139,8 @@
   "bluewallet": {
    "repo": "https://github.com/BlueWallet/BlueWallet",
    "track": {"branch": "HEAD"},
-   "rev": "0cc68854189d9bd54b69ee458e9108f7b10c35d2",
-   "label": "BlueWallet/BlueWallet@0cc6885",
+   "rev": "a7fe068709b0f91c504b28accda8bc85ee4c3714",
+   "label": "BlueWallet/BlueWallet@a7fe068",
    "date": "2026-10-04"
   },
   "green": {
