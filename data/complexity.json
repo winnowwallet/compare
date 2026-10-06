@@ -334,16 +334,16 @@
  },
  "Bitkit": {
   "app": {
-   "functions": 5554,
-   "mean_cc": 2.97,
+   "functions": 5856,
+   "mean_cc": 2.96,
    "p90_cc": 6,
    "max_cc": 119,
-   "cc_le_2": 3378,
-   "cc_3_12": 2083,
-   "cc_gt_12": 93,
+   "cc_le_2": 3553,
+   "cc_3_12": 2207,
+   "cc_gt_12": 96,
    "cc_gt_30": 9,
-   "files": 593,
-   "files_with_parse_errors": 4,
+   "files": 612,
+   "files_with_parse_errors": 6,
    "most_complex": [
     {
      "cc": 119,
@@ -358,12 +358,12 @@
     {
      "cc": 56,
      "function": "handleScannedData",
-     "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:535"
+     "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:537"
     },
     {
      "cc": 55,
      "function": "handleLdkNodeEvent",
-     "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:1351"
+     "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:1354"
     },
     {
      "cc": 48,
@@ -373,13 +373,13 @@
    ]
   },
   "all": {
-   "functions": 5554,
-   "mean_cc": 2.97,
+   "functions": 5856,
+   "mean_cc": 2.96,
    "p90_cc": 6,
    "max_cc": 119,
-   "cc_le_2": 3378,
-   "cc_3_12": 2083,
-   "cc_gt_12": 93,
+   "cc_le_2": 3553,
+   "cc_3_12": 2207,
+   "cc_gt_12": 96,
    "cc_gt_30": 9
   }
  },
@@ -436,12 +436,12 @@
  },
  "Zeus": {
   "app": {
-   "functions": 4728,
+   "functions": 4734,
    "mean_cc": 4.7,
    "p90_cc": 10,
    "max_cc": 252,
-   "cc_le_2": 2716,
-   "cc_3_12": 1665,
+   "cc_le_2": 2721,
+   "cc_3_12": 1666,
    "cc_gt_12": 347,
    "cc_gt_30": 75,
    "files": 578,
@@ -475,12 +475,12 @@
    ]
   },
   "all": {
-   "functions": 4728,
+   "functions": 4734,
    "mean_cc": 4.7,
    "p90_cc": 10,
    "max_cc": 252,
-   "cc_le_2": 2716,
-   "cc_3_12": 1665,
+   "cc_le_2": 2721,
+   "cc_3_12": 1666,
    "cc_gt_12": 347,
    "cc_gt_30": 75
   }

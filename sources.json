@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-10-05",
+ "snapshot": "2026-10-06",
  "method": 2,
  "sources": {
   "winnow": {
@@ -30,8 +30,8 @@
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {"branch": "HEAD"},
-   "rev": "62563af370403ea10af635a8c6d27487e5194f3d",
-   "label": "synonymdev/bitkit-ios@62563af",
+   "rev": "f4710eb901ea93a97dae33ef8def0a5a353d7367",
+   "label": "synonymdev/bitkit-ios@f4710eb",
    "date": "2026-10-05"
   },
   "synonym-ldk-node": {
@@ -104,8 +104,8 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "0d736e44b79e3d69e35d37c1c94bb55f57010ef2",
-   "label": "ZeusLN/zeus@0d736e4",
+   "rev": "96d3308921d80d8f387b0c700641a5fd7db15e86",
+   "label": "ZeusLN/zeus@96d3308",
    "date": "2026-10-05"
   },
   "lnd-zeus": {

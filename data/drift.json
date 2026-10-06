@@ -1,11 +1,11 @@
 {
  "reviewed": "2026-10-02",
  "reviewed_latest": "2026-10-02",
- "measured": "2026-10-05",
+ "measured": "2026-10-06",
  "citations": 420,
- "same": 399,
- "moved": 17,
- "changed": 4,
+ "same": 397,
+ "moved": 18,
+ "changed": 5,
  "gone": 0,
  "by_wallet": {
   "Winnow": {
@@ -39,9 +39,9 @@
    "gone": 0
   },
   "Bitkit": {
-   "same": 52,
-   "moved": 0,
-   "changed": 0,
+   "same": 49,
+   "moved": 2,
+   "changed": 1,
    "gone": 0
   },
   "Blixt": {
@@ -51,8 +51,8 @@
    "gone": 0
   },
   "Zeus": {
-   "same": 45,
-   "moved": 12,
+   "same": 46,
+   "moved": 11,
    "changed": 1,
    "gone": 0
   }
@@ -62,6 +62,12 @@
    "wallet": "BlueWallet",
    "fact": "features.fee_bump",
    "cite": "bluewallet:screen/transactions/TransactionStatus.tsx:1128-1150",
+   "status": "changed"
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.watch_only",
+   "cite": "bitkit:Bitkit/Managers/HwWalletManager.swift:5-7",
    "status": "changed"
   },
   {
@@ -113,11 +119,18 @@
    "now_at": 253
   },
   {
-   "wallet": "Zeus",
+   "wallet": "Bitkit",
    "fact": "features.hw_signer",
-   "cite": "zeus:locales/en.json:426",
+   "cite": "bitkit:Bitkit/Views/Wallets/Send/HwSendSignView.swift:115",
    "status": "moved",
-   "now_at": 427
+   "now_at": 119
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.psbt",
+   "cite": "bitkit:Bitkit/Managers/HwWalletManager.swift:1177",
+   "status": "moved",
+   "now_at": 1520
   },
   {
    "wallet": "Zeus",
@@ -166,7 +179,7 @@
    "fact": "features.tor",
    "cite": "zeus:stores/SettingsStore.ts:1608",
    "status": "moved",
-   "now_at": 1615
+   "now_at": 1630
   },
   {
    "wallet": "Zeus",
@@ -187,7 +200,7 @@
    "fact": "profile.chain_data",
    "cite": "zeus:stores/SettingsStore.ts:1476-1482",
    "status": "moved",
-   "now_at": 1483
+   "now_at": 1498
   },
   {
    "wallet": "Zeus",
