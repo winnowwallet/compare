@@ -21,8 +21,8 @@
  },
  "BlueWallet": {
   "app": {
-   "code": 57816,
-   "chars": 1636747,
+   "code": 57858,
+   "chars": 1638294,
    "files": 382,
    "languages": {
     "C/C++ Header": 18,
@@ -30,7 +30,7 @@
     "Objective-C": 33,
     "Objective-C++": 59,
     "Swift": 3492,
-    "TypeScript": 52691
+    "TypeScript": 52733
    },
    "generated_excluded": []
   }
@@ -106,11 +106,11 @@
  },
  "Bitkit": {
   "app": {
-   "code": 97921,
-   "chars": 2733543,
-   "files": 612,
+   "code": 98068,
+   "chars": 2737578,
+   "files": 613,
    "languages": {
-    "Swift": 97921
+    "Swift": 98068
    },
    "generated_excluded": []
   },
@@ -176,8 +176,8 @@
  },
  "Zeus": {
   "app": {
-   "code": 190382,
-   "chars": 3693568,
+   "code": 190456,
+   "chars": 3695767,
    "files": 577,
    "languages": {
     "C/C++ Header": 45,
@@ -185,7 +185,7 @@
     "Objective-C": 1332,
     "Objective-C++": 440,
     "Swift": 4038,
-    "TypeScript": 184480
+    "TypeScript": 184554
    },
    "generated_excluded": [
     "zeus/ios/LdkNodeMobile/LDKNode.swift"

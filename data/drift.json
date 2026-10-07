@@ -1,11 +1,11 @@
 {
  "reviewed": "2026-10-02",
  "reviewed_latest": "2026-10-02",
- "measured": "2026-10-06",
+ "measured": "2026-10-07",
  "citations": 420,
- "same": 397,
- "moved": 18,
- "changed": 5,
+ "same": 390,
+ "moved": 24,
+ "changed": 6,
  "gone": 0,
  "by_wallet": {
   "Winnow": {
@@ -15,9 +15,9 @@
    "gone": 0
   },
   "BlueWallet": {
-   "same": 53,
-   "moved": 4,
-   "changed": 1,
+   "same": 50,
+   "moved": 6,
+   "changed": 2,
    "gone": 0
   },
   "Green": {
@@ -51,8 +51,8 @@
    "gone": 0
   },
   "Zeus": {
-   "same": 46,
-   "moved": 11,
+   "same": 42,
+   "moved": 15,
    "changed": 1,
    "gone": 0
   }
@@ -62,6 +62,12 @@
    "wallet": "BlueWallet",
    "fact": "features.fee_bump",
    "cite": "bluewallet:screen/transactions/TransactionStatus.tsx:1128-1150",
+   "status": "changed"
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.cloud_backup",
+   "cite": "bluewallet:class/blue-app.ts:302",
    "status": "changed"
   },
   {
@@ -119,6 +125,20 @@
    "now_at": 253
   },
   {
+   "wallet": "BlueWallet",
+   "fact": "features.cloud_backup",
+   "cite": "bluewallet:class/blue-app.ts:133",
+   "status": "moved",
+   "now_at": 138
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.cloud_backup",
+   "cite": "bluewallet:class/blue-app.ts:709",
+   "status": "moved",
+   "now_at": 714
+  },
+  {
    "wallet": "Bitkit",
    "fact": "features.hw_signer",
    "cite": "bitkit:Bitkit/Views/Wallets/Send/HwSendSignView.swift:115",
@@ -131,6 +151,13 @@
    "cite": "bitkit:Bitkit/Managers/HwWalletManager.swift:1177",
    "status": "moved",
    "now_at": 1520
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.hw_signer",
+   "cite": "zeus:locales/en.json:426",
+   "status": "moved",
+   "now_at": 427
   },
   {
    "wallet": "Zeus",
@@ -148,10 +175,31 @@
   },
   {
    "wallet": "Zeus",
+   "fact": "features.coin_control",
+   "cite": "zeus:views/Send.tsx:1015-1020",
+   "status": "moved",
+   "now_at": 1016
+  },
+  {
+   "wallet": "Zeus",
    "fact": "features.fee_bump",
    "cite": "lnd-zeus:lnrpc/walletrpc/walletkit.proto:316-321",
    "status": "moved",
    "now_at": 323
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.fee_bump",
+   "cite": "zeus:backends/LdkNode.ts:2177",
+   "status": "moved",
+   "now_at": 2193
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.taproot",
+   "cite": "zeus:backends/LdkNode.ts:2176",
+   "status": "moved",
+   "now_at": 2192
   },
   {
    "wallet": "Zeus",

@@ -91,12 +91,12 @@
  },
  "BlueWallet": {
   "app": {
-   "functions": 1760,
+   "functions": 1764,
    "mean_cc": 5.27,
    "p90_cc": 10,
    "max_cc": 242,
    "cc_le_2": 1013,
-   "cc_3_12": 606,
+   "cc_3_12": 610,
    "cc_gt_12": 141,
    "cc_gt_30": 42,
    "files": 382,
@@ -130,12 +130,12 @@
    ]
   },
   "all": {
-   "functions": 1760,
+   "functions": 1764,
    "mean_cc": 5.27,
    "p90_cc": 10,
    "max_cc": 242,
    "cc_le_2": 1013,
-   "cc_3_12": 606,
+   "cc_3_12": 610,
    "cc_gt_12": 141,
    "cc_gt_30": 42
   }
@@ -334,15 +334,15 @@
  },
  "Bitkit": {
   "app": {
-   "functions": 5856,
+   "functions": 5866,
    "mean_cc": 2.96,
    "p90_cc": 6,
    "max_cc": 119,
-   "cc_le_2": 3553,
-   "cc_3_12": 2207,
+   "cc_le_2": 3559,
+   "cc_3_12": 2211,
    "cc_gt_12": 96,
    "cc_gt_30": 9,
-   "files": 612,
+   "files": 613,
    "files_with_parse_errors": 6,
    "most_complex": [
     {
@@ -373,12 +373,12 @@
    ]
   },
   "all": {
-   "functions": 5856,
+   "functions": 5866,
    "mean_cc": 2.96,
    "p90_cc": 6,
    "max_cc": 119,
-   "cc_le_2": 3553,
-   "cc_3_12": 2207,
+   "cc_le_2": 3559,
+   "cc_3_12": 2211,
    "cc_gt_12": 96,
    "cc_gt_30": 9
   }
@@ -436,12 +436,12 @@
  },
  "Zeus": {
   "app": {
-   "functions": 4734,
-   "mean_cc": 4.7,
+   "functions": 4748,
+   "mean_cc": 4.69,
    "p90_cc": 10,
    "max_cc": 252,
-   "cc_le_2": 2721,
-   "cc_3_12": 1666,
+   "cc_le_2": 2732,
+   "cc_3_12": 1669,
    "cc_gt_12": 347,
    "cc_gt_30": 75,
    "files": 578,
@@ -475,12 +475,12 @@
    ]
   },
   "all": {
-   "functions": 4734,
-   "mean_cc": 4.7,
+   "functions": 4748,
+   "mean_cc": 4.69,
    "p90_cc": 10,
    "max_cc": 252,
-   "cc_le_2": 2721,
-   "cc_3_12": 1666,
+   "cc_le_2": 2732,
+   "cc_3_12": 1669,
    "cc_gt_12": 347,
    "cc_gt_30": 75
   }
