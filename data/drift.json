@@ -1,11 +1,11 @@
 {
  "reviewed": "2026-10-02",
  "reviewed_latest": "2026-10-02",
- "measured": "2026-10-07",
+ "measured": "2026-10-08",
  "citations": 420,
- "same": 390,
- "moved": 24,
- "changed": 6,
+ "same": 382,
+ "moved": 27,
+ "changed": 11,
  "gone": 0,
  "by_wallet": {
   "Winnow": {
@@ -15,9 +15,9 @@
    "gone": 0
   },
   "BlueWallet": {
-   "same": 50,
+   "same": 48,
    "moved": 6,
-   "changed": 2,
+   "changed": 4,
    "gone": 0
   },
   "Green": {
@@ -39,9 +39,9 @@
    "gone": 0
   },
   "Bitkit": {
-   "same": 49,
-   "moved": 2,
-   "changed": 1,
+   "same": 44,
+   "moved": 5,
+   "changed": 3,
    "gone": 0
   },
   "Blixt": {
@@ -51,9 +51,9 @@
    "gone": 0
   },
   "Zeus": {
-   "same": 42,
+   "same": 41,
    "moved": 15,
-   "changed": 1,
+   "changed": 2,
    "gone": 0
   }
  },
@@ -77,6 +77,18 @@
    "status": "changed"
   },
   {
+   "wallet": "Bitkit",
+   "fact": "features.cloud_backup",
+   "cite": "bitkit:Bitkit/Services/BackupService.swift:220",
+   "status": "changed"
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.license",
+   "cite": "zeus:README.md:145",
+   "status": "changed"
+  },
+  {
    "wallet": "Winnow",
    "fact": "profile.engine",
    "cite": "winnow:README.md:7",
@@ -86,6 +98,24 @@
    "wallet": "Winnow",
    "fact": "profile.chain_data",
    "cite": "winnow:README.md:7",
+   "status": "changed"
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "profile.engine",
+   "cite": "bluewallet:package.json:132-135",
+   "status": "changed"
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "profile.libraries",
+   "cite": "bluewallet:package.json:93-190",
+   "status": "changed"
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "profile.libraries",
+   "cite": "bitkit:Bitkit.xcodeproj/project.pbxproj:1176-1223",
    "status": "changed"
   },
   {
@@ -143,7 +173,7 @@
    "fact": "features.hw_signer",
    "cite": "bitkit:Bitkit/Views/Wallets/Send/HwSendSignView.swift:115",
    "status": "moved",
-   "now_at": 119
+   "now_at": 128
   },
   {
    "wallet": "Bitkit",
@@ -151,6 +181,20 @@
    "cite": "bitkit:Bitkit/Managers/HwWalletManager.swift:1177",
    "status": "moved",
    "now_at": 1520
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.psbt",
+   "cite": "bitkit:Bitkit/Views/Settings/DevSettingsView.swift:59-61",
+   "status": "moved",
+   "now_at": 57
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.fee_bump",
+   "cite": "bitkit:Bitkit/Services/CoreService.swift:1648-1675",
+   "status": "moved",
+   "now_at": 1702
   },
   {
    "wallet": "Zeus",
@@ -242,6 +286,13 @@
    "cite": "bluewallet:screen/settings/ElectrumSettings.tsx:193-212",
    "status": "moved",
    "now_at": 247
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "profile.third_party",
+   "cite": "bitkit:Bitkit/Services/LightningService.swift:796-803",
+   "status": "moved",
+   "now_at": 810
   },
   {
    "wallet": "Zeus",

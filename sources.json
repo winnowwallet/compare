@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-10-07",
+ "snapshot": "2026-10-08",
  "method": 2,
  "sources": {
   "winnow": {
@@ -30,9 +30,9 @@
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {"branch": "HEAD"},
-   "rev": "150668d46582e24506fd536c1487ea82e77491e5",
-   "label": "synonymdev/bitkit-ios@150668d",
-   "date": "2026-10-06"
+   "rev": "a231b829fff74643cf91d5d660395b15da6d7600",
+   "label": "synonymdev/bitkit-ios@a231b82",
+   "date": "2026-10-07"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",
@@ -63,10 +63,10 @@
   "paykit-rs": {
    "repo": "https://github.com/pubky/paykit-rs",
    "track": {"from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved", "spm": "paykit-rs"},
-   "rev": "24162ebbcc703251d8038f2e176d1f4cfb117c6a",
-   "version": "0.1.0-rc56",
-   "label": "pubky/paykit-rs 0.1.0-rc56",
-   "date": "2026-09-28"
+   "rev": "2ea4b2b82494435d56bda45393ad1497d24a32e9",
+   "version": "0.1.0-rc70",
+   "label": "pubky/paykit-rs 0.1.0-rc70",
+   "date": "2026-10-07"
   },
   "vss-rust-client-ffi": {
    "repo": "https://github.com/synonymdev/vss-rust-client-ffi",
@@ -104,9 +104,9 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "c84656f52f86fc1daf2aaecd35e47b8efe1edb73",
-   "label": "ZeusLN/zeus@c84656f",
-   "date": "2026-10-07"
+   "rev": "3808d898230c5e0bceafc6660e032951f2daf068",
+   "label": "ZeusLN/zeus@3808d89",
+   "date": "2026-10-08"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
@@ -139,8 +139,8 @@
   "bluewallet": {
    "repo": "https://github.com/BlueWallet/BlueWallet",
    "track": {"branch": "HEAD"},
-   "rev": "5c30de3f94625728b02e289972678c8bc3bc7403",
-   "label": "BlueWallet/BlueWallet@5c30de3",
+   "rev": "69adb1555038c8b2385952edd0404d2e1ecd7ca7",
+   "label": "BlueWallet/BlueWallet@69adb15",
    "date": "2026-10-07"
   },
   "green": {
