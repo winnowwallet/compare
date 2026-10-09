@@ -1,10 +1,10 @@
 {
  "reviewed": "2026-10-02",
  "reviewed_latest": "2026-10-02",
- "measured": "2026-10-08",
+ "measured": "2026-10-09",
  "citations": 420,
- "same": 382,
- "moved": 27,
+ "same": 377,
+ "moved": 32,
  "changed": 11,
  "gone": 0,
  "by_wallet": {
@@ -51,8 +51,8 @@
    "gone": 0
   },
   "Zeus": {
-   "same": 41,
-   "moved": 15,
+   "same": 36,
+   "moved": 20,
    "changed": 2,
    "gone": 0
   }
@@ -219,6 +219,20 @@
   },
   {
    "wallet": "Zeus",
+   "fact": "features.passphrase",
+   "cite": "zeus:views/Settings/SeedRecovery.tsx:924-931",
+   "status": "moved",
+   "now_at": 919
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.passphrase",
+   "cite": "zeus:utils/WalletCreationUtils.ts:126",
+   "status": "moved",
+   "now_at": 129
+  },
+  {
+   "wallet": "Zeus",
    "fact": "features.coin_control",
    "cite": "zeus:views/Send.tsx:1015-1020",
    "status": "moved",
@@ -237,6 +251,13 @@
    "cite": "zeus:backends/LdkNode.ts:2177",
    "status": "moved",
    "now_at": 2193
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.taproot",
+   "cite": "zeus:views/Receive.tsx:1127-1133",
+   "status": "moved",
+   "now_at": 1129
   },
   {
    "wallet": "Zeus",
@@ -264,14 +285,14 @@
    "fact": "features.tor",
    "cite": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465",
    "status": "moved",
-   "now_at": 1465
+   "now_at": 1461
   },
   {
    "wallet": "Zeus",
    "fact": "features.tor",
    "cite": "zeus:stores/SettingsStore.ts:1608",
    "status": "moved",
-   "now_at": 1630
+   "now_at": 1640
   },
   {
    "wallet": "Zeus",
@@ -296,10 +317,24 @@
   },
   {
    "wallet": "Zeus",
+   "fact": "profile.engine",
+   "cite": "zeus:utils/WalletCreationUtils.ts:109-126",
+   "status": "moved",
+   "now_at": 112
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.engine",
+   "cite": "zeus:utils/WalletCreationUtils.ts:71-78",
+   "status": "moved",
+   "now_at": 74
+  },
+  {
+   "wallet": "Zeus",
    "fact": "profile.chain_data",
    "cite": "zeus:stores/SettingsStore.ts:1476-1482",
    "status": "moved",
-   "now_at": 1498
+   "now_at": 1508
   },
   {
    "wallet": "Zeus",

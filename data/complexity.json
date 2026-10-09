@@ -334,15 +334,15 @@
  },
  "Bitkit": {
   "app": {
-   "functions": 5957,
-   "mean_cc": 2.99,
+   "functions": 5995,
+   "mean_cc": 3.01,
    "p90_cc": 6,
    "max_cc": 119,
-   "cc_le_2": 3600,
-   "cc_3_12": 2256,
-   "cc_gt_12": 101,
-   "cc_gt_30": 11,
-   "files": 615,
+   "cc_le_2": 3612,
+   "cc_3_12": 2278,
+   "cc_gt_12": 105,
+   "cc_gt_30": 12,
+   "files": 616,
    "files_with_parse_errors": 7,
    "most_complex": [
     {
@@ -363,7 +363,7 @@
     {
      "cc": 55,
      "function": "handleLdkNodeEvent",
-     "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:1368"
+     "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:1370"
     },
     {
      "cc": 48,
@@ -373,14 +373,14 @@
    ]
   },
   "all": {
-   "functions": 5957,
-   "mean_cc": 2.99,
+   "functions": 5995,
+   "mean_cc": 3.01,
    "p90_cc": 6,
    "max_cc": 119,
-   "cc_le_2": 3600,
-   "cc_3_12": 2256,
-   "cc_gt_12": 101,
-   "cc_gt_30": 11
+   "cc_le_2": 3612,
+   "cc_3_12": 2278,
+   "cc_gt_12": 105,
+   "cc_gt_30": 12
   }
  },
  "Blixt": {
@@ -436,13 +436,13 @@
  },
  "Zeus": {
   "app": {
-   "functions": 4752,
-   "mean_cc": 4.69,
+   "functions": 4772,
+   "mean_cc": 4.67,
    "p90_cc": 10,
    "max_cc": 252,
-   "cc_le_2": 2735,
-   "cc_3_12": 1670,
-   "cc_gt_12": 347,
+   "cc_le_2": 2754,
+   "cc_3_12": 1673,
+   "cc_gt_12": 345,
    "cc_gt_30": 75,
    "files": 579,
    "files_with_parse_errors": 13,
@@ -450,12 +450,12 @@
     {
      "cc": 252,
      "function": "render",
-     "at": "zeus/views/Receive.tsx:982"
+     "at": "zeus/views/Receive.tsx:984"
     },
     {
      "cc": 225,
      "function": "render",
-     "at": "zeus/views/Settings/WalletConfiguration.tsx:1392"
+     "at": "zeus/views/Settings/WalletConfiguration.tsx:1388"
     },
     {
      "cc": 164,
@@ -465,7 +465,7 @@
     {
      "cc": 144,
      "function": "render",
-     "at": "zeus/views/Settings/SeedRecovery.tsx:499"
+     "at": "zeus/views/Settings/SeedRecovery.tsx:494"
     },
     {
      "cc": 131,
@@ -475,13 +475,13 @@
    ]
   },
   "all": {
-   "functions": 4752,
-   "mean_cc": 4.69,
+   "functions": 4772,
+   "mean_cc": 4.67,
    "p90_cc": 10,
    "max_cc": 252,
-   "cc_le_2": 2735,
-   "cc_3_12": 1670,
-   "cc_gt_12": 347,
+   "cc_le_2": 2754,
+   "cc_3_12": 1673,
+   "cc_gt_12": 345,
    "cc_gt_30": 75
   }
  }

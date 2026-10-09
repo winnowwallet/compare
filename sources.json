@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-10-08",
+ "snapshot": "2026-10-09",
  "method": 2,
  "sources": {
   "winnow": {
@@ -30,9 +30,9 @@
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {"branch": "HEAD"},
-   "rev": "a231b829fff74643cf91d5d660395b15da6d7600",
-   "label": "synonymdev/bitkit-ios@a231b82",
-   "date": "2026-10-07"
+   "rev": "99edefc811550239833dce43b95fe12b0bfdbe21",
+   "label": "synonymdev/bitkit-ios@99edefc",
+   "date": "2026-10-09"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",
@@ -104,19 +104,19 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "3808d898230c5e0bceafc6660e032951f2daf068",
-   "label": "ZeusLN/zeus@3808d89",
-   "date": "2026-10-08"
+   "rev": "7e4ecd6900695ac2cde4e820b2b6ec3392e46398",
+   "label": "ZeusLN/zeus@7e4ecd6",
+   "date": "2026-10-09"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
    "track": {"from": "zeus:fetch-libraries-versions.json", "json": "embedded-lnd.version", "tag": "{}"},
    "version_from": {"path": "build/version.go", "pattern": "AppMajor uint = (\\d+)[\\s\\S]*?AppMinor uint = (\\d+)[\\s\\S]*?AppPatch uint = (\\d+)"},
-   "rev": "124fec6c02f9d5ff81e45a8a3d87e0f6fab49fc7",
-   "tag": "v0.21.4-beta-zeus",
+   "rev": "5711f358f4dc01434ad636160eea941ec1f392b7",
+   "tag": "v0.21.4-beta-zeus.1",
    "version": "0.21.4",
-   "label": "ZeusLN/lnd v0.21.4-beta-zeus",
-   "date": "2026-10-01"
+   "label": "ZeusLN/lnd v0.21.4-beta-zeus.1",
+   "date": "2026-10-08"
   },
   "zeus-ldk-node": {
    "repo": "https://github.com/ZeusLN/ldk-node",
