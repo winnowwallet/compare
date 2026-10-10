@@ -1422,7 +1422,7 @@
   "spm": [
    "bitkit-core@0.5.18",
    "lottie-ios@4.6.1",
-   "paykit-rs@0.1.0-rc70",
+   "paykit-rs@0.1.0-rc72",
    "swift-secp256k1@0.17.0",
    "vss-rust-client-ffi@0.5.23"
   ],

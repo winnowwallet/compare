@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-10-09",
+ "snapshot": "2026-10-10",
  "method": 2,
  "sources": {
   "winnow": {
@@ -30,8 +30,8 @@
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {"branch": "HEAD"},
-   "rev": "99edefc811550239833dce43b95fe12b0bfdbe21",
-   "label": "synonymdev/bitkit-ios@99edefc",
+   "rev": "91fffad36b4693771e34a5d4f38c08dcff374901",
+   "label": "synonymdev/bitkit-ios@91fffad",
    "date": "2026-10-09"
   },
   "synonym-ldk-node": {
@@ -63,10 +63,10 @@
   "paykit-rs": {
    "repo": "https://github.com/pubky/paykit-rs",
    "track": {"from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved", "spm": "paykit-rs"},
-   "rev": "2ea4b2b82494435d56bda45393ad1497d24a32e9",
-   "version": "0.1.0-rc70",
-   "label": "pubky/paykit-rs 0.1.0-rc70",
-   "date": "2026-10-07"
+   "rev": "ad3c72248d18587bb5b6ef3c99b063fa9bf31551",
+   "version": "0.1.0-rc72",
+   "label": "pubky/paykit-rs 0.1.0-rc72",
+   "date": "2026-10-08"
   },
   "vss-rust-client-ffi": {
    "repo": "https://github.com/synonymdev/vss-rust-client-ffi",
@@ -104,9 +104,9 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "7e4ecd6900695ac2cde4e820b2b6ec3392e46398",
-   "label": "ZeusLN/zeus@7e4ecd6",
-   "date": "2026-10-09"
+   "rev": "340f8803fe86a005c00d36ff436ff24bf94cb506",
+   "label": "ZeusLN/zeus@340f880",
+   "date": "2026-10-10"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",

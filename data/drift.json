@@ -1,7 +1,7 @@
 {
  "reviewed": "2026-10-02",
  "reviewed_latest": "2026-10-02",
- "measured": "2026-10-09",
+ "measured": "2026-10-10",
  "citations": 420,
  "same": 377,
  "moved": 32,
@@ -236,7 +236,7 @@
    "fact": "features.coin_control",
    "cite": "zeus:views/Send.tsx:1015-1020",
    "status": "moved",
-   "now_at": 1016
+   "now_at": 1038
   },
   {
    "wallet": "Zeus",
@@ -250,7 +250,7 @@
    "fact": "features.fee_bump",
    "cite": "zeus:backends/LdkNode.ts:2177",
    "status": "moved",
-   "now_at": 2193
+   "now_at": 2220
   },
   {
    "wallet": "Zeus",
@@ -264,7 +264,7 @@
    "fact": "features.taproot",
    "cite": "zeus:backends/LdkNode.ts:2176",
    "status": "moved",
-   "now_at": 2192
+   "now_at": 2219
   },
   {
    "wallet": "Zeus",
