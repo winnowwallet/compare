@@ -1,9 +1,7 @@
 {
  "Winnow": {
-  "spm": [
-   "swift-secp256k1@0.23.2"
-  ],
-  "total": 1
+  "lake": [],
+  "total": 0
  },
  "BlueWallet": {
   "npm_direct": [

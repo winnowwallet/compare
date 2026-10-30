@@ -3,7 +3,8 @@ over exactly the files loc.py counts.
 
 CC = 1 + each if/guard, for/while/repeat, non-default case/when/match arm, catch, ternary,
 &&, || and ??/?: (elvis). Closures, lambdas and nested functions count toward the named function,
-method, initializer or computed property that contains them.
+method, initializer or computed property that contains them. Lean, which no tree-sitter grammar parses,
+is read lexically by the same rule (lean.py).
 
 Without coverage, CRAP = CC^2 (1 - cov)^3 + CC is bounded below by CC: a function with CC > 12 scores
 above 12 whatever its tests, and one with CC > 30 exceeds crap4j's default threshold whatever its tests."""
@@ -13,11 +14,12 @@ from pathlib import Path
 
 from tree_sitter_language_pack import get_parser
 
+import lean
 from common import CONFIG, COUNTED, DATA, STAGE, left_out, stage, write_json
 
 LANG = {'.swift': 'swift', '.kt': 'kotlin', '.kts': 'kotlin', '.ts': 'typescript', '.tsx': 'tsx',
         '.js': 'javascript', '.jsx': 'javascript', '.go': 'go', '.rs': 'rust', '.m': 'objc', '.mm': 'objc',
-        '.h': 'objc', '.c': 'c', '.cc': 'cpp', '.cpp': 'cpp', '.hpp': 'cpp'}
+        '.h': 'objc', '.c': 'c', '.cc': 'cpp', '.cpp': 'cpp', '.hpp': 'cpp', '.lean': 'lean'}
 JS = {'typescript', 'tsx', 'javascript'}
 C_LIKE = {'objc', 'c', 'cpp'}
 UNITS = {
@@ -83,6 +85,8 @@ def name_of(node):
 
 def analyze(path):
     lang = LANG[Path(path).suffix]
+    if lang == 'lean':
+        return lean.analyze(Path(path).read_text(errors='ignore'))[0], False
     fam = family(lang)
     tree = get_parser(lang).parse(Path(path).read_bytes())
     units, stack = [], [(tree.root_node, None)]

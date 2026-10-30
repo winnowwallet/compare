@@ -1,92 +1,92 @@
 {
  "Winnow": {
   "app": {
-   "functions": 610,
-   "mean_cc": 3.28,
-   "p90_cc": 7,
-   "max_cc": 27,
-   "cc_le_2": 331,
-   "cc_3_12": 269,
-   "cc_gt_12": 10,
-   "cc_gt_30": 0,
-   "files": 33,
-   "files_with_parse_errors": 1,
+   "functions": 957,
+   "mean_cc": 4.2,
+   "p90_cc": 8,
+   "max_cc": 142,
+   "cc_le_2": 519,
+   "cc_3_12": 384,
+   "cc_gt_12": 54,
+   "cc_gt_30": 9,
+   "files": 43,
+   "files_with_parse_errors": 0,
    "most_complex": [
     {
-     "cc": 27,
-     "function": "(computed_property)",
-     "at": "winnow/Sources/WinnowApp/SettingsView.swift:39"
+     "cc": 142,
+     "function": "onHost",
+     "at": "winnow/LeanApp/WinnowApp/Update.lean:36"
     },
     {
-     "cc": 22,
-     "function": "init",
-     "at": "winnow/Sources/WinnowApp/AppModel.swift:458"
+     "cc": 134,
+     "function": "perform",
+     "at": "winnow/LeanApp/WinnowApp/Main.lean:158"
     },
     {
-     "cc": 22,
-     "function": "(computed_property)",
-     "at": "winnow/Sources/WinnowApp/MuSig2SignView.swift:266"
+     "cc": 85,
+     "function": "stepMultisig",
+     "at": "winnow/LeanApp/WinnowApp/Multisig.lean:187"
     },
     {
-     "cc": 20,
-     "function": "(computed_property)",
-     "at": "winnow/Sources/WinnowApp/PeerGatewaysSection.swift:15"
+     "cc": 44,
+     "function": "parseDouble",
+     "at": "winnow/LeanApp/WinnowApp/Pure.lean:525"
     },
     {
-     "cc": 20,
-     "function": "(computed_property)",
-     "at": "winnow/Sources/WinnowApp/RecipientsView.swift:116"
+     "cc": 43,
+     "function": "Model.onMultisigHost",
+     "at": "winnow/LeanApp/WinnowApp/Multisig.lean:338"
     }
    ]
   },
   "bitcoin": {
-   "functions": 1010,
-   "mean_cc": 3.34,
-   "p90_cc": 7,
-   "max_cc": 27,
-   "cc_le_2": 523,
-   "cc_3_12": 473,
-   "cc_gt_12": 14,
-   "cc_gt_30": 0,
-   "files": 59,
-   "files_with_parse_errors": 3,
+   "functions": 2019,
+   "mean_cc": 3.4,
+   "p90_cc": 8,
+   "max_cc": 34,
+   "cc_le_2": 1144,
+   "cc_3_12": 816,
+   "cc_gt_12": 59,
+   "cc_gt_30": 4,
+   "files": 104,
+   "files_with_parse_errors": 0,
    "most_complex": [
     {
-     "cc": 27,
-     "function": "decode",
-     "at": "winnow/Sources/WalletCore/Network/Protocol/Messages.swift:367"
-    },
-    {
-     "cc": 23,
-     "function": "(computed_property)",
-     "at": "winnow/Sources/WalletCore/Network/Protocol/Messages.swift:302"
-    },
-    {
-     "cc": 21,
-     "function": "validateKnownFields",
-     "at": "winnow/Sources/WalletCore/PSBT/PSBT.swift:815"
-    },
-    {
-     "cc": 19,
-     "function": "(computed_property)",
-     "at": "winnow/Sources/WalletCore/Network/Protocol/Messages.swift:329"
-    },
-    {
-     "cc": 18,
+     "cc": 34,
      "function": "replenish",
-     "at": "winnow/Sources/WalletCore/Network/Peers/PeerPool.swift:627"
+     "at": "winnow/Lean/Winnow/IO/Pool.lean:309"
+    },
+    {
+     "cc": 32,
+     "function": "publicV4",
+     "at": "winnow/Lean/Winnow/IO/Census.lean:96"
+    },
+    {
+     "cc": 32,
+     "function": "boundary",
+     "at": "winnow/Lean/Winnow/Wallet/Characters.lean:83"
+    },
+    {
+     "cc": 31,
+     "function": "handleInbound",
+     "at": "winnow/Lean/Winnow/IO/Transport.lean:311"
+    },
+    {
+     "cc": 29,
+     "function": "decodeUTF8Lossy",
+     "at": "winnow/Lean/Winnow/Keys/Unicode.lean:112"
     }
    ]
   },
   "all": {
-   "functions": 1620,
-   "mean_cc": 3.32,
-   "p90_cc": 7,
-   "max_cc": 27,
-   "cc_le_2": 854,
-   "cc_3_12": 742,
-   "cc_gt_12": 24,
-   "cc_gt_30": 0
+   "functions": 2976,
+   "mean_cc": 3.66,
+   "p90_cc": 8,
+   "max_cc": 142,
+   "cc_le_2": 1663,
+   "cc_3_12": 1200,
+   "cc_gt_12": 113,
+   "cc_gt_30": 13
   }
  },
  "BlueWallet": {

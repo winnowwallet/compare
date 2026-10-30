@@ -2,27 +2,33 @@
  "order": ["Winnow", "BlueWallet", "Green", "Muun", "Phoenix", "Bitkit", "Blixt", "Zeus"],
  "profiles": {
   "Winnow": {
-   "built_with": "Swift (SwiftUI)",
+   "built_with": "Lean 4, drawn by LeanNative's generated Objective-C/UIKit shell; no Swift",
    "engine": {
-    "text": "Its own, in Swift (WalletCore), in the same repository: keys, PSBTs, scripts, compact-filter sync, peer networking",
-    "cite": "winnow:Package.swift:19-21; winnow:README.md:7"
+    "text": "Its own, in Lean 4 (Lean/Winnow, and Lean/Secp, a secp256k1 whose field and curve arithmetic carry machine-checked proofs), in the same repository: keys, PSBTs, scripts, compact-filter sync, peer networking over Lean's libuv TCP",
+    "cite": "winnow:Lean/lakefile.toml:5-9; winnow:Lean/Winnow.lean:1-8; winnow:Lean/Winnow/IO/Transport.lean:3; winnow:Lean/Winnow/Keys/Secp256k1.lean:4-8; winnow:Lean/Secp/Proofs/Gate.lean:1-8"
    },
    "chain_data": {
-    "text": "BIP157/158 compact filters from Bitcoin peers found through a signed peer list and DNS seeds; Advanced mode adds your own peers",
-    "cite": "winnow:README.md:7; winnow:Sources/WalletCore/Network/Peers/CensusCatalog.swift:28; winnow:Sources/WinnowApp/SettingsView.swift:83-107"
+    "text": "BIP157/158 compact filters from Bitcoin peers found through the census peer list shipped with the build (its signature checked when the build is made) and DNS seeds; Advanced mode adds your own peers",
+    "cite": "winnow:Lean/Winnow/IO/Pool.lean:10-15; winnow:Lean/Winnow/IO/Census.lean:217-220; winnow:scripts/import-census:10-12; winnow:LeanApp/WinnowApp/Settings.lean:161-165"
    },
    "third_party": {
-    "text": "Nobody for the everyday wallet; shared accounts need the co-owners' keys, with no co-signing server",
-    "cite": "winnow:README.md:9; winnow:Sources/WinnowApp/SharedSavingsViews.swift:104-105"
+    "text": "Nobody for the everyday wallet; multisig accounts need their other signers (phones, Ledgers or keys someone sent), with no co-signing server",
+    "cite": "winnow:README.md:4-6; winnow:LeanApp/WinnowApp/Send.lean:115-117; winnow:LeanApp/WinnowApp/Multisig.lean:528-530"
    },
-   "distribution": {"text": "App Store; pre-release builds on TestFlight", "cite": "winnow:README.md:5; winnow:.github/workflows/appstore-submit.yml:3-6"},
+   "distribution": {
+    "text": "App Store, in the listing the Swift app used (com.btcswift.app); tagged builds upload to TestFlight",
+    "cite": "winnow:README.md:11-12; winnow:LeanApp/WinnowApp/Project.lean:19-23; winnow:.github/workflows/release.yml:1-6; winnow:.github/workflows/release.yml:182-192"
+   },
    "libraries": {
-    "text": "swift-secp256k1 0.23.2 (Bitcoin Core's libsecp256k1), the only third-party dependency",
-    "cite": "winnow:Package.swift:16; winnow:README.md:11"
+    "text": "LeanNative 7ab7ec8 (its Lean framework, C shim and printed Objective-C shell) and Lean 4.35.0's runtime and standard library (libLean, libStd, libInit, libleanrt) with the toolchain's libuv and GMP; no package from a registry",
+    "cite": "winnow:LeanApp/lakefile.toml:10-19; winnow:LeanApp/lean-toolchain:1; winnow:Lean/lake-manifest.json:3; leannative:framework/native/scripts/ios_lean_sources.sh:58; leannative:framework/lean/ElmShell/Manifest.lean:187"
    },
    "bitcoin_library_not_counted": null,
-   "prebuilt": {"text": "None in the repository; the app links the swift-secp256k1 package that SwiftPM fetches", "cite": "winnow:Package.swift:16-21"},
-   "patched": "None"
+   "prebuilt": {
+    "text": "None in the repository; the build links the Lean toolchain's static libraries (libLean, libStd, libInit, libleanrt, libuv, libgmp), macOS arm64 objects retargeted to iOS by LeanNative's retarget_ar.py",
+    "cite": "leannative:framework/native/scripts/ios_lean_sources.sh:15-19; leannative:framework/native/scripts/ios_lean_sources.sh:58; leannative:framework/native/scripts/ios_lean_sources.sh:67-78"
+   },
+   "patched": "No patch files; the build rewrites the platform (LC_BUILD_VERSION) of Lean's macOS static libraries to iOS, which Lean does not support"
   },
   "BlueWallet": {
    "built_with": "React Native (TypeScript) with small native modules",

@@ -5,105 +5,51 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Bitcoin wallets compared — Winnow</title>
 <link rel="alternate" type="application/json" href="data.json" title="All measurements">
-<meta name="description" content="A reproducible comparison of open-source iPhone Bitcoin wallets: features, code size, complexity, dependencies and vendored code.">
+<meta name="description" content="A reproducible comparison of open-source iPhone Bitcoin wallets: features, code size, complexity, proofs, dependencies and vendored code.">
+<meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://compare.winnowwallet.com/">
 <link rel="stylesheet" href="assets/site.css">
-<style>
-/* Code-size chart. Series colors pass the categorical CVD checks on both page surfaces. */
-.size-chart{--s-app:#2a78d6;--s-btc:#1baf7a;margin:1.4rem 0 1.2rem;text-align:left}
-.size-chart figcaption{margin-top:1rem}
-@media (prefers-color-scheme:dark){.size-chart{--s-app:#3987e5;--s-btc:#199e70}}
-.size-chart>input{position:absolute;opacity:0;pointer-events:none}
-.chart-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.8rem 1.4rem;margin-bottom:1rem}
-.units{display:inline-flex;border:1px solid var(--rule-2);border-radius:999px;padding:2px;font-size:.84rem}
-.units label{display:inline-flex;align-items:center;min-height:36px;padding:0 .9rem;border-radius:999px;color:var(--ink-2);cursor:pointer}
-#unit-lines:checked~.chart-head label[for=unit-lines],#unit-chars:checked~.chart-head label[for=unit-chars]{background:var(--paper-2);color:var(--ink);font-weight:600}
-#unit-lines:focus-visible~.chart-head label[for=unit-lines],#unit-chars:focus-visible~.chart-head label[for=unit-chars]{outline:2px solid var(--mark);outline-offset:2px}
-.key{display:flex;flex-wrap:wrap;gap:.3rem 1.1rem;margin:0;padding:0;list-style:none;font-size:.84rem}
-.key li{display:inline-flex;align-items:center;gap:.45rem;margin:0;color:var(--ink-2)}
-.key i{width:.8rem;height:.8rem;border-radius:3px;background:var(--c)}
-.bar-row,.axis{display:grid;grid-template-columns:6.2rem minmax(0,1fr) 3.4rem;column-gap:.8rem;align-items:stretch}
-.bar-row{position:relative;min-height:44px;outline-offset:1px}
-.bar-row .name{align-self:center;font-size:.9rem;color:var(--ink)}
-.track{display:flex;align-items:center;background:linear-gradient(to right,var(--rule) 1px,transparent 1px) 0 0/var(--gl) 100%}
-#unit-chars:checked~.bars .track{background-size:var(--gc) 100%}
-.bar{display:flex;height:20px;width:100%}
-.seg{flex:none;height:100%;width:max(1px,calc(var(--l) - 2px));margin-right:2px;background:var(--s)}
-.seg:last-child{width:max(2px,var(--l));margin-right:0;border-radius:0 4px 4px 0}
-#unit-chars:checked~.bars .seg{width:max(1px,calc(var(--c) - 2px))}
-#unit-chars:checked~.bars .seg:last-child{width:max(2px,var(--c))}
-.seg.app{--s:var(--s-app)}.seg.btc{--s:var(--s-btc)}
-.total{align-self:center;text-align:right;font-size:.86rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
-.size-chart .u-c{display:none}
-#unit-chars:checked~* .u-c{display:inline}
-#unit-chars:checked~* .u-l{display:none}
-.tip{display:none;position:absolute;left:7rem;bottom:calc(100% - 4px);z-index:2;max-width:min(30rem,calc(100% - 7rem));padding:.45rem .7rem;border:1px solid var(--rule-2);border-radius:.5rem;background:var(--card);color:var(--ink-2);font-size:.8rem;line-height:1.45;box-shadow:0 6px 18px rgb(0 0 0/.12)}
-.tip b{color:var(--ink);font-weight:640}
-.bar-row:hover .tip,.bar-row:focus .tip{display:block}
-.bar-row:hover .name,.bar-row:focus .name{text-decoration:underline;text-underline-offset:3px}
-.axis{margin-top:.2rem;font-size:.76rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
-.axis .ticks{position:relative;height:1.3rem}
-.axis .ticks span{position:absolute;top:0;transform:translateX(-50%)}
-.axis .ticks span[style^="left:0.000%"]{transform:none}
-#unit-chars:checked~.axis .ticks .u-c{display:block}
-.axis .unit-name{text-align:right}
-td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-.glance td{min-width:8.5rem}.glance td:first-of-type{min-width:6.5rem}
-td.lib{min-width:10rem}
-@media(max-width:40rem){.bar-row,.axis{grid-template-columns:5.2rem minmax(0,1fr) 2.8rem;column-gap:.55rem}.tip{left:0;max-width:100%}}
-@media (forced-colors:active){.seg{forced-color-adjust:none}}
-/* Tables added for features, languages, complexity and dependencies. */
-.feat th[scope=row],.deps th[scope=row],.cc th[scope=row]{font-weight:500;color:var(--ink);background:none;white-space:normal;min-width:11rem}
-.feat td{white-space:nowrap;min-width:6.4rem}
-.feat tr.group th{background:var(--paper-2)}
-.feat tr.group th{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);padding-top:.7rem}
-.f-yes span{color:var(--good);font-weight:700}.f-partial span{color:var(--seed);font-weight:700}
-.f-engine span,.f-no span{color:var(--ink-3)}.f-no{color:var(--ink-3)}
-.dim{color:var(--ink-3)}
-td.wrap{white-space:normal;min-width:9rem;font-size:.85rem}
-.deps tr.sum td,.deps tr.sum th{border-top:1px solid var(--rule-2)}
-.bar-cell{width:5.5rem;min-width:4rem;vertical-align:middle}
-.cc th.num,.deps th,.feat thead th{white-space:normal}
-.deps-text td{min-width:9rem;font-size:.86rem}
-.minibar{display:block;height:10px;width:var(--w);min-width:2px;border-radius:0 3px 3px 0;background:#2a78d6}
-@media (prefers-color-scheme:dark){.minibar{background:#3987e5}}
-ul.evidence{font-size:.86rem;padding-left:1.1rem}
-ul.evidence li{margin:.3rem 0}
-ul.evidence code{font-size:.8em}
-.cite{display:block;margin-top:.25rem;font-size:.74rem}.cite a{color:var(--ink-3)}.cite code{overflow-wrap:normal}
-.legend-line{font-size:.86rem;color:var(--ink-2);margin:.4rem 0 0}
-/* Over time: one sparkline per wallet and measure. Gray line, today's value in the accent. */
-.trend{--accent:#2a78d6}
-@media (prefers-color-scheme:dark){.trend{--accent:#3987e5}}
-.trend th[scope=col]{white-space:normal}
-.trend-cell{position:relative;min-width:9.5rem;vertical-align:top}
-.trend-cell .val{display:block;font-weight:600;color:var(--ink)}
-.trend-cell .delta{display:block;font-size:.8rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
-.spark{display:block;width:144px;max-width:100%;height:auto;margin-top:.35rem;overflow:visible;cursor:crosshair;border-radius:3px}
-.spark:focus-visible{outline:2px solid var(--mark);outline-offset:3px}
-.spark polyline{fill:none;stroke:var(--ink-3);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
-.spark .end{fill:var(--accent);stroke:var(--paper);stroke-width:2}
-.spark .hover{fill:var(--ink);stroke:var(--paper);stroke-width:2;display:none}
-.spark .cross{stroke:var(--rule-2);stroke-width:1;display:none}
-.trend-cell.reading .val,.trend-cell.reading .delta{color:var(--ink)}
-.snapshots th[scope=row]{font-weight:500;white-space:nowrap}
-@media (forced-colors:active){.spark polyline{stroke:CanvasText}.spark .end{fill:Highlight}}
-</style>
+<script>try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="topbar"><div class="bar"><a class="mark" href="https://winnowwallet.com/" aria-label="Winnow home">winnow</a><nav class="links" aria-label="Main"><a href="https://winnowwallet.com/">Wallet</a><a href="https://census.winnowwallet.com/">Census</a><a href="#reproduce">Reproduce</a><a href="https://github.com/winnowwallet/compare">Source ↗</a></nav></div></header>
-<main id="main">
-<p class="page-kicker">Winnow compare · Bitcoin on iPhone</p>
-<h1>Bitcoin wallets compared</h1>
-<p class="lede">How Winnow compares with {{N_OTHERS}} other open-source iPhone wallets that hold your own Bitcoin keys: features, code size, complexity and what each one depends on. Everything is measured from source and rebuilt every day.</p>
-<aside class="guide-summary"><p><strong>Winnow is a Bitcoin-only wallet written in Swift, with one third-party dependency.</strong> It counts {{W_L}} lines of its own code, {{W_APP}} for the app and {{W_BTC}} for its Bitcoin library. It checks the chain on the phone with compact block filters from Bitcoin peers it finds itself, receives to Taproot addresses, and reaches Tor and I2P through gateways you run, with no client of its own. The other wallets count {{LR_MIN}} to {{LR_MAX}} times as many lines, without counting the node or wallet engines that most of them embed. <a href="#scope">What the comparison leaves out</a></p></aside>
-<nav class="contents" aria-label="On this page"><a href="#glance">At a glance</a><a href="#features">Features</a><a href="#size">Code size</a><a href="#languages">Languages</a><a href="#complexity">Complexity</a><a href="#dependencies">Dependencies</a><a href="#history">Over time</a><a href="#scope">What the numbers leave out</a><a href="#method">How we measured</a><a href="#other">Not compared</a></nav>
+<div class="wrap">
+<header class="site">
+<a class="brand" href="https://winnowwallet.com/" aria-label="Winnow home"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="currentColor" opacity="0.1"/><path d="M14 20l8 26 10-20 10 20 8-26" fill="none" stroke="var(--accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>Winnow <span>compare</span></a>
+<nav aria-label="Main"><a href="https://winnowwallet.com/">Wallet</a><a href="https://census.winnowwallet.com/">Census</a><a href="#reproduce">Reproduce</a><a href="https://github.com/winnowwallet/compare">Source ↗</a><button class="theme" type="button" aria-label="Switch between light and dark" title="Light or dark"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button></nav>
+</header>
+</div>
 
-<section id="glance">
+<main id="main">
+<div class="wrap">
+<div class="hero">
+<div>
+<p class="eyebrow">Measured from source · {{SNAPSHOT}}</p>
+<h1>Bitcoin wallets on iPhone, <em>compared from their code</em></h1>
+<p class="lede">How Winnow compares with {{N_OTHERS}} other open-source iPhone wallets that hold your own keys: features, code size, complexity, proofs and what each one depends on. Every number is measured from pinned source and rebuilt by a script anyone can run.</p>
+<div class="actions"><a class="btn primary" href="#size">See the numbers</a><a class="btn" href="#reproduce">Reproduce it</a></div>
+<p class="fine">Winnow is measured at {{WINNOW_SRC}}, its Lean 4 app. <a href="#scope">What the comparison leaves out</a></p>
+</div>
+<aside class="panel" aria-labelledby="panel-title">
+<p class="panel-head"><b id="panel-title">Winnow</b><span>Lean 4 · no Swift</span></p>
+<dl class="stats">
+<div class="stat"><dt>Lines of its own code</dt><dd>{{W_L}}<small>others: {{LR_MIN}}–{{LR_MAX}}× as many</small></dd></div>
+<div class="stat"><dt>Third-party packages</dt><dd>{{DEP_W}}<small>others: {{DEP_MIN}}–{{DEP_MAX}}</small></dd></div>
+<div class="stat"><dt>Machine-checked theorems</dt><dd>{{W_THM}}<small>in its secp256k1</small></dd></div>
+<div class="stat"><dt>Functions above CC 12</dt><dd>{{P12_W}}%<small>others: {{P12_MIN}}–{{P12_MAX}}%</small></dd></div>
+</dl>
+<p class="fine">Built on LeanNative ({{W_ENGINE_L}} lines, shown beside the totals, not in them). Snapshot of {{SNAPSHOT}}.</p>
+</aside>
+</div>
+
+<nav aria-label="On this page"><ul class="contents"><li><a href="#glance">At a glance</a></li><li><a href="#features">Features</a></li><li><a href="#size">Code size</a></li><li><a href="#languages">Languages</a></li><li><a href="#complexity">Complexity</a></li><li><a href="#proofs">Proofs</a></li><li><a href="#dependencies">Dependencies</a></li><li><a href="#history">Over time</a></li><li><a href="#scope">Leaves out</a></li><li><a href="#method">Method</a></li></ul></nav>
+</div>
+
+<section id="glance"><div class="wrap">
 <h2>At a glance</h2>
-<p>Each wallet below holds its own keys on the phone, with the exception noted in the fourth column. Four of them (Phoenix, Bitkit, Blixt and Zeus) are Lightning-first wallets with an on-chain side; this page looks only at their Bitcoin wallet and ignores their Lightning features. The table shows defaults; most of these wallets let you change the chain source.</p>
-<div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table">
+<p class="sub">Winnow is a Bitcoin-only wallet written in Lean 4: the wallet, its peer networking and the app’s model, update and view compile to C, and LeanNative’s generated Objective-C shell draws them with UIKit. It checks the chain on the phone with compact block filters from Bitcoin peers it finds itself, and reaches Tor and I2P through gateways you run, with no client of its own.</p>
+<p class="sub">Each wallet below holds its own keys on the phone, with the exceptions noted in the fourth column. Four of them (Phoenix, Bitkit, Blixt and Zeus) are Lightning-first wallets with an on-chain side; this page looks only at their Bitcoin wallet. The table shows defaults; most of these wallets let you change the chain source.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="At a glance, scrollable table">
 <table class="glance">
 <thead><tr><th scope="col">Wallet</th><th scope="col">Built with</th><th scope="col">Where the on-chain wallet lives</th><th scope="col">Chain data</th><th scope="col">Who else must sign</th><th scope="col">On iPhone</th></tr></thead>
 <tbody>
@@ -111,12 +57,12 @@ ul.evidence code{font-size:.8em}
 </tbody>
 </table>
 </div>
-</section>
+</div></section>
 
-<section id="features">
+<section id="features"><div class="wrap">
 <h2>Features</h2>
-<p>What a person can do in each iPhone app today with the wallet’s Bitcoin, checked against the code. Where a wallet has several account types, a cell shows the best one it offers, and its note says which. Hover or focus a cell for the note; <a href="#feature-evidence">every cell links to its evidence</a> below. The cells were last checked by hand {{REVIEWED}}. {{DRIFT_TEXT}}</p>
-<div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table">
+<p class="sub">What a person can do in each iPhone app today with the wallet’s Bitcoin, checked against the code. Where a wallet has several account types, a cell shows the best one it offers, and its note says which. Hover or focus a cell for the note; <a href="#feature-evidence">every cell links to its evidence</a>. The cells were last checked by hand {{REVIEWED}}. {{DRIFT_TEXT}}</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Features, scrollable table">
 <table class="feat">
 <thead><tr><th scope="col">Feature</th>{{WALLET_TH}}</tr></thead>
 <tbody>
@@ -124,22 +70,24 @@ ul.evidence code{font-size:.8em}
 </tbody>
 </table>
 </div>
-<p class="legend-line"><span class="f-yes"><span aria-hidden="true">✓</span></span> Yes · <span class="f-partial"><span aria-hidden="true">◐</span></span> Partial · <span class="f-engine"><span aria-hidden="true">○</span></span> Engine only · <span class="f-no"><span aria-hidden="true">–</span></span> No · <span class="f-no"><span aria-hidden="true">?</span></span> Unknown</p>
+<ul class="legend" aria-label="Legend"><li class="f-yes"><span class="chip"><span aria-hidden="true">✓</span> Yes</span></li><li class="f-partial"><span class="chip"><span aria-hidden="true">◐</span> Partial</span></li><li class="f-engine"><span class="chip"><span aria-hidden="true">○</span> Engine only</span></li><li class="f-no"><span class="chip"><span aria-hidden="true">–</span> No</span></li><li class="f-no"><span class="chip"><span aria-hidden="true">?</span> Unknown</span></li></ul>
 <details id="feature-evidence">
 <summary>Notes and code evidence for every cell</summary>
 <p>Links open the exact line that was checked, at the revision reviewed {{REVIEWED}}.</p>
 {{DRIFT_LIST}}
 {{EVIDENCE}}
 </details>
-</section>
+</div></section>
 
-<section id="size">
+<section id="size"><div class="wrap">
 <h2>Code size</h2>
-<p>Winnow counts {{W_L}} lines of code: {{W_APP}} for the app and {{W_BTC}} for its own Bitcoin library, which lives in the same repository. The other wallets count {{LR_MIN}} to {{LR_MAX}} times as many lines. That is the app, plus a Bitcoin library of its own for Muun.</p>
-<p>The count leaves out the engines that Green, Phoenix, Bitkit, Blixt and Zeus embed: gdk, lightning-kmp, LDK Node, and LND. Each is a separate project the wallet is built on, and four of the five are Lightning nodes, so their lines are shown in the table and not in the totals. BlueWallet takes its Bitcoin primitives from npm packages, which the dependency tables count. The gap would be wider with the engines added.</p>
+<div class="prose">
+<p>Winnow counts {{W_L}} lines of code: {{W_APP}} for the app and {{W_BTC}} for its own Bitcoin library, which lives in the same repository and includes {{W_PROOF_LINES}} lines of proofs. The other wallets count {{LR_MIN}} to {{LR_MAX}} times as many lines. That is the app, plus a Bitcoin library of its own for Muun.</p>
+<p>The count leaves out the engines each wallet is built on. Green, Phoenix, Bitkit, Blixt and Zeus embed gdk, lightning-kmp, LDK Node and LND; four of the five are Lightning nodes. Winnow is built on LeanNative, a {{W_ENGINE_L}}-line framework that runs a Lean app on iOS; it plays the part SwiftUI or React Native play for the others, which are not counted either. Each engine is shown in the table, not in the totals. BlueWallet takes its Bitcoin primitives from npm packages, which the dependency tables count.</p>
 <p>Winnow’s lines are denser, at about {{W_CPL}} characters each against {{O_CPL_MIN}}–{{O_CPL_MAX}} for the others. Counted in characters, the gap is {{CR_MIN}} to {{CR_MAX}} times.</p>
+</div>
 <figure class="size-chart" aria-labelledby="size-caption" style="--gl:{{GRID_L}};--gc:{{GRID_C}}">
-<input type="radio" name="unit" id="unit-lines" checked><input type="radio" name="unit" id="unit-chars">
+<input type="radio" name="unit" id="unit-lines" checked aria-label="Lines"><input type="radio" name="unit" id="unit-chars" aria-label="Characters">
 <div class="chart-head">
 <ul class="key" aria-label="Legend"><li style="--c:var(--s-app)"><i></i>App</li><li style="--c:var(--s-btc)"><i></i>Own Bitcoin library</li></ul>
 <div class="units" role="group" aria-label="Measure"><label for="unit-lines">Lines</label><label for="unit-chars">Characters</label></div>
@@ -150,7 +98,7 @@ ul.evidence code{font-size:.8em}
 <div class="axis" aria-hidden="true"><span></span><span class="ticks">{{AXIS_L}}{{AXIS_C}}</span><span class="unit-name"><span class="u-l">lines</span><span class="u-c">chars</span></span></div>
 <figcaption id="size-caption">Code that builds into each iPhone app, without tests, generated files or comments, and without embedded engines. Snapshot of {{SNAPSHOT}}.</figcaption>
 </figure>
-<div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table">
+<div class="table-wrap" role="region" tabindex="0" aria-label="Lines of code by part, scrollable table">
 <table>
 <caption>Lines of code by part</caption>
 <thead><tr><th scope="col">Wallet</th><th scope="col" class="num">App</th><th scope="col">Own Bitcoin library</th><th scope="col" class="num">Total lines</th><th scope="col" class="num">Characters</th><th scope="col" class="num">vs Winnow</th><th scope="col">Embedded engine, not in the total</th></tr></thead>
@@ -159,30 +107,32 @@ ul.evidence code{font-size:.8em}
 </tbody>
 </table>
 </div>
-<p>“vs Winnow” divides each total by Winnow’s, first in lines, then in characters. The engine column shows each engine at the version the app pins, so its size can be read beside the wallet’s.</p>
-</section>
+<p class="prose">“vs Winnow” divides each total by Winnow’s, first in lines, then in characters. The engine column shows each engine at the version the app pins, so its size can be read beside the wallet’s.</p>
+</div></section>
 
-<section id="languages">
+<section id="languages"><div class="wrap">
 <h2>Languages</h2>
-<p>Share of each wallet’s counted lines, app and own Bitcoin library together. Winnow is written in one language; most of the others combine a user-interface language with a library in another.</p>
-<div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table">
+<p class="sub">Share of each wallet’s lines, app, own Bitcoin library and embedded engine together, since all of them ship in the app. Winnow and LeanNative are Lean, apart from LeanNative’s small C shim; most of the others combine a user-interface language with a library or engine in another.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Languages, scrollable table">
 <table>
-<thead><tr><th scope="col">Wallet</th><th scope="col" class="num">Swift</th><th scope="col" class="num">Kotlin</th><th scope="col" class="num">Rust</th><th scope="col" class="num">Go</th><th scope="col" class="num">TypeScript/JS</th><th scope="col" class="num">C family</th></tr></thead>
+<thead><tr><th scope="col">Wallet</th>{{LANG_TH}}</tr></thead>
 <tbody>
 {{LANG_ROWS}}
 </tbody>
 </table>
 </div>
-</section>
+</div></section>
 
-<section id="complexity">
+<section id="complexity"><div class="wrap">
 <h2>Complexity and CRAP</h2>
-<p>CRAP scores each function by its cyclomatic complexity (CC, the number of paths through it) and how much of it the tests run: CRAP = CC² × (1 − coverage)³ + CC. Coverage needs each project’s test suite run with instrumentation, on a Mac for the Swift apps, so it is not measured here. Testing can only bring CRAP down to CC, so the complexity alone sets a floor: a function above 12 scores above 12 however well it is tested, and one above 30 fails crap4j’s default threshold whatever its tests. Complexity is measured on each wallet’s counted code, not on embedded engines.</p>
-<p>{{P12_W}}% of Winnow’s functions are above 12, against {{P12_MIN}}–{{P12_MAX}}% for the others. Winnow’s most complex function scores {{W_MAXCC}}. Its mean is {{W_MEAN}}; the others’ range from {{MEAN_MIN}} to {{MEAN_MAX}}. Winnow’s CI also rejects any function over 8 as SwiftLint counts complexity, which leaves out <code>case</code> arms, <code>&amp;&amp;</code>, <code>||</code>, <code>??</code> and ternaries; this page counts all of them, so its numbers are higher.</p>
-<div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table">
+<div class="prose">
+<p>CRAP scores each function by its cyclomatic complexity (CC, the number of paths through it) and how much of it the tests run: CRAP = CC² × (1 − coverage)³ + CC. Coverage needs each project’s test suite run with instrumentation, so it is not measured here. Testing can only bring CRAP down to CC, so complexity alone sets a floor: a function above 12 scores above 12 however well it is tested, and one above 30 fails crap4j’s default threshold whatever its tests. Complexity is measured on each wallet’s counted code, not on embedded engines.</p>
+<p>{{P12_W}}% of Winnow’s {{W_FUNCS}} functions are above 12, against {{P12_MIN}}–{{P12_MAX}}% for the others. Its mean is {{W_MEAN}}; the others’ range from {{MEAN_MIN}} to {{MEAN_MAX}}. Its most complex function, {{W_TOP}}, scores {{W_MAXCC}}: Winnow’s app follows the Elm architecture, and its update and command dispatchers are single <code>match</code> expressions with an arm for each message, which this rule counts as paths. {{W_GT30}} of its functions are above 30.</p>
+</div>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Complexity, scrollable table">
 <table class="cc">
 <caption>Cyclomatic complexity per function, app and own Bitcoin library together</caption>
-<thead><tr><th scope="col">Wallet</th><th scope="col" class="num">Functions</th><th scope="col" class="num">Mean CC</th><th scope="col" class="num">90th pct</th><th scope="col" class="num">Max</th><th scope="col" class="num">CRAP above 12 at any coverage</th><th scope="col" aria-label="Share of functions above 12, relative to the highest"></th><th scope="col" class="num">CRAP above 30 at any coverage</th></tr></thead>
+<thead><tr><th scope="col">Wallet</th><th scope="col" class="num">Functions</th><th scope="col" class="num">Mean CC</th><th scope="col" class="num">90th pct</th><th scope="col" class="num">Max</th><th scope="col" class="num">CRAP above 12 at any coverage</th><th scope="col"><span class="dim">Share above 12, relative to the highest</span></th><th scope="col" class="num">CRAP above 30 at any coverage</th></tr></thead>
 <tbody>
 {{CC_ROWS}}
 </tbody>
@@ -190,7 +140,7 @@ ul.evidence code{font-size:.8em}
 </div>
 <details>
 <summary>By part: app and own Bitcoin library</summary>
-<div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table">
+<div class="table-wrap" role="region" tabindex="0" aria-label="Complexity by part, scrollable table">
 <table class="cc">
 <thead><tr><th scope="col">Part</th><th scope="col" class="num">Functions</th><th scope="col" class="num">Mean CC</th><th scope="col" class="num">90th pct</th><th scope="col" class="num">Max</th><th scope="col" class="num">CC &gt; 12</th><th scope="col" class="num">CC &gt; 30</th><th scope="col">Most complex</th></tr></thead>
 <tbody>
@@ -199,12 +149,23 @@ ul.evidence code{font-size:.8em}
 </table>
 </div>
 </details>
-</section>
+</div></section>
 
-<section id="dependencies">
+<section id="proofs"><div class="wrap">
+<h2>Machine-checked proofs</h2>
+<p class="sub">Lean is also a proof assistant, so part of Winnow’s code comes with theorems that Lean’s kernel checks on every build. Tests check examples; a theorem covers every input. The other wallets are written in languages without proofs, so this section has nothing to compare them on.</p>
+<div class="grid">
+<div class="card"><span class="big">{{W_THM}}</span><h3>Theorems in Winnow’s code</h3><p>{{W_PROOF_LINES}} lines, all in its Bitcoin library’s secp256k1: limb and field arithmetic, the curve and its Jacobian formulas. {{GATE_LINK}} lists them, and the build fails if one rests on <code>sorry</code> or an extra axiom.</p></div>
+<div class="card"><span class="big">{{E_THM}}</span><h3>Theorems in LeanNative</h3><p>{{E_PROOF_LINES}} lines, most of them about how the runtime steps an app: each step runs <code>update</code> on one message and asks for exactly that message’s commands, whatever the order of events. The Objective-C renderer and platform effects are not proved; they are trusted and tested.</p></div>
+<div class="card"><span class="big">Not proved</span><h3>What the theorems leave out</h3><p>The wallet logic, networking and app have tests, not proofs. Signing runs on the proved arithmetic but is not constant-time: its timing depends on the key ({{SECP_LINK}}).</p></div>
+</div>
+<p class="prose">Proofs are erased when Lean compiles, so they add nothing to the app. They are counted as lines in the code size above, and are not functions in the complexity table.</p>
+</div></section>
+
+<section id="dependencies"><div class="wrap">
 <h2>Dependencies and vendored code</h2>
-<p>Winnow depends on {{DEP_W}} third-party package: swift-secp256k1, which builds Bitcoin Core’s libsecp256k1 from source. The others depend on {{DEP_MIN}} to {{DEP_MAX}}. These counts include what the embedded engines pull in, because that code ships in the app too. Package counts from different ecosystems are not equal units: an npm package is often a few hundred lines, a Rust crate or Go module often more. Read them per row.</p>
-<div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table">
+<p class="sub">Winnow resolves no third-party package: its Lake manifest pins only LeanNative, the framework counted above as its engine. Like every Lean program it links Lean’s runtime and standard library from the toolchain, which bring libuv and GMP; they are under prebuilt binaries below. The others depend on {{DEP_MIN}} to {{DEP_MAX}} packages, counting what their embedded engines pull in, because that code ships in the app too. Package counts from different ecosystems are not equal units: an npm package is often a few hundred lines, a Rust crate or Go module often more. Read them per row.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Third-party packages, scrollable table">
 <table class="deps">
 <caption>Third-party packages each app resolves and ships, beyond the code counted above</caption>
 <thead><tr><th scope="col">Kind</th>{{WALLET_TH}}</tr></thead>
@@ -213,7 +174,7 @@ ul.evidence code{font-size:.8em}
 </tbody>
 </table>
 </div>
-<div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table">
+<div class="table-wrap" role="region" tabindex="0" aria-label="Libraries and binaries, scrollable table">
 <table class="deps-text">
 <caption>Main libraries, the Bitcoin code outside the counted code, and code that arrives other than as source packages</caption>
 <thead><tr><th scope="col">Wallet</th><th scope="col">Main libraries</th><th scope="col">Bitcoin code not counted above</th><th scope="col">Prebuilt binaries</th><th scope="col">Third-party code copied into the repository</th><th scope="col">Patched dependencies</th></tr></thead>
@@ -222,7 +183,8 @@ ul.evidence code{font-size:.8em}
 </tbody>
 </table>
 </div>
-<ul>
+<ul class="list">
+<li><strong>Lean packages</strong> are the git packages in the app’s <code>lake-manifest.json</code>, less the framework counted as its engine.</li>
 <li><strong>Swift packages</strong> are every package Swift Package Manager resolves. Phoenix links Firebase Messaging, which brings in Google’s package graph.</li>
 <li><strong>Kotlin libraries</strong> are the {{KOTLIN_N}} libraries Phoenix’s iOS framework links besides lightning-kmp, resolved for the iPhone target.</li>
 <li><strong>Rust crates</strong> are compiled into prebuilt libraries. Bitkit’s four libraries each carry their own copies: {{RUST_B}} distinct crates, {{RUST_COPIES_B}} counting each library’s copy. Green’s gdk adds {{RUST_G}}. gdk’s C++ dependencies are not counted.</li>
@@ -231,12 +193,12 @@ ul.evidence code{font-size:.8em}
 <li><strong>CocoaPods</strong> counts pods from the CocoaPods trunk. Another {{PODS_NPM_BW}} pods in BlueWallet, {{PODS_NPM_B}} in Blixt and {{PODS_NPM_Z}} in Zeus are the native halves of npm packages and React Native itself.</li>
 <li><strong>Muun commits the sources of its CocoaPods</strong> into its repository: {{MUUN_VENDORED}} lines of third-party code that build into the app, with a registry of each pod’s upstream and checksum.</li>
 </ul>
-</section>
+</div></section>
 
-<section id="history">
+<section id="history"><div class="wrap">
 <h2>Over time</h2>
-<p>The comparison is measured again every day from each wallet’s latest code. Wallet repositories are read at the head of their main branch, except Phoenix, which is read at its latest iOS release ({{PHOENIX_TAG}}): when we checked, its default branch was configured for testnet. Every engine and library is read at the version its wallet pins. A snapshot is recorded whenever any of them moves: {{SNAPSHOTS_N}} since {{FIRST_DAY}}, when this page began counting Bitcoin wallets only. Changes are shown against that first snapshot. Hover or focus a line for each snapshot. The {{EARLIER_N}} earlier snapshots ({{EARLIER_FIRST}} to {{EARLIER_LAST}}) compared Lightning wallets and counted their Lightning engines; they are in <a href="data.json">data.json</a>.</p>
-<div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table">
+<p class="sub">Wallet repositories are read at the head of their main branch, except Phoenix and Winnow, which are read at their latest release ({{PHOENIX_TAG}}, {{WINNOW_TAG}}); Phoenix’s default branch was configured for testnet when we checked. Every engine and library is read at the version its wallet pins. A snapshot is recorded whenever any of them moves: {{SNAPSHOTS_N}} since {{FIRST_DAY}}, when this page began counting Bitcoin wallets only. Changes are shown against that first snapshot. On 30 October 2026 Winnow’s measured source moved from its Swift app to its Lean 4 rewrite, so its line jumps there. Hover or focus a line for each snapshot. The {{EARLIER_N}} earlier snapshots ({{EARLIER_FIRST}} to {{EARLIER_LAST}}) compared Lightning wallets and counted their Lightning engines; they are in <a href="data.json">data.json</a>.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Over time, scrollable table">
 <table class="trend">
 <thead><tr><th scope="col">Wallet</th><th scope="col">Lines of code</th><th scope="col">Third-party packages</th><th scope="col">Functions above CC 12</th></tr></thead>
 <tbody>
@@ -249,33 +211,31 @@ ul.evidence code{font-size:.8em}
 {{SNAPSHOT_TABLES}}
 {{OLDER}}
 </details>
-</section>
+</div></section>
 
-<section id="scope">
+<section id="scope"><div class="wrap">
 <h2>What the numbers leave out</h2>
-<h3>Less code is not proof of safety</h3>
-<p>A smaller codebase is quicker to read and review. It does not show the code is correct, and it says nothing about whether anyone independent has reviewed it. Check each project’s own security page.</p>
-<h3>The wallets do different amounts of work</h3>
-<p>Each count is the whole app, not only its on-chain wallet. Zeus also manages remote LND and Core Lightning nodes and includes Cashu, Nostr Wallet Connect and a point of sale. Bitkit includes Pubky contacts, Paykit and Trezor support. Winnow includes shared accounts with MuSig2 and 2-of-3 signing. BlueWallet includes Lightning wallet types (an LNDHub custodian and an Ark one). Green’s count includes its <code>lightning</code> folder. Muun includes Lightning payments through swaps.</p>
-<h3>Engines are not counted</h3>
-<p>Phoenix, Bitkit, Blixt, Zeus and Green build their Bitcoin wallet on an engine that is a separate project: lightning-kmp, LDK Node with BDK, LND and gdk. The code size and complexity here are for the wallet itself, so those wallets look smaller than everything they ship. Winnow, Muun and BlueWallet have no such engine. Winnow and Muun keep their own Bitcoin library in the repository, which is counted.</p>
-<h3>Who can move on-chain funds</h3>
-<p>Where a service has to cosign, the wallet cannot spend without it, or only after a delay. The fourth column of the table at the top says which wallets that applies to, and the notes under each cell give the account type.</p>
-</section>
+<div class="grid">
+<div class="card"><h3>Less code is not proof of safety</h3><p>A smaller codebase is quicker to read and review. It does not show the code is correct, and it says nothing about whether anyone independent has reviewed it. Check each project’s own security page.</p></div>
+<div class="card"><h3>The wallets do different amounts of work</h3><p>Each count is the whole app, not only its on-chain wallet. Zeus also manages remote LND and Core Lightning nodes and includes Cashu, Nostr Wallet Connect and a point of sale. Bitkit includes Pubky contacts, Paykit and Trezor support. Winnow includes k-of-n multisig accounts and a Ledger signer. BlueWallet includes Lightning wallet types (an LNDHub custodian and an Ark one). Green’s count includes its <code>lightning</code> folder. Muun includes Lightning payments through swaps.</p></div>
+<div class="card"><h3>Engines are not counted</h3><p>Phoenix, Bitkit, Blixt, Zeus and Green build their Bitcoin wallet on an engine that is a separate project: lightning-kmp, LDK Node with BDK, LND and gdk, so they look smaller than everything they ship. Winnow’s engine is a UI framework, LeanNative; its Bitcoin code is its own and counted, as Muun’s is. BlueWallet has no engine.</p></div>
+<div class="card"><h3>Who can move on-chain funds</h3><p>Where a service has to cosign, the wallet cannot spend without it, or only after a delay. The fourth column of the table at the top says which wallets that applies to, and the notes under each cell give the account type.</p></div>
+</div>
+</div></section>
 
-<section id="method">
+<section id="method"><div class="wrap">
 <h2>How we measured</h2>
-<ul>
-<li><strong>Lines:</strong> <a href="https://github.com/AlDanial/cloc">cloc</a> 2.06 counted non-blank, non-comment lines in each app’s programming languages, for code that builds into the iPhone app. Characters were counted after removing comments and all whitespace. Excluded: tests; Android, desktop and web code; build tools; files marked as generated (protobuf, sqlc and UniFFI bindings); and vendored third-party code. Rust test modules inside source files were removed.</li>
-<li><strong>Complexity:</strong> each file was parsed with <a href="https://tree-sitter.github.io/">tree-sitter</a>, and one rule applied to every language. CC is 1, plus 1 for each <code>if</code> or <code>guard</code>, loop, <code>catch</code>, ternary, <code>&amp;&amp;</code>, <code>||</code>, <code>??</code> or elvis, and non-default <code>case</code>, <code>when</code> or <code>match</code> arm. Closures, lambdas and nested functions count toward the function that contains them, so a React screen written as one function component counts as one function. Tree-sitter could not fully parse at most {{PE_MAX}}% of any wallet’s files; it recovers locally, so their functions are still counted.</li>
-<li><strong>Dependencies:</strong> read from each app’s own lockfiles (Swift Package Manager, CocoaPods, npm, yarn and bun). Kotlin libraries were resolved from Maven Central’s metadata for the iPhone target. Rust crates come from <code>cargo tree</code> for <code>aarch64-apple-ios</code> at each prebuilt library’s pinned source. Go modules come from <code>go list -deps</code> for iOS, with the build tags LND’s own iOS build uses or, for Muun, none.</li>
+<ul class="list">
+<li><strong>Lines:</strong> <a href="https://github.com/AlDanial/cloc">cloc</a> 2.06 counted non-blank, non-comment lines in each app’s programming languages, for code that builds into the iPhone app. Characters were counted after removing comments and all whitespace. Excluded: tests; Android, desktop and web code; build tools; files marked as generated (protobuf, sqlc and UniFFI bindings); and vendored third-party code. Rust test modules inside source files were removed. Winnow’s test oracles, test vectors and UI tests are left out by name; Lean proofs are counted as lines.</li>
+<li><strong>Complexity:</strong> each file was parsed with <a href="https://tree-sitter.github.io/">tree-sitter</a>, and one rule applied to every language. CC is 1, plus 1 for each <code>if</code> or <code>guard</code>, loop, <code>catch</code>, ternary, <code>&amp;&amp;</code>, <code>||</code>, <code>??</code> or elvis, and non-default <code>case</code>, <code>when</code> or <code>match</code> arm. Closures, lambdas and nested functions count toward the function that contains them, so a React screen written as one function component counts as one function. Tree-sitter could not fully parse at most {{PE_MAX}}% of any wallet’s files; it recovers locally, so their functions are still counted. No tree-sitter grammar parses current Lean, so Lean is read lexically under the same rule: each <code>def</code>, <code>instance</code>, <code>abbrev</code> or <code>opaque</code> is a function, and theorems are not.</li>
+<li><strong>Dependencies:</strong> read from each app’s own lockfiles (Swift Package Manager, Lake, CocoaPods, npm, yarn and bun). Kotlin libraries were resolved from Maven Central’s metadata for the iPhone target. Rust crates come from <code>cargo tree</code> for <code>aarch64-apple-ios</code> at each prebuilt library’s pinned source. Go modules come from <code>go list -deps</code> for iOS, with the build tags LND’s own iOS build uses or, for Muun, none.</li>
 <li><strong>Vendored code:</strong> each repository was searched for third-party code committed into it: vendor directories, committed CocoaPods, copied npm packages, license files below the root, committed binaries and dependency patches.</li>
 <li><strong>Features:</strong> each cell was checked by hand in the app’s and the engine’s source {{REVIEWED}}, at the revisions in <code>reviewed.json</code>. The build compares every cited passage with today’s code and lists any that have changed. The rows and what each value means are in <code>features/rows.json</code>.</li>
-<li><strong>Embedded engines:</strong> counted at the version each app pins, as the named library only, and kept out of every total. Phoenix’s lightning-kmp comes from its Gradle catalog. Bitkit’s LDK Node and libraries come from its Package.resolved, and rust-lightning from LDK Node’s lockfile. Blixt’s LND is the fork its react-native-turbo-lnd release builds. Zeus’s LND, LDK Node and Cashu versions come from its <code>fetch-libraries-versions.json</code>, and its count uses its default embedded LND. Green’s gdk is the release its <code>fetch_gdk_binaries.sh</code> downloads.</li>
+<li><strong>Embedded engines:</strong> counted at the version each app pins, as the named library only, and kept out of every total. Winnow’s LeanNative ({{LEANNATIVE_SRC}}) is the commit its <code>lake-manifest.json</code> pins: its Lean framework, the Lean that prints the shell’s Objective-C, and its C shim. Phoenix’s lightning-kmp comes from its Gradle catalog. Bitkit’s LDK Node and libraries come from its Package.resolved, and rust-lightning from LDK Node’s lockfile. Blixt’s LND is the fork its react-native-turbo-lnd release builds. Zeus’s LND, LDK Node and Cashu versions come from its <code>fetch-libraries-versions.json</code>, and its count uses its default embedded LND. Green’s gdk is the release its <code>fetch_gdk_binaries.sh</code> downloads.</li>
 </ul>
 <details>
 <summary>Exact sources</summary>
-<div class="table-wrap" role="region" tabindex="0" aria-label="Scrollable table">
+<div class="table-wrap" role="region" tabindex="0" aria-label="Exact sources, scrollable table">
 <table>
 <thead><tr><th scope="col">Wallet</th><th scope="col">App source</th><th scope="col">Embedded engines</th><th scope="col">Prebuilt libraries resolved for dependencies</th></tr></thead>
 <tbody>
@@ -284,27 +244,35 @@ ul.evidence code{font-size:.8em}
 </table>
 </div>
 </details>
-<p>Each project changes often. These numbers are measured again every day, and each snapshot is dated. They are a measurement, not a ranking.</p>
+<p class="prose">Each project changes often. These numbers are measured again whenever a pinned source moves, and each snapshot is dated. They are a measurement, not a ranking.</p>
 <h3 id="reproduce">Reproduce it</h3>
-<p>Everything on this page is generated from the <a href="https://github.com/winnowwallet/compare">source repository</a>. It pins every project to an exact commit, and <code>data.json</code> holds every measurement, including the full package lists. To rebuild it:</p>
+<p class="prose">Everything on this page is generated from the <a href="https://github.com/winnowwallet/compare">source repository</a>. It pins every project to an exact commit, and <code>data.json</code> holds every measurement, including the full package lists. To rebuild it:</p>
 <pre><code>git clone https://github.com/winnowwallet/compare
 cd compare
 npm ci &amp;&amp; pip install -r requirements.txt
 ./build          # fetch the pinned sources, measure, render
 git diff         # nothing changes if the measurement reproduces</code></pre>
-<p>It needs Python 3.11, Node, Go and Cargo, plus network access to GitHub, crates.io, the Go module proxy and Maven Central. Feature cells and profile facts are reviewed by hand. The build checks that every citation resolves at the revision it was reviewed against, and reports which cited code has changed since.</p>
-</section>
+<p class="prose">It needs Python 3.11, Node, Go and Cargo, plus network access to GitHub, crates.io, the Go module proxy and Maven Central; no Lean toolchain is needed. Feature cells and profile facts are reviewed by hand. The build checks that every citation resolves at the revision it was reviewed against, and reports which cited code has changed since.</p>
+</div></section>
 
-<section id="other">
+<section id="other"><div class="wrap">
 <h2>Not compared</h2>
-<p>This comparison needs the iPhone app’s source, so closed-source and custodial wallets cannot be measured and are left out, however widely they are used. Other open-source wallets could be added.</p>
-<ul>
+<p class="sub">This comparison needs the iPhone app’s source, so closed-source and custodial wallets cannot be measured and are left out, however widely they are used. Other open-source wallets could be added.</p>
+<ul class="list">
 {{OTHER}}
 </ul>
-</section>
+</div></section>
 </main>
-<footer><div class="bar"><nav aria-label="Footer"><a href="https://winnowwallet.com/">Winnow</a><a href="https://census.winnowwallet.com/">Census</a><a href="data.json">All data (JSON)</a><a href="https://github.com/winnowwallet/compare">Source</a></nav></div></footer>
+
+<footer><div class="wrap cols"><nav aria-label="Footer"><a href="https://winnowwallet.com/">Winnow</a><a href="https://census.winnowwallet.com/">Census</a><a href="https://leannative.com/">LeanNative</a><a href="data.json">All data (JSON)</a><a href="https://github.com/winnowwallet/compare">Source</a></nav><p>Snapshot of {{SNAPSHOT}}</p></div></footer>
 <script>
+// Light or dark: follows the system until chosen, then remembers the choice in this browser.
+document.querySelector('.theme').addEventListener('click', () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+});
 // Sparklines: hovering or focusing shows the nearest snapshot's value and date in place of today's; arrow keys step.
 for (const svg of document.querySelectorAll('svg.spark')) {
   const d = svg.dataset.d.split(','), v = svg.dataset.v.split(',').map(Number);

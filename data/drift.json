@@ -1,17 +1,17 @@
 {
  "reviewed": "2026-10-02",
- "reviewed_latest": "2026-10-02",
- "measured": "2026-10-10",
- "citations": 420,
- "same": 377,
- "moved": 32,
- "changed": 11,
+ "reviewed_latest": "2026-10-30",
+ "measured": "2026-10-30",
+ "citations": 441,
+ "same": 401,
+ "moved": 31,
+ "changed": 9,
  "gone": 0,
  "by_wallet": {
   "Winnow": {
-   "same": 49,
-   "moved": 1,
-   "changed": 2,
+   "same": 73,
+   "moved": 0,
+   "changed": 0,
    "gone": 0
   },
   "BlueWallet": {
@@ -89,18 +89,6 @@
    "status": "changed"
   },
   {
-   "wallet": "Winnow",
-   "fact": "profile.engine",
-   "cite": "winnow:README.md:7",
-   "status": "changed"
-  },
-  {
-   "wallet": "Winnow",
-   "fact": "profile.chain_data",
-   "cite": "winnow:README.md:7",
-   "status": "changed"
-  },
-  {
    "wallet": "BlueWallet",
    "fact": "profile.engine",
    "cite": "bluewallet:package.json:132-135",
@@ -126,13 +114,6 @@
   }
  ],
  "moved_within_file": [
-  {
-   "wallet": "Winnow",
-   "fact": "features.license",
-   "cite": "winnow:README.md:162",
-   "status": "moved",
-   "now_at": 148
-  },
   {
    "wallet": "BlueWallet",
    "fact": "features.own_server",

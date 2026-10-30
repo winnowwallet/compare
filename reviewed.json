@@ -1,7 +1,8 @@
 {
  "about": "The revision each hand-reviewed fact in features/ and wallets.json was checked against, and when. Citations resolve and link here, so they stay valid as sources.json moves forward; data/drift.json shows which cited code has changed since. `tools/evidence.py --adopt [source ...]` starts a re-review.",
  "sources": {
-  "winnow": {"repo": "https://github.com/winnowwallet/winnow", "rev": "7751cfd30f5e1b108fcfe322db38b76948a0bb1d", "date": "2026-10-02"},
+  "winnow": {"repo": "https://github.com/winnowwallet/winnow-lean", "rev": "bce5d97c0d317bef862cb616ef47d71603df100a", "date": "2026-10-30"},
+  "leannative": {"repo": "https://github.com/LeanNative/leannative", "rev": "7ab7ec8f523263491cc0b532c187cbd59daf1da3", "date": "2026-10-30"},
   "phoenix": {"repo": "https://github.com/ACINQ/phoenix", "rev": "c3b0ae7882ad256c0b35e94c66d5f1f27305c208", "date": "2026-10-02"},
   "lightning-kmp": {"repo": "https://github.com/ACINQ/lightning-kmp", "rev": "9dacdc0b4ac981dcb8fed9be23b53e6994eab27a", "date": "2026-10-02"},
   "bitkit": {"repo": "https://github.com/synonymdev/bitkit-ios", "rev": "f751f505710e175bbbf4ee9f8cf8ca09fc471df7", "date": "2026-10-02"},

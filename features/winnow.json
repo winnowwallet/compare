@@ -3,77 +3,77 @@
  "features": {
   "multisig": {
    "value": "yes",
-   "evidence": "winnow:Sources/WinnowApp/VaultsView.swift:41-42; winnow:Sources/WinnowApp/VaultsView.swift:47-48; winnow:Sources/WinnowApp/SharedSavingsViews.swift:104-105",
-   "note": "k-of-n threshold accounts and all-keys MuSig2; add this phone's key and pasted keys from other signers"
+   "evidence": "winnow:LeanApp/WinnowApp/Multisig.lean:423-432; winnow:LeanApp/WinnowApp/Multisig.lean:528-535; winnow:LeanApp/WinnowApp/Signers.lean:123-134",
+   "note": "k-of-n Taproot accounts in Advanced mode, members from this phone, paired Ledgers and keys others sent; MuSig2 removed"
   },
   "hw_signer": {
-   "value": "partial",
-   "evidence": "winnow:Sources/WinnowApp/VaultsView.swift:72; winnow:Sources/WinnowApp/MuSig2SignView.swift:126-136",
-   "note": "Cosigns by pasting PSBTs with another Winnow or Core; hardware wallets are stated as not yet verified"
+   "value": "yes",
+   "evidence": "winnow:LeanApp/WinnowApp/Real/LedgerTransport.lean:102-106; winnow:LeanApp/WinnowApp/Main.lean:138-151; winnow:LeanApp/WinnowApp/Signers.lean:152-160; winnow:LeanApp/WinnowApp/Multisig.lean:657-659",
+   "note": "Pairs a Ledger over Bluetooth as a multisig member, registers the account on it and has it sign; the everyday wallet signs in-app; this build has paired only a simulated Ledger so far"
   },
   "psbt": {
    "value": "partial",
-   "evidence": "winnow:Sources/WinnowApp/VaultSpendSession.swift:102-111; winnow:Sources/WinnowApp/VaultSpendSession.swift:400-403; winnow:Sources/WinnowApp/MuSig2SignView.swift:126-136",
-   "note": "Shared accounts only: copy or share a request or raw PSBT and paste one back; the everyday wallet signs in-app"
+   "evidence": "winnow:LeanApp/WinnowApp/Multisig.lean:664-674; winnow:LeanApp/WinnowApp/Multisig.lean:602-605; winnow:LeanApp/WinnowApp/Send.lean:63-65",
+   "note": "Multisig accounts only: copy a BIP174 v0 PSBT to share and paste co-signers' PSBTs back; the everyday wallet signs in-app"
   },
   "watch_only": {
    "value": "partial",
-   "evidence": "winnow:Sources/WinnowApp/OnboardingView.swift:39; winnow:Sources/WalletCore/Wallet/ImportBundle.swift:61-63; winnow:Sources/WinnowApp/SharedSavingsViews.swift:207",
-   "note": "Descriptor-only backup JSON restores watch-only; shared accounts add from a card; no xpub or address entry"
+   "evidence": "winnow:LeanApp/WinnowApp/View.lean:13-17; winnow:Lean/Winnow/Wallet/Wallet.lean:954-959; winnow:LeanApp/WinnowApp/Real/Multisig.lean:207-211",
+   "note": "Descriptor-only backup JSON restores watch-only; no xpub or address entry; joined accounts must include this phone's key"
   },
   "passphrase": {
    "value": "no",
-   "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:646-647; winnow:Sources/WalletCore/Wallet/ImportBundle.swift:443",
-   "note": "Seed is derived with an empty BIP39 passphrase; no passphrase field when creating, backing up or importing"
+   "evidence": "winnow:Lean/Winnow/Keys/BIP39.lean:71-72; winnow:Lean/Winnow/Wallet/Wallet.lean:226; winnow:Lean/Winnow/Wallet/Wallet.lean:938",
+   "note": "Seed is derived with BIP39's empty default passphrase on create and import; no passphrase field anywhere in the app"
   },
   "coin_control": {
    "value": "no",
-   "evidence": "winnow:Sources/WinnowApp/AppModel.swift:1893-1897; winnow:Sources/WalletCore/Wallet/Vault.swift:589-592",
-   "note": "Send picks coins automatically, largest first, for the wallet and shared accounts; coin list is read-only"
+   "evidence": "winnow:Lean/Winnow/Wallet/CoinSelection.lean:118-130; winnow:Lean/Winnow/Wallet/Wallet.lean:685; winnow:Lean/Winnow/Wallet/MultisigAccount.lean:1185; winnow:LeanApp/WinnowApp/Multisig.lean:609-613",
+   "note": "Send picks coins automatically, largest first, for the wallet and multisig accounts; an account's coin list is read-only"
   },
   "fee_bump": {
    "value": "partial",
-   "evidence": "winnow:Sources/WinnowApp/HomeView.swift:328-329; winnow:Sources/WalletCore/Wallet/Wallet.swift:781-789; winnow:Sources/WinnowApp/AppModel.swift:2040-2046",
-   "note": "RBF Bump fee in Advanced mode for own pending sends with unspent change; none for shared accounts; no CPFP"
+   "evidence": "winnow:LeanApp/WinnowApp/Home.lean:317-322; winnow:Lean/Winnow/Wallet/Wallet.lean:304-311; winnow:Lean/Winnow/Wallet/Wallet.lean:809-814; winnow:LeanApp/WinnowApp/Home.lean:279-282",
+   "note": "RBF Bump fee in Advanced mode for own pending sends with unspent change; accounts only rebroadcast or give up; no CPFP"
   },
   "taproot": {
    "value": "yes",
-   "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:646-652; winnow:Sources/WinnowApp/ReceiveView.swift:151; winnow:README.md:8",
-   "note": "Receives to BIP86 bc1p addresses by default; shared accounts are Taproot too (script path or MuSig2)"
+   "evidence": "winnow:Lean/Winnow/Wallet/Wallet.lean:226-230; winnow:Lean/Winnow/Wallet/Wallet.lean:166-169; winnow:Lean/Winnow/Wallet/MultisigAccount.lean:10",
+   "note": "Receives to BIP86 bc1p addresses by default; multisig accounts are Taproot too (script path, NUMS internal key)"
   },
   "descriptors": {
    "value": "partial",
-   "evidence": "winnow:Sources/WinnowApp/AccountDetailView.swift:120-123; winnow:Sources/WinnowApp/VaultsView.swift:120-125; winnow:Sources/WalletCore/Wallet/ImportBundle.swift:32",
-   "note": "Shared accounts show a copyable descriptor in Advanced mode; the everyday wallet's is only inside its backup JSON"
+   "evidence": "winnow:LeanApp/WinnowApp/Multisig.lean:465-467; winnow:LeanApp/WinnowApp/Multisig.lean:614-615; winnow:LeanApp/WinnowApp/Multisig.lean:525; winnow:Lean/Winnow/Wallet/Wallet.lean:894",
+   "note": "Multisig accounts join from and share a tr() descriptor; the everyday wallet's is only inside its backup file"
   },
   "own_server": {
    "value": "yes",
-   "evidence": "winnow:Sources/WinnowApp/SettingsView.swift:83-95; winnow:Sources/WinnowApp/SettingsView.swift:106; winnow:Sources/WalletCore/Network/Peers/PeerPool.swift:635-637",
+   "evidence": "winnow:LeanApp/WinnowApp/Settings.lean:161-165; winnow:LeanApp/WinnowApp/Pure.lean:463; winnow:Lean/Winnow/IO/Pool.lean:215-218",
    "note": "Manual host:port peers under Advanced mode, tried first; peer must serve compact filters; pool still fills from others"
   },
   "verifies_chain": {
    "value": "yes",
-   "evidence": "winnow:Sources/WalletCore/Network/Filters/FilterSync.swift:81-98; winnow:Sources/WalletCore/Network/Headers/README.md:5-6",
-   "note": "Checks header work, cross-checks filter headers across peers, matches filters locally; verifies fetched blocks"
+   "evidence": "winnow:Lean/Winnow/Net/HeaderChain.lean:12-15; winnow:Lean/Winnow/IO/Filters.lean:5-11; winnow:LeanApp/WinnowApp/Real/Stack.lean:307",
+   "note": "Checks header work, cross-checks filter headers across peers, matches filters locally; merkle-checks fetched blocks"
   },
   "tor": {
    "value": "partial",
-   "evidence": "winnow:README.md:11; winnow:Sources/WinnowApp/PeerGatewaysSection.swift:17-21; winnow:Sources/WalletCore/Network/Transport/TailnetGatewayDiscovery.swift:18-19",
+   "evidence": "winnow:README.md:54-56; winnow:LeanApp/WinnowApp/Settings.lean:130-138; winnow:Lean/Winnow/IO/Gateways.lean:6-11",
    "note": "No bundled Tor or I2P client; routes peers through SOCKS gateways you run, found on Tailscale or set by hand"
   },
   "seed_standard": {
    "value": "yes",
-   "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:646-649; winnow:Sources/WinnowApp/BackupSection.swift:43; winnow:Sources/WalletCore/Keys/BIP86.swift:10",
-   "note": "12-word BIP39 phrase on BIP86 paths; the app restores only from its backup file, not from the words alone"
+   "evidence": "winnow:Lean/Winnow/Wallet/Wallet.lean:83; winnow:Lean/Winnow/Wallet/Wallet.lean:224-229; winnow:LeanApp/WinnowApp/Backup.lean:160-163",
+   "note": "12-word BIP39 phrase on BIP86 paths, shown in Advanced mode; the app restores only from its backup file, not the words alone"
   },
   "cloud_backup": {
    "value": "yes",
-   "evidence": "winnow:Sources/WinnowApp/CloudBackupController.swift:24; winnow:Sources/WalletCore/Wallet/CloudWalletBackup.swift:4-6; winnow:Sources/WinnowApp/ICloudBackupStore.swift:116-117",
-   "note": "On by default: AES-GCM backup to the person's private CloudKit database, key in iCloud Keychain; file backup too"
+   "evidence": "winnow:LeanApp/WinnowApp/Real/CloudBackup.lean:104; winnow:Lean/Winnow/Wallet/CloudWalletBackup.lean:7-10; winnow:LeanApp/WinnowApp/Real/CloudBackup.lean:397-399; winnow:LeanApp/WinnowApp/Real/CloudBackup.lean:460-463",
+   "note": "On by default: AES-256-GCM copy in the person's private CloudKit database, key in iCloud Keychain; backup file too"
   },
   "license": {
    "value": "MIT",
-   "evidence": "winnow:LICENSE:1; winnow:README.md:162",
+   "evidence": "winnow:LICENSE:1; winnow:README.md:158",
    "note": "MIT License"
   }
  }

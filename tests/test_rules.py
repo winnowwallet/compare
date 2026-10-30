@@ -9,6 +9,7 @@ sys.path.insert(0, str(HERE.parent / 'tools'))
 
 from common import strip_rust_tests  # noqa: E402
 from complexity import analyze  # noqa: E402
+import lean  # noqa: E402
 
 
 def scores(name):
@@ -57,6 +58,17 @@ class Complexity(unittest.TestCase):
             (1, 'f'),
             (2, 'd'),
         ])
+
+    def test_lean(self):
+        found, proofs = lean.analyze((HERE / 'complexity' / 'sample.lean').read_text())
+        self.assertEqual([(cc, fn) for cc, _, fn, _ in found], [
+            # if, &&, ||, else if, for, unless, while, catch, 2 non-wildcard match arms (or-pattern is one),
+            # 1 non-wildcard fun alternative, the where helper's if; strings, a char and comments add nothing
+            (1 + 12, 'f'),
+            (1 + 2, 'g'),                          # two non-wildcard arms of a definition by patterns
+            (2, '(instance ToString Bool)'),       # if
+        ])
+        self.assertEqual(proofs, (1, 2))           # the theorem is a proof, not a function
 
 
 class RustTests(unittest.TestCase):

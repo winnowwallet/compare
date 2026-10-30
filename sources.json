@@ -1,13 +1,22 @@
 {
- "snapshot": "2026-10-10",
+ "snapshot": "2026-10-30",
  "method": 2,
  "sources": {
   "winnow": {
-   "repo": "https://github.com/winnowwallet/winnow",
-   "track": {"branch": "HEAD"},
-   "rev": "13db07a9017088db9ca51852c0d55c08de7891d9",
-   "label": "winnowwallet/winnow@13db07a",
-   "date": "2026-10-02"
+   "repo": "https://github.com/winnowwallet/winnow-lean",
+   "track": {"tag_latest": "v(\\d+(?:\\.\\d+)*)"},
+   "rev": "bce5d97c0d317bef862cb616ef47d71603df100a",
+   "label": "winnowwallet/winnow-lean v0.9.5",
+   "date": "2026-10-30",
+   "tag": "v0.9.5",
+   "version": "0.9.5"
+  },
+  "leannative": {
+   "repo": "https://github.com/LeanNative/leannative",
+   "track": {"from": "winnow:LeanApp/lake-manifest.json", "lake": "elmlean"},
+   "rev": "7ab7ec8f523263491cc0b532c187cbd59daf1da3",
+   "label": "LeanNative/leannative@7ab7ec8",
+   "date": "2026-10-29"
   },
   "phoenix": {
    "repo": "https://github.com/ACINQ/phoenix",
@@ -170,9 +179,20 @@
  "wallets": {
   "Winnow": {
    "app_source": "winnow",
-   "code": {"app": ["winnow:Sources/WinnowApp"], "bitcoin": ["winnow:Sources/WalletCore"]},
-   "deps": {"spm": "winnow:Package.resolved"},
-   "complete": ["winnow:Sources"]
+   "code": {
+    "app": ["winnow:LeanApp/WinnowApp", "winnow:LeanApp/WinnowApp.lean"],
+    "bitcoin": ["winnow:Lean/Winnow", "winnow:Lean/Winnow.lean", "winnow:Lean/Secp", "winnow:Lean/Secp.lean"],
+    "engine": [
+     "leannative:framework/lean/ElmLean",
+     "leannative:framework/lean/ElmLean.lean",
+     "leannative:framework/lean/ElmShell",
+     "leannative:framework/lean/ElmShell.lean",
+     "leannative:framework/native/c"
+    ]
+   },
+   "skip": ["winnow:Lean/Oracle", "winnow:Lean/Vectors", "winnow:LeanApp/ios"],
+   "deps": {"lake": "winnow:LeanApp/lake-manifest.json", "lake_engine": "elmlean"},
+   "complete": ["winnow:Lean", "winnow:LeanApp"]
   },
   "BlueWallet": {
    "app_source": "bluewallet",

@@ -144,14 +144,14 @@ for w in ORDER:
 axis = [''.join(f'<span class="u-{u}" style="left:{100 * v / MAX[u]:.3f}%">{t}</span>' for v, t in TICKS[u]) for u in 'lc']
 
 # ── languages ──────────────────────────────────────────────────
-LANG_GROUP = {'Swift': 'Swift', 'Kotlin': 'Kotlin', 'Rust': 'Rust', 'Go': 'Go', 'TypeScript': 'TypeScript/JS',
+LANG_GROUP = {'Lean': 'Lean', 'Swift': 'Swift', 'Kotlin': 'Kotlin', 'Rust': 'Rust', 'Go': 'Go', 'TypeScript': 'TypeScript/JS',
               'JavaScript': 'TypeScript/JS', 'JSX': 'TypeScript/JS', 'Objective-C': 'C family',
               'Objective-C++': 'C family', 'C': 'C family', 'C++': 'C family', 'C/C++ Header': 'C family'}
-LANGS = ['Swift', 'Kotlin', 'Rust', 'Go', 'TypeScript/JS', 'C family']
+LANGS = ['Lean', 'Swift', 'Kotlin', 'Rust', 'Go', 'TypeScript/JS', 'C family']
 languages, lang_rows = {}, []
 for w in ORDER:
     shares = {}
-    for part in loc[w].values():
+    for part in loc[w].values():  # the app, its own Bitcoin library and its embedded engine: what ships
         for lang, n in part['languages'].items():
             shares[LANG_GROUP[lang]] = shares.get(LANG_GROUP[lang], 0) + n
     total = sum(shares.values())
@@ -190,6 +190,7 @@ def dep_cell(w, key):
 
 dep_rows = '\n'.join([
     '<tr><th scope="row">Swift packages</th>' + ''.join(dep_cell(w, 'spm') for w in ORDER) + '</tr>',
+    '<tr><th scope="row">Lean packages (Lake)</th>' + ''.join(dep_cell(w, 'lake') for w in ORDER) + '</tr>',
     '<tr><th scope="row">Kotlin libraries</th>' + ''.join(dep_cell(w, 'kotlin') for w in ORDER) + '</tr>',
     '<tr><th scope="row">Rust crates, inside prebuilt libraries</th>' + ''.join(dep_cell(w, 'rust') for w in ORDER) + '</tr>',
     '<tr><th scope="row">Go modules, inside the Go library</th>' + ''.join(dep_cell(w, 'go') for w in ORDER) + '</tr>',
@@ -226,7 +227,7 @@ for title, items in GROUPS:
         for w in ORDER:
             f = features[w][key]
             cls, glyph, word = MARK[f['value']]
-            cells.append(f'<td class="{cls}" title="{esc(f["note"])}"><span aria-hidden="true">{glyph}</span> {word}</td>')
+            cells.append(f'<td class="{cls}" title="{esc(f["note"])}"><span class="chip"><span aria-hidden="true">{glyph}</span> {word}</span></td>')
         feat_rows.append(f'<tr><th scope="row">{label}</th>{"".join(cells)}</tr>')
 feat_rows.append(f'<tr class="group"><th scope="rowgroup" colspan="{len(ORDER) + 1}">License</th></tr><tr><th scope="row">Source license</th>' +
                  ''.join(f'<td>{esc(features[w]["license"]["value"])}</td>' for w in ORDER) + '</tr>')
@@ -354,11 +355,14 @@ parse_errors = max(100 * sum(p.get('files_with_parse_errors', 0) for kk, p in cc
 
 
 # What the page says about Winnow's own project, and the file at the pinned revision that has to keep saying it.
+SECP_WRAPPER = 'Lean/Winnow/Keys/Secp256k1.lean'
+PROOF_GATE = 'Lean/Secp/Proofs/Gate.lean'
 WINNOW_STATEMENTS = [
-    ('README.md', ['BIP157/158'], 'Winnow checks the chain with compact block filters from Bitcoin peers'),
-    ('README.md', ['Taproot today'], 'Winnow receives to Taproot (P2TR) addresses'),
-    ('README.md', ['SOCKS gateways'], 'Winnow reaches Tor and I2P through gateways, with no client of its own'),
-    ('.swiftlint.yml', ['error: 8', 'ignores_case_statements: true'], 'Winnow’s CI rejects a function over 8 as SwiftLint counts it, leaving out case arms'),
+    ('README.md', ['compact block filters'], 'Winnow checks the chain with compact block filters from Bitcoin peers'),
+    ('README.md', ['SOCKS gateways', 'bundles no Tor or I2P'], 'Winnow reaches Tor and I2P through gateways, with no client of its own'),
+    ('README.md', ['compiles no Swift at all'], 'Winnow is written in Lean 4 and compiles no Swift'),
+    (SECP_WRAPPER, ['Not constant-time'], 'Winnow’s signing is not constant-time'),
+    (PROOF_GATE, ['#assert_axioms', 'sorry'], 'Winnow’s build fails if a listed theorem rests on sorry or an extra axiom'),
 ]
 
 
@@ -373,16 +377,34 @@ def claims():
         wrong.append('"The other wallets count … times as many lines" needs every other wallet above Winnow')
     if cpl['Winnow'] <= ocpl[-1]:
         wrong.append('"Winnow’s lines are denser" needs Winnow’s characters per line above every other wallet’s')
-    if [p.split('@')[0] for p in deps['Winnow'].get('spm', [])] != ['swift-secp256k1'] or deps['Winnow']['total'] != 1:
-        wrong.append('"Winnow depends on 1 third-party package: swift-secp256k1" no longer holds')
-    if sum(1 for v in languages['Winnow'].values() if v) != 1:
-        wrong.append('"Winnow is written in one language" no longer holds')
+    if deps['Winnow']['total'] or deps['Winnow'].get('lake') != []:
+        wrong.append('"Winnow resolves no third-party package; its Lake manifest pins only LeanNative" no longer holds')
+    if [k.split(':')[0] for k in CONFIG['wallets']['Winnow']['code'].get('engine', [])] != ['leannative'] * len(CONFIG['wallets']['Winnow']['code']['engine']):
+        wrong.append('"Winnow’s engine column is LeanNative" no longer matches sources.json')
+    if not W_PROOFS['bitcoin'][0] or W_PROOFS['app'][0]:
+        wrong.append('"Winnow’s theorems are all in its Bitcoin library" no longer holds')
+    if 'onHost' not in W_TOP['function'] and 'perform' not in W_TOP['function']:
+        wrong.append('"Winnow’s most complex functions are its message dispatchers" no longer holds')
+    if languages['Winnow']['Lean'] < 99 or sum(1 for v in languages['Winnow'].values() if v) > 2:
+        wrong.append('"Winnow and its engine are Lean, apart from LeanNative’s small C shim" no longer holds')
     if len(CONFIG['wallets']['Bitkit']['deps']['cargo']) != 4:
         wrong.append('"Bitkit’s four libraries" no longer matches sources.json')
     if not vend['Muun']['copied_lines']:
         wrong.append('"Muun commits the sources of its CocoaPods" no longer holds')
     if wrong:
         raise SystemExit('Page sentences that are no longer true; reword them in page/template.html:\n  ' + '\n  '.join(wrong))
+
+
+W_PROOFS = {part: (p.get('proofs', {}).get('theorems', 0), p.get('proofs', {}).get('lines', 0)) for part, p in loc['Winnow'].items()}
+W_THM, W_PROOF_LINES = W_PROOFS['bitcoin']
+E_THM, E_PROOF_LINES = W_PROOFS.get('engine', (0, 0))
+W_TOP = max((p['most_complex'][0] for part, p in cc['Winnow'].items() if part in COUNTED), key=lambda f: f['cc'])
+
+
+def top_link(f):
+    source, _, rest = f['at'].partition('/')
+    path, _, line = rest.rpartition(':')
+    return link(source, path, line, text=f['function'])
 
 
 NUMBER_WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
@@ -414,6 +436,14 @@ subs = {
     'PODS_NPM_Z': str(deps['Zeus']['pods_from_npm_and_react_native']), 'PODS_NPM_B': str(deps['Blixt']['pods_from_npm_and_react_native']),
     'PODS_NPM_BW': str(deps['BlueWallet']['pods_from_npm_and_react_native']),
     'KOTLIN_N': str(len(deps['Phoenix']['kotlin'])), 'GO_MUUN': f'{len(deps["Muun"]["go"]):,}',
+    'LANG_TH': ''.join(f'<th scope="col" class="num">{l}</th>' for l in LANGS),
+    'W_THM': f'{W_THM:,}', 'W_PROOF_LINES': f'{W_PROOF_LINES:,}', 'E_THM': f'{E_THM:,}', 'E_PROOF_LINES': f'{E_PROOF_LINES:,}',
+    'W_FUNCS': f'{cc["Winnow"]["all"]["functions"]:,}', 'W_TOP': top_link(W_TOP), 'W_GT30': f'{cc["Winnow"]["all"]["cc_gt_30"]:,}',
+    'W_ENGINE_L': f'{loc["Winnow"]["engine"]["code"]:,}', 'W_CHARS': f'{W_C / 1e6:.2f}M',
+    'WINNOW_TAG': esc(CONFIG['sources']['winnow'].get('tag', CONFIG['sources']['winnow']['rev'][:7])),
+    'WINNOW_SRC': f'<a href="{esc(CONFIG["sources"]["winnow"]["repo"])}/tree/{CONFIG["sources"]["winnow"]["rev"]}"><code>{esc(CONFIG["sources"]["winnow"]["label"])}</code></a>',
+    'LEANNATIVE_SRC': f'<a href="{esc(CONFIG["sources"]["leannative"]["repo"])}/tree/{CONFIG["sources"]["leannative"]["rev"]}"><code>{esc(CONFIG["sources"]["leannative"]["label"])}</code></a>',
+    'SECP_LINK': link('winnow', SECP_WRAPPER, text='Keys/Secp256k1.lean'), 'GATE_LINK': link('winnow', PROOF_GATE, text='Secp/Proofs/Gate.lean'),
     'MUUN_VENDORED': f'{vend["Muun"]["copied_lines"]:,}', 'PHOENIX_TAG': esc(CONFIG['sources']['phoenix']['tag']),
 }
 
