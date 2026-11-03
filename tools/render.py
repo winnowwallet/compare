@@ -383,8 +383,8 @@ def claims():
         wrong.append('"Winnow’s engine column is LeanNative" no longer matches sources.json')
     if not W_PROOFS['bitcoin'][0] or W_PROOFS['app'][0]:
         wrong.append('"Winnow’s theorems are all in its Bitcoin library" no longer holds')
-    if 'onHost' not in W_TOP['function'] and 'perform' not in W_TOP['function']:
-        wrong.append('"Winnow’s most complex functions are its message dispatchers" no longer holds')
+    if not any(re.fullmatch(r'(Model\.)?(on\w*Host|step\w*|perform\w*)', f['function']) for f in W_APP_TOP[1:2]):
+        wrong.append('"Winnow’s update dispatchers come next after its most complex function" no longer holds')
     if languages['Winnow']['Lean'] < 99 or sum(1 for v in languages['Winnow'].values() if v) > 2:
         wrong.append('"Winnow and its engine are Lean, apart from LeanNative’s small C shim" no longer holds')
     if len(CONFIG['wallets']['Bitkit']['deps']['cargo']) != 4:
@@ -398,6 +398,7 @@ def claims():
 W_PROOFS = {part: (p.get('proofs', {}).get('theorems', 0), p.get('proofs', {}).get('lines', 0)) for part, p in loc['Winnow'].items()}
 W_THM, W_PROOF_LINES = W_PROOFS['bitcoin']
 E_THM, E_PROOF_LINES = W_PROOFS.get('engine', (0, 0))
+W_APP_TOP = cc['Winnow']['app']['most_complex']
 W_TOP = max((p['most_complex'][0] for part, p in cc['Winnow'].items() if part in COUNTED), key=lambda f: f['cc'])
 
 

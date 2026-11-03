@@ -1,22 +1,22 @@
 {
- "snapshot": "2026-10-30",
+ "snapshot": "2026-11-03",
  "method": 2,
  "sources": {
   "winnow": {
    "repo": "https://github.com/winnowwallet/winnow-lean",
    "track": {"tag_latest": "v(\\d+(?:\\.\\d+)*)"},
-   "rev": "bce5d97c0d317bef862cb616ef47d71603df100a",
-   "label": "winnowwallet/winnow-lean v0.9.5",
-   "date": "2026-10-30",
-   "tag": "v0.9.5",
-   "version": "0.9.5"
+   "rev": "a43913654a6937dd6f207d0b43e0b22013d78f3b",
+   "label": "winnowwallet/winnow-lean v0.9.10",
+   "date": "2026-10-31",
+   "tag": "v0.9.10",
+   "version": "0.9.10"
   },
   "leannative": {
    "repo": "https://github.com/LeanNative/leannative",
-   "track": {"from": "winnow:LeanApp/lake-manifest.json", "lake": "elmlean"},
-   "rev": "7ab7ec8f523263491cc0b532c187cbd59daf1da3",
-   "label": "LeanNative/leannative@7ab7ec8",
-   "date": "2026-10-29"
+   "track": {"from": "winnow:LeanApp/lake-manifest.json", "lake": "leannative"},
+   "rev": "700b3889a99a55804bd7fd256fb4fd3f008e236b",
+   "label": "LeanNative/leannative@700b388",
+   "date": "2026-10-31"
   },
   "phoenix": {
    "repo": "https://github.com/ACINQ/phoenix",
@@ -39,58 +39,57 @@
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {"branch": "HEAD"},
-   "rev": "91fffad36b4693771e34a5d4f38c08dcff374901",
-   "label": "synonymdev/bitkit-ios@91fffad",
-   "date": "2026-10-09"
+   "rev": "2ee882f734759eb5a612d4faf07db14665f3b29f",
+   "label": "synonymdev/bitkit-ios@2ee882f",
+   "date": "2026-11-03"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",
    "track": {"from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved", "spm": "ldk-node"},
-   "lock": "locks/synonym-ldk-node.Cargo.lock",
-   "rev": "190a17d966cf5a685444cfa17c3a419c290bf26c",
-   "version": "0.7.0-rc.66",
-   "label": "synonymdev/ldk-node 0.7.0-rc.66",
-   "date": "2026-09-02"
+   "rev": "1976754dd49886e102f2b3132d5f700d6aabd8d7",
+   "version": "0.7.0-rc.78",
+   "label": "synonymdev/ldk-node 0.7.0-rc.78",
+   "date": "2026-10-27"
   },
   "rust-lightning": {
    "repo": "https://github.com/lightningdevkit/rust-lightning",
    "track": {"from": "synonym-ldk-node:Cargo.lock", "cargo": "lightning", "tag": "v{}"},
-   "rev": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
-   "tag": "v0.2.6",
-   "version": "0.2.6",
-   "label": "lightningdevkit/rust-lightning v0.2.6",
-   "date": "2026-09-09"
+   "rev": "5ce2ecb33d32e3b61ef01d5ead0ee6693c0cd7d1",
+   "tag": "v0.2.7",
+   "version": "0.2.7",
+   "label": "lightningdevkit/rust-lightning v0.2.7",
+   "date": "2026-10-01"
   },
   "bitkit-core": {
    "repo": "https://github.com/synonymdev/bitkit-core",
    "track": {"from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved", "spm": "bitkit-core"},
-   "rev": "b53fa54a16f04940943072bb6e08dc2650302f93",
-   "version": "0.5.18",
-   "label": "synonymdev/bitkit-core 0.5.18",
-   "date": "2026-09-21"
+   "rev": "22e0acc31a97b65205e71f4190cfc659fdecd3ca",
+   "version": "0.8.0-rc11",
+   "label": "synonymdev/bitkit-core 0.8.0-rc11",
+   "date": "2026-10-24"
   },
   "paykit-rs": {
    "repo": "https://github.com/pubky/paykit-rs",
    "track": {"from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved", "spm": "paykit-rs"},
-   "rev": "ad3c72248d18587bb5b6ef3c99b063fa9bf31551",
-   "version": "0.1.0-rc72",
-   "label": "pubky/paykit-rs 0.1.0-rc72",
-   "date": "2026-10-08"
+   "rev": "01de5dd232d2b22f132d066697cce041700e7136",
+   "version": "0.1.1-rc2",
+   "label": "pubky/paykit-rs 0.1.1-rc2",
+   "date": "2026-10-26"
   },
   "vss-rust-client-ffi": {
    "repo": "https://github.com/synonymdev/vss-rust-client-ffi",
    "track": {"from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved", "spm": "vss-rust-client-ffi"},
-   "rev": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
-   "version": "0.5.23",
-   "label": "synonymdev/vss-rust-client-ffi 0.5.23",
-   "date": "2026-08-17"
+   "rev": "eba41ef62b7314aa75827a5a3e71d2b23930b981",
+   "version": "0.5.26-rc1",
+   "label": "synonymdev/vss-rust-client-ffi 0.5.26-rc1",
+   "date": "2026-10-26"
   },
   "blixt": {
    "repo": "https://github.com/hsjoberg/blixt-wallet",
    "track": {"branch": "HEAD"},
-   "rev": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
-   "label": "hsjoberg/blixt-wallet@baa6ba0",
-   "date": "2026-08-21"
+   "rev": "b0408dd1d45a24d7e5a38221adeb79d6309f0e87",
+   "label": "hsjoberg/blixt-wallet@b0408dd",
+   "date": "2026-10-17"
   },
   "turbo-lnd": {
    "repo": "https://github.com/hsjoberg/react-native-turbo-lnd",
@@ -113,44 +112,44 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "340f8803fe86a005c00d36ff436ff24bf94cb506",
-   "label": "ZeusLN/zeus@340f880",
-   "date": "2026-10-10"
+   "rev": "5f56abba57dd25a1881ed41f1ca850c55a4ff182",
+   "label": "ZeusLN/zeus@5f56abb",
+   "date": "2026-11-02"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
    "track": {"from": "zeus:fetch-libraries-versions.json", "json": "embedded-lnd.version", "tag": "{}"},
    "version_from": {"path": "build/version.go", "pattern": "AppMajor uint = (\\d+)[\\s\\S]*?AppMinor uint = (\\d+)[\\s\\S]*?AppPatch uint = (\\d+)"},
-   "rev": "5711f358f4dc01434ad636160eea941ec1f392b7",
-   "tag": "v0.21.4-beta-zeus.1",
-   "version": "0.21.4",
-   "label": "ZeusLN/lnd v0.21.4-beta-zeus.1",
-   "date": "2026-10-08"
+   "rev": "e21a177c24b3cb33bf4b44261f5b5f3fa6790a9c",
+   "tag": "v0.21.5-beta-zeus",
+   "version": "0.21.5",
+   "label": "ZeusLN/lnd v0.21.5-beta-zeus",
+   "date": "2026-10-27"
   },
   "zeus-ldk-node": {
    "repo": "https://github.com/ZeusLN/ldk-node",
    "track": {"from": "zeus:fetch-libraries-versions.json", "json": "ldk-node.version", "tag": "{}"},
-   "rev": "4687d9fe5e4348ecfa059decfd870e154d19262e",
-   "tag": "v0.7.0-zeus-rl-0.2.7",
-   "version": "0.7.0-zeus-rl-0.2.7",
-   "label": "ZeusLN/ldk-node v0.7.0-zeus-rl-0.2.7",
-   "date": "2026-10-02"
+   "rev": "93680ba7d9069680afe95cc3387c5f3639b9681e",
+   "tag": "v0.7.1-zeus",
+   "version": "0.7.1-zeus",
+   "label": "ZeusLN/ldk-node v0.7.1-zeus",
+   "date": "2026-10-27"
   },
   "cdk": {
    "repo": "https://github.com/cashubtc/cdk",
    "track": {"from": "zeus:fetch-libraries-versions.json", "json": "cdk.version", "tag": "v{}"},
-   "rev": "874745d5d79b36be346efbd716393357ab898834",
-   "tag": "v0.17.4",
-   "version": "0.17.4",
-   "label": "cashubtc/cdk v0.17.4",
-   "date": "2026-08-14"
+   "rev": "9f6d3a3734d7223d10b5553e3591d3f9d5c6c904",
+   "tag": "v0.18.2",
+   "version": "0.18.2",
+   "label": "cashubtc/cdk v0.18.2",
+   "date": "2026-10-13"
   },
   "bluewallet": {
    "repo": "https://github.com/BlueWallet/BlueWallet",
    "track": {"branch": "HEAD"},
-   "rev": "69adb1555038c8b2385952edd0404d2e1ecd7ca7",
-   "label": "BlueWallet/BlueWallet@69adb15",
-   "date": "2026-10-07"
+   "rev": "3631c47d000e9faf702a9bcf9c9b3f7a4c1bfcfe",
+   "label": "BlueWallet/BlueWallet@3631c47",
+   "date": "2026-10-30"
   },
   "green": {
    "repo": "https://github.com/Blockstream/green_ios",
@@ -183,15 +182,15 @@
     "app": ["winnow:LeanApp/WinnowApp", "winnow:LeanApp/WinnowApp.lean"],
     "bitcoin": ["winnow:Lean/Winnow", "winnow:Lean/Winnow.lean", "winnow:Lean/Secp", "winnow:Lean/Secp.lean"],
     "engine": [
-     "leannative:framework/lean/ElmLean",
-     "leannative:framework/lean/ElmLean.lean",
-     "leannative:framework/lean/ElmShell",
-     "leannative:framework/lean/ElmShell.lean",
+     "leannative:framework/lean/LeanNative",
+     "leannative:framework/lean/LeanNative.lean",
+     "leannative:framework/lean/LeanNativeShell",
+     "leannative:framework/lean/LeanNativeShell.lean",
      "leannative:framework/native/c"
     ]
    },
    "skip": ["winnow:Lean/Oracle", "winnow:Lean/Vectors", "winnow:LeanApp/ios"],
-   "deps": {"lake": "winnow:LeanApp/lake-manifest.json", "lake_engine": "elmlean"},
+   "deps": {"lake": "winnow:LeanApp/lake-manifest.json", "lake_engine": "leannative"},
    "complete": ["winnow:Lean", "winnow:LeanApp"]
   },
   "BlueWallet": {

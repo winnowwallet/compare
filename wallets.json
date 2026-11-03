@@ -13,15 +13,15 @@
    },
    "third_party": {
     "text": "Nobody for the everyday wallet; multisig accounts need their other signers (phones, Ledgers or keys someone sent), with no co-signing server",
-    "cite": "winnow:README.md:4-6; winnow:LeanApp/WinnowApp/Send.lean:115-117; winnow:LeanApp/WinnowApp/Multisig.lean:528-530"
+    "cite": "winnow:README.md:4-6; winnow:LeanApp/WinnowApp/Send.lean:115-117; winnow:LeanApp/WinnowApp/Multisig.lean:580-582"
    },
    "distribution": {
     "text": "App Store, in the listing the Swift app used (com.btcswift.app); tagged builds upload to TestFlight",
-    "cite": "winnow:README.md:11-12; winnow:LeanApp/WinnowApp/Project.lean:19-23; winnow:.github/workflows/release.yml:1-6; winnow:.github/workflows/release.yml:182-192"
+    "cite": "winnow:README.md:11-12; winnow:LeanApp/WinnowApp/Project.lean:19-23; winnow:.github/workflows/release.yml:1-6; winnow:.github/workflows/release.yml:210-220"
    },
    "libraries": {
-    "text": "LeanNative 7ab7ec8 (its Lean framework, C shim and printed Objective-C shell) and Lean 4.35.0's runtime and standard library (libLean, libStd, libInit, libleanrt) with the toolchain's libuv and GMP; no package from a registry",
-    "cite": "winnow:LeanApp/lakefile.toml:10-19; winnow:LeanApp/lean-toolchain:1; winnow:Lean/lake-manifest.json:3; leannative:framework/native/scripts/ios_lean_sources.sh:58; leannative:framework/lean/ElmShell/Manifest.lean:187"
+    "text": "LeanNative 700b388 (its Lean framework, C shim and printed Objective-C shell) and Lean 4.35.0's runtime and standard library (libLean, libStd, libInit, libleanrt) with the toolchain's libuv and GMP; no package from a registry",
+    "cite": "winnow:LeanApp/lakefile.toml:10-19; winnow:LeanApp/lean-toolchain:1; winnow:Lean/lake-manifest.json:3; leannative:framework/native/scripts/ios_lean_sources.sh:58; leannative:framework/lean/LeanNativeShell/Manifest.lean:193"
    },
    "bitcoin_library_not_counted": null,
    "prebuilt": {

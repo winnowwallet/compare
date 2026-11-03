@@ -79,7 +79,7 @@ site/               the published site (generated, committed); site/data.json ha
 | --- | --- |
 | BlueWallet, Green, Muun, Bitkit, Blixt, Zeus | the head of their default branch |
 | Winnow | its latest `v*` release tag of winnowwallet/winnow-lean |
-| LeanNative | the `elmlean` commit in Winnow's `LeanApp/lake-manifest.json` |
+| LeanNative | the `leannative` commit in Winnow's `LeanApp/lake-manifest.json` |
 | Phoenix | its latest `ios-v*` release tag: its default branch was configured for testnet when we checked, and a release is what ships |
 | gdk | the `TAGNAME` in Green's `tools/fetch_gdk_binaries.sh` |
 | lightning-kmp | `lightningkmp` in Phoenix's `gradle/libs.versions.toml`; the Kotlin libraries use the same catalog |
@@ -88,8 +88,8 @@ site/               the published site (generated, committed); site/data.json ha
 | Blixt's LND | Blixt's `bun.lock` → react-native-turbo-lnd's `lnd-source.properties` → that fork and commit |
 | Zeus's LND, LDK Node, Cashu CDK | Zeus's `fetch-libraries-versions.json` |
 
-A source that commits no Cargo.lock (Synonym's LDK Node) gets one from `cargo generate-lockfile`
-when its revision changes, saved in `locks/` so the measurement stays reproducible. When anything
+A source that commits no Cargo.lock gets one from `cargo generate-lockfile` when its revision
+changes, saved in `locks/` so the measurement stays reproducible. When anything
 moved, `snapshot` becomes the day's date and `./build` adds that day's row to `data/history.json`.
 
 What the Daily workflow cannot decide is left to fail loudly: a counted path that no longer

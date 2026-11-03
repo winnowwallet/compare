@@ -30,15 +30,18 @@
    }
   },
   "nested_licenses": [
-   "/blue_modules/pako/LICENSE"
+   "/blue_modules/pako/LICENSE",
+   "/blue_modules/payjoin-client/LICENSE"
   ],
   "binaries": [],
   "patches": [
+   "@bugsnag+react-native+9.1.0.patch",
    "README.md",
    "react-native-background-fetch+4.4.2.patch",
    "react-native-context-menu-view+1.21.0.patch",
    "react-native-notifications+5.2.2.patch",
-   "react-native-screens+4.27.0.patch"
+   "react-native-reanimated+4.7.1.patch",
+   "react-native-screens+4.30.0.patch"
   ],
   "copied_lines": 5136
  },
@@ -244,23 +247,11 @@
     "counted": "source"
    },
    "zeus_modules/@lightninglabs/lnc-rn": {
-    "lines": 330,
+    "lines": 335,
     "counted": "source"
-   },
-   "zeus_modules/bc-bech32": {
-    "lines": 206,
-    "counted": "published build output"
-   },
-   "zeus_modules/bc-ur": {
-    "lines": 284,
-    "counted": "published build output"
    },
    "zeus_modules/noble_ecc.ts": {
     "lines": 89,
-    "counted": "source"
-   },
-   "zeus_modules/ur": {
-    "lines": 77,
     "counted": "source"
    }
   },
@@ -268,12 +259,14 @@
   "binaries": [],
   "patches": [
    "patch-jcenter.mjs",
+   "patch-keychain-atomic-update.mjs",
+   "patch-keychain-atomic-update.test.ts",
    "patch-keychain-cloudsync.mjs",
    "patch-native-event-emitter.mjs",
    "patch-noble-hashes.mjs",
    "patch-react-native-notifications.mjs",
    "patch-reanimated-set-fixes.mjs"
   ],
-  "copied_lines": 4605
+  "copied_lines": 4043
  }
 }

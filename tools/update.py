@@ -138,9 +138,11 @@ def cargo_sources():
 def ensure_lock(key, spec, moved, below=''):
     """Use the source's own Cargo.lock; generate one only when it commits none."""
     path = source_dir(key)
-    if git('ls-files', str(Path(below) / 'Cargo.lock'), cwd=path):
+    committed = git('ls-files', str(Path(below) / 'Cargo.lock'), cwd=path)
+    if committed:
         if spec.pop('lock', None):
             (ROOT / f'locks/{key}.Cargo.lock').unlink(missing_ok=True)
+            git('checkout', '--', committed, cwd=path)  # fetch wrote the old locks/ copy over it
         return
     lock = ROOT / f'locks/{key}.Cargo.lock'
     if moved or not lock.exists():

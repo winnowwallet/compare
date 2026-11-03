@@ -127,7 +127,7 @@
 <h2>Complexity and CRAP</h2>
 <div class="prose">
 <p>CRAP scores each function by its cyclomatic complexity (CC, the number of paths through it) and how much of it the tests run: CRAP = CC² × (1 − coverage)³ + CC. Coverage needs each project’s test suite run with instrumentation, so it is not measured here. Testing can only bring CRAP down to CC, so complexity alone sets a floor: a function above 12 scores above 12 however well it is tested, and one above 30 fails crap4j’s default threshold whatever its tests. Complexity is measured on each wallet’s counted code, not on embedded engines.</p>
-<p>{{P12_W}}% of Winnow’s {{W_FUNCS}} functions are above 12, against {{P12_MIN}}–{{P12_MAX}}% for the others. Its mean is {{W_MEAN}}; the others’ range from {{MEAN_MIN}} to {{MEAN_MAX}}. Its most complex function, {{W_TOP}}, scores {{W_MAXCC}}: Winnow’s app follows the Elm architecture, and its update and command dispatchers are single <code>match</code> expressions with an arm for each message, which this rule counts as paths. {{W_GT30}} of its functions are above 30.</p>
+<p>{{P12_W}}% of Winnow’s {{W_FUNCS}} functions are above 12, against {{P12_MIN}}–{{P12_MAX}}% for the others. Its mean is {{W_MEAN}}; the others’ range from {{MEAN_MIN}} to {{MEAN_MAX}}. Its most complex function, {{W_TOP}}, scores {{W_MAXCC}}, and {{W_GT30}} of its functions are above 30. Winnow’s app follows the Elm architecture, and its update dispatchers, split by screen, come next: <code>match</code> expressions with an arm for each message, which this rule counts as paths.</p>
 </div>
 <div class="table-wrap" role="region" tabindex="0" aria-label="Complexity, scrollable table">
 <table class="cc">

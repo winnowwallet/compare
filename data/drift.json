@@ -1,11 +1,11 @@
 {
  "reviewed": "2026-10-02",
- "reviewed_latest": "2026-10-30",
- "measured": "2026-10-30",
+ "reviewed_latest": "2026-11-03",
+ "measured": "2026-11-03",
  "citations": 441,
- "same": 401,
- "moved": 31,
- "changed": 9,
+ "same": 318,
+ "moved": 99,
+ "changed": 24,
  "gone": 0,
  "by_wallet": {
   "Winnow": {
@@ -15,9 +15,9 @@
    "gone": 0
   },
   "BlueWallet": {
-   "same": 48,
-   "moved": 6,
-   "changed": 4,
+   "same": 15,
+   "moved": 35,
+   "changed": 8,
    "gone": 0
   },
   "Green": {
@@ -39,21 +39,21 @@
    "gone": 0
   },
   "Bitkit": {
-   "same": 44,
-   "moved": 5,
-   "changed": 3,
+   "same": 28,
+   "moved": 14,
+   "changed": 10,
    "gone": 0
   },
   "Blixt": {
-   "same": 45,
-   "moved": 0,
-   "changed": 0,
+   "same": 33,
+   "moved": 10,
+   "changed": 2,
    "gone": 0
   },
   "Zeus": {
-   "same": 36,
-   "moved": 20,
-   "changed": 2,
+   "same": 14,
+   "moved": 40,
+   "changed": 4,
    "gone": 0
   }
  },
@@ -66,8 +66,20 @@
   },
   {
    "wallet": "BlueWallet",
+   "fact": "features.descriptors",
+   "cite": "bluewallet:screen/wallets/xpub.tsx:72-78",
+   "status": "changed"
+  },
+  {
+   "wallet": "BlueWallet",
    "fact": "features.cloud_backup",
    "cite": "bluewallet:class/blue-app.ts:302",
+   "status": "changed"
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.hw_signer",
+   "cite": "bitkit:Bitkit/Views/Wallets/Send/HwSendSignView.swift:115",
    "status": "changed"
   },
   {
@@ -78,8 +90,50 @@
   },
   {
    "wallet": "Bitkit",
+   "fact": "features.taproot",
+   "cite": "bitkit:Bitkit/Views/Settings/Advanced/AddressTypePreferenceView.swift:109-125",
+   "status": "changed"
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.own_server",
+   "cite": "bitkit:Bitkit/ViewModels/Extensions/SettingsViewModel+Electrum.swift:46-50",
+   "status": "changed"
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.tor",
+   "cite": "synonym-ldk-node:src/chain/electrum.rs:660-666",
+   "status": "changed"
+  },
+  {
+   "wallet": "Bitkit",
    "fact": "features.cloud_backup",
    "cite": "bitkit:Bitkit/Services/BackupService.swift:220",
+   "status": "changed"
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.cloud_backup",
+   "cite": "bitkit:Bitkit/Constants/Env.swift:340-343",
+   "status": "changed"
+  },
+  {
+   "wallet": "Blixt",
+   "fact": "features.psbt",
+   "cite": "blixt:src/windows/OnChain/Withdraw.tsx:50-65",
+   "status": "changed"
+  },
+  {
+   "wallet": "Blixt",
+   "fact": "features.coin_control",
+   "cite": "blixt:src/windows/OnChain/Withdraw.tsx:50-65",
+   "status": "changed"
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.psbt",
+   "cite": "zeus:utils/handleAnything.ts:1050-1051",
    "status": "changed"
   },
   {
@@ -96,14 +150,50 @@
   },
   {
    "wallet": "BlueWallet",
+   "fact": "profile.distribution",
+   "cite": "bluewallet:fastlane/Fastfile:1306-1344",
+   "status": "changed"
+  },
+  {
+   "wallet": "BlueWallet",
    "fact": "profile.libraries",
    "cite": "bluewallet:package.json:93-190",
+   "status": "changed"
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "profile.prebuilt",
+   "cite": "bluewallet:ios/Podfile.lock:28-30",
+   "status": "changed"
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "profile.prebuilt",
+   "cite": "bluewallet:ios/Podfile.lock:97",
+   "status": "changed"
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "profile.third_party",
+   "cite": "bitkit:Bitkit/Services/LightningService.swift:796-803",
    "status": "changed"
   },
   {
    "wallet": "Bitkit",
    "fact": "profile.libraries",
    "cite": "bitkit:Bitkit.xcodeproj/project.pbxproj:1176-1223",
+   "status": "changed"
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "profile.prebuilt",
+   "cite": "bitkit-core:Package.swift:29",
+   "status": "changed"
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.third_party",
+   "cite": "zeus:backends/EmbeddedLND.ts:100-107",
    "status": "changed"
   },
   {
@@ -114,6 +204,118 @@
   }
  ],
  "moved_within_file": [
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.multisig",
+   "cite": "bluewallet:screen/wallets/Add.tsx:294",
+   "status": "moved",
+   "now_at": 295
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.hw_signer",
+   "cite": "bluewallet:class/wallets/abstract-wallet.ts:321-337",
+   "status": "moved",
+   "now_at": 315
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.hw_signer",
+   "cite": "bluewallet:class/wallets/abstract-wallet.ts:339-347",
+   "status": "moved",
+   "now_at": 333
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.hw_signer",
+   "cite": "bluewallet:screen/send/ScanQRCode.tsx:165-170",
+   "status": "moved",
+   "now_at": 167
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.hw_signer",
+   "cite": "bluewallet:screen/wallets/WalletDetails.tsx:813",
+   "status": "moved",
+   "now_at": 801
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.watch_only",
+   "cite": "bluewallet:class/wallet-import.ts:502-528",
+   "status": "moved",
+   "now_at": 530
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.passphrase",
+   "cite": "bluewallet:navigation/AddWalletStack.tsx:246-262",
+   "status": "moved",
+   "now_at": 255
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.passphrase",
+   "cite": "bluewallet:class/wallet-import.ts:146-148",
+   "status": "moved",
+   "now_at": 174
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.passphrase",
+   "cite": "bluewallet:class/wallets/abstract-hd-wallet.ts:79-80",
+   "status": "moved",
+   "now_at": 80
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.coin_control",
+   "cite": "bluewallet:screen/send/SendDetails.tsx:1056-1061",
+   "status": "moved",
+   "now_at": 1067
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.coin_control",
+   "cite": "bluewallet:screen/send/CoinControl.tsx:289-291",
+   "status": "moved",
+   "now_at": 291
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.coin_control",
+   "cite": "bluewallet:screen/send/CoinControl.tsx:301-303",
+   "status": "moved",
+   "now_at": 303
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.fee_bump",
+   "cite": "bluewallet:class/wallets/abstract-wallet.ts:170-172",
+   "status": "moved",
+   "now_at": 164
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.taproot",
+   "cite": "bluewallet:navigation/AddWalletStack.tsx:155-159",
+   "status": "moved",
+   "now_at": 153
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.taproot",
+   "cite": "bluewallet:screen/wallets/Add.tsx:250-252",
+   "status": "moved",
+   "now_at": 251
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.descriptors",
+   "cite": "bluewallet:class/wallets/abstract-wallet.ts:238-244",
+   "status": "moved",
+   "now_at": 232
+  },
   {
    "wallet": "BlueWallet",
    "fact": "features.own_server",
@@ -130,6 +332,34 @@
   },
   {
    "wallet": "BlueWallet",
+   "fact": "features.own_server",
+   "cite": "bluewallet:blue_modules/BlueElectrum.ts:90-97",
+   "status": "moved",
+   "now_at": 84
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.verifies_chain",
+   "cite": "bluewallet:blue_modules/BlueElectrum.ts:1034-1038",
+   "status": "moved",
+   "now_at": 1030
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.verifies_chain",
+   "cite": "bluewallet:blue_modules/BlueElectrum.ts:1128-1131",
+   "status": "moved",
+   "now_at": 1132
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.verifies_chain",
+   "cite": "bluewallet:blue_modules/BlueElectrum.ts:1609-1616",
+   "status": "moved",
+   "now_at": 1613
+  },
+  {
+   "wallet": "BlueWallet",
    "fact": "features.tor",
    "cite": "bluewallet:screen/settings/ElectrumSettings.tsx:199-202",
    "status": "moved",
@@ -137,52 +367,178 @@
   },
   {
    "wallet": "BlueWallet",
+   "fact": "features.tor",
+   "cite": "bluewallet:loc/en.json:253",
+   "status": "moved",
+   "now_at": 254
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.tor",
+   "cite": "bluewallet:blue_modules/BlueElectrum.ts:1453",
+   "status": "moved",
+   "now_at": 1457
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.seed_standard",
+   "cite": "bluewallet:screen/wallets/Add.tsx:284-286",
+   "status": "moved",
+   "now_at": 285
+  },
+  {
+   "wallet": "BlueWallet",
    "fact": "features.cloud_backup",
    "cite": "bluewallet:class/blue-app.ts:133",
    "status": "moved",
-   "now_at": 138
+   "now_at": 141
   },
   {
    "wallet": "BlueWallet",
    "fact": "features.cloud_backup",
    "cite": "bluewallet:class/blue-app.ts:709",
    "status": "moved",
-   "now_at": 714
+   "now_at": 717
   },
   {
    "wallet": "Bitkit",
    "fact": "features.hw_signer",
-   "cite": "bitkit:Bitkit/Views/Wallets/Send/HwSendSignView.swift:115",
+   "cite": "bitkit:Bitkit/Services/Trezor/TrezorTransport.swift:37-48",
    "status": "moved",
-   "now_at": 128
+   "now_at": 40
   },
   {
    "wallet": "Bitkit",
    "fact": "features.psbt",
    "cite": "bitkit:Bitkit/Managers/HwWalletManager.swift:1177",
    "status": "moved",
-   "now_at": 1520
+   "now_at": 1524
   },
   {
    "wallet": "Bitkit",
    "fact": "features.psbt",
    "cite": "bitkit:Bitkit/Views/Settings/DevSettingsView.swift:59-61",
    "status": "moved",
-   "now_at": 57
+   "now_at": 58
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.coin_control",
+   "cite": "bitkit:Bitkit/Views/Wallets/Send/SendAmountView.swift:302-323",
+   "status": "moved",
+   "now_at": 406
   },
   {
    "wallet": "Bitkit",
    "fact": "features.fee_bump",
    "cite": "bitkit:Bitkit/Services/CoreService.swift:1648-1675",
    "status": "moved",
-   "now_at": 1702
+   "now_at": 1781
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.fee_bump",
+   "cite": "synonym-ldk-node:src/wallet/mod.rs:827",
+   "status": "moved",
+   "now_at": 884
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.taproot",
+   "cite": "bitkit:Bitkit/ViewModels/SettingsViewModel.swift:576",
+   "status": "moved",
+   "now_at": 647
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.descriptors",
+   "cite": "bitkit:Bitkit/Services/SamRockService.swift:273",
+   "status": "moved",
+   "now_at": 269
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.descriptors",
+   "cite": "bitkit:Bitkit/Services/SamRockService.swift:333-339",
+   "status": "moved",
+   "now_at": 329
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.verifies_chain",
+   "cite": "synonym-ldk-node:src/chain/electrum.rs:671",
+   "status": "moved",
+   "now_at": 731
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.verifies_chain",
+   "cite": "synonym-ldk-node:src/chain/electrum.rs:785",
+   "status": "moved",
+   "now_at": 924
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.cloud_backup",
+   "cite": "vss-rust-client-ffi:src/implementation.rs:248-256",
+   "status": "moved",
+   "now_at": 252
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "features.license",
+   "cite": "bitkit:README.md:258-261",
+   "status": "moved",
+   "now_at": 249
+  },
+  {
+   "wallet": "Blixt",
+   "fact": "features.own_server",
+   "cite": "blixt:src/windows/Settings/Settings.tsx:1670-1680",
+   "status": "moved",
+   "now_at": 1731
+  },
+  {
+   "wallet": "Blixt",
+   "fact": "features.own_server",
+   "cite": "blixt:src/windows/Settings/Settings.tsx:750-785",
+   "status": "moved",
+   "now_at": 755
+  },
+  {
+   "wallet": "Blixt",
+   "fact": "features.tor",
+   "cite": "blixt:src/windows/Settings/Settings.tsx:1867-1877",
+   "status": "moved",
+   "now_at": 1935
+  },
+  {
+   "wallet": "Blixt",
+   "fact": "features.tor",
+   "cite": "blixt:locales/en.json:958",
+   "status": "moved",
+   "now_at": 977
+  },
+  {
+   "wallet": "Blixt",
+   "fact": "features.cloud_backup",
+   "cite": "blixt:locales/en.json:1241-1242",
+   "status": "moved",
+   "now_at": 1260
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.multisig",
+   "cite": "zeus:utils/AddressUtils.ts:73-79",
+   "status": "moved",
+   "now_at": 76
   },
   {
    "wallet": "Zeus",
    "fact": "features.hw_signer",
    "cite": "zeus:locales/en.json:426",
    "status": "moved",
-   "now_at": 427
+   "now_at": 424
   },
   {
    "wallet": "Zeus",
@@ -193,17 +549,24 @@
   },
   {
    "wallet": "Zeus",
+   "fact": "features.watch_only",
+   "cite": "zeus:utils/handleAnything.ts:1122-1129",
+   "status": "moved",
+   "now_at": 1154
+  },
+  {
+   "wallet": "Zeus",
    "fact": "features.passphrase",
    "cite": "zeus:utils/LndMobileUtils.ts:1316-1322",
    "status": "moved",
-   "now_at": 1315
+   "now_at": 1349
   },
   {
    "wallet": "Zeus",
    "fact": "features.passphrase",
    "cite": "zeus:views/Settings/SeedRecovery.tsx:924-931",
    "status": "moved",
-   "now_at": 919
+   "now_at": 920
   },
   {
    "wallet": "Zeus",
@@ -217,7 +580,14 @@
    "fact": "features.coin_control",
    "cite": "zeus:views/Send.tsx:1015-1020",
    "status": "moved",
-   "now_at": 1038
+   "now_at": 1053
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.fee_bump",
+   "cite": "zeus:views/Transaction.tsx:404-413",
+   "status": "moved",
+   "now_at": 402
   },
   {
    "wallet": "Zeus",
@@ -231,56 +601,133 @@
    "fact": "features.fee_bump",
    "cite": "zeus:backends/LdkNode.ts:2177",
    "status": "moved",
-   "now_at": 2220
+   "now_at": 2301
   },
   {
    "wallet": "Zeus",
    "fact": "features.taproot",
    "cite": "zeus:views/Receive.tsx:1127-1133",
    "status": "moved",
-   "now_at": 1129
+   "now_at": 1256
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.taproot",
+   "cite": "zeus:backends/EmbeddedLND.ts:586",
+   "status": "moved",
+   "now_at": 675
   },
   {
    "wallet": "Zeus",
    "fact": "features.taproot",
    "cite": "zeus:backends/LdkNode.ts:2176",
    "status": "moved",
-   "now_at": 2219
+   "now_at": 2300
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.descriptors",
+   "cite": "zeus:utils/AddressUtils.ts:73-79",
+   "status": "moved",
+   "now_at": 76
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.descriptors",
+   "cite": "zeus:utils/handleAnything.ts:1094-1118",
+   "status": "moved",
+   "now_at": 1126
   },
   {
    "wallet": "Zeus",
    "fact": "features.own_server",
    "cite": "zeus:utils/LndMobileUtils.ts:222-224",
    "status": "moved",
-   "now_at": 220
+   "now_at": 225
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.own_server",
+   "cite": "zeus:views/Settings/EmbeddedNode/Peers/NeutrinoPeers.tsx:213-218",
+   "status": "moved",
+   "now_at": 211
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.own_server",
+   "cite": "zeus:views/Settings/EmbeddedNode/Peers/NeutrinoPeers.tsx:258-270",
+   "status": "moved",
+   "now_at": 256
   },
   {
    "wallet": "Zeus",
    "fact": "features.verifies_chain",
    "cite": "zeus:utils/LndMobileUtils.ts:270",
    "status": "moved",
-   "now_at": 268
+   "now_at": 273
   },
   {
    "wallet": "Zeus",
    "fact": "features.tor",
    "cite": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465",
    "status": "moved",
-   "now_at": 1461
+   "now_at": 1587
   },
   {
    "wallet": "Zeus",
    "fact": "features.tor",
    "cite": "zeus:stores/SettingsStore.ts:1608",
    "status": "moved",
-   "now_at": 1640
+   "now_at": 1664
   },
   {
    "wallet": "Zeus",
    "fact": "features.seed_standard",
    "cite": "zeus:utils/LndMobileUtils.ts:1295",
    "status": "moved",
-   "now_at": 1293
+   "now_at": 1327
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.cloud_backup",
+   "cite": "zeus:stores/ChannelBackupStore.ts:63-69",
+   "status": "moved",
+   "now_at": 80
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.cloud_backup",
+   "cite": "zeus:stores/ChannelBackupStore.ts:95",
+   "status": "moved",
+   "now_at": 112
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "features.cloud_backup",
+   "cite": "zeus:utils/LdkNodeUtils.ts:47",
+   "status": "moved",
+   "now_at": 48
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "profile.engine",
+   "cite": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:1075",
+   "status": "moved",
+   "now_at": 1078
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "profile.engine",
+   "cite": "bluewallet:package.json:144",
+   "status": "moved",
+   "now_at": 145
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "profile.chain_data",
+   "cite": "bluewallet:blue_modules/BlueElectrum.ts:90-97",
+   "status": "moved",
+   "now_at": 84
   },
   {
    "wallet": "BlueWallet",
@@ -290,11 +737,67 @@
    "now_at": 247
   },
   {
-   "wallet": "Bitkit",
+   "wallet": "BlueWallet",
    "fact": "profile.third_party",
-   "cite": "bitkit:Bitkit/Services/LightningService.swift:796-803",
+   "cite": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:1075",
    "status": "moved",
-   "now_at": 810
+   "now_at": 1078
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "profile.third_party",
+   "cite": "bluewallet:class/wallets/lightning-custodian-wallet.ts:80",
+   "status": "moved",
+   "now_at": 84
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "profile.third_party",
+   "cite": "bluewallet:class/wallets/lightning-ark-wallet.ts:94",
+   "status": "moved",
+   "now_at": 98
+  },
+  {
+   "wallet": "Bitkit",
+   "fact": "profile.chain_data",
+   "cite": "bitkit:Bitkit/Constants/Env.swift:191",
+   "status": "moved",
+   "now_at": 217
+  },
+  {
+   "wallet": "Blixt",
+   "fact": "profile.chain_data",
+   "cite": "blixt:src/windows/Settings/Settings.tsx:1670-1680",
+   "status": "moved",
+   "now_at": 1731
+  },
+  {
+   "wallet": "Blixt",
+   "fact": "profile.libraries",
+   "cite": "blixt:package.json:104",
+   "status": "moved",
+   "now_at": 103
+  },
+  {
+   "wallet": "Blixt",
+   "fact": "profile.libraries",
+   "cite": "blixt:package.json:122",
+   "status": "moved",
+   "now_at": 121
+  },
+  {
+   "wallet": "Blixt",
+   "fact": "profile.libraries",
+   "cite": "blixt:package.json:134",
+   "status": "moved",
+   "now_at": 133
+  },
+  {
+   "wallet": "Blixt",
+   "fact": "profile.libraries",
+   "cite": "blixt:package.json:145",
+   "status": "moved",
+   "now_at": 144
   },
   {
    "wallet": "Zeus",
@@ -315,21 +818,84 @@
    "fact": "profile.chain_data",
    "cite": "zeus:stores/SettingsStore.ts:1476-1482",
    "status": "moved",
-   "now_at": 1508
+   "now_at": 1529
   },
   {
    "wallet": "Zeus",
    "fact": "profile.chain_data",
    "cite": "zeus:utils/LndMobileUtils.ts:222-224",
    "status": "moved",
-   "now_at": 220
+   "now_at": 225
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.chain_data",
+   "cite": "zeus:utils/LdkNodeUtils.ts:26-27",
+   "status": "moved",
+   "now_at": 27
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.libraries",
+   "cite": "zeus:package.json:53",
+   "status": "moved",
+   "now_at": 62
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.libraries",
+   "cite": "zeus:package.json:55",
+   "status": "moved",
+   "now_at": 64
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.libraries",
+   "cite": "zeus:package.json:56",
+   "status": "moved",
+   "now_at": 65
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.libraries",
+   "cite": "zeus:package.json:59",
+   "status": "moved",
+   "now_at": 68
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.libraries",
+   "cite": "zeus:package.json:77",
+   "status": "moved",
+   "now_at": 86
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.libraries",
+   "cite": "zeus:package.json:86",
+   "status": "moved",
+   "now_at": 95
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.libraries",
+   "cite": "zeus:package.json:117",
+   "status": "moved",
+   "now_at": 125
   },
   {
    "wallet": "Zeus",
    "fact": "profile.libraries",
    "cite": "zeus:package.json:148",
    "status": "moved",
-   "now_at": 147
+   "now_at": 155
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.prebuilt",
+   "cite": "zeus:fetch-libraries.sh:37-38",
+   "status": "moved",
+   "now_at": 36
   }
  ]
 }

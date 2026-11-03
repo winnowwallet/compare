@@ -3,17 +3,17 @@
  "features": {
   "multisig": {
    "value": "yes",
-   "evidence": "winnow:LeanApp/WinnowApp/Multisig.lean:423-432; winnow:LeanApp/WinnowApp/Multisig.lean:528-535; winnow:LeanApp/WinnowApp/Signers.lean:123-134",
+   "evidence": "winnow:LeanApp/WinnowApp/Multisig.lean:475-484; winnow:LeanApp/WinnowApp/Multisig.lean:580-587; winnow:LeanApp/WinnowApp/Signers.lean:123-134",
    "note": "k-of-n Taproot accounts in Advanced mode, members from this phone, paired Ledgers and keys others sent; MuSig2 removed"
   },
   "hw_signer": {
    "value": "yes",
-   "evidence": "winnow:LeanApp/WinnowApp/Real/LedgerTransport.lean:102-106; winnow:LeanApp/WinnowApp/Main.lean:138-151; winnow:LeanApp/WinnowApp/Signers.lean:152-160; winnow:LeanApp/WinnowApp/Multisig.lean:657-659",
+   "evidence": "winnow:LeanApp/WinnowApp/Real/LedgerTransport.lean:102-106; winnow:LeanApp/WinnowApp/Main.lean:138-151; winnow:LeanApp/WinnowApp/Signers.lean:152-160; winnow:LeanApp/WinnowApp/Multisig.lean:709-711",
    "note": "Pairs a Ledger over Bluetooth as a multisig member, registers the account on it and has it sign; the everyday wallet signs in-app; this build has paired only a simulated Ledger so far"
   },
   "psbt": {
    "value": "partial",
-   "evidence": "winnow:LeanApp/WinnowApp/Multisig.lean:664-674; winnow:LeanApp/WinnowApp/Multisig.lean:602-605; winnow:LeanApp/WinnowApp/Send.lean:63-65",
+   "evidence": "winnow:LeanApp/WinnowApp/Multisig.lean:716-726; winnow:LeanApp/WinnowApp/Multisig.lean:654-657; winnow:LeanApp/WinnowApp/Send.lean:63-65",
    "note": "Multisig accounts only: copy a BIP174 v0 PSBT to share and paste co-signers' PSBTs back; the everyday wallet signs in-app"
   },
   "watch_only": {
@@ -28,7 +28,7 @@
   },
   "coin_control": {
    "value": "no",
-   "evidence": "winnow:Lean/Winnow/Wallet/CoinSelection.lean:118-130; winnow:Lean/Winnow/Wallet/Wallet.lean:685; winnow:Lean/Winnow/Wallet/MultisigAccount.lean:1185; winnow:LeanApp/WinnowApp/Multisig.lean:609-613",
+   "evidence": "winnow:Lean/Winnow/Wallet/CoinSelection.lean:118-130; winnow:Lean/Winnow/Wallet/Wallet.lean:685; winnow:Lean/Winnow/Wallet/MultisigAccount.lean:1185; winnow:LeanApp/WinnowApp/Multisig.lean:661-665",
    "note": "Send picks coins automatically, largest first, for the wallet and multisig accounts; an account's coin list is read-only"
   },
   "fee_bump": {
@@ -43,7 +43,7 @@
   },
   "descriptors": {
    "value": "partial",
-   "evidence": "winnow:LeanApp/WinnowApp/Multisig.lean:465-467; winnow:LeanApp/WinnowApp/Multisig.lean:614-615; winnow:LeanApp/WinnowApp/Multisig.lean:525; winnow:Lean/Winnow/Wallet/Wallet.lean:894",
+   "evidence": "winnow:LeanApp/WinnowApp/Multisig.lean:517-519; winnow:LeanApp/WinnowApp/Multisig.lean:666-667; winnow:LeanApp/WinnowApp/Multisig.lean:577; winnow:Lean/Winnow/Wallet/Wallet.lean:894",
    "note": "Multisig accounts join from and share a tr() descriptor; the everyday wallet's is only inside its backup file"
   },
   "own_server": {
@@ -73,7 +73,7 @@
   },
   "license": {
    "value": "MIT",
-   "evidence": "winnow:LICENSE:1; winnow:README.md:158",
+   "evidence": "winnow:LICENSE:1; winnow:README.md:163",
    "note": "MIT License"
   }
  }
