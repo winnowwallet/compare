@@ -39,8 +39,8 @@
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {"branch": "HEAD"},
-   "rev": "2ee882f734759eb5a612d4faf07db14665f3b29f",
-   "label": "synonymdev/bitkit-ios@2ee882f",
+   "rev": "6861aa7325de948721169b2da2db680c0d31ef15",
+   "label": "synonymdev/bitkit-ios@6861aa7",
    "date": "2026-11-03"
   },
   "synonym-ldk-node": {
