@@ -193,27 +193,17 @@
  },
  "Muun": {
   "app": {
-   "functions": 5201,
-   "mean_cc": 1.68,
+   "functions": 5094,
+   "mean_cc": 1.63,
    "p90_cc": 3,
-   "max_cc": 63,
-   "cc_le_2": 4431,
-   "cc_3_12": 749,
-   "cc_gt_12": 21,
-   "cc_gt_30": 2,
-   "files": 683,
+   "max_cc": 22,
+   "cc_le_2": 4419,
+   "cc_3_12": 656,
+   "cc_gt_12": 19,
+   "cc_gt_30": 0,
+   "files": 682,
    "files_with_parse_errors": 20,
    "most_complex": [
-    {
-     "cc": 63,
-     "function": "handle",
-     "at": "muun/falcon/app/falcon/core/Protobuf/wallet_service.grpc.swift:2153"
-    },
-    {
-     "cc": 63,
-     "function": "handle",
-     "at": "muun/falcon/app/falcon/core/Protobuf/wallet_service.grpc.swift:2634"
-    },
     {
      "cc": 22,
      "function": "getKindOfError",
@@ -228,6 +218,16 @@
      "cc": 20,
      "function": "titleAndBody",
      "at": "muun/falcon/app/falconPushNotifications/NotificationService.swift:111"
+    },
+    {
+     "cc": 19,
+     "function": "handlerFor",
+     "at": "muun/falcon/app/falcon/core/Domain/Notifications/NotificationProcessor.swift:273"
+    },
+    {
+     "cc": 18,
+     "function": "analyticsEvent",
+     "at": "muun/falcon/app/falcon/Presentation/Screen/NewOperation/NewOpError.swift:140"
     }
    ]
   },
@@ -271,14 +271,14 @@
    ]
   },
   "all": {
-   "functions": 6679,
-   "mean_cc": 1.92,
+   "functions": 6572,
+   "mean_cc": 1.89,
    "p90_cc": 4,
-   "max_cc": 63,
-   "cc_le_2": 5405,
-   "cc_3_12": 1220,
-   "cc_gt_12": 54,
-   "cc_gt_30": 2
+   "max_cc": 26,
+   "cc_le_2": 5393,
+   "cc_3_12": 1127,
+   "cc_gt_12": 52,
+   "cc_gt_30": 0
   }
  },
  "Phoenix": {

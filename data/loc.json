@@ -83,13 +83,15 @@
  },
  "Muun": {
   "app": {
-   "code": 59660,
-   "chars": 1732233,
-   "files": 683,
+   "code": 57144,
+   "chars": 1625670,
+   "files": 682,
    "languages": {
-    "Swift": 59660
+    "Swift": 57144
    },
-   "generated_excluded": []
+   "generated_excluded": [
+    "muun/falcon/app/falcon/core/Protobuf/wallet_service.grpc.swift"
+   ]
   },
   "bitcoin": {
    "code": 28469,
