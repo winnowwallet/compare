@@ -1,6 +1,7 @@
 """Third-party packages each iPhone app resolves and ships, from its own lockfiles and pinned sources.
 
-SwiftPM: every resolved package. npm: the production closure of package.json `dependencies`.
+SwiftPM: every resolved package. Lake: every git package in the app's lake-manifest.json, minus the
+engine (Lean's own runtime and standard library come with the toolchain, as Swift's do). npm: the production closure of package.json `dependencies`.
 CocoaPods: trunk pods, separately from pods that are the native half of npm packages.
 Kotlin: libraries resolved for the iPhone target from Maven Central's Gradle module metadata.
 Rust: `cargo tree` for aarch64-apple-ios at each prebuilt library's pinned source.
@@ -43,6 +44,11 @@ def pods(ref):
         'react_native_core': sorted(n for n, p in ext if 'node_modules/react-native/' in p),
         'local': sorted(n for n, p in ext if 'node_modules' not in p),
     }
+
+
+def lake(ref, engine=None):
+    packages = json.loads(resolve(ref).read_text())['packages']
+    return sorted(f"{p['name']}@{p['rev'][:12]}" for p in packages if p['type'] == 'git' and p['name'] != engine)
 
 
 # ── npm ───────────────────────────────────────────────────────
@@ -231,6 +237,8 @@ def main():
         d, r = spec['deps'], {}
         if 'spm' in d:
             r['spm'] = [p for p in spm(d['spm']) if not p.startswith(d.get('spm_engine', '\0') + '@')]
+        if 'lake' in d:
+            r['lake'] = lake(d['lake'], d.get('lake_engine'))
         if 'maven' in d:
             r['kotlin'] = maven(d['maven'])
         if 'cargo' in d:
@@ -251,7 +259,7 @@ def main():
             p = pods(d['pods'])
             r['pods'] = p['trunk']
             r['pods_from_npm_and_react_native'] = len(p['native_half_of_npm_packages']) + len(p['react_native_core'])
-        r['total'] = sum(len(r[k]) for k in ('spm', 'kotlin', 'rust', 'go', 'npm', 'pods') if k in r)
+        r['total'] = sum(len(r[k]) for k in ('spm', 'lake', 'kotlin', 'rust', 'go', 'npm', 'pods') if k in r)
         out[wallet] = r
         print(wallet, {k: (len(v) if isinstance(v, list) else v) for k, v in r.items() if k != 'rust_per_library'})
     write_json(DATA / 'deps.json', out)

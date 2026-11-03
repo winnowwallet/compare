@@ -2,6 +2,7 @@
 whitespace-free characters, which do not reward long lines."""
 import json
 
+import lean
 from common import CONFIG, DATA, LANGS, STAGE, cloc, left_out, stage, unclaimed, write_json
 
 
@@ -19,8 +20,13 @@ def measure(refs, skip=()):
     for f in sorted(STAGE.rglob('*.nc')):
         chars += sum(1 for ch in f.read_text(errors='ignore') if not ch.isspace())
         f.unlink()
-    return {'code': sum(languages.values()), 'chars': chars, 'files': files,
-            'languages': dict(sorted(languages.items())), 'generated_excluded': sorted(generated)}
+    result = {'code': sum(languages.values()), 'chars': chars, 'files': files,
+              'languages': dict(sorted(languages.items())), 'generated_excluded': sorted(generated)}
+    # Lean proofs (theorem, lemma, example) are in the code count; how many, and their lines, are shown too
+    proofs = [lean.analyze(f.read_text(errors='ignore'))[1] for f in staged if f.suffix == '.lean']
+    if proofs:
+        result['proofs'] = {'theorems': sum(p[0] for p in proofs), 'lines': sum(p[1] for p in proofs)}
+    return result
 
 
 def main():

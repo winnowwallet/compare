@@ -1,14 +1,26 @@
 {
- "snapshot": "2026-10-10",
+ "snapshot": "2026-11-03",
  "sources": {
   "winnow": {
-   "repo": "https://github.com/winnowwallet/winnow",
+   "repo": "https://github.com/winnowwallet/winnow-lean",
    "track": {
-    "branch": "HEAD"
+    "tag_latest": "v(\\d+(?:\\.\\d+)*)"
    },
-   "rev": "13db07a9017088db9ca51852c0d55c08de7891d9",
-   "label": "winnowwallet/winnow@13db07a",
-   "date": "2026-10-02"
+   "rev": "a43913654a6937dd6f207d0b43e0b22013d78f3b",
+   "label": "winnowwallet/winnow-lean v0.9.10",
+   "date": "2026-10-31",
+   "tag": "v0.9.10",
+   "version": "0.9.10"
+  },
+  "leannative": {
+   "repo": "https://github.com/LeanNative/leannative",
+   "track": {
+    "from": "winnow:LeanApp/lake-manifest.json",
+    "lake": "leannative"
+   },
+   "rev": "700b3889a99a55804bd7fd256fb4fd3f008e236b",
+   "label": "LeanNative/leannative@700b388",
+   "date": "2026-10-31"
   },
   "phoenix": {
    "repo": "https://github.com/ACINQ/phoenix",
@@ -39,9 +51,9 @@
    "track": {
     "branch": "HEAD"
    },
-   "rev": "91fffad36b4693771e34a5d4f38c08dcff374901",
-   "label": "synonymdev/bitkit-ios@91fffad",
-   "date": "2026-10-09"
+   "rev": "2ee882f734759eb5a612d4faf07db14665f3b29f",
+   "label": "synonymdev/bitkit-ios@2ee882f",
+   "date": "2026-11-03"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",
@@ -49,11 +61,10 @@
     "from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
     "spm": "ldk-node"
    },
-   "lock": "locks/synonym-ldk-node.Cargo.lock",
-   "rev": "190a17d966cf5a685444cfa17c3a419c290bf26c",
-   "version": "0.7.0-rc.66",
-   "label": "synonymdev/ldk-node 0.7.0-rc.66",
-   "date": "2026-09-02"
+   "rev": "1976754dd49886e102f2b3132d5f700d6aabd8d7",
+   "version": "0.7.0-rc.78",
+   "label": "synonymdev/ldk-node 0.7.0-rc.78",
+   "date": "2026-10-27"
   },
   "rust-lightning": {
    "repo": "https://github.com/lightningdevkit/rust-lightning",
@@ -62,11 +73,11 @@
     "cargo": "lightning",
     "tag": "v{}"
    },
-   "rev": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
-   "tag": "v0.2.6",
-   "version": "0.2.6",
-   "label": "lightningdevkit/rust-lightning v0.2.6",
-   "date": "2026-09-09"
+   "rev": "5ce2ecb33d32e3b61ef01d5ead0ee6693c0cd7d1",
+   "tag": "v0.2.7",
+   "version": "0.2.7",
+   "label": "lightningdevkit/rust-lightning v0.2.7",
+   "date": "2026-10-01"
   },
   "bitkit-core": {
    "repo": "https://github.com/synonymdev/bitkit-core",
@@ -74,10 +85,10 @@
     "from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
     "spm": "bitkit-core"
    },
-   "rev": "b53fa54a16f04940943072bb6e08dc2650302f93",
-   "version": "0.5.18",
-   "label": "synonymdev/bitkit-core 0.5.18",
-   "date": "2026-09-21"
+   "rev": "22e0acc31a97b65205e71f4190cfc659fdecd3ca",
+   "version": "0.8.0-rc11",
+   "label": "synonymdev/bitkit-core 0.8.0-rc11",
+   "date": "2026-10-24"
   },
   "paykit-rs": {
    "repo": "https://github.com/pubky/paykit-rs",
@@ -85,10 +96,10 @@
     "from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
     "spm": "paykit-rs"
    },
-   "rev": "ad3c72248d18587bb5b6ef3c99b063fa9bf31551",
-   "version": "0.1.0-rc72",
-   "label": "pubky/paykit-rs 0.1.0-rc72",
-   "date": "2026-10-08"
+   "rev": "01de5dd232d2b22f132d066697cce041700e7136",
+   "version": "0.1.1-rc2",
+   "label": "pubky/paykit-rs 0.1.1-rc2",
+   "date": "2026-10-26"
   },
   "vss-rust-client-ffi": {
    "repo": "https://github.com/synonymdev/vss-rust-client-ffi",
@@ -96,19 +107,19 @@
     "from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
     "spm": "vss-rust-client-ffi"
    },
-   "rev": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
-   "version": "0.5.23",
-   "label": "synonymdev/vss-rust-client-ffi 0.5.23",
-   "date": "2026-08-17"
+   "rev": "eba41ef62b7314aa75827a5a3e71d2b23930b981",
+   "version": "0.5.26-rc1",
+   "label": "synonymdev/vss-rust-client-ffi 0.5.26-rc1",
+   "date": "2026-10-26"
   },
   "blixt": {
    "repo": "https://github.com/hsjoberg/blixt-wallet",
    "track": {
     "branch": "HEAD"
    },
-   "rev": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
-   "label": "hsjoberg/blixt-wallet@baa6ba0",
-   "date": "2026-08-21"
+   "rev": "b0408dd1d45a24d7e5a38221adeb79d6309f0e87",
+   "label": "hsjoberg/blixt-wallet@b0408dd",
+   "date": "2026-10-17"
   },
   "turbo-lnd": {
    "repo": "https://github.com/hsjoberg/react-native-turbo-lnd",
@@ -146,9 +157,9 @@
    "track": {
     "branch": "HEAD"
    },
-   "rev": "340f8803fe86a005c00d36ff436ff24bf94cb506",
-   "label": "ZeusLN/zeus@340f880",
-   "date": "2026-10-10"
+   "rev": "5f56abba57dd25a1881ed41f1ca850c55a4ff182",
+   "label": "ZeusLN/zeus@5f56abb",
+   "date": "2026-11-02"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
@@ -161,11 +172,11 @@
     "path": "build/version.go",
     "pattern": "AppMajor uint = (\\d+)[\\s\\S]*?AppMinor uint = (\\d+)[\\s\\S]*?AppPatch uint = (\\d+)"
    },
-   "rev": "5711f358f4dc01434ad636160eea941ec1f392b7",
-   "tag": "v0.21.4-beta-zeus.1",
-   "version": "0.21.4",
-   "label": "ZeusLN/lnd v0.21.4-beta-zeus.1",
-   "date": "2026-10-08"
+   "rev": "e21a177c24b3cb33bf4b44261f5b5f3fa6790a9c",
+   "tag": "v0.21.5-beta-zeus",
+   "version": "0.21.5",
+   "label": "ZeusLN/lnd v0.21.5-beta-zeus",
+   "date": "2026-10-27"
   },
   "zeus-ldk-node": {
    "repo": "https://github.com/ZeusLN/ldk-node",
@@ -174,11 +185,11 @@
     "json": "ldk-node.version",
     "tag": "{}"
    },
-   "rev": "4687d9fe5e4348ecfa059decfd870e154d19262e",
-   "tag": "v0.7.0-zeus-rl-0.2.7",
-   "version": "0.7.0-zeus-rl-0.2.7",
-   "label": "ZeusLN/ldk-node v0.7.0-zeus-rl-0.2.7",
-   "date": "2026-10-02"
+   "rev": "93680ba7d9069680afe95cc3387c5f3639b9681e",
+   "tag": "v0.7.1-zeus",
+   "version": "0.7.1-zeus",
+   "label": "ZeusLN/ldk-node v0.7.1-zeus",
+   "date": "2026-10-27"
   },
   "cdk": {
    "repo": "https://github.com/cashubtc/cdk",
@@ -187,20 +198,20 @@
     "json": "cdk.version",
     "tag": "v{}"
    },
-   "rev": "874745d5d79b36be346efbd716393357ab898834",
-   "tag": "v0.17.4",
-   "version": "0.17.4",
-   "label": "cashubtc/cdk v0.17.4",
-   "date": "2026-08-14"
+   "rev": "9f6d3a3734d7223d10b5553e3591d3f9d5c6c904",
+   "tag": "v0.18.2",
+   "version": "0.18.2",
+   "label": "cashubtc/cdk v0.18.2",
+   "date": "2026-10-13"
   },
   "bluewallet": {
    "repo": "https://github.com/BlueWallet/BlueWallet",
    "track": {
     "branch": "HEAD"
    },
-   "rev": "69adb1555038c8b2385952edd0404d2e1ecd7ca7",
-   "label": "BlueWallet/BlueWallet@69adb15",
-   "date": "2026-10-07"
+   "rev": "3631c47d000e9faf702a9bcf9c9b3f7a4c1bfcfe",
+   "label": "BlueWallet/BlueWallet@3631c47",
+   "date": "2026-10-30"
   },
   "green": {
    "repo": "https://github.com/Blockstream/green_ios",
@@ -237,36 +248,59 @@
  "lines": {
   "Winnow": {
    "app": {
-    "code": 8965,
-    "chars": 277104,
-    "files": 33,
+    "code": 9322,
+    "chars": 404775,
+    "files": 43,
     "languages": {
-     "Swift": 8965
+     "Lean": 9322
     },
-    "generated_excluded": []
+    "generated_excluded": [],
+    "proofs": {
+     "theorems": 0,
+     "lines": 0
+    }
    },
    "bitcoin": {
-    "code": 13032,
-    "chars": 441655,
-    "files": 59,
+    "code": 15486,
+    "chars": 681105,
+    "files": 104,
     "languages": {
-     "Swift": 13032
+     "Lean": 15486
     },
-    "generated_excluded": []
+    "generated_excluded": [],
+    "proofs": {
+     "theorems": 95,
+     "lines": 872
+    }
+   },
+   "engine": {
+    "code": 6051,
+    "chars": 266940,
+    "files": 45,
+    "languages": {
+     "C": 62,
+     "C/C++ Header": 8,
+     "Lean": 5981
+    },
+    "generated_excluded": [],
+    "proofs": {
+     "theorems": 45,
+     "lines": 303
+    }
    }
   },
   "BlueWallet": {
    "app": {
-    "code": 57858,
-    "chars": 1638294,
-    "files": 382,
+    "code": 59075,
+    "chars": 1689763,
+    "files": 381,
     "languages": {
-     "C/C++ Header": 18,
-     "JavaScript": 1523,
-     "Objective-C": 33,
-     "Objective-C++": 59,
-     "Swift": 3492,
-     "TypeScript": 52733
+     "C/C++ Header": 17,
+     "JavaScript": 1522,
+     "Objective-C": 26,
+     "Objective-C++": 80,
+     "Swift": 3651,
+     "TypeScript": 53779
     },
     "generated_excluded": []
    }
@@ -342,29 +376,29 @@
   },
   "Bitkit": {
    "app": {
-    "code": 100640,
-    "chars": 2833545,
-    "files": 617,
+    "code": 112906,
+    "chars": 3292458,
+    "files": 630,
     "languages": {
-     "Swift": 100640
+     "Swift": 112906
     },
     "generated_excluded": []
    },
    "engine": {
-    "code": 127646,
-    "chars": 3812752,
+    "code": 128396,
+    "chars": 3834405,
     "files": 226,
     "languages": {
-     "Rust": 127646
+     "Rust": 128396
     },
     "generated_excluded": []
    }
   },
   "Blixt": {
    "app": {
-    "code": 36360,
-    "chars": 947579,
-    "files": 298,
+    "code": 36740,
+    "chars": 957844,
+    "files": 301,
     "languages": {
      "C++": 47,
      "C/C++ Header": 87,
@@ -372,7 +406,7 @@
      "Objective-C": 154,
      "Objective-C++": 84,
      "Swift": 780,
-     "TypeScript": 31440
+     "TypeScript": 31820
     },
     "generated_excluded": [
      "blixt/speedloader-turbomodule/liblnd/arm64-v8a/liblnd.h",
@@ -412,27 +446,27 @@
   },
   "Zeus": {
    "app": {
-    "code": 191851,
-    "chars": 3732483,
-    "files": 581,
+    "code": 193516,
+    "chars": 3791635,
+    "files": 591,
     "languages": {
-     "C/C++ Header": 45,
-     "JavaScript": 47,
-     "Objective-C": 1333,
-     "Objective-C++": 440,
-     "Swift": 4075,
-     "TypeScript": 185911
+     "C/C++ Header": 46,
+     "JavaScript": 48,
+     "Objective-C": 1335,
+     "Objective-C++": 492,
+     "Swift": 4182,
+     "TypeScript": 187413
     },
     "generated_excluded": [
      "zeus/ios/LdkNodeMobile/LDKNode.swift"
     ]
    },
    "engine": {
-    "code": 242900,
-    "chars": 5628091,
-    "files": 1188,
+    "code": 243921,
+    "chars": 5651207,
+    "files": 1191,
     "languages": {
-     "Go": 242900
+     "Go": 243921
     },
     "generated_excluded": [
      "lnd-zeus/graph/db/migration1/sqlc/db.go",
@@ -459,22 +493,25 @@
  },
  "languages_percent": {
   "Winnow": {
-   "Swift": 100.0,
+   "Lean": 99.77,
+   "Swift": 0.0,
    "Kotlin": 0.0,
    "Rust": 0.0,
    "Go": 0.0,
    "TypeScript/JS": 0.0,
-   "C family": 0.0
+   "C family": 0.23
   },
   "BlueWallet": {
-   "Swift": 6.04,
+   "Lean": 0.0,
+   "Swift": 6.18,
    "Kotlin": 0.0,
    "Rust": 0.0,
    "Go": 0.0,
-   "TypeScript/JS": 93.77,
-   "C family": 0.19
+   "TypeScript/JS": 93.61,
+   "C family": 0.21
   },
   "Green": {
+   "Lean": 0.0,
    "Swift": 67.74,
    "Kotlin": 0.0,
    "Rust": 9.38,
@@ -483,6 +520,7 @@
    "C family": 22.88
   },
   "Muun": {
+   "Lean": 0.0,
    "Swift": 67.7,
    "Kotlin": 0.0,
    "Rust": 0.13,
@@ -491,6 +529,7 @@
    "C family": 0.01
   },
   "Phoenix": {
+   "Lean": 0.0,
    "Swift": 59.98,
    "Kotlin": 39.5,
    "Rust": 0.0,
@@ -499,148 +538,151 @@
    "C family": 0.52
   },
   "Bitkit": {
-   "Swift": 44.09,
+   "Lean": 0.0,
+   "Swift": 46.79,
    "Kotlin": 0.0,
-   "Rust": 55.91,
+   "Rust": 53.21,
    "Go": 0.0,
    "TypeScript/JS": 0.0,
    "C family": 0.0
   },
   "Blixt": {
+   "Lean": 0.0,
    "Swift": 0.28,
    "Kotlin": 0.0,
    "Rust": 0.0,
-   "Go": 86.79,
-   "TypeScript/JS": 12.79,
-   "C family": 0.14
+   "Go": 86.67,
+   "TypeScript/JS": 12.91,
+   "C family": 0.13
   },
   "Zeus": {
-   "Swift": 0.94,
+   "Lean": 0.0,
+   "Swift": 0.96,
    "Kotlin": 0.0,
    "Rust": 0.0,
-   "Go": 55.87,
-   "TypeScript/JS": 42.77,
-   "C family": 0.42
+   "Go": 55.76,
+   "TypeScript/JS": 42.85,
+   "C family": 0.43
   }
  },
  "complexity": {
   "Winnow": {
    "app": {
-    "functions": 610,
-    "mean_cc": 3.28,
-    "p90_cc": 7,
-    "max_cc": 27,
-    "cc_le_2": 331,
-    "cc_3_12": 269,
-    "cc_gt_12": 10,
-    "cc_gt_30": 0,
-    "files": 33,
-    "files_with_parse_errors": 1,
+    "functions": 982,
+    "mean_cc": 4.14,
+    "p90_cc": 10,
+    "max_cc": 44,
+    "cc_le_2": 521,
+    "cc_3_12": 394,
+    "cc_gt_12": 67,
+    "cc_gt_30": 6,
+    "files": 43,
+    "files_with_parse_errors": 0,
     "most_complex": [
      {
-      "cc": 27,
-      "function": "(computed_property)",
-      "at": "winnow/Sources/WinnowApp/SettingsView.swift:39"
+      "cc": 44,
+      "function": "parseDouble",
+      "at": "winnow/LeanApp/WinnowApp/Pure.lean:525"
      },
      {
-      "cc": 22,
-      "function": "init",
-      "at": "winnow/Sources/WinnowApp/AppModel.swift:458"
+      "cc": 43,
+      "function": "Model.onMultisigHost",
+      "at": "winnow/LeanApp/WinnowApp/Multisig.lean:390"
      },
      {
-      "cc": 22,
-      "function": "(computed_property)",
-      "at": "winnow/Sources/WinnowApp/MuSig2SignView.swift:266"
+      "cc": 41,
+      "function": "step",
+      "at": "winnow/LeanApp/WinnowApp/Update.lean:309"
      },
      {
-      "cc": 20,
-      "function": "(computed_property)",
-      "at": "winnow/Sources/WinnowApp/PeerGatewaysSection.swift:15"
+      "cc": 34,
+      "function": "stepSettings",
+      "at": "winnow/LeanApp/WinnowApp/Settings.lean:61"
      },
      {
-      "cc": 20,
-      "function": "(computed_property)",
-      "at": "winnow/Sources/WinnowApp/RecipientsView.swift:116"
+      "cc": 32,
+      "function": "multisigAccountSections",
+      "at": "winnow/LeanApp/WinnowApp/Multisig.lean:618"
      }
     ]
    },
    "bitcoin": {
-    "functions": 1010,
-    "mean_cc": 3.34,
-    "p90_cc": 7,
-    "max_cc": 27,
-    "cc_le_2": 523,
-    "cc_3_12": 473,
-    "cc_gt_12": 14,
-    "cc_gt_30": 0,
-    "files": 59,
-    "files_with_parse_errors": 3,
+    "functions": 2019,
+    "mean_cc": 3.4,
+    "p90_cc": 8,
+    "max_cc": 34,
+    "cc_le_2": 1144,
+    "cc_3_12": 816,
+    "cc_gt_12": 59,
+    "cc_gt_30": 4,
+    "files": 104,
+    "files_with_parse_errors": 0,
     "most_complex": [
      {
-      "cc": 27,
-      "function": "decode",
-      "at": "winnow/Sources/WalletCore/Network/Protocol/Messages.swift:367"
-     },
-     {
-      "cc": 23,
-      "function": "(computed_property)",
-      "at": "winnow/Sources/WalletCore/Network/Protocol/Messages.swift:302"
-     },
-     {
-      "cc": 21,
-      "function": "validateKnownFields",
-      "at": "winnow/Sources/WalletCore/PSBT/PSBT.swift:815"
-     },
-     {
-      "cc": 19,
-      "function": "(computed_property)",
-      "at": "winnow/Sources/WalletCore/Network/Protocol/Messages.swift:329"
-     },
-     {
-      "cc": 18,
+      "cc": 34,
       "function": "replenish",
-      "at": "winnow/Sources/WalletCore/Network/Peers/PeerPool.swift:627"
+      "at": "winnow/Lean/Winnow/IO/Pool.lean:309"
+     },
+     {
+      "cc": 32,
+      "function": "publicV4",
+      "at": "winnow/Lean/Winnow/IO/Census.lean:96"
+     },
+     {
+      "cc": 32,
+      "function": "boundary",
+      "at": "winnow/Lean/Winnow/Wallet/Characters.lean:83"
+     },
+     {
+      "cc": 31,
+      "function": "handleInbound",
+      "at": "winnow/Lean/Winnow/IO/Transport.lean:311"
+     },
+     {
+      "cc": 29,
+      "function": "decodeUTF8Lossy",
+      "at": "winnow/Lean/Winnow/Keys/Unicode.lean:112"
      }
     ]
    },
    "all": {
-    "functions": 1620,
-    "mean_cc": 3.32,
-    "p90_cc": 7,
-    "max_cc": 27,
-    "cc_le_2": 854,
-    "cc_3_12": 742,
-    "cc_gt_12": 24,
-    "cc_gt_30": 0
+    "functions": 3001,
+    "mean_cc": 3.64,
+    "p90_cc": 8,
+    "max_cc": 44,
+    "cc_le_2": 1665,
+    "cc_3_12": 1210,
+    "cc_gt_12": 126,
+    "cc_gt_30": 10
    }
   },
   "BlueWallet": {
    "app": {
-    "functions": 1764,
-    "mean_cc": 5.27,
+    "functions": 1817,
+    "mean_cc": 5.29,
     "p90_cc": 10,
-    "max_cc": 242,
-    "cc_le_2": 1013,
-    "cc_3_12": 610,
-    "cc_gt_12": 141,
-    "cc_gt_30": 42,
-    "files": 382,
-    "files_with_parse_errors": 6,
+    "max_cc": 262,
+    "cc_le_2": 1039,
+    "cc_3_12": 635,
+    "cc_gt_12": 143,
+    "cc_gt_30": 45,
+    "files": 381,
+    "files_with_parse_errors": 5,
     "most_complex": [
      {
-      "cc": 242,
+      "cc": 262,
       "function": "(arrow_function)",
-      "at": "bluewallet/screen/transactions/TransactionStatus.tsx:165"
+      "at": "bluewallet/screen/transactions/TransactionStatus.tsx:185"
      },
      {
-      "cc": 238,
+      "cc": 244,
       "function": "(arrow_function)",
-      "at": "bluewallet/screen/send/SendDetails.tsx:77"
+      "at": "bluewallet/screen/send/SendDetails.tsx:81"
      },
      {
-      "cc": 178,
+      "cc": 181,
       "function": "(arrow_function)",
-      "at": "bluewallet/screen/wallets/WalletDetails.tsx:63"
+      "at": "bluewallet/screen/wallets/WalletDetails.tsx:66"
      },
      {
       "cc": 133,
@@ -648,21 +690,21 @@
       "at": "bluewallet/screen/settings/ElectrumSettings.tsx:45"
      },
      {
-      "cc": 122,
+      "cc": 126,
       "function": "(arrow_function)",
-      "at": "bluewallet/screen/receive/ReceiveDetails.tsx:149"
+      "at": "bluewallet/screen/receive/ReceiveDetails.tsx:150"
      }
     ]
    },
    "all": {
-    "functions": 1764,
-    "mean_cc": 5.27,
+    "functions": 1817,
+    "mean_cc": 5.29,
     "p90_cc": 10,
-    "max_cc": 242,
-    "cc_le_2": 1013,
-    "cc_3_12": 610,
-    "cc_gt_12": 141,
-    "cc_gt_30": 42
+    "max_cc": 262,
+    "cc_le_2": 1039,
+    "cc_3_12": 635,
+    "cc_gt_12": 143,
+    "cc_gt_30": 45
    }
   },
   "Green": {
@@ -859,72 +901,72 @@
   },
   "Bitkit": {
    "app": {
-    "functions": 6014,
-    "mean_cc": 3.02,
+    "functions": 6728,
+    "mean_cc": 3.26,
     "p90_cc": 6,
-    "max_cc": 119,
-    "cc_le_2": 3618,
-    "cc_3_12": 2287,
-    "cc_gt_12": 109,
-    "cc_gt_30": 14,
-    "files": 617,
-    "files_with_parse_errors": 7,
+    "max_cc": 111,
+    "cc_le_2": 3954,
+    "cc_3_12": 2610,
+    "cc_gt_12": 164,
+    "cc_gt_30": 28,
+    "files": 630,
+    "files_with_parse_errors": 12,
     "most_complex": [
      {
-      "cc": 119,
+      "cc": 111,
       "function": "(computed_property)",
-      "at": "bitkit/Bitkit/MainNavView.swift:492"
+      "at": "bitkit/Bitkit/MainNavView.swift:494"
      },
      {
-      "cc": 70,
-      "function": "init",
-      "at": "bitkit/Bitkit/Utilities/Errors.swift:281"
+      "cc": 78,
+      "function": "refreshBip21",
+      "at": "bitkit/Bitkit/ViewModels/WalletViewModel.swift:1567"
      },
      {
-      "cc": 56,
+      "cc": 77,
       "function": "handleScannedData",
-      "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:550"
+      "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:763"
      },
      {
-      "cc": 55,
-      "function": "handleLdkNodeEvent",
-      "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:1370"
+      "cc": 71,
+      "function": "init",
+      "at": "bitkit/Bitkit/Utilities/Errors.swift:237"
      },
      {
-      "cc": 48,
-      "function": "listenForEvents",
-      "at": "bitkit/Bitkit/Services/LightningService.swift:1382"
+      "cc": 60,
+      "function": "performPayment",
+      "at": "bitkit/Bitkit/Views/Wallets/Send/SendConfirmationView.swift:1185"
      }
     ]
    },
    "all": {
-    "functions": 6014,
-    "mean_cc": 3.02,
+    "functions": 6728,
+    "mean_cc": 3.26,
     "p90_cc": 6,
-    "max_cc": 119,
-    "cc_le_2": 3618,
-    "cc_3_12": 2287,
-    "cc_gt_12": 109,
-    "cc_gt_30": 14
+    "max_cc": 111,
+    "cc_le_2": 3954,
+    "cc_3_12": 2610,
+    "cc_gt_12": 164,
+    "cc_gt_30": 28
    }
   },
   "Blixt": {
    "app": {
-    "functions": 1057,
-    "mean_cc": 3.57,
+    "functions": 1067,
+    "mean_cc": 3.59,
     "p90_cc": 7,
-    "max_cc": 134,
-    "cc_le_2": 785,
-    "cc_3_12": 216,
-    "cc_gt_12": 56,
+    "max_cc": 139,
+    "cc_le_2": 788,
+    "cc_3_12": 221,
+    "cc_gt_12": 58,
     "cc_gt_30": 19,
-    "files": 298,
+    "files": 301,
     "files_with_parse_errors": 11,
     "most_complex": [
      {
-      "cc": 134,
+      "cc": 139,
       "function": "Settings",
-      "at": "blixt/src/windows/Settings/Settings.tsx:70"
+      "at": "blixt/src/windows/Settings/Settings.tsx:75"
      },
      {
       "cc": 62,
@@ -949,79 +991,78 @@
     ]
    },
    "all": {
-    "functions": 1057,
-    "mean_cc": 3.57,
+    "functions": 1067,
+    "mean_cc": 3.59,
     "p90_cc": 7,
-    "max_cc": 134,
-    "cc_le_2": 785,
-    "cc_3_12": 216,
-    "cc_gt_12": 56,
+    "max_cc": 139,
+    "cc_le_2": 788,
+    "cc_3_12": 221,
+    "cc_gt_12": 58,
     "cc_gt_30": 19
    }
   },
   "Zeus": {
    "app": {
-    "functions": 4820,
-    "mean_cc": 4.69,
+    "functions": 5008,
+    "mean_cc": 4.7,
     "p90_cc": 10,
-    "max_cc": 252,
-    "cc_le_2": 2771,
-    "cc_3_12": 1699,
-    "cc_gt_12": 350,
-    "cc_gt_30": 77,
-    "files": 582,
+    "max_cc": 246,
+    "cc_le_2": 2868,
+    "cc_3_12": 1772,
+    "cc_gt_12": 368,
+    "cc_gt_30": 78,
+    "files": 592,
     "files_with_parse_errors": 13,
     "most_complex": [
      {
-      "cc": 252,
+      "cc": 246,
       "function": "render",
-      "at": "zeus/views/Receive.tsx:984"
+      "at": "zeus/views/Receive.tsx:1108"
      },
      {
-      "cc": 225,
+      "cc": 226,
       "function": "render",
-      "at": "zeus/views/Settings/WalletConfiguration.tsx:1388"
+      "at": "zeus/views/Settings/WalletConfiguration.tsx:1514"
      },
      {
-      "cc": 164,
+      "cc": 172,
+      "function": "fetchDataCore",
+      "at": "zeus/views/Wallet/Wallet.tsx:598"
+     },
+     {
+      "cc": 165,
       "function": "(arrow_function)",
-      "at": "zeus/utils/handleAnything.ts:363"
+      "at": "zeus/utils/handleAnything.ts:368"
      },
      {
       "cc": 144,
       "function": "render",
-      "at": "zeus/views/Settings/SeedRecovery.tsx:494"
-     },
-     {
-      "cc": 132,
-      "function": "fetchDataCore",
-      "at": "zeus/views/Wallet/Wallet.tsx:578"
+      "at": "zeus/views/Settings/SeedRecovery.tsx:495"
      }
     ]
    },
    "all": {
-    "functions": 4820,
-    "mean_cc": 4.69,
+    "functions": 5008,
+    "mean_cc": 4.7,
     "p90_cc": 10,
-    "max_cc": 252,
-    "cc_le_2": 2771,
-    "cc_3_12": 1699,
-    "cc_gt_12": 350,
-    "cc_gt_30": 77
+    "max_cc": 246,
+    "cc_le_2": 2868,
+    "cc_3_12": 1772,
+    "cc_gt_12": 368,
+    "cc_gt_30": 78
    }
   }
  },
  "dependencies": {
   "Winnow": {
-   "spm": [
-    "swift-secp256k1@0.23.2"
-   ],
-   "total": 1
+   "lake": [],
+   "total": 0
   },
   "BlueWallet": {
    "npm_direct": [
     "@arkade-os/boltz-swap",
     "@arkade-os/sdk",
+    "@bugsnag/cli",
     "@bugsnag/react-native",
     "@bugsnag/source-maps",
     "@keystonehq/bc-ur-registry",
@@ -1075,7 +1116,6 @@
     "events",
     "lottie-react-native",
     "pako",
-    "payjoin-client",
     "prop-types",
     "qr",
     "react",
@@ -1102,7 +1142,6 @@
     "react-native-notifications",
     "react-native-permissions",
     "react-native-prompt-android",
-    "react-native-quick-actions",
     "react-native-reanimated",
     "react-native-safe-area-context",
     "react-native-screens",
@@ -1123,7 +1162,7 @@
    "npm": [
     "@ampproject/remapping@2.3.0",
     "@arkade-os/boltz-swap@0.3.67",
-    "@arkade-os/sdk@0.4.78",
+    "@arkade-os/sdk@0.4.79",
     "@babel/code-frame@7.29.7",
     "@babel/compat-data@7.29.7",
     "@babel/core@7.26.10",
@@ -1190,20 +1229,21 @@
     "@bitcoinerlab/descriptors-core@3.1.7",
     "@bitcoinerlab/descriptors-scure@3.1.7",
     "@bitcoinerlab/miniscript@2.0.0",
-    "@bugsnag/core@8.9.0",
-    "@bugsnag/cuid@3.2.1",
-    "@bugsnag/delivery-react-native@8.9.0",
-    "@bugsnag/plugin-console-breadcrumbs@8.9.0",
-    "@bugsnag/plugin-network-breadcrumbs@8.9.0",
-    "@bugsnag/plugin-react-native-client-sync@8.9.0",
-    "@bugsnag/plugin-react-native-event-sync@8.9.0",
-    "@bugsnag/plugin-react-native-global-error-handler@8.9.0",
-    "@bugsnag/plugin-react-native-hermes@8.9.0",
-    "@bugsnag/plugin-react-native-session@8.9.0",
-    "@bugsnag/plugin-react-native-unhandled-rejection@8.9.0",
-    "@bugsnag/plugin-react@8.9.0",
-    "@bugsnag/react-native@8.9.0",
-    "@bugsnag/request-tracker@8.9.0",
+    "@bugsnag/cli@3.10.7",
+    "@bugsnag/core@9.1.0",
+    "@bugsnag/cuid@3.2.2",
+    "@bugsnag/delivery-react-native@9.1.0",
+    "@bugsnag/plugin-console-breadcrumbs@9.1.0",
+    "@bugsnag/plugin-network-breadcrumbs@9.1.0",
+    "@bugsnag/plugin-react-native-client-sync@9.1.0",
+    "@bugsnag/plugin-react-native-event-sync@9.1.0",
+    "@bugsnag/plugin-react-native-global-error-handler@9.1.0",
+    "@bugsnag/plugin-react-native-hermes@9.1.0",
+    "@bugsnag/plugin-react-native-session@9.1.0",
+    "@bugsnag/plugin-react-native-unhandled-rejection@9.1.0",
+    "@bugsnag/plugin-react@9.1.0",
+    "@bugsnag/react-native@9.1.0",
+    "@bugsnag/request-tracker@9.1.0",
     "@bugsnag/safe-json-stringify@6.1.0",
     "@bugsnag/source-maps@2.3.3",
     "@colors/colors@1.6.0",
@@ -1216,12 +1256,13 @@
     "@jest/schemas@29.6.3",
     "@jest/types@29.6.3",
     "@jridgewell/gen-mapping@0.3.13",
+    "@jridgewell/remapping@2.3.5",
     "@jridgewell/resolve-uri@3.1.2",
     "@jridgewell/source-map@0.3.11",
     "@jridgewell/sourcemap-codec@1.5.0",
     "@jridgewell/trace-mapping@0.3.31",
     "@keystonehq/alias-sampling@0.1.2",
-    "@keystonehq/bc-ur-registry@0.8.0",
+    "@keystonehq/bc-ur-registry@0.8.1",
     "@marcbachmann/cel-js@8.0.0",
     "@ngraveio/bc-ur@1.1.13",
     "@noble/ciphers@1.3.0",
@@ -1250,46 +1291,44 @@
     "@react-native-community/cli-tools@20.2.0",
     "@react-native-community/cli-types@20.2.0",
     "@react-native-community/cli@20.2.0",
-    "@react-native-documents/picker@12.0.2",
-    "@react-native-vector-icons/common@13.0.3",
-    "@react-native-vector-icons/entypo@13.1.4",
-    "@react-native-vector-icons/fontawesome6@13.1.4",
-    "@react-native-vector-icons/fontawesome@13.1.4",
-    "@react-native-vector-icons/ionicons@13.1.4",
-    "@react-native-vector-icons/material-design-icons@13.1.4",
-    "@react-native-vector-icons/material-icons@13.1.4",
-    "@react-native/assets-registry@0.85.3",
-    "@react-native/babel-plugin-codegen@0.86.2",
-    "@react-native/babel-preset@0.86.2",
-    "@react-native/codegen@0.85.3",
-    "@react-native/codegen@0.86.2",
-    "@react-native/community-cli-plugin@0.85.3",
-    "@react-native/debugger-frontend@0.85.3",
-    "@react-native/debugger-shell@0.85.3",
-    "@react-native/dev-middleware@0.85.3",
-    "@react-native/gradle-plugin@0.85.3",
-    "@react-native/gradle-plugin@0.86.2",
-    "@react-native/js-polyfills@0.85.3",
-    "@react-native/js-polyfills@0.86.2",
-    "@react-native/metro-babel-transformer@0.86.2",
-    "@react-native/metro-config@0.86.2",
-    "@react-native/normalize-colors@0.85.3",
-    "@react-native/virtualized-lists@0.85.3",
-    "@react-navigation/core@7.23.0",
-    "@react-navigation/devtools@7.1.16",
-    "@react-navigation/drawer@7.14.3",
-    "@react-navigation/elements@2.9.44",
+    "@react-native-documents/picker@12.0.3",
+    "@react-native-vector-icons/common@13.0.4",
+    "@react-native-vector-icons/entypo@13.1.5",
+    "@react-native-vector-icons/fontawesome6@13.1.5",
+    "@react-native-vector-icons/fontawesome@13.1.5",
+    "@react-native-vector-icons/ionicons@13.1.5",
+    "@react-native-vector-icons/material-design-icons@13.1.5",
+    "@react-native-vector-icons/material-icons@13.1.5",
+    "@react-native/asset-utils@0.88.1",
+    "@react-native/babel-plugin-codegen@0.88.1",
+    "@react-native/babel-preset@0.88.1",
+    "@react-native/codegen@0.88.1",
+    "@react-native/community-cli-plugin@0.88.1",
+    "@react-native/debugger-frontend@0.88.1",
+    "@react-native/debugger-shell@0.88.1",
+    "@react-native/dev-middleware@0.88.1",
+    "@react-native/gradle-plugin@0.88.1",
+    "@react-native/js-polyfills@0.88.1",
+    "@react-native/metro-babel-transformer@0.88.1",
+    "@react-native/metro-config@0.88.1",
+    "@react-native/normalize-colors@0.88.1",
+    "@react-native/virtualized-lists@0.88.1",
+    "@react-navigation/core@7.24.0",
+    "@react-navigation/devtools@7.1.17",
+    "@react-navigation/drawer@7.14.4",
+    "@react-navigation/elements@2.9.45",
     "@react-navigation/native-stack@7.17.10",
-    "@react-navigation/native@7.5.0",
-    "@react-navigation/routers@7.6.4",
+    "@react-navigation/native@7.5.1",
+    "@react-navigation/routers@7.6.5",
     "@realm/fetch@0.1.1",
     "@scure/base@1.1.1",
     "@scure/base@1.2.6",
     "@scure/base@2.0.0",
     "@scure/base@2.4.0",
     "@scure/bip32@2.4.0",
-    "@scure/bip39@2.0.1",
+    "@scure/bip39@2.4.0",
     "@scure/btc-signer@2.0.1",
+    "@scure/btc-signer@2.4.1",
     "@sideway/address@4.1.5",
     "@sideway/formula@3.0.1",
     "@sideway/pinpoint@2.0.0",
@@ -1301,7 +1340,6 @@
     "@types/istanbul-lib-coverage@2.0.6",
     "@types/istanbul-lib-report@3.0.3",
     "@types/istanbul-reports@3.0.4",
-    "@types/node@10.12.18",
     "@types/node@22.14.0",
     "@types/normalize-package-data@2.4.4",
     "@types/react-test-renderer@19.1.0",
@@ -1314,7 +1352,6 @@
     "@wix-pilot/core@3.4.2",
     "@wix-pilot/detox@1.0.13",
     "@xmldom/xmldom@0.9.12",
-    "abort-controller@3.0.0",
     "accepts@1.3.8",
     "accepts@2.0.0",
     "acorn@8.15.0",
@@ -1344,8 +1381,6 @@
     "babel-plugin-polyfill-corejs2@0.4.15",
     "babel-plugin-polyfill-corejs3@0.11.1",
     "babel-plugin-polyfill-regenerator@0.6.6",
-    "babel-plugin-syntax-hermes-parser@0.33.3",
-    "babel-plugin-syntax-hermes-parser@0.36.0",
     "babel-plugin-transform-flow-enums@0.0.2",
     "balanced-match@1.0.2",
     "base-64@0.1.0",
@@ -1361,21 +1396,17 @@
     "bignumber.js@9.3.1",
     "bindings@1.5.0",
     "bip174@2.1.1",
-    "bip174@3.0.0",
+    "bip174@3.0.1",
     "bip21@2.0.3",
-    "bip32@2.0.6",
     "bip32@3.1.0",
     "bip32@5.0.0",
     "bip32@5.0.1",
     "bip38@3.1.1",
-    "bip39@3.1.0",
+    "bip39@3.1.2",
     "bip66@1.1.5",
     "bip68@1.0.4",
-    "bitcoin-ops@1.4.1",
-    "bitcoinjs-lib@5.2.0",
-    "bitcoinjs-lib@6.1.7",
-    "bitcoinjs-lib@7.0.0",
-    "bitcoinjs-lib@7.0.2",
+    "bitcoinjs-lib@6.1.10",
+    "bitcoinjs-lib@7.0.5",
     "bitcoinjs-message@2.2.0",
     "bl@4.1.0",
     "blakejs@1.2.1",
@@ -1383,7 +1414,7 @@
     "bn.js@4.12.1",
     "bn.js@5.2.2",
     "body-parser@2.2.2",
-    "bolt11@1.4.1",
+    "bolt11@1.4.2",
     "boolbase@1.0.0",
     "brace-expansion@1.1.11",
     "brace-expansion@2.0.1",
@@ -1426,9 +1457,6 @@
     "chalk@2.4.2",
     "chalk@4.1.2",
     "chownr@1.1.4",
-    "chrome-launcher@0.15.2",
-    "chromium-edge-launcher@0.3.0",
-    "ci-info@2.0.0",
     "ci-info@3.9.0",
     "cipher-base@1.0.6",
     "cli-cursor@3.1.0",
@@ -1460,6 +1488,7 @@
     "connect@3.7.0",
     "consola@2.15.3",
     "content-type@1.0.5",
+    "content-type@2.1.0",
     "convert-source-map@2.0.0",
     "core-js-compat@3.48.0",
     "core-util-is@1.0.3",
@@ -1486,6 +1515,7 @@
     "deepmerge@4.3.1",
     "defaults@1.0.4",
     "define-data-property@1.1.4",
+    "define-lazy-prop@2.0.0",
     "define-properties@1.2.1",
     "delayed-stream@1.0.0",
     "depd@2.0.0",
@@ -1533,7 +1563,6 @@
     "escape-string-regexp@4.0.0",
     "etag@1.8.1",
     "event-pubsub@4.3.0",
-    "event-target-shim@5.0.1",
     "eventemitter3@4.0.7",
     "events@3.3.0",
     "evp_bytestokey@1.0.3",
@@ -1561,6 +1590,10 @@
     "find-up@8.0.0",
     "flat@5.0.2",
     "flow-enums-runtime@0.0.6",
+    "flow-estree@0.327.0",
+    "flow-estree@0.331.0",
+    "flow-parser@0.327.0",
+    "flow-parser@0.331.0",
     "fn.name@1.1.0",
     "for-each@0.3.5",
     "form-data@3.0.4",
@@ -1593,13 +1626,7 @@
     "hash-base@3.1.0",
     "hash.js@1.1.7",
     "hasown@2.0.2",
-    "hermes-compiler@250829098.0.10",
-    "hermes-estree@0.33.3",
-    "hermes-estree@0.35.0",
-    "hermes-estree@0.36.0",
-    "hermes-parser@0.33.3",
-    "hermes-parser@0.35.0",
-    "hermes-parser@0.36.0",
+    "hermes-compiler@260318099.0.5",
     "hmac-drbg@1.0.1",
     "hoist-non-react-statics@3.3.2",
     "hosted-git-info@2.8.9",
@@ -1608,7 +1635,6 @@
     "human-signals@2.1.0",
     "iconv-lite@0.7.2",
     "ieee754@1.2.1",
-    "image-size@1.2.1",
     "import-fresh@3.3.1",
     "inflight@1.0.6",
     "inherits@2.0.4",
@@ -1664,7 +1690,6 @@
     "launch-editor@2.13.2",
     "leven@3.1.0",
     "light-bolt11-decoder@3.2.0",
-    "lighthouse-logger@1.4.2",
     "lines-and-columns@1.2.4",
     "localized-strings@0.2.4",
     "locate-path@5.0.0",
@@ -1682,8 +1707,6 @@
     "loose-envify@1.4.0",
     "lottie-react-native@7.5.0",
     "lru-cache@5.1.1",
-    "makeerror@1.0.12",
-    "marky@1.3.0",
     "math-intrinsics@1.1.0",
     "md5.js@1.3.5",
     "mdn-data@2.0.14",
@@ -1692,21 +1715,21 @@
     "merge-options@3.0.4",
     "merge-stream@2.0.0",
     "merge2@1.4.1",
-    "merkle-lib@2.0.10",
-    "metro-babel-transformer@0.84.3",
-    "metro-cache-key@0.84.3",
-    "metro-cache@0.84.3",
-    "metro-config@0.84.3",
-    "metro-core@0.84.3",
-    "metro-file-map@0.84.3",
-    "metro-minify-terser@0.84.3",
-    "metro-resolver@0.84.3",
-    "metro-runtime@0.84.3",
-    "metro-source-map@0.84.3",
-    "metro-symbolicate@0.84.3",
-    "metro-transform-plugins@0.84.3",
-    "metro-transform-worker@0.84.3",
-    "metro@0.84.3",
+    "metro-babel-transformer@0.87.1",
+    "metro-cache-key@0.87.1",
+    "metro-cache@0.87.1",
+    "metro-config@0.87.1",
+    "metro-core@0.87.1",
+    "metro-file-map@0.87.1",
+    "metro-minify-terser@0.87.1",
+    "metro-resolver@0.87.1",
+    "metro-runtime@0.87.1",
+    "metro-source-map@0.87.1",
+    "metro-symbolicate@0.87.1",
+    "metro-transform-plugins@0.87.1",
+    "metro-transform-worker@0.87.1",
+    "metro@0.87.1",
+    "micro-packed@0.11.1",
     "micro-packed@0.8.0",
     "micromatch@4.0.8",
     "miller-rabin@4.0.1",
@@ -1725,7 +1748,6 @@
     "minimist@1.2.8",
     "mkdirp-classic@0.5.3",
     "mkdirp@0.5.6",
-    "mkdirp@1.0.4",
     "moment@2.30.1",
     "ms@2.0.0",
     "ms@2.1.3",
@@ -1738,7 +1760,7 @@
     "ncp@2.0.0",
     "negotiator@0.6.3",
     "negotiator@0.6.4",
-    "negotiator@1.0.0",
+    "negotiator@1.1.0",
     "nocache@3.0.4",
     "node-abi@3.74.0",
     "node-addon-api@5.1.0",
@@ -1752,7 +1774,7 @@
     "npm-run-path@4.0.1",
     "nth-check@2.1.1",
     "nullthrows@1.1.1",
-    "ob1@0.84.3",
+    "ob1@0.87.1",
     "object-assign@4.1.1",
     "object-inspect@1.13.4",
     "object-is@1.1.6",
@@ -1765,7 +1787,7 @@
     "one-time@1.0.0",
     "onetime@5.1.2",
     "open@6.4.0",
-    "open@7.4.2",
+    "open@8.4.2",
     "ora@5.4.1",
     "p-limit@2.3.0",
     "p-limit@3.1.0",
@@ -1785,7 +1807,6 @@
     "path-is-absolute@1.0.1",
     "path-key@3.1.1",
     "path-parse@1.0.7",
-    "payjoin-client@1.0.1",
     "pbkdf2@3.1.3",
     "picocolors@1.1.1",
     "picomatch@2.3.1",
@@ -1804,11 +1825,9 @@
     "public-encrypt@4.0.3",
     "pump@3.0.2",
     "punycode@1.4.1",
-    "pushdata-bitcoin@1.0.1",
     "qr@0.6.0",
     "qs@6.15.2",
     "queue-microtask@1.2.3",
-    "queue@6.0.2",
     "randombytes@2.1.0",
     "randomfill@1.0.4",
     "range-parser@1.2.1",
@@ -1818,7 +1837,7 @@
     "react-freeze@1.0.4",
     "react-is@16.13.1",
     "react-is@18.3.1",
-    "react-is@19.3.0",
+    "react-is@19.3.1",
     "react-localization@1.0.19",
     "react-native-background-fetch@4.4.2",
     "react-native-biometrics@3.0.1",
@@ -1829,32 +1848,31 @@
     "react-native-default-preference@1.5.1",
     "react-native-device-info@14.1.1",
     "react-native-draggable-flatlist@4.0.3",
-    "react-native-drawer-layout@4.2.11",
+    "react-native-drawer-layout@4.2.12",
     "react-native-fs@2.20.0",
-    "react-native-gesture-handler@2.33.0",
+    "react-native-gesture-handler@2.33.1",
     "react-native-get-random-values@1.11.0",
     "react-native-handoff@0.0.3",
     "react-native-haptic-feedback@2.3.4",
-    "react-native-image-picker@8.2.1",
+    "react-native-image-picker@8.3.0",
     "react-native-is-edge-to-edge@1.3.1",
     "react-native-keychain@10.0.0",
     "react-native-linear-gradient@2.8.3",
     "react-native-localize@3.7.2",
     "react-native-notifications@5.2.2",
-    "react-native-permissions@5.6.2",
+    "react-native-permissions@5.6.3",
     "react-native-prompt-android@1.0.0",
-    "react-native-quick-actions@0.3.13",
-    "react-native-reanimated@4.5.1",
+    "react-native-reanimated@4.7.1",
     "react-native-safe-area-context@5.10.1",
-    "react-native-screens@4.28.0",
+    "react-native-screens@4.30.0",
     "react-native-secure-key-store@2.0.10",
     "react-native-share@12.2.6",
-    "react-native-svg@15.15.5",
+    "react-native-svg@15.16.0",
     "react-native-tcp-socket@6.4.3",
-    "react-native-worklets@0.10.2",
-    "react-native@0.85.3",
+    "react-native-worklets@0.13.0",
+    "react-native@0.88.1",
     "react-refresh@0.14.2",
-    "react@19.2.3",
+    "react@19.3.0",
     "read-pkg-up@7.0.1",
     "read-pkg@5.2.0",
     "readable-stream@2.3.8",
@@ -1888,7 +1906,7 @@
     "safe-stable-stringify@2.5.0",
     "safer-buffer@2.1.2",
     "sanitize-filename@1.6.3",
-    "scheduler@0.27.0",
+    "scheduler@0.28.0",
     "scryptsy@2.1.0",
     "secp256k1@3.8.1",
     "secp256k1@4.0.4",
@@ -1954,14 +1972,13 @@
     "tar-fs@2.1.2",
     "tar-stream@2.2.0",
     "telnet-client@1.2.8",
-    "terser@5.46.2",
+    "terser@5.51.2",
     "text-encoding@0.7.0",
     "text-hex@1.0.0",
     "throat@5.0.0",
     "tiny-secp256k1@1.1.7",
     "tinyglobby@0.2.15",
     "tmp@0.2.7",
-    "tmpl@1.0.5",
     "to-buffer@1.2.1",
     "to-regex-range@5.0.1",
     "toidentifier@1.0.1",
@@ -1980,9 +1997,11 @@
     "typeforce@1.18.0",
     "typical@4.0.0",
     "typical@5.2.0",
+    "uint8array-tools@0.0.10",
     "uint8array-tools@0.0.8",
     "uint8array-tools@0.0.9",
     "undici-types@6.21.0",
+    "undici@6.29.1",
     "unicode-canonical-property-names-ecmascript@2.0.1",
     "unicode-match-property-ecmascript@2.0.0",
     "unicode-match-property-value-ecmascript@2.2.1",
@@ -2001,15 +2020,14 @@
     "util@0.12.5",
     "utils-merge@1.0.1",
     "valibot@0.37.0",
-    "valibot@0.38.0",
     "valibot@1.3.1",
     "valibot@1.4.0",
     "validate-npm-package-license@3.0.4",
     "varuint-bitcoin@1.1.2",
     "varuint-bitcoin@2.0.0",
+    "varuint-bitcoin@2.0.1",
     "vary@1.1.2",
     "vlq@1.0.1",
-    "walker@1.0.8",
     "warn-once@0.1.1",
     "wcwidth@1.0.1",
     "whatwg-fetch@3.6.20",
@@ -2029,6 +2047,7 @@
     "ws@6.2.3",
     "ws@7.5.10",
     "ws@7.5.11",
+    "ws@7.5.13",
     "ws@8.21.3",
     "xml-naming@0.1.0",
     "xmlbuilder@15.1.1",
@@ -2048,8 +2067,8 @@
     "CocoaAsyncSocket",
     "lottie-ios"
    ],
-   "pods_from_npm_and_react_native": 109,
-   "total": 924
+   "pods_from_npm_and_react_native": 106,
+   "total": 904
   },
   "Green": {
    "spm": [
@@ -2433,19 +2452,26 @@
   },
   "Bitkit": {
    "spm": [
-    "bitkit-core@0.5.18",
+    "bitkit-core@0.8.0-rc11",
     "lottie-ios@4.6.1",
-    "paykit-rs@0.1.0-rc72",
+    "paykit-rs@0.1.1-rc2",
     "swift-secp256k1@0.17.0",
-    "vss-rust-client-ffi@0.5.23"
+    "vss-rust-client-ffi@0.5.26-rc1"
    ],
    "rust": [
     "adler2 v2.0.1",
     "aead v0.5.2",
+    "aead v0.6.1",
     "aes v0.8.4",
     "aes-gcm v0.10.3",
     "ahash v0.8.12",
     "aho-corasick v1.1.4",
+    "alloy-primitives v1.7.3",
+    "alloy-rlp v0.3.16",
+    "alloy-sol-macro v1.7.3 (proc-macro)",
+    "alloy-sol-macro-expander v1.7.3",
+    "alloy-sol-macro-input v1.7.3",
+    "alloy-sol-types v1.7.3",
     "anstream v1.0.0",
     "anstyle v1.0.11",
     "anstyle v1.0.14",
@@ -2470,10 +2496,10 @@
     "async-trait v0.1.89 (proc-macro)",
     "async-trait v0.1.92 (proc-macro)",
     "atomic-waker v1.1.2",
-    "aws-lc-rs v1.17.0",
     "aws-lc-rs v1.18.1",
-    "aws-lc-sys v0.41.0",
+    "aws-lc-rs v1.18.2",
     "aws-lc-sys v0.45.0",
+    "aws-lc-sys v0.46.0",
     "base16ct v0.2.0",
     "base16ct v1.0.0",
     "base32 v0.5.1",
@@ -2524,13 +2550,14 @@
     "bitcoin_hashes v0.14.101",
     "bitcoin_hashes v1.2.0",
     "bitflags v2.11.0",
-    "bitflags v2.13.2",
+    "bitflags v2.13.1",
     "bitflags v2.9.1",
     "blake2 v0.10.6",
     "blake2 v0.11.0",
     "blake3 v1.8.3",
     "block-buffer v0.10.4",
     "block-buffer v0.12.0",
+    "block-buffer v0.12.1",
     "block-padding v0.3.3",
     "block2 v0.5.1",
     "boltz-client v0.4.1",
@@ -2543,18 +2570,18 @@
     "bytes v1.12.1",
     "camino v1.1.10",
     "camino v1.2.2",
-    "camino v1.2.6",
+    "camino v1.2.5",
     "cargo-platform v0.1.9",
     "cargo_metadata v0.15.4",
     "cargo_metadata v0.19.2",
     "cbc v0.1.2",
     "cfg-if v1.0.1",
     "cfg-if v1.0.4",
-    "cfg-if v1.0.5",
     "chacha20 v0.10.0",
     "chacha20 v0.9.1",
     "chacha20-poly1305 v0.1.2",
     "chacha20poly1305 v0.10.1",
+    "chacha20poly1305 v0.11.0",
     "chrono v0.4.44",
     "chrono v0.4.45",
     "chunked_transfer v1.5.0",
@@ -2562,6 +2589,7 @@
     "ciborium-io v0.2.2",
     "ciborium-ll v0.2.2",
     "cipher v0.4.4",
+    "cipher v0.5.1",
     "clap v4.5.41",
     "clap v4.6.0",
     "clap_builder v4.5.41",
@@ -2573,9 +2601,11 @@
     "cmov v0.5.4",
     "cobs v0.3.0",
     "colorchoice v1.0.5",
+    "const-hex v1.19.3",
     "const-oid v0.10.2",
     "const-oid v0.9.6",
     "constant_time_eq v0.4.2",
+    "convert_case v0.10.0",
     "cookie v0.18.1",
     "cookie_store v0.21.1",
     "cookie_store v0.22.1",
@@ -2587,12 +2617,13 @@
     "crc v3.4.0",
     "crc-catalog v2.4.0",
     "crc32fast v1.5.0",
-    "crossbeam-epoch v0.9.18",
+    "crossbeam-epoch v0.9.20",
     "crossbeam-queue v0.3.12",
     "crossbeam-utils v0.8.21",
     "crypto-bigint v0.5.5",
     "crypto-common v0.1.7",
     "crypto-common v0.2.1",
+    "crypto-common v0.2.2",
     "crypto_secretbox v0.1.1",
     "ctr v0.9.2",
     "ctutils v0.4.2",
@@ -2603,6 +2634,8 @@
     "der v0.7.10",
     "der v0.8.0",
     "deranged v0.5.8",
+    "derive_more v2.1.1",
+    "derive_more-impl v2.1.1 (proc-macro)",
     "diatomic-waker v0.2.3",
     "digest v0.10.7",
     "digest v0.11.3",
@@ -2611,6 +2644,7 @@
     "dnssec-prover v0.6.10",
     "dnssec-prover v0.6.8",
     "document-features v0.2.12 (proc-macro)",
+    "dunce v1.0.5",
     "dyn-clone v1.0.20",
     "ecdsa v0.16.9",
     "ed25519 v2.2.3",
@@ -2702,7 +2736,10 @@
     "hex-conservative v0.2.3",
     "hex_lit v0.1.1",
     "hkdf v0.12.4",
+    "hkdf v0.13.0",
     "hmac v0.12.1",
+    "hmac v0.13.0",
+    "hpke v0.14.1",
     "http v1.4.0",
     "http v1.5.0",
     "http-body v1.0.1",
@@ -2711,48 +2748,41 @@
     "http-body-util v0.1.5",
     "httparse v1.10.1",
     "httpdate v1.0.3",
-    "hybrid-array v0.4.8",
+    "hybrid-array v0.4.10",
+    "hybrid-array v0.4.15",
     "hyper v1.11.1",
     "hyper v1.8.1",
-    "hyper-rustls v0.27.10",
     "hyper-rustls v0.27.7",
+    "hyper-rustls v0.27.9",
     "hyper-tls v0.6.0",
     "hyper-util v0.1.19",
     "hyper-util v0.1.20",
-    "hyper-util v0.1.21",
     "iana-time-zone v0.1.65",
     "icu_collections v2.0.0",
     "icu_collections v2.1.1",
-    "icu_collections v2.3.0",
     "icu_locale_core v2.0.0",
     "icu_locale_core v2.1.1",
-    "icu_locale_core v2.3.0",
     "icu_normalizer v2.0.0",
     "icu_normalizer v2.1.1",
-    "icu_normalizer v2.3.0",
     "icu_normalizer_data v2.0.0",
     "icu_normalizer_data v2.1.1",
-    "icu_normalizer_data v2.3.0",
     "icu_properties v2.0.1",
     "icu_properties v2.1.2",
-    "icu_properties v2.3.0",
     "icu_properties_data v2.0.1",
     "icu_properties_data v2.1.2",
-    "icu_properties_data v2.3.0",
     "icu_provider v2.0.0",
     "icu_provider v2.1.1",
-    "icu_provider v2.3.1",
     "idna v1.0.3",
     "idna v1.1.0",
     "idna_adapter v1.2.1",
-    "idna_adapter v1.2.2",
     "indexmap v2.10.0",
     "indexmap v2.13.0",
     "inout v0.1.4",
+    "inout v0.2.3",
     "instant v0.1.13",
     "ipnet v2.11.0",
     "ipnet v2.12.0",
-    "ipnet v2.12.2",
+    "ipnet v2.12.1",
     "iri-string v0.7.10",
     "iri-string v0.7.12",
     "iri-string v0.7.9",
@@ -2766,6 +2796,7 @@
     "jiff v0.2.29",
     "k256 v0.13.4",
     "keccak v0.1.6",
+    "keccak v0.2.2",
     "lazy-regex v3.6.0",
     "lazy-regex-proc_macros v3.6.0 (proc-macro)",
     "libc v0.2.174",
@@ -2789,6 +2820,7 @@
     "lru v0.13.0",
     "lru v0.16.3",
     "lru v0.18.2",
+    "macro-string v0.2.0",
     "mainline v5.4.0",
     "mainline v8.0.0",
     "memchr v2.7.5",
@@ -2848,6 +2880,7 @@
     "pkcs8 v0.11.0",
     "plain v0.2.3",
     "poly1305 v0.8.0",
+    "poly1305 v0.9.1",
     "polyval v0.6.2",
     "possiblyrandom v0.2.1",
     "postcard v1.1.3",
@@ -2856,6 +2889,8 @@
     "potential_utf v0.1.6",
     "powerfmt v0.2.0",
     "ppv-lite86 v0.2.21",
+    "proc-macro-error-attr3 v3.0.1 (proc-macro)",
+    "proc-macro-error3 v3.0.1",
     "proc-macro2 v1.0.106",
     "proc-macro2 v1.0.107",
     "proc-macro2 v1.0.95",
@@ -2864,14 +2899,14 @@
     "prost-derive v0.11.9 (proc-macro)",
     "prost-derive v0.13.5 (proc-macro)",
     "psl-types v2.0.11",
-    "pubky v0.15.0",
+    "pubky v0.16.2",
     "pubky v0.5.4",
     "pubky v0.6.0",
     "pubky-app-specs v0.4.3",
-    "pubky-common v0.15.0",
+    "pubky-common v0.16.2",
     "pubky-common v0.5.4",
     "pubky-common v0.6.0",
-    "pubky-noise v0.1.0-rc13",
+    "pubky-noise v0.1.0",
     "pubky-timestamp v0.4.1",
     "publicsuffix v2.3.0",
     "quote v1.0.40",
@@ -2879,8 +2914,8 @@
     "quote v1.0.47",
     "r2d2 v0.8.10",
     "r2d2_sqlite v0.25.0",
-    "rand v0.10.0",
     "rand v0.10.1",
+    "rand v0.10.3",
     "rand v0.8.5",
     "rand v0.8.8",
     "rand v0.9.2",
@@ -2901,6 +2936,8 @@
     "rfc6979 v0.4.0",
     "ring v0.17.14",
     "ripemd v0.1.3",
+    "ruint v1.20.1",
+    "ruint-macro v1.2.1 (proc-macro)",
     "rusqlite v0.31.0",
     "rusqlite v0.32.1",
     "rust-blocktank-client v0.0.16",
@@ -2910,8 +2947,9 @@
     "rustix v1.1.4",
     "rustls v0.21.12",
     "rustls v0.23.35",
-    "rustls v0.23.37",
+    "rustls v0.23.43",
     "rustls v0.23.45",
+    "rustls v0.23.46",
     "rustls-native-certs v0.8.3",
     "rustls-pki-types v1.13.1",
     "rustls-pki-types v1.14.0",
@@ -2921,7 +2959,6 @@
     "rustls-webpki v0.102.8",
     "rustls-webpki v0.103.15",
     "rustls-webpki v0.103.8",
-    "rustls-webpki v0.103.9",
     "ryu v1.0.20",
     "ryu v1.0.23",
     "salsa20 v0.10.2",
@@ -2966,6 +3003,7 @@
     "sha2 v0.10.9",
     "sha2 v0.11.0",
     "sha3 v0.10.9",
+    "sha3 v0.11.0",
     "signal-hook-registry v1.4.8",
     "signature v2.2.0",
     "signature v3.0.0",
@@ -2976,7 +3014,7 @@
     "slab v0.4.12",
     "sled v0.34.7",
     "smallvec v1.15.1",
-    "smallvec v1.16.2",
+    "smallvec v1.16.0",
     "smawk v0.3.2",
     "smawk v0.3.3",
     "snow v0.10.0",
@@ -2999,15 +3037,14 @@
     "syn v2.0.117",
     "syn v2.0.119",
     "syn v3.0.3",
-    "syn v3.0.6",
+    "syn v3.0.4",
+    "syn-solidity v1.7.3",
     "sync_wrapper v1.0.2",
     "synchronoise v1.0.1",
     "synstructure v0.13.2",
-    "synstructure v0.14.0",
     "tempfile v3.20.0",
     "tempfile v3.27.0",
     "textwrap v0.16.2",
-    "textwrap v0.16.4",
     "thiserror v1.0.69",
     "thiserror v2.0.12",
     "thiserror v2.0.18",
@@ -3021,7 +3058,7 @@
     "tinystr v0.8.2",
     "tinystr v0.8.4",
     "tinyvec v1.11.0",
-    "tinyvec v1.13.3",
+    "tinyvec v1.13.2",
     "tinyvec v1.9.0",
     "tinyvec_macros v0.1.1",
     "tokio v1.47.0",
@@ -3049,16 +3086,18 @@
     "tracing-attributes v0.1.31 (proc-macro)",
     "tracing-core v0.1.34",
     "tracing-core v0.1.36",
-    "trezor-connect-rs v0.4.0",
+    "trezor-connect-rs v10.0.0",
     "try-lock v0.2.5",
     "tungstenite v0.26.2",
     "typenum v1.19.0",
+    "typenum v1.20.1",
     "unicase v2.9.0",
     "unicode-ident v1.0.18",
     "unicode-ident v1.0.24",
-    "unicode-ident v1.0.26",
     "unicode-normalization v0.1.24",
     "unicode-normalization v0.1.25",
+    "unicode-segmentation v1.13.3",
+    "unicode-xid v0.2.6",
     "uniffi v0.28.3",
     "uniffi v0.29.5",
     "uniffi_bindgen v0.28.3",
@@ -3077,6 +3116,7 @@
     "uniffi_udl v0.28.3",
     "uniffi_udl v0.29.5",
     "universal-hash v0.5.1",
+    "universal-hash v0.6.1",
     "untrusted v0.9.0",
     "ur v0.5.2",
     "ureq v2.8.0",
@@ -3104,21 +3144,22 @@
     "writeable v0.6.2",
     "writeable v0.6.4",
     "x25519-dalek v2.0.1",
+    "x25519-dalek v3.0.0",
     "yoke v0.8.0",
     "yoke v0.8.1",
     "yoke v0.8.3",
     "yoke-derive v0.8.0 (proc-macro)",
     "yoke-derive v0.8.1 (proc-macro)",
-    "yoke-derive v0.8.3 (proc-macro)",
+    "yoke-derive v0.8.2 (proc-macro)",
     "zerocopy v0.8.26",
     "zerocopy v0.8.42",
     "zerocopy v0.8.48",
-    "zerocopy v0.8.59",
+    "zerocopy v0.8.56",
     "zerocopy-derive v0.8.42 (proc-macro)",
     "zerofrom v0.1.6",
     "zerofrom v0.1.8",
     "zerofrom-derive v0.1.6 (proc-macro)",
-    "zerofrom-derive v0.1.8 (proc-macro)",
+    "zerofrom-derive v0.1.7 (proc-macro)",
     "zeroize v1.8.2",
     "zeroize v1.9.0",
     "zeroize_derive v1.4.3 (proc-macro)",
@@ -3134,14 +3175,14 @@
     "zmij v1.0.21",
     "zmij v1.0.23"
    ],
-   "rust_copies": 1085,
+   "rust_copies": 1122,
    "rust_per_library": {
     "synonym-ldk-node": 196,
-    "bitkit-core": 432,
-    "paykit-rs": 289,
+    "bitkit-core": 459,
+    "paykit-rs": 299,
     "vss-rust-client-ffi": 168
    },
-   "total": 698
+   "total": 720
   },
   "Blixt": {
    "go": [
@@ -3279,7 +3320,6 @@
     "@react-native-clipboard/clipboard",
     "@react-native-community/geolocation",
     "@react-native-community/push-notification-ios",
-    "@react-native-community/slider",
     "@react-native-documents/picker",
     "@react-native-google-signin/google-signin",
     "@react-navigation/bottom-tabs",
@@ -3455,7 +3495,6 @@
     "@react-native-clipboard/clipboard@1.16.3",
     "@react-native-community/geolocation@3.4.0",
     "@react-native-community/push-notification-ios@1.12.0",
-    "@react-native-community/slider@5.2.1",
     "@react-native-documents/picker@12.0.2",
     "@react-native-google-signin/google-signin@16.1.4",
     "@react-native/assets-registry@0.85.2",
@@ -3920,23 +3959,20 @@
     "PromisesObjC",
     "SwiftProtobuf"
    ],
-   "pods_from_npm_and_react_native": 99,
-   "total": 681
+   "pods_from_npm_and_react_native": 98,
+   "total": 680
   },
   "Zeus": {
    "rust": [
-    "adler2 v2.0.1",
     "aes v0.8.4",
     "ahash v0.8.12",
-    "aho-corasick v1.1.4",
-    "alloc-no-stdlib v2.0.4",
-    "alloc-stdlib v0.2.4",
+    "aho-corasick v1.1.5",
     "anstyle v1.0.14",
     "anyhow v1.0.102",
-    "anyhow v1.0.103",
-    "arc-swap v1.9.1",
+    "anyhow v1.0.104",
+    "arc-swap v1.9.2",
     "arrayvec v0.7.6",
-    "arrayvec v0.7.7",
+    "arrayvec v0.7.8",
     "askama v0.12.1",
     "askama v0.13.1",
     "askama_derive v0.12.5 (proc-macro)",
@@ -3944,55 +3980,61 @@
     "askama_escape v0.10.3",
     "askama_parser v0.13.0",
     "askama_parser v0.2.1",
-    "async-compat v0.2.5",
-    "async-compression v0.4.42",
+    "async-compat v0.2.6",
     "async-trait v0.1.89 (proc-macro)",
-    "async-utility v0.3.1",
+    "async-trait v0.1.92 (proc-macro)",
+    "async-utility v0.3.2",
     "async-wsocket v0.13.2",
     "atomic-destructor v0.3.0",
     "atomic-waker v1.1.2",
+    "aws-lc-rs v1.16.0",
+    "aws-lc-sys v0.37.1",
     "base58ck v0.1.0",
     "base58ck v0.1.101",
     "base64 v0.21.7",
     "base64 v0.22.1",
     "basic-toml v0.1.10",
     "bdk_chain v0.23.2",
-    "bdk_core v0.6.2",
-    "bdk_electrum v0.23.2",
+    "bdk_core v0.6.4",
+    "bdk_electrum v0.24.1",
     "bdk_esplora v0.22.1",
     "bdk_wallet v2.3.0",
     "bech32 v0.11.1",
     "bincode v1.3.3",
     "bip21 v0.5.0",
     "bip39 v2.2.2",
-    "bitcoin v0.32.101",
+    "bitcoin v0.32.102",
     "bitcoin v0.32.8",
+    "bitcoin-consensus-encoding v1.3.0",
     "bitcoin-internals v0.3.0",
+    "bitcoin-internals v0.6.0",
+    "bitcoin-internals v0.7.0",
     "bitcoin-io v0.1.101",
     "bitcoin-io v0.1.4",
-    "bitcoin-payment-instructions v0.7.0",
+    "bitcoin-payment-instructions v0.7.1",
     "bitcoin-units v0.1.101",
     "bitcoin-units v0.1.2",
     "bitcoin_hashes v0.14.1",
     "bitcoin_hashes v0.14.101",
+    "bitcoin_hashes v1.2.0",
     "bitflags v2.11.0",
-    "bitflags v2.13.0",
+    "bitflags v2.13.2",
+    "bitreq v0.3.7",
     "block-buffer v0.10.4",
     "block-padding v0.3.3",
-    "brotli v8.0.4",
-    "brotli-decompressor v5.0.3",
     "bs58 v0.5.1",
     "byteorder v1.5.0",
     "bytes v1.11.1",
-    "bytes v1.12.0",
+    "bytes v1.12.1",
     "camino v1.2.2",
-    "camino v1.2.3",
+    "camino v1.2.6",
     "cargo-platform v0.1.9",
     "cargo_metadata v0.15.4",
     "cargo_metadata v0.19.2",
     "cbc v0.1.2",
     "cbor-diag v0.1.12",
     "cfg-if v1.0.4",
+    "cfg-if v1.0.5",
     "chacha20 v0.9.1",
     "chacha20-poly1305 v0.1.2",
     "chrono v0.4.44",
@@ -4002,56 +4044,60 @@
     "ciborium-io v0.2.2",
     "ciborium-ll v0.2.2",
     "cipher v0.4.4",
-    "clap v4.6.1",
-    "clap_builder v4.6.0",
-    "clap_derive v4.6.1 (proc-macro)",
-    "clap_lex v1.1.0",
-    "compression-codecs v0.4.38",
-    "compression-core v0.4.32",
+    "clap v4.6.7",
+    "clap_builder v4.6.7",
+    "clap_derive v4.6.7 (proc-macro)",
+    "clap_lex v1.1.1",
     "core-foundation-sys v0.8.7",
     "cpufeatures v0.2.17",
-    "crc32fast v1.5.0",
-    "critical-section v1.2.0",
-    "crossbeam-channel v0.5.15",
-    "crossbeam-epoch v0.9.18",
-    "crossbeam-utils v0.8.21",
+    "crc v3.4.0",
+    "crc-catalog v2.5.0",
     "crypto-common v0.1.7",
-    "darling v0.23.0",
-    "darling_core v0.23.0",
-    "darling_macro v0.23.0 (proc-macro)",
-    "data-encoding v2.11.0",
+    "darling v0.24.1",
+    "darling_core v0.24.1",
+    "darling_macro v0.24.1 (proc-macro)",
+    "data-encoding v2.11.1",
     "deranged v0.5.8",
     "digest v0.10.7",
     "displaydoc v0.2.5 (proc-macro)",
-    "displaydoc v0.2.6 (proc-macro)",
+    "displaydoc v0.2.7 (proc-macro)",
+    "dnssec-prover v0.6.10",
     "dnssec-prover v0.6.8",
     "either v1.15.0",
-    "either v1.16.0",
-    "electrum-client v0.24.1",
-    "enum-as-inner v0.6.1 (proc-macro)",
+    "either v1.18.0",
+    "electrum-client v0.24.2",
+    "electrum-client v0.25.2",
     "equivalent v1.0.2",
     "errno v0.3.14",
     "esplora-client v0.12.3",
     "fallible-iterator v0.3.0",
     "fallible-streaming-iterator v0.1.9",
-    "fastrand v2.4.1",
-    "flate2 v1.1.9",
+    "fastrand v2.5.0",
     "form_urlencoded v1.2.2",
     "fs-err v2.11.0",
     "futures v0.3.32",
+    "futures v0.3.34",
     "futures-channel v0.3.32",
+    "futures-channel v0.3.34",
     "futures-core v0.3.32",
+    "futures-core v0.3.34",
     "futures-executor v0.3.32",
     "futures-io v0.3.32",
+    "futures-io v0.3.34",
     "futures-macro v0.3.32 (proc-macro)",
+    "futures-macro v0.3.34 (proc-macro)",
     "futures-sink v0.3.32",
+    "futures-sink v0.3.34",
     "futures-task v0.3.32",
+    "futures-task v0.3.34",
     "futures-util v0.3.32",
+    "futures-util v0.3.34",
     "generic-array v0.14.7",
     "getrandom v0.2.17",
     "getrandom v0.3.4",
     "getrandom v0.4.3",
     "glob v0.3.3",
+    "glob v0.3.4",
     "goblin v0.8.2",
     "half v2.7.1",
     "hashbrown v0.13.2",
@@ -4061,42 +4107,38 @@
     "heck v0.5.0",
     "hex v0.4.3",
     "hex-conservative v0.2.2",
+    "hex-conservative v0.2.3",
     "hex_lit v0.1.1",
-    "hickory-proto v0.25.2",
-    "hickory-resolver v0.25.2",
     "http v1.4.0",
-    "http v1.4.2",
+    "http v1.5.0",
     "http-body v1.0.1",
     "http-body-util v0.1.3",
     "httparse v1.10.1",
-    "hyper v1.10.1",
     "hyper v1.8.1",
     "hyper-rustls v0.27.7",
-    "hyper-rustls v0.27.9",
     "hyper-util v0.1.20",
     "iana-time-zone v0.1.65",
     "icu_collections v2.1.1",
-    "icu_collections v2.2.0",
+    "icu_collections v2.3.0",
     "icu_locale_core v2.1.1",
-    "icu_locale_core v2.2.0",
+    "icu_locale_core v2.3.0",
     "icu_normalizer v2.1.1",
-    "icu_normalizer v2.2.0",
+    "icu_normalizer v2.3.0",
     "icu_normalizer_data v2.1.1",
-    "icu_normalizer_data v2.2.0",
+    "icu_normalizer_data v2.3.0",
     "icu_properties v2.1.2",
-    "icu_properties v2.2.0",
+    "icu_properties v2.3.0",
     "icu_properties_data v2.1.2",
-    "icu_properties_data v2.2.0",
+    "icu_properties_data v2.3.0",
     "icu_provider v2.1.1",
-    "icu_provider v2.2.0",
+    "icu_provider v2.3.1",
     "ident_case v1.0.1",
     "idna v1.1.0",
     "idna_adapter v1.2.1",
     "idna_adapter v1.2.2",
-    "indexmap v2.14.0",
+    "indexmap v2.14.2",
     "inout v0.1.4",
     "ipnet v2.11.0",
-    "ipnet v2.12.0",
     "iri-string v0.7.10",
     "itertools v0.10.5",
     "itoa v1.0.17",
@@ -4104,38 +4146,37 @@
     "jsonwebtoken v9.3.1",
     "lazy_static v1.5.0",
     "libc v0.2.182",
-    "libc v0.2.186",
+    "libc v0.2.189",
     "libm v0.2.16",
     "libsqlite3-sys v0.28.0",
     "linux-raw-sys v0.12.1",
     "litemap v0.8.1",
-    "litemap v0.8.2",
+    "litemap v0.8.3",
     "lock_api v0.4.14",
     "log v0.4.29",
-    "log v0.4.33",
+    "log v0.4.34",
     "lru v0.16.4",
     "matchers v0.2.0",
     "memchr v2.8.0",
-    "memchr v2.8.2",
+    "memchr v2.8.3",
     "mime v0.3.17",
     "mime_guess v2.0.5",
+    "minicbor v2.3.0",
     "minimal-lexical v0.2.1",
     "miniscript v12.3.5",
-    "miniz_oxide v0.8.9",
     "mio v1.1.1",
-    "mio v1.2.1",
-    "moka v0.12.15",
-    "negentropy v0.5.0",
+    "mio v1.2.3",
+    "negentropy v0.5.1",
     "nom v7.1.3",
-    "nostr v0.44.3",
+    "nostr v0.44.8",
     "nostr-database v0.44.0",
     "nostr-gossip v0.44.0",
-    "nostr-relay-pool v0.44.1",
+    "nostr-relay-pool v0.44.3",
     "nostr-sdk v0.44.1",
     "nu-ansi-term v0.50.3",
-    "num-bigint v0.4.6",
+    "num-bigint v0.4.8",
     "num-conv v0.2.2",
-    "num-integer v0.1.46",
+    "num-integer v0.1.47",
     "num-rational v0.4.2",
     "num-traits v0.2.19",
     "once_cell v1.21.3",
@@ -4151,43 +4192,44 @@
     "pin-project-lite v0.2.17",
     "pin-utils v0.1.0",
     "plain v0.2.3",
-    "portable-atomic v1.13.1",
     "possiblyrandom v0.2.1",
     "possiblyrandom v0.2.1 (https://github.com/ZeusLN/rust-lightning?rev=4e5cba988c52903a8f50186048a6b2c37465f9cc#4e5cba98)",
     "potential_utf v0.1.4",
-    "potential_utf v0.1.5",
+    "potential_utf v0.1.6",
     "powerfmt v0.2.0",
     "ppv-lite86 v0.2.21",
     "proc-macro2 v1.0.106",
+    "proc-macro2 v1.0.107",
     "prost v0.11.9",
     "prost-derive v0.11.9 (proc-macro)",
     "quote v1.0.44",
-    "quote v1.0.46",
+    "quote v1.0.47",
     "rand v0.8.5",
-    "rand v0.8.6",
+    "rand v0.8.8",
     "rand v0.9.2",
-    "rand v0.9.4",
+    "rand v0.9.5",
     "rand_chacha v0.3.1",
     "rand_chacha v0.9.0",
+    "rand_core v0.10.1",
     "rand_core v0.6.4",
     "rand_core v0.9.5",
-    "regex v1.12.4",
-    "regex-automata v0.4.14",
+    "rand_xoshiro v0.8.1",
+    "regex v1.13.1",
+    "regex-automata v0.4.18",
     "regex-syntax v0.8.11",
     "reqwest v0.12.28",
-    "resolv-conf v0.7.6",
     "ring v0.17.14",
     "rusqlite v0.31.0",
-    "rustc-hash v2.1.2",
-    "rustix v1.1.4",
+    "rustc-hash v2.1.3",
+    "rustix v1.1.5",
     "rustls v0.23.37",
-    "rustls v0.23.41",
+    "rustls v0.23.45",
     "rustls-native-certs v0.8.4",
     "rustls-pki-types v1.14.0",
-    "rustls-pki-types v1.14.1",
-    "rustls-webpki v0.103.13",
+    "rustls-pki-types v1.15.1",
+    "rustls-webpki v0.103.15",
     "rustls-webpki v0.103.9",
-    "rustversion v1.0.22 (proc-macro)",
+    "rustversion v1.0.23 (proc-macro)",
     "ryu v1.0.23",
     "scopeguard v1.2.0",
     "scroll v0.12.0",
@@ -4198,69 +4240,71 @@
     "semver v1.0.28",
     "separator v0.4.1",
     "serde v1.0.228",
+    "serde v1.0.229",
+    "serde_bytes v0.11.19",
     "serde_core v1.0.228",
+    "serde_core v1.0.229",
     "serde_derive v1.0.228 (proc-macro)",
+    "serde_derive v1.0.229 (proc-macro)",
     "serde_json v1.0.149",
-    "serde_json v1.0.150",
+    "serde_json v1.0.151",
     "serde_spanned v1.1.1",
     "serde_urlencoded v0.7.1",
-    "serde_with v3.21.0",
-    "serde_with_macros v3.21.0 (proc-macro)",
-    "sha1 v0.10.6",
+    "serde_with v3.24.0",
+    "serde_with_macros v3.24.0 (proc-macro)",
+    "sha1 v0.10.7",
     "sharded-slab v0.1.7",
-    "signal-hook-registry v1.4.8",
-    "simd-adler32 v0.3.9",
     "simple_asn1 v0.6.4",
     "siphasher v0.3.11",
     "slab v0.4.12",
     "smallvec v1.15.1",
-    "smallvec v1.15.2",
+    "smallvec v1.16.2",
     "smawk v0.3.2",
     "smawk v0.3.3",
     "socket2 v0.6.2",
-    "socket2 v0.6.4",
+    "socket2 v0.6.5",
     "stable_deref_trait v1.2.1",
     "static_assertions v1.1.0",
     "strsim v0.11.1",
-    "strum v0.27.2",
-    "strum_macros v0.27.2 (proc-macro)",
     "subtle v2.6.1",
     "syn v1.0.109",
     "syn v2.0.117",
-    "syn v2.0.118",
+    "syn v2.0.119",
+    "syn v3.0.6",
     "sync_wrapper v1.0.2",
     "synstructure v0.13.2",
-    "tagptr v0.2.0",
+    "synstructure v0.14.0",
     "tempfile v3.27.0",
     "textwrap v0.16.2",
+    "textwrap v0.16.4",
     "thiserror v1.0.69",
-    "thiserror v2.0.18",
+    "thiserror v2.0.21",
     "thiserror-impl v1.0.69 (proc-macro)",
-    "thiserror-impl v2.0.18 (proc-macro)",
-    "thread_local v1.1.9",
-    "time v0.3.51",
+    "thiserror-impl v2.0.21 (proc-macro)",
+    "thread_local v1.1.10",
+    "time v0.3.55",
     "time-core v0.1.9",
-    "time-macros v0.2.30 (proc-macro)",
+    "time-macros v0.2.32 (proc-macro)",
     "tinystr v0.8.2",
-    "tinystr v0.8.3",
+    "tinystr v0.8.4",
     "tinyvec v1.10.0",
-    "tinyvec v1.11.0",
+    "tinyvec v1.13.3",
     "tinyvec_macros v0.1.1",
     "tokio v1.49.0",
-    "tokio v1.52.3",
+    "tokio v1.53.2",
     "tokio-macros v2.6.0 (proc-macro)",
-    "tokio-macros v2.7.0 (proc-macro)",
+    "tokio-macros v2.7.2 (proc-macro)",
     "tokio-rustls v0.26.4",
+    "tokio-rustls v0.26.6",
     "tokio-socks v0.5.3",
     "tokio-tungstenite v0.26.2",
-    "tokio-util v0.7.18",
+    "tokio-util v0.7.19",
     "toml v0.5.11",
     "toml v0.9.12+spec-1.1.0",
     "toml_datetime v0.7.5+spec-1.1.0",
-    "toml_parser v1.1.2+spec-1.1.0",
-    "toml_writer v1.1.1+spec-1.1.0",
+    "toml_parser v1.1.3+spec-1.1.0",
+    "toml_writer v1.1.2+spec-1.1.0",
     "tower v0.5.3",
-    "tower-http v0.6.11",
     "tower-http v0.6.8",
     "tower-layer v0.3.3",
     "tower-service v0.3.3",
@@ -4274,6 +4318,7 @@
     "typenum v1.20.1",
     "unicase v2.9.0",
     "unicode-ident v1.0.24",
+    "unicode-ident v1.0.26",
     "unicode-normalization v0.1.25",
     "uniffi v0.28.3",
     "uniffi v0.30.0",
@@ -4293,50 +4338,48 @@
     "uniffi_udl v0.28.3",
     "uniffi_udl v0.30.0",
     "untrusted v0.9.0",
+    "ur v0.5.2",
     "url v2.5.8",
     "utf-8 v0.7.6",
     "utf8_iter v1.0.4",
-    "uuid v1.23.4",
+    "uuid v1.26.1",
     "vss-client-ng v0.4.1",
     "want v0.3.1",
     "web-time v1.1.0",
-    "webpki-roots v0.25.4",
     "webpki-roots v0.26.11",
-    "webpki-roots v1.0.6",
-    "webpki-roots v1.0.8",
+    "webpki-roots v1.0.11",
+    "webpki-roots v1.0.9",
     "weedle2 v5.0.0",
     "winnow v0.7.15",
-    "winnow v1.0.3",
+    "winnow v1.0.4",
     "writeable v0.6.2",
-    "writeable v0.6.3",
+    "writeable v0.6.4",
     "yoke v0.8.1",
     "yoke v0.8.3",
     "yoke-derive v0.8.1 (proc-macro)",
     "yoke-derive v0.8.2 (proc-macro)",
     "zerocopy v0.8.39",
-    "zerocopy v0.8.52",
-    "zerocopy-derive v0.8.52 (proc-macro)",
+    "zerocopy v0.8.59",
+    "zerocopy-derive v0.8.59 (proc-macro)",
     "zerofrom v0.1.6",
     "zerofrom v0.1.8",
     "zerofrom-derive v0.1.6 (proc-macro)",
-    "zerofrom-derive v0.1.7 (proc-macro)",
+    "zerofrom-derive v0.1.8 (proc-macro)",
     "zeroize v1.8.2",
     "zeroize v1.9.0",
     "zerotrie v0.2.3",
-    "zerotrie v0.2.4",
+    "zerotrie v0.2.5",
     "zerovec v0.11.5",
-    "zerovec v0.11.6",
+    "zerovec v0.11.8",
     "zerovec-derive v0.11.2 (proc-macro)",
-    "zerovec-derive v0.11.3 (proc-macro)",
+    "zerovec-derive v0.11.6 (proc-macro)",
     "zmij v1.0.21",
-    "zstd v0.13.3",
-    "zstd-safe v7.2.4",
-    "zstd-sys v2.0.16+zstd.1.5.7"
+    "zmij v1.0.23"
    ],
-   "rust_copies": 497,
+   "rust_copies": 468,
    "rust_per_library": {
-    "zeus-ldk-node": 197,
-    "cdk": 300
+    "zeus-ldk-node": 199,
+    "cdk": 269
    },
    "go": [
     "dario.cat/mergo@v1.0.1",
@@ -4345,24 +4388,26 @@
     "github.com/NebulousLabs/go-upnp@v0.0.0-20180202185039-29b680b06c82",
     "github.com/Nvveen/Gotty@v0.0.0-20120604004816-cd527374f1e5",
     "github.com/Yawning/aez@v0.0.0-20211027044916-e49e68abd344",
-    "github.com/ZeusLN/btcwallet@v0.16.19-7-zeus",
+    "github.com/ZeusLN/btcwallet@v0.16.19-11-zeus",
     "github.com/ZeusLN/chantools@v0.14.2-zeus",
     "github.com/ZeusLN/lightning-terminal@v0.10.5-alpha-zeus",
     "github.com/aead/chacha20@v0.0.0-20180709150244-8b13a72661da",
     "github.com/aead/siphash@v1.0.1",
     "github.com/andybalholm/brotli@v1.0.5",
-    "github.com/btcsuite/btcd/btcec/v2@v2.3.6",
+    "github.com/btcsuite/btcd/btcec/v2@v2.5.0",
     "github.com/btcsuite/btcd/btcutil/psbt@v1.1.10",
     "github.com/btcsuite/btcd/btcutil@v1.1.6",
     "github.com/btcsuite/btcd/chaincfg/chainhash@v1.1.0",
+    "github.com/btcsuite/btcd/chainhash/v2@v2.0.0",
     "github.com/btcsuite/btcd/v2transport@v1.0.1",
+    "github.com/btcsuite/btcd/wire/v2@v2.0.0",
     "github.com/btcsuite/btcd@v0.25.1-0.20260310163610-1c55c7c18179",
     "github.com/btcsuite/btclog/v2@v2.0.1-0.20250728225537-6090e87c6c5b",
     "github.com/btcsuite/btclog@v1.0.0",
     "github.com/btcsuite/btcwallet/wallet/txauthor@v1.3.5",
     "github.com/btcsuite/btcwallet/wallet/txrules@v1.2.2",
     "github.com/btcsuite/btcwallet/wallet/txsizes@v1.2.5",
-    "github.com/btcsuite/btcwallet/wtxmgr@v1.5.7-0.20260915140118-f2c79d772865",
+    "github.com/btcsuite/btcwallet/wtxmgr@v1.5.7-0.20261020152322-a4ace3b44809",
     "github.com/btcsuite/go-socks@v0.0.0-20170105172521-4720035b7bfd",
     "github.com/btcsuite/websocket@v0.0.0-20150119174127-31079b680792",
     "github.com/cenkalti/backoff/v4@v4.2.1",
@@ -4394,15 +4439,9 @@
     "github.com/grpc-ecosystem/grpc-gateway/v2@v2.22.0",
     "github.com/hashicorp/errwrap@v1.1.0",
     "github.com/hashicorp/go-multierror@v1.1.1",
-    "github.com/jackc/chunkreader/v2@v2.0.1",
-    "github.com/jackc/pgconn@v1.14.3",
     "github.com/jackc/pgerrcode@v0.0.0-20240316143900-6e2875d9b438",
-    "github.com/jackc/pgio@v1.0.0",
     "github.com/jackc/pgpassfile@v1.0.0",
-    "github.com/jackc/pgproto3/v2@v2.3.3",
     "github.com/jackc/pgservicefile@v0.0.0-20240606120523-5a60cdf6a761",
-    "github.com/jackc/pgtype@v1.14.4",
-    "github.com/jackc/pgx/v4@v4.18.3",
     "github.com/jackc/pgx/v5@v5.11.0",
     "github.com/jackc/puddle/v2@v2.2.2",
     "github.com/jackpal/gateway@v1.0.5",
@@ -4517,7 +4556,6 @@
     "bignumber.js",
     "bip32",
     "bitcoinjs-lib",
-    "bolt07",
     "bs58check",
     "buffer",
     "create-hash",
@@ -4634,7 +4672,6 @@
     "@babel/plugin-syntax-import-attributes@7.29.7",
     "@babel/plugin-syntax-import-meta@7.10.4",
     "@babel/plugin-syntax-json-strings@7.8.3",
-    "@babel/plugin-syntax-jsx@7.25.9",
     "@babel/plugin-syntax-jsx@7.29.7",
     "@babel/plugin-syntax-logical-assignment-operators@7.10.4",
     "@babel/plugin-syntax-nullish-coalescing-operator@7.8.3",
@@ -4710,8 +4747,8 @@
     "@bitcoinerlab/secp256k1@1.2.0",
     "@codesandbox/nodebox@0.1.8",
     "@codesandbox/sandpack-client@2.19.8",
-    "@getalby/lightning-tools@8.1.1",
-    "@getalby/sdk@8.0.3",
+    "@getalby/lightning-tools@9.0.2",
+    "@getalby/sdk@9.0.0",
     "@isaacs/ttlcache@1.4.1",
     "@istanbuljs/load-nyc-config@1.1.0",
     "@istanbuljs/schema@0.1.3",
@@ -4759,15 +4796,15 @@
     "@react-native-async-storage/async-storage@2.2.0",
     "@react-native-clipboard/clipboard@1.16.3",
     "@react-native-community/datetimepicker@9.2.1",
-    "@react-native-community/netinfo@11.4.1",
+    "@react-native-community/netinfo@12.0.1",
     "@react-native-community/slider@5.2.1",
     "@react-native-documents/picker@12.0.2",
     "@react-native-picker/picker@2.11.4",
-    "@react-native-vector-icons/common@13.0.3",
-    "@react-native-vector-icons/feather@13.1.4",
-    "@react-native-vector-icons/fontawesome@13.1.4",
-    "@react-native-vector-icons/material-design-icons@13.1.4",
-    "@react-native-vector-icons/material-icons@13.1.4",
+    "@react-native-vector-icons/common@13.0.4",
+    "@react-native-vector-icons/feather@13.1.5",
+    "@react-native-vector-icons/fontawesome@13.1.5",
+    "@react-native-vector-icons/material-design-icons@13.1.5",
+    "@react-native-vector-icons/material-icons@13.1.5",
     "@react-native/asset-utils@0.87.1",
     "@react-native/codegen@0.87.1",
     "@react-native/community-cli-plugin@0.87.1",
@@ -4783,11 +4820,9 @@
     "@react-navigation/native-stack@7.20.0",
     "@react-navigation/native@7.5.0",
     "@react-navigation/routers@7.6.4",
-    "@rneui/base@5.0.0-beta.1",
-    "@rneui/themed@5.0.0-beta.1",
+    "@rneui/base@5.0.0",
+    "@rneui/themed@5.0.0",
     "@scure/base@1.1.1",
-    "@scure/base@1.1.6",
-    "@scure/base@1.2.4",
     "@scure/base@1.2.6",
     "@scure/base@2.0.0",
     "@scure/base@2.4.0",
@@ -4842,6 +4877,7 @@
     "@types/yargs-parser@21.0.3",
     "@types/yargs@17.0.33",
     "@ungap/structured-clone@1.4.0",
+    "@webbtc/webln-types@3.0.0",
     "@xmldom/xmldom@0.8.15",
     "abs-svg-path@0.1.1",
     "accepts@2.0.0",
@@ -4880,7 +4916,7 @@
     "baseline-browser-mapping@2.11.20",
     "bech32@1.1.4",
     "bech32@2.0.0",
-    "bignumber.js@9.0.2",
+    "bignumber.js@11.1.5",
     "bignumber.js@9.2.1",
     "bindings@1.5.0",
     "bip174@2.1.1",
@@ -4889,7 +4925,6 @@
     "blakejs@1.2.1",
     "bn.js@4.12.3",
     "bn.js@5.2.3",
-    "bolt07@1.9.5",
     "boolbase@1.0.0",
     "brace-expansion@1.1.21",
     "braces@3.0.3",
@@ -4967,11 +5002,11 @@
     "css-what@6.1.0",
     "csso@5.0.5",
     "csstype@3.2.3",
-    "dateformat@5.0.3",
+    "dateformat@5.0.4",
     "debug@2.6.9",
     "debug@4.4.3",
     "decamelize@1.2.0",
-    "decode-uri-component@0.2.2",
+    "decode-uri-component@0.5.1",
     "dedent@1.5.3",
     "deepmerge@4.3.1",
     "define-data-property@1.1.4",
@@ -5031,7 +5066,7 @@
     "fdir@6.5.0",
     "file-uri-to-path@1.0.0",
     "fill-range@7.1.1",
-    "filter-obj@1.1.0",
+    "filter-obj@5.1.0",
     "finalhandler@1.1.2",
     "find-up@4.1.0",
     "find-up@8.0.0",
@@ -5246,7 +5281,7 @@
     "p-locate@4.1.0",
     "p-locate@6.0.0",
     "p-try@2.2.0",
-    "pako@2.1.0",
+    "pako@3.0.2",
     "parent-module@1.0.1",
     "parse-asn1@5.1.7",
     "parse-json@5.2.0",
@@ -5273,14 +5308,14 @@
     "prompts@2.4.2",
     "prop-types@15.8.1",
     "property-information@7.2.0",
-    "protobufjs@8.8.0",
+    "protobufjs@8.8.1",
     "public-encrypt@4.0.3",
     "punycode@1.4.1",
     "punycode@2.3.1",
     "pure-rand@6.1.0",
     "qrcode@1.5.4",
-    "qs@6.16.0",
-    "query-string@6.14.1",
+    "qs@6.17.0",
+    "query-string@9.5.1",
     "querystring-es3@0.2.1",
     "randombytes@2.1.0",
     "randomfill@1.0.4",
@@ -5317,21 +5352,20 @@
     "react-native-redash@18.1.3",
     "react-native-restart@0.0.29",
     "react-native-safe-area-context@5.10.1",
-    "react-native-screens@4.28.0",
+    "react-native-screens@4.29.0",
     "react-native-share@12.3.1",
     "react-native-size-matters@0.4.2",
     "react-native-svg-transformer@1.5.3",
     "react-native-svg@15.15.5",
     "react-native-system-navigation-bar@2.8.0",
     "react-native-udp@4.1.7",
-    "react-native-view-shot@6.1.0",
+    "react-native-view-shot@6.1.1",
     "react-native-vision-camera@4.7.3",
     "react-native-worklets@0.13.0",
     "react-native@0.87.1",
     "react-refresh@0.14.2",
     "react@19.2.8",
     "readable-stream@1.0.33",
-    "readable-stream@1.1.14",
     "readable-stream@2.3.8",
     "readable-stream@3.6.2",
     "regenerate-unicode-properties@10.2.0",
@@ -5395,7 +5429,7 @@
     "source-map@0.5.7",
     "source-map@0.6.1",
     "space-separated-tokens@2.0.2",
-    "split-on-first@1.1.0",
+    "split-on-first@3.0.0",
     "sprintf-js@1.0.3",
     "sse4_crc32@6.0.1",
     "stack-utils@2.0.6",
@@ -5405,9 +5439,8 @@
     "static-browser-server@1.0.3",
     "statuses@1.5.0",
     "statuses@2.0.1",
-    "stream-browserify@1.0.0",
+    "stream-browserify@3.0.0",
     "strict-event-emitter@0.4.6",
-    "strict-uri-encode@2.0.0",
     "string-length@4.0.2",
     "string-width@4.2.3",
     "string_decoder@0.10.31",
@@ -5466,7 +5499,7 @@
     "util-deprecate@1.0.2",
     "util@0.12.5",
     "utils-merge@1.0.1",
-    "uuid@14.0.2",
+    "uuid@14.0.3",
     "v8-to-istanbul@9.3.0",
     "valibot@1.4.2",
     "varuint-bitcoin@1.1.2",
@@ -5507,7 +5540,7 @@
     "lottie-ios"
    ],
    "pods_from_npm_and_react_native": 112,
-   "total": 1457
+   "total": 1452
   }
  },
  "vendored": {
@@ -5542,15 +5575,18 @@
     }
    },
    "nested_licenses": [
-    "/blue_modules/pako/LICENSE"
+    "/blue_modules/pako/LICENSE",
+    "/blue_modules/payjoin-client/LICENSE"
    ],
    "binaries": [],
    "patches": [
+    "@bugsnag+react-native+9.1.0.patch",
     "README.md",
     "react-native-background-fetch+4.4.2.patch",
     "react-native-context-menu-view+1.21.0.patch",
     "react-native-notifications+5.2.2.patch",
-    "react-native-screens+4.27.0.patch"
+    "react-native-reanimated+4.7.1.patch",
+    "react-native-screens+4.30.0.patch"
    ],
    "copied_lines": 5136
   },
@@ -5756,23 +5792,11 @@
      "counted": "source"
     },
     "zeus_modules/@lightninglabs/lnc-rn": {
-     "lines": 330,
+     "lines": 335,
      "counted": "source"
-    },
-    "zeus_modules/bc-bech32": {
-     "lines": 206,
-     "counted": "published build output"
-    },
-    "zeus_modules/bc-ur": {
-     "lines": 284,
-     "counted": "published build output"
     },
     "zeus_modules/noble_ecc.ts": {
      "lines": 89,
-     "counted": "source"
-    },
-    "zeus_modules/ur": {
-     "lines": 77,
      "counted": "source"
     }
    },
@@ -5780,90 +5804,92 @@
    "binaries": [],
    "patches": [
     "patch-jcenter.mjs",
+    "patch-keychain-atomic-update.mjs",
+    "patch-keychain-atomic-update.test.ts",
     "patch-keychain-cloudsync.mjs",
     "patch-native-event-emitter.mjs",
     "patch-noble-hashes.mjs",
     "patch-react-native-notifications.mjs",
     "patch-reanimated-set-fixes.mjs"
    ],
-   "copied_lines": 4605
+   "copied_lines": 4043
   }
  },
  "features": {
   "Winnow": {
    "multisig": {
     "value": "yes",
-    "evidence": "winnow:Sources/WinnowApp/VaultsView.swift:41-42; winnow:Sources/WinnowApp/VaultsView.swift:47-48; winnow:Sources/WinnowApp/SharedSavingsViews.swift:104-105",
-    "note": "k-of-n threshold accounts and all-keys MuSig2; add this phone's key and pasted keys from other signers"
+    "evidence": "winnow:LeanApp/WinnowApp/Multisig.lean:475-484; winnow:LeanApp/WinnowApp/Multisig.lean:580-587; winnow:LeanApp/WinnowApp/Signers.lean:123-134",
+    "note": "k-of-n Taproot accounts in Advanced mode, members from this phone, paired Ledgers and keys others sent; MuSig2 removed"
    },
    "hw_signer": {
-    "value": "partial",
-    "evidence": "winnow:Sources/WinnowApp/VaultsView.swift:72; winnow:Sources/WinnowApp/MuSig2SignView.swift:126-136",
-    "note": "Cosigns by pasting PSBTs with another Winnow or Core; hardware wallets are stated as not yet verified"
+    "value": "yes",
+    "evidence": "winnow:LeanApp/WinnowApp/Real/LedgerTransport.lean:102-106; winnow:LeanApp/WinnowApp/Main.lean:138-151; winnow:LeanApp/WinnowApp/Signers.lean:152-160; winnow:LeanApp/WinnowApp/Multisig.lean:709-711",
+    "note": "Pairs a Ledger over Bluetooth as a multisig member, registers the account on it and has it sign; the everyday wallet signs in-app; this build has paired only a simulated Ledger so far"
    },
    "psbt": {
     "value": "partial",
-    "evidence": "winnow:Sources/WinnowApp/VaultSpendSession.swift:102-111; winnow:Sources/WinnowApp/VaultSpendSession.swift:400-403; winnow:Sources/WinnowApp/MuSig2SignView.swift:126-136",
-    "note": "Shared accounts only: copy or share a request or raw PSBT and paste one back; the everyday wallet signs in-app"
+    "evidence": "winnow:LeanApp/WinnowApp/Multisig.lean:716-726; winnow:LeanApp/WinnowApp/Multisig.lean:654-657; winnow:LeanApp/WinnowApp/Send.lean:63-65",
+    "note": "Multisig accounts only: copy a BIP174 v0 PSBT to share and paste co-signers' PSBTs back; the everyday wallet signs in-app"
    },
    "watch_only": {
     "value": "partial",
-    "evidence": "winnow:Sources/WinnowApp/OnboardingView.swift:39; winnow:Sources/WalletCore/Wallet/ImportBundle.swift:61-63; winnow:Sources/WinnowApp/SharedSavingsViews.swift:207",
-    "note": "Descriptor-only backup JSON restores watch-only; shared accounts add from a card; no xpub or address entry"
+    "evidence": "winnow:LeanApp/WinnowApp/View.lean:13-17; winnow:Lean/Winnow/Wallet/Wallet.lean:954-959; winnow:LeanApp/WinnowApp/Real/Multisig.lean:207-211",
+    "note": "Descriptor-only backup JSON restores watch-only; no xpub or address entry; joined accounts must include this phone's key"
    },
    "passphrase": {
     "value": "no",
-    "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:646-647; winnow:Sources/WalletCore/Wallet/ImportBundle.swift:443",
-    "note": "Seed is derived with an empty BIP39 passphrase; no passphrase field when creating, backing up or importing"
+    "evidence": "winnow:Lean/Winnow/Keys/BIP39.lean:71-72; winnow:Lean/Winnow/Wallet/Wallet.lean:226; winnow:Lean/Winnow/Wallet/Wallet.lean:938",
+    "note": "Seed is derived with BIP39's empty default passphrase on create and import; no passphrase field anywhere in the app"
    },
    "coin_control": {
     "value": "no",
-    "evidence": "winnow:Sources/WinnowApp/AppModel.swift:1893-1897; winnow:Sources/WalletCore/Wallet/Vault.swift:589-592",
-    "note": "Send picks coins automatically, largest first, for the wallet and shared accounts; coin list is read-only"
+    "evidence": "winnow:Lean/Winnow/Wallet/CoinSelection.lean:118-130; winnow:Lean/Winnow/Wallet/Wallet.lean:685; winnow:Lean/Winnow/Wallet/MultisigAccount.lean:1185; winnow:LeanApp/WinnowApp/Multisig.lean:661-665",
+    "note": "Send picks coins automatically, largest first, for the wallet and multisig accounts; an account's coin list is read-only"
    },
    "fee_bump": {
     "value": "partial",
-    "evidence": "winnow:Sources/WinnowApp/HomeView.swift:328-329; winnow:Sources/WalletCore/Wallet/Wallet.swift:781-789; winnow:Sources/WinnowApp/AppModel.swift:2040-2046",
-    "note": "RBF Bump fee in Advanced mode for own pending sends with unspent change; none for shared accounts; no CPFP"
+    "evidence": "winnow:LeanApp/WinnowApp/Home.lean:317-322; winnow:Lean/Winnow/Wallet/Wallet.lean:304-311; winnow:Lean/Winnow/Wallet/Wallet.lean:809-814; winnow:LeanApp/WinnowApp/Home.lean:279-282",
+    "note": "RBF Bump fee in Advanced mode for own pending sends with unspent change; accounts only rebroadcast or give up; no CPFP"
    },
    "taproot": {
     "value": "yes",
-    "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:646-652; winnow:Sources/WinnowApp/ReceiveView.swift:151; winnow:README.md:8",
-    "note": "Receives to BIP86 bc1p addresses by default; shared accounts are Taproot too (script path or MuSig2)"
+    "evidence": "winnow:Lean/Winnow/Wallet/Wallet.lean:226-230; winnow:Lean/Winnow/Wallet/Wallet.lean:166-169; winnow:Lean/Winnow/Wallet/MultisigAccount.lean:10",
+    "note": "Receives to BIP86 bc1p addresses by default; multisig accounts are Taproot too (script path, NUMS internal key)"
    },
    "descriptors": {
     "value": "partial",
-    "evidence": "winnow:Sources/WinnowApp/AccountDetailView.swift:120-123; winnow:Sources/WinnowApp/VaultsView.swift:120-125; winnow:Sources/WalletCore/Wallet/ImportBundle.swift:32",
-    "note": "Shared accounts show a copyable descriptor in Advanced mode; the everyday wallet's is only inside its backup JSON"
+    "evidence": "winnow:LeanApp/WinnowApp/Multisig.lean:517-519; winnow:LeanApp/WinnowApp/Multisig.lean:666-667; winnow:LeanApp/WinnowApp/Multisig.lean:577; winnow:Lean/Winnow/Wallet/Wallet.lean:894",
+    "note": "Multisig accounts join from and share a tr() descriptor; the everyday wallet's is only inside its backup file"
    },
    "own_server": {
     "value": "yes",
-    "evidence": "winnow:Sources/WinnowApp/SettingsView.swift:83-95; winnow:Sources/WinnowApp/SettingsView.swift:106; winnow:Sources/WalletCore/Network/Peers/PeerPool.swift:635-637",
+    "evidence": "winnow:LeanApp/WinnowApp/Settings.lean:161-165; winnow:LeanApp/WinnowApp/Pure.lean:463; winnow:Lean/Winnow/IO/Pool.lean:215-218",
     "note": "Manual host:port peers under Advanced mode, tried first; peer must serve compact filters; pool still fills from others"
    },
    "verifies_chain": {
     "value": "yes",
-    "evidence": "winnow:Sources/WalletCore/Network/Filters/FilterSync.swift:81-98; winnow:Sources/WalletCore/Network/Headers/README.md:5-6",
-    "note": "Checks header work, cross-checks filter headers across peers, matches filters locally; verifies fetched blocks"
+    "evidence": "winnow:Lean/Winnow/Net/HeaderChain.lean:12-15; winnow:Lean/Winnow/IO/Filters.lean:5-11; winnow:LeanApp/WinnowApp/Real/Stack.lean:307",
+    "note": "Checks header work, cross-checks filter headers across peers, matches filters locally; merkle-checks fetched blocks"
    },
    "tor": {
     "value": "partial",
-    "evidence": "winnow:README.md:11; winnow:Sources/WinnowApp/PeerGatewaysSection.swift:17-21; winnow:Sources/WalletCore/Network/Transport/TailnetGatewayDiscovery.swift:18-19",
+    "evidence": "winnow:README.md:54-56; winnow:LeanApp/WinnowApp/Settings.lean:130-138; winnow:Lean/Winnow/IO/Gateways.lean:6-11",
     "note": "No bundled Tor or I2P client; routes peers through SOCKS gateways you run, found on Tailscale or set by hand"
    },
    "seed_standard": {
     "value": "yes",
-    "evidence": "winnow:Sources/WalletCore/Wallet/Wallet.swift:646-649; winnow:Sources/WinnowApp/BackupSection.swift:43; winnow:Sources/WalletCore/Keys/BIP86.swift:10",
-    "note": "12-word BIP39 phrase on BIP86 paths; the app restores only from its backup file, not from the words alone"
+    "evidence": "winnow:Lean/Winnow/Wallet/Wallet.lean:83; winnow:Lean/Winnow/Wallet/Wallet.lean:224-229; winnow:LeanApp/WinnowApp/Backup.lean:160-163",
+    "note": "12-word BIP39 phrase on BIP86 paths, shown in Advanced mode; the app restores only from its backup file, not the words alone"
    },
    "cloud_backup": {
     "value": "yes",
-    "evidence": "winnow:Sources/WinnowApp/CloudBackupController.swift:24; winnow:Sources/WalletCore/Wallet/CloudWalletBackup.swift:4-6; winnow:Sources/WinnowApp/ICloudBackupStore.swift:116-117",
-    "note": "On by default: AES-GCM backup to the person's private CloudKit database, key in iCloud Keychain; file backup too"
+    "evidence": "winnow:LeanApp/WinnowApp/Real/CloudBackup.lean:104; winnow:Lean/Winnow/Wallet/CloudWalletBackup.lean:7-10; winnow:LeanApp/WinnowApp/Real/CloudBackup.lean:397-399; winnow:LeanApp/WinnowApp/Real/CloudBackup.lean:460-463",
+    "note": "On by default: AES-256-GCM copy in the person's private CloudKit database, key in iCloud Keychain; backup file too"
    },
    "license": {
     "value": "MIT",
-    "evidence": "winnow:LICENSE:1; winnow:README.md:162",
+    "evidence": "winnow:LICENSE:1; winnow:README.md:163",
     "note": "MIT License"
    }
   },
@@ -6409,33 +6435,33 @@
  },
  "profiles": {
   "Winnow": {
-   "built_with": "Swift (SwiftUI)",
+   "built_with": "Lean 4, drawn by LeanNative's generated Objective-C/UIKit shell; no Swift",
    "engine": {
-    "text": "Its own, in Swift (WalletCore), in the same repository: keys, PSBTs, scripts, compact-filter sync, peer networking",
-    "cite": "winnow:Package.swift:19-21; winnow:README.md:7"
+    "text": "Its own, in Lean 4 (Lean/Winnow, and Lean/Secp, a secp256k1 whose field and curve arithmetic carry machine-checked proofs), in the same repository: keys, PSBTs, scripts, compact-filter sync, peer networking over Lean's libuv TCP",
+    "cite": "winnow:Lean/lakefile.toml:5-9; winnow:Lean/Winnow.lean:1-8; winnow:Lean/Winnow/IO/Transport.lean:3; winnow:Lean/Winnow/Keys/Secp256k1.lean:4-8; winnow:Lean/Secp/Proofs/Gate.lean:1-8"
    },
    "chain_data": {
-    "text": "BIP157/158 compact filters from Bitcoin peers found through a signed peer list and DNS seeds; Advanced mode adds your own peers",
-    "cite": "winnow:README.md:7; winnow:Sources/WalletCore/Network/Peers/CensusCatalog.swift:28; winnow:Sources/WinnowApp/SettingsView.swift:83-107"
+    "text": "BIP157/158 compact filters from Bitcoin peers found through the census peer list shipped with the build (its signature checked when the build is made) and DNS seeds; Advanced mode adds your own peers",
+    "cite": "winnow:Lean/Winnow/IO/Pool.lean:10-15; winnow:Lean/Winnow/IO/Census.lean:217-220; winnow:scripts/import-census:10-12; winnow:LeanApp/WinnowApp/Settings.lean:161-165"
    },
    "third_party": {
-    "text": "Nobody for the everyday wallet; shared accounts need the co-owners' keys, with no co-signing server",
-    "cite": "winnow:README.md:9; winnow:Sources/WinnowApp/SharedSavingsViews.swift:104-105"
+    "text": "Nobody for the everyday wallet; multisig accounts need their other signers (phones, Ledgers or keys someone sent), with no co-signing server",
+    "cite": "winnow:README.md:4-6; winnow:LeanApp/WinnowApp/Send.lean:115-117; winnow:LeanApp/WinnowApp/Multisig.lean:580-582"
    },
    "distribution": {
-    "text": "App Store; pre-release builds on TestFlight",
-    "cite": "winnow:README.md:5; winnow:.github/workflows/appstore-submit.yml:3-6"
+    "text": "App Store, in the listing the Swift app used (com.btcswift.app); tagged builds upload to TestFlight",
+    "cite": "winnow:README.md:11-12; winnow:LeanApp/WinnowApp/Project.lean:19-23; winnow:.github/workflows/release.yml:1-6; winnow:.github/workflows/release.yml:210-220"
    },
    "libraries": {
-    "text": "swift-secp256k1 0.23.2 (Bitcoin Core's libsecp256k1), the only third-party dependency",
-    "cite": "winnow:Package.swift:16; winnow:README.md:11"
+    "text": "LeanNative 700b388 (its Lean framework, C shim and printed Objective-C shell) and Lean 4.35.0's runtime and standard library (libLean, libStd, libInit, libleanrt) with the toolchain's libuv and GMP; no package from a registry",
+    "cite": "winnow:LeanApp/lakefile.toml:10-19; winnow:LeanApp/lean-toolchain:1; winnow:Lean/lake-manifest.json:3; leannative:framework/native/scripts/ios_lean_sources.sh:58; leannative:framework/lean/LeanNativeShell/Manifest.lean:193"
    },
    "bitcoin_library_not_counted": null,
    "prebuilt": {
-    "text": "None in the repository; the app links the swift-secp256k1 package that SwiftPM fetches",
-    "cite": "winnow:Package.swift:16-21"
+    "text": "None in the repository; the build links the Lean toolchain's static libraries (libLean, libStd, libInit, libleanrt, libuv, libgmp), macOS arm64 objects retargeted to iOS by LeanNative's retarget_ar.py",
+    "cite": "leannative:framework/native/scripts/ios_lean_sources.sh:15-19; leannative:framework/native/scripts/ios_lean_sources.sh:58; leannative:framework/native/scripts/ios_lean_sources.sh:67-78"
    },
-   "patched": "None"
+   "patched": "No patch files; the build rewrites the platform (LC_BUILD_VERSION) of Lean's macOS static libraries to iOS, which Lean does not support"
   },
   "BlueWallet": {
    "built_with": "React Native (TypeScript) with small native modules",
@@ -6627,9 +6653,14 @@
   "about": "The revision each hand-reviewed fact in features/ and wallets.json was checked against, and when. Citations resolve and link here, so they stay valid as sources.json moves forward; data/drift.json shows which cited code has changed since. `tools/evidence.py --adopt [source ...]` starts a re-review.",
   "sources": {
    "winnow": {
-    "repo": "https://github.com/winnowwallet/winnow",
-    "rev": "7751cfd30f5e1b108fcfe322db38b76948a0bb1d",
-    "date": "2026-10-02"
+    "repo": "https://github.com/winnowwallet/winnow-lean",
+    "rev": "a43913654a6937dd6f207d0b43e0b22013d78f3b",
+    "date": "2026-11-03"
+   },
+   "leannative": {
+    "repo": "https://github.com/LeanNative/leannative",
+    "rev": "700b3889a99a55804bd7fd256fb4fd3f008e236b",
+    "date": "2026-11-03"
    },
    "phoenix": {
     "repo": "https://github.com/ACINQ/phoenix",
@@ -6730,24 +6761,24 @@
  },
  "drift": {
   "reviewed": "2026-10-02",
-  "reviewed_latest": "2026-10-02",
-  "measured": "2026-10-10",
-  "citations": 420,
-  "same": 377,
-  "moved": 32,
-  "changed": 11,
+  "reviewed_latest": "2026-11-03",
+  "measured": "2026-11-03",
+  "citations": 441,
+  "same": 318,
+  "moved": 99,
+  "changed": 24,
   "gone": 0,
   "by_wallet": {
    "Winnow": {
-    "same": 49,
-    "moved": 1,
-    "changed": 2,
+    "same": 73,
+    "moved": 0,
+    "changed": 0,
     "gone": 0
    },
    "BlueWallet": {
-    "same": 48,
-    "moved": 6,
-    "changed": 4,
+    "same": 15,
+    "moved": 35,
+    "changed": 8,
     "gone": 0
    },
    "Green": {
@@ -6769,21 +6800,21 @@
     "gone": 0
    },
    "Bitkit": {
-    "same": 44,
-    "moved": 5,
-    "changed": 3,
+    "same": 28,
+    "moved": 14,
+    "changed": 10,
     "gone": 0
    },
    "Blixt": {
-    "same": 45,
-    "moved": 0,
-    "changed": 0,
+    "same": 33,
+    "moved": 10,
+    "changed": 2,
     "gone": 0
    },
    "Zeus": {
-    "same": 36,
-    "moved": 20,
-    "changed": 2,
+    "same": 14,
+    "moved": 40,
+    "changed": 4,
     "gone": 0
    }
   },
@@ -6796,8 +6827,20 @@
    },
    {
     "wallet": "BlueWallet",
+    "fact": "features.descriptors",
+    "cite": "bluewallet:screen/wallets/xpub.tsx:72-78",
+    "status": "changed"
+   },
+   {
+    "wallet": "BlueWallet",
     "fact": "features.cloud_backup",
     "cite": "bluewallet:class/blue-app.ts:302",
+    "status": "changed"
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "features.hw_signer",
+    "cite": "bitkit:Bitkit/Views/Wallets/Send/HwSendSignView.swift:115",
     "status": "changed"
    },
    {
@@ -6808,26 +6851,56 @@
    },
    {
     "wallet": "Bitkit",
+    "fact": "features.taproot",
+    "cite": "bitkit:Bitkit/Views/Settings/Advanced/AddressTypePreferenceView.swift:109-125",
+    "status": "changed"
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "features.own_server",
+    "cite": "bitkit:Bitkit/ViewModels/Extensions/SettingsViewModel+Electrum.swift:46-50",
+    "status": "changed"
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "features.tor",
+    "cite": "synonym-ldk-node:src/chain/electrum.rs:660-666",
+    "status": "changed"
+   },
+   {
+    "wallet": "Bitkit",
     "fact": "features.cloud_backup",
     "cite": "bitkit:Bitkit/Services/BackupService.swift:220",
+    "status": "changed"
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "features.cloud_backup",
+    "cite": "bitkit:Bitkit/Constants/Env.swift:340-343",
+    "status": "changed"
+   },
+   {
+    "wallet": "Blixt",
+    "fact": "features.psbt",
+    "cite": "blixt:src/windows/OnChain/Withdraw.tsx:50-65",
+    "status": "changed"
+   },
+   {
+    "wallet": "Blixt",
+    "fact": "features.coin_control",
+    "cite": "blixt:src/windows/OnChain/Withdraw.tsx:50-65",
+    "status": "changed"
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.psbt",
+    "cite": "zeus:utils/handleAnything.ts:1050-1051",
     "status": "changed"
    },
    {
     "wallet": "Zeus",
     "fact": "features.license",
     "cite": "zeus:README.md:145",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "profile.engine",
-    "cite": "winnow:README.md:7",
-    "status": "changed"
-   },
-   {
-    "wallet": "Winnow",
-    "fact": "profile.chain_data",
-    "cite": "winnow:README.md:7",
     "status": "changed"
    },
    {
@@ -6838,14 +6911,50 @@
    },
    {
     "wallet": "BlueWallet",
+    "fact": "profile.distribution",
+    "cite": "bluewallet:fastlane/Fastfile:1306-1344",
+    "status": "changed"
+   },
+   {
+    "wallet": "BlueWallet",
     "fact": "profile.libraries",
     "cite": "bluewallet:package.json:93-190",
+    "status": "changed"
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "profile.prebuilt",
+    "cite": "bluewallet:ios/Podfile.lock:28-30",
+    "status": "changed"
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "profile.prebuilt",
+    "cite": "bluewallet:ios/Podfile.lock:97",
+    "status": "changed"
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "profile.third_party",
+    "cite": "bitkit:Bitkit/Services/LightningService.swift:796-803",
     "status": "changed"
    },
    {
     "wallet": "Bitkit",
     "fact": "profile.libraries",
     "cite": "bitkit:Bitkit.xcodeproj/project.pbxproj:1176-1223",
+    "status": "changed"
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "profile.prebuilt",
+    "cite": "bitkit-core:Package.swift:29",
+    "status": "changed"
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "profile.third_party",
+    "cite": "zeus:backends/EmbeddedLND.ts:100-107",
     "status": "changed"
    },
    {
@@ -6857,11 +6966,116 @@
   ],
   "moved_within_file": [
    {
-    "wallet": "Winnow",
-    "fact": "features.license",
-    "cite": "winnow:README.md:162",
+    "wallet": "BlueWallet",
+    "fact": "features.multisig",
+    "cite": "bluewallet:screen/wallets/Add.tsx:294",
     "status": "moved",
-    "now_at": 148
+    "now_at": 295
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.hw_signer",
+    "cite": "bluewallet:class/wallets/abstract-wallet.ts:321-337",
+    "status": "moved",
+    "now_at": 315
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.hw_signer",
+    "cite": "bluewallet:class/wallets/abstract-wallet.ts:339-347",
+    "status": "moved",
+    "now_at": 333
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.hw_signer",
+    "cite": "bluewallet:screen/send/ScanQRCode.tsx:165-170",
+    "status": "moved",
+    "now_at": 167
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.hw_signer",
+    "cite": "bluewallet:screen/wallets/WalletDetails.tsx:813",
+    "status": "moved",
+    "now_at": 801
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.watch_only",
+    "cite": "bluewallet:class/wallet-import.ts:502-528",
+    "status": "moved",
+    "now_at": 530
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.passphrase",
+    "cite": "bluewallet:navigation/AddWalletStack.tsx:246-262",
+    "status": "moved",
+    "now_at": 255
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.passphrase",
+    "cite": "bluewallet:class/wallet-import.ts:146-148",
+    "status": "moved",
+    "now_at": 174
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.passphrase",
+    "cite": "bluewallet:class/wallets/abstract-hd-wallet.ts:79-80",
+    "status": "moved",
+    "now_at": 80
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.coin_control",
+    "cite": "bluewallet:screen/send/SendDetails.tsx:1056-1061",
+    "status": "moved",
+    "now_at": 1067
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.coin_control",
+    "cite": "bluewallet:screen/send/CoinControl.tsx:289-291",
+    "status": "moved",
+    "now_at": 291
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.coin_control",
+    "cite": "bluewallet:screen/send/CoinControl.tsx:301-303",
+    "status": "moved",
+    "now_at": 303
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.fee_bump",
+    "cite": "bluewallet:class/wallets/abstract-wallet.ts:170-172",
+    "status": "moved",
+    "now_at": 164
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.taproot",
+    "cite": "bluewallet:navigation/AddWalletStack.tsx:155-159",
+    "status": "moved",
+    "now_at": 153
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.taproot",
+    "cite": "bluewallet:screen/wallets/Add.tsx:250-252",
+    "status": "moved",
+    "now_at": 251
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.descriptors",
+    "cite": "bluewallet:class/wallets/abstract-wallet.ts:238-244",
+    "status": "moved",
+    "now_at": 232
    },
    {
     "wallet": "BlueWallet",
@@ -6879,6 +7093,34 @@
    },
    {
     "wallet": "BlueWallet",
+    "fact": "features.own_server",
+    "cite": "bluewallet:blue_modules/BlueElectrum.ts:90-97",
+    "status": "moved",
+    "now_at": 84
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.verifies_chain",
+    "cite": "bluewallet:blue_modules/BlueElectrum.ts:1034-1038",
+    "status": "moved",
+    "now_at": 1030
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.verifies_chain",
+    "cite": "bluewallet:blue_modules/BlueElectrum.ts:1128-1131",
+    "status": "moved",
+    "now_at": 1132
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.verifies_chain",
+    "cite": "bluewallet:blue_modules/BlueElectrum.ts:1609-1616",
+    "status": "moved",
+    "now_at": 1613
+   },
+   {
+    "wallet": "BlueWallet",
     "fact": "features.tor",
     "cite": "bluewallet:screen/settings/ElectrumSettings.tsx:199-202",
     "status": "moved",
@@ -6886,52 +7128,178 @@
    },
    {
     "wallet": "BlueWallet",
+    "fact": "features.tor",
+    "cite": "bluewallet:loc/en.json:253",
+    "status": "moved",
+    "now_at": 254
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.tor",
+    "cite": "bluewallet:blue_modules/BlueElectrum.ts:1453",
+    "status": "moved",
+    "now_at": 1457
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.seed_standard",
+    "cite": "bluewallet:screen/wallets/Add.tsx:284-286",
+    "status": "moved",
+    "now_at": 285
+   },
+   {
+    "wallet": "BlueWallet",
     "fact": "features.cloud_backup",
     "cite": "bluewallet:class/blue-app.ts:133",
     "status": "moved",
-    "now_at": 138
+    "now_at": 141
    },
    {
     "wallet": "BlueWallet",
     "fact": "features.cloud_backup",
     "cite": "bluewallet:class/blue-app.ts:709",
     "status": "moved",
-    "now_at": 714
+    "now_at": 717
    },
    {
     "wallet": "Bitkit",
     "fact": "features.hw_signer",
-    "cite": "bitkit:Bitkit/Views/Wallets/Send/HwSendSignView.swift:115",
+    "cite": "bitkit:Bitkit/Services/Trezor/TrezorTransport.swift:37-48",
     "status": "moved",
-    "now_at": 128
+    "now_at": 40
    },
    {
     "wallet": "Bitkit",
     "fact": "features.psbt",
     "cite": "bitkit:Bitkit/Managers/HwWalletManager.swift:1177",
     "status": "moved",
-    "now_at": 1520
+    "now_at": 1524
    },
    {
     "wallet": "Bitkit",
     "fact": "features.psbt",
     "cite": "bitkit:Bitkit/Views/Settings/DevSettingsView.swift:59-61",
     "status": "moved",
-    "now_at": 57
+    "now_at": 58
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "features.coin_control",
+    "cite": "bitkit:Bitkit/Views/Wallets/Send/SendAmountView.swift:302-323",
+    "status": "moved",
+    "now_at": 406
    },
    {
     "wallet": "Bitkit",
     "fact": "features.fee_bump",
     "cite": "bitkit:Bitkit/Services/CoreService.swift:1648-1675",
     "status": "moved",
-    "now_at": 1702
+    "now_at": 1781
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "features.fee_bump",
+    "cite": "synonym-ldk-node:src/wallet/mod.rs:827",
+    "status": "moved",
+    "now_at": 884
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "features.taproot",
+    "cite": "bitkit:Bitkit/ViewModels/SettingsViewModel.swift:576",
+    "status": "moved",
+    "now_at": 647
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "features.descriptors",
+    "cite": "bitkit:Bitkit/Services/SamRockService.swift:273",
+    "status": "moved",
+    "now_at": 269
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "features.descriptors",
+    "cite": "bitkit:Bitkit/Services/SamRockService.swift:333-339",
+    "status": "moved",
+    "now_at": 329
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "features.verifies_chain",
+    "cite": "synonym-ldk-node:src/chain/electrum.rs:671",
+    "status": "moved",
+    "now_at": 731
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "features.verifies_chain",
+    "cite": "synonym-ldk-node:src/chain/electrum.rs:785",
+    "status": "moved",
+    "now_at": 924
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "features.cloud_backup",
+    "cite": "vss-rust-client-ffi:src/implementation.rs:248-256",
+    "status": "moved",
+    "now_at": 252
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "features.license",
+    "cite": "bitkit:README.md:258-261",
+    "status": "moved",
+    "now_at": 249
+   },
+   {
+    "wallet": "Blixt",
+    "fact": "features.own_server",
+    "cite": "blixt:src/windows/Settings/Settings.tsx:1670-1680",
+    "status": "moved",
+    "now_at": 1731
+   },
+   {
+    "wallet": "Blixt",
+    "fact": "features.own_server",
+    "cite": "blixt:src/windows/Settings/Settings.tsx:750-785",
+    "status": "moved",
+    "now_at": 755
+   },
+   {
+    "wallet": "Blixt",
+    "fact": "features.tor",
+    "cite": "blixt:src/windows/Settings/Settings.tsx:1867-1877",
+    "status": "moved",
+    "now_at": 1935
+   },
+   {
+    "wallet": "Blixt",
+    "fact": "features.tor",
+    "cite": "blixt:locales/en.json:958",
+    "status": "moved",
+    "now_at": 977
+   },
+   {
+    "wallet": "Blixt",
+    "fact": "features.cloud_backup",
+    "cite": "blixt:locales/en.json:1241-1242",
+    "status": "moved",
+    "now_at": 1260
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.multisig",
+    "cite": "zeus:utils/AddressUtils.ts:73-79",
+    "status": "moved",
+    "now_at": 76
    },
    {
     "wallet": "Zeus",
     "fact": "features.hw_signer",
     "cite": "zeus:locales/en.json:426",
     "status": "moved",
-    "now_at": 427
+    "now_at": 424
    },
    {
     "wallet": "Zeus",
@@ -6942,17 +7310,24 @@
    },
    {
     "wallet": "Zeus",
+    "fact": "features.watch_only",
+    "cite": "zeus:utils/handleAnything.ts:1122-1129",
+    "status": "moved",
+    "now_at": 1154
+   },
+   {
+    "wallet": "Zeus",
     "fact": "features.passphrase",
     "cite": "zeus:utils/LndMobileUtils.ts:1316-1322",
     "status": "moved",
-    "now_at": 1315
+    "now_at": 1349
    },
    {
     "wallet": "Zeus",
     "fact": "features.passphrase",
     "cite": "zeus:views/Settings/SeedRecovery.tsx:924-931",
     "status": "moved",
-    "now_at": 919
+    "now_at": 920
    },
    {
     "wallet": "Zeus",
@@ -6966,7 +7341,14 @@
     "fact": "features.coin_control",
     "cite": "zeus:views/Send.tsx:1015-1020",
     "status": "moved",
-    "now_at": 1038
+    "now_at": 1053
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.fee_bump",
+    "cite": "zeus:views/Transaction.tsx:404-413",
+    "status": "moved",
+    "now_at": 402
    },
    {
     "wallet": "Zeus",
@@ -6980,56 +7362,133 @@
     "fact": "features.fee_bump",
     "cite": "zeus:backends/LdkNode.ts:2177",
     "status": "moved",
-    "now_at": 2220
+    "now_at": 2301
    },
    {
     "wallet": "Zeus",
     "fact": "features.taproot",
     "cite": "zeus:views/Receive.tsx:1127-1133",
     "status": "moved",
-    "now_at": 1129
+    "now_at": 1256
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.taproot",
+    "cite": "zeus:backends/EmbeddedLND.ts:586",
+    "status": "moved",
+    "now_at": 675
    },
    {
     "wallet": "Zeus",
     "fact": "features.taproot",
     "cite": "zeus:backends/LdkNode.ts:2176",
     "status": "moved",
-    "now_at": 2219
+    "now_at": 2300
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.descriptors",
+    "cite": "zeus:utils/AddressUtils.ts:73-79",
+    "status": "moved",
+    "now_at": 76
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.descriptors",
+    "cite": "zeus:utils/handleAnything.ts:1094-1118",
+    "status": "moved",
+    "now_at": 1126
    },
    {
     "wallet": "Zeus",
     "fact": "features.own_server",
     "cite": "zeus:utils/LndMobileUtils.ts:222-224",
     "status": "moved",
-    "now_at": 220
+    "now_at": 225
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.own_server",
+    "cite": "zeus:views/Settings/EmbeddedNode/Peers/NeutrinoPeers.tsx:213-218",
+    "status": "moved",
+    "now_at": 211
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.own_server",
+    "cite": "zeus:views/Settings/EmbeddedNode/Peers/NeutrinoPeers.tsx:258-270",
+    "status": "moved",
+    "now_at": 256
    },
    {
     "wallet": "Zeus",
     "fact": "features.verifies_chain",
     "cite": "zeus:utils/LndMobileUtils.ts:270",
     "status": "moved",
-    "now_at": 268
+    "now_at": 273
    },
    {
     "wallet": "Zeus",
     "fact": "features.tor",
     "cite": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465",
     "status": "moved",
-    "now_at": 1461
+    "now_at": 1587
    },
    {
     "wallet": "Zeus",
     "fact": "features.tor",
     "cite": "zeus:stores/SettingsStore.ts:1608",
     "status": "moved",
-    "now_at": 1640
+    "now_at": 1664
    },
    {
     "wallet": "Zeus",
     "fact": "features.seed_standard",
     "cite": "zeus:utils/LndMobileUtils.ts:1295",
     "status": "moved",
-    "now_at": 1293
+    "now_at": 1327
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.cloud_backup",
+    "cite": "zeus:stores/ChannelBackupStore.ts:63-69",
+    "status": "moved",
+    "now_at": 80
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.cloud_backup",
+    "cite": "zeus:stores/ChannelBackupStore.ts:95",
+    "status": "moved",
+    "now_at": 112
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.cloud_backup",
+    "cite": "zeus:utils/LdkNodeUtils.ts:47",
+    "status": "moved",
+    "now_at": 48
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "profile.engine",
+    "cite": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:1075",
+    "status": "moved",
+    "now_at": 1078
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "profile.engine",
+    "cite": "bluewallet:package.json:144",
+    "status": "moved",
+    "now_at": 145
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "profile.chain_data",
+    "cite": "bluewallet:blue_modules/BlueElectrum.ts:90-97",
+    "status": "moved",
+    "now_at": 84
    },
    {
     "wallet": "BlueWallet",
@@ -7039,11 +7498,67 @@
     "now_at": 247
    },
    {
-    "wallet": "Bitkit",
+    "wallet": "BlueWallet",
     "fact": "profile.third_party",
-    "cite": "bitkit:Bitkit/Services/LightningService.swift:796-803",
+    "cite": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:1075",
     "status": "moved",
-    "now_at": 810
+    "now_at": 1078
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "profile.third_party",
+    "cite": "bluewallet:class/wallets/lightning-custodian-wallet.ts:80",
+    "status": "moved",
+    "now_at": 84
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "profile.third_party",
+    "cite": "bluewallet:class/wallets/lightning-ark-wallet.ts:94",
+    "status": "moved",
+    "now_at": 98
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "profile.chain_data",
+    "cite": "bitkit:Bitkit/Constants/Env.swift:191",
+    "status": "moved",
+    "now_at": 217
+   },
+   {
+    "wallet": "Blixt",
+    "fact": "profile.chain_data",
+    "cite": "blixt:src/windows/Settings/Settings.tsx:1670-1680",
+    "status": "moved",
+    "now_at": 1731
+   },
+   {
+    "wallet": "Blixt",
+    "fact": "profile.libraries",
+    "cite": "blixt:package.json:104",
+    "status": "moved",
+    "now_at": 103
+   },
+   {
+    "wallet": "Blixt",
+    "fact": "profile.libraries",
+    "cite": "blixt:package.json:122",
+    "status": "moved",
+    "now_at": 121
+   },
+   {
+    "wallet": "Blixt",
+    "fact": "profile.libraries",
+    "cite": "blixt:package.json:134",
+    "status": "moved",
+    "now_at": 133
+   },
+   {
+    "wallet": "Blixt",
+    "fact": "profile.libraries",
+    "cite": "blixt:package.json:145",
+    "status": "moved",
+    "now_at": 144
    },
    {
     "wallet": "Zeus",
@@ -7064,21 +7579,84 @@
     "fact": "profile.chain_data",
     "cite": "zeus:stores/SettingsStore.ts:1476-1482",
     "status": "moved",
-    "now_at": 1508
+    "now_at": 1529
    },
    {
     "wallet": "Zeus",
     "fact": "profile.chain_data",
     "cite": "zeus:utils/LndMobileUtils.ts:222-224",
     "status": "moved",
-    "now_at": 220
+    "now_at": 225
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "profile.chain_data",
+    "cite": "zeus:utils/LdkNodeUtils.ts:26-27",
+    "status": "moved",
+    "now_at": 27
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "profile.libraries",
+    "cite": "zeus:package.json:53",
+    "status": "moved",
+    "now_at": 62
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "profile.libraries",
+    "cite": "zeus:package.json:55",
+    "status": "moved",
+    "now_at": 64
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "profile.libraries",
+    "cite": "zeus:package.json:56",
+    "status": "moved",
+    "now_at": 65
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "profile.libraries",
+    "cite": "zeus:package.json:59",
+    "status": "moved",
+    "now_at": 68
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "profile.libraries",
+    "cite": "zeus:package.json:77",
+    "status": "moved",
+    "now_at": 86
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "profile.libraries",
+    "cite": "zeus:package.json:86",
+    "status": "moved",
+    "now_at": 95
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "profile.libraries",
+    "cite": "zeus:package.json:117",
+    "status": "moved",
+    "now_at": 125
    },
    {
     "wallet": "Zeus",
     "fact": "profile.libraries",
     "cite": "zeus:package.json:148",
     "status": "moved",
-    "now_at": 147
+    "now_at": 155
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "profile.prebuilt",
+    "cite": "zeus:fetch-libraries.sh:37-38",
+    "status": "moved",
+    "now_at": 36
    }
   ]
  },
@@ -8187,6 +8765,256 @@
      "max_cc": 252,
      "packages": 1457,
      "vendored_lines": 4605
+    }
+   }
+  },
+  {
+   "date": "2026-10-30",
+   "method": 2,
+   "sources": {
+    "winnow": "bce5d97c0d317bef862cb616ef47d71603df100a",
+    "leannative": "7ab7ec8f523263491cc0b532c187cbd59daf1da3",
+    "phoenix": "c3b0ae7882ad256c0b35e94c66d5f1f27305c208",
+    "lightning-kmp": "9dacdc0b4ac981dcb8fed9be23b53e6994eab27a",
+    "bitkit": "91fffad36b4693771e34a5d4f38c08dcff374901",
+    "synonym-ldk-node": "190a17d966cf5a685444cfa17c3a419c290bf26c",
+    "rust-lightning": "dd0e83eae5a0c25102ff09c4354a6285bd17e7f4",
+    "bitkit-core": "b53fa54a16f04940943072bb6e08dc2650302f93",
+    "paykit-rs": "ad3c72248d18587bb5b6ef3c99b063fa9bf31551",
+    "vss-rust-client-ffi": "3476fa45be919244310c4f65945e8d2bc1b8ee15",
+    "blixt": "baa6ba0a028f6651b9b753cb6f4aec32fdf3cc2a",
+    "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
+    "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
+    "zeus": "340f8803fe86a005c00d36ff436ff24bf94cb506",
+    "lnd-zeus": "5711f358f4dc01434ad636160eea941ec1f392b7",
+    "zeus-ldk-node": "4687d9fe5e4348ecfa059decfd870e154d19262e",
+    "cdk": "874745d5d79b36be346efbd716393357ab898834",
+    "bluewallet": "69adb1555038c8b2385952edd0404d2e1ecd7ca7",
+    "green": "131f820fdef34b5368de9caa5ef7f3de4d7e0139",
+    "gdk": "02e3646264ed10afd460e61c2c516510b9ce5cf5",
+    "muun": "d6719c00f96d2ecbde2ab6588f95e54975ceea0e"
+   },
+   "wallets": {
+    "Winnow": {
+     "lines": 24683,
+     "lines_app": 9197,
+     "lines_bitcoin": 15486,
+     "lines_engine": 5832,
+     "characters": 1081044,
+     "functions": 2976,
+     "cc_gt_12": 113,
+     "cc_gt_30": 13,
+     "max_cc": 142,
+     "packages": 0,
+     "vendored_lines": 0
+    },
+    "BlueWallet": {
+     "lines": 57858,
+     "lines_app": 57858,
+     "characters": 1638294,
+     "functions": 1764,
+     "cc_gt_12": 141,
+     "cc_gt_30": 42,
+     "max_cc": 242,
+     "packages": 924,
+     "vendored_lines": 5136
+    },
+    "Green": {
+     "lines": 70474,
+     "lines_app": 70474,
+     "lines_engine": 34374,
+     "characters": 2032945,
+     "functions": 6905,
+     "cc_gt_12": 85,
+     "cc_gt_30": 7,
+     "max_cc": 45,
+     "packages": 157,
+     "vendored_lines": 0
+    },
+    "Muun": {
+     "lines": 88129,
+     "lines_app": 59660,
+     "lines_bitcoin": 28469,
+     "characters": 2435805,
+     "functions": 6679,
+     "cc_gt_12": 54,
+     "cc_gt_30": 2,
+     "max_cc": 63,
+     "packages": 139,
+     "vendored_lines": 101694
+    },
+    "Phoenix": {
+     "lines": 72881,
+     "lines_app": 72881,
+     "lines_engine": 28779,
+     "characters": 1902473,
+     "functions": 4703,
+     "cc_gt_12": 77,
+     "cc_gt_30": 9,
+     "max_cc": 155,
+     "packages": 58,
+     "vendored_lines": 0
+    },
+    "Bitkit": {
+     "lines": 100640,
+     "lines_app": 100640,
+     "lines_engine": 127646,
+     "characters": 2833545,
+     "functions": 6014,
+     "cc_gt_12": 109,
+     "cc_gt_30": 14,
+     "max_cc": 119,
+     "packages": 698,
+     "vendored_lines": 0
+    },
+    "Blixt": {
+     "lines": 36360,
+     "lines_app": 36360,
+     "lines_engine": 238947,
+     "characters": 947579,
+     "functions": 1057,
+     "cc_gt_12": 56,
+     "cc_gt_30": 19,
+     "max_cc": 134,
+     "packages": 681,
+     "vendored_lines": 0
+    },
+    "Zeus": {
+     "lines": 191851,
+     "lines_app": 191851,
+     "lines_engine": 242900,
+     "characters": 3732483,
+     "functions": 4820,
+     "cc_gt_12": 350,
+     "cc_gt_30": 77,
+     "max_cc": 252,
+     "packages": 1457,
+     "vendored_lines": 4605
+    }
+   }
+  },
+  {
+   "date": "2026-11-03",
+   "method": 2,
+   "sources": {
+    "winnow": "a43913654a6937dd6f207d0b43e0b22013d78f3b",
+    "leannative": "700b3889a99a55804bd7fd256fb4fd3f008e236b",
+    "phoenix": "c3b0ae7882ad256c0b35e94c66d5f1f27305c208",
+    "lightning-kmp": "9dacdc0b4ac981dcb8fed9be23b53e6994eab27a",
+    "bitkit": "2ee882f734759eb5a612d4faf07db14665f3b29f",
+    "synonym-ldk-node": "1976754dd49886e102f2b3132d5f700d6aabd8d7",
+    "rust-lightning": "5ce2ecb33d32e3b61ef01d5ead0ee6693c0cd7d1",
+    "bitkit-core": "22e0acc31a97b65205e71f4190cfc659fdecd3ca",
+    "paykit-rs": "01de5dd232d2b22f132d066697cce041700e7136",
+    "vss-rust-client-ffi": "eba41ef62b7314aa75827a5a3e71d2b23930b981",
+    "blixt": "b0408dd1d45a24d7e5a38221adeb79d6309f0e87",
+    "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
+    "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
+    "zeus": "5f56abba57dd25a1881ed41f1ca850c55a4ff182",
+    "lnd-zeus": "e21a177c24b3cb33bf4b44261f5b5f3fa6790a9c",
+    "zeus-ldk-node": "93680ba7d9069680afe95cc3387c5f3639b9681e",
+    "cdk": "9f6d3a3734d7223d10b5553e3591d3f9d5c6c904",
+    "bluewallet": "3631c47d000e9faf702a9bcf9c9b3f7a4c1bfcfe",
+    "green": "131f820fdef34b5368de9caa5ef7f3de4d7e0139",
+    "gdk": "02e3646264ed10afd460e61c2c516510b9ce5cf5",
+    "muun": "d6719c00f96d2ecbde2ab6588f95e54975ceea0e"
+   },
+   "wallets": {
+    "Winnow": {
+     "lines": 24808,
+     "lines_app": 9322,
+     "lines_bitcoin": 15486,
+     "lines_engine": 6051,
+     "characters": 1085880,
+     "functions": 3001,
+     "cc_gt_12": 126,
+     "cc_gt_30": 10,
+     "max_cc": 44,
+     "packages": 0,
+     "vendored_lines": 0
+    },
+    "BlueWallet": {
+     "lines": 59075,
+     "lines_app": 59075,
+     "characters": 1689763,
+     "functions": 1817,
+     "cc_gt_12": 143,
+     "cc_gt_30": 45,
+     "max_cc": 262,
+     "packages": 904,
+     "vendored_lines": 5136
+    },
+    "Green": {
+     "lines": 70474,
+     "lines_app": 70474,
+     "lines_engine": 34374,
+     "characters": 2032945,
+     "functions": 6905,
+     "cc_gt_12": 85,
+     "cc_gt_30": 7,
+     "max_cc": 45,
+     "packages": 157,
+     "vendored_lines": 0
+    },
+    "Muun": {
+     "lines": 88129,
+     "lines_app": 59660,
+     "lines_bitcoin": 28469,
+     "characters": 2435805,
+     "functions": 6679,
+     "cc_gt_12": 54,
+     "cc_gt_30": 2,
+     "max_cc": 63,
+     "packages": 139,
+     "vendored_lines": 101694
+    },
+    "Phoenix": {
+     "lines": 72881,
+     "lines_app": 72881,
+     "lines_engine": 28779,
+     "characters": 1902473,
+     "functions": 4703,
+     "cc_gt_12": 77,
+     "cc_gt_30": 9,
+     "max_cc": 155,
+     "packages": 58,
+     "vendored_lines": 0
+    },
+    "Bitkit": {
+     "lines": 112906,
+     "lines_app": 112906,
+     "lines_engine": 128396,
+     "characters": 3292458,
+     "functions": 6728,
+     "cc_gt_12": 164,
+     "cc_gt_30": 28,
+     "max_cc": 111,
+     "packages": 720,
+     "vendored_lines": 0
+    },
+    "Blixt": {
+     "lines": 36740,
+     "lines_app": 36740,
+     "lines_engine": 238947,
+     "characters": 957844,
+     "functions": 1067,
+     "cc_gt_12": 58,
+     "cc_gt_30": 19,
+     "max_cc": 139,
+     "packages": 680,
+     "vendored_lines": 0
+    },
+    "Zeus": {
+     "lines": 193516,
+     "lines_app": 193516,
+     "lines_engine": 243921,
+     "characters": 3791635,
+     "functions": 5008,
+     "cc_gt_12": 368,
+     "cc_gt_30": 78,
+     "max_cc": 246,
+     "packages": 1452,
+     "vendored_lines": 4043
     }
    }
   }

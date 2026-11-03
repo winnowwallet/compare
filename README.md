@@ -3,10 +3,10 @@
 A reproducible comparison of open-source iPhone Bitcoin wallets, published at
 **https://compare.winnowwallet.com/**.
 
-It measures [Winnow](https://github.com/winnowwallet/winnow) beside seven other open-source iPhone
+It measures [Winnow](https://github.com/winnowwallet/winnow-lean), the Lean 4 app, beside seven other open-source iPhone
 wallets (BlueWallet, Blockstream Green, Muun, Phoenix, Bitkit, Blixt and Zeus), looking only at
 their Bitcoin wallet and not at Lightning: features, lines of code, languages, cyclomatic
-complexity and CRAP, third-party dependencies, prebuilt binaries, vendored code and patched
+complexity and CRAP, machine-checked proofs, third-party dependencies, prebuilt binaries, vendored code and patched
 dependencies. Every project is pinned to an exact commit, and every number on the site comes out of
 `./build`.
 
@@ -18,6 +18,9 @@ charts each wallet's lines, packages and complex functions over time.
 
 Needs Python 3.11+, Node, Go and Cargo, and network access to GitHub, crates.io, the Go module
 proxy and Maven Central.
+
+Run it on Linux, as CI does: `cargo tree --target aarch64-apple-ios` still resolves proc-macro
+dependencies for the machine it runs on, so on a Mac a few Rust crates (`linux-raw-sys`) drop out.
 
 ```sh
 npm ci                                # pins cloc 2.06
@@ -35,9 +38,10 @@ on every pull request and fails if anything it produces differs from what is com
 | Measure | Tool | Rule |
 | --- | --- | --- |
 | Lines of code | [cloc](https://github.com/AlDanial/cloc) 2.06 | Non-blank, non-comment lines in programming languages, for code that builds into the iPhone app. Characters are counted with comments and whitespace removed, so dense code is not rewarded. |
-| Complexity | [tree-sitter](https://tree-sitter.github.io/) grammars | Cyclomatic complexity per function: 1 plus each `if`/`guard`, loop, non-default `case`/`when`/`match` arm, `catch`, ternary, `&&`, `\|\|`, `??` and elvis. Closures and nested functions count toward the function that contains them. |
+| Complexity | [tree-sitter](https://tree-sitter.github.io/) grammars | Cyclomatic complexity per function: 1 plus each `if`/`guard`, loop, non-default `case`/`when`/`match` arm, `catch`, ternary, `&&`, `\|\|`, `??` and elvis. Closures and nested functions count toward the function that contains them. Lean has no usable grammar (the packaged one leaves most of Winnow in error nodes), so `tools/lean.py` applies the same rule to Lean's tokens: `def`/`instance`/`abbrev`/`opaque` are functions, each non-wildcard `match` or `fun` arm counts. |
+| Proofs | `tools/lean.py` | `theorem`, `lemma` and `example` commands in counted Lean code, and their lines. Lean erases them when it compiles, so they are not functions; their lines stay in the line count. |
 | CRAP | from complexity | `CRAP = CC² × (1 − coverage)³ + CC`. Coverage needs each project's tests run with instrumentation (on a Mac for the Swift apps) and is not measured, so the site reports the floor CRAP cannot go below: CC. |
-| Dependencies | the apps' own lockfiles | SwiftPM and CocoaPods lockfiles; npm production closures from package-lock.json, yarn and bun lockfiles; Kotlin libraries resolved for `ios_arm64` from Maven Central metadata; Rust crates from `cargo tree --target aarch64-apple-ios`; Go modules from `go list -deps` for iOS. |
+| Dependencies | the apps' own lockfiles | SwiftPM and CocoaPods lockfiles; Lake's `lake-manifest.json` (git packages, less the engine); npm production closures from package-lock.json, yarn and bun lockfiles; Kotlin libraries resolved for `ios_arm64` from Maven Central metadata; Rust crates from `cargo tree --target aarch64-apple-ios`; Go modules from `go list -deps` for iOS. |
 | Vendored code | `tools/vendored.py` | Third-party packages committed into an app's repository (including a committed CocoaPods `Pods/`), counted by source (or by published build output when only that was copied), plus committed binaries and dependency patches. |
 | Features | reviewed by hand | Each cell in `features/` cites the code that establishes it, at the revision in `reviewed.json`. `./build evidence` fails if a citation does not resolve there, and writes `data/drift.json`: which cited passages have changed in the code measured since. |
 
@@ -46,8 +50,9 @@ Excluded everywhere: tests, Android/desktop/web code, build tooling, files marke
 removed before counting.
 
 The totals and the complexity are the wallet's own code: its `app` part and, where its repository
-holds one, its own `bitcoin` library (Winnow's WalletCore, Muun's libwallet). An `engine` part is a
-separate project the app embeds (lightning-kmp, LDK Node with rust-lightning, LND, gdk). It is
+holds one, its own `bitcoin` library (Winnow's Lean/Winnow and Lean/Secp, Muun's libwallet). An `engine` part is a
+separate project the app embeds (lightning-kmp, LDK Node with rust-lightning, LND, gdk, and the
+LeanNative framework Winnow runs on). It is
 counted at the version the app pins and shown beside the totals, but is in none of them. A wallet can
 leave paths out on purpose with `skip` in `sources.json`.
 
@@ -75,7 +80,9 @@ site/               the published site (generated, committed); site/data.json ha
 
 | Source | Follows |
 | --- | --- |
-| Winnow, BlueWallet, Green, Muun, Bitkit, Blixt, Zeus | the head of their default branch |
+| BlueWallet, Green, Muun, Bitkit, Blixt, Zeus | the head of their default branch |
+| Winnow | its latest `v*` release tag of winnowwallet/winnow-lean |
+| LeanNative | the `leannative` commit in Winnow's `LeanApp/lake-manifest.json` |
 | Phoenix | its latest `ios-v*` release tag: its default branch was configured for testnet when we checked, and a release is what ships |
 | gdk | the `TAGNAME` in Green's `tools/fetch_gdk_binaries.sh` |
 | lightning-kmp | `lightningkmp` in Phoenix's `gradle/libs.versions.toml`; the Kotlin libraries use the same catalog |
@@ -84,8 +91,8 @@ site/               the published site (generated, committed); site/data.json ha
 | Blixt's LND | Blixt's `bun.lock` → react-native-turbo-lnd's `lnd-source.properties` → that fork and commit |
 | Zeus's LND, LDK Node, Cashu CDK | Zeus's `fetch-libraries-versions.json` |
 
-A source that commits no Cargo.lock (Synonym's LDK Node) gets one from `cargo generate-lockfile`
-when its revision changes, saved in `locks/` so the measurement stays reproducible. When anything
+A source that commits no Cargo.lock gets one from `cargo generate-lockfile` when its revision
+changes, saved in `locks/` so the measurement stays reproducible. When anything
 moved, `snapshot` becomes the day's date and `./build` adds that day's row to `data/history.json`.
 
 What the Daily workflow cannot decide is left to fail loudly: a counted path that no longer

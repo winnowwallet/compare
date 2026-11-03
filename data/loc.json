@@ -1,36 +1,59 @@
 {
  "Winnow": {
   "app": {
-   "code": 8965,
-   "chars": 277104,
-   "files": 33,
+   "code": 9322,
+   "chars": 404775,
+   "files": 43,
    "languages": {
-    "Swift": 8965
+    "Lean": 9322
    },
-   "generated_excluded": []
+   "generated_excluded": [],
+   "proofs": {
+    "theorems": 0,
+    "lines": 0
+   }
   },
   "bitcoin": {
-   "code": 13032,
-   "chars": 441655,
-   "files": 59,
+   "code": 15486,
+   "chars": 681105,
+   "files": 104,
    "languages": {
-    "Swift": 13032
+    "Lean": 15486
    },
-   "generated_excluded": []
+   "generated_excluded": [],
+   "proofs": {
+    "theorems": 95,
+    "lines": 872
+   }
+  },
+  "engine": {
+   "code": 6051,
+   "chars": 266940,
+   "files": 45,
+   "languages": {
+    "C": 62,
+    "C/C++ Header": 8,
+    "Lean": 5981
+   },
+   "generated_excluded": [],
+   "proofs": {
+    "theorems": 45,
+    "lines": 303
+   }
   }
  },
  "BlueWallet": {
   "app": {
-   "code": 57858,
-   "chars": 1638294,
-   "files": 382,
+   "code": 59075,
+   "chars": 1689763,
+   "files": 381,
    "languages": {
-    "C/C++ Header": 18,
-    "JavaScript": 1523,
-    "Objective-C": 33,
-    "Objective-C++": 59,
-    "Swift": 3492,
-    "TypeScript": 52733
+    "C/C++ Header": 17,
+    "JavaScript": 1522,
+    "Objective-C": 26,
+    "Objective-C++": 80,
+    "Swift": 3651,
+    "TypeScript": 53779
    },
    "generated_excluded": []
   }
@@ -106,29 +129,29 @@
  },
  "Bitkit": {
   "app": {
-   "code": 100640,
-   "chars": 2833545,
-   "files": 617,
+   "code": 112906,
+   "chars": 3292458,
+   "files": 630,
    "languages": {
-    "Swift": 100640
+    "Swift": 112906
    },
    "generated_excluded": []
   },
   "engine": {
-   "code": 127646,
-   "chars": 3812752,
+   "code": 128396,
+   "chars": 3834405,
    "files": 226,
    "languages": {
-    "Rust": 127646
+    "Rust": 128396
    },
    "generated_excluded": []
   }
  },
  "Blixt": {
   "app": {
-   "code": 36360,
-   "chars": 947579,
-   "files": 298,
+   "code": 36740,
+   "chars": 957844,
+   "files": 301,
    "languages": {
     "C++": 47,
     "C/C++ Header": 87,
@@ -136,7 +159,7 @@
     "Objective-C": 154,
     "Objective-C++": 84,
     "Swift": 780,
-    "TypeScript": 31440
+    "TypeScript": 31820
    },
    "generated_excluded": [
     "blixt/speedloader-turbomodule/liblnd/arm64-v8a/liblnd.h",
@@ -176,27 +199,27 @@
  },
  "Zeus": {
   "app": {
-   "code": 191851,
-   "chars": 3732483,
-   "files": 581,
+   "code": 193516,
+   "chars": 3791635,
+   "files": 591,
    "languages": {
-    "C/C++ Header": 45,
-    "JavaScript": 47,
-    "Objective-C": 1333,
-    "Objective-C++": 440,
-    "Swift": 4075,
-    "TypeScript": 185911
+    "C/C++ Header": 46,
+    "JavaScript": 48,
+    "Objective-C": 1335,
+    "Objective-C++": 492,
+    "Swift": 4182,
+    "TypeScript": 187413
    },
    "generated_excluded": [
     "zeus/ios/LdkNodeMobile/LDKNode.swift"
    ]
   },
   "engine": {
-   "code": 242900,
-   "chars": 5628091,
-   "files": 1188,
+   "code": 243921,
+   "chars": 5651207,
+   "files": 1191,
    "languages": {
-    "Go": 242900
+    "Go": 243921
    },
    "generated_excluded": [
     "lnd-zeus/graph/db/migration1/sqlc/db.go",

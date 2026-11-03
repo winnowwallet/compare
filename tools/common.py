@@ -21,14 +21,14 @@ COUNTED = ('app', 'bitcoin')
 
 # Programming languages only: no JSON, XML, Markdown, assets or build scripts.
 LANGS = ['Swift', 'Kotlin', 'Objective-C', 'Objective-C++', 'C', 'C++', 'C/C++ Header',
-         'TypeScript', 'JavaScript', 'JSX', 'Dart', 'Go', 'Rust']
+         'TypeScript', 'JavaScript', 'JSX', 'Dart', 'Go', 'Rust', 'Lean']
 EXTENSIONS = {'.swift', '.kt', '.m', '.mm', '.c', '.cc', '.cpp', '.h', '.hpp', '.ts', '.tsx', '.js',
-              '.jsx', '.dart', '.go', '.rs'}
+              '.jsx', '.dart', '.go', '.rs', '.lean'}
 # Tests, other platforms, vendored trees and tooling never build into the iPhone app.
 SKIP_DIRS = {'test', 'tests', '__tests__', '__mocks__', 'e2e', 'integration_test', 'itest', 'lntest', 'fuzz',
              'bench', 'benches', 'testdata', 'Tests', 'node_modules', 'Pods', 'android', 'docs', '.github'}
 TEST_FILE = re.compile(
-    r'(_test\.go|\.test\.[jt]sx?|\.spec\.[jt]sx?|Tests?\.(swift|kt|m)|_test\.dart|'
+    r'(_test\.go|\.test\.[jt]sx?|\.spec\.[jt]sx?|Tests?\.(swift|kt|m|lean)|_test\.dart|'
     r'(^|/|_)tests?\.rs|test_utils\.rs|functional_test_utils\.rs|'
     r'\.pb\.go|\.pb\.gw\.go|\.pb\.json\.go|_grpc\.pb\.go|\.pb\.swift|_pb\.[jt]s|\.pb\.(dart|m|h))$')
 TEST_PATH = re.compile(r'/(commonTest|jvmTest|nativeTest|linuxTest|iosTest|androidTest|androidMain|'
@@ -111,9 +111,10 @@ def strip_rust_tests(text):
 
 def unclaimed(spec):
     """Directories in a wallet's `complete` trees that none of its code parts counts. A tree listed
-    there (e.g. winnow:Sources) must be counted in full, so a wallet that moves code into a new
-    folder fails the build instead of quietly shrinking."""
+    there (e.g. winnow:Lean) must be counted in full, or left out by name in `skip`, so a wallet that moves
+    code into a new folder fails the build instead of quietly shrinking."""
     counted = [resolve(ref).resolve() for refs in spec['code'].values() for ref in refs]
+    counted += [resolve(ref).resolve() for ref in left_out(spec)]
     missing = []
     for tree in spec.get('complete', []):
         for d in sorted(p for p in resolve(tree).iterdir() if p.is_dir()):

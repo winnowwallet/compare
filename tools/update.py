@@ -1,8 +1,8 @@
 """Move every source to what each wallet ships today, and rewrite sources.json.
 
 Wallet repositories follow their default branch. Every engine and prebuilt library follows the
-version its wallet declares, read from the wallet's own files at the new revision: Phoenix's Gradle
-catalog, Bitkit's Package.resolved, Zeus's fetch-libraries-versions.json, Blixt's bun.lock through
+version its wallet declares, read from the wallet's own files at the new revision: Winnow's
+lake-manifest.json for LeanNative, Phoenix's Gradle catalog, Bitkit's Package.resolved, Zeus's fetch-libraries-versions.json, Blixt's bun.lock through
 react-native-turbo-lnd, and LDK Node's Cargo.lock for rust-lightning. Nothing is picked by hand.
 
 A source that commits no Cargo.lock gets one generated when its revision changes, saved in locks/
@@ -107,6 +107,9 @@ def resolve_rule(key, spec):
     if 'spm' in rule:
         rev, version = spm_pin(text, rule['spm'])
         return repo, rev, version, None
+    if 'lake' in rule:  # a Lake git package is pinned by commit
+        rev = next(p['rev'] for p in json.loads(text)['packages'] if p['name'] == rule['lake'])
+        return repo, rev, None, None
     if 'properties' in rule:
         props = properties(text)
         repo = rule['properties']['repo'].format(**props)
@@ -135,9 +138,11 @@ def cargo_sources():
 def ensure_lock(key, spec, moved, below=''):
     """Use the source's own Cargo.lock; generate one only when it commits none."""
     path = source_dir(key)
-    if git('ls-files', str(Path(below) / 'Cargo.lock'), cwd=path):
+    committed = git('ls-files', str(Path(below) / 'Cargo.lock'), cwd=path)
+    if committed:
         if spec.pop('lock', None):
             (ROOT / f'locks/{key}.Cargo.lock').unlink(missing_ok=True)
+            git('checkout', '--', committed, cwd=path)  # fetch wrote the old locks/ copy over it
         return
     lock = ROOT / f'locks/{key}.Cargo.lock'
     if moved or not lock.exists():
