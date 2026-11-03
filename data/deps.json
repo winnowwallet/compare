@@ -1750,6 +1750,8 @@
    "libm v0.2.16",
    "libsqlite3-sys v0.28.0",
    "libsqlite3-sys v0.30.1",
+   "linux-raw-sys v0.12.1",
+   "linux-raw-sys v0.9.4",
    "litemap v0.8.0",
    "litemap v0.8.1",
    "litemap v0.8.3",
@@ -2118,14 +2120,14 @@
    "zmij v1.0.21",
    "zmij v1.0.23"
   ],
-  "rust_copies": 1119,
+  "rust_copies": 1122,
   "rust_per_library": {
    "synonym-ldk-node": 196,
-   "bitkit-core": 458,
-   "paykit-rs": 298,
-   "vss-rust-client-ffi": 167
+   "bitkit-core": 459,
+   "paykit-rs": 299,
+   "vss-rust-client-ffi": 168
   },
-  "total": 718
+  "total": 720
  },
  "Blixt": {
   "go": [
@@ -3092,6 +3094,7 @@
    "libc v0.2.189",
    "libm v0.2.16",
    "libsqlite3-sys v0.28.0",
+   "linux-raw-sys v0.12.1",
    "litemap v0.8.1",
    "litemap v0.8.3",
    "lock_api v0.4.14",
@@ -3318,10 +3321,10 @@
    "zmij v1.0.21",
    "zmij v1.0.23"
   ],
-  "rust_copies": 467,
+  "rust_copies": 468,
   "rust_per_library": {
    "zeus-ldk-node": 199,
-   "cdk": 268
+   "cdk": 269
   },
   "go": [
    "dario.cat/mergo@v1.0.1",
@@ -4482,6 +4485,6 @@
    "lottie-ios"
   ],
   "pods_from_npm_and_react_native": 112,
-  "total": 1451
+  "total": 1452
  }
 }

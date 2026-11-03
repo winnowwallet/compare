@@ -19,6 +19,9 @@ charts each wallet's lines, packages and complex functions over time.
 Needs Python 3.11+, Node, Go and Cargo, and network access to GitHub, crates.io, the Go module
 proxy and Maven Central.
 
+Run it on Linux, as CI does: `cargo tree --target aarch64-apple-ios` still resolves proc-macro
+dependencies for the machine it runs on, so on a Mac a few Rust crates (`linux-raw-sys`) drop out.
+
 ```sh
 npm ci                                # pins cloc 2.06
 python3 -m pip install -r requirements.txt  # pins the tree-sitter grammars
