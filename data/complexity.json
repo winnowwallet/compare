@@ -334,14 +334,14 @@
  },
  "Bitkit": {
   "app": {
-   "functions": 6728,
+   "functions": 6740,
    "mean_cc": 3.26,
    "p90_cc": 6,
    "max_cc": 111,
-   "cc_le_2": 3954,
-   "cc_3_12": 2610,
-   "cc_gt_12": 164,
-   "cc_gt_30": 28,
+   "cc_le_2": 3960,
+   "cc_3_12": 2614,
+   "cc_gt_12": 166,
+   "cc_gt_30": 27,
    "files": 630,
    "files_with_parse_errors": 12,
    "most_complex": [
@@ -351,14 +351,14 @@
      "at": "bitkit/Bitkit/MainNavView.swift:494"
     },
     {
+     "cc": 83,
+     "function": "handleScannedData",
+     "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:763"
+    },
+    {
      "cc": 78,
      "function": "refreshBip21",
      "at": "bitkit/Bitkit/ViewModels/WalletViewModel.swift:1567"
-    },
-    {
-     "cc": 77,
-     "function": "handleScannedData",
-     "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:763"
     },
     {
      "cc": 71,
@@ -368,19 +368,19 @@
     {
      "cc": 60,
      "function": "performPayment",
-     "at": "bitkit/Bitkit/Views/Wallets/Send/SendConfirmationView.swift:1185"
+     "at": "bitkit/Bitkit/Views/Wallets/Send/SendConfirmationView.swift:1223"
     }
    ]
   },
   "all": {
-   "functions": 6728,
+   "functions": 6740,
    "mean_cc": 3.26,
    "p90_cc": 6,
    "max_cc": 111,
-   "cc_le_2": 3954,
-   "cc_3_12": 2610,
-   "cc_gt_12": 164,
-   "cc_gt_30": 28
+   "cc_le_2": 3960,
+   "cc_3_12": 2614,
+   "cc_gt_12": 166,
+   "cc_gt_30": 27
   }
  },
  "Blixt": {
@@ -436,26 +436,26 @@
  },
  "Zeus": {
   "app": {
-   "functions": 5008,
+   "functions": 5028,
    "mean_cc": 4.7,
    "p90_cc": 10,
    "max_cc": 246,
-   "cc_le_2": 2868,
-   "cc_3_12": 1772,
-   "cc_gt_12": 368,
+   "cc_le_2": 2875,
+   "cc_3_12": 1783,
+   "cc_gt_12": 370,
    "cc_gt_30": 78,
-   "files": 592,
+   "files": 595,
    "files_with_parse_errors": 13,
    "most_complex": [
     {
      "cc": 246,
      "function": "render",
-     "at": "zeus/views/Receive.tsx:1108"
+     "at": "zeus/views/Receive.tsx:1115"
     },
     {
      "cc": 226,
      "function": "render",
-     "at": "zeus/views/Settings/WalletConfiguration.tsx:1514"
+     "at": "zeus/views/Settings/WalletConfiguration.tsx:1523"
     },
     {
      "cc": 172,
@@ -463,9 +463,9 @@
      "at": "zeus/views/Wallet/Wallet.tsx:598"
     },
     {
-     "cc": 165,
+     "cc": 169,
      "function": "(arrow_function)",
-     "at": "zeus/utils/handleAnything.ts:368"
+     "at": "zeus/utils/handleAnything.ts:371"
     },
     {
      "cc": 144,
@@ -475,13 +475,13 @@
    ]
   },
   "all": {
-   "functions": 5008,
+   "functions": 5028,
    "mean_cc": 4.7,
    "p90_cc": 10,
    "max_cc": 246,
-   "cc_le_2": 2868,
-   "cc_3_12": 1772,
-   "cc_gt_12": 368,
+   "cc_le_2": 2875,
+   "cc_3_12": 1783,
+   "cc_gt_12": 370,
    "cc_gt_30": 78
   }
  }

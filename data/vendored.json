@@ -258,6 +258,8 @@
   "nested_licenses": [],
   "binaries": [],
   "patches": [
+   "patch-blob-util-no-retry.mjs",
+   "patch-blob-util-no-retry.test.ts",
    "patch-jcenter.mjs",
    "patch-keychain-atomic-update.mjs",
    "patch-keychain-atomic-update.test.ts",

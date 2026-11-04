@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-11-03",
+ "snapshot": "2026-11-04",
  "sources": {
   "winnow": {
    "repo": "https://github.com/winnowwallet/winnow-lean",
@@ -51,9 +51,9 @@
    "track": {
     "branch": "HEAD"
    },
-   "rev": "6861aa7325de948721169b2da2db680c0d31ef15",
-   "label": "synonymdev/bitkit-ios@6861aa7",
-   "date": "2026-11-03"
+   "rev": "f75f2d56f2b8747339de724251960a9705c445ea",
+   "label": "synonymdev/bitkit-ios@f75f2d5",
+   "date": "2026-11-04"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",
@@ -157,9 +157,9 @@
    "track": {
     "branch": "HEAD"
    },
-   "rev": "5f56abba57dd25a1881ed41f1ca850c55a4ff182",
-   "label": "ZeusLN/zeus@5f56abb",
-   "date": "2026-11-02"
+   "rev": "c8149d7cd9c894b88641a0b57c489952af732a34",
+   "label": "ZeusLN/zeus@c8149d7",
+   "date": "2026-11-04"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
@@ -209,9 +209,9 @@
    "track": {
     "branch": "HEAD"
    },
-   "rev": "3631c47d000e9faf702a9bcf9c9b3f7a4c1bfcfe",
-   "label": "BlueWallet/BlueWallet@3631c47",
-   "date": "2026-10-30"
+   "rev": "1b83a99a7f4fb8fc5ad4056e5173f382f0a01fe4",
+   "label": "BlueWallet/BlueWallet@1b83a99",
+   "date": "2026-11-04"
   },
   "green": {
    "repo": "https://github.com/Blockstream/green_ios",
@@ -291,8 +291,8 @@
   },
   "BlueWallet": {
    "app": {
-    "code": 59075,
-    "chars": 1689763,
+    "code": 59067,
+    "chars": 1689659,
     "files": 381,
     "languages": {
      "C/C++ Header": 17,
@@ -300,7 +300,7 @@
      "Objective-C": 26,
      "Objective-C++": 80,
      "Swift": 3651,
-     "TypeScript": 53779
+     "TypeScript": 53771
     },
     "generated_excluded": []
    }
@@ -378,11 +378,11 @@
   },
   "Bitkit": {
    "app": {
-    "code": 112906,
-    "chars": 3292458,
+    "code": 113066,
+    "chars": 3298511,
     "files": 630,
     "languages": {
-     "Swift": 112906
+     "Swift": 113066
     },
     "generated_excluded": []
    },
@@ -448,16 +448,16 @@
   },
   "Zeus": {
    "app": {
-    "code": 193516,
-    "chars": 3791635,
-    "files": 591,
+    "code": 194004,
+    "chars": 3802988,
+    "files": 594,
     "languages": {
      "C/C++ Header": 46,
      "JavaScript": 48,
      "Objective-C": 1335,
      "Objective-C++": 492,
      "Swift": 4182,
-     "TypeScript": 187413
+     "TypeScript": 187901
     },
     "generated_excluded": [
      "zeus/ios/LdkNodeMobile/LDKNode.swift"
@@ -541,9 +541,9 @@
   },
   "Bitkit": {
    "Lean": 0.0,
-   "Swift": 46.79,
+   "Swift": 46.83,
    "Kotlin": 0.0,
-   "Rust": 53.21,
+   "Rust": 53.17,
    "Go": 0.0,
    "TypeScript/JS": 0.0,
    "C family": 0.0
@@ -559,11 +559,11 @@
   },
   "Zeus": {
    "Lean": 0.0,
-   "Swift": 0.96,
+   "Swift": 0.95,
    "Kotlin": 0.0,
    "Rust": 0.0,
-   "Go": 55.76,
-   "TypeScript/JS": 42.85,
+   "Go": 55.7,
+   "TypeScript/JS": 42.92,
    "C family": 0.43
   }
  },
@@ -903,14 +903,14 @@
   },
   "Bitkit": {
    "app": {
-    "functions": 6728,
+    "functions": 6740,
     "mean_cc": 3.26,
     "p90_cc": 6,
     "max_cc": 111,
-    "cc_le_2": 3954,
-    "cc_3_12": 2610,
-    "cc_gt_12": 164,
-    "cc_gt_30": 28,
+    "cc_le_2": 3960,
+    "cc_3_12": 2614,
+    "cc_gt_12": 166,
+    "cc_gt_30": 27,
     "files": 630,
     "files_with_parse_errors": 12,
     "most_complex": [
@@ -920,14 +920,14 @@
       "at": "bitkit/Bitkit/MainNavView.swift:494"
      },
      {
+      "cc": 83,
+      "function": "handleScannedData",
+      "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:763"
+     },
+     {
       "cc": 78,
       "function": "refreshBip21",
       "at": "bitkit/Bitkit/ViewModels/WalletViewModel.swift:1567"
-     },
-     {
-      "cc": 77,
-      "function": "handleScannedData",
-      "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:763"
      },
      {
       "cc": 71,
@@ -937,19 +937,19 @@
      {
       "cc": 60,
       "function": "performPayment",
-      "at": "bitkit/Bitkit/Views/Wallets/Send/SendConfirmationView.swift:1185"
+      "at": "bitkit/Bitkit/Views/Wallets/Send/SendConfirmationView.swift:1223"
      }
     ]
    },
    "all": {
-    "functions": 6728,
+    "functions": 6740,
     "mean_cc": 3.26,
     "p90_cc": 6,
     "max_cc": 111,
-    "cc_le_2": 3954,
-    "cc_3_12": 2610,
-    "cc_gt_12": 164,
-    "cc_gt_30": 28
+    "cc_le_2": 3960,
+    "cc_3_12": 2614,
+    "cc_gt_12": 166,
+    "cc_gt_30": 27
    }
   },
   "Blixt": {
@@ -1005,26 +1005,26 @@
   },
   "Zeus": {
    "app": {
-    "functions": 5008,
+    "functions": 5028,
     "mean_cc": 4.7,
     "p90_cc": 10,
     "max_cc": 246,
-    "cc_le_2": 2868,
-    "cc_3_12": 1772,
-    "cc_gt_12": 368,
+    "cc_le_2": 2875,
+    "cc_3_12": 1783,
+    "cc_gt_12": 370,
     "cc_gt_30": 78,
-    "files": 592,
+    "files": 595,
     "files_with_parse_errors": 13,
     "most_complex": [
      {
       "cc": 246,
       "function": "render",
-      "at": "zeus/views/Receive.tsx:1108"
+      "at": "zeus/views/Receive.tsx:1115"
      },
      {
       "cc": 226,
       "function": "render",
-      "at": "zeus/views/Settings/WalletConfiguration.tsx:1514"
+      "at": "zeus/views/Settings/WalletConfiguration.tsx:1523"
      },
      {
       "cc": 172,
@@ -1032,9 +1032,9 @@
       "at": "zeus/views/Wallet/Wallet.tsx:598"
      },
      {
-      "cc": 165,
+      "cc": 169,
       "function": "(arrow_function)",
-      "at": "zeus/utils/handleAnything.ts:368"
+      "at": "zeus/utils/handleAnything.ts:371"
      },
      {
       "cc": 144,
@@ -1044,13 +1044,13 @@
     ]
    },
    "all": {
-    "functions": 5008,
+    "functions": 5028,
     "mean_cc": 4.7,
     "p90_cc": 10,
     "max_cc": 246,
-    "cc_le_2": 2868,
-    "cc_3_12": 1772,
-    "cc_gt_12": 368,
+    "cc_le_2": 2875,
+    "cc_3_12": 1783,
+    "cc_gt_12": 370,
     "cc_gt_30": 78
    }
   }
@@ -1273,7 +1273,6 @@
     "@noble/hashes@1.8.0",
     "@noble/hashes@2.0.1",
     "@noble/hashes@2.4.0",
-    "@noble/secp256k1@1.6.3",
     "@noble/secp256k1@3.0.0",
     "@noble/secp256k1@3.2.0",
     "@nodelib/fs.scandir@2.1.5",
@@ -1844,7 +1843,7 @@
     "react-native-background-fetch@4.4.2",
     "react-native-biometrics@3.0.1",
     "react-native-blue-crypto@1.0.0",
-    "react-native-camera-kit-no-google@18.0.0",
+    "react-native-camera-kit-no-google@18.0.1",
     "react-native-capture-protection@2.4.1",
     "react-native-context-menu-view@1.21.0",
     "react-native-default-preference@1.5.1",
@@ -1934,7 +1933,7 @@
     "side-channel-weakmap@1.0.2",
     "side-channel@1.1.0",
     "signal-exit@3.0.7",
-    "silent-payments@2.2.1",
+    "silent-payments@4.0.0",
     "simple-concat@1.0.1",
     "simple-get@4.0.1",
     "simple-swizzle@0.2.2",
@@ -2070,7 +2069,7 @@
     "lottie-ios"
    ],
    "pods_from_npm_and_react_native": 106,
-   "total": 904
+   "total": 903
   },
   "Green": {
    "spm": [
@@ -5805,6 +5804,8 @@
    "nested_licenses": [],
    "binaries": [],
    "patches": [
+    "patch-blob-util-no-retry.mjs",
+    "patch-blob-util-no-retry.test.ts",
     "patch-jcenter.mjs",
     "patch-keychain-atomic-update.mjs",
     "patch-keychain-atomic-update.test.ts",
@@ -6764,10 +6765,10 @@
  "drift": {
   "reviewed": "2026-10-02",
   "reviewed_latest": "2026-11-03",
-  "measured": "2026-11-03",
+  "measured": "2026-11-04",
   "citations": 441,
-  "same": 318,
-  "moved": 99,
+  "same": 316,
+  "moved": 101,
   "changed": 24,
   "gone": 0,
   "by_wallet": {
@@ -6778,8 +6779,8 @@
     "gone": 0
    },
    "BlueWallet": {
-    "same": 15,
-    "moved": 35,
+    "same": 13,
+    "moved": 37,
     "changed": 8,
     "gone": 0
    },
@@ -6976,6 +6977,13 @@
    },
    {
     "wallet": "BlueWallet",
+    "fact": "features.multisig",
+    "cite": "bluewallet:screen/wallets/addMultisigStep2.tsx:226-232",
+    "status": "moved",
+    "now_at": 216
+   },
+   {
+    "wallet": "BlueWallet",
     "fact": "features.hw_signer",
     "cite": "bluewallet:class/wallets/abstract-wallet.ts:321-337",
     "status": "moved",
@@ -7145,6 +7153,13 @@
    {
     "wallet": "BlueWallet",
     "fact": "features.seed_standard",
+    "cite": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:168-171",
+    "status": "moved",
+    "now_at": 169
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.seed_standard",
     "cite": "bluewallet:screen/wallets/Add.tsx:284-286",
     "status": "moved",
     "now_at": 285
@@ -7189,7 +7204,7 @@
     "fact": "features.coin_control",
     "cite": "bitkit:Bitkit/Views/Wallets/Send/SendAmountView.swift:302-323",
     "status": "moved",
-    "now_at": 406
+    "now_at": 408
    },
    {
     "wallet": "Bitkit",
@@ -7301,7 +7316,7 @@
     "fact": "features.hw_signer",
     "cite": "zeus:locales/en.json:426",
     "status": "moved",
-    "now_at": 424
+    "now_at": 429
    },
    {
     "wallet": "Zeus",
@@ -7315,7 +7330,7 @@
     "fact": "features.watch_only",
     "cite": "zeus:utils/handleAnything.ts:1122-1129",
     "status": "moved",
-    "now_at": 1154
+    "now_at": 1173
    },
    {
     "wallet": "Zeus",
@@ -7371,14 +7386,14 @@
     "fact": "features.taproot",
     "cite": "zeus:views/Receive.tsx:1127-1133",
     "status": "moved",
-    "now_at": 1256
+    "now_at": 1263
    },
    {
     "wallet": "Zeus",
     "fact": "features.taproot",
     "cite": "zeus:backends/EmbeddedLND.ts:586",
     "status": "moved",
-    "now_at": 675
+    "now_at": 678
    },
    {
     "wallet": "Zeus",
@@ -7399,7 +7414,7 @@
     "fact": "features.descriptors",
     "cite": "zeus:utils/handleAnything.ts:1094-1118",
     "status": "moved",
-    "now_at": 1126
+    "now_at": 1145
    },
    {
     "wallet": "Zeus",
@@ -7434,7 +7449,7 @@
     "fact": "features.tor",
     "cite": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465",
     "status": "moved",
-    "now_at": 1587
+    "now_at": 1596
    },
    {
     "wallet": "Zeus",
@@ -7476,7 +7491,7 @@
     "fact": "profile.engine",
     "cite": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:1075",
     "status": "moved",
-    "now_at": 1078
+    "now_at": 1079
    },
    {
     "wallet": "BlueWallet",
@@ -7504,7 +7519,7 @@
     "fact": "profile.third_party",
     "cite": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:1075",
     "status": "moved",
-    "now_at": 1078
+    "now_at": 1079
    },
    {
     "wallet": "BlueWallet",
@@ -9013,6 +9028,131 @@
      "characters": 3791635,
      "functions": 5008,
      "cc_gt_12": 368,
+     "cc_gt_30": 78,
+     "max_cc": 246,
+     "packages": 1452,
+     "vendored_lines": 4043
+    }
+   }
+  },
+  {
+   "date": "2026-11-04",
+   "method": 2,
+   "sources": {
+    "winnow": "a43913654a6937dd6f207d0b43e0b22013d78f3b",
+    "leannative": "700b3889a99a55804bd7fd256fb4fd3f008e236b",
+    "phoenix": "c3b0ae7882ad256c0b35e94c66d5f1f27305c208",
+    "lightning-kmp": "9dacdc0b4ac981dcb8fed9be23b53e6994eab27a",
+    "bitkit": "f75f2d56f2b8747339de724251960a9705c445ea",
+    "synonym-ldk-node": "1976754dd49886e102f2b3132d5f700d6aabd8d7",
+    "rust-lightning": "5ce2ecb33d32e3b61ef01d5ead0ee6693c0cd7d1",
+    "bitkit-core": "22e0acc31a97b65205e71f4190cfc659fdecd3ca",
+    "paykit-rs": "01de5dd232d2b22f132d066697cce041700e7136",
+    "vss-rust-client-ffi": "eba41ef62b7314aa75827a5a3e71d2b23930b981",
+    "blixt": "b0408dd1d45a24d7e5a38221adeb79d6309f0e87",
+    "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
+    "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
+    "zeus": "c8149d7cd9c894b88641a0b57c489952af732a34",
+    "lnd-zeus": "e21a177c24b3cb33bf4b44261f5b5f3fa6790a9c",
+    "zeus-ldk-node": "93680ba7d9069680afe95cc3387c5f3639b9681e",
+    "cdk": "9f6d3a3734d7223d10b5553e3591d3f9d5c6c904",
+    "bluewallet": "1b83a99a7f4fb8fc5ad4056e5173f382f0a01fe4",
+    "green": "131f820fdef34b5368de9caa5ef7f3de4d7e0139",
+    "gdk": "02e3646264ed10afd460e61c2c516510b9ce5cf5",
+    "muun": "d6719c00f96d2ecbde2ab6588f95e54975ceea0e"
+   },
+   "wallets": {
+    "Winnow": {
+     "lines": 24808,
+     "lines_app": 9322,
+     "lines_bitcoin": 15486,
+     "lines_engine": 6051,
+     "characters": 1085880,
+     "functions": 3001,
+     "cc_gt_12": 126,
+     "cc_gt_30": 10,
+     "max_cc": 44,
+     "packages": 0,
+     "vendored_lines": 0
+    },
+    "BlueWallet": {
+     "lines": 59067,
+     "lines_app": 59067,
+     "characters": 1689659,
+     "functions": 1817,
+     "cc_gt_12": 143,
+     "cc_gt_30": 45,
+     "max_cc": 262,
+     "packages": 903,
+     "vendored_lines": 5136
+    },
+    "Green": {
+     "lines": 70474,
+     "lines_app": 70474,
+     "lines_engine": 34374,
+     "characters": 2032945,
+     "functions": 6905,
+     "cc_gt_12": 85,
+     "cc_gt_30": 7,
+     "max_cc": 45,
+     "packages": 157,
+     "vendored_lines": 0
+    },
+    "Muun": {
+     "lines": 85613,
+     "lines_app": 57144,
+     "lines_bitcoin": 28469,
+     "characters": 2329242,
+     "functions": 6572,
+     "cc_gt_12": 52,
+     "cc_gt_30": 0,
+     "max_cc": 26,
+     "packages": 139,
+     "vendored_lines": 101694
+    },
+    "Phoenix": {
+     "lines": 72881,
+     "lines_app": 72881,
+     "lines_engine": 28779,
+     "characters": 1902473,
+     "functions": 4703,
+     "cc_gt_12": 77,
+     "cc_gt_30": 9,
+     "max_cc": 155,
+     "packages": 58,
+     "vendored_lines": 0
+    },
+    "Bitkit": {
+     "lines": 113066,
+     "lines_app": 113066,
+     "lines_engine": 128396,
+     "characters": 3298511,
+     "functions": 6740,
+     "cc_gt_12": 166,
+     "cc_gt_30": 27,
+     "max_cc": 111,
+     "packages": 720,
+     "vendored_lines": 0
+    },
+    "Blixt": {
+     "lines": 36740,
+     "lines_app": 36740,
+     "lines_engine": 238947,
+     "characters": 957844,
+     "functions": 1067,
+     "cc_gt_12": 58,
+     "cc_gt_30": 19,
+     "max_cc": 139,
+     "packages": 680,
+     "vendored_lines": 0
+    },
+    "Zeus": {
+     "lines": 194004,
+     "lines_app": 194004,
+     "lines_engine": 243921,
+     "characters": 3802988,
+     "functions": 5028,
+     "cc_gt_12": 370,
      "cc_gt_30": 78,
      "max_cc": 246,
      "packages": 1452,

@@ -216,7 +216,6 @@
    "@noble/hashes@1.8.0",
    "@noble/hashes@2.0.1",
    "@noble/hashes@2.4.0",
-   "@noble/secp256k1@1.6.3",
    "@noble/secp256k1@3.0.0",
    "@noble/secp256k1@3.2.0",
    "@nodelib/fs.scandir@2.1.5",
@@ -787,7 +786,7 @@
    "react-native-background-fetch@4.4.2",
    "react-native-biometrics@3.0.1",
    "react-native-blue-crypto@1.0.0",
-   "react-native-camera-kit-no-google@18.0.0",
+   "react-native-camera-kit-no-google@18.0.1",
    "react-native-capture-protection@2.4.1",
    "react-native-context-menu-view@1.21.0",
    "react-native-default-preference@1.5.1",
@@ -877,7 +876,7 @@
    "side-channel-weakmap@1.0.2",
    "side-channel@1.1.0",
    "signal-exit@3.0.7",
-   "silent-payments@2.2.1",
+   "silent-payments@4.0.0",
    "simple-concat@1.0.1",
    "simple-get@4.0.1",
    "simple-swizzle@0.2.2",
@@ -1013,7 +1012,7 @@
    "lottie-ios"
   ],
   "pods_from_npm_and_react_native": 106,
-  "total": 904
+  "total": 903
  },
  "Green": {
   "spm": [

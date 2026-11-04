@@ -1,10 +1,10 @@
 {
  "reviewed": "2026-10-02",
  "reviewed_latest": "2026-11-03",
- "measured": "2026-11-03",
+ "measured": "2026-11-04",
  "citations": 441,
- "same": 318,
- "moved": 99,
+ "same": 316,
+ "moved": 101,
  "changed": 24,
  "gone": 0,
  "by_wallet": {
@@ -15,8 +15,8 @@
    "gone": 0
   },
   "BlueWallet": {
-   "same": 15,
-   "moved": 35,
+   "same": 13,
+   "moved": 37,
    "changed": 8,
    "gone": 0
   },
@@ -213,6 +213,13 @@
   },
   {
    "wallet": "BlueWallet",
+   "fact": "features.multisig",
+   "cite": "bluewallet:screen/wallets/addMultisigStep2.tsx:226-232",
+   "status": "moved",
+   "now_at": 216
+  },
+  {
+   "wallet": "BlueWallet",
    "fact": "features.hw_signer",
    "cite": "bluewallet:class/wallets/abstract-wallet.ts:321-337",
    "status": "moved",
@@ -382,6 +389,13 @@
   {
    "wallet": "BlueWallet",
    "fact": "features.seed_standard",
+   "cite": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:168-171",
+   "status": "moved",
+   "now_at": 169
+  },
+  {
+   "wallet": "BlueWallet",
+   "fact": "features.seed_standard",
    "cite": "bluewallet:screen/wallets/Add.tsx:284-286",
    "status": "moved",
    "now_at": 285
@@ -426,7 +440,7 @@
    "fact": "features.coin_control",
    "cite": "bitkit:Bitkit/Views/Wallets/Send/SendAmountView.swift:302-323",
    "status": "moved",
-   "now_at": 406
+   "now_at": 408
   },
   {
    "wallet": "Bitkit",
@@ -538,7 +552,7 @@
    "fact": "features.hw_signer",
    "cite": "zeus:locales/en.json:426",
    "status": "moved",
-   "now_at": 424
+   "now_at": 429
   },
   {
    "wallet": "Zeus",
@@ -552,7 +566,7 @@
    "fact": "features.watch_only",
    "cite": "zeus:utils/handleAnything.ts:1122-1129",
    "status": "moved",
-   "now_at": 1154
+   "now_at": 1173
   },
   {
    "wallet": "Zeus",
@@ -608,14 +622,14 @@
    "fact": "features.taproot",
    "cite": "zeus:views/Receive.tsx:1127-1133",
    "status": "moved",
-   "now_at": 1256
+   "now_at": 1263
   },
   {
    "wallet": "Zeus",
    "fact": "features.taproot",
    "cite": "zeus:backends/EmbeddedLND.ts:586",
    "status": "moved",
-   "now_at": 675
+   "now_at": 678
   },
   {
    "wallet": "Zeus",
@@ -636,7 +650,7 @@
    "fact": "features.descriptors",
    "cite": "zeus:utils/handleAnything.ts:1094-1118",
    "status": "moved",
-   "now_at": 1126
+   "now_at": 1145
   },
   {
    "wallet": "Zeus",
@@ -671,7 +685,7 @@
    "fact": "features.tor",
    "cite": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465",
    "status": "moved",
-   "now_at": 1587
+   "now_at": 1596
   },
   {
    "wallet": "Zeus",
@@ -713,7 +727,7 @@
    "fact": "profile.engine",
    "cite": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:1075",
    "status": "moved",
-   "now_at": 1078
+   "now_at": 1079
   },
   {
    "wallet": "BlueWallet",
@@ -741,7 +755,7 @@
    "fact": "profile.third_party",
    "cite": "bluewallet:class/wallets/abstract-hd-electrum-wallet.ts:1075",
    "status": "moved",
-   "now_at": 1078
+   "now_at": 1079
   },
   {
    "wallet": "BlueWallet",

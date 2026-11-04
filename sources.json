@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-11-03",
+ "snapshot": "2026-11-04",
  "method": 2,
  "sources": {
   "winnow": {
@@ -39,9 +39,9 @@
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {"branch": "HEAD"},
-   "rev": "6861aa7325de948721169b2da2db680c0d31ef15",
-   "label": "synonymdev/bitkit-ios@6861aa7",
-   "date": "2026-11-03"
+   "rev": "f75f2d56f2b8747339de724251960a9705c445ea",
+   "label": "synonymdev/bitkit-ios@f75f2d5",
+   "date": "2026-11-04"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",
@@ -112,9 +112,9 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "5f56abba57dd25a1881ed41f1ca850c55a4ff182",
-   "label": "ZeusLN/zeus@5f56abb",
-   "date": "2026-11-02"
+   "rev": "c8149d7cd9c894b88641a0b57c489952af732a34",
+   "label": "ZeusLN/zeus@c8149d7",
+   "date": "2026-11-04"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
@@ -147,9 +147,9 @@
   "bluewallet": {
    "repo": "https://github.com/BlueWallet/BlueWallet",
    "track": {"branch": "HEAD"},
-   "rev": "3631c47d000e9faf702a9bcf9c9b3f7a4c1bfcfe",
-   "label": "BlueWallet/BlueWallet@3631c47",
-   "date": "2026-10-30"
+   "rev": "1b83a99a7f4fb8fc5ad4056e5173f382f0a01fe4",
+   "label": "BlueWallet/BlueWallet@1b83a99",
+   "date": "2026-11-04"
   },
   "green": {
    "repo": "https://github.com/Blockstream/green_ios",
