@@ -1,11 +1,11 @@
 {
  "reviewed": "2026-10-02",
  "reviewed_latest": "2026-11-03",
- "measured": "2026-11-04",
+ "measured": "2026-11-06",
  "citations": 441,
  "same": 316,
- "moved": 101,
- "changed": 24,
+ "moved": 100,
+ "changed": 25,
  "gone": 0,
  "by_wallet": {
   "Winnow": {
@@ -52,8 +52,8 @@
   },
   "Zeus": {
    "same": 14,
-   "moved": 40,
-   "changed": 4,
+   "moved": 39,
+   "changed": 5,
    "gone": 0
   }
  },
@@ -194,6 +194,12 @@
    "wallet": "Zeus",
    "fact": "profile.third_party",
    "cite": "zeus:backends/EmbeddedLND.ts:100-107",
+   "status": "changed"
+  },
+  {
+   "wallet": "Zeus",
+   "fact": "profile.libraries",
+   "cite": "zeus:package.json:117",
    "status": "changed"
   },
   {
@@ -419,21 +425,21 @@
    "fact": "features.hw_signer",
    "cite": "bitkit:Bitkit/Services/Trezor/TrezorTransport.swift:37-48",
    "status": "moved",
-   "now_at": 40
+   "now_at": 42
   },
   {
    "wallet": "Bitkit",
    "fact": "features.psbt",
    "cite": "bitkit:Bitkit/Managers/HwWalletManager.swift:1177",
    "status": "moved",
-   "now_at": 1524
+   "now_at": 1539
   },
   {
    "wallet": "Bitkit",
    "fact": "features.psbt",
    "cite": "bitkit:Bitkit/Views/Settings/DevSettingsView.swift:59-61",
    "status": "moved",
-   "now_at": 58
+   "now_at": 57
   },
   {
    "wallet": "Bitkit",
@@ -461,7 +467,7 @@
    "fact": "features.taproot",
    "cite": "bitkit:Bitkit/ViewModels/SettingsViewModel.swift:576",
    "status": "moved",
-   "now_at": 647
+   "now_at": 645
   },
   {
    "wallet": "Bitkit",
@@ -622,7 +628,7 @@
    "fact": "features.taproot",
    "cite": "zeus:views/Receive.tsx:1127-1133",
    "status": "moved",
-   "now_at": 1263
+   "now_at": 1276
   },
   {
    "wallet": "Zeus",
@@ -889,13 +895,6 @@
    "cite": "zeus:package.json:86",
    "status": "moved",
    "now_at": 95
-  },
-  {
-   "wallet": "Zeus",
-   "fact": "profile.libraries",
-   "cite": "zeus:package.json:117",
-   "status": "moved",
-   "now_at": 125
   },
   {
    "wallet": "Zeus",
