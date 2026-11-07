@@ -91,12 +91,12 @@
  },
  "BlueWallet": {
   "app": {
-   "functions": 1817,
-   "mean_cc": 5.29,
+   "functions": 1821,
+   "mean_cc": 5.28,
    "p90_cc": 10,
    "max_cc": 262,
-   "cc_le_2": 1039,
-   "cc_3_12": 635,
+   "cc_le_2": 1041,
+   "cc_3_12": 637,
    "cc_gt_12": 143,
    "cc_gt_30": 45,
    "files": 381,
@@ -130,12 +130,12 @@
    ]
   },
   "all": {
-   "functions": 1817,
-   "mean_cc": 5.29,
+   "functions": 1821,
+   "mean_cc": 5.28,
    "p90_cc": 10,
    "max_cc": 262,
-   "cc_le_2": 1039,
-   "cc_3_12": 635,
+   "cc_le_2": 1041,
+   "cc_3_12": 637,
    "cc_gt_12": 143,
    "cc_gt_30": 45
   }
@@ -436,15 +436,15 @@
  },
  "Zeus": {
   "app": {
-   "functions": 5052,
-   "mean_cc": 4.7,
+   "functions": 5074,
+   "mean_cc": 4.69,
    "p90_cc": 10,
    "max_cc": 246,
-   "cc_le_2": 2887,
-   "cc_3_12": 1793,
+   "cc_le_2": 2906,
+   "cc_3_12": 1796,
    "cc_gt_12": 372,
    "cc_gt_30": 78,
-   "files": 597,
+   "files": 602,
    "files_with_parse_errors": 13,
    "most_complex": [
     {
@@ -460,7 +460,7 @@
     {
      "cc": 172,
      "function": "fetchDataCore",
-     "at": "zeus/views/Wallet/Wallet.tsx:598"
+     "at": "zeus/views/Wallet/Wallet.tsx:592"
     },
     {
      "cc": 169,
@@ -475,12 +475,12 @@
    ]
   },
   "all": {
-   "functions": 5052,
-   "mean_cc": 4.7,
+   "functions": 5074,
+   "mean_cc": 4.69,
    "p90_cc": 10,
    "max_cc": 246,
-   "cc_le_2": 2887,
-   "cc_3_12": 1793,
+   "cc_le_2": 2906,
+   "cc_3_12": 1796,
    "cc_gt_12": 372,
    "cc_gt_30": 78
   }
