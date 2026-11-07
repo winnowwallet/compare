@@ -66,6 +66,7 @@ class Complexity(unittest.TestCase):
             # 1 non-wildcard fun alternative, the where helper's if; strings, a char and comments add nothing
             (1 + 12, 'f'),
             (1 + 2, 'g'),                          # two non-wildcard arms of a definition by patterns
+            (1 + 3, 'h'),                          # three arms with a string or char pattern, and `_, _`
             (2, '(instance ToString Bool)'),       # if
         ])
         self.assertEqual(proofs, (1, 2))           # the theorem is a proof, not a function
