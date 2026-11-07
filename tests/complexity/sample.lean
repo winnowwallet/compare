@@ -31,6 +31,14 @@ def g : Nat → Nat
   | 1 => 1
   | _ => 2
 
+/-- String and character patterns are arms too; only `_` is the default. -/
+def h (s : String) (c : Char) : Nat :=
+  match s, c with
+  | "a", 'x' => 0
+  | "b", _ => 1
+  | _, 'y' => 2
+  | _, _ => 3
+
 instance : ToString Bool := ⟨fun b => if b then "t" else "f"⟩
 
 theorem g_zero : g 0 = 0 := by

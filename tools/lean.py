@@ -3,8 +3,8 @@ tree-sitter-language-pack leaves most of Winnow's Lean in error nodes (73% of it
 finds half its declarations. So Lean gets the same rule as every other language, applied to tokens
 instead of a syntax tree:
 
-- Comments (`--`, nested `/- -/`) and string and character literals are blanked out first, keeping
-  line numbers.
+- Comments (`--`, nested `/- -/`) are blanked out first, and each string or character literal is reduced
+  to its opening quote, keeping line numbers. The quote stays so that `| "a" =>` is an arm with a pattern.
 - A Lean file is a sequence of commands, each starting at column 0. A function is a `def`, `instance`,
   `abbrev` or `opaque` command, from its first line (attributes and modifiers included) to the line
   before the next command. Its `where` and `let rec` helpers and its lambdas count toward it, as nested
@@ -32,11 +32,14 @@ BRANCH_WORDS = {'if', 'unless', 'for', 'while', 'repeat', 'catch'}
 
 
 def blank(text):
-    """Comments, strings and character literals replaced by spaces; newlines kept."""
+    """Comments replaced by spaces, and strings and character literals by their opening quote; newlines kept."""
     out, i, n = [], 0, len(text)
 
     def keep_lines(s):
         return re.sub(r'[^\n]', ' ', s)
+
+    def quote(s, mark='"'):
+        return mark + keep_lines(s[1:])
     while i < n:
         c = text[i]
         if text.startswith('--', i):
@@ -57,14 +60,14 @@ def blank(text):
             hashes = re.match(r'r(#*)"', text[i:]).group(1)
             end = text.find('"' + hashes, i + 2 + len(hashes))
             j = n if end < 0 else end + 1 + len(hashes)
-            out.append(keep_lines(text[i:j])); i = j
+            out.append(quote(text[i:j])); i = j
         elif c == '"':
             j = string_end(text, i)
-            out.append(keep_lines(text[i:j])); i = j
+            out.append(quote(text[i:j])); i = j
         elif c == "'" and (i == 0 or not (text[i - 1].isalnum() or text[i - 1] in "_'.!?")):
             m = re.match(r"'(?:\\(?:x[0-9a-fA-F]{2}|u\{[0-9a-fA-F]+\}|.)|[^\\'\n])'", text[i:i + 16])
             if m:
-                out.append(' ' * len(m.group(0))); i += len(m.group(0))
+                out.append(quote(m.group(0), "'")); i += len(m.group(0))
             else:
                 out.append(c); i += 1
         else:

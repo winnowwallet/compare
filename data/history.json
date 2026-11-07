@@ -1482,8 +1482,8 @@
      "lines_engine": 5832,
      "characters": 1081044,
      "functions": 2976,
-     "cc_gt_12": 113,
-     "cc_gt_30": 13,
+     "cc_gt_12": 117,
+     "cc_gt_30": 14,
      "max_cc": 142,
      "packages": 0,
      "vendored_lines": 0
@@ -1607,8 +1607,8 @@
      "lines_engine": 6051,
      "characters": 1085880,
      "functions": 3001,
-     "cc_gt_12": 126,
-     "cc_gt_30": 10,
+     "cc_gt_12": 130,
+     "cc_gt_30": 11,
      "max_cc": 44,
      "packages": 0,
      "vendored_lines": 0
@@ -1732,8 +1732,8 @@
      "lines_engine": 6051,
      "characters": 1085880,
      "functions": 3001,
-     "cc_gt_12": 126,
-     "cc_gt_30": 10,
+     "cc_gt_12": 130,
+     "cc_gt_30": 11,
      "max_cc": 44,
      "packages": 0,
      "vendored_lines": 0
@@ -1857,8 +1857,8 @@
      "lines_engine": 6051,
      "characters": 1085880,
      "functions": 3001,
-     "cc_gt_12": 126,
-     "cc_gt_30": 10,
+     "cc_gt_12": 130,
+     "cc_gt_30": 11,
      "max_cc": 44,
      "packages": 0,
      "vendored_lines": 0
