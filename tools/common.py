@@ -156,20 +156,75 @@ def counted_files(refs, skip=()):
     return kept, generated
 
 
-def stage(refs, skip=()):
-    """Copy a part's counted files into .stage/ (Rust inline tests removed) and return them."""
-    shutil.rmtree(STAGE, ignore_errors=True)
+PROOF_STAGE = ROOT / '.stage-proofs'
+
+
+def lean_imports(roots, search):
+    """The Lean files that `roots` import, directly or not, themselves included."""
+    import lean
+    search = [resolve(r) for r in search]
+    todo = [resolve(r) for r in roots]
+    seen = set()
+    while todo:
+        f = todo.pop().resolve()
+        if f in seen:
+            continue
+        seen.add(f)
+        for module in lean.imports(f.read_text(errors='ignore')):
+            rel = Path(*module.split('.')).with_suffix('.lean')
+            for base in search:
+                if (base / rel).exists():
+                    todo.append(base / rel)
+                    break
+    return seen
+
+
+def lean_closure(spec):
+    """(what the app builds, what its proofs read) for a wallet with `lean` roots, else None. The app's
+    roots and everything they import build into the app. A Lean library may also hold proofs, and the
+    specification they are proved against, in modules the app never imports: those are what the proof
+    roots import and the app's do not. Anything else (an umbrella module, the project manifest) is
+    neither."""
+    lean_spec = spec.get('lean')
+    if not lean_spec:
+        return None
+    app = lean_imports(lean_spec['roots'], lean_spec['search'])
+    return app, lean_imports(lean_spec.get('proofs', []), lean_spec['search']) - app
+
+
+def stage(refs, skip=(), closure=None):
+    """Copy a part's counted files into .stage/ and return them, with the generated files left out and the
+    Lean files the app does not build. Rust inline tests are removed. Lean proofs are moved to
+    .stage-proofs/: the `theorem`, `lemma` and `example` commands of each file, and, where a `closure` is
+    given (`lean_closure`), the files the app does not import that its proofs do. Files neither imports are
+    left out and listed."""
+    import lean
+    for d in (STAGE, PROOF_STAGE):
+        shutil.rmtree(d, ignore_errors=True)
     kept, generated = counted_files(refs, skip)
-    staged = []
+    staged, proof_files, not_built = [], [], []
+
+    def put(root, f, text):
+        dest = root / f.relative_to(SOURCES_DIR)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(text)
+        return dest
     for f in kept:
         text = f.read_text(errors='ignore')
         if f.suffix == '.rs':
             text = strip_rust_tests(text)
-        dest = STAGE / f.relative_to(SOURCES_DIR)
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        dest.write_text(text)
-        staged.append(dest)
-    return staged, generated
+        if f.suffix == '.lean':
+            if closure is not None and f.resolve() not in closure[0]:
+                if f.resolve() in closure[1]:
+                    proof_files.append(put(PROOF_STAGE, f, text))
+                else:
+                    not_built.append(str(f.relative_to(SOURCES_DIR)))
+                continue
+            text, proofs = lean.split_proofs(text)
+            if proofs.strip():
+                proof_files.append(put(PROOF_STAGE, f, proofs))
+        staged.append(put(STAGE, f, text))
+    return staged, generated, proof_files, not_built
 
 
 def cloc(args, cwd=ROOT, input_text=None):

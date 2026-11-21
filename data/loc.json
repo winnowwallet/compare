@@ -1,44 +1,64 @@
 {
  "Winnow": {
   "app": {
-   "code": 9322,
-   "chars": 404775,
-   "files": 43,
+   "code": 12174,
+   "chars": 534766,
+   "files": 45,
    "languages": {
-    "Lean": 9322
+    "Lean": 12174
    },
    "generated_excluded": [],
+   "not_built": [
+    "winnow/LeanApp/WinnowApp/Project.lean"
+   ],
    "proofs": {
     "theorems": 0,
-    "lines": 0
+    "lines": 0,
+    "files": 0,
+    "theorems_by_folder": {}
    }
   },
   "bitcoin": {
-   "code": 15486,
-   "chars": 681105,
-   "files": 104,
+   "code": 16157,
+   "chars": 725097,
+   "files": 108,
    "languages": {
-    "Lean": 15486
+    "Lean": 16157
    },
    "generated_excluded": [],
+   "not_built": [
+    "winnow/Lean/Secp.lean",
+    "winnow/Lean/SecpCt.lean"
+   ],
    "proofs": {
-    "theorems": 95,
-    "lines": 872
+    "theorems": 704,
+    "lines": 8002,
+    "files": 28,
+    "theorems_by_folder": {
+     "Lean/Secp/Proofs": 189,
+     "Lean/SecpCt": 287,
+     "Lean/Winnow/Proofs": 228
+    }
    }
   },
   "engine": {
-   "code": 6051,
-   "chars": 266940,
-   "files": 45,
+   "code": 8830,
+   "chars": 408747,
+   "files": 51,
    "languages": {
     "C": 62,
     "C/C++ Header": 8,
-    "Lean": 5981
+    "Lean": 8760
    },
    "generated_excluded": [],
    "proofs": {
-    "theorems": 45,
-    "lines": 303
+    "theorems": 48,
+    "lines": 310,
+    "files": 8,
+    "theorems_by_folder": {
+     "framework/lean/LeanNative": 36,
+     "framework/lean/LeanNativeShell": 12
+    }
    }
   }
  },

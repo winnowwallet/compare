@@ -1,0 +1,72 @@
+{
+ "Winnow": {
+  "code": 19239,
+  "files": 32,
+  "languages": {
+   "Lean": 19239
+  },
+  "generated_excluded": []
+ },
+ "BlueWallet": {
+  "code": 21536,
+  "files": 119,
+  "languages": {
+   "JavaScript": 10435,
+   "Swift": 46,
+   "TypeScript": 11055
+  },
+  "generated_excluded": []
+ },
+ "Green": {
+  "code": 175,
+  "files": 4,
+  "languages": {
+   "Swift": 175
+  },
+  "generated_excluded": []
+ },
+ "Muun": {
+  "code": 32814,
+  "files": 255,
+  "languages": {
+   "Go": 26418,
+   "Swift": 6396
+  },
+  "generated_excluded": []
+ },
+ "Phoenix": {
+  "code": 2970,
+  "files": 20,
+  "languages": {
+   "Kotlin": 2776,
+   "Swift": 194
+  },
+  "generated_excluded": []
+ },
+ "Bitkit": {
+  "code": 78257,
+  "files": 212,
+  "languages": {
+   "Swift": 78257
+  },
+  "generated_excluded": []
+ },
+ "Blixt": {
+  "code": 53,
+  "files": 1,
+  "languages": {
+   "Objective-C": 53
+  },
+  "generated_excluded": []
+ },
+ "Zeus": {
+  "code": 91704,
+  "files": 272,
+  "languages": {
+   "JavaScript": 790,
+   "Objective-C": 47,
+   "TypeScript": 90867
+  },
+  "generated_excluded": []
+ }
+}

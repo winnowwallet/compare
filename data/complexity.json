@@ -1,60 +1,60 @@
 {
  "Winnow": {
   "app": {
-   "functions": 982,
-   "mean_cc": 4.19,
-   "p90_cc": 10,
-   "max_cc": 44,
-   "cc_le_2": 518,
-   "cc_3_12": 396,
-   "cc_gt_12": 68,
-   "cc_gt_30": 7,
-   "files": 43,
+   "functions": 1419,
+   "mean_cc": 3.89,
+   "p90_cc": 9,
+   "max_cc": 129,
+   "cc_le_2": 851,
+   "cc_3_12": 481,
+   "cc_gt_12": 87,
+   "cc_gt_30": 16,
+   "files": 45,
    "files_with_parse_errors": 0,
    "most_complex": [
     {
+     "cc": 129,
+     "function": "syncOnce",
+     "at": "winnow/LeanApp/WinnowApp/Real/Stack.lean:427"
+    },
+    {
+     "cc": 50,
+     "function": "stepSettings",
+     "at": "winnow/LeanApp/WinnowApp/Settings.lean:66"
+    },
+    {
+     "cc": 45,
+     "function": "stepHome",
+     "at": "winnow/LeanApp/WinnowApp/Home.lean:53"
+    },
+    {
+     "cc": 45,
+     "function": "Model.onMultisigHost",
+     "at": "winnow/LeanApp/WinnowApp/Multisig.lean:417"
+    },
+    {
      "cc": 44,
      "function": "parseDouble",
-     "at": "winnow/LeanApp/WinnowApp/Pure.lean:525"
-    },
-    {
-     "cc": 43,
-     "function": "Model.onMultisigHost",
-     "at": "winnow/LeanApp/WinnowApp/Multisig.lean:390"
-    },
-    {
-     "cc": 41,
-     "function": "step",
-     "at": "winnow/LeanApp/WinnowApp/Update.lean:309"
-    },
-    {
-     "cc": 35,
-     "function": "Model.fail",
-     "at": "winnow/LeanApp/WinnowApp/Common.lean:32"
-    },
-    {
-     "cc": 34,
-     "function": "stepSettings",
-     "at": "winnow/LeanApp/WinnowApp/Settings.lean:61"
+     "at": "winnow/LeanApp/WinnowApp/Pure.lean:618"
     }
    ]
   },
   "bitcoin": {
-   "functions": 2019,
-   "mean_cc": 3.44,
+   "functions": 2227,
+   "mean_cc": 3.42,
    "p90_cc": 8,
    "max_cc": 34,
-   "cc_le_2": 1136,
-   "cc_3_12": 821,
-   "cc_gt_12": 62,
-   "cc_gt_30": 4,
-   "files": 104,
+   "cc_le_2": 1265,
+   "cc_3_12": 886,
+   "cc_gt_12": 76,
+   "cc_gt_30": 5,
+   "files": 108,
    "files_with_parse_errors": 0,
    "most_complex": [
     {
      "cc": 34,
      "function": "replenish",
-     "at": "winnow/Lean/Winnow/IO/Pool.lean:309"
+     "at": "winnow/Lean/Winnow/IO/Pool.lean:312"
     },
     {
      "cc": 32,
@@ -67,26 +67,26 @@
      "at": "winnow/Lean/Winnow/Wallet/Characters.lean:83"
     },
     {
-     "cc": 31,
-     "function": "handleInbound",
-     "at": "winnow/Lean/Winnow/IO/Transport.lean:311"
+     "cc": 32,
+     "function": "ofJV",
+     "at": "winnow/Lean/Winnow/Wallet/Types.lean:586"
     },
     {
-     "cc": 29,
-     "function": "decodeUTF8Lossy",
-     "at": "winnow/Lean/Winnow/Keys/Unicode.lean:112"
+     "cc": 31,
+     "function": "handleInbound",
+     "at": "winnow/Lean/Winnow/IO/Transport.lean:284"
     }
    ]
   },
   "all": {
-   "functions": 3001,
-   "mean_cc": 3.69,
+   "functions": 3646,
+   "mean_cc": 3.6,
    "p90_cc": 8,
-   "max_cc": 44,
-   "cc_le_2": 1654,
-   "cc_3_12": 1217,
-   "cc_gt_12": 130,
-   "cc_gt_30": 11
+   "max_cc": 129,
+   "cc_le_2": 2116,
+   "cc_3_12": 1367,
+   "cc_gt_12": 163,
+   "cc_gt_30": 21
   }
  },
  "BlueWallet": {

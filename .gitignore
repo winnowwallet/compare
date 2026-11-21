@@ -3,3 +3,6 @@
 .cache/
 node_modules/
 __pycache__/
+.venv/
+.stage-proofs/
+.tests-list

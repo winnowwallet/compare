@@ -1,22 +1,22 @@
 {
- "snapshot": "2026-11-07",
+ "snapshot": "2026-11-21",
  "method": 2,
  "sources": {
   "winnow": {
    "repo": "https://github.com/winnowwallet/winnow-lean",
    "track": {"tag_latest": "v(\\d+(?:\\.\\d+)*)"},
-   "rev": "a43913654a6937dd6f207d0b43e0b22013d78f3b",
-   "label": "winnowwallet/winnow-lean v0.9.10",
-   "date": "2026-10-31",
-   "tag": "v0.9.10",
-   "version": "0.9.10"
+   "rev": "415370298fb6406ce019662fa51418dab6cb1c05",
+   "label": "winnowwallet/winnow-lean v0.9.28",
+   "date": "2026-11-21",
+   "tag": "v0.9.28",
+   "version": "0.9.28"
   },
   "leannative": {
    "repo": "https://github.com/LeanNative/leannative",
    "track": {"from": "winnow:LeanApp/lake-manifest.json", "lake": "leannative"},
-   "rev": "700b3889a99a55804bd7fd256fb4fd3f008e236b",
-   "label": "LeanNative/leannative@700b388",
-   "date": "2026-10-31"
+   "rev": "dc8522ec4859cb992a855a735e2bee1f95ec967f",
+   "label": "LeanNative/leannative@dc8522e",
+   "date": "2026-11-18"
   },
   "phoenix": {
    "repo": "https://github.com/ACINQ/phoenix",
@@ -180,7 +180,15 @@
    "app_source": "winnow",
    "code": {
     "app": ["winnow:LeanApp/WinnowApp", "winnow:LeanApp/WinnowApp.lean"],
-    "bitcoin": ["winnow:Lean/Winnow", "winnow:Lean/Winnow.lean", "winnow:Lean/Secp", "winnow:Lean/Secp.lean"],
+    "bitcoin": [
+     "winnow:Lean/Winnow",
+     "winnow:Lean/Winnow.lean",
+     "winnow:Lean/WinnowCore.lean",
+     "winnow:Lean/Secp",
+     "winnow:Lean/Secp.lean",
+     "winnow:Lean/SecpCt",
+     "winnow:Lean/SecpCt.lean"
+    ],
     "engine": [
      "leannative:framework/lean/LeanNative",
      "leannative:framework/lean/LeanNative.lean",
@@ -189,9 +197,20 @@
      "leannative:framework/native/c"
     ]
    },
-   "skip": ["winnow:Lean/Oracle", "winnow:Lean/Vectors", "winnow:LeanApp/ios"],
+   "skip": ["winnow:Lean/Oracle", "winnow:Lean/TestKit", "winnow:Lean/Vectors", "winnow:LeanApp/Journeys", "winnow:LeanApp/ios"],
    "deps": {"lake": "winnow:LeanApp/lake-manifest.json", "lake_engine": "leannative"},
-   "complete": ["winnow:Lean", "winnow:LeanApp"]
+   "complete": ["winnow:Lean", "winnow:LeanApp"],
+   "tests": [
+    "winnow:Lean/TestKit",
+    "winnow:Lean/TestKit.lean",
+    "winnow:Lean/Fuzz.lean",
+    "winnow:Lean/MultisigDifferential.lean",
+    "winnow:Lean/CardRegtest.lean",
+    "winnow:Lean/SegwitRegtest.lean",
+    "winnow:LeanApp/Journeys",
+    "winnow:LeanApp/Journeys.lean"
+   ],
+   "lean": {"roots": ["winnow:LeanApp/WinnowApp.lean"], "proofs": ["winnow:Lean/WinnowProofs.lean"], "search": ["winnow:Lean", "winnow:LeanApp"]}
   },
   "BlueWallet": {
    "app_source": "bluewallet",

@@ -1,17 +1,17 @@
 {
  "reviewed": "2026-10-02",
  "reviewed_latest": "2026-11-03",
- "measured": "2026-11-07",
+ "measured": "2026-11-21",
  "citations": 441,
- "same": 315,
- "moved": 100,
- "changed": 26,
+ "same": 257,
+ "moved": 125,
+ "changed": 59,
  "gone": 0,
  "by_wallet": {
   "Winnow": {
-   "same": 73,
-   "moved": 0,
-   "changed": 0,
+   "same": 15,
+   "moved": 25,
+   "changed": 33,
    "gone": 0
   },
   "BlueWallet": {
@@ -58,6 +58,138 @@
   }
  },
  "changed_or_gone": [
+  {
+   "wallet": "Winnow",
+   "fact": "features.multisig",
+   "cite": "winnow:LeanApp/WinnowApp/Multisig.lean:475-484",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.multisig",
+   "cite": "winnow:LeanApp/WinnowApp/Multisig.lean:580-587",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.multisig",
+   "cite": "winnow:LeanApp/WinnowApp/Signers.lean:123-134",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.hw_signer",
+   "cite": "winnow:LeanApp/WinnowApp/Signers.lean:152-160",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.hw_signer",
+   "cite": "winnow:LeanApp/WinnowApp/Multisig.lean:709-711",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.psbt",
+   "cite": "winnow:LeanApp/WinnowApp/Multisig.lean:716-726",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.psbt",
+   "cite": "winnow:LeanApp/WinnowApp/Multisig.lean:654-657",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.psbt",
+   "cite": "winnow:LeanApp/WinnowApp/Send.lean:63-65",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.watch_only",
+   "cite": "winnow:Lean/Winnow/Wallet/Wallet.lean:954-959",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.watch_only",
+   "cite": "winnow:LeanApp/WinnowApp/Real/Multisig.lean:207-211",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.coin_control",
+   "cite": "winnow:Lean/Winnow/Wallet/CoinSelection.lean:118-130",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.fee_bump",
+   "cite": "winnow:LeanApp/WinnowApp/Home.lean:317-322",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.fee_bump",
+   "cite": "winnow:LeanApp/WinnowApp/Home.lean:279-282",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.descriptors",
+   "cite": "winnow:LeanApp/WinnowApp/Multisig.lean:517-519",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.descriptors",
+   "cite": "winnow:LeanApp/WinnowApp/Multisig.lean:666-667",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.descriptors",
+   "cite": "winnow:LeanApp/WinnowApp/Multisig.lean:577",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.own_server",
+   "cite": "winnow:LeanApp/WinnowApp/Settings.lean:161-165",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.own_server",
+   "cite": "winnow:LeanApp/WinnowApp/Pure.lean:463",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.own_server",
+   "cite": "winnow:Lean/Winnow/IO/Pool.lean:215-218",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.verifies_chain",
+   "cite": "winnow:Lean/Winnow/Net/HeaderChain.lean:12-15",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.verifies_chain",
+   "cite": "winnow:LeanApp/WinnowApp/Real/Stack.lean:307",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.tor",
+   "cite": "winnow:LeanApp/WinnowApp/Settings.lean:130-138",
+   "status": "changed"
+  },
   {
    "wallet": "BlueWallet",
    "fact": "features.fee_bump",
@@ -143,6 +275,72 @@
    "status": "changed"
   },
   {
+   "wallet": "Winnow",
+   "fact": "profile.engine",
+   "cite": "winnow:Lean/lakefile.toml:5-9",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.engine",
+   "cite": "winnow:Lean/Winnow.lean:1-8",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.engine",
+   "cite": "winnow:Lean/Winnow/Keys/Secp256k1.lean:4-8",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.engine",
+   "cite": "winnow:Lean/Secp/Proofs/Gate.lean:1-8",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.chain_data",
+   "cite": "winnow:LeanApp/WinnowApp/Settings.lean:161-165",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.third_party",
+   "cite": "winnow:LeanApp/WinnowApp/Send.lean:115-117",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.third_party",
+   "cite": "winnow:LeanApp/WinnowApp/Multisig.lean:580-582",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.distribution",
+   "cite": "winnow:LeanApp/WinnowApp/Project.lean:19-23",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.distribution",
+   "cite": "winnow:.github/workflows/release.yml:1-6",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.distribution",
+   "cite": "winnow:.github/workflows/release.yml:210-220",
+   "status": "changed"
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.libraries",
+   "cite": "winnow:LeanApp/lakefile.toml:10-19",
+   "status": "changed"
+  },
+  {
    "wallet": "BlueWallet",
    "fact": "profile.engine",
    "cite": "bluewallet:package.json:132-135",
@@ -216,6 +414,153 @@
   }
  ],
  "moved_within_file": [
+  {
+   "wallet": "Winnow",
+   "fact": "features.hw_signer",
+   "cite": "winnow:LeanApp/WinnowApp/Real/LedgerTransport.lean:102-106",
+   "status": "moved",
+   "now_at": 103
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.hw_signer",
+   "cite": "winnow:LeanApp/WinnowApp/Main.lean:138-151",
+   "status": "moved",
+   "now_at": 212
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.watch_only",
+   "cite": "winnow:LeanApp/WinnowApp/View.lean:13-17",
+   "status": "moved",
+   "now_at": 16
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.passphrase",
+   "cite": "winnow:Lean/Winnow/Wallet/Wallet.lean:226",
+   "status": "moved",
+   "now_at": 234
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.passphrase",
+   "cite": "winnow:Lean/Winnow/Wallet/Wallet.lean:938",
+   "status": "moved",
+   "now_at": 1292
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.coin_control",
+   "cite": "winnow:Lean/Winnow/Wallet/Wallet.lean:685",
+   "status": "moved",
+   "now_at": 1018
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.coin_control",
+   "cite": "winnow:Lean/Winnow/Wallet/MultisigAccount.lean:1185",
+   "status": "moved",
+   "now_at": 240
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.coin_control",
+   "cite": "winnow:LeanApp/WinnowApp/Multisig.lean:661-665",
+   "status": "moved",
+   "now_at": 730
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.fee_bump",
+   "cite": "winnow:Lean/Winnow/Wallet/Wallet.lean:304-311",
+   "status": "moved",
+   "now_at": 311
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.fee_bump",
+   "cite": "winnow:Lean/Winnow/Wallet/Wallet.lean:809-814",
+   "status": "moved",
+   "now_at": 1142
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.taproot",
+   "cite": "winnow:Lean/Winnow/Wallet/Wallet.lean:226-230",
+   "status": "moved",
+   "now_at": 234
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.taproot",
+   "cite": "winnow:Lean/Winnow/Wallet/Wallet.lean:166-169",
+   "status": "moved",
+   "now_at": 174
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.taproot",
+   "cite": "winnow:Lean/Winnow/Wallet/MultisigAccount.lean:10",
+   "status": "moved",
+   "now_at": 9
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.descriptors",
+   "cite": "winnow:Lean/Winnow/Wallet/Wallet.lean:894",
+   "status": "moved",
+   "now_at": 1235
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.tor",
+   "cite": "winnow:README.md:54-56",
+   "status": "moved",
+   "now_at": 77
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.seed_standard",
+   "cite": "winnow:Lean/Winnow/Wallet/Wallet.lean:83",
+   "status": "moved",
+   "now_at": 86
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.seed_standard",
+   "cite": "winnow:Lean/Winnow/Wallet/Wallet.lean:224-229",
+   "status": "moved",
+   "now_at": 232
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.seed_standard",
+   "cite": "winnow:LeanApp/WinnowApp/Backup.lean:160-163",
+   "status": "moved",
+   "now_at": 168
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.cloud_backup",
+   "cite": "winnow:LeanApp/WinnowApp/Real/CloudBackup.lean:397-399",
+   "status": "moved",
+   "now_at": 399
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.cloud_backup",
+   "cite": "winnow:LeanApp/WinnowApp/Real/CloudBackup.lean:460-463",
+   "status": "moved",
+   "now_at": 466
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "features.license",
+   "cite": "winnow:README.md:163",
+   "status": "moved",
+   "now_at": 252
+  },
   {
    "wallet": "BlueWallet",
    "fact": "features.multisig",
@@ -740,6 +1085,34 @@
    "cite": "zeus:utils/LdkNodeUtils.ts:47",
    "status": "moved",
    "now_at": 48
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.libraries",
+   "cite": "leannative:framework/native/scripts/ios_lean_sources.sh:58",
+   "status": "moved",
+   "now_at": 68
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.libraries",
+   "cite": "leannative:framework/lean/LeanNativeShell/Manifest.lean:193",
+   "status": "moved",
+   "now_at": 219
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.prebuilt",
+   "cite": "leannative:framework/native/scripts/ios_lean_sources.sh:58",
+   "status": "moved",
+   "now_at": 68
+  },
+  {
+   "wallet": "Winnow",
+   "fact": "profile.prebuilt",
+   "cite": "leannative:framework/native/scripts/ios_lean_sources.sh:67-78",
+   "status": "moved",
+   "now_at": 77
   },
   {
    "wallet": "BlueWallet",

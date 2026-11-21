@@ -187,6 +187,7 @@ td.wrap { white-space: normal; min-width: 9rem; font-size: .85rem; }
 /* complexity: share above 12, relative to the highest */
 .bar-cell { width: 5.5rem; min-width: 4rem; vertical-align: middle; }
 .minibar { display: block; height: 10px; width: var(--w); min-width: 2px; border-radius: 0 3px 3px 0; background: var(--s-app); }
+.minibar.good { background: var(--s-btc); }
 
 /* ── over time: one sparkline per wallet and measure ─────── */
 .trend th[scope=col] { white-space: normal; }

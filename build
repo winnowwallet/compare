@@ -4,7 +4,7 @@
   ./build            all steps below, from the pins in sources.json
   ./build test       the hand-counted cases that pin the complexity and Rust test rules
   ./build fetch      check out every source at its pinned commit under .sources/
-  ./build measure    lines, complexity, dependencies and vendored code -> data/, and this
+  ./build measure    lines, tests, complexity, dependencies and vendored code -> data/, and this
                      snapshot's row in data/history.json
   ./build evidence   every feature and profile citation resolves at its reviewed revision;
                      how much of the cited code has changed since -> data/drift.json
@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent
 STEPS = {
     'test': [],
     'fetch': ['fetch'],
-    'measure': ['loc', 'complexity', 'deps', 'vendored', 'history'],
+    'measure': ['loc', 'tests', 'complexity', 'deps', 'vendored', 'history'],
     'evidence': ['evidence'],
     'render': ['render'],
 }
