@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-11-21",
+ "snapshot": "2026-11-22",
  "method": 2,
  "sources": {
   "winnow": {
@@ -39,50 +39,50 @@
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {"branch": "HEAD"},
-   "rev": "90949e4a16d0066e8d3ce94c47b55c6cda567cce",
-   "label": "synonymdev/bitkit-ios@90949e4",
-   "date": "2026-11-06"
+   "rev": "f17214e929dce5d3cbf62434e92d7f45bc418de7",
+   "label": "synonymdev/bitkit-ios@f17214e",
+   "date": "2026-11-21"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",
    "track": {"from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved", "spm": "ldk-node"},
-   "rev": "1976754dd49886e102f2b3132d5f700d6aabd8d7",
-   "version": "0.7.0-rc.78",
-   "label": "synonymdev/ldk-node 0.7.0-rc.78",
-   "date": "2026-10-27"
+   "rev": "b6335ecd86e9e9dc4e824dcb4b6065273572ca9d",
+   "version": "0.7.0-rc.80",
+   "label": "synonymdev/ldk-node 0.7.0-rc.80",
+   "date": "2026-11-11"
   },
   "rust-lightning": {
    "repo": "https://github.com/lightningdevkit/rust-lightning",
    "track": {"from": "synonym-ldk-node:Cargo.lock", "cargo": "lightning", "tag": "v{}"},
-   "rev": "5ce2ecb33d32e3b61ef01d5ead0ee6693c0cd7d1",
-   "tag": "v0.2.7",
-   "version": "0.2.7",
-   "label": "lightningdevkit/rust-lightning v0.2.7",
-   "date": "2026-10-01"
+   "rev": "254bc9687dd190375956ad790f87239b97ebd058",
+   "tag": "v0.2.8",
+   "version": "0.2.8",
+   "label": "lightningdevkit/rust-lightning v0.2.8",
+   "date": "2026-11-11"
   },
   "bitkit-core": {
    "repo": "https://github.com/synonymdev/bitkit-core",
    "track": {"from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved", "spm": "bitkit-core"},
-   "rev": "22e0acc31a97b65205e71f4190cfc659fdecd3ca",
-   "version": "0.8.0-rc11",
-   "label": "synonymdev/bitkit-core 0.8.0-rc11",
-   "date": "2026-10-24"
+   "rev": "045c7ff68529d9ffb8135de3b27916447f64b0c4",
+   "version": "0.8.0-rc15",
+   "label": "synonymdev/bitkit-core 0.8.0-rc15",
+   "date": "2026-11-11"
   },
   "paykit-rs": {
    "repo": "https://github.com/pubky/paykit-rs",
    "track": {"from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved", "spm": "paykit-rs"},
-   "rev": "01de5dd232d2b22f132d066697cce041700e7136",
-   "version": "0.1.1-rc2",
-   "label": "pubky/paykit-rs 0.1.1-rc2",
-   "date": "2026-10-26"
+   "rev": "0b9c63d25dbd0cd5e7cf6ec577bc170732d350be",
+   "version": "0.1.1-rc9",
+   "label": "pubky/paykit-rs 0.1.1-rc9",
+   "date": "2026-11-16"
   },
   "vss-rust-client-ffi": {
    "repo": "https://github.com/synonymdev/vss-rust-client-ffi",
    "track": {"from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved", "spm": "vss-rust-client-ffi"},
-   "rev": "eba41ef62b7314aa75827a5a3e71d2b23930b981",
-   "version": "0.5.26-rc1",
-   "label": "synonymdev/vss-rust-client-ffi 0.5.26-rc1",
-   "date": "2026-10-26"
+   "rev": "cf5b5cdfb8aaa79c06953fc57e98d96236c57d25",
+   "version": "0.5.26-rc2",
+   "label": "synonymdev/vss-rust-client-ffi 0.5.26-rc2",
+   "date": "2026-11-09"
   },
   "blixt": {
    "repo": "https://github.com/hsjoberg/blixt-wallet",
@@ -112,60 +112,60 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "eb27332f0e54b81a8404f2e07f2111a6585f2217",
-   "label": "ZeusLN/zeus@eb27332",
-   "date": "2026-11-07"
+   "rev": "2cdb215df47bccbef481453d8bd2fdcb10760572",
+   "label": "ZeusLN/zeus@2cdb215",
+   "date": "2026-11-21"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
    "track": {"from": "zeus:fetch-libraries-versions.json", "json": "embedded-lnd.version", "tag": "{}"},
    "version_from": {"path": "build/version.go", "pattern": "AppMajor uint = (\\d+)[\\s\\S]*?AppMinor uint = (\\d+)[\\s\\S]*?AppPatch uint = (\\d+)"},
-   "rev": "e21a177c24b3cb33bf4b44261f5b5f3fa6790a9c",
-   "tag": "v0.21.5-beta-zeus",
-   "version": "0.21.5",
-   "label": "ZeusLN/lnd v0.21.5-beta-zeus",
-   "date": "2026-10-27"
+   "rev": "6300671c3003c473893a0751bf8ea44cd00368a4",
+   "tag": "v0.21.8-beta-zeus",
+   "version": "0.21.8",
+   "label": "ZeusLN/lnd v0.21.8-beta-zeus",
+   "date": "2026-11-11"
   },
   "zeus-ldk-node": {
    "repo": "https://github.com/ZeusLN/ldk-node",
    "track": {"from": "zeus:fetch-libraries-versions.json", "json": "ldk-node.version", "tag": "{}"},
-   "rev": "93680ba7d9069680afe95cc3387c5f3639b9681e",
-   "tag": "v0.7.1-zeus",
-   "version": "0.7.1-zeus",
-   "label": "ZeusLN/ldk-node v0.7.1-zeus",
-   "date": "2026-10-27"
+   "rev": "afa6b97ccf6c0ef121f5d86fd095027f5abed5a6",
+   "tag": "v0.7.1-zeus-rl-0.2.8",
+   "version": "0.7.1-zeus-rl-0.2.8",
+   "label": "ZeusLN/ldk-node v0.7.1-zeus-rl-0.2.8",
+   "date": "2026-11-10"
   },
   "cdk": {
    "repo": "https://github.com/cashubtc/cdk",
    "track": {"from": "zeus:fetch-libraries-versions.json", "json": "cdk.version", "tag": "v{}"},
-   "rev": "9f6d3a3734d7223d10b5553e3591d3f9d5c6c904",
-   "tag": "v0.18.2",
-   "version": "0.18.2",
-   "label": "cashubtc/cdk v0.18.2",
-   "date": "2026-10-13"
+   "rev": "b2035a3525c98b22226926bdc20fa128a1351ae5",
+   "tag": "v0.18.3",
+   "version": "0.18.3",
+   "label": "cashubtc/cdk v0.18.3",
+   "date": "2026-10-28"
   },
   "bluewallet": {
    "repo": "https://github.com/BlueWallet/BlueWallet",
    "track": {"branch": "HEAD"},
-   "rev": "3c5004027c28ff2233e95b1e31ee1715963707d6",
-   "label": "BlueWallet/BlueWallet@3c50040",
-   "date": "2026-11-07"
+   "rev": "66987706630895adbff08099778e4d33e26bd2f7",
+   "label": "BlueWallet/BlueWallet@6698770",
+   "date": "2026-11-21"
   },
   "green": {
    "repo": "https://github.com/Blockstream/green_ios",
    "track": {"branch": "HEAD"},
-   "rev": "131f820fdef34b5368de9caa5ef7f3de4d7e0139",
-   "label": "Blockstream/green_ios@131f820",
-   "date": "2026-09-25"
+   "rev": "b6429b6ee48a40dc1891dd08105a9818563b48aa",
+   "label": "Blockstream/green_ios@b6429b6",
+   "date": "2026-11-06"
   },
   "gdk": {
    "repo": "https://github.com/Blockstream/gdk",
    "track": {"from": "green:tools/fetch_gdk_binaries.sh", "regex": "TAGNAME=\"([^\"]+)\"", "tag": "{}"},
-   "rev": "02e3646264ed10afd460e61c2c516510b9ce5cf5",
-   "tag": "release_0.78.0",
-   "version": "0.78.0",
-   "label": "Blockstream/gdk release_0.78.0",
-   "date": "2026-09-10"
+   "rev": "8fcf0f7cb5295e7ded7244697d475f2b21dd9dd2",
+   "tag": "release_0.78.1",
+   "version": "0.78.1",
+   "label": "Blockstream/gdk release_0.78.1",
+   "date": "2026-11-04"
   },
   "muun": {
    "repo": "https://github.com/muun/falcon",

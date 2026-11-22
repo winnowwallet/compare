@@ -243,7 +243,7 @@
  "Zeus": {
   "copied_packages": {
    "zeus_modules/@lightninglabs/lnc-core": {
-    "lines": 3619,
+    "lines": 3627,
     "counted": "source"
    },
    "zeus_modules/@lightninglabs/lnc-rn": {
@@ -269,6 +269,6 @@
    "patch-react-native-notifications.mjs",
    "patch-reanimated-set-fixes.mjs"
   ],
-  "copied_lines": 4043
+  "copied_lines": 4051
  }
 }

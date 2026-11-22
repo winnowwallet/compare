@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-11-21",
+ "snapshot": "2026-11-22",
  "sources": {
   "winnow": {
    "repo": "https://github.com/winnowwallet/winnow-lean",
@@ -51,9 +51,9 @@
    "track": {
     "branch": "HEAD"
    },
-   "rev": "90949e4a16d0066e8d3ce94c47b55c6cda567cce",
-   "label": "synonymdev/bitkit-ios@90949e4",
-   "date": "2026-11-06"
+   "rev": "f17214e929dce5d3cbf62434e92d7f45bc418de7",
+   "label": "synonymdev/bitkit-ios@f17214e",
+   "date": "2026-11-21"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",
@@ -61,10 +61,10 @@
     "from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
     "spm": "ldk-node"
    },
-   "rev": "1976754dd49886e102f2b3132d5f700d6aabd8d7",
-   "version": "0.7.0-rc.78",
-   "label": "synonymdev/ldk-node 0.7.0-rc.78",
-   "date": "2026-10-27"
+   "rev": "b6335ecd86e9e9dc4e824dcb4b6065273572ca9d",
+   "version": "0.7.0-rc.80",
+   "label": "synonymdev/ldk-node 0.7.0-rc.80",
+   "date": "2026-11-11"
   },
   "rust-lightning": {
    "repo": "https://github.com/lightningdevkit/rust-lightning",
@@ -73,11 +73,11 @@
     "cargo": "lightning",
     "tag": "v{}"
    },
-   "rev": "5ce2ecb33d32e3b61ef01d5ead0ee6693c0cd7d1",
-   "tag": "v0.2.7",
-   "version": "0.2.7",
-   "label": "lightningdevkit/rust-lightning v0.2.7",
-   "date": "2026-10-01"
+   "rev": "254bc9687dd190375956ad790f87239b97ebd058",
+   "tag": "v0.2.8",
+   "version": "0.2.8",
+   "label": "lightningdevkit/rust-lightning v0.2.8",
+   "date": "2026-11-11"
   },
   "bitkit-core": {
    "repo": "https://github.com/synonymdev/bitkit-core",
@@ -85,10 +85,10 @@
     "from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
     "spm": "bitkit-core"
    },
-   "rev": "22e0acc31a97b65205e71f4190cfc659fdecd3ca",
-   "version": "0.8.0-rc11",
-   "label": "synonymdev/bitkit-core 0.8.0-rc11",
-   "date": "2026-10-24"
+   "rev": "045c7ff68529d9ffb8135de3b27916447f64b0c4",
+   "version": "0.8.0-rc15",
+   "label": "synonymdev/bitkit-core 0.8.0-rc15",
+   "date": "2026-11-11"
   },
   "paykit-rs": {
    "repo": "https://github.com/pubky/paykit-rs",
@@ -96,10 +96,10 @@
     "from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
     "spm": "paykit-rs"
    },
-   "rev": "01de5dd232d2b22f132d066697cce041700e7136",
-   "version": "0.1.1-rc2",
-   "label": "pubky/paykit-rs 0.1.1-rc2",
-   "date": "2026-10-26"
+   "rev": "0b9c63d25dbd0cd5e7cf6ec577bc170732d350be",
+   "version": "0.1.1-rc9",
+   "label": "pubky/paykit-rs 0.1.1-rc9",
+   "date": "2026-11-16"
   },
   "vss-rust-client-ffi": {
    "repo": "https://github.com/synonymdev/vss-rust-client-ffi",
@@ -107,10 +107,10 @@
     "from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
     "spm": "vss-rust-client-ffi"
    },
-   "rev": "eba41ef62b7314aa75827a5a3e71d2b23930b981",
-   "version": "0.5.26-rc1",
-   "label": "synonymdev/vss-rust-client-ffi 0.5.26-rc1",
-   "date": "2026-10-26"
+   "rev": "cf5b5cdfb8aaa79c06953fc57e98d96236c57d25",
+   "version": "0.5.26-rc2",
+   "label": "synonymdev/vss-rust-client-ffi 0.5.26-rc2",
+   "date": "2026-11-09"
   },
   "blixt": {
    "repo": "https://github.com/hsjoberg/blixt-wallet",
@@ -157,9 +157,9 @@
    "track": {
     "branch": "HEAD"
    },
-   "rev": "eb27332f0e54b81a8404f2e07f2111a6585f2217",
-   "label": "ZeusLN/zeus@eb27332",
-   "date": "2026-11-07"
+   "rev": "2cdb215df47bccbef481453d8bd2fdcb10760572",
+   "label": "ZeusLN/zeus@2cdb215",
+   "date": "2026-11-21"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
@@ -172,11 +172,11 @@
     "path": "build/version.go",
     "pattern": "AppMajor uint = (\\d+)[\\s\\S]*?AppMinor uint = (\\d+)[\\s\\S]*?AppPatch uint = (\\d+)"
    },
-   "rev": "e21a177c24b3cb33bf4b44261f5b5f3fa6790a9c",
-   "tag": "v0.21.5-beta-zeus",
-   "version": "0.21.5",
-   "label": "ZeusLN/lnd v0.21.5-beta-zeus",
-   "date": "2026-10-27"
+   "rev": "6300671c3003c473893a0751bf8ea44cd00368a4",
+   "tag": "v0.21.8-beta-zeus",
+   "version": "0.21.8",
+   "label": "ZeusLN/lnd v0.21.8-beta-zeus",
+   "date": "2026-11-11"
   },
   "zeus-ldk-node": {
    "repo": "https://github.com/ZeusLN/ldk-node",
@@ -185,11 +185,11 @@
     "json": "ldk-node.version",
     "tag": "{}"
    },
-   "rev": "93680ba7d9069680afe95cc3387c5f3639b9681e",
-   "tag": "v0.7.1-zeus",
-   "version": "0.7.1-zeus",
-   "label": "ZeusLN/ldk-node v0.7.1-zeus",
-   "date": "2026-10-27"
+   "rev": "afa6b97ccf6c0ef121f5d86fd095027f5abed5a6",
+   "tag": "v0.7.1-zeus-rl-0.2.8",
+   "version": "0.7.1-zeus-rl-0.2.8",
+   "label": "ZeusLN/ldk-node v0.7.1-zeus-rl-0.2.8",
+   "date": "2026-11-10"
   },
   "cdk": {
    "repo": "https://github.com/cashubtc/cdk",
@@ -198,29 +198,29 @@
     "json": "cdk.version",
     "tag": "v{}"
    },
-   "rev": "9f6d3a3734d7223d10b5553e3591d3f9d5c6c904",
-   "tag": "v0.18.2",
-   "version": "0.18.2",
-   "label": "cashubtc/cdk v0.18.2",
-   "date": "2026-10-13"
+   "rev": "b2035a3525c98b22226926bdc20fa128a1351ae5",
+   "tag": "v0.18.3",
+   "version": "0.18.3",
+   "label": "cashubtc/cdk v0.18.3",
+   "date": "2026-10-28"
   },
   "bluewallet": {
    "repo": "https://github.com/BlueWallet/BlueWallet",
    "track": {
     "branch": "HEAD"
    },
-   "rev": "3c5004027c28ff2233e95b1e31ee1715963707d6",
-   "label": "BlueWallet/BlueWallet@3c50040",
-   "date": "2026-11-07"
+   "rev": "66987706630895adbff08099778e4d33e26bd2f7",
+   "label": "BlueWallet/BlueWallet@6698770",
+   "date": "2026-11-21"
   },
   "green": {
    "repo": "https://github.com/Blockstream/green_ios",
    "track": {
     "branch": "HEAD"
    },
-   "rev": "131f820fdef34b5368de9caa5ef7f3de4d7e0139",
-   "label": "Blockstream/green_ios@131f820",
-   "date": "2026-09-25"
+   "rev": "b6429b6ee48a40dc1891dd08105a9818563b48aa",
+   "label": "Blockstream/green_ios@b6429b6",
+   "date": "2026-11-06"
   },
   "gdk": {
    "repo": "https://github.com/Blockstream/gdk",
@@ -229,11 +229,11 @@
     "regex": "TAGNAME=\"([^\"]+)\"",
     "tag": "{}"
    },
-   "rev": "02e3646264ed10afd460e61c2c516510b9ce5cf5",
-   "tag": "release_0.78.0",
-   "version": "0.78.0",
-   "label": "Blockstream/gdk release_0.78.0",
-   "date": "2026-09-10"
+   "rev": "8fcf0f7cb5295e7ded7244697d475f2b21dd9dd2",
+   "tag": "release_0.78.1",
+   "version": "0.78.1",
+   "label": "Blockstream/gdk release_0.78.1",
+   "date": "2026-11-04"
   },
   "muun": {
    "repo": "https://github.com/muun/falcon",
@@ -311,39 +311,39 @@
   },
   "BlueWallet": {
    "app": {
-    "code": 59121,
-    "chars": 1691998,
-    "files": 381,
+    "code": 59921,
+    "chars": 1716902,
+    "files": 386,
     "languages": {
      "C/C++ Header": 17,
      "JavaScript": 1530,
      "Objective-C": 26,
      "Objective-C++": 80,
      "Swift": 3651,
-     "TypeScript": 53817
+     "TypeScript": 54617
     },
     "generated_excluded": []
    }
   },
   "Green": {
    "app": {
-    "code": 70474,
-    "chars": 2032945,
+    "code": 70476,
+    "chars": 2032949,
     "files": 672,
     "languages": {
-     "Swift": 70474
+     "Swift": 70476
     },
     "generated_excluded": []
    },
    "engine": {
-    "code": 34374,
-    "chars": 1125661,
+    "code": 34652,
+    "chars": 1135496,
     "files": 135,
     "languages": {
-     "C++": 19637,
-     "C/C++ Header": 4348,
-     "Rust": 9837,
-     "Swift": 552
+     "C++": 19784,
+     "C/C++ Header": 4393,
+     "Rust": 9918,
+     "Swift": 557
     },
     "generated_excluded": []
    }
@@ -398,20 +398,20 @@
   },
   "Bitkit": {
    "app": {
-    "code": 114604,
-    "chars": 3346091,
-    "files": 636,
+    "code": 132589,
+    "chars": 3931346,
+    "files": 672,
     "languages": {
-     "Swift": 114604
+     "Swift": 132589
     },
     "generated_excluded": []
    },
    "engine": {
-    "code": 128396,
-    "chars": 3834405,
+    "code": 128861,
+    "chars": 3847971,
     "files": 226,
     "languages": {
-     "Rust": 128396
+     "Rust": 128861
     },
     "generated_excluded": []
    }
@@ -468,27 +468,27 @@
   },
   "Zeus": {
    "app": {
-    "code": 194646,
-    "chars": 3818750,
-    "files": 601,
+    "code": 201327,
+    "chars": 3974375,
+    "files": 612,
     "languages": {
      "C/C++ Header": 48,
-     "JavaScript": 48,
-     "Objective-C": 1335,
+     "JavaScript": 49,
+     "Objective-C": 1420,
      "Objective-C++": 517,
-     "Swift": 4182,
-     "TypeScript": 188516
+     "Swift": 4234,
+     "TypeScript": 195059
     },
     "generated_excluded": [
      "zeus/ios/LdkNodeMobile/LDKNode.swift"
     ]
    },
    "engine": {
-    "code": 243921,
-    "chars": 5651207,
+    "code": 244546,
+    "chars": 5665986,
     "files": 1191,
     "languages": {
-     "Go": 243921
+     "Go": 244546
     },
     "generated_excluded": [
      "lnd-zeus/graph/db/migration1/sqlc/db.go",
@@ -525,21 +525,21 @@
   },
   "BlueWallet": {
    "Lean": 0.0,
-   "Swift": 6.18,
+   "Swift": 6.09,
    "Kotlin": 0.0,
    "Rust": 0.0,
    "Go": 0.0,
-   "TypeScript/JS": 93.62,
+   "TypeScript/JS": 93.7,
    "C family": 0.21
   },
   "Green": {
    "Lean": 0.0,
-   "Swift": 67.74,
+   "Swift": 67.57,
    "Kotlin": 0.0,
-   "Rust": 9.38,
+   "Rust": 9.43,
    "Go": 0.0,
    "TypeScript/JS": 0.0,
-   "C family": 22.88
+   "C family": 23.0
   },
   "Muun": {
    "Lean": 0.0,
@@ -561,9 +561,9 @@
   },
   "Bitkit": {
    "Lean": 0.0,
-   "Swift": 47.16,
+   "Swift": 50.71,
    "Kotlin": 0.0,
-   "Rust": 52.84,
+   "Rust": 49.29,
    "Go": 0.0,
    "TypeScript/JS": 0.0,
    "C family": 0.0
@@ -582,9 +582,9 @@
    "Swift": 0.95,
    "Kotlin": 0.0,
    "Rust": 0.0,
-   "Go": 55.62,
-   "TypeScript/JS": 43.0,
-   "C family": 0.43
+   "Go": 54.85,
+   "TypeScript/JS": 43.76,
+   "C family": 0.45
   }
  },
  "complexity": {
@@ -680,29 +680,29 @@
   },
   "BlueWallet": {
    "app": {
-    "functions": 1821,
-    "mean_cc": 5.28,
+    "functions": 1857,
+    "mean_cc": 5.27,
     "p90_cc": 10,
-    "max_cc": 262,
-    "cc_le_2": 1041,
-    "cc_3_12": 637,
-    "cc_gt_12": 143,
+    "max_cc": 264,
+    "cc_le_2": 1065,
+    "cc_3_12": 650,
+    "cc_gt_12": 142,
     "cc_gt_30": 45,
-    "files": 381,
+    "files": 386,
     "files_with_parse_errors": 5,
     "most_complex": [
      {
-      "cc": 262,
+      "cc": 264,
       "function": "(arrow_function)",
-      "at": "bluewallet/screen/transactions/TransactionStatus.tsx:185"
+      "at": "bluewallet/screen/transactions/TransactionStatus.tsx:186"
      },
      {
-      "cc": 244,
+      "cc": 247,
       "function": "(arrow_function)",
       "at": "bluewallet/screen/send/SendDetails.tsx:81"
      },
      {
-      "cc": 181,
+      "cc": 179,
       "function": "(arrow_function)",
       "at": "bluewallet/screen/wallets/WalletDetails.tsx:66"
      },
@@ -719,13 +719,13 @@
     ]
    },
    "all": {
-    "functions": 1821,
-    "mean_cc": 5.28,
+    "functions": 1857,
+    "mean_cc": 5.27,
     "p90_cc": 10,
-    "max_cc": 262,
-    "cc_le_2": 1041,
-    "cc_3_12": 637,
-    "cc_gt_12": 143,
+    "max_cc": 264,
+    "cc_le_2": 1065,
+    "cc_3_12": 650,
+    "cc_gt_12": 142,
     "cc_gt_30": 45
    }
   },
@@ -923,26 +923,26 @@
   },
   "Bitkit": {
    "app": {
-    "functions": 6900,
-    "mean_cc": 3.25,
+    "functions": 8223,
+    "mean_cc": 3.26,
     "p90_cc": 6,
-    "max_cc": 111,
-    "cc_le_2": 4067,
-    "cc_3_12": 2665,
-    "cc_gt_12": 168,
-    "cc_gt_30": 26,
-    "files": 636,
-    "files_with_parse_errors": 11,
+    "max_cc": 130,
+    "cc_le_2": 4832,
+    "cc_3_12": 3188,
+    "cc_gt_12": 203,
+    "cc_gt_30": 33,
+    "files": 672,
+    "files_with_parse_errors": 12,
     "most_complex": [
      {
-      "cc": 111,
+      "cc": 130,
       "function": "(computed_property)",
-      "at": "bitkit/Bitkit/MainNavView.swift:494"
+      "at": "bitkit/Bitkit/MainNavView.swift:508"
      },
      {
-      "cc": 83,
+      "cc": 89,
       "function": "handleScannedData",
-      "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:765"
+      "at": "bitkit/Bitkit/ViewModels/AppViewModel.swift:836"
      },
      {
       "cc": 71,
@@ -950,26 +950,26 @@
       "at": "bitkit/Bitkit/Utilities/Errors.swift:243"
      },
      {
-      "cc": 60,
+      "cc": 70,
       "function": "performPayment",
-      "at": "bitkit/Bitkit/Views/Wallets/Send/SendConfirmationView.swift:1295"
+      "at": "bitkit/Bitkit/Views/Wallets/Send/SendConfirmationView.swift:1911"
      },
      {
       "cc": 56,
       "function": "reconcile",
-      "at": "bitkit/Bitkit/Services/PaykitUsdtPaymentService.swift:435"
+      "at": "bitkit/Bitkit/Services/PaykitUsdtPaymentService.swift:437"
      }
     ]
    },
    "all": {
-    "functions": 6900,
-    "mean_cc": 3.25,
+    "functions": 8223,
+    "mean_cc": 3.26,
     "p90_cc": 6,
-    "max_cc": 111,
-    "cc_le_2": 4067,
-    "cc_3_12": 2665,
-    "cc_gt_12": 168,
-    "cc_gt_30": 26
+    "max_cc": 130,
+    "cc_le_2": 4832,
+    "cc_3_12": 3188,
+    "cc_gt_12": 203,
+    "cc_gt_30": 33
    }
   },
   "Blixt": {
@@ -1025,53 +1025,53 @@
   },
   "Zeus": {
    "app": {
-    "functions": 5074,
-    "mean_cc": 4.69,
+    "functions": 5338,
+    "mean_cc": 4.73,
     "p90_cc": 10,
     "max_cc": 246,
-    "cc_le_2": 2906,
-    "cc_3_12": 1796,
-    "cc_gt_12": 372,
-    "cc_gt_30": 78,
-    "files": 602,
+    "cc_le_2": 3006,
+    "cc_3_12": 1941,
+    "cc_gt_12": 391,
+    "cc_gt_30": 81,
+    "files": 613,
     "files_with_parse_errors": 13,
     "most_complex": [
      {
       "cc": 246,
       "function": "render",
-      "at": "zeus/views/Receive.tsx:1128"
+      "at": "zeus/views/Receive.tsx:1142"
      },
      {
       "cc": 226,
       "function": "render",
-      "at": "zeus/views/Settings/WalletConfiguration.tsx:1523"
+      "at": "zeus/views/Settings/WalletConfiguration.tsx:1568"
      },
      {
-      "cc": 172,
+      "cc": 181,
       "function": "fetchDataCore",
-      "at": "zeus/views/Wallet/Wallet.tsx:592"
+      "at": "zeus/views/Wallet/Wallet.tsx:612"
      },
      {
-      "cc": 169,
+      "cc": 168,
       "function": "(arrow_function)",
-      "at": "zeus/utils/handleAnything.ts:371"
+      "at": "zeus/utils/handleAnything.ts:381"
      },
      {
-      "cc": 144,
+      "cc": 148,
       "function": "render",
-      "at": "zeus/views/Settings/SeedRecovery.tsx:495"
+      "at": "zeus/views/Settings/SeedRecovery.tsx:505"
      }
     ]
    },
    "all": {
-    "functions": 5074,
-    "mean_cc": 4.69,
+    "functions": 5338,
+    "mean_cc": 4.73,
     "p90_cc": 10,
     "max_cc": 246,
-    "cc_le_2": 2906,
-    "cc_3_12": 1796,
-    "cc_gt_12": 372,
-    "cc_gt_30": 78
+    "cc_le_2": 3006,
+    "cc_3_12": 1941,
+    "cc_gt_12": 391,
+    "cc_gt_30": 81
    }
   }
  },
@@ -1085,12 +1085,12 @@
    "generated_excluded": []
   },
   "BlueWallet": {
-   "code": 21536,
-   "files": 119,
+   "code": 22613,
+   "files": 124,
    "languages": {
-    "JavaScript": 10435,
+    "JavaScript": 10726,
     "Swift": 46,
-    "TypeScript": 11055
+    "TypeScript": 11841
    },
    "generated_excluded": []
   },
@@ -1121,10 +1121,10 @@
    "generated_excluded": []
   },
   "Bitkit": {
-   "code": 78257,
-   "files": 212,
+   "code": 94474,
+   "files": 257,
    "languages": {
-    "Swift": 78257
+    "Swift": 94474
    },
    "generated_excluded": []
   },
@@ -1137,12 +1137,12 @@
    "generated_excluded": []
   },
   "Zeus": {
-   "code": 91704,
-   "files": 272,
+   "code": 131557,
+   "files": 351,
    "languages": {
-    "JavaScript": 790,
+    "JavaScript": 1016,
     "Objective-C": 47,
-    "TypeScript": 90867
+    "TypeScript": 130494
    },
    "generated_excluded": []
   }
@@ -1254,33 +1254,32 @@
     "wif"
    ],
    "npm": [
-    "@ampproject/remapping@2.3.0",
     "@arkade-os/boltz-swap@0.3.67",
     "@arkade-os/sdk@0.4.79",
     "@babel/code-frame@7.29.7",
     "@babel/compat-data@7.29.7",
-    "@babel/core@7.26.10",
-    "@babel/generator@7.29.7",
+    "@babel/core@7.29.13",
+    "@babel/generator@7.29.13",
     "@babel/helper-annotate-as-pure@7.29.7",
-    "@babel/helper-compilation-targets@7.29.7",
+    "@babel/helper-compilation-targets@7.29.13",
     "@babel/helper-create-class-features-plugin@7.29.7",
     "@babel/helper-create-regexp-features-plugin@7.29.7",
     "@babel/helper-define-polyfill-provider@0.6.8",
     "@babel/helper-globals@7.29.7",
     "@babel/helper-member-expression-to-functions@7.29.7",
     "@babel/helper-module-imports@7.29.7",
-    "@babel/helper-module-transforms@7.29.7",
+    "@babel/helper-module-transforms@7.29.13",
     "@babel/helper-optimise-call-expression@7.29.7",
     "@babel/helper-plugin-utils@7.29.7",
     "@babel/helper-remap-async-to-generator@7.29.7",
     "@babel/helper-replace-supers@7.29.7",
     "@babel/helper-skip-transparent-expression-wrappers@7.29.7",
-    "@babel/helper-string-parser@7.29.7",
+    "@babel/helper-string-parser@7.29.13",
     "@babel/helper-validator-identifier@7.29.7",
     "@babel/helper-validator-option@7.29.7",
     "@babel/helper-wrap-function@7.29.7",
-    "@babel/helpers@7.27.0",
-    "@babel/parser@7.29.7",
+    "@babel/helpers@7.29.13",
+    "@babel/parser@7.29.13",
     "@babel/plugin-proposal-export-default-from@7.25.9",
     "@babel/plugin-syntax-dynamic-import@7.8.3",
     "@babel/plugin-syntax-export-default-from@7.25.9",
@@ -1318,8 +1317,8 @@
     "@babel/preset-typescript@7.29.7",
     "@babel/runtime@7.27.0",
     "@babel/template@7.29.7",
-    "@babel/traverse@7.29.7",
-    "@babel/types@7.29.7",
+    "@babel/traverse@7.29.13",
+    "@babel/types@7.29.11",
     "@bitcoinerlab/descriptors-core@3.1.7",
     "@bitcoinerlab/descriptors-scure@3.1.7",
     "@bitcoinerlab/miniscript@2.0.0",
@@ -1367,6 +1366,7 @@
     "@noble/hashes@2.4.0",
     "@noble/secp256k1@3.0.0",
     "@noble/secp256k1@3.2.0",
+    "@nodable/entities@3.1.0",
     "@nodelib/fs.scandir@2.1.5",
     "@nodelib/fs.stat@2.0.5",
     "@nodelib/fs.walk@1.2.8",
@@ -1451,7 +1451,7 @@
     "aez@1.0.1",
     "aezeed@0.0.5",
     "agent-base@7.1.4",
-    "ajv@8.17.1",
+    "ajv@8.20.0",
     "anser@1.4.10",
     "ansi-fragments@0.2.1",
     "ansi-regex@4.1.1",
@@ -1459,6 +1459,7 @@
     "ansi-styles@3.2.1",
     "ansi-styles@4.3.0",
     "ansi-styles@5.2.0",
+    "anynum@1.0.1",
     "appdirsjs@1.2.7",
     "argparse@2.0.1",
     "array-back@3.1.0",
@@ -1481,7 +1482,7 @@
     "base-x@4.0.1",
     "base-x@5.0.1",
     "base64-js@1.5.1",
-    "baseline-browser-mapping@2.10.0",
+    "baseline-browser-mapping@2.11.35",
     "bc-bech32@None",
     "bech32@1.1.4",
     "bech32@2.0.0",
@@ -1504,13 +1505,13 @@
     "bl@4.1.0",
     "blakejs@1.2.1",
     "bluebird@3.7.2",
-    "bn.js@4.12.1",
-    "bn.js@5.2.2",
-    "body-parser@2.2.2",
+    "bn.js@4.12.5",
+    "bn.js@5.2.5",
+    "body-parser@2.4.0",
     "bolt11@1.4.2",
     "boolbase@1.0.0",
-    "brace-expansion@1.1.11",
-    "brace-expansion@2.0.1",
+    "brace-expansion@1.1.21",
+    "brace-expansion@2.1.7",
     "braces@3.0.3",
     "brorand@1.1.0",
     "browser-process-hrtime@1.0.0",
@@ -1518,8 +1519,8 @@
     "browserify-cipher@1.0.1",
     "browserify-des@1.0.2",
     "browserify-rsa@4.1.1",
-    "browserify-sign@4.2.3",
-    "browserslist@4.28.1",
+    "browserify-sign@4.2.6",
+    "browserslist@4.29.5",
     "bs58@4.0.1",
     "bs58@5.0.0",
     "bs58@6.0.0",
@@ -1545,7 +1546,7 @@
     "callsites@3.1.0",
     "camelcase@5.3.1",
     "camelcase@6.3.0",
-    "caniuse-lite@1.0.30001772",
+    "caniuse-lite@1.0.30001823",
     "cbor-sync@1.0.4",
     "chalk@2.4.2",
     "chalk@4.1.2",
@@ -1575,12 +1576,11 @@
     "commander@2.20.3",
     "commander@9.5.0",
     "compressible@2.0.18",
-    "compression@1.8.1",
+    "compression@1.8.2",
     "concat-map@0.0.1",
     "concat-stream@2.0.0",
     "connect@3.7.0",
     "consola@2.15.3",
-    "content-type@1.0.5",
     "content-type@2.1.0",
     "convert-source-map@2.0.0",
     "core-js-compat@3.48.0",
@@ -1589,7 +1589,6 @@
     "crc-32@1.2.2",
     "crc@3.8.0",
     "create-ecdh@4.0.4",
-    "create-hash@1.1.3",
     "create-hash@1.2.0",
     "create-hmac@1.1.7",
     "cross-spawn@7.0.6",
@@ -1631,7 +1630,7 @@
     "ecpair@3.0.2",
     "ecurve@1.0.6",
     "ee-first@1.1.1",
-    "electron-to-chromium@1.5.302",
+    "electron-to-chromium@1.5.478",
     "electrum-client@3.1.1",
     "electrum-mnemonic@2.0.0",
     "elliptic@6.6.1",
@@ -1666,9 +1665,9 @@
     "fast-base64-decode@1.0.0",
     "fast-deep-equal@3.1.3",
     "fast-glob@3.3.3",
-    "fast-uri@3.0.6",
-    "fast-xml-builder@1.2.0",
-    "fast-xml-parser@5.5.9",
+    "fast-uri@3.1.9",
+    "fast-xml-builder@1.3.1",
+    "fast-xml-parser@5.12.0",
     "fastq@1.19.1",
     "fb-dotslash@0.5.8",
     "fb-watchman@2.0.2",
@@ -1689,7 +1688,7 @@
     "flow-parser@0.331.0",
     "fn.name@1.1.0",
     "for-each@0.3.5",
-    "form-data@3.0.4",
+    "form-data@3.0.5",
     "fresh@0.5.2",
     "fs-constants@1.0.0",
     "fs-extra@11.3.6",
@@ -1714,11 +1713,10 @@
     "has-property-descriptors@1.0.2",
     "has-symbols@1.1.0",
     "has-tostringtag@1.0.2",
-    "hash-base@2.0.2",
     "hash-base@3.0.5",
-    "hash-base@3.1.0",
+    "hash-base@3.1.2",
     "hash.js@1.1.7",
-    "hasown@2.0.2",
+    "hasown@2.0.4",
     "hermes-compiler@260318099.0.5",
     "hmac-drbg@1.0.1",
     "hoist-non-react-statics@3.3.2",
@@ -1726,7 +1724,7 @@
     "http-errors@2.0.1",
     "https-proxy-agent@7.0.6",
     "human-signals@2.1.0",
-    "iconv-lite@0.7.2",
+    "iconv-lite@0.7.3",
     "ieee754@1.2.1",
     "import-fresh@3.3.1",
     "inflight@1.0.6",
@@ -1752,6 +1750,7 @@
     "is-stream@2.0.1",
     "is-typed-array@1.1.15",
     "is-unicode-supported@0.1.0",
+    "is-unsafe@2.0.3",
     "is-wsl@1.1.0",
     "is-wsl@2.2.0",
     "isarray@1.0.0",
@@ -1764,11 +1763,11 @@
     "jest-util@29.7.0",
     "jest-validate@29.7.0",
     "jest-worker@29.7.0",
-    "joi@17.13.3",
+    "joi@17.13.9",
     "js-message@1.0.7",
     "js-queue@2.0.2",
     "js-tokens@4.0.0",
-    "js-yaml@4.1.1",
+    "js-yaml@4.3.2",
     "jsbi@3.2.5",
     "jsc-safe-url@0.2.4",
     "jsesc@3.1.0",
@@ -1780,7 +1779,7 @@
     "jsonfile@6.2.1",
     "kleur@3.0.3",
     "kuler@2.0.0",
-    "launch-editor@2.13.2",
+    "launch-editor@2.14.2",
     "leven@3.1.0",
     "light-bolt11-decoder@3.2.0",
     "lines-and-columns@1.2.4",
@@ -1803,7 +1802,7 @@
     "math-intrinsics@1.1.0",
     "md5.js@1.3.5",
     "mdn-data@2.0.14",
-    "media-typer@1.1.0",
+    "media-typer@1.1.1",
     "memoize-one@5.2.1",
     "merge-options@3.0.4",
     "merge-stream@2.0.0",
@@ -1836,12 +1835,12 @@
     "mimic-response@3.1.0",
     "minimalistic-assert@1.0.1",
     "minimalistic-crypto-utils@1.0.1",
-    "minimatch@3.1.2",
+    "minimatch@3.1.5",
     "minimatch@5.1.9",
     "minimist@1.2.8",
     "mkdirp-classic@0.5.3",
     "mkdirp@0.5.6",
-    "moment@2.30.1",
+    "moment@2.31.0",
     "ms@2.0.0",
     "ms@2.1.3",
     "multi-sort-stream@1.0.4",
@@ -1861,7 +1860,7 @@
     "node-int64@0.4.0",
     "node-ipc@9.2.1",
     "node-machine-id@1.1.12",
-    "node-releases@2.0.27",
+    "node-releases@2.0.63",
     "node-stream-zip@1.15.0",
     "normalize-package-data@2.5.0",
     "npm-run-path@4.0.1",
@@ -1891,19 +1890,19 @@
     "p-try@2.2.0",
     "pako@None",
     "parent-module@1.0.1",
-    "parse-asn1@5.1.7",
+    "parse-asn1@5.1.10",
     "parse-json@5.2.0",
     "parseurl@1.3.3",
     "path-browserify@1.0.1",
     "path-exists@4.0.0",
-    "path-expression-matcher@1.5.0",
+    "path-expression-matcher@1.6.2",
     "path-is-absolute@1.0.1",
     "path-key@3.1.1",
     "path-parse@1.0.7",
-    "pbkdf2@3.1.3",
+    "pbkdf2@3.1.7",
     "picocolors@1.1.1",
-    "picomatch@2.3.1",
-    "picomatch@4.0.3",
+    "picomatch@2.3.2",
+    "picomatch@4.0.7",
     "plist@3.1.1",
     "pngjs@7.0.0",
     "possible-typed-array-names@1.1.0",
@@ -1919,7 +1918,7 @@
     "pump@3.0.2",
     "punycode@1.4.1",
     "qr@0.6.0",
-    "qs@6.15.2",
+    "qs@6.17.1",
     "queue-microtask@1.2.3",
     "randombytes@2.1.0",
     "randomfill@1.0.4",
@@ -1989,8 +1988,7 @@
     "retry@0.12.0",
     "reusify@1.1.0",
     "rimraf@2.4.5",
-    "ripemd160@2.0.1",
-    "ripemd160@2.0.2",
+    "ripemd160@2.0.3",
     "run-parallel@1.2.0",
     "safe-buffer@5.1.2",
     "safe-buffer@5.2.1",
@@ -2002,7 +2000,7 @@
     "scheduler@0.28.0",
     "scryptsy@2.1.0",
     "secp256k1@3.8.1",
-    "secp256k1@4.0.4",
+    "secp256k1@4.0.5",
     "semver@5.7.2",
     "semver@6.3.1",
     "semver@7.7.1",
@@ -2019,11 +2017,11 @@
     "sha.js@2.4.12",
     "shebang-command@2.0.0",
     "shebang-regex@3.0.0",
-    "shell-quote@1.8.3",
-    "side-channel-list@1.0.0",
+    "shell-quote@1.12.0",
+    "side-channel-list@1.0.1",
     "side-channel-map@1.0.1",
     "side-channel-weakmap@1.0.2",
-    "side-channel@1.1.0",
+    "side-channel@1.1.1",
     "signal-exit@3.0.7",
     "silent-payments@4.0.0",
     "simple-concat@1.0.1",
@@ -2056,13 +2054,13 @@
     "strip-ansi@6.0.1",
     "strip-final-newline@2.0.0",
     "strip-json-comments@2.0.1",
-    "strnum@2.2.2",
+    "strnum@2.5.1",
     "supports-color@5.5.0",
     "supports-color@7.2.0",
     "supports-color@8.1.1",
     "supports-preserve-symlinks-flag@1.0.0",
     "table-layout@1.0.2",
-    "tar-fs@2.1.2",
+    "tar-fs@2.1.5",
     "tar-stream@2.2.0",
     "telnet-client@1.2.8",
     "terser@5.51.2",
@@ -2072,7 +2070,7 @@
     "tiny-secp256k1@1.1.7",
     "tinyglobby@0.2.15",
     "tmp@0.2.7",
-    "to-buffer@1.2.1",
+    "to-buffer@1.2.2",
     "to-regex-range@5.0.1",
     "toidentifier@1.0.1",
     "trace-event-lib@1.4.1",
@@ -2084,7 +2082,7 @@
     "type-fest@0.6.0",
     "type-fest@0.7.1",
     "type-fest@0.8.1",
-    "type-is@2.0.1",
+    "type-is@2.1.0",
     "typed-array-buffer@1.0.3",
     "typedarray@0.0.6",
     "typeforce@1.18.0",
@@ -2103,7 +2101,7 @@
     "universalify@0.1.2",
     "universalify@2.0.1",
     "unpipe@1.0.0",
-    "update-browserslist-db@1.2.3",
+    "update-browserslist-db@1.3.4",
     "url@0.11.4",
     "use-latest-callback@0.2.6",
     "use-sync-external-store@1.6.0",
@@ -2113,8 +2111,7 @@
     "util@0.12.5",
     "utils-merge@1.0.1",
     "valibot@0.37.0",
-    "valibot@1.3.1",
-    "valibot@1.4.0",
+    "valibot@1.5.0",
     "validate-npm-package-license@3.0.4",
     "varuint-bitcoin@1.1.2",
     "varuint-bitcoin@2.0.0",
@@ -2137,17 +2134,16 @@
     "wrap-ansi@7.0.0",
     "wrappy@1.0.2",
     "ws-electrumx-client@1.0.5",
-    "ws@6.2.3",
-    "ws@7.5.10",
+    "ws@6.2.6",
     "ws@7.5.11",
     "ws@7.5.13",
     "ws@8.21.3",
-    "xml-naming@0.1.0",
+    "xml-naming@0.3.0",
     "xmlbuilder@15.1.1",
     "y18n@4.0.3",
     "y18n@5.0.8",
     "yallist@3.1.1",
-    "yaml@2.8.2",
+    "yaml@2.9.1",
     "yargs-parser@18.1.3",
     "yargs-parser@21.1.1",
     "yargs-unparser@2.0.0",
@@ -2161,7 +2157,7 @@
     "lottie-ios"
    ],
    "pods_from_npm_and_react_native": 106,
-   "total": 903
+   "total": 899
   },
   "Green": {
    "spm": [
@@ -2232,7 +2228,7 @@
     "ctr v0.7.0",
     "digest v0.10.7",
     "displaydoc v0.2.5 (proc-macro)",
-    "electrum-client v0.24.1",
+    "electrum-client v0.24.2",
     "elements v0.25.1",
     "elements-miniscript v0.4.0",
     "flate2 v1.1.2",
@@ -2259,7 +2255,7 @@
     "idna v1.0.3",
     "idna_adapter v1.2.0",
     "itoa v1.0.2",
-    "libc v0.2.170",
+    "libc v0.2.191",
     "litemap v0.7.4",
     "log v0.4.27",
     "memchr v2.7.4",
@@ -2271,15 +2267,15 @@
     "percent-encoding v2.3.1",
     "polyval v0.5.3",
     "ppv-lite86 v0.2.16",
-    "proc-macro2 v1.0.87",
+    "proc-macro2 v1.0.107",
     "quote v1.0.37",
     "rand v0.8.6",
     "rand_chacha v0.3.1",
     "rand_core v0.6.3",
     "ring v0.17.14",
-    "rustls v0.23.37",
+    "rustls v0.23.46",
     "rustls-pki-types v1.14.0",
-    "rustls-webpki v0.103.13",
+    "rustls-webpki v0.103.16",
     "secp256k1 v0.24.2",
     "secp256k1 v0.29.1",
     "secp256k1-sys v0.10.1",
@@ -2312,8 +2308,7 @@
     "utf16_iter v1.0.5",
     "utf8-zero v0.8.1",
     "utf8_iter v1.0.4",
-    "webpki-roots v0.25.4",
-    "webpki-roots v1.0.6",
+    "webpki-roots v1.0.11",
     "write16 v1.0.0",
     "writeable v0.5.5",
     "yoke v0.7.5",
@@ -2321,6 +2316,7 @@
     "zerofrom v0.1.5",
     "zerofrom-derive v0.1.5 (proc-macro)",
     "zeroize v1.8.2",
+    "zeroize_derive v1.5.0 (proc-macro)",
     "zerovec v0.10.4",
     "zerovec-derive v0.10.3 (proc-macro)",
     "zmij v1.0.21"
@@ -2545,11 +2541,13 @@
   },
   "Bitkit": {
    "spm": [
-    "bitkit-core@0.8.0-rc11",
+    "bitkit-core@0.8.0-rc15",
+    "breez-sdk-spark-swift@0.28.3",
     "lottie-ios@4.6.1",
-    "paykit-rs@0.1.1-rc2",
+    "paykit-rs@0.1.1-rc9",
+    "swift-bigint@2.4.0",
     "swift-secp256k1@0.24.0",
-    "vss-rust-client-ffi@0.5.26-rc1"
+    "vss-rust-client-ffi@0.5.26-rc2"
    ],
    "rust": [
     "adler2 v2.0.1",
@@ -2573,6 +2571,7 @@
     "anyhow v1.0.102",
     "anyhow v1.0.104",
     "anyhow v1.0.98",
+    "arc-swap v1.9.3",
     "argon2 v0.5.3",
     "argon2 v0.6.0",
     "arrayref v0.3.9",
@@ -2589,10 +2588,12 @@
     "async-trait v0.1.89 (proc-macro)",
     "async-trait v0.1.92 (proc-macro)",
     "atomic-waker v1.1.2",
+    "attohttpc v0.30.1",
     "aws-lc-rs v1.18.1",
     "aws-lc-rs v1.18.2",
     "aws-lc-sys v0.45.0",
     "aws-lc-sys v0.46.0",
+    "backon v1.6.0",
     "base16ct v0.2.0",
     "base16ct v1.0.0",
     "base32 v0.5.1",
@@ -2653,6 +2654,7 @@
     "block-buffer v0.12.1",
     "block-padding v0.3.3",
     "block2 v0.5.1",
+    "block2 v0.6.2",
     "boltz-client v0.4.1",
     "boltz-client-macros v1.0.0 (proc-macro)",
     "bs58 v0.5.1",
@@ -2720,18 +2722,23 @@
     "crypto_secretbox v0.1.1",
     "ctr v0.9.2",
     "ctutils v0.4.2",
+    "ctutils v0.4.7",
     "curve25519-dalek v4.1.3",
     "curve25519-dalek v5.0.0",
     "dashmap v6.1.0",
-    "data-encoding v2.11.0",
+    "data-encoding v2.11.1",
+    "data-encoding-macro v0.1.21",
+    "data-encoding-macro-internal v0.1.19 (proc-macro)",
     "der v0.7.10",
     "der v0.8.0",
+    "der v0.8.3",
     "deranged v0.5.8",
     "derive_more v2.1.1",
     "derive_more-impl v2.1.1 (proc-macro)",
     "diatomic-waker v0.2.3",
     "digest v0.10.7",
     "digest v0.11.3",
+    "dispatch2 v0.3.1",
     "displaydoc v0.2.5 (proc-macro)",
     "displaydoc v0.2.7 (proc-macro)",
     "dnssec-prover v0.6.10",
@@ -2752,6 +2759,7 @@
     "elements v0.26.2",
     "elliptic-curve v0.13.8",
     "email_address v0.2.5",
+    "enum-assoc v1.4.1 (proc-macro)",
     "env_filter v2.0.0",
     "env_logger v0.11.11",
     "equivalent v1.0.2",
@@ -2765,6 +2773,8 @@
     "flate2 v1.1.9",
     "flume v0.11.1",
     "flume v0.12.0",
+    "fnv v1.0.7",
+    "foldhash v0.2.0",
     "foreign-types v0.3.2",
     "foreign-types-shared v0.1.1",
     "form_urlencoded v1.2.1",
@@ -2809,12 +2819,14 @@
     "glob v0.3.4",
     "goblin v0.8.2",
     "group v0.13.0",
+    "h2 v0.4.20",
     "half v2.7.1",
     "hash32 v0.2.1",
     "hashbrown v0.13.2",
     "hashbrown v0.14.5",
     "hashbrown v0.15.4",
     "hashbrown v0.16.1",
+    "hashbrown v0.17.1",
     "hashlink v0.9.1",
     "heapless v0.7.17",
     "heck v0.5.0",
@@ -2865,11 +2877,14 @@
     "icu_properties_data v2.1.2",
     "icu_provider v2.0.0",
     "icu_provider v2.1.1",
+    "identity-hash v0.1.0",
     "idna v1.0.3",
     "idna v1.1.0",
     "idna_adapter v1.2.1",
+    "igd-next v0.17.1",
     "indexmap v2.10.0",
     "indexmap v2.13.0",
+    "indexmap v2.14.2",
     "inout v0.1.4",
     "inout v0.2.3",
     "instant v0.1.13",
@@ -2879,6 +2894,12 @@
     "iri-string v0.7.10",
     "iri-string v0.7.12",
     "iri-string v0.7.9",
+    "iroh v1.2.0",
+    "iroh-base v1.4.1",
+    "iroh-dns v1.4.1",
+    "iroh-metrics v1.0.2",
+    "iroh-metrics-derive v1.0.1 (proc-macro)",
+    "iroh-relay v1.4.1",
     "is_terminal_polyfill v1.70.2",
     "itertools v0.10.5",
     "itertools v0.14.0",
@@ -2913,6 +2934,9 @@
     "lru v0.13.0",
     "lru v0.16.3",
     "lru v0.18.2",
+    "lru v0.18.5",
+    "lru-slab v0.1.2",
+    "mac-addr v0.3.0",
     "macro-string v0.2.0",
     "mainline v5.4.0",
     "mainline v8.0.0",
@@ -2930,19 +2954,36 @@
     "mio v1.1.1",
     "mio v1.2.0",
     "mio v1.2.3",
+    "musig2 v0.4.1",
+    "n0-dns-resolver v0.1.0",
+    "n0-error v1.0.1",
+    "n0-error-macros v1.0.1 (proc-macro)",
+    "n0-future v0.3.2",
+    "n0-watcher v1.0.1",
     "native-tls v0.2.18",
+    "netdev v0.46.3",
+    "netwatch v0.19.3",
     "nom v7.1.3",
+    "noq v1.4.0",
+    "noq-proto v1.4.0",
+    "noq-udp v1.4.0",
     "ntimestamp v1.0.0",
     "num-bigint v0.4.6",
     "num-conv v0.2.0",
     "num-conv v0.2.1",
     "num-integer v0.1.46",
     "num-traits v0.2.19",
+    "num_enum v0.7.6",
+    "num_enum_derive v0.7.6 (proc-macro)",
     "objc-sys v0.3.5",
     "objc2 v0.5.2",
+    "objc2 v0.6.5",
     "objc2-core-bluetooth v0.2.2",
+    "objc2-core-foundation v0.3.2",
     "objc2-encode v4.1.0",
     "objc2-foundation v0.2.2",
+    "objc2-security v0.3.2",
+    "objc2-system-configuration v0.3.2",
     "once_cell v1.21.3",
     "once_cell v1.21.4",
     "opaque-debug v0.3.1",
@@ -2951,6 +2992,7 @@
     "openssl-probe v0.2.1",
     "openssl-sys v0.9.112",
     "page_size v0.6.0",
+    "papaya v0.2.5",
     "parking v2.2.1",
     "parking_lot v0.11.2",
     "parking_lot v0.12.5",
@@ -2960,10 +3002,13 @@
     "password-hash v0.6.1",
     "paste v1.0.15 (proc-macro)",
     "pbkdf2 v0.12.2",
+    "pem-rfc7468 v1.0.0",
     "percent-encoding v2.3.1",
     "percent-encoding v2.3.2",
     "percent-encoding-rfc3986 v0.1.3",
     "phc v0.6.1",
+    "pin-project v1.1.13",
+    "pin-project-internal v1.1.13 (proc-macro)",
     "pin-project-lite v0.2.16",
     "pin-project-lite v0.2.17",
     "pin-utils v0.1.0",
@@ -2972,16 +3017,21 @@
     "pkcs8 v0.10.2",
     "pkcs8 v0.11.0",
     "plain v0.2.3",
+    "plist v1.10.3",
     "poly1305 v0.8.0",
     "poly1305 v0.9.1",
     "polyval v0.6.2",
+    "portable-atomic v1.13.1",
+    "portmapper v0.19.3",
     "possiblyrandom v0.2.1",
     "postcard v1.1.3",
+    "postcard-derive v0.2.2 (proc-macro)",
     "potential_utf v0.1.2",
     "potential_utf v0.1.4",
     "potential_utf v0.1.6",
     "powerfmt v0.2.0",
     "ppv-lite86 v0.2.21",
+    "proc-macro-crate v3.5.0",
     "proc-macro-error-attr3 v3.0.1 (proc-macro)",
     "proc-macro-error3 v3.0.1",
     "proc-macro2 v1.0.106",
@@ -3002,6 +3052,7 @@
     "pubky-noise v0.1.0",
     "pubky-timestamp v0.4.1",
     "publicsuffix v2.3.0",
+    "quick-xml v0.42.0",
     "quote v1.0.40",
     "quote v1.0.45",
     "quote v1.0.47",
@@ -3019,6 +3070,7 @@
     "rand_core v0.10.1",
     "rand_core v0.6.4",
     "rand_core v0.9.5",
+    "rand_pcg v0.10.2",
     "rand_xoshiro v0.8.1",
     "regex v1.12.3",
     "regex-automata v0.4.14",
@@ -3026,6 +3078,7 @@
     "reqwest v0.12.25",
     "reqwest v0.12.28",
     "reqwest v0.13.2",
+    "reqwest v0.13.5",
     "rfc6979 v0.4.0",
     "ring v0.17.14",
     "ripemd v0.1.3",
@@ -3036,22 +3089,22 @@
     "rust-blocktank-client v0.0.16",
     "rustc-hash v2.1.1",
     "rustc-hash v2.1.2",
+    "rustc-hash v2.1.3",
     "rustix v1.0.8",
     "rustix v1.1.4",
     "rustls v0.21.12",
-    "rustls v0.23.35",
-    "rustls v0.23.43",
-    "rustls v0.23.45",
     "rustls v0.23.46",
     "rustls-native-certs v0.8.3",
     "rustls-pki-types v1.13.1",
     "rustls-pki-types v1.14.0",
     "rustls-pki-types v1.15.1",
     "rustls-platform-verifier v0.6.2",
+    "rustls-platform-verifier v0.7.1",
     "rustls-webpki v0.101.7",
     "rustls-webpki v0.102.8",
     "rustls-webpki v0.103.15",
-    "rustls-webpki v0.103.8",
+    "rustls-webpki v0.103.16",
+    "rustversion v1.0.22 (proc-macro)",
     "ryu v1.0.20",
     "ryu v1.0.23",
     "salsa20 v0.10.2",
@@ -3061,17 +3114,21 @@
     "scroll_derive v0.12.1 (proc-macro)",
     "sct v0.7.1",
     "sec1 v0.7.3",
+    "secp v0.7.0",
     "secp256k1 v0.27.0",
     "secp256k1 v0.29.1",
     "secp256k1 v0.30.0",
+    "secp256k1 v0.31.1",
     "secp256k1 v0.32.0-beta.2",
     "secp256k1-sys v0.10.1",
+    "secp256k1-sys v0.11.0",
     "secp256k1-sys v0.12.0",
     "secp256k1-sys v0.8.2",
     "secp256k1-zkp v0.11.0",
     "secp256k1-zkp-sys v0.10.1",
     "security-framework v3.7.0",
     "security-framework-sys v2.17.0",
+    "seize v0.5.1",
     "self_cell v1.2.2",
     "semver v1.0.26",
     "semver v1.0.27",
@@ -3095,17 +3152,20 @@
     "sha1_smol v1.0.1",
     "sha2 v0.10.9",
     "sha2 v0.11.0",
+    "sha2 v0.11.1",
     "sha3 v0.10.9",
     "sha3 v0.11.0",
     "signal-hook-registry v1.4.8",
     "signature v2.2.0",
     "signature v3.0.0",
     "simd-adler32 v0.3.8",
+    "simdutf8 v0.1.5",
     "simple-dns v0.12.0",
     "simple-dns v0.9.3",
     "siphasher v0.3.11",
     "slab v0.4.12",
     "sled v0.34.7",
+    "slotmap v1.1.1",
     "smallvec v1.15.1",
     "smallvec v1.16.0",
     "smawk v0.3.2",
@@ -3115,26 +3175,35 @@
     "socket2 v0.6.3",
     "socket2 v0.6.5",
     "socks v0.3.4",
+    "sorted-index-buffer v0.2.1",
+    "spez v0.1.2 (proc-macro)",
     "spin v0.10.0",
     "spin v0.9.8",
     "spki v0.7.3",
     "spki v0.8.0",
+    "spki v0.8.1",
     "sse-core v0.2.3",
     "stable_deref_trait v1.2.0",
     "stable_deref_trait v1.2.1",
     "static_assertions v1.1.0",
     "strsim v0.11.1",
+    "strum v0.28.0",
+    "strum_macros v0.28.0 (proc-macro)",
     "subtle v2.6.1",
+    "swap-common v0.1.0 (https://github.com/coreyphillips/pubky-swap?rev=f45e204ee7646dc91983d90e4782d40760b6c72b#f45e204e)",
     "syn v1.0.109",
     "syn v2.0.104",
     "syn v2.0.117",
     "syn v2.0.119",
     "syn v3.0.3",
     "syn v3.0.4",
+    "syn v3.0.6",
     "syn-solidity v1.7.3",
     "sync_wrapper v1.0.2",
     "synchronoise v1.0.1",
     "synstructure v0.13.2",
+    "system-configuration v0.8.0",
+    "system-configuration-sys v0.6.0",
     "tempfile v3.20.0",
     "tempfile v3.27.0",
     "textwrap v0.16.2",
@@ -3167,7 +3236,11 @@
     "tokio-tungstenite-wasm v0.6.1",
     "tokio-util v0.7.18",
     "tokio-util v0.7.19",
+    "tokio-websockets v0.13.3",
     "toml v0.5.11",
+    "toml_datetime v1.0.0+spec-1.1.0",
+    "toml_edit v0.25.4+spec-1.1.0",
+    "toml_parser v1.0.9+spec-1.1.0",
     "tower v0.5.2",
     "tower v0.5.3",
     "tower-http v0.6.11",
@@ -3179,7 +3252,7 @@
     "tracing-attributes v0.1.31 (proc-macro)",
     "tracing-core v0.1.34",
     "tracing-core v0.1.36",
-    "trezor-connect-rs v10.0.0",
+    "trezor-connect-rs v10.0.1",
     "try-lock v0.2.5",
     "tungstenite v0.26.2",
     "typenum v1.19.0",
@@ -3228,8 +3301,8 @@
     "webpki-roots v0.22.6",
     "webpki-roots v0.25.4",
     "webpki-roots v0.26.11",
+    "webpki-roots v1.0.11",
     "webpki-roots v1.0.4",
-    "webpki-roots v1.0.6",
     "webpki-roots v1.0.9",
     "weedle2 v5.0.0",
     "winnow v0.7.15",
@@ -3238,6 +3311,8 @@
     "writeable v0.6.4",
     "x25519-dalek v2.0.1",
     "x25519-dalek v3.0.0",
+    "xml-rs v0.8.29",
+    "xmltree v0.10.3",
     "yoke v0.8.0",
     "yoke v0.8.1",
     "yoke v0.8.3",
@@ -3255,7 +3330,9 @@
     "zerofrom-derive v0.1.7 (proc-macro)",
     "zeroize v1.8.2",
     "zeroize v1.9.0",
+    "zeroize v1.9.1",
     "zeroize_derive v1.4.3 (proc-macro)",
+    "zeroize_derive v1.5.0 (proc-macro)",
     "zerotrie v0.2.2",
     "zerotrie v0.2.3",
     "zerotrie v0.2.5",
@@ -3268,14 +3345,14 @@
     "zmij v1.0.21",
     "zmij v1.0.23"
    ],
-   "rust_copies": 1122,
+   "rust_copies": 1212,
    "rust_per_library": {
     "synonym-ldk-node": 196,
-    "bitkit-core": 459,
+    "bitkit-core": 549,
     "paykit-rs": 299,
     "vss-rust-client-ffi": 168
    },
-   "total": 720
+   "total": 801
   },
   "Blixt": {
    "go": [
@@ -4286,7 +4363,7 @@
     "pin-utils v0.1.0",
     "plain v0.2.3",
     "possiblyrandom v0.2.1",
-    "possiblyrandom v0.2.1 (https://github.com/ZeusLN/rust-lightning?rev=4e5cba988c52903a8f50186048a6b2c37465f9cc#4e5cba98)",
+    "possiblyrandom v0.2.1 (https://github.com/ZeusLN/rust-lightning?rev=4d46c5623f6e24de04cbd7c027e78fd971bdb6e8#4d46c562)",
     "potential_utf v0.1.4",
     "potential_utf v0.1.6",
     "powerfmt v0.2.0",
@@ -4354,6 +4431,7 @@
     "smallvec v1.16.2",
     "smawk v0.3.2",
     "smawk v0.3.3",
+    "socket2 v0.5.10",
     "socket2 v0.6.2",
     "socket2 v0.6.5",
     "stable_deref_trait v1.2.1",
@@ -4469,9 +4547,9 @@
     "zmij v1.0.21",
     "zmij v1.0.23"
    ],
-   "rust_copies": 468,
+   "rust_copies": 469,
    "rust_per_library": {
-    "zeus-ldk-node": 199,
+    "zeus-ldk-node": 200,
     "cdk": 269
    },
    "go": [
@@ -4481,7 +4559,7 @@
     "github.com/NebulousLabs/go-upnp@v0.0.0-20180202185039-29b680b06c82",
     "github.com/Nvveen/Gotty@v0.0.0-20120604004816-cd527374f1e5",
     "github.com/Yawning/aez@v0.0.0-20211027044916-e49e68abd344",
-    "github.com/ZeusLN/btcwallet@v0.16.19-11-zeus",
+    "github.com/ZeusLN/btcwallet@v0.16.19-15-zeus",
     "github.com/ZeusLN/chantools@v0.14.2-zeus",
     "github.com/ZeusLN/lightning-terminal@v0.10.5-alpha-zeus",
     "github.com/aead/chacha20@v0.0.0-20180709150244-8b13a72661da",
@@ -4726,11 +4804,12 @@
    "npm": [
     "@babel/code-frame@7.29.7",
     "@babel/compat-data@7.29.7",
-    "@babel/core@7.29.7",
-    "@babel/generator@7.29.8",
+    "@babel/core@7.29.13",
+    "@babel/generator@7.29.14",
     "@babel/helper-annotate-as-pure@7.25.9",
     "@babel/helper-annotate-as-pure@7.29.7",
-    "@babel/helper-compilation-targets@7.29.7",
+    "@babel/helper-compilation-targets@7.29.13",
+    "@babel/helper-create-class-features-plugin@7.29.13",
     "@babel/helper-create-class-features-plugin@7.29.7",
     "@babel/helper-create-regexp-features-plugin@7.27.0",
     "@babel/helper-create-regexp-features-plugin@7.29.7",
@@ -4738,22 +4817,23 @@
     "@babel/helper-globals@7.29.7",
     "@babel/helper-member-expression-to-functions@7.29.7",
     "@babel/helper-module-imports@7.29.7",
-    "@babel/helper-module-transforms@7.29.7",
+    "@babel/helper-module-transforms@7.29.14",
     "@babel/helper-optimise-call-expression@7.29.7",
     "@babel/helper-plugin-utils@7.29.7",
     "@babel/helper-remap-async-to-generator@7.29.7",
     "@babel/helper-replace-supers@7.29.7",
+    "@babel/helper-skip-transparent-expression-wrappers@7.29.13",
     "@babel/helper-skip-transparent-expression-wrappers@7.29.7",
-    "@babel/helper-string-parser@7.29.7",
+    "@babel/helper-string-parser@7.29.14",
     "@babel/helper-validator-identifier@7.29.7",
     "@babel/helper-validator-option@7.29.7",
     "@babel/helper-wrap-function@7.29.7",
-    "@babel/helpers@7.29.7",
-    "@babel/parser@7.29.8",
+    "@babel/helpers@7.29.14",
+    "@babel/parser@7.29.14",
     "@babel/plugin-bugfix-firefox-class-in-computed-class-key@7.29.7",
     "@babel/plugin-bugfix-safari-class-field-initializer-scope@7.29.7",
     "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@7.29.7",
-    "@babel/plugin-bugfix-safari-rest-destructuring-rhs-array@7.29.7",
+    "@babel/plugin-bugfix-safari-rest-destructuring-rhs-array@7.29.13",
     "@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining@7.29.7",
     "@babel/plugin-bugfix-v8-static-class-fields-redefine-readonly@7.29.7",
     "@babel/plugin-proposal-private-property-in-object@7.21.0-placeholder-for-preset-env.2",
@@ -4781,12 +4861,12 @@
     "@babel/plugin-transform-async-generator-functions@7.29.7",
     "@babel/plugin-transform-async-to-generator@7.29.7",
     "@babel/plugin-transform-block-scoped-functions@7.29.7",
-    "@babel/plugin-transform-block-scoping@7.29.7",
+    "@babel/plugin-transform-block-scoping@7.29.13",
     "@babel/plugin-transform-class-properties@7.29.7",
-    "@babel/plugin-transform-class-static-block@7.29.7",
-    "@babel/plugin-transform-classes@7.29.7",
+    "@babel/plugin-transform-class-static-block@7.29.14",
+    "@babel/plugin-transform-classes@7.29.11",
     "@babel/plugin-transform-computed-properties@7.29.7",
-    "@babel/plugin-transform-destructuring@7.29.7",
+    "@babel/plugin-transform-destructuring@7.29.13",
     "@babel/plugin-transform-dotall-regex@7.29.7",
     "@babel/plugin-transform-duplicate-keys@7.29.7",
     "@babel/plugin-transform-duplicate-named-capturing-groups-regex@7.29.7",
@@ -4794,16 +4874,16 @@
     "@babel/plugin-transform-explicit-resource-management@7.29.7",
     "@babel/plugin-transform-exponentiation-operator@7.29.7",
     "@babel/plugin-transform-export-namespace-from@7.29.7",
-    "@babel/plugin-transform-for-of@7.29.7",
+    "@babel/plugin-transform-for-of@7.29.13",
     "@babel/plugin-transform-function-name@7.29.7",
     "@babel/plugin-transform-json-strings@7.29.7",
     "@babel/plugin-transform-literals@7.29.7",
     "@babel/plugin-transform-logical-assignment-operators@7.29.7",
     "@babel/plugin-transform-member-expression-literals@7.29.7",
-    "@babel/plugin-transform-modules-amd@7.29.7",
-    "@babel/plugin-transform-modules-commonjs@7.29.7",
-    "@babel/plugin-transform-modules-systemjs@7.29.7",
-    "@babel/plugin-transform-modules-umd@7.29.7",
+    "@babel/plugin-transform-modules-amd@7.29.14",
+    "@babel/plugin-transform-modules-commonjs@7.29.14",
+    "@babel/plugin-transform-modules-systemjs@7.29.8",
+    "@babel/plugin-transform-modules-umd@7.29.14",
     "@babel/plugin-transform-named-capturing-groups-regex@7.29.7",
     "@babel/plugin-transform-new-target@7.29.7",
     "@babel/plugin-transform-nullish-coalescing-operator@7.29.7",
@@ -4816,11 +4896,11 @@
     "@babel/plugin-transform-private-methods@7.29.7",
     "@babel/plugin-transform-private-property-in-object@7.29.7",
     "@babel/plugin-transform-property-literals@7.29.7",
-    "@babel/plugin-transform-regenerator@7.29.7",
+    "@babel/plugin-transform-regenerator@7.29.8",
     "@babel/plugin-transform-regexp-modifiers@7.29.7",
     "@babel/plugin-transform-reserved-words@7.29.7",
     "@babel/plugin-transform-shorthand-properties@7.29.7",
-    "@babel/plugin-transform-spread@7.29.7",
+    "@babel/plugin-transform-spread@7.29.11",
     "@babel/plugin-transform-sticky-regex@7.29.7",
     "@babel/plugin-transform-template-literals@7.29.7",
     "@babel/plugin-transform-typeof-symbol@7.29.7",
@@ -4829,13 +4909,13 @@
     "@babel/plugin-transform-unicode-property-regex@7.29.7",
     "@babel/plugin-transform-unicode-regex@7.29.7",
     "@babel/plugin-transform-unicode-sets-regex@7.29.7",
-    "@babel/preset-env@7.29.7",
+    "@babel/preset-env@7.29.14",
     "@babel/preset-modules@0.1.6-no-external-plugins",
     "@babel/preset-typescript@7.29.7",
-    "@babel/runtime@7.27.0",
+    "@babel/runtime@7.29.14",
     "@babel/template@7.29.7",
-    "@babel/traverse@7.29.7",
-    "@babel/types@7.29.8",
+    "@babel/traverse@7.29.14",
+    "@babel/types@7.29.14",
     "@bcoe/v8-coverage@0.2.3",
     "@bitcoinerlab/secp256k1@1.2.0",
     "@codesandbox/nodebox@0.1.8",
@@ -4874,11 +4954,9 @@
     "@lightninglabs/lnc-core@0.3.5-alpha",
     "@ngraveio/bc-ur@1.1.13",
     "@noble/ciphers@2.1.1",
-    "@noble/curves@1.8.2",
     "@noble/curves@1.9.7",
     "@noble/curves@2.0.1",
     "@noble/curves@2.4.0",
-    "@noble/hashes@1.7.2",
     "@noble/hashes@1.8.0",
     "@noble/hashes@2.0.1",
     "@noble/hashes@2.4.0",
@@ -4888,7 +4966,7 @@
     "@open-draft/deferred-promise@2.2.0",
     "@react-native-async-storage/async-storage@2.2.0",
     "@react-native-clipboard/clipboard@1.16.3",
-    "@react-native-community/datetimepicker@9.2.2",
+    "@react-native-community/datetimepicker@9.3.0",
     "@react-native-community/netinfo@12.0.1",
     "@react-native-community/slider@5.2.1",
     "@react-native-documents/picker@12.0.3",
@@ -5013,7 +5091,7 @@
     "bindings@1.5.0",
     "bip174@2.1.1",
     "bip32@5.0.1",
-    "bitcoinjs-lib@6.1.5",
+    "bitcoinjs-lib@6.1.10",
     "blakejs@1.2.1",
     "bn.js@4.12.3",
     "bn.js@5.2.3",
@@ -5179,7 +5257,7 @@
     "get-stream@6.0.1",
     "glob@7.2.3",
     "gopd@1.2.0",
-    "graceful-fs@4.2.11",
+    "graceful-fs@4.2.12",
     "has-flag@4.0.0",
     "has-property-descriptors@1.0.2",
     "has-symbols@1.1.0",
@@ -5282,7 +5360,7 @@
     "lodash@4.18.1",
     "long@5.3.2",
     "loose-envify@1.4.0",
-    "lottie-react-native@7.5.0",
+    "lottie-react-native@7.5.1",
     "lower-case@2.0.2",
     "lru-cache@5.1.1",
     "make-dir@4.0.0",
@@ -5341,9 +5419,7 @@
     "node-releases@2.0.54",
     "normalize-path@3.0.0",
     "normalize-svg-path@1.1.0",
-    "nostr-tools@2.23.3",
-    "nostr-tools@2.25.5",
-    "nostr-wasm@0.1.0",
+    "nostr-tools@2.26.0",
     "npm-run-path@4.0.1",
     "nth-check@2.1.1",
     "nullthrows@1.1.1",
@@ -5421,7 +5497,7 @@
     "react-native-draglist@3.11.0",
     "react-native-encrypted-storage@4.0.3",
     "react-native-fs@2.20.0",
-    "react-native-gesture-handler@3.4.0",
+    "react-native-gesture-handler@3.5.0",
     "react-native-get-random-values@2.1.0",
     "react-native-haptic-feedback@2.3.3",
     "react-native-hce@0.3.0",
@@ -5429,11 +5505,11 @@
     "react-native-is-edge-to-edge@1.3.1",
     "react-native-keychain@10.0.0",
     "react-native-nfc-manager@3.17.5",
-    "react-native-nitro-tor@0.6.1",
+    "react-native-nitro-tor@1.1.0",
     "react-native-notifications@5.2.2",
     "react-native-print@0.11.0",
     "react-native-qr-kit@1.1.6",
-    "react-native-qrcode-svg@6.3.52",
+    "react-native-qrcode-svg@6.3.54",
     "react-native-randombytes@3.6.2",
     "react-native-reanimated-carousel@4.0.3",
     "react-native-reanimated@4.7.1",
@@ -5444,7 +5520,7 @@
     "react-native-share@12.3.1",
     "react-native-size-matters@0.4.2",
     "react-native-svg-transformer@1.5.3",
-    "react-native-svg@15.16.0",
+    "react-native-svg@15.16.1",
     "react-native-system-navigation-bar@3.0.1",
     "react-native-udp@4.1.7",
     "react-native-view-shot@6.2.1",
@@ -5460,7 +5536,6 @@
     "regenerate-unicode-properties@10.2.2",
     "regenerate@1.4.2",
     "regenerator-runtime@0.13.11",
-    "regenerator-runtime@0.14.1",
     "regex-recursion@6.0.2",
     "regex-utilities@2.3.0",
     "regex@6.1.0",
@@ -5628,7 +5703,7 @@
     "lottie-ios"
    ],
    "pods_from_npm_and_react_native": 114,
-   "total": 1447
+   "total": 1445
   }
  },
  "vendored": {
@@ -5876,7 +5951,7 @@
   "Zeus": {
    "copied_packages": {
     "zeus_modules/@lightninglabs/lnc-core": {
-     "lines": 3619,
+     "lines": 3627,
      "counted": "source"
     },
     "zeus_modules/@lightninglabs/lnc-rn": {
@@ -5902,7 +5977,7 @@
     "patch-react-native-notifications.mjs",
     "patch-reanimated-set-fixes.mjs"
    ],
-   "copied_lines": 4043
+   "copied_lines": 4051
   }
  },
  "features": {
@@ -6852,11 +6927,11 @@
  "drift": {
   "reviewed": "2026-10-02",
   "reviewed_latest": "2026-11-03",
-  "measured": "2026-11-21",
+  "measured": "2026-11-22",
   "citations": 441,
-  "same": 257,
-  "moved": 125,
-  "changed": 59,
+  "same": 236,
+  "moved": 138,
+  "changed": 67,
   "gone": 0,
   "by_wallet": {
    "Winnow": {
@@ -6866,15 +6941,15 @@
     "gone": 0
    },
    "BlueWallet": {
-    "same": 13,
-    "moved": 37,
-    "changed": 8,
+    "same": 8,
+    "moved": 41,
+    "changed": 9,
     "gone": 0
    },
    "Green": {
-    "same": 54,
-    "moved": 0,
-    "changed": 0,
+    "same": 44,
+    "moved": 7,
+    "changed": 3,
     "gone": 0
    },
    "Muun": {
@@ -6890,9 +6965,9 @@
     "gone": 0
    },
    "Bitkit": {
-    "same": 28,
-    "moved": 14,
-    "changed": 10,
+    "same": 26,
+    "moved": 15,
+    "changed": 11,
     "gone": 0
    },
    "Blixt": {
@@ -6902,9 +6977,9 @@
     "gone": 0
    },
    "Zeus": {
-    "same": 13,
-    "moved": 39,
-    "changed": 6,
+    "same": 9,
+    "moved": 40,
+    "changed": 9,
     "gone": 0
    }
   },
@@ -7043,6 +7118,12 @@
    },
    {
     "wallet": "BlueWallet",
+    "fact": "features.multisig",
+    "cite": "bluewallet:screen/wallets/addMultisigStep2.tsx:226-232",
+    "status": "changed"
+   },
+   {
+    "wallet": "BlueWallet",
     "fact": "features.fee_bump",
     "cite": "bluewallet:screen/transactions/TransactionStatus.tsx:1128-1150",
     "status": "changed"
@@ -7060,6 +7141,12 @@
     "status": "changed"
    },
    {
+    "wallet": "Green",
+    "fact": "features.passphrase",
+    "cite": "gdk:src/signer.cpp:32-47",
+    "status": "changed"
+   },
+   {
     "wallet": "Bitkit",
     "fact": "features.hw_signer",
     "cite": "bitkit:Bitkit/Views/Wallets/Send/HwSendSignView.swift:115",
@@ -7069,6 +7156,12 @@
     "wallet": "Bitkit",
     "fact": "features.watch_only",
     "cite": "bitkit:Bitkit/Managers/HwWalletManager.swift:5-7",
+    "status": "changed"
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "features.fee_bump",
+    "cite": "bitkit:Bitkit/Services/CoreService.swift:1648-1675",
     "status": "changed"
    },
    {
@@ -7117,6 +7210,12 @@
     "wallet": "Zeus",
     "fact": "features.psbt",
     "cite": "zeus:utils/handleAnything.ts:1050-1051",
+    "status": "changed"
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.cloud_backup",
+    "cite": "zeus:stores/ChannelBackupStore.ts:63-69",
     "status": "changed"
    },
    {
@@ -7222,6 +7321,18 @@
     "status": "changed"
    },
    {
+    "wallet": "Green",
+    "fact": "profile.engine",
+    "cite": "green:tools/fetch_gdk_binaries.sh:29",
+    "status": "changed"
+   },
+   {
+    "wallet": "Green",
+    "fact": "profile.prebuilt",
+    "cite": "green:tools/fetch_gdk_binaries.sh:29-37",
+    "status": "changed"
+   },
+   {
     "wallet": "Bitkit",
     "fact": "profile.third_party",
     "cite": "bitkit:Bitkit/Services/LightningService.swift:796-803",
@@ -7254,7 +7365,19 @@
    {
     "wallet": "Zeus",
     "fact": "profile.libraries",
+    "cite": "zeus:package.json:86",
+    "status": "changed"
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "profile.libraries",
     "cite": "zeus:package.json:117",
+    "status": "changed"
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "profile.libraries",
+    "cite": "zeus:package.json:148",
     "status": "changed"
    },
    {
@@ -7422,23 +7545,23 @@
    {
     "wallet": "BlueWallet",
     "fact": "features.multisig",
-    "cite": "bluewallet:screen/wallets/addMultisigStep2.tsx:226-232",
+    "cite": "bluewallet:screen/wallets/WalletsAddMultisig.tsx:54-58",
     "status": "moved",
-    "now_at": 216
+    "now_at": 55
    },
    {
     "wallet": "BlueWallet",
     "fact": "features.hw_signer",
     "cite": "bluewallet:class/wallets/abstract-wallet.ts:321-337",
     "status": "moved",
-    "now_at": 315
+    "now_at": 325
    },
    {
     "wallet": "BlueWallet",
     "fact": "features.hw_signer",
     "cite": "bluewallet:class/wallets/abstract-wallet.ts:339-347",
     "status": "moved",
-    "now_at": 333
+    "now_at": 343
    },
    {
     "wallet": "BlueWallet",
@@ -7463,10 +7586,17 @@
    },
    {
     "wallet": "BlueWallet",
+    "fact": "features.watch_only",
+    "cite": "bluewallet:class/wallets/watch-only-wallet.ts:64-72",
+    "status": "moved",
+    "now_at": 63
+   },
+   {
+    "wallet": "BlueWallet",
     "fact": "features.passphrase",
     "cite": "bluewallet:navigation/AddWalletStack.tsx:246-262",
     "status": "moved",
-    "now_at": 255
+    "now_at": 253
    },
    {
     "wallet": "BlueWallet",
@@ -7477,17 +7607,10 @@
    },
    {
     "wallet": "BlueWallet",
-    "fact": "features.passphrase",
-    "cite": "bluewallet:class/wallets/abstract-hd-wallet.ts:79-80",
-    "status": "moved",
-    "now_at": 80
-   },
-   {
-    "wallet": "BlueWallet",
     "fact": "features.coin_control",
     "cite": "bluewallet:screen/send/SendDetails.tsx:1056-1061",
     "status": "moved",
-    "now_at": 1067
+    "now_at": 1074
    },
    {
     "wallet": "BlueWallet",
@@ -7508,14 +7631,21 @@
     "fact": "features.fee_bump",
     "cite": "bluewallet:class/wallets/abstract-wallet.ts:170-172",
     "status": "moved",
-    "now_at": 164
+    "now_at": 163
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.fee_bump",
+    "cite": "bluewallet:class/wallets/hd-segwit-bech32-wallet.ts:22-24",
+    "status": "moved",
+    "now_at": 21
    },
    {
     "wallet": "BlueWallet",
     "fact": "features.taproot",
     "cite": "bluewallet:navigation/AddWalletStack.tsx:155-159",
     "status": "moved",
-    "now_at": 153
+    "now_at": 151
    },
    {
     "wallet": "BlueWallet",
@@ -7526,10 +7656,24 @@
    },
    {
     "wallet": "BlueWallet",
+    "fact": "features.taproot",
+    "cite": "bluewallet:class/wallets/hd-taproot-wallet.ts:47-57",
+    "status": "moved",
+    "now_at": 46
+   },
+   {
+    "wallet": "BlueWallet",
     "fact": "features.descriptors",
     "cite": "bluewallet:class/wallets/abstract-wallet.ts:238-244",
     "status": "moved",
-    "now_at": 232
+    "now_at": 242
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.descriptors",
+    "cite": "bluewallet:class/wallets/multisig-hd-wallet.ts:634-640",
+    "status": "moved",
+    "now_at": 662
    },
    {
     "wallet": "BlueWallet",
@@ -7550,28 +7694,28 @@
     "fact": "features.own_server",
     "cite": "bluewallet:blue_modules/BlueElectrum.ts:90-97",
     "status": "moved",
-    "now_at": 84
+    "now_at": 66
    },
    {
     "wallet": "BlueWallet",
     "fact": "features.verifies_chain",
     "cite": "bluewallet:blue_modules/BlueElectrum.ts:1034-1038",
     "status": "moved",
-    "now_at": 1030
+    "now_at": 951
    },
    {
     "wallet": "BlueWallet",
     "fact": "features.verifies_chain",
     "cite": "bluewallet:blue_modules/BlueElectrum.ts:1128-1131",
     "status": "moved",
-    "now_at": 1132
+    "now_at": 1053
    },
    {
     "wallet": "BlueWallet",
     "fact": "features.verifies_chain",
     "cite": "bluewallet:blue_modules/BlueElectrum.ts:1609-1616",
     "status": "moved",
-    "now_at": 1631
+    "now_at": 1551
    },
    {
     "wallet": "BlueWallet",
@@ -7585,14 +7729,14 @@
     "fact": "features.tor",
     "cite": "bluewallet:loc/en.json:253",
     "status": "moved",
-    "now_at": 254
+    "now_at": 258
    },
    {
     "wallet": "BlueWallet",
     "fact": "features.tor",
     "cite": "bluewallet:blue_modules/BlueElectrum.ts:1453",
     "status": "moved",
-    "now_at": 1475
+    "now_at": 1395
    },
    {
     "wallet": "BlueWallet",
@@ -7613,7 +7757,7 @@
     "fact": "features.cloud_backup",
     "cite": "bluewallet:class/blue-app.ts:133",
     "status": "moved",
-    "now_at": 141
+    "now_at": 145
    },
    {
     "wallet": "BlueWallet",
@@ -7621,6 +7765,41 @@
     "cite": "bluewallet:class/blue-app.ts:709",
     "status": "moved",
     "now_at": 717
+   },
+   {
+    "wallet": "BlueWallet",
+    "fact": "features.license",
+    "cite": "bluewallet:package.json:4",
+    "status": "moved",
+    "now_at": 5
+   },
+   {
+    "wallet": "Green",
+    "fact": "features.taproot",
+    "cite": "gdk:src/ga_auth_handlers.cpp:1257-1260",
+    "status": "moved",
+    "now_at": 1290
+   },
+   {
+    "wallet": "Green",
+    "fact": "features.verifies_chain",
+    "cite": "gdk:CHANGELOG.md:174-176",
+    "status": "moved",
+    "now_at": 198
+   },
+   {
+    "wallet": "Green",
+    "fact": "features.verifies_chain",
+    "cite": "gdk:src/ga_session.cpp:2313-2316",
+    "status": "moved",
+    "now_at": 2322
+   },
+   {
+    "wallet": "Green",
+    "fact": "features.tor",
+    "cite": "gdk:src/session_impl.cpp:101-105",
+    "status": "moved",
+    "now_at": 102
    },
    {
     "wallet": "Bitkit",
@@ -7648,14 +7827,14 @@
     "fact": "features.coin_control",
     "cite": "bitkit:Bitkit/Views/Wallets/Send/SendAmountView.swift:302-323",
     "status": "moved",
-    "now_at": 408
+    "now_at": 470
    },
    {
     "wallet": "Bitkit",
     "fact": "features.fee_bump",
-    "cite": "bitkit:Bitkit/Services/CoreService.swift:1648-1675",
+    "cite": "bitkit:Bitkit/Views/Wallets/Activity/ActivityItemView.swift:562-572",
     "status": "moved",
-    "now_at": 1781
+    "now_at": 565
    },
    {
     "wallet": "Bitkit",
@@ -7669,7 +7848,7 @@
     "fact": "features.taproot",
     "cite": "bitkit:Bitkit/ViewModels/SettingsViewModel.swift:576",
     "status": "moved",
-    "now_at": 645
+    "now_at": 723
    },
    {
     "wallet": "Bitkit",
@@ -7684,6 +7863,13 @@
     "cite": "bitkit:Bitkit/Services/SamRockService.swift:333-339",
     "status": "moved",
     "now_at": 329
+   },
+   {
+    "wallet": "Bitkit",
+    "fact": "features.own_server",
+    "cite": "bitkit:Bitkit/Views/Settings/Advanced/AdvancedSettingsView.swift:100-107",
+    "status": "moved",
+    "now_at": 105
    },
    {
     "wallet": "Bitkit",
@@ -7711,7 +7897,7 @@
     "fact": "features.license",
     "cite": "bitkit:README.md:258-261",
     "status": "moved",
-    "now_at": 249
+    "now_at": 262
    },
    {
     "wallet": "Blixt",
@@ -7758,9 +7944,37 @@
    {
     "wallet": "Zeus",
     "fact": "features.hw_signer",
+    "cite": "zeus:views/HandleAnythingQRScanner.tsx:114",
+    "status": "moved",
+    "now_at": 119
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.hw_signer",
+    "cite": "zeus:views/PSBT.tsx:201-206",
+    "status": "moved",
+    "now_at": 203
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.hw_signer",
     "cite": "zeus:locales/en.json:426",
     "status": "moved",
-    "now_at": 429
+    "now_at": 433
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.psbt",
+    "cite": "zeus:views/PSBT.tsx:201-206",
+    "status": "moved",
+    "now_at": 203
+   },
+   {
+    "wallet": "Zeus",
+    "fact": "features.psbt",
+    "cite": "zeus:views/HandleAnythingQRScanner.tsx:161-166",
+    "status": "moved",
+    "now_at": 142
    },
    {
     "wallet": "Zeus",
@@ -7774,7 +7988,7 @@
     "fact": "features.watch_only",
     "cite": "zeus:utils/handleAnything.ts:1122-1129",
     "status": "moved",
-    "now_at": 1173
+    "now_at": 1176
    },
    {
     "wallet": "Zeus",
@@ -7788,7 +8002,7 @@
     "fact": "features.passphrase",
     "cite": "zeus:views/Settings/SeedRecovery.tsx:924-931",
     "status": "moved",
-    "now_at": 920
+    "now_at": 932
    },
    {
     "wallet": "Zeus",
@@ -7802,14 +8016,14 @@
     "fact": "features.coin_control",
     "cite": "zeus:views/Send.tsx:1015-1020",
     "status": "moved",
-    "now_at": 1053
+    "now_at": 1087
    },
    {
     "wallet": "Zeus",
     "fact": "features.fee_bump",
     "cite": "zeus:views/Transaction.tsx:404-413",
     "status": "moved",
-    "now_at": 402
+    "now_at": 401
    },
    {
     "wallet": "Zeus",
@@ -7823,28 +8037,28 @@
     "fact": "features.fee_bump",
     "cite": "zeus:backends/LdkNode.ts:2177",
     "status": "moved",
-    "now_at": 2301
+    "now_at": 2385
    },
    {
     "wallet": "Zeus",
     "fact": "features.taproot",
     "cite": "zeus:views/Receive.tsx:1127-1133",
     "status": "moved",
-    "now_at": 1276
+    "now_at": 1290
    },
    {
     "wallet": "Zeus",
     "fact": "features.taproot",
     "cite": "zeus:backends/EmbeddedLND.ts:586",
     "status": "moved",
-    "now_at": 678
+    "now_at": 689
    },
    {
     "wallet": "Zeus",
     "fact": "features.taproot",
     "cite": "zeus:backends/LdkNode.ts:2176",
     "status": "moved",
-    "now_at": 2300
+    "now_at": 2384
    },
    {
     "wallet": "Zeus",
@@ -7858,7 +8072,7 @@
     "fact": "features.descriptors",
     "cite": "zeus:utils/handleAnything.ts:1094-1118",
     "status": "moved",
-    "now_at": 1145
+    "now_at": 1148
    },
    {
     "wallet": "Zeus",
@@ -7893,14 +8107,14 @@
     "fact": "features.tor",
     "cite": "zeus:views/Settings/WalletConfiguration.tsx:1462-1465",
     "status": "moved",
-    "now_at": 1596
+    "now_at": 1641
    },
    {
     "wallet": "Zeus",
     "fact": "features.tor",
     "cite": "zeus:stores/SettingsStore.ts:1608",
     "status": "moved",
-    "now_at": 1664
+    "now_at": 1683
    },
    {
     "wallet": "Zeus",
@@ -7919,16 +8133,9 @@
    {
     "wallet": "Zeus",
     "fact": "features.cloud_backup",
-    "cite": "zeus:stores/ChannelBackupStore.ts:63-69",
-    "status": "moved",
-    "now_at": 84
-   },
-   {
-    "wallet": "Zeus",
-    "fact": "features.cloud_backup",
     "cite": "zeus:stores/ChannelBackupStore.ts:95",
     "status": "moved",
-    "now_at": 119
+    "now_at": 156
    },
    {
     "wallet": "Zeus",
@@ -7977,14 +8184,14 @@
     "fact": "profile.engine",
     "cite": "bluewallet:package.json:144",
     "status": "moved",
-    "now_at": 145
+    "now_at": 147
    },
    {
     "wallet": "BlueWallet",
     "fact": "profile.chain_data",
     "cite": "bluewallet:blue_modules/BlueElectrum.ts:90-97",
     "status": "moved",
-    "now_at": 84
+    "now_at": 66
    },
    {
     "wallet": "BlueWallet",
@@ -8005,14 +8212,35 @@
     "fact": "profile.third_party",
     "cite": "bluewallet:class/wallets/lightning-custodian-wallet.ts:80",
     "status": "moved",
-    "now_at": 84
+    "now_at": 83
    },
    {
     "wallet": "BlueWallet",
     "fact": "profile.third_party",
     "cite": "bluewallet:class/wallets/lightning-ark-wallet.ts:94",
     "status": "moved",
-    "now_at": 98
+    "now_at": 97
+   },
+   {
+    "wallet": "Green",
+    "fact": "profile.engine",
+    "cite": "gdk:src/session_impl.cpp:79-82",
+    "status": "moved",
+    "now_at": 80
+   },
+   {
+    "wallet": "Green",
+    "fact": "profile.third_party",
+    "cite": "gdk:src/ga_auth_handlers.cpp:808",
+    "status": "moved",
+    "now_at": 839
+   },
+   {
+    "wallet": "Green",
+    "fact": "profile.third_party",
+    "cite": "gdk:src/ga_auth_handlers.cpp:835-844",
+    "status": "moved",
+    "now_at": 866
    },
    {
     "wallet": "Bitkit",
@@ -8075,7 +8303,7 @@
     "fact": "profile.chain_data",
     "cite": "zeus:stores/SettingsStore.ts:1476-1482",
     "status": "moved",
-    "now_at": 1529
+    "now_at": 1543
    },
    {
     "wallet": "Zeus",
@@ -8096,42 +8324,28 @@
     "fact": "profile.libraries",
     "cite": "zeus:package.json:55",
     "status": "moved",
-    "now_at": 64
+    "now_at": 65
    },
    {
     "wallet": "Zeus",
     "fact": "profile.libraries",
     "cite": "zeus:package.json:56",
     "status": "moved",
-    "now_at": 65
+    "now_at": 66
    },
    {
     "wallet": "Zeus",
     "fact": "profile.libraries",
     "cite": "zeus:package.json:59",
     "status": "moved",
-    "now_at": 68
+    "now_at": 69
    },
    {
     "wallet": "Zeus",
     "fact": "profile.libraries",
     "cite": "zeus:package.json:77",
     "status": "moved",
-    "now_at": 86
-   },
-   {
-    "wallet": "Zeus",
-    "fact": "profile.libraries",
-    "cite": "zeus:package.json:86",
-    "status": "moved",
-    "now_at": 95
-   },
-   {
-    "wallet": "Zeus",
-    "fact": "profile.libraries",
-    "cite": "zeus:package.json:148",
-    "status": "moved",
-    "now_at": 155
+    "now_at": 87
    },
    {
     "wallet": "Zeus",
@@ -9997,6 +10211,131 @@
      "max_cc": 246,
      "packages": 1447,
      "vendored_lines": 4043
+    }
+   }
+  },
+  {
+   "date": "2026-11-22",
+   "method": 2,
+   "sources": {
+    "winnow": "415370298fb6406ce019662fa51418dab6cb1c05",
+    "leannative": "dc8522ec4859cb992a855a735e2bee1f95ec967f",
+    "phoenix": "c3b0ae7882ad256c0b35e94c66d5f1f27305c208",
+    "lightning-kmp": "9dacdc0b4ac981dcb8fed9be23b53e6994eab27a",
+    "bitkit": "f17214e929dce5d3cbf62434e92d7f45bc418de7",
+    "synonym-ldk-node": "b6335ecd86e9e9dc4e824dcb4b6065273572ca9d",
+    "rust-lightning": "254bc9687dd190375956ad790f87239b97ebd058",
+    "bitkit-core": "045c7ff68529d9ffb8135de3b27916447f64b0c4",
+    "paykit-rs": "0b9c63d25dbd0cd5e7cf6ec577bc170732d350be",
+    "vss-rust-client-ffi": "cf5b5cdfb8aaa79c06953fc57e98d96236c57d25",
+    "blixt": "b0408dd1d45a24d7e5a38221adeb79d6309f0e87",
+    "turbo-lnd": "87ed562a0e9369c0933cfe8383cf5cd22388de46",
+    "lnd-blixt": "ae185f27e097a4106d04437f0a2be6edacf40910",
+    "zeus": "2cdb215df47bccbef481453d8bd2fdcb10760572",
+    "lnd-zeus": "6300671c3003c473893a0751bf8ea44cd00368a4",
+    "zeus-ldk-node": "afa6b97ccf6c0ef121f5d86fd095027f5abed5a6",
+    "cdk": "b2035a3525c98b22226926bdc20fa128a1351ae5",
+    "bluewallet": "66987706630895adbff08099778e4d33e26bd2f7",
+    "green": "b6429b6ee48a40dc1891dd08105a9818563b48aa",
+    "gdk": "8fcf0f7cb5295e7ded7244697d475f2b21dd9dd2",
+    "muun": "d6719c00f96d2ecbde2ab6588f95e54975ceea0e"
+   },
+   "wallets": {
+    "Winnow": {
+     "lines": 28331,
+     "lines_app": 12174,
+     "lines_bitcoin": 16157,
+     "lines_engine": 8830,
+     "characters": 1259863,
+     "functions": 3646,
+     "cc_gt_12": 163,
+     "cc_gt_30": 21,
+     "max_cc": 129,
+     "packages": 0,
+     "vendored_lines": 0
+    },
+    "BlueWallet": {
+     "lines": 59921,
+     "lines_app": 59921,
+     "characters": 1716902,
+     "functions": 1857,
+     "cc_gt_12": 142,
+     "cc_gt_30": 45,
+     "max_cc": 264,
+     "packages": 899,
+     "vendored_lines": 5136
+    },
+    "Green": {
+     "lines": 70476,
+     "lines_app": 70476,
+     "lines_engine": 34652,
+     "characters": 2032949,
+     "functions": 6905,
+     "cc_gt_12": 85,
+     "cc_gt_30": 7,
+     "max_cc": 45,
+     "packages": 157,
+     "vendored_lines": 0
+    },
+    "Muun": {
+     "lines": 85613,
+     "lines_app": 57144,
+     "lines_bitcoin": 28469,
+     "characters": 2329242,
+     "functions": 6572,
+     "cc_gt_12": 52,
+     "cc_gt_30": 0,
+     "max_cc": 26,
+     "packages": 139,
+     "vendored_lines": 101694
+    },
+    "Phoenix": {
+     "lines": 72881,
+     "lines_app": 72881,
+     "lines_engine": 28779,
+     "characters": 1902473,
+     "functions": 4703,
+     "cc_gt_12": 77,
+     "cc_gt_30": 9,
+     "max_cc": 155,
+     "packages": 58,
+     "vendored_lines": 0
+    },
+    "Bitkit": {
+     "lines": 132589,
+     "lines_app": 132589,
+     "lines_engine": 128861,
+     "characters": 3931346,
+     "functions": 8223,
+     "cc_gt_12": 203,
+     "cc_gt_30": 33,
+     "max_cc": 130,
+     "packages": 801,
+     "vendored_lines": 0
+    },
+    "Blixt": {
+     "lines": 36740,
+     "lines_app": 36740,
+     "lines_engine": 238947,
+     "characters": 957844,
+     "functions": 1067,
+     "cc_gt_12": 58,
+     "cc_gt_30": 19,
+     "max_cc": 139,
+     "packages": 680,
+     "vendored_lines": 0
+    },
+    "Zeus": {
+     "lines": 201327,
+     "lines_app": 201327,
+     "lines_engine": 244546,
+     "characters": 3974375,
+     "functions": 5338,
+     "cc_gt_12": 391,
+     "cc_gt_30": 81,
+     "max_cc": 246,
+     "packages": 1445,
+     "vendored_lines": 4051
     }
    }
   }
