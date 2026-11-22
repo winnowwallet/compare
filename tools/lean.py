@@ -153,3 +153,24 @@ def analyze(text):
         elif kind in FUNCTIONS:
             found.append((complexity(TOKEN.findall(joined)), end - start + 1, name_of(kind, body[0] if DECL.match(body[0].strip()) else joined), start))
     return found, (proofs, proof_lines)
+
+
+def split_proofs(text):
+    """The text with its `theorem`, `lemma` and `example` commands blanked out, and those commands alone
+    (everything else blanked), each keeping the file's line numbers. Lean erases proofs when it compiles,
+    so the first is what the app ships and the second is counted on its own."""
+    lines = text.split('\n')
+    proof = [False] * len(lines)
+    for start, end, body in commands(text):
+        m = DECL.match(' '.join(body).strip())
+        if m and m.group(1) in PROOFS:
+            for k in range(start - 1, end):
+                proof[k] = True
+    code = '\n'.join('' if p else line for line, p in zip(lines, proof))
+    proofs = '\n'.join(line if p else '' for line, p in zip(lines, proof))
+    return code, proofs
+
+
+def imports(text):
+    """The modules a Lean file imports (`import A.B`, with any `public`/`meta`/`all` modifiers)."""
+    return re.findall(r'^\s*(?:(?:public|meta|private)\s+)*import\s+(?:all\s+)?([A-Za-z_][\w.]*)', blank(text), re.M)

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Bitcoin wallets compared — Winnow</title>
 <link rel="alternate" type="application/json" href="data.json" title="All measurements">
-<meta name="description" content="A reproducible comparison of open-source iPhone Bitcoin wallets: features, code size, complexity, proofs, dependencies and vendored code.">
+<meta name="description" content="A reproducible comparison of open-source iPhone Bitcoin wallets: features, code size, tests, proofs, complexity, dependencies and vendored code.">
 <meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://compare.winnowwallet.com/">
 <link rel="stylesheet" href="assets/site.css">
@@ -26,23 +26,25 @@
 <div>
 <p class="eyebrow">Measured from source · {{SNAPSHOT}}</p>
 <h1>Bitcoin wallets on iPhone, <em>compared from their code</em></h1>
-<p class="lede">How Winnow compares with {{N_OTHERS}} other open-source iPhone wallets that hold your own keys: features, code size, complexity, proofs and what each one depends on. Every number is measured from pinned source and rebuilt by a script anyone can run.</p>
+<p class="lede">How Winnow compares with {{N_OTHERS}} other open-source iPhone wallets that hold your own keys: features, code size, tests and proofs, complexity and what each one depends on. Every number is measured from pinned source and rebuilt by a script anyone can run.</p>
 <div class="actions"><a class="btn primary" href="#size">See the numbers</a><a class="btn" href="#reproduce">Reproduce it</a></div>
 <p class="fine">Winnow is measured at {{WINNOW_SRC}}, its Lean 4 app. <a href="#scope">What the comparison leaves out</a></p>
 </div>
 <aside class="panel" aria-labelledby="panel-title">
 <p class="panel-head"><b id="panel-title">Winnow</b><span>Lean 4 · no Swift</span></p>
 <dl class="stats">
-<div class="stat"><dt>Lines of its own code</dt><dd>{{W_L}}<small>others: {{LR_MIN}}–{{LR_MAX}}× as many</small></dd></div>
+<div class="stat"><dt>Lines of code the app builds from</dt><dd>{{W_L}}<small>others: {{LR_MIN}}–{{LR_MAX}}× as many</small></dd></div>
+<div class="stat"><dt>Lines of tests per 100 lines of code</dt><dd>{{W_T100}}<small>others: {{T100_MIN}}–{{T100_MAX}}</small></dd></div>
+<div class="stat"><dt>Machine-checked theorems</dt><dd>{{W_THM}}<small>others: none</small></dd></div>
 <div class="stat"><dt>Third-party packages</dt><dd>{{DEP_W}}<small>others: {{DEP_MIN}}–{{DEP_MAX}}</small></dd></div>
-<div class="stat"><dt>Machine-checked theorems</dt><dd>{{W_THM}}<small>in its secp256k1</small></dd></div>
+<div class="stat"><dt>Lines of proofs and specification</dt><dd>{{W_PROOF_LINES}}<small>not built into the app</small></dd></div>
 <div class="stat"><dt>Functions above CC 12</dt><dd>{{P12_W}}%<small>others: {{P12_MIN}}–{{P12_MAX}}%</small></dd></div>
 </dl>
 <p class="fine">Built on LeanNative ({{W_ENGINE_L}} lines, shown beside the totals, not in them). Snapshot of {{SNAPSHOT}}.</p>
 </aside>
 </div>
 
-<nav aria-label="On this page"><ul class="contents"><li><a href="#glance">At a glance</a></li><li><a href="#features">Features</a></li><li><a href="#size">Code size</a></li><li><a href="#languages">Languages</a></li><li><a href="#complexity">Complexity</a></li><li><a href="#proofs">Proofs</a></li><li><a href="#dependencies">Dependencies</a></li><li><a href="#history">Over time</a></li><li><a href="#scope">Leaves out</a></li><li><a href="#method">Method</a></li></ul></nav>
+<nav aria-label="On this page"><ul class="contents"><li><a href="#glance">At a glance</a></li><li><a href="#features">Features</a></li><li><a href="#size">Code size</a></li><li><a href="#checks">Tests and proofs</a></li><li><a href="#languages">Languages</a></li><li><a href="#complexity">Complexity</a></li><li><a href="#proofs">Proofs</a></li><li><a href="#dependencies">Dependencies</a></li><li><a href="#history">Over time</a></li><li><a href="#scope">Leaves out</a></li><li><a href="#method">Method</a></li></ul></nav>
 </div>
 
 <section id="glance"><div class="wrap">
@@ -82,9 +84,10 @@
 <section id="size"><div class="wrap">
 <h2>Code size</h2>
 <div class="prose">
-<p>Winnow counts {{W_L}} lines of code: {{W_APP}} for the app and {{W_BTC}} for its own Bitcoin library, which lives in the same repository and includes {{W_PROOF_LINES}} lines of proofs. The other wallets count {{LR_MIN}} to {{LR_MAX}} times as many lines. That is the app, plus a Bitcoin library of its own for Muun.</p>
+<p>Winnow’s app is built from {{W_L}} lines of code: {{W_APP}} for the app and {{W_BTC}} for its own Bitcoin library, which lives in the same repository. The other wallets count {{LR_MIN}} to {{LR_MAX}} times as many lines. That is the app, plus a Bitcoin library of its own for Muun.</p>
+<p>Winnow’s repository also holds {{W_PROOF_LINES}} lines of proofs, and of the specification they are proved against. Lean erases proofs when it compiles, and the app never imports the specification, so none of it is built into the app or counted here; <a href="#checks">Tests and proofs</a> counts it, beside every wallet’s tests.</p>
 <p>The count leaves out the engines each wallet is built on. Green, Phoenix, Bitkit, Blixt and Zeus embed gdk, lightning-kmp, LDK Node and LND; four of the five are Lightning nodes. Winnow is built on LeanNative, a {{W_ENGINE_L}}-line framework that runs a Lean app on iOS; it plays the part SwiftUI or React Native play for the others, which are not counted either. Each engine is shown in the table, not in the totals. BlueWallet takes its Bitcoin primitives from npm packages, which the dependency tables count.</p>
-<p>Winnow’s lines are denser, at about {{W_CPL}} characters each against {{O_CPL_MIN}}–{{O_CPL_MAX}} for the others. Counted in characters, the gap is {{CR_MIN}} to {{CR_MAX}} times.</p>
+<p>Winnow’s lines are denser, at about {{W_CPL}} characters each against {{O_CPL_MIN}}–{{O_CPL_MAX}} for the others. Counted in characters, the others are {{CR_MIN}} to {{CR_MAX}} times Winnow’s size.</p>
 </div>
 <figure class="size-chart" aria-labelledby="size-caption" style="--gl:{{GRID_L}};--gc:{{GRID_C}}">
 <input type="radio" name="unit" id="unit-lines" checked aria-label="Lines"><input type="radio" name="unit" id="unit-chars" aria-label="Characters">
@@ -110,6 +113,24 @@
 <p class="prose">“vs Winnow” divides each total by Winnow’s, first in lines, then in characters. The engine column shows each engine at the version the app pins, so its size can be read beside the wallet’s.</p>
 </div></section>
 
+<section id="checks"><div class="wrap">
+<h2>Tests and proofs</h2>
+<div class="prose">
+<p>Code is one measure; how much of it is checked is another. Every wallet here has tests, which run the code on chosen examples. Winnow also has proofs, which Lean’s kernel checks for every input on every build.</p>
+<p>Winnow has {{W_TESTS}} lines of tests in {{W_TEST_FILES}} files: {{W_T100}} for every 100 lines of the code its app is built from, {{W_RANK}} of the {{N_WALLETS}} wallets. The others have {{T100_MIN}} to {{T100_MAX}}. Its {{W_THM}} theorems take {{W_PROOF_LINES}} lines; none of the other wallets is written in a language that can state one.</p>
+</div>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Tests and proofs, scrollable table">
+<table class="cc">
+<caption>Test code and proofs in each wallet’s own repository, most tested first</caption>
+<thead><tr><th scope="col">Wallet</th><th scope="col" class="num">Code</th><th scope="col" class="num">Tests</th><th scope="col" class="num">Tests per 100 lines of code</th><th scope="col"><span class="dim">Relative to the most tested</span></th><th scope="col" class="num">Theorems</th><th scope="col" class="num">Proof lines</th></tr></thead>
+<tbody>
+{{CHECK_ROWS}}
+</tbody>
+</table>
+</div>
+<p class="prose">Test code is counted the way the code is: non-blank, non-comment lines in the wallet’s own repository, in test folders and test files (<code>tests/</code>, <code>…Tests</code> targets, <code>*.test.ts</code>, <code>_test.go</code>, <code>…Test.lean</code>), without other platforms’ tests or engines’ tests. It says how much testing was written, not how much of the code it runs or whether it passes: coverage is not measured, and neither are the fuzzers and UI journeys some projects run in CI beyond the files counted here.</p>
+</div></section>
+
 <section id="languages"><div class="wrap">
 <h2>Languages</h2>
 <p class="sub">Share of each wallet’s lines, app, own Bitcoin library and embedded engine together, since all of them ship in the app. Winnow and LeanNative are Lean, apart from LeanNative’s small C shim; most of the others combine a user-interface language with a library or engine in another.</p>
@@ -126,7 +147,7 @@
 <section id="complexity"><div class="wrap">
 <h2>Complexity and CRAP</h2>
 <div class="prose">
-<p>CRAP scores each function by its cyclomatic complexity (CC, the number of paths through it) and how much of it the tests run: CRAP = CC² × (1 − coverage)³ + CC. Coverage needs each project’s test suite run with instrumentation, so it is not measured here. Testing can only bring CRAP down to CC, so complexity alone sets a floor: a function above 12 scores above 12 however well it is tested, and one above 30 fails crap4j’s default threshold whatever its tests. Complexity is measured on each wallet’s counted code, not on embedded engines.</p>
+<p>CRAP scores each function by its cyclomatic complexity (CC, the number of paths through it) and how much of it the tests run: CRAP = CC² × (1 − coverage)³ + CC. Coverage needs each project’s test suite run with instrumentation, so it is not measured here. Testing can only bring CRAP down to CC, so complexity alone sets a floor: a function above 12 scores above 12 however well it is tested, and one above 30 fails crap4j’s default threshold whatever its tests. Complexity is measured on each wallet’s counted code, not on embedded engines or on proofs, which are not functions.</p>
 <p>{{P12_W}}% of Winnow’s {{W_FUNCS}} functions are above 12, against {{P12_MIN}}–{{P12_MAX}}% for the others. Its mean is {{W_MEAN}}; the others’ range from {{MEAN_MIN}} to {{MEAN_MAX}}. Its most complex function, {{W_TOP}}, scores {{W_MAXCC}}, and {{W_GT30}} of its functions are above 30. Winnow’s app follows the Elm architecture, and its update dispatchers, split by screen, come next: <code>match</code> expressions with an arm for each message, which this rule counts as paths.</p>
 </div>
 <div class="table-wrap" role="region" tabindex="0" aria-label="Complexity, scrollable table">
@@ -153,13 +174,15 @@
 
 <section id="proofs"><div class="wrap">
 <h2>Machine-checked proofs</h2>
-<p class="sub">Lean is also a proof assistant, so part of Winnow’s code comes with theorems that Lean’s kernel checks on every build. Tests check examples; a theorem covers every input. The other wallets are written in languages without proofs, so this section has nothing to compare them on.</p>
+<p class="sub">Lean is also a proof assistant. A test checks the examples someone chose; a theorem covers every input, and Lean’s kernel checks it on every build. The other wallets are written in languages without proofs, so this section has nothing to compare them on. {{GATE_LINK}} restates every theorem, and the build fails if one rests on <code>sorry</code> or on an axiom beyond Lean’s standard three.</p>
 <div class="grid">
-<div class="card"><span class="big">{{W_THM}}</span><h3>Theorems in Winnow’s code</h3><p>{{W_PROOF_LINES}} lines, all in its Bitcoin library’s secp256k1: limb and field arithmetic, the curve and its Jacobian formulas. {{GATE_LINK}} lists them, and the build fails if one rests on <code>sorry</code> or an extra axiom.</p></div>
+<div class="card"><span class="big">{{THM_SECPCT}}</span><h3>The curve code the app runs</h3><p>Winnow’s secp256k1 is its own Lean: field and scalar arithmetic, points, keys, tweaks, and BIP 340 and ECDSA signing and verification are each proved to compute what the curve as specified says ({{PROVED_CURVE}}).</p></div>
+<div class="card"><span class="big">{{THM_SPEC}}</span><h3>The specification itself</h3><p>The curve as specified is proved sound on its own terms: both of secp256k1’s moduli are prime, its points form an abelian group, and its DER encoding is canonical ({{PROVED_PRIMES}}).</p></div>
+<div class="card"><span class="big">{{THM_WALLET}}</span><h3>The wallet</h3><p>The key behind every address the wallet shows can sign for it ({{PROVED_CUSTODY}}). The send that is signed is exactly the send that was reviewed ({{PROVED_REVIEW}}). Coin selection adds up: coins in are payments, fee and change ({{PROVED_SELECTION}}). A SegWit v0 account is the threshold and keys given, none twice ({{PROVED_SEGWIT}}). An account removed on one device does not come back on another ({{PROVED_SYNC}}).</p></div>
 <div class="card"><span class="big">{{E_THM}}</span><h3>Theorems in LeanNative</h3><p>{{E_PROOF_LINES}} lines, most of them about how the runtime steps an app: each step runs <code>update</code> on one message and asks for exactly that message’s commands, whatever the order of events. The Objective-C renderer and platform effects are not proved; they are trusted and tested.</p></div>
-<div class="card"><span class="big">Not proved</span><h3>What the theorems leave out</h3><p>The wallet logic, networking and app have tests, not proofs. Signing runs on the proved arithmetic but is not constant-time: its timing depends on the key ({{SECP_LINK}}).</p></div>
+<div class="card"><span class="big">Not proved</span><h3>What the theorems leave out</h3><p>Networking, compact-filter sync, Bluetooth and the screens have tests, not proofs. The proofs are about answers, not timing: the curve code is written to do the same work whatever the secret, which has been checked only for a Linux x86-64 build under Valgrind, not for the arm64 builds the app ships, and the AES behind backup encryption is not constant-time ({{TIMING_LINK}}).</p></div>
 </div>
-<p class="prose">Proofs are erased when Lean compiles, so they add nothing to the app. They are counted as lines in the code size above, and are not functions in the complexity table.</p>
+<p class="prose">Proofs are erased when Lean compiles, and the specification is never imported by the app, so neither adds anything to it. They are counted in <a href="#checks">Tests and proofs</a>, not in the code size, and are not functions in the complexity table.</p>
 </div></section>
 
 <section id="dependencies"><div class="wrap">
@@ -197,7 +220,7 @@
 
 <section id="history"><div class="wrap">
 <h2>Over time</h2>
-<p class="sub">Wallet repositories are read at the head of their main branch, except Phoenix and Winnow, which are read at their latest release ({{PHOENIX_TAG}}, {{WINNOW_TAG}}); Phoenix’s default branch was configured for testnet when we checked. Every engine and library is read at the version its wallet pins. A snapshot is recorded whenever any of them moves: {{SNAPSHOTS_N}} since {{FIRST_DAY}}, when this page began counting Bitcoin wallets only. Changes are shown against that first snapshot. On 30 October 2026 Winnow’s measured source moved from its Swift app to its Lean 4 rewrite, so its line jumps there. Hover or focus a line for each snapshot. The {{EARLIER_N}} earlier snapshots ({{EARLIER_FIRST}} to {{EARLIER_LAST}}) compared Lightning wallets and counted their Lightning engines; they are in <a href="data.json">data.json</a>.</p>
+<p class="sub">Wallet repositories are read at the head of their main branch, except Phoenix and Winnow, which are read at their latest release ({{PHOENIX_TAG}}, {{WINNOW_TAG}}); Phoenix’s default branch was configured for testnet when we checked. Every engine and library is read at the version its wallet pins. A snapshot is recorded whenever any of them moves: {{SNAPSHOTS_N}} since {{FIRST_DAY}}, when this page began counting Bitcoin wallets only. Changes are shown against that first snapshot. On 30 October 2026 Winnow’s measured source moved from its Swift app to its Lean 4 rewrite, so its line jumps there. From 21 November 2026 the count leaves out Lean proofs and the Lean modules an app does not import; of the wallets, that changes only Winnow’s line. Hover or focus a line for each snapshot. The {{EARLIER_N}} earlier snapshots ({{EARLIER_FIRST}} to {{EARLIER_LAST}}) compared Lightning wallets and counted their Lightning engines; they are in <a href="data.json">data.json</a>.</p>
 <div class="table-wrap" role="region" tabindex="0" aria-label="Over time, scrollable table">
 <table class="trend">
 <thead><tr><th scope="col">Wallet</th><th scope="col">Lines of code</th><th scope="col">Third-party packages</th><th scope="col">Functions above CC 12</th></tr></thead>
@@ -216,6 +239,7 @@
 <section id="scope"><div class="wrap">
 <h2>What the numbers leave out</h2>
 <div class="grid">
+<div class="card"><h3>Test lines are not test quality</h3><p>A line count of tests says how much testing was written. It does not say how much of the code the tests run, whether they pass, or whether they test what matters. Coverage is not measured here; each project’s CI is the place to see its tests run.</p></div>
 <div class="card"><h3>Less code is not proof of safety</h3><p>A smaller codebase is quicker to read and review. It does not show the code is correct, and it says nothing about whether anyone independent has reviewed it. Check each project’s own security page.</p></div>
 <div class="card"><h3>The wallets do different amounts of work</h3><p>Each count is the whole app, not only its on-chain wallet. Zeus also manages remote LND and Core Lightning nodes and includes Cashu, Nostr Wallet Connect and a point of sale. Bitkit includes Pubky contacts, Paykit and Trezor support. Winnow includes k-of-n multisig accounts and a Ledger signer. BlueWallet includes Lightning wallet types (an LNDHub custodian and an Ark one). Green’s count includes its <code>lightning</code> folder. Muun includes Lightning payments through swaps.</p></div>
 <div class="card"><h3>Engines are not counted</h3><p>Phoenix, Bitkit, Blixt, Zeus and Green build their Bitcoin wallet on an engine that is a separate project: lightning-kmp, LDK Node with BDK, LND and gdk, so they look smaller than everything they ship. Winnow’s engine is a UI framework, LeanNative; its Bitcoin code is its own and counted, as Muun’s is. BlueWallet has no engine.</p></div>
@@ -226,7 +250,8 @@
 <section id="method"><div class="wrap">
 <h2>How we measured</h2>
 <ul class="list">
-<li><strong>Lines:</strong> <a href="https://github.com/AlDanial/cloc">cloc</a> 2.06 counted non-blank, non-comment lines in each app’s programming languages, for code that builds into the iPhone app. Characters were counted after removing comments and all whitespace. Excluded: tests; Android, desktop and web code; build tools; files marked as generated (protobuf, sqlc and UniFFI bindings); and vendored third-party code. Rust test modules inside source files were removed. Winnow’s test oracles, test vectors and UI tests are left out by name; Lean proofs are counted as lines.</li>
+<li><strong>Lines:</strong> <a href="https://github.com/AlDanial/cloc">cloc</a> 2.06 counted non-blank, non-comment lines in each app’s programming languages, for code that builds into the iPhone app. Characters were counted after removing comments and all whitespace. Excluded: tests; Android, desktop and web code; build tools; files marked as generated (protobuf, sqlc and UniFFI bindings); and vendored third-party code. Rust test modules inside source files were removed. Winnow’s test kit, test vectors and UI journeys are left out by name. For Lean, “builds into the app” is read from the imports: a file counts only if the app’s root module imports it, directly or not, and its <code>theorem</code>, <code>lemma</code> and <code>example</code> commands, which the compiler erases, are taken out of the count.</li>
+<li><strong>Tests and proofs:</strong> test code is counted with the same cloc rules in each wallet’s own repositories (not its engines’): files in test folders or with test names, less other platforms’ tests and generated files. Wallets whose tests are named otherwise list them in <code>sources.json</code>; Winnow’s are its Lean test programs, regtest suites, fuzzer and UI journeys. Proofs are the Lean <code>theorem</code>, <code>lemma</code> and <code>example</code> commands, with the modules the proofs import and the app does not (the specification they are proved against, and the gates that list them).</li>
 <li><strong>Complexity:</strong> each file was parsed with <a href="https://tree-sitter.github.io/">tree-sitter</a>, and one rule applied to every language. CC is 1, plus 1 for each <code>if</code> or <code>guard</code>, loop, <code>catch</code>, ternary, <code>&amp;&amp;</code>, <code>||</code>, <code>??</code> or elvis, and non-default <code>case</code>, <code>when</code> or <code>match</code> arm. Closures, lambdas and nested functions count toward the function that contains them, so a React screen written as one function component counts as one function. Tree-sitter could not fully parse at most {{PE_MAX}}% of any wallet’s files; it recovers locally, so their functions are still counted. No tree-sitter grammar parses current Lean, so Lean is read lexically under the same rule: each <code>def</code>, <code>instance</code>, <code>abbrev</code> or <code>opaque</code> is a function, and theorems are not.</li>
 <li><strong>Dependencies:</strong> read from each app’s own lockfiles (Swift Package Manager, Lake, CocoaPods, npm, yarn and bun). Kotlin libraries were resolved from Maven Central’s metadata for the iPhone target. Rust crates come from <code>cargo tree</code> for <code>aarch64-apple-ios</code> at each prebuilt library’s pinned source. Go modules come from <code>go list -deps</code> for iOS, with the build tags LND’s own iOS build uses or, for Muun, none.</li>
 <li><strong>Vendored code:</strong> each repository was searched for third-party code committed into it: vendor directories, committed CocoaPods, copied npm packages, license files below the root, committed binaries and dependency patches.</li>

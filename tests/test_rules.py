@@ -91,3 +91,52 @@ fn c() {}'''.split())
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class LeanProofs(unittest.TestCase):
+    TEXT = '\n'.join([
+        'import Std.Data.HashMap',          # 1
+        'public import Winnow.Keys',        # 2
+        '',                                 # 3
+        '/-- A doc comment. -/',            # 4
+        'def double (n : Nat) : Nat := 2 * n',  # 5
+        '',                                 # 6
+        '@[simp] private theorem double_add (a b : Nat) :',  # 7
+        '    double (a + b) = double a + double b := by',     # 8
+        '  simp [double]; omega',           # 9
+        '',                                 # 10
+        'example : double 2 = 4 := rfl',    # 11
+        'def triple (n : Nat) : Nat := 3 * n',  # 12
+    ])
+
+    def test_proofs_are_split_out_keeping_line_numbers(self):
+        code, proofs = lean.split_proofs(self.TEXT)
+        code, proofs = code.split('\n'), proofs.split('\n')
+        self.assertEqual(len(code), 12)
+        self.assertEqual(len(proofs), 12)
+        # the theorem (lines 7-9) and the example (11) leave the code; the defs stay where they were
+        self.assertEqual([k + 1 for k, line in enumerate(proofs) if line.strip()], [7, 8, 9, 11])
+        self.assertEqual(code[4], 'def double (n : Nat) : Nat := 2 * n')
+        self.assertEqual(code[11], 'def triple (n : Nat) : Nat := 3 * n')
+        self.assertFalse(any('theorem' in line or 'example' in line for line in code))
+        # and the proof count agrees with what is split out
+        self.assertEqual(lean.analyze(self.TEXT)[1], (2, 4))
+
+    def test_imports(self):
+        self.assertEqual(lean.imports(self.TEXT), ['Std.Data.HashMap', 'Winnow.Keys'])
+        self.assertEqual(lean.imports('-- import Not.This\n/- import Nor.This -/\nimport This.One\n'), ['This.One'])
+
+
+class TestFiles(unittest.TestCase):
+    def test_recognised(self):
+        import tests as t
+        yes = ['tests/unit/wallet.test.ts', 'src/__tests__/a.tsx', 'BitkitTests/PaykitTests.swift',
+               'gaiosUITests/Screens/Home.swift', 'libwallet/address_test.go', 'phoenix-shared/src/commonTest/kotlin/A.kt',
+               'Lean/MultisigTest.lean', 'LeanApp/RecordsTest.lean', 'src/fuzz/target.rs', 'crate/src/tests.rs']
+        no = ['src/wallet.ts', 'Bitkit/Testimony.swift', 'libwallet/testament.go', 'Lean/Winnow/Wallet/Spend.lean',
+              'android/app/src/test/java/A.kt', 'phoenix-android/src/androidTest/A.kt', 'desktop/tests/a.ts',
+              'shared/src/androidMain/kotlin/A.kt']
+        for path in yes:
+            self.assertTrue(t.is_test(tuple(path.split('/'))), path)
+        for path in no:
+            self.assertFalse(t.is_test(tuple(path.split('/'))), path)

@@ -17,6 +17,7 @@ PROFILES = json.loads((ROOT / 'wallets.json').read_text())
 ORDER = PROFILES['order']
 loc = json.loads((DATA / 'loc.json').read_text())
 cc = json.loads((DATA / 'complexity.json').read_text())
+tests = json.loads((DATA / 'tests.json').read_text())
 deps = json.loads((DATA / 'deps.json').read_text())
 vend = json.loads((DATA / 'vendored.json').read_text())
 drift = json.loads((DATA / 'drift.json').read_text())
@@ -142,6 +143,27 @@ for w in ORDER:
     size_table.append(f'<tr>{name_cell(w)}{"".join(cells)}<td class="num"><strong>{L:,}</strong></td>'
                       f'<td class="num">{C / 1e6:.2f}M</td><td class="num">{rel}</td>{engine_cell}</tr>')
 axis = [''.join(f'<span class="u-{u}" style="left:{100 * v / MAX[u]:.3f}%">{t}</span>' for v, t in TICKS[u]) for u in 'lc']
+
+# ── tests and proofs ───────────────────────────────────────────
+def proofs_of(w):
+    """(theorems, lines) in the wallet's own code: proofs and the specification they are proved against."""
+    found = [p.get('proofs', {}) for part, p in loc[w].items() if part in COUNTED]
+    return sum(f.get('theorems', 0) for f in found), sum(f.get('lines', 0) for f in found)
+
+
+PER100 = {w: 100 * tests[w]['code'] / tot(w, 'code') for w in ORDER}
+best_per100 = max(PER100.values())
+check_rows = []
+for w in sorted(ORDER, key=lambda w: -PER100[w]):
+    thm, plines = proofs_of(w)
+    bar = f'<span class="minibar good" style="--w:{100 * PER100[w] / best_per100:.1f}%" aria-hidden="true"></span>'
+    langs = ', '.join(tests[w]['languages']) or '—'
+    check_rows.append(
+        f'<tr>{name_cell(w)}<td class="num">{tot(w, "code"):,}</td><td class="num" title="In {esc(langs)}">{tests[w]["code"]:,}</td>'
+        f'<td class="num"><strong>{PER100[w]:.0f}</strong></td><td class="bar-cell">{bar}</td>'
+        f'<td class="num">{f"{thm:,}" if thm else "<span class=dim>—</span>"}</td>'
+        f'<td class="num">{f"{plines:,}" if plines else "<span class=dim>—</span>"}</td></tr>')
+RANK = sorted(ORDER, key=lambda w: -PER100[w]).index('Winnow')
 
 # ── languages ──────────────────────────────────────────────────
 LANG_GROUP = {'Lean': 'Lean', 'Swift': 'Swift', 'Kotlin': 'Kotlin', 'Rust': 'Rust', 'Go': 'Go', 'TypeScript': 'TypeScript/JS',
@@ -355,15 +377,38 @@ parse_errors = max(100 * sum(p.get('files_with_parse_errors', 0) for kk, p in cc
 
 
 # What the page says about Winnow's own project, and the file at the pinned revision that has to keep saying it.
-SECP_WRAPPER = 'Lean/Winnow/Keys/Secp256k1.lean'
-PROOF_GATE = 'Lean/Secp/Proofs/Gate.lean'
+PROOF_GATE = 'Lean/Winnow/Proofs/Gate.lean'
+TIMING = 'docs/read-side.html'
+# (file, the text the page's link points at, …) for each wallet theorem the proofs section names
+PROVED = {
+    'custody': ('Lean/Winnow/Proofs/Custody.lean', 'theorem publicAdd_eq_privateAdd'),
+    'review': ('Lean/Winnow/Proofs/Spend.lean', 'The send that is signed is the send that was reviewed'),
+    'selection': ('Lean/Winnow/Proofs/Selection.lean', 'theorem select_conserves'),
+    'segwit': ('Lean/Winnow/Proofs/Spend.lean', 'theorem make_admits'),
+    'sync': ('Lean/Winnow/Proofs/DeviceSyncProofs.lean', 'theorem decideAccount_absent_removed'),
+    'curve': ('Lean/SecpCt/Gate.lean', 'what it computes is what the specification says'),
+    'primes': ('Lean/Secp/Proofs/Gate.lean', 'Secp.Primes.P_prime'),
+}
 WINNOW_STATEMENTS = [
     ('README.md', ['compact block filters'], 'Winnow checks the chain with compact block filters from Bitcoin peers'),
     ('README.md', ['SOCKS gateways', 'bundles no Tor or I2P'], 'Winnow reaches Tor and I2P through gateways, with no client of its own'),
     ('README.md', ['compiles no Swift at all'], 'Winnow is written in Lean 4 and compiles no Swift'),
-    (SECP_WRAPPER, ['Not constant-time'], 'Winnow’s signing is not constant-time'),
-    (PROOF_GATE, ['#assert_axioms', 'sorry'], 'Winnow’s build fails if a listed theorem rests on sorry or an extra axiom'),
-]
+    (TIMING, ['Valgrind', 'not for the arm64 builds', 'not constant-time'],
+     'Winnow’s curve code is written to do the same work whatever the secret, checked for timing only under Valgrind on Linux x86-64; its AES is not constant-time'),
+    (PROOF_GATE, ['#assert_all_axioms', 'propext, Quot.sound, Classical.choice'],
+     'Winnow’s build fails if a listed theorem rests on sorry or an extra axiom'),
+    ('Lean/SecpCt/Gate.lean', ['sorry', 'No proof here uses'], 'the curve code’s gate refuses sorry, extra axioms and native_decide'),
+] + [(path, [needle], f'Winnow proves what {path} names') for path, needle in PROVED.values()]
+
+
+def line_of(path, needle):
+    text = blob('winnow', CONFIG['sources']['winnow']['rev'], path) or []
+    return next((i + 1 for i, line in enumerate(text) if needle in line), None)
+
+
+def proved_link(key, text):
+    path, needle = PROVED[key]
+    return link('winnow', path, line_of(path, needle), text=text)
 
 
 def claims():
@@ -383,6 +428,10 @@ def claims():
         wrong.append('"Winnow’s engine column is LeanNative" no longer matches sources.json')
     if not W_PROOFS['bitcoin'][0] or W_PROOFS['app'][0]:
         wrong.append('"Winnow’s theorems are all in its Bitcoin library" no longer holds')
+    if any(proofs_of(w)[0] for w in others):
+        wrong.append('"The other wallets have no proofs" no longer holds')
+    if set(W_PROOF_FOLDERS) != {'Lean/Secp/Proofs', 'Lean/SecpCt', 'Lean/Winnow/Proofs'}:
+        wrong.append(f'"Winnow’s theorems are in Secp, SecpCt and Winnow/Proofs" no longer holds: {W_PROOF_FOLDERS}')
     if not any(re.fullmatch(r'(Model\.)?(on\w*Host|step\w*|perform\w*)', f['function']) for f in W_APP_TOP[1:2]):
         wrong.append('"Winnow’s update dispatchers come next after its most complex function" no longer holds')
     if languages['Winnow']['Lean'] < 99 or sum(1 for v in languages['Winnow'].values() if v) > 2:
@@ -396,7 +445,8 @@ def claims():
 
 
 W_PROOFS = {part: (p.get('proofs', {}).get('theorems', 0), p.get('proofs', {}).get('lines', 0)) for part, p in loc['Winnow'].items()}
-W_THM, W_PROOF_LINES = W_PROOFS['bitcoin']
+W_THM, W_PROOF_LINES = proofs_of('Winnow')
+W_PROOF_FOLDERS = loc['Winnow']['bitcoin'].get('proofs', {}).get('theorems_by_folder', {})
 E_THM, E_PROOF_LINES = W_PROOFS.get('engine', (0, 0))
 W_APP_TOP = cc['Winnow']['app']['most_complex']
 W_TOP = max((p['most_complex'][0] for part, p in cc['Winnow'].items() if part in COUNTED), key=lambda f: f['cc'])
@@ -444,13 +494,29 @@ subs = {
     'WINNOW_TAG': esc(CONFIG['sources']['winnow'].get('tag', CONFIG['sources']['winnow']['rev'][:7])),
     'WINNOW_SRC': f'<a href="{esc(CONFIG["sources"]["winnow"]["repo"])}/tree/{CONFIG["sources"]["winnow"]["rev"]}"><code>{esc(CONFIG["sources"]["winnow"]["label"])}</code></a>',
     'LEANNATIVE_SRC': f'<a href="{esc(CONFIG["sources"]["leannative"]["repo"])}/tree/{CONFIG["sources"]["leannative"]["rev"]}"><code>{esc(CONFIG["sources"]["leannative"]["label"])}</code></a>',
-    'SECP_LINK': link('winnow', SECP_WRAPPER, text='Keys/Secp256k1.lean'), 'GATE_LINK': link('winnow', PROOF_GATE, text='Secp/Proofs/Gate.lean'),
+    'GATE_LINK': link('winnow', PROOF_GATE, text='Winnow/Proofs/Gate.lean'), 'TIMING_LINK': link('winnow', TIMING, text='read-side.html'),
+    'THM_SECPCT': f'{W_PROOF_FOLDERS.get("Lean/SecpCt", 0):,}', 'THM_SPEC': f'{W_PROOF_FOLDERS.get("Lean/Secp/Proofs", 0):,}',
+    'THM_WALLET': f'{W_PROOF_FOLDERS.get("Lean/Winnow/Proofs", 0):,}',
+    'CHECK_ROWS': '\n'.join(check_rows), 'W_TESTS': f'{tests["Winnow"]["code"]:,}', 'W_T100': f'{PER100["Winnow"]:.0f}',
+    'T100_MIN': f'{min(PER100[w] for w in others):.0f}', 'T100_MAX': f'{max(PER100[w] for w in others):.0f}',
+    'W_RANK': ['the most', 'the second most', 'the third most'][RANK] if RANK < 3 else f'number {RANK + 1} of {len(ORDER)} in',
+    'W_TEST_FILES': f'{tests["Winnow"]["files"]:,}',
     'MUUN_VENDORED': f'{vend["Muun"]["copied_lines"]:,}', 'PHOENIX_TAG': esc(CONFIG['sources']['phoenix']['tag']),
 }
 
 
+def proved_links():
+    """Links to the wallet theorems the proofs section names, at the line each starts on. Read from the
+    checked-out source, so only when rendering (the tests import this module before anything is fetched)."""
+    return {'PROVED_CUSTODY': proved_link('custody', 'Proofs/Custody.lean'), 'PROVED_REVIEW': proved_link('review', 'Proofs/Spend.lean'),
+            'PROVED_SELECTION': proved_link('selection', 'Proofs/Selection.lean'), 'PROVED_SEGWIT': proved_link('segwit', 'make_admits'),
+            'PROVED_SYNC': proved_link('sync', 'Proofs/DeviceSyncProofs.lean'), 'PROVED_CURVE': proved_link('curve', 'SecpCt/Gate.lean'),
+            'PROVED_PRIMES': proved_link('primes', 'Secp/Proofs/Gate.lean')}
+
+
 def main():
     claims()
+    subs.update(proved_links())
     page = (ROOT / 'page/template.html').read_text()
     for key, value in subs.items():
         page = page.replace('{{' + key + '}}', value)
@@ -460,7 +526,7 @@ def main():
     (ROOT / 'site/index.html').write_text(page)
     write_json(ROOT / 'site/data.json', {
         'snapshot': CONFIG['snapshot'], 'sources': CONFIG['sources'], 'lines': loc, 'languages_percent': languages,
-        'complexity': cc, 'dependencies': deps, 'vendored': vend, 'features': features, 'profiles': P,
+        'complexity': cc, 'tests': tests, 'dependencies': deps, 'vendored': vend, 'features': features, 'profiles': P,
         'reviewed': REVIEWED, 'drift': drift, 'history': history})
     print(f'site/index.html {len(page):,} bytes; site/data.json')
 
