@@ -1,22 +1,22 @@
 {
- "snapshot": "2026-11-22",
+ "snapshot": "2026-11-23",
  "method": 2,
  "sources": {
   "winnow": {
    "repo": "https://github.com/winnowwallet/winnow-lean",
    "track": {"tag_latest": "v(\\d+(?:\\.\\d+)*)"},
-   "rev": "415370298fb6406ce019662fa51418dab6cb1c05",
-   "label": "winnowwallet/winnow-lean v0.9.28",
-   "date": "2026-11-21",
-   "tag": "v0.9.28",
-   "version": "0.9.28"
+   "rev": "3faedc6d5510e5d722597035c39bf4d894c40b48",
+   "label": "winnowwallet/winnow-lean v0.9.31",
+   "date": "2026-11-22",
+   "tag": "v0.9.31",
+   "version": "0.9.31"
   },
   "leannative": {
    "repo": "https://github.com/LeanNative/leannative",
    "track": {"from": "winnow:LeanApp/lake-manifest.json", "lake": "leannative"},
-   "rev": "dc8522ec4859cb992a855a735e2bee1f95ec967f",
-   "label": "LeanNative/leannative@dc8522e",
-   "date": "2026-11-18"
+   "rev": "eac6c00bf0d33ed043e3e77250a47d0637f744ae",
+   "label": "LeanNative/leannative@eac6c00",
+   "date": "2026-11-22"
   },
   "phoenix": {
    "repo": "https://github.com/ACINQ/phoenix",
@@ -112,9 +112,9 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "2cdb215df47bccbef481453d8bd2fdcb10760572",
-   "label": "ZeusLN/zeus@2cdb215",
-   "date": "2026-11-21"
+   "rev": "0dae8bb5c5aa2535e93712231ffd6e39a5be568d",
+   "label": "ZeusLN/zeus@0dae8bb",
+   "date": "2026-11-23"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
@@ -147,9 +147,9 @@
   "bluewallet": {
    "repo": "https://github.com/BlueWallet/BlueWallet",
    "track": {"branch": "HEAD"},
-   "rev": "66987706630895adbff08099778e4d33e26bd2f7",
-   "label": "BlueWallet/BlueWallet@6698770",
-   "date": "2026-11-21"
+   "rev": "f2f14a578dc5a4d012aa35cc6480ffe5212cfbd0",
+   "label": "BlueWallet/BlueWallet@f2f14a5",
+   "date": "2026-11-23"
   },
   "green": {
    "repo": "https://github.com/Blockstream/green_ios",

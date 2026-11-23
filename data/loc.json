@@ -1,11 +1,11 @@
 {
  "Winnow": {
   "app": {
-   "code": 12174,
-   "chars": 534766,
-   "files": 45,
+   "code": 12693,
+   "chars": 555799,
+   "files": 46,
    "languages": {
-    "Lean": 12174
+    "Lean": 12693
    },
    "generated_excluded": [],
    "not_built": [
@@ -19,11 +19,11 @@
    }
   },
   "bitcoin": {
-   "code": 16157,
-   "chars": 725097,
+   "code": 16208,
+   "chars": 727695,
    "files": 108,
    "languages": {
-    "Lean": 16157
+    "Lean": 16208
    },
    "generated_excluded": [],
    "not_built": [
@@ -42,13 +42,13 @@
    }
   },
   "engine": {
-   "code": 8830,
-   "chars": 408747,
-   "files": 51,
+   "code": 9086,
+   "chars": 419321,
+   "files": 54,
    "languages": {
     "C": 62,
     "C/C++ Header": 8,
-    "Lean": 8760
+    "Lean": 9016
    },
    "generated_excluded": [],
    "proofs": {
@@ -64,16 +64,16 @@
  },
  "BlueWallet": {
   "app": {
-   "code": 59921,
-   "chars": 1716902,
+   "code": 59953,
+   "chars": 1717269,
    "files": 386,
    "languages": {
     "C/C++ Header": 17,
-    "JavaScript": 1530,
+    "JavaScript": 1152,
     "Objective-C": 26,
     "Objective-C++": 80,
     "Swift": 3651,
-    "TypeScript": 54617
+    "TypeScript": 55027
    },
    "generated_excluded": []
   }
@@ -221,16 +221,16 @@
  },
  "Zeus": {
   "app": {
-   "code": 201327,
-   "chars": 3974375,
-   "files": 612,
+   "code": 201639,
+   "chars": 3983353,
+   "files": 613,
    "languages": {
-    "C/C++ Header": 48,
+    "C/C++ Header": 49,
     "JavaScript": 49,
-    "Objective-C": 1420,
+    "Objective-C": 1519,
     "Objective-C++": 517,
     "Swift": 4234,
-    "TypeScript": 195059
+    "TypeScript": 195271
    },
    "generated_excluded": [
     "zeus/ios/LdkNodeMobile/LDKNode.swift"
