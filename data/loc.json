@@ -64,16 +64,16 @@
  },
  "BlueWallet": {
   "app": {
-   "code": 59953,
-   "chars": 1717269,
-   "files": 386,
+   "code": 61122,
+   "chars": 1758976,
+   "files": 389,
    "languages": {
     "C/C++ Header": 17,
     "JavaScript": 1152,
     "Objective-C": 26,
     "Objective-C++": 80,
-    "Swift": 3651,
-    "TypeScript": 55027
+    "Swift": 4009,
+    "TypeScript": 55838
    },
    "generated_excluded": []
   }
@@ -151,20 +151,20 @@
  },
  "Bitkit": {
   "app": {
-   "code": 132589,
-   "chars": 3931346,
+   "code": 133432,
+   "chars": 3961811,
    "files": 672,
    "languages": {
-    "Swift": 132589
+    "Swift": 133432
    },
    "generated_excluded": []
   },
   "engine": {
-   "code": 128861,
-   "chars": 3847971,
+   "code": 128923,
+   "chars": 3849857,
    "files": 226,
    "languages": {
-    "Rust": 128861
+    "Rust": 128923
    },
    "generated_excluded": []
   }
@@ -221,16 +221,16 @@
  },
  "Zeus": {
   "app": {
-   "code": 201639,
-   "chars": 3983353,
-   "files": 613,
+   "code": 201664,
+   "chars": 3985042,
+   "files": 615,
    "languages": {
     "C/C++ Header": 49,
     "JavaScript": 49,
     "Objective-C": 1519,
     "Objective-C++": 517,
     "Swift": 4234,
-    "TypeScript": 195271
+    "TypeScript": 195296
    },
    "generated_excluded": [
     "zeus/ios/LdkNodeMobile/LDKNode.swift"

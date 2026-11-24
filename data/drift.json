@@ -1,7 +1,7 @@
 {
  "reviewed": "2026-10-02",
  "reviewed_latest": "2026-11-03",
- "measured": "2026-11-23",
+ "measured": "2026-11-24",
  "citations": 441,
  "same": 235,
  "moved": 138,
@@ -655,7 +655,7 @@
    "fact": "features.hw_signer",
    "cite": "bluewallet:screen/wallets/WalletDetails.tsx:813",
    "status": "moved",
-   "now_at": 801
+   "now_at": 865
   },
   {
    "wallet": "BlueWallet",
@@ -809,7 +809,7 @@
    "fact": "features.tor",
    "cite": "bluewallet:loc/en.json:253",
    "status": "moved",
-   "now_at": 258
+   "now_at": 257
   },
   {
    "wallet": "BlueWallet",
@@ -914,7 +914,7 @@
    "fact": "features.fee_bump",
    "cite": "bitkit:Bitkit/Views/Wallets/Activity/ActivityItemView.swift:562-572",
    "status": "moved",
-   "now_at": 565
+   "now_at": 569
   },
   {
    "wallet": "Bitkit",
@@ -1026,7 +1026,7 @@
    "fact": "features.hw_signer",
    "cite": "zeus:views/HandleAnythingQRScanner.tsx:114",
    "status": "moved",
-   "now_at": 119
+   "now_at": 120
   },
   {
    "wallet": "Zeus",
@@ -1054,7 +1054,7 @@
    "fact": "features.psbt",
    "cite": "zeus:views/HandleAnythingQRScanner.tsx:161-166",
    "status": "moved",
-   "now_at": 142
+   "now_at": 143
   },
   {
    "wallet": "Zeus",
@@ -1327,7 +1327,7 @@
    "fact": "profile.chain_data",
    "cite": "bitkit:Bitkit/Constants/Env.swift:191",
    "status": "moved",
-   "now_at": 217
+   "now_at": 222
   },
   {
    "wallet": "Blixt",

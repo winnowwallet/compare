@@ -1,5 +1,5 @@
 {
- "snapshot": "2026-11-23",
+ "snapshot": "2026-11-24",
  "method": 2,
  "sources": {
   "winnow": {
@@ -39,17 +39,17 @@
   "bitkit": {
    "repo": "https://github.com/synonymdev/bitkit-ios",
    "track": {"branch": "HEAD"},
-   "rev": "f17214e929dce5d3cbf62434e92d7f45bc418de7",
-   "label": "synonymdev/bitkit-ios@f17214e",
-   "date": "2026-11-21"
+   "rev": "cdfbca1cf8a49b86a824d89df6c4e3f27125b130",
+   "label": "synonymdev/bitkit-ios@cdfbca1",
+   "date": "2026-11-24"
   },
   "synonym-ldk-node": {
    "repo": "https://github.com/synonymdev/ldk-node",
    "track": {"from": "bitkit:Bitkit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved", "spm": "ldk-node"},
-   "rev": "b6335ecd86e9e9dc4e824dcb4b6065273572ca9d",
-   "version": "0.7.0-rc.80",
-   "label": "synonymdev/ldk-node 0.7.0-rc.80",
-   "date": "2026-11-11"
+   "rev": "366d56ef3c735406146ed12a34aba291776d29f6",
+   "version": "0.7.0-rc.81",
+   "label": "synonymdev/ldk-node 0.7.0-rc.81",
+   "date": "2026-11-23"
   },
   "rust-lightning": {
    "repo": "https://github.com/lightningdevkit/rust-lightning",
@@ -112,9 +112,9 @@
   "zeus": {
    "repo": "https://github.com/ZeusLN/zeus",
    "track": {"branch": "HEAD"},
-   "rev": "0dae8bb5c5aa2535e93712231ffd6e39a5be568d",
-   "label": "ZeusLN/zeus@0dae8bb",
-   "date": "2026-11-23"
+   "rev": "2a5b5f3bc3ea48727e0224320f354fbccab16d68",
+   "label": "ZeusLN/zeus@2a5b5f3",
+   "date": "2026-11-24"
   },
   "lnd-zeus": {
    "repo": "https://github.com/ZeusLN/lnd",
@@ -147,8 +147,8 @@
   "bluewallet": {
    "repo": "https://github.com/BlueWallet/BlueWallet",
    "track": {"branch": "HEAD"},
-   "rev": "f2f14a578dc5a4d012aa35cc6480ffe5212cfbd0",
-   "label": "BlueWallet/BlueWallet@f2f14a5",
+   "rev": "2432b4585d5b15fa7f314377e9f8da9d07605fe1",
+   "label": "BlueWallet/BlueWallet@2432b45",
    "date": "2026-11-23"
   },
   "green": {
